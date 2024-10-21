@@ -1,0 +1,165 @@
+:::{.justify}
+# Tipos de Datos
+
+:::{.center}
+![Python](https://www.python.org/static/img/python-logo.png)
+:::
+
+Los tipos de Datos en Python son la forma en que Python clasifica y almacena los datos. Los tipos de datos más comunes en Python son:
+
+- Números
+- Cadenas
+- Listas
+- Tuplas
+- Diccionarios
+- Booleanos
+- Rango
+
+En esta actividad, aprenderás sobre los diferentes tipos de datos en Python y cómo se utilizan.
+
+## String y Números.
+
+Los String y los Números son dos de los tipos de datos más comunes en Python. Los String son secuencias de caracteres, como letras, números y símbolos, que se utilizan para representar texto. Los Números, por otro lado, son valores numéricos, como enteros y decimales, que se utilizan para realizar cálculos matemáticos.
+
+### String
+
+Los String en Python se crean utilizando comillas simples **' '** o comillas dobles **" "**. Por ejemplo:
+
+```python
+nombre = "Juan"
+apellido = 'Pérez'
+```
+
+En el código anterior, se crean dos variables, **nombre** y **apellido**, que contienen los String **"Juan"** y **"Pérez"** respectivamente.
+
+### Números
+
+Los Números en Python pueden ser enteros o decimales. Los enteros son números enteros, como **1**, **2**, **3**, mientras que los decimales son números con decimales, como **1.5**, **2.75**, **3.14**. Por ejemplo:
+
+```python
+entero = 10
+decimal = 3.14
+```
+
+En el código anterior, se crean dos variables, **entero** y **decimal**, que contienen los números **10** y **3.14** respectivamente.
+
+## Listas y Tuplas.
+
+Las listas y las tuplas son dos tipos de datos en Python que se utilizan para almacenar colecciones de elementos. Las listas son colecciones ordenadas y modificables de elementos, mientras que las tuplas son colecciones ordenadas e inmutables de elementos.
+
+### Listas
+
+Las listas en Python se crean utilizando corchetes **[ ]** y pueden contener cualquier tipo de datos, como números, String, listas, tuplas, diccionarios, etc. Por ejemplo:
+
+```python
+numeros = [1, 2, 3, 4, 5]
+nombres = ["Juan", "María", "Pedro"]
+```
+
+En el código anterior, se crean dos listas, **numeros** y **nombres**, que contienen los números **1**, **2**, **3**, **4**, **5** y los nombres **"Juan"**, **"María"**, **"Pedro"** respectivamente.
+
+### Tuplas
+
+Las tuplas en Python se crean utilizando paréntesis **( )** y pueden contener cualquier tipo de datos, como números, String, listas, tuplas, diccionarios, etc. Por ejemplo:
+
+```python
+coordenadas = (10, 20)
+colores = ("rojo", "verde", "azul")
+```
+
+En el código anterior, se crean dos tuplas, **coordenadas** y **colores**, que contienen las coordenadas **(10, 20)** y los colores **"rojo"**, **"verde"**, **"azul"** respectivamente.
+
+## Diccionarios y Booleanos.
+
+Los diccionarios y los booleanos son dos tipos de datos en Python que se utilizan para almacenar información y tomar decisiones.
+
+### Diccionarios
+
+Los diccionarios en Python se crean utilizando llaves **{ }** y contienen pares de claves y valores. Por ejemplo:
+
+```python
+persona = {"nombre": "Juan", "edad": 30, "ciudad": "Bogotá"}
+```
+
+En el código anterior, se crea un diccionario **persona** que contiene las claves **"nombre"**, **"edad"** y **"ciudad"** con los valores **"Juan"**, **30** y **"Bogotá"** respectivamente.
+
+### Booleanos
+
+Los booleanos en Python son valores lógicos que pueden ser **True** o **False**. Se utilizan para tomar decisiones en un programa. Por ejemplo:
+
+```python
+es_mayor_de_edad = True
+es_estudiante = False
+```
+
+En el código anterior, se crean dos variables booleanas, **es_mayor_de_edad** y **es_estudiante**, que contienen los valores **True** y **False** respectivamente.
+
+## Range
+
+El tipo de datos **range** en Python se utiliza para generar una secuencia de números. Se crea utilizando la función **range()** y puede contener hasta tres argumentos: **start**, **stop** y **step**. Por ejemplo:
+
+```python
+numeros = range(1, 10, 2)
+```
+En el código anterior, se crea un objeto **range** llamado **numeros** que contiene los números **1**, **3**, **5**, **7**, **9**.
+
+# Actividad
+
+## Instrucciones
+
+1. Crea una lista llamada **numeros** que contenga los números del **1** al **10**.
+
+2. Crea una tupla llamada **colores** que contenga los colores **"rojo"**, **"verde"** y **"azul"**.
+
+3. Crea un diccionario llamado **persona** que contenga las claves **"nombre"**, **"edad"** y **"ciudad"** con los valores **"Juan"**, **30** y **"Bogotá"** respectivamente.
+
+4. Crea una variable booleana llamada **es_mayor_de_edad** y asígnale el valor **True**.
+
+5. Imprime en la consola las variables **numeros**, **colores**, **persona** y **es_mayor_de_edad**.
+
+6. ¿Qué tipo de datos es la variable **numeros**? ¿Y la variable **colores**? ¿Y la variable **persona**? ¿Y la variable **es_mayor_de_edad**?
+
+7. ¿Qué tipo de datos es la variable **numeros[0]**? ¿Y la variable **colores[1]**? ¿Y la variable **persona["nombre"]**? ¿Y la variable **es_mayor_de_edad**?
+
+8. ¿Qué tipo de datos es la variable **numeros[0:5]**? ¿Y la variable **colores[1:]**? ¿Y la variable **persona.keys()**? ¿Y la variable **es_mayor_de_edad**?
+
+9. ¿Qué tipo de datos es la variable **range(1, 10, 2)**? ¿Y la variable **range(10)**? ¿Y la variable **range(1, 10)**? ¿Y la variable **range(1, 10, 1)**?
+
+10. ¿Qué tipo de datos es la variable **range(1, 10, 2)[0]**? ¿Y la variable **range(10)[0]**? ¿Y la variable **range(1, 10)[0]**? ¿Y la variable **range(1, 10, 1)[0]**?
+
+<details>
+<summary>Posibles soluciones</summary>
+
+1. La variable **numeros** es una lista.
+
+2. La variable **colores** es una tupla.
+
+3. La variable **persona** es un diccionario.
+
+4. La variable **es_mayor_de_edad** es un booleano.
+
+5. La variable **numeros[0]** es un número.
+
+6. La variable **colores[1]** es un String.
+
+7. La variable **persona["nombre"]** es un String.
+
+8. La variable **numeros[0:5]** es una lista.
+
+9. La variable **range(1, 10, 2)** es un objeto **range**.
+
+10. La variable **range(1, 10, 2)[0]** es un número.
+
+</details>
+
+# Conclusiones
+
+En esta actividad, aprendiste sobre los diferentes tipos de datos en Python, como los String, los Números, las Listas, las Tuplas, los Diccionarios, los Booleanos y el tipo de datos **range**. 
+
+También aprendiste cómo crear y utilizar estos tipos de datos en Python. Ahora estás listo para utilizar estos conocimientos en tus propios programas y proyectos. 
+
+:::{.center}
+¡Sigue practicando y mejorando tus habilidades de programación en Python!
+:::
+
+:::

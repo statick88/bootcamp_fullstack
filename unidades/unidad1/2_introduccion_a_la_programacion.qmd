@@ -1,0 +1,124 @@
+:::{.justify}
+# Introducción a la Programación con Python
+
+:::{.center}
+![Python](https://www.python.org/static/img/python-logo.png)
+:::
+
+## ¿Qué es la programación?
+
+La programación es el proceso de diseñar e implementar un programa de computadora. Un programa es un conjunto de instrucciones que le dice a la computadora qué hacer. Estas instrucciones pueden ser escritas en diferentes lenguajes de programación, como Python, Java, C++, entre otros.
+
+## ¿Qué es Python?
+
+Python es un lenguaje de programación de alto nivel, interpretado y orientado a objetos. Fue creado por Guido van Rossum en 1991 y es uno de los lenguajes de programación más populares en la actualidad. Python es conocido por su sintaxis simple y legible, lo que lo hace ideal para principiantes en programación.
+
+## ¿Por qué aprender Python?
+
+Python es un lenguaje de programación versátil que se puede utilizar para una amplia variedad de aplicaciones, como desarrollo web, análisis de datos, inteligencia artificial, entre otros. Además, Python es fácil de aprender y de usar, lo que lo convierte en una excelente opción para aquellos que quieren iniciarse en la programación.
+
+## ¿Qué aprenderemos en este bootcamp?
+
+En este bootcamp aprenderemos los conceptos básicos de programación con Python, incluyendo variables, tipos de datos, operadores, estructuras de control, funciones, entre otros. Al final del bootcamp, tendrás los conocimientos necesarios para crear tus propios programas en Python y continuar tu aprendizaje en programación.
+
+¡Vamos a empezar!
+
+## Identación en Python
+
+Python utiliza la identación para definir bloques de código. La identación es el espacio en blanco al principio de una línea de código y se utiliza para indicar que una línea de código pertenece a un bloque de código. Por ejemplo, en el siguiente código, la línea **print("Hola, mundo!")** está identada con cuatro espacios, lo que indica que pertenece al bloque de código del **if**.
+
+```python 
+if True:
+    print("Hola, mundo!")
+```
+En el código anterior, la línea **print("Hola, mundo!")** se ejecutará si la condición del **if** es verdadera. Si la línea no estuviera identada, no se ejecutaría dentro del bloque de código del **if**.
+
+## Comentarios en python
+
+Los comentarios son líneas de texto que se utilizan para explicar el código y hacerlo más legible. En Python, los comentarios se crean utilizando el símbolo **#**. Todo lo que sigue al símbolo **#** en una línea se considera un comentario y no se ejecuta como código.
+
+```python
+# Este es un comentarios
+print("Hola, mundo!") # Este es otro comentarios
+```
+
+En el código anterior, la línea **print("Hola, mundo!")** se ejecutará, pero los comentarios no se ejecutarán.
+
+## Variables y Variables Múltiples
+
+Una variable es un contenedor que se utiliza para almacenar datos en un programa. En Python, una variable se crea asignando un valor a un nombre de variable. Por ejemplo, en el siguiente código, la variable **nombre** se crea y se le asigna el valor **"Juan"**.
+
+```python
+nombre = "Juan"
+print(nombre)
+```
+
+En el código anterior, la variable **nombre** se imprime en la consola y se muestra el valor **"Juan"**.
+
+En Python, también se pueden crear múltiples variables en una sola línea. Por ejemplo, en el siguiente código, se crean tres variables **a**, **b** y **c** y se les asignan los valores **1**, **2** y **3** respectivamente.
+
+```python
+a, b, c = 1, 2, 3
+print(a, b, c)
+```
+
+En el código anterior, las variables **a**, **b** y **c** se imprimen en la consola y se muestran los valores **1**, **2** y **3** respectivamente.
+
+## Concatenación de Cadenas
+
+La concatenación de cadenas es la unión de dos o más cadenas en una sola cadena. En Python, se puede concatenar cadenas utilizando el operador **+**. Por ejemplo, en el siguiente código, se concatenan las cadenas **"Hola"** y **"mundo"** en una sola cadena.
+
+```python
+saludo = "Hola" + "mundo"
+print(saludo)
+```
+
+En el código anterior, la variable **saludo** se imprime en la consola y se muestra la cadena **"Hola mundo"**.
+
+Algunos ejemplos adicionales de concatenación de cadenas son:
+
+```python
+nombre = "Juan"
+apellido = "Pérez"
+nombre_completo = nombre + " " + apellido
+print(nombre_completo)
+```
+
+En el código anterior, la variable **nombre_completo** se imprime en la consola y se muestra la cadena **"Juan Pérez"**.
+
+```python
+edad = 30
+mensaje = "Tengo " + str(edad) + " años"
+print(mensaje)
+```
+
+En el código anterior, la variable **mensaje** se imprime en la consola y se muestra la cadena **"Tengo 30 años"**.
+
+# Actividad
+
+## instrucciones
+
+1. Crea una variable llamada **nombre** y asígnale tu nombre.
+
+2. Crea una variable llamada **edad** y asígnale tu edad.
+
+3. Crea una variable llamada **ciudad** y asígnale tu ciudad de origen.
+
+4. Imprime en la consola un mensaje que contenga tu nombre, edad y ciudad de origen utilizando la concatenación de cadenas.
+
+5. Crea una variable llamada **mensaje** y asígnale el siguiente mensaje: "Hola, mi nombre es [nombre], tengo [edad] años y soy de [ciudad]."
+
+6. Imprime en la consola el mensaje utilizando la variable **mensaje**.
+
+<details>
+  <summary>🔍 Pistas</summary>
+  
+  - Para concatenar cadenas en Python, utiliza el operador **+**.
+  - Para convertir un número entero en una cadena, utiliza la función **str()**.
+
+</details>
+
+# Conclusión
+
+En este módulo, aprendimos los conceptos básicos de programación con Python, incluyendo variables, identación, comentarios y concatenación de cadenas. Estos conceptos son fundamentales para comprender y escribir programas en Python. En los módulos siguientes, profundizaremos en otros aspectos de la programación con Python, como tipos de datos, operadores, estructuras de control, funciones, entre otros. ¡Sigue adelante!
+:::

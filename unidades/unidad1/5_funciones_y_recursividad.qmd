@@ -1,0 +1,145 @@
+:::{.justify}
+# Funciones y recursividad.
+
+:::{.center}
+![Python](https://www.python.org/static/img/python-logo.png)
+:::
+
+Las funciones son bloques de código reutilizables que realizan una tarea específica. En Python, las funciones se definen utilizando la palabra clave **def** seguida del nombre de la función y los parámetros entre paréntesis. Por ejemplo:
+
+```python
+def saludar():
+    print("Hola, ¿cómo estás?")
+```
+
+En el código anterior, se define una función llamada **saludar** que imprime en la consola el mensaje "Hola, ¿cómo estás?". Para llamar a una función en Python, simplemente se escribe el nombre de la función seguido de paréntesis. Por ejemplo:
+
+```python
+saludar()
+```
+
+En el código anterior, se llama a la función **saludar** y se imprime en la consola el mensaje "Hola, ¿cómo estás?".
+
+## Introducción a Funciones
+
+Para entender de mejor forma cómo funcionan las funciones en Python, vamos a crear una función que reciba dos números como parámetros y devuelva la suma de los mismos. Por ejemplo:
+
+```python
+def sumar(a, b):
+    return a + b
+```
+
+En el código anterior, se define una función llamada **sumar** que recibe dos parámetros **a** y **b** y devuelve la suma de los mismos. Para llamar a la función **sumar** y obtener el resultado, se puede hacer de la siguiente manera:
+
+```python
+resultado = sumar(5, 3)
+print(resultado)
+```
+
+En el código anterior, se llama a la función **sumar** con los números **5** y **3** como parámetros y se imprime en la consola el resultado **8**.
+
+## Parámetros y Argumentos
+
+En Python, los parámetros son las variables que se definen en la declaración de la función, mientras que los argumentos son los valores que se pasan a la función cuando se llama. Por ejemplo:
+
+```python
+def saludar(nombre):
+    print("Hola, " + nombre + "!")
+```
+
+En el código anterior, la función **saludar** tiene un parámetro llamado **nombre**. Para llamar a la función **saludar** con un argumento, se puede hacer de la siguiente manera:
+
+```python
+saludar("Juan")
+```
+
+En el código anterior, se llama a la función **saludar** con el argumento **"Juan"** y se imprime en la consola el mensaje "Hola, Juan!".
+
+## Retorno de valores
+
+En Python, las funciones pueden devolver valores utilizando la palabra clave **return** seguida del valor que se desea devolver. Por ejemplo:
+
+```python
+def sumar(a, b):
+    return a + b
+```
+
+En el código anterior, la función **sumar** devuelve la suma de los números **a** y **b**. Para obtener el valor devuelto por la función, se puede asignar a una variable y luego imprimir en la consola. Por ejemplo:
+
+```python
+resultado = sumar(5, 3)
+print(resultado)
+```
+
+En el código anterior, se llama a la función **sumar** con los números **5** y **3** como parámetros, se asigna el resultado a la variable **resultado** y se imprime en la consola el valor **8**.
+
+## Recursividad
+
+La recursividad es un concepto en programación en el que una función se llama a sí misma para resolver un problema más pequeño. Por ejemplo, la función factorial se puede definir de forma recursiva de la siguiente manera:
+
+```python
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+```
+
+En el código anterior, la función **factorial** calcula el factorial de un número **n** de forma recursiva. Para llamar a la función **factorial** y obtener el resultado, se puede hacer de la siguiente manera:
+
+```python
+resultado = factorial(5)
+print(resultado)
+```
+
+En el código anterior, se llama a la función **factorial** con el número **5** como parámetro y se imprime en la consola el resultado **120**.
+
+Otro ejemplo de recursividad es la función Fibonacci, que calcula el enésimo término de la secuencia de Fibonacci de forma recursiva. Por ejemplo:
+
+```python
+def fibonacci(n):
+    if n <= 1:
+        return n
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+```
+
+En el código anterior, la función **fibonacci** calcula el enésimo término de la secuencia de Fibonacci de forma recursiva. Para llamar a la función **fibonacci** y obtener el resultado, se puede hacer de la siguiente manera:
+
+```python
+resultado = fibonacci(10)
+print(resultado)
+```
+
+En el código anterior, se llama a la función **fibonacci** con el número **10** como parámetro y se imprime en la consola el resultado **55**.
+
+# Actividad
+
+## Instrucciones
+
+1. Crea una función llamada **saludar** que reciba un parámetro **nombre** y devuelva un saludo personalizado. Por ejemplo, si el nombre es **"Juan"**, la función debe devolver el mensaje **"Hola, Juan!"**.
+
+2. Crea una función llamada **calcular_promedio** que reciba una lista de números como parámetro y devuelva el promedio de los mismos. Por ejemplo, si la lista es **[1, 2, 3, 4, 5]**, la función debe devolver **3.0**.
+
+3. Crea una función llamada **es_par** que reciba un número como parámetro y devuelva **True** si el número es par y **False** si no lo es.
+
+4. Crea una función llamada **calcular_factorial** que reciba un número como parámetro y devuelva el factorial del mismo. Por ejemplo, si el número es **5**, la función debe devolver **120**.
+
+5. Crea una función llamada **calcular_fibonacci** que reciba un número como parámetro y devuelva el enésimo término de la secuencia de Fibonacci. Por ejemplo, si el número es **10**, la función debe devolver **55**.
+
+6. Llama a cada una de las funciones creadas con valores de ejemplo y muestra los resultados en la consola.
+
+<details>
+  <summary>🔍 Pistas</summary>
+  
+  - Para definir una función en Python, utiliza la palabra clave **def** seguida del nombre de la función y los parámetros entre paréntesis.
+  - Para devolver un valor en una función, utiliza la palabra clave **return** seguida del valor que deseas devolver.
+  - Para llamar a una función en Python, simplemente escribe el nombre de la función seguido de paréntesis y los argumentos si es necesario.
+</details>
+
+# Conclusiones
+
+Las funciones y la recursividad son conceptos fundamentales en programación que nos permiten escribir código más modular, reutilizable y eficiente. Al entender cómo funcionan las funciones y cómo se pueden llamar de forma recursiva, podemos resolver una amplia variedad de problemas de programación de manera más sencilla y elegante. Además, las funciones nos permiten encapsular la lógica de nuestro código y separar las diferentes tareas en bloques más pequeños y manejables. En resumen, las funciones y la recursividad son herramientas poderosas que nos ayudan a escribir un código más limpio, organizado y fácil de mantener.
+
+:::
+

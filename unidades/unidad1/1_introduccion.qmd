@@ -1,6 +1,10 @@
 :::{.justify}
 # Introducción e Instalaciones Necesarias.
 
+:::{.center}
+![Lógica de la Programación](images/logica_programacion.jpeg)
+:::
+
 En este Bootcamp aprenderemos las bases y fundamentos necesarios del desarrollo web fullstack, esto es desde el frontend hasta el backend. 
 
 Para ello, utilizaremos Python como lenguaje de programación principal, y Django y FastAPI como frameworks para el desarrollo de aplicaciones web. 
@@ -83,13 +87,10 @@ En resumen, la lógica de programación es la habilidad de pensar de manera lóg
 
 A continuación te ofresco algunas páginas que puedes revisar por tu cuenta y que te permitirán practicar el desarrollo de la lógica de programación:
 
-- [CodeSignal](https://codesignal.com/)
-- [LeetCode](https://leetcode.com/)
 - [HackerRank](https://www.hackerrank.com/)
-- [Codecademy](https://www.codecademy.com/)
-- [edX](https://www.edx.org/)
-- [Coursera](https://www.coursera.org/)
-- [Udemy](https://www.udemy.com/)
+- [LeetCode](https://leetcode.com/)
+- [Retod de Programación](https://retosdeprogramacion.com)
+- [Geeks for Geeks](https://www.geeksforgeeks.org/)
 
 ## Instalación de Python
 
@@ -101,15 +102,35 @@ Para instalar Python en tu computadora, sigue los siguientes pasos:
 
 1. Ve al sitio web oficial de Python en [https://www.python.org/](https://www.python.org/).
 
+:::{.center}
+![Python](images/python.org.png)
+:::
+
 2. Haz clic en el botón de descarga de Python.
+
+:::{.center}
+![Python](images/download.png)
+:::
 
 3. Selecciona la versión de Python que deseas instalar (recomendamos la versión más reciente).
 
 4. Descarga el instalador de Python para tu sistema operativo (Windows, macOS o Linux).
 
+:::{.center}
+![Python](images/instalador_pyhton.png)
+:::
+
 5. Ejecuta el instalador de Python y sigue las instrucciones en pantalla para completar la instalación.
 
+:::{.center}
+![Python](images/add_to_path.png)
+:::
+
 Una vez que hayas instalado Python en tu computadora, puedes verificar que la instalación se haya realizado correctamente abriendo una terminal y ejecutando el siguiente comando:
+
+:::{.center}
+![Python](images/python_version.png)
+:::
 
 ```bash
 python --version
@@ -150,6 +171,61 @@ Una vez que hayas abierto el REPL de Python, puedes escribir y ejecutar código 
 >>> print("Hola, Mundo!")
 >>> Hola, Mundo!
 ```
+# Pep 8
+
+PEP 8 (Python Enhancement Proposal 8) es una guía de estilo para escribir código de Python de manera clara y legible. Es una excelente referencia para seguir buenas prácticas de codificación y mantener un código limpio y ordenado.
+
+Algunas recomendaciones de PEP 8 son:
+
+- Utiliza sangrías de 4 espacios para indentar el código.
+
+- Utiliza líneas en blanco para separar funciones y clases.
+
+- Utiliza nombres descriptivos para las variables y funciones.
+
+- Utiliza comentarios para explicar el código y hacerlo más legible.
+
+- Utiliza espacios alrededor de los operadores y después de las comas.
+
+- Utiliza comillas simples o dobles de manera consistente para las cadenas de texto.
+
+- Utiliza la función **print()** para imprimir en la consola.
+
+# Zen de python.
+
+El Zen de Python es una colección de 19 aforismos que resumen los principios de diseño y filosofía de Python. Fueron escritos por Tim Peters, uno de los desarrolladores originales de Python, y se pueden ver en cualquier instalación de Python utilizando el siguiente comando:
+
+```bash
+import this
+```
+
+Algunos de los aforismos más conocidos del Zen de Python son:
+
+- Hermoso es mejor que feo.
+
+- Explícito es mejor que implícito.
+
+- Simple es mejor que complejo.
+
+- Complejo es mejor que complicado.
+
+- La legibilidad cuenta.
+
+- Los casos especiales no son lo suficientemente especiales como para romper las reglas.
+
+- Si la implementación es difícil de explicar, es una mala idea.
+
+- Si la implementación es fácil de explicar, puede que sea una buena idea.
+
+- Los errores nunca deberían pasar en silencio.
+
+- A menos que sean silenciados.
+
+- En la cara de la ambigüedad, rechaza la tentación de adivinar.
+
+- Debería haber una, y preferiblemente solo una, manera obvia de hacerlo.
+
+- Aunque esa manera puede no ser obvia al principio a menos que seas holandés.
 
 En el ejemplo anterior, hemos utilizado el REPL de Python para ejecutar expresiones matemáticas y cadenas de texto. Es una excelente manera de probar y experimentar con el lenguaje de programación.
 
@@ -161,12 +237,46 @@ Existen varios entornos de desarrollo que podemos utilizar para programar en Pyt
 
 - **IDLE**: Es el entorno de desarrollo integrado (IDE) oficial de Python. Viene incluido con la instalación de Python y es una excelente opción para programar en Python.
 
+:::{.center}
+![IDLE](images/idle_python.png)
+:::
+
 - **PyCharm**: Es un IDE de Python desarrollado por JetBrains. Es una excelente opción para programar en Python, ya que ofrece muchas características y herramientas útiles.
+
+:::{.center}
+![PyCharm](images/pycharm.png)
+:::
 
 - **Visual Studio Code**: Es un editor de código desarrollado por Microsoft. Es una excelente opción para programar en Python, ya que ofrece muchas extensiones y herramientas útiles.
 
+:::{.center}
+![Visual Studio Code](images/vscode.png)
+:::
+
 - **Jupyter Notebook**: Es una aplicación web que nos permite crear y compartir documentos interactivos que contienen código de Python, visualizaciones y texto explicativo.
 
+:::{.center}
+![Jupyter Notebook](images/jupyter_notebook.png)
+:::
+
 En este bootcam utilizaremos **Visual Studio Code** como editor de código para programar en Python. Sin embargo, te recomiendo que explores otros entornos de desarrollo y elijas el que mejor se adapte a tus necesidades y preferencias.
+
+## 5 Consejos para mejorar la lógica de programación.
+
+1. **Practica regularmente**: La práctica es fundamental para mejorar la lógica de programación. Dedica tiempo a resolver problemas de programación y desafíos lógicos de manera regular.
+
+2. **Descompón el problema**: Divide los problemas complejos en problemas más pequeños y manejables. Esto te ayudará a abordar el problema de manera más efectiva y eficiente.
+
+3. **Utiliza pseudocódigo**: Antes de escribir código, utiliza pseudocódigo para planificar y diseñar tu solución. Esto te ayudará a visualizar el problema y encontrar una solución más clara.
+
+4. **Comenta tu código**: Utiliza comentarios para explicar tu código y hacerlo más legible. Esto te ayudará a entender tu código y a identificar posibles errores.
+
+5. **Colabora con otros**: Trabaja en equipo con otros programadores para resolver problemas de programación. La colaboración te permitirá aprender de otros y mejorar tus habilidades de programación.
+
+¡Espero que estos consejos te sean útiles para mejorar tu lógica de programación!
+
+## Conclusiones
+
+En este módulo hemos aprendido acerca de la introducción general a la programación, la instalación de Python, el uso de REPL, PEP 8 y Zen de Python, y los entornos de desarrollo que podemos utilizar para programar en Python.
 
 :::

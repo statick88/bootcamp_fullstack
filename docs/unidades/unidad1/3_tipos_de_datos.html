@@ -8,7 +8,7 @@
 
 <meta name="description" content="Bootcamp de Desarrollo Web FullStack con Python, Django y React">
 
-<title>Bootcamp Desarrollo Web FullStack - Introducción e Instalaciones Necesarias.</title>
+<title>Bootcamp Desarrollo Web FullStack - Tipos de Datos</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,7 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../index.html" rel="prev">
+<link href="../../unidades/unidad1/4_control_de_flujo.html" rel="next">
+<link href="../../unidades/unidad1/2_introduccion_a_la_programacion.html" rel="prev">
 <link href="../../logo.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -120,7 +121,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad1/1_intr.html">Unidad 1: Introducción e Instalaciones Necesarias</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad1/1_intr.html"><span class="chapter-title">Introducción e Instalaciones Necesarias.</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad1/1_introduccion.html">Unidad 1: Introducción e Instalaciones Necesarias</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad1/3_tipos_de_datos.html"><span class="chapter-title">Tipos de Datos</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -201,7 +202,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad1/1_intr.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Introducción e Instalaciones Necesarias.</span></a>
+  <a href="../../unidades/unidad1/1_introduccion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción e Instalaciones Necesarias.</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad1/2_introduccion_a_la_programacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a la Programación con Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad1/3_tipos_de_datos.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Tipos de Datos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad1/4_control_de_flujo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Control de Flujo</span></a>
   </div>
 </li>
       </ul>
@@ -217,9 +233,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad1/1_intr.html">Unidad 1: Introducción e Instalaciones Necesarias</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad1/1_intr.html"><span class="chapter-title">Introducción e Instalaciones Necesarias.</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad1/1_introduccion.html">Unidad 1: Introducción e Instalaciones Necesarias</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad1/3_tipos_de_datos.html"><span class="chapter-title">Tipos de Datos</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Introducción e Instalaciones Necesarias.</span></h1>
+<h1 class="title"><span class="chapter-title">Tipos de Datos</span></h1>
 </div>
 
 
@@ -240,132 +256,123 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="center">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/logica_programacion.jpeg" class="img-fluid figure-img"></p>
-<figcaption>Lógica de la Programación</figcaption>
-</figure>
-</div>
-</div>
-<p>En este Bootcamp aprenderemos las bases y fundamentos necesarios del desarrollo web fullstack, esto es desde el frontend hasta el backend.</p>
-<p>Para ello, utilizaremos Python como lenguaje de programación principal, y Django y FastAPI como frameworks para el desarrollo de aplicaciones web.</p>
-<p>Por otra parte esta tambien el frontend, donde utilizaremos HTML, CSS y JavaScript para el desarrollo de interfaces de usuario, aprenderemos acerca de Node.js y React.js para el desarrollo de aplicaciones web del lado del cliente.</p>
-<p>Sin embargo antes de empezar con el desarrollo web, es necesario tener una base sólida en programación, por lo que en este primer módulo aprenderemos acerca de Python, un lenguaje de programación de alto nivel, interpretado y orientado a objetos.</p>
-<p>Por otra parte es necesario saber que cualquier lenguaje de programación no es suficiente para poder desarrollar sistemas que permitan resolver problemas del diario vivir, es necesario tener un entorno de desarrollo adecuado, por lo que en este módulo también aprenderemos acerca de los entornos de desarrollo que podemos utilizar para programar en Python.</p>
-<p>En este módulo aprenderemos acerca de los siguientes temas:</p>
-<ul>
-<li><p>Introducción General a la Programación</p></li>
-<li><p>Instalación de Python</p></li>
-<li><p>Uso de REPL, PEP 8 y Zen de Python</p></li>
-<li><p>Entornos de Desarrollo</p></li>
-</ul>
-<section id="introducción-general-a-la-programación" class="level2">
-<h2 class="anchored" data-anchor-id="introducción-general-a-la-programación">Introducción General a la Programación</h2>
-<p>Si más preámbulos, empecemos con la introducción general a la programación.</p>
-<p>Es el proceso de diseñar e implementar un programa de computadora, es decir, un conjunto de instrucciones que le dicen a una computadora qué hacer.</p>
-<p>Es una habilidad muy valiosa en el mundo actual, ya que la mayoría de las tareas que realizamos a diario involucran el uso de computadoras y software.</p>
-<p>Nos permite automatizar tareas, resolver problemas de manera eficiente y crear aplicaciones y sistemas que nos ayudan en nuestra vida diaria.</p>
-<p>En este módulo aprenderemos los fundamentos de la programación utilizando Python, un lenguaje de programación de alto nivel, interpretado y orientado a objetos.</p>
-<p>Antes de introducirnos en el aprendizaje del lenguaje de programación, es importante conocer que debemos desarrollar la <strong>lógica de la prograamción</strong>, es decir, la habilidad de pensar de manera lógica y estructurada para resolver problemas de manera eficiente.</p>
-<p>Analicemos el siguiente problema para entender la importancia de la lógica de programación:</p>
-<ul>
-<li><strong>Problema</strong>: Supongamos que queremos escribir un programa que imprima los números del 1 al 10.</li>
-</ul>
-<p>¿Cómo resolverías este problema?</p>
-<p>Una posible solución sería escribir un programa que imprima los números del 1 al 10 de manera secuencial.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">1</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">2</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">3</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">4</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">5</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">6</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">7</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">8</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">9</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En el ejemplo anterior, hemos resuelto el problema de imprimir los números del 1 al 10 de manera secuencial. Sin embargo, esta solución no es escalable, ya que si quisiéramos imprimir los números del 1 al 1000, tendríamos que escribir 1000 instrucciones de impresión.</p>
-<p>Una solución más eficiente sería utilizar un bucle para imprimir los números del 1 al 10 de manera automática.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>):</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En el ejemplo anterior, hemos utilizado un bucle <strong>for</strong> para imprimir los números del 1 al 10 de manera automática. Esta solución es más eficiente y escalable, ya que podemos cambiar el rango del bucle para imprimir los números del 1 al 1000 sin tener que modificar el código.</p>
-<ul>
-<li><strong>Problema</strong>: Supongamos que queremos escribir un programa que imprima un saludo personalizado.</li>
-</ul>
-<p>¿Cómo resolverías este problema?</p>
-<p>Una posible solución sería escribir un programa que solicite al usuario su nombre y luego imprima un saludo personalizado.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Ingrese su nombre: "</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hola, "</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">"!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En el ejemplo anterior, hemos resuelto el problema de imprimir un saludo personalizado solicitando al usuario su nombre. Esta solución es interactiva y personalizada, ya que el saludo se adapta al nombre del usuario.</p>
-<p>En resumen, la lógica de programación es la habilidad de pensar de manera lógica y estructurada para resolver problemas de manera eficiente. Es fundamental para desarrollar programas y sistemas que nos ayuden en nuestra vida diaria.</p>
-<p>A continuación te ofresco algunas páginas que puedes revisar por tu cuenta y que te permitirán practicar el desarrollo de la lógica de programación:</p>
-<ul>
-<li><a href="https://codesignal.com/">CodeSignal</a></li>
-<li><a href="https://leetcode.com/">LeetCode</a></li>
-<li><a href="https://www.hackerrank.com/">HackerRank</a></li>
-<li><a href="https://www.codecademy.com/">Codecademy</a></li>
-<li><a href="https://www.edx.org/">edX</a></li>
-<li><a href="https://www.coursera.org/">Coursera</a></li>
-<li><a href="https://www.udemy.com/">Udemy</a></li>
-</ul>
-</section>
-<section id="instalación-de-python" class="level2">
-<h2 class="anchored" data-anchor-id="instalación-de-python">Instalación de Python</h2>
-<div class="center">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
 <p><img src="https://www.python.org/static/img/python-logo.png" class="img-fluid figure-img"></p>
 <figcaption>Python</figcaption>
 </figure>
 </div>
 </div>
-<p>Para instalar Python en tu computadora, sigue los siguientes pasos:</p>
-<ol type="1">
-<li><p>Ve al sitio web oficial de Python en <a href="https://www.python.org/">https://www.python.org/</a>.</p></li>
-<li><p>Haz clic en el botón de descarga de Python.</p></li>
-<li><p>Selecciona la versión de Python que deseas instalar (recomendamos la versión más reciente).</p></li>
-<li><p>Descarga el instalador de Python para tu sistema operativo (Windows, macOS o Linux).</p></li>
-<li><p>Ejecuta el instalador de Python y sigue las instrucciones en pantalla para completar la instalación.</p></li>
-</ol>
-<p>Una vez que hayas instalado Python en tu computadora, puedes verificar que la instalación se haya realizado correctamente abriendo una terminal y ejecutando el siguiente comando:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Si la instalación se realizó correctamente, verás la versión de Python instalada en tu computadora.</p>
-</section>
-<section id="uso-de-repl-pep-8-y-zen-de-python" class="level2">
-<h2 class="anchored" data-anchor-id="uso-de-repl-pep-8-y-zen-de-python">Uso de REPL, PEP 8 y Zen de Python</h2>
-<p>En esta sección, aprenderemos acerca de REPL, PEP 8 y Zen de Python.</p>
-<section id="repl" class="level3">
-<h3 class="anchored" data-anchor-id="repl">REPL</h3>
-<p>REPL (Read-Eval-Print Loop) es un entorno interactivo que permite escribir y ejecutar código de Python de manera interactiva. Es una excelente herramienta para probar y experimentar con el lenguaje de programación.</p>
-<p>Para abrir el REPL de Python, abre una terminal y ejecuta el siguiente comando:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Una vez que hayas abierto el REPL de Python, puedes escribir y ejecutar código de Python de manera interactiva. Por ejemplo, puedes escribir una expresión matemática y ver el resultado:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="dv">4</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="dv">3</span> <span class="op">*</span> <span class="dv">4</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="dv">12</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="dv">10</span> <span class="op">/</span> <span class="dv">2</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="fl">5.0</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="dv">2</span> <span class="op">**</span> <span class="dv">3</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="dv">8</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="st">"Hola, Mundo!"</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="st">'Hola, Mundo!'</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="st">"Hola, "</span> <span class="op">+</span> <span class="st">"Mundo!"</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="st">'Hola, '</span> <span class="op">*</span> <span class="dv">3</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="st">'Hola, Hola, Hola, '</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(<span class="st">"Hola, Mundo!"</span>)</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> Hola, Mundo<span class="op">!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En el ejemplo anterior, hemos utilizado el REPL de Python para ejecutar expresiones matemáticas y cadenas de texto. Es una excelente manera de probar y experimentar con el lenguaje de programación.</p>
-</section>
-</section>
-<section id="entornos-de-desarrollo" class="level2">
-<h2 class="anchored" data-anchor-id="entornos-de-desarrollo">Entornos de Desarrollo</h2>
-<p>Un entorno de desarrollo es un conjunto de herramientas que nos permiten escribir, depurar y ejecutar código de manera eficiente. Es fundamental para desarrollar programas y sistemas de manera efectiva.</p>
-<p>Existen varios entornos de desarrollo que podemos utilizar para programar en Python. Algunos de los más populares son:</p>
+<p>Los tipos de Datos en Python son la forma en que Python clasifica y almacena los datos. Los tipos de datos más comunes en Python son:</p>
 <ul>
-<li><p><strong>IDLE</strong>: Es el entorno de desarrollo integrado (IDE) oficial de Python. Viene incluido con la instalación de Python y es una excelente opción para programar en Python.</p></li>
-<li><p><strong>PyCharm</strong>: Es un IDE de Python desarrollado por JetBrains. Es una excelente opción para programar en Python, ya que ofrece muchas características y herramientas útiles.</p></li>
-<li><p><strong>Visual Studio Code</strong>: Es un editor de código desarrollado por Microsoft. Es una excelente opción para programar en Python, ya que ofrece muchas extensiones y herramientas útiles.</p></li>
-<li><p><strong>Jupyter Notebook</strong>: Es una aplicación web que nos permite crear y compartir documentos interactivos que contienen código de Python, visualizaciones y texto explicativo.</p></li>
+<li>Números</li>
+<li>Cadenas</li>
+<li>Listas</li>
+<li>Tuplas</li>
+<li>Diccionarios</li>
+<li>Booleanos</li>
+<li>Rango</li>
 </ul>
-<p>En este bootcam utilizaremos <strong>Visual Studio Code</strong> como editor de código para programar en Python. Sin embargo, te recomiendo que explores otros entornos de desarrollo y elijas el que mejor se adapte a tus necesidades y preferencias.</p>
+<p>En esta actividad, aprenderás sobre los diferentes tipos de datos en Python y cómo se utilizan.</p>
+<section id="string-y-números." class="level2">
+<h2 class="anchored" data-anchor-id="string-y-números.">String y Números.</h2>
+<p>Los String y los Números son dos de los tipos de datos más comunes en Python. Los String son secuencias de caracteres, como letras, números y símbolos, que se utilizan para representar texto. Los Números, por otro lado, son valores numéricos, como enteros y decimales, que se utilizan para realizar cálculos matemáticos.</p>
+<section id="string" class="level3">
+<h3 class="anchored" data-anchor-id="string">String</h3>
+<p>Los String en Python se crean utilizando comillas simples <strong>’ ’</strong> o comillas dobles <strong>” “</strong>. Por ejemplo:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>nombre <span class="op">=</span> <span class="st">"Juan"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>apellido <span class="op">=</span> <span class="st">'Pérez'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En el código anterior, se crean dos variables, <strong>nombre</strong> y <strong>apellido</strong>, que contienen los String <strong>“Juan”</strong> y <strong>“Pérez”</strong> respectivamente.</p>
+</section>
+<section id="números" class="level3">
+<h3 class="anchored" data-anchor-id="números">Números</h3>
+<p>Los Números en Python pueden ser enteros o decimales. Los enteros son números enteros, como <strong>1</strong>, <strong>2</strong>, <strong>3</strong>, mientras que los decimales son números con decimales, como <strong>1.5</strong>, <strong>2.75</strong>, <strong>3.14</strong>. Por ejemplo:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>entero <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>decimal <span class="op">=</span> <span class="fl">3.14</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En el código anterior, se crean dos variables, <strong>entero</strong> y <strong>decimal</strong>, que contienen los números <strong>10</strong> y <strong>3.14</strong> respectivamente.</p>
+</section>
+</section>
+<section id="listas-y-tuplas." class="level2">
+<h2 class="anchored" data-anchor-id="listas-y-tuplas.">Listas y Tuplas.</h2>
+<p>Las listas y las tuplas son dos tipos de datos en Python que se utilizan para almacenar colecciones de elementos. Las listas son colecciones ordenadas y modificables de elementos, mientras que las tuplas son colecciones ordenadas e inmutables de elementos.</p>
+<section id="listas" class="level3">
+<h3 class="anchored" data-anchor-id="listas">Listas</h3>
+<p>Las listas en Python se crean utilizando corchetes <strong>[ ]</strong> y pueden contener cualquier tipo de datos, como números, String, listas, tuplas, diccionarios, etc. Por ejemplo:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>numeros <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>nombres <span class="op">=</span> [<span class="st">"Juan"</span>, <span class="st">"María"</span>, <span class="st">"Pedro"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En el código anterior, se crean dos listas, <strong>numeros</strong> y <strong>nombres</strong>, que contienen los números <strong>1</strong>, <strong>2</strong>, <strong>3</strong>, <strong>4</strong>, <strong>5</strong> y los nombres <strong>“Juan”</strong>, <strong>“María”</strong>, <strong>“Pedro”</strong> respectivamente.</p>
+</section>
+<section id="tuplas" class="level3">
+<h3 class="anchored" data-anchor-id="tuplas">Tuplas</h3>
+<p>Las tuplas en Python se crean utilizando paréntesis <strong>( )</strong> y pueden contener cualquier tipo de datos, como números, String, listas, tuplas, diccionarios, etc. Por ejemplo:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>coordenadas <span class="op">=</span> (<span class="dv">10</span>, <span class="dv">20</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>colores <span class="op">=</span> (<span class="st">"rojo"</span>, <span class="st">"verde"</span>, <span class="st">"azul"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En el código anterior, se crean dos tuplas, <strong>coordenadas</strong> y <strong>colores</strong>, que contienen las coordenadas <strong>(10, 20)</strong> y los colores <strong>“rojo”</strong>, <strong>“verde”</strong>, <strong>“azul”</strong> respectivamente.</p>
+</section>
+</section>
+<section id="diccionarios-y-booleanos." class="level2">
+<h2 class="anchored" data-anchor-id="diccionarios-y-booleanos.">Diccionarios y Booleanos.</h2>
+<p>Los diccionarios y los booleanos son dos tipos de datos en Python que se utilizan para almacenar información y tomar decisiones.</p>
+<section id="diccionarios" class="level3">
+<h3 class="anchored" data-anchor-id="diccionarios">Diccionarios</h3>
+<p>Los diccionarios en Python se crean utilizando llaves <strong>{ }</strong> y contienen pares de claves y valores. Por ejemplo:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>persona <span class="op">=</span> {<span class="st">"nombre"</span>: <span class="st">"Juan"</span>, <span class="st">"edad"</span>: <span class="dv">30</span>, <span class="st">"ciudad"</span>: <span class="st">"Bogotá"</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En el código anterior, se crea un diccionario <strong>persona</strong> que contiene las claves <strong>“nombre”</strong>, <strong>“edad”</strong> y <strong>“ciudad”</strong> con los valores <strong>“Juan”</strong>, <strong>30</strong> y <strong>“Bogotá”</strong> respectivamente.</p>
+</section>
+<section id="booleanos" class="level3">
+<h3 class="anchored" data-anchor-id="booleanos">Booleanos</h3>
+<p>Los booleanos en Python son valores lógicos que pueden ser <strong>True</strong> o <strong>False</strong>. Se utilizan para tomar decisiones en un programa. Por ejemplo:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>es_mayor_de_edad <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>es_estudiante <span class="op">=</span> <span class="va">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En el código anterior, se crean dos variables booleanas, <strong>es_mayor_de_edad</strong> y <strong>es_estudiante</strong>, que contienen los valores <strong>True</strong> y <strong>False</strong> respectivamente.</p>
+</section>
+</section>
+<section id="range" class="level2">
+<h2 class="anchored" data-anchor-id="range">Range</h2>
+<p>El tipo de datos <strong>range</strong> en Python se utiliza para generar una secuencia de números. Se crea utilizando la función <strong>range()</strong> y puede contener hasta tres argumentos: <strong>start</strong>, <strong>stop</strong> y <strong>step</strong>. Por ejemplo:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>numeros <span class="op">=</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En el código anterior, se crea un objeto <strong>range</strong> llamado <strong>numeros</strong> que contiene los números <strong>1</strong>, <strong>3</strong>, <strong>5</strong>, <strong>7</strong>, <strong>9</strong>.</p>
+</section>
+<section id="actividad" class="level1">
+<h1>Actividad</h1>
+<section id="instrucciones" class="level2">
+<h2 class="anchored" data-anchor-id="instrucciones">Instrucciones</h2>
+<ol type="1">
+<li><p>Crea una lista llamada <strong>numeros</strong> que contenga los números del <strong>1</strong> al <strong>10</strong>.</p></li>
+<li><p>Crea una tupla llamada <strong>colores</strong> que contenga los colores <strong>“rojo”</strong>, <strong>“verde”</strong> y <strong>“azul”</strong>.</p></li>
+<li><p>Crea un diccionario llamado <strong>persona</strong> que contenga las claves <strong>“nombre”</strong>, <strong>“edad”</strong> y <strong>“ciudad”</strong> con los valores <strong>“Juan”</strong>, <strong>30</strong> y <strong>“Bogotá”</strong> respectivamente.</p></li>
+<li><p>Crea una variable booleana llamada <strong>es_mayor_de_edad</strong> y asígnale el valor <strong>True</strong>.</p></li>
+<li><p>Imprime en la consola las variables <strong>numeros</strong>, <strong>colores</strong>, <strong>persona</strong> y <strong>es_mayor_de_edad</strong>.</p></li>
+<li><p>¿Qué tipo de datos es la variable <strong>numeros</strong>? ¿Y la variable <strong>colores</strong>? ¿Y la variable <strong>persona</strong>? ¿Y la variable <strong>es_mayor_de_edad</strong>?</p></li>
+<li><p>¿Qué tipo de datos es la variable <strong>numeros[0]</strong>? ¿Y la variable <strong>colores[1]</strong>? ¿Y la variable <strong>persona[“nombre”]</strong>? ¿Y la variable <strong>es_mayor_de_edad</strong>?</p></li>
+<li><p>¿Qué tipo de datos es la variable <strong>numeros[0:5]</strong>? ¿Y la variable <strong>colores[1:]</strong>? ¿Y la variable <strong>persona.keys()</strong>? ¿Y la variable <strong>es_mayor_de_edad</strong>?</p></li>
+<li><p>¿Qué tipo de datos es la variable <strong>range(1, 10, 2)</strong>? ¿Y la variable <strong>range(10)</strong>? ¿Y la variable <strong>range(1, 10)</strong>? ¿Y la variable <strong>range(1, 10, 1)</strong>?</p></li>
+<li><p>¿Qué tipo de datos es la variable <strong>range(1, 10, 2)[0]</strong>? ¿Y la variable <strong>range(10)[0]</strong>? ¿Y la variable <strong>range(1, 10)[0]</strong>? ¿Y la variable <strong>range(1, 10, 1)[0]</strong>?</p></li>
+</ol>
+<details>
+<summary>
+Posibles soluciones
+</summary>
+<ol type="1">
+<li><p>La variable <strong>numeros</strong> es una lista.</p></li>
+<li><p>La variable <strong>colores</strong> es una tupla.</p></li>
+<li><p>La variable <strong>persona</strong> es un diccionario.</p></li>
+<li><p>La variable <strong>es_mayor_de_edad</strong> es un booleano.</p></li>
+<li><p>La variable <strong>numeros[0]</strong> es un número.</p></li>
+<li><p>La variable <strong>colores[1]</strong> es un String.</p></li>
+<li><p>La variable <strong>persona[“nombre”]</strong> es un String.</p></li>
+<li><p>La variable <strong>numeros[0:5]</strong> es una lista.</p></li>
+<li><p>La variable <strong>range(1, 10, 2)</strong> es un objeto <strong>range</strong>.</p></li>
+<li><p>La variable <strong>range(1, 10, 2)[0]</strong> es un número.</p></li>
+</ol>
+</details>
+</section>
+</section>
+<section id="conclusiones" class="level1">
+<h1>Conclusiones</h1>
+<p>En esta actividad, aprendiste sobre los diferentes tipos de datos en Python, como los String, los Números, las Listas, las Tuplas, los Diccionarios, los Booleanos y el tipo de datos <strong>range</strong>.</p>
+<p>También aprendiste cómo crear y utilizar estos tipos de datos en Python. Ahora estás listo para utilizar estos conocimientos en tus propios programas y proyectos.</p>
+<div class="center">
+<p>¡Sigue practicando y mejorando tus habilidades de programación en Python!</p>
+</div>
 </section>
 </div>
 
@@ -934,11 +941,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../index.html" class="pagination-link" aria-label="Bienvenido">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Bienvenido</span></span>
+      <a href="../../unidades/unidad1/2_introduccion_a_la_programacion.html" class="pagination-link" aria-label="Introducción a la Programación con Python">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Introducción a la Programación con Python</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../../unidades/unidad1/4_control_de_flujo.html" class="pagination-link" aria-label="Control de Flujo">
+        <span class="nav-page-text"><span class="chapter-title">Control de Flujo</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

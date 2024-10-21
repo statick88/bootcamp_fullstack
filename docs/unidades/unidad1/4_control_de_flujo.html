@@ -8,7 +8,7 @@
 
 <meta name="description" content="Bootcamp de Desarrollo Web FullStack con Python, Django y React">
 
-<title>Bootcamp Desarrollo Web FullStack - Introducción e Instalaciones Necesarias.</title>
+<title>Bootcamp Desarrollo Web FullStack - Control de Flujo</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,7 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../index.html" rel="prev">
+<link href="../../unidades/unidad1/5_funciones_y_recursividad.html" rel="next">
+<link href="../../unidades/unidad1/3_tipos_de_datos.html" rel="prev">
 <link href="../../logo.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -120,7 +121,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad1/1_intr.html">Unidad 1: Introducción e Instalaciones Necesarias</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad1/1_intr.html"><span class="chapter-title">Introducción e Instalaciones Necesarias.</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad1/1_introduccion.html">Unidad 1: Introducción e Instalaciones Necesarias</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad1/4_control_de_flujo.html"><span class="chapter-title">Control de Flujo</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -201,7 +202,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad1/1_intr.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Introducción e Instalaciones Necesarias.</span></a>
+  <a href="../../unidades/unidad1/1_introduccion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción e Instalaciones Necesarias.</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad1/2_introduccion_a_la_programacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a la Programación con Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad1/3_tipos_de_datos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tipos de Datos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad1/4_control_de_flujo.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Control de Flujo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad1/5_funciones_y_recursividad.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5_funciones_y_recursividad.html</span></a>
   </div>
 </li>
       </ul>
@@ -217,9 +238,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad1/1_intr.html">Unidad 1: Introducción e Instalaciones Necesarias</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad1/1_intr.html"><span class="chapter-title">Introducción e Instalaciones Necesarias.</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad1/1_introduccion.html">Unidad 1: Introducción e Instalaciones Necesarias</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad1/4_control_de_flujo.html"><span class="chapter-title">Control de Flujo</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Introducción e Instalaciones Necesarias.</span></h1>
+<h1 class="title"><span class="chapter-title">Control de Flujo</span></h1>
 </div>
 
 
@@ -240,132 +261,149 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="center">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/logica_programacion.jpeg" class="img-fluid figure-img"></p>
-<figcaption>Lógica de la Programación</figcaption>
-</figure>
-</div>
-</div>
-<p>En este Bootcamp aprenderemos las bases y fundamentos necesarios del desarrollo web fullstack, esto es desde el frontend hasta el backend.</p>
-<p>Para ello, utilizaremos Python como lenguaje de programación principal, y Django y FastAPI como frameworks para el desarrollo de aplicaciones web.</p>
-<p>Por otra parte esta tambien el frontend, donde utilizaremos HTML, CSS y JavaScript para el desarrollo de interfaces de usuario, aprenderemos acerca de Node.js y React.js para el desarrollo de aplicaciones web del lado del cliente.</p>
-<p>Sin embargo antes de empezar con el desarrollo web, es necesario tener una base sólida en programación, por lo que en este primer módulo aprenderemos acerca de Python, un lenguaje de programación de alto nivel, interpretado y orientado a objetos.</p>
-<p>Por otra parte es necesario saber que cualquier lenguaje de programación no es suficiente para poder desarrollar sistemas que permitan resolver problemas del diario vivir, es necesario tener un entorno de desarrollo adecuado, por lo que en este módulo también aprenderemos acerca de los entornos de desarrollo que podemos utilizar para programar en Python.</p>
-<p>En este módulo aprenderemos acerca de los siguientes temas:</p>
-<ul>
-<li><p>Introducción General a la Programación</p></li>
-<li><p>Instalación de Python</p></li>
-<li><p>Uso de REPL, PEP 8 y Zen de Python</p></li>
-<li><p>Entornos de Desarrollo</p></li>
-</ul>
-<section id="introducción-general-a-la-programación" class="level2">
-<h2 class="anchored" data-anchor-id="introducción-general-a-la-programación">Introducción General a la Programación</h2>
-<p>Si más preámbulos, empecemos con la introducción general a la programación.</p>
-<p>Es el proceso de diseñar e implementar un programa de computadora, es decir, un conjunto de instrucciones que le dicen a una computadora qué hacer.</p>
-<p>Es una habilidad muy valiosa en el mundo actual, ya que la mayoría de las tareas que realizamos a diario involucran el uso de computadoras y software.</p>
-<p>Nos permite automatizar tareas, resolver problemas de manera eficiente y crear aplicaciones y sistemas que nos ayudan en nuestra vida diaria.</p>
-<p>En este módulo aprenderemos los fundamentos de la programación utilizando Python, un lenguaje de programación de alto nivel, interpretado y orientado a objetos.</p>
-<p>Antes de introducirnos en el aprendizaje del lenguaje de programación, es importante conocer que debemos desarrollar la <strong>lógica de la prograamción</strong>, es decir, la habilidad de pensar de manera lógica y estructurada para resolver problemas de manera eficiente.</p>
-<p>Analicemos el siguiente problema para entender la importancia de la lógica de programación:</p>
-<ul>
-<li><strong>Problema</strong>: Supongamos que queremos escribir un programa que imprima los números del 1 al 10.</li>
-</ul>
-<p>¿Cómo resolverías este problema?</p>
-<p>Una posible solución sería escribir un programa que imprima los números del 1 al 10 de manera secuencial.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">1</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">2</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">3</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">4</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">5</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">6</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">7</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">8</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">9</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En el ejemplo anterior, hemos resuelto el problema de imprimir los números del 1 al 10 de manera secuencial. Sin embargo, esta solución no es escalable, ya que si quisiéramos imprimir los números del 1 al 1000, tendríamos que escribir 1000 instrucciones de impresión.</p>
-<p>Una solución más eficiente sería utilizar un bucle para imprimir los números del 1 al 10 de manera automática.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>):</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En el ejemplo anterior, hemos utilizado un bucle <strong>for</strong> para imprimir los números del 1 al 10 de manera automática. Esta solución es más eficiente y escalable, ya que podemos cambiar el rango del bucle para imprimir los números del 1 al 1000 sin tener que modificar el código.</p>
-<ul>
-<li><strong>Problema</strong>: Supongamos que queremos escribir un programa que imprima un saludo personalizado.</li>
-</ul>
-<p>¿Cómo resolverías este problema?</p>
-<p>Una posible solución sería escribir un programa que solicite al usuario su nombre y luego imprima un saludo personalizado.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Ingrese su nombre: "</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hola, "</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">"!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En el ejemplo anterior, hemos resuelto el problema de imprimir un saludo personalizado solicitando al usuario su nombre. Esta solución es interactiva y personalizada, ya que el saludo se adapta al nombre del usuario.</p>
-<p>En resumen, la lógica de programación es la habilidad de pensar de manera lógica y estructurada para resolver problemas de manera eficiente. Es fundamental para desarrollar programas y sistemas que nos ayuden en nuestra vida diaria.</p>
-<p>A continuación te ofresco algunas páginas que puedes revisar por tu cuenta y que te permitirán practicar el desarrollo de la lógica de programación:</p>
-<ul>
-<li><a href="https://codesignal.com/">CodeSignal</a></li>
-<li><a href="https://leetcode.com/">LeetCode</a></li>
-<li><a href="https://www.hackerrank.com/">HackerRank</a></li>
-<li><a href="https://www.codecademy.com/">Codecademy</a></li>
-<li><a href="https://www.edx.org/">edX</a></li>
-<li><a href="https://www.coursera.org/">Coursera</a></li>
-<li><a href="https://www.udemy.com/">Udemy</a></li>
-</ul>
-</section>
-<section id="instalación-de-python" class="level2">
-<h2 class="anchored" data-anchor-id="instalación-de-python">Instalación de Python</h2>
-<div class="center">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
 <p><img src="https://www.python.org/static/img/python-logo.png" class="img-fluid figure-img"></p>
 <figcaption>Python</figcaption>
 </figure>
 </div>
 </div>
-<p>Para instalar Python en tu computadora, sigue los siguientes pasos:</p>
-<ol type="1">
-<li><p>Ve al sitio web oficial de Python en <a href="https://www.python.org/">https://www.python.org/</a>.</p></li>
-<li><p>Haz clic en el botón de descarga de Python.</p></li>
-<li><p>Selecciona la versión de Python que deseas instalar (recomendamos la versión más reciente).</p></li>
-<li><p>Descarga el instalador de Python para tu sistema operativo (Windows, macOS o Linux).</p></li>
-<li><p>Ejecuta el instalador de Python y sigue las instrucciones en pantalla para completar la instalación.</p></li>
-</ol>
-<p>Una vez que hayas instalado Python en tu computadora, puedes verificar que la instalación se haya realizado correctamente abriendo una terminal y ejecutando el siguiente comando:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Si la instalación se realizó correctamente, verás la versión de Python instalada en tu computadora.</p>
-</section>
-<section id="uso-de-repl-pep-8-y-zen-de-python" class="level2">
-<h2 class="anchored" data-anchor-id="uso-de-repl-pep-8-y-zen-de-python">Uso de REPL, PEP 8 y Zen de Python</h2>
-<p>En esta sección, aprenderemos acerca de REPL, PEP 8 y Zen de Python.</p>
-<section id="repl" class="level3">
-<h3 class="anchored" data-anchor-id="repl">REPL</h3>
-<p>REPL (Read-Eval-Print Loop) es un entorno interactivo que permite escribir y ejecutar código de Python de manera interactiva. Es una excelente herramienta para probar y experimentar con el lenguaje de programación.</p>
-<p>Para abrir el REPL de Python, abre una terminal y ejecuta el siguiente comando:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Una vez que hayas abierto el REPL de Python, puedes escribir y ejecutar código de Python de manera interactiva. Por ejemplo, puedes escribir una expresión matemática y ver el resultado:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="dv">4</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="dv">3</span> <span class="op">*</span> <span class="dv">4</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="dv">12</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="dv">10</span> <span class="op">/</span> <span class="dv">2</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="fl">5.0</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="dv">2</span> <span class="op">**</span> <span class="dv">3</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="dv">8</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="st">"Hola, Mundo!"</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="st">'Hola, Mundo!'</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="st">"Hola, "</span> <span class="op">+</span> <span class="st">"Mundo!"</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="st">'Hola, '</span> <span class="op">*</span> <span class="dv">3</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="st">'Hola, Hola, Hola, '</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(<span class="st">"Hola, Mundo!"</span>)</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> Hola, Mundo<span class="op">!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En el ejemplo anterior, hemos utilizado el REPL de Python para ejecutar expresiones matemáticas y cadenas de texto. Es una excelente manera de probar y experimentar con el lenguaje de programación.</p>
-</section>
-</section>
-<section id="entornos-de-desarrollo" class="level2">
-<h2 class="anchored" data-anchor-id="entornos-de-desarrollo">Entornos de Desarrollo</h2>
-<p>Un entorno de desarrollo es un conjunto de herramientas que nos permiten escribir, depurar y ejecutar código de manera eficiente. Es fundamental para desarrollar programas y sistemas de manera efectiva.</p>
-<p>Existen varios entornos de desarrollo que podemos utilizar para programar en Python. Algunos de los más populares son:</p>
+<p>El control de flujo en Python se refiere a la forma en que se ejecutan las instrucciones en un programa. Python proporciona varias estructuras de control de flujo que permiten tomar decisiones, repetir tareas y ejecutar instrucciones en función de ciertas condiciones.</p>
+<p>La sintaxis de las estructuras de control de flujo en Python se basa en la indentación, lo que significa que las instrucciones dentro de un bloque de código deben estar indentadas con la misma cantidad de espacios o tabulaciones. Esto hace que el código sea más legible y fácil de entender.</p>
+<p>En esta sección, aprenderemos sobre las siguientes estructuras de control de flujo en Python:</p>
 <ul>
-<li><p><strong>IDLE</strong>: Es el entorno de desarrollo integrado (IDE) oficial de Python. Viene incluido con la instalación de Python y es una excelente opción para programar en Python.</p></li>
-<li><p><strong>PyCharm</strong>: Es un IDE de Python desarrollado por JetBrains. Es una excelente opción para programar en Python, ya que ofrece muchas características y herramientas útiles.</p></li>
-<li><p><strong>Visual Studio Code</strong>: Es un editor de código desarrollado por Microsoft. Es una excelente opción para programar en Python, ya que ofrece muchas extensiones y herramientas útiles.</p></li>
-<li><p><strong>Jupyter Notebook</strong>: Es una aplicación web que nos permite crear y compartir documentos interactivos que contienen código de Python, visualizaciones y texto explicativo.</p></li>
+<li>If y Condicionales</li>
+<li>If, elif y else</li>
+<li>And y Or</li>
+<li>While loop</li>
+<li>While, break y continue</li>
+<li>For loop</li>
 </ul>
-<p>En este bootcam utilizaremos <strong>Visual Studio Code</strong> como editor de código para programar en Python. Sin embargo, te recomiendo que explores otros entornos de desarrollo y elijas el que mejor se adapte a tus necesidades y preferencias.</p>
+<section id="if-y-condicionales" class="level2">
+<h2 class="anchored" data-anchor-id="if-y-condicionales">If y Condicionales</h2>
+<p>Para entender el concepto de If y Condicionales en Python, primero debemos comprender qué es una condición. Una condición es una expresión que se evalúa como verdadera o falsa. En Python, las condiciones se utilizan para tomar decisiones en un programa.</p>
+<p>La estructura básica de un If en Python es la siguiente:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> condicion:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Bloque de código si la condición es verdadera</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En el código anterior, si la condición es verdadera, se ejecutará el bloque de código dentro del If. Si la condición es falsa, el bloque de código no se ejecutará.</p>
+<p>Por ejemplo:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>edad <span class="op">=</span> <span class="dv">18</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> edad <span class="op">&gt;=</span> <span class="dv">18</span>:</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Eres mayor de edad"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En el código anterior, si la variable <strong>edad</strong> es mayor o igual a 18, se imprimirá en la consola el mensaje “Eres mayor de edad”.</p>
+</section>
+<section id="if-elif-y-else" class="level2">
+<h2 class="anchored" data-anchor-id="if-elif-y-else">If, elif y else</h2>
+<p>Además del If, Python también proporciona las palabras clave <strong>elif</strong> y <strong>else</strong> para tomar decisiones más complejas en un programa. La estructura básica de un If, elif y else en Python es la siguiente:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> condicion1:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Bloque de código si la condicion1 es verdadera</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> condicion2:</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Bloque de código si la condicion2 es verdadera</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Bloque de código si ninguna de las condiciones anteriores es verdadera</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En el código anterior, si la <strong>condicion1</strong> es verdadera, se ejecutará el bloque de código dentro del If. Si la <strong>condicion1</strong> es falsa y la <strong>condicion2</strong> es verdadera, se ejecutará el bloque de código dentro del <strong>elif</strong>. Si ninguna de las condiciones anteriores es verdadera, se ejecutará el bloque de código dentro del <strong>else</strong>.</p>
+<p>Por ejemplo:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>edad <span class="op">=</span> <span class="dv">18</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> edad <span class="op">&lt;</span> <span class="dv">18</span>:</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Eres menor de edad"</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> edad <span class="op">==</span> <span class="dv">18</span>:</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Tienes 18 años"</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Eres mayor de edad"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En el código anterior, si la variable <strong>edad</strong> es menor que 18, se imprimirá en la consola el mensaje “Eres menor de edad”. Si la variable <strong>edad</strong> es igual a 18, se imprimirá en la consola el mensaje “Tienes 18 años”. Si ninguna de las condiciones anteriores es verdadera, se imprimirá en la consola el mensaje “Eres mayor de edad”.</p>
+</section>
+<section id="and-y-or" class="level2">
+<h2 class="anchored" data-anchor-id="and-y-or">And y Or</h2>
+<p>Para entender el concepto de And y Or en Python, primero debemos comprender cómo funcionan los operadores lógicos. Los operadores lógicos se utilizan para combinar o modificar condiciones en una expresión lógica.</p>
+<p>En Python, los operadores lógicos más comunes son <strong>and</strong> y <strong>or</strong>. El operador <strong>and</strong> devuelve <strong>True</strong> si ambas condiciones son verdaderas. El operador <strong>or</strong> devuelve <strong>True</strong> si al menos una de las condiciones es verdadera.</p>
+<p>Por ejemplo:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>edad <span class="op">=</span> <span class="dv">18</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> edad <span class="op">&gt;=</span> <span class="dv">18</span> <span class="kw">and</span> edad <span class="op">&lt;=</span> <span class="dv">30</span>:</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Tienes entre 18 y 30 años"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En el código anterior, si la variable <strong>edad</strong> es mayor o igual a 18 y menor o igual a 30, se imprimirá en la consola el mensaje “Tienes entre 18 y 30 años”.</p>
+</section>
+<section id="while-loop" class="level2">
+<h2 class="anchored" data-anchor-id="while-loop">While loop</h2>
+<p>Para entender el concepto de While loop en Python, primero debemos comprender qué es un bucle. Un bucle es una estructura de control que se utiliza para repetir una secuencia de instrucciones varias veces. En Python, el bucle <strong>while</strong> se utiliza para repetir un bloque de código mientras una condición sea verdadera.</p>
+<p>La estructura básica de un While loop en Python es la siguiente:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> condicion:</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Bloque de código que se repetirá mientras la condición sea verdadera</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En el código anterior, si la condición es verdadera, se ejecutará el bloque de código dentro del While loop. El bloque de código se repetirá hasta que la condición sea falsa.</p>
+<p>Por ejemplo:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>contador <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> contador <span class="op">&lt;</span> <span class="dv">5</span>:</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(contador)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    contador <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En el código anterior, se crea una variable <strong>contador</strong> con el valor <strong>0</strong>. Luego, se ejecuta un While loop que imprime el valor del <strong>contador</strong> y luego incrementa el <strong>contador</strong> en <strong>1</strong> en cada iteración. El bucle se repetirá hasta que el <strong>contador</strong> sea mayor o igual a <strong>5</strong>.</p>
+</section>
+<section id="while-break-y-continue" class="level2">
+<h2 class="anchored" data-anchor-id="while-break-y-continue">While, break y continue</h2>
+<p>Para entender el concepto de While, break y continue en Python, primero debemos comprender cómo funcionan las palabras clave <strong>break</strong> y <strong>continue</strong> en un bucle <strong>while</strong>.</p>
+<p>La palabra clave <strong>break</strong> se utiliza para salir de un bucle <strong>while</strong> antes de que la condición sea falsa. La palabra clave <strong>continue</strong> se utiliza para saltar a la siguiente iteración del bucle <strong>while</strong> sin ejecutar el resto del bloque de código.</p>
+<p>Por ejemplo:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>contador <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> contador <span class="op">&lt;</span> <span class="dv">5</span>:</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> contador <span class="op">==</span> <span class="dv">3</span>:</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(contador)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    contador <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En el código anterior, se crea una variable <strong>contador</strong> con el valor <strong>0</strong>. Luego, se ejecuta un While loop que imprime el valor del <strong>contador</strong> y luego incrementa el <strong>contador</strong> en <strong>1</strong> en cada iteración. Si el <strong>contador</strong> es igual a <strong>3</strong>, se ejecuta la palabra clave <strong>break</strong> y se sale del bucle.</p>
+</section>
+<section id="for-loop" class="level2">
+<h2 class="anchored" data-anchor-id="for-loop">For loop</h2>
+<p>Para entender el concepto de For loop en Python, primero debemos comprender cómo funciona un bucle <strong>for</strong>. Un bucle <strong>for</strong> se utiliza para iterar sobre una secuencia de elementos, como una lista, una tupla, un diccionario, etc.</p>
+<p>La estructura básica de un For loop en Python es la siguiente:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> elemento <span class="kw">in</span> secuencia:</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Bloque de código que se repetirá para cada elemento en la secuencia</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En el código anterior, el bucle <strong>for</strong> recorre cada elemento en la secuencia y ejecuta el bloque de código para cada elemento.</p>
+<p>Por ejemplo:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>numeros <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> numero <span class="kw">in</span> numeros:</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(numero)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En el código anterior, se crea una lista <strong>numeros</strong> con los números del <strong>1</strong> al <strong>5</strong>. Luego, se ejecuta un For loop que imprime cada número en la lista.</p>
+</section>
+<section id="actividad" class="level1">
+<h1>Actividad</h1>
+<section id="instrucciones" class="level2">
+<h2 class="anchored" data-anchor-id="instrucciones">instrucciones</h2>
+<ol type="1">
+<li><p>Crea una lista llamada <strong>numeros</strong> que contenga los números del <strong>1</strong> al <strong>10</strong>.</p></li>
+<li><p>Crea una tupla llamada <strong>colores</strong> que contenga los colores <strong>“rojo”</strong>, <strong>“verde”</strong> y <strong>“azul”</strong>.</p></li>
+<li><p>Crea un diccionario llamado <strong>persona</strong> que contenga las claves <strong>“nombre”</strong>, <strong>“edad”</strong> y <strong>“ciudad”</strong> con los valores <strong>“Diego”</strong>, <strong>36</strong> y <strong>“Quito”</strong> respectivamente.</p></li>
+<li><p>Crea una variable booleana llamada <strong>es_mayor_de_edad</strong> y asígnale el valor <strong>True</strong>.</p></li>
+<li><p>Imprime en la consola las variables <strong>numeros</strong>, <strong>colores</strong>, <strong>persona</strong> y <strong>es_mayor_de_edad</strong>.</p></li>
+<li><p>¿Qué tipo de datos es la variable <strong>numeros</strong>? ¿Y la variable <strong>colores</strong>? ¿Y la variable <strong>persona</strong>? ¿Y la variable <strong>es_mayor_de_edad</strong>?</p></li>
+<li><p>¿Qué tipo de datos es la variable <strong>numeros[0]</strong>? ¿Y la variable <strong>colores[1]</strong>? ¿Y la variable <strong>persona[“nombre”]</strong>? ¿Y la variable <strong>es_mayor_de_edad</strong>?</p></li>
+<li><p>¿Qué tipo de datos es la variable <strong>numeros[0:5]</strong>? ¿Y la variable <strong>colores[1:]</strong>? ¿Y la variable <strong>persona.keys()</strong>? ¿Y la variable <strong>es_mayor_de_edad</strong>?</p></li>
+<li><p>¿Qué tipo de datos es la variable <strong>range(1, 10, 2)</strong>? ¿Y la variable <strong>range(10)</strong>? ¿Y la variable <strong>range(1, 10)</strong>? ¿Y la variable <strong>range(1, 10, 1)</strong>?</p></li>
+<li><p>¿Qué tipo de datos es la variable <strong>range(1, 10, 2)[0]</strong>? ¿Y la variable <strong>range(10)[0]</strong>? ¿Y la variable <strong>range(1, 10)[0]</strong>? ¿Y la variable <strong>range(1, 10, 1)[0]</strong>?</p></li>
+</ol>
+<details>
+<summary>
+Posibles soluciones
+</summary>
+<ol type="1">
+<li><p>La variable <strong>numeros</strong> es una lista.</p></li>
+<li><p>La variable <strong>colores</strong> es una tupla.</p></li>
+<li><p>La variable <strong>persona</strong> es un diccionario.</p></li>
+<li><p>La variable <strong>es_mayor_de_edad</strong> es un booleano.</p></li>
+<li><p>La variable <strong>numeros[0]</strong> es un número.</p></li>
+<li><p>La variable <strong>colores[1]</strong> es un String.</p></li>
+<li><p>La variable <strong>persona[“nombre”]</strong> es un String.</p></li>
+<li><p>La variable <strong>numeros[0:5]</strong> es una lista.</p></li>
+<li><p>La variable <strong>range(1, 10, 2)</strong> es un objeto <strong>range</strong>.</p></li>
+<li><p>La variable <strong>range(1, 10, 2)[0]</strong> es un número.</p></li>
+</ol>
+</details>
+</section>
+</section>
+<section id="conclusiones" class="level1">
+<h1>Conclusiones</h1>
+<p>En esta sección, aprendimos sobre las estructuras de control de flujo en Python, como If, elif, else, And, Or, While loop y For loop. Estas estructuras nos permiten tomar decisiones, repetir tareas y ejecutar instrucciones en función de ciertas condiciones en un programa. Es importante comprender cómo funcionan estas estructuras para poder escribir código más eficiente y legible en Python.</p>
 </section>
 </div>
 
@@ -934,11 +972,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../index.html" class="pagination-link" aria-label="Bienvenido">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Bienvenido</span></span>
+      <a href="../../unidades/unidad1/3_tipos_de_datos.html" class="pagination-link" aria-label="Tipos de Datos">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Tipos de Datos</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../../unidades/unidad1/5_funciones_y_recursividad.html" class="pagination-link" aria-label="5_funciones_y_recursividad.html">
+        <span class="nav-page-text"><span class="chapter-title">5_funciones_y_recursividad.html</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

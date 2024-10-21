@@ -8,20 +8,20 @@ book:
   output-file: "bootcamp_desarrollo_web_fullstack"  
   date: today
   date-format: medium
-  favicon: logo.png
+  favicon: logo.jpeg
   description: Bootcamp de Desarrollo Web FullStack con Python, Django y React
   keyword: Python, Django, React, FullStack, Bootcamp
   url: https://github.com/statick88/bootcamp_desarrollo_web_fullstack
   page-navigation: true
   sidebar: 
-    logo: logo.png
+    logo: logo.jpeg
     search: true
     collapse-level: 1
 
   repo-subdir: book
   sharing: [twitter, linkedin]
   downloads: [pdf, epub]
-  image: logo.png
+  image: logo.jpeg
 
   page-footer:
     center: 
@@ -34,7 +34,11 @@ book:
     - index.qmd
     - part: "Unidad 1: Introducción e Instalaciones Necesarias"
       chapters: 
-        - unidades/unidad1/1_intr.qmd
+        - unidades/unidad1/1_introduccion.qmd
+        - unidades/unidad1/2_introduccion_a_la_programacion.qmd
+        - unidades/unidad1/3_tipos_de_datos.qmd
+        - unidades/unidad1/4_control_de_flujo.qmd
+        - unidades/unidad1/5_funciones_y_recursividad.qmd
 
 bibliography: references.bib
 biblio-style: "apalike"

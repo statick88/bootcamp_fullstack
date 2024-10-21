@@ -4,28 +4,25 @@
 ::: justify
 
 ::: {.text-center}
-¡Bienvenido al Curso Completo de Django y React! 
+¡Bienvenido al Bootcamp de Desarrollo Web Fullstack
 :::
-En este curso, exploraremos todo, desde los fundamentos hasta las aplicaciones prácticas.
+En este bootcamp, exploraremos todo, desde los fundamentos hasta las aplicaciones prácticas.
 
-## ¿De qué trata este curso?
+## ¿De qué trata este Bootcamp?
 
+Este bootcamp está diseñado para enseñarle a desarrollar aplicaciones web modernas utilizando Django, Flask y React.
 
-Este curso completo me llevará desde los fundamentos básicos de la programación hasta la construcción de aplicaciones prácticas utilizando los frameworks Django y la biblioteca de React. 
+## ¿Para quién es este bootcamp?
 
-A través de una combinación de teoría y ejercicios prácticos, me sumergiré en los conceptos esenciales del desarrollo web y avanzaré hacia la creación de proyectos del mundo real. 
+Este bootcamp es para cualquier persona interesada en aprender a desarrollar aplicaciones web modernas.
 
-Desde la configuración del entorno de desarrollo hasta la construcción de una aplicación web de pila completa, este curso me proporcionará una comprensión sólida y experiencia práctica con Django y React.
+## ¿Qué aprenderás?
 
-## ¿Para quién es este curso?
-
-Este curso está diseñado para principiantes y aquellos con poca o ninguna experiencia en programación.
-
-Ya sea que sea un estudiante curioso, un profesional que busca cambiar de carrera o simplemente alguien que quiere aprender desarrollo web, este curso es para usted. Desde adolescentes hasta adultos, todos son bienvenidos a participar y explorar el emocionante mundo del desarrollo web con Django y React.
+Aprenderás algunos lenguajes de programación como Python, JavaScript y TypeScript, así como algunos de los frameworks y bibliotecas más populares como Django, FastAPI y React.
 
 ## ¿Cómo contribuir?
 
-Valoramos su contribución a este curso. Si encuentra algún error, desea sugerir mejoras o agregar contenido adicional, me encantaría saber de usted. 
+Valoramos su contribución a este bootcamp. Si encuentra algún error, desea sugerir mejoras o agregar contenido adicional, me encantaría saber de usted. 
 
 Puede contribuir a través del repositorio en linea, donde puede compartir sus comentarios y sugerencias. 
 
@@ -37,6 +34,7 @@ Estará disponible en línea para cualquier persona, sin importar su ubicación 
 
 Puede descargarlo en formato PDF, Epub o verlo en línea en cualquier momento y lugar.
 
-Esperamos que disfrute este emocionante viaje de aprendizaje y descubrimiento en el mundo del desarrollo web con Django y React!
+Esperamos que disfrute este emocionante viaje de aprendizaje y descubrimiento en el mundo del desarrollo web con Django, FastAPI y React!
+
 :::
 :::

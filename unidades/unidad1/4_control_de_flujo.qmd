@@ -1,0 +1,214 @@
+:::{.justify}
+# Control de Flujo
+
+:::{.center}
+![Python](https://www.python.org/static/img/python-logo.png)
+:::
+
+El control de flujo en Python se refiere a la forma en que se ejecutan las instrucciones en un programa. Python proporciona varias estructuras de control de flujo que permiten tomar decisiones, repetir tareas y ejecutar instrucciones en función de ciertas condiciones.
+
+La sintaxis de las estructuras de control de flujo en Python se basa en la indentación, lo que significa que las instrucciones dentro de un bloque de código deben estar indentadas con la misma cantidad de espacios o tabulaciones. Esto hace que el código sea más legible y fácil de entender.
+
+En esta sección, aprenderemos sobre las siguientes estructuras de control de flujo en Python:
+
+- If y Condicionales
+- If, elif y else
+- And y Or
+- While loop
+- While, break y continue
+- For loop
+
+## If y Condicionales
+
+Para entender el concepto de If y Condicionales en Python, primero debemos comprender qué es una condición. Una condición es una expresión que se evalúa como verdadera o falsa. En Python, las condiciones se utilizan para tomar decisiones en un programa.
+
+La estructura básica de un If en Python es la siguiente:
+
+```python
+if condicion:
+    # Bloque de código si la condición es verdadera
+```
+
+En el código anterior, si la condición es verdadera, se ejecutará el bloque de código dentro del If. Si la condición es falsa, el bloque de código no se ejecutará.
+
+Por ejemplo:
+
+```python
+edad = 18
+
+if edad >= 18:
+    print("Eres mayor de edad")
+```
+
+En el código anterior, si la variable **edad** es mayor o igual a 18, se imprimirá en la consola el mensaje "Eres mayor de edad".
+
+## If, elif y else
+
+Además del If, Python también proporciona las palabras clave **elif** y **else** para tomar decisiones más complejas en un programa. La estructura básica de un If, elif y else en Python es la siguiente:
+
+```python
+if condicion1:
+    # Bloque de código si la condicion1 es verdadera
+elif condicion2:
+    # Bloque de código si la condicion2 es verdadera
+else:
+    # Bloque de código si ninguna de las condiciones anteriores es verdadera
+```
+
+En el código anterior, si la **condicion1** es verdadera, se ejecutará el bloque de código dentro del If. Si la **condicion1** es falsa y la **condicion2** es verdadera, se ejecutará el bloque de código dentro del **elif**. Si ninguna de las condiciones anteriores es verdadera, se ejecutará el bloque de código dentro del **else**.
+
+Por ejemplo:
+
+```python
+edad = 18
+
+if edad < 18:
+    print("Eres menor de edad")
+elif edad == 18:
+    print("Tienes 18 años")
+else:
+    print("Eres mayor de edad")
+```
+
+En el código anterior, si la variable **edad** es menor que 18, se imprimirá en la consola el mensaje "Eres menor de edad". Si la variable **edad** es igual a 18, se imprimirá en la consola el mensaje "Tienes 18 años". Si ninguna de las condiciones anteriores es verdadera, se imprimirá en la consola el mensaje "Eres mayor de edad".
+
+## And y Or
+
+Para entender el concepto de And y Or en Python, primero debemos comprender cómo funcionan los operadores lógicos. Los operadores lógicos se utilizan para combinar o modificar condiciones en una expresión lógica.
+
+En Python, los operadores lógicos más comunes son **and** y **or**. El operador **and** devuelve **True** si ambas condiciones son verdaderas. El operador **or** devuelve **True** si al menos una de las condiciones es verdadera.
+
+Por ejemplo:
+
+```python
+edad = 18
+
+if edad >= 18 and edad <= 30:
+    print("Tienes entre 18 y 30 años")
+```
+
+En el código anterior, si la variable **edad** es mayor o igual a 18 y menor o igual a 30, se imprimirá en la consola el mensaje "Tienes entre 18 y 30 años".
+
+## While loop
+
+Para entender el concepto de While loop en Python, primero debemos comprender qué es un bucle. Un bucle es una estructura de control que se utiliza para repetir una secuencia de instrucciones varias veces. En Python, el bucle **while** se utiliza para repetir un bloque de código mientras una condición sea verdadera.
+
+La estructura básica de un While loop en Python es la siguiente:
+
+```python
+while condicion:
+    # Bloque de código que se repetirá mientras la condición sea verdadera
+```
+
+En el código anterior, si la condición es verdadera, se ejecutará el bloque de código dentro del While loop. El bloque de código se repetirá hasta que la condición sea falsa.
+
+Por ejemplo:
+
+```python
+contador = 0
+
+while contador < 5:
+    print(contador)
+    contador += 1
+```
+
+En el código anterior, se crea una variable **contador** con el valor **0**. Luego, se ejecuta un While loop que imprime el valor del **contador** y luego incrementa el **contador** en **1** en cada iteración. El bucle se repetirá hasta que el **contador** sea mayor o igual a **5**.
+
+## While, break y continue
+
+Para entender el concepto de While, break y continue en Python, primero debemos comprender cómo funcionan las palabras clave **break** y **continue** en un bucle **while**.
+
+La palabra clave **break** se utiliza para salir de un bucle **while** antes de que la condición sea falsa. La palabra clave **continue** se utiliza para saltar a la siguiente iteración del bucle **while** sin ejecutar el resto del bloque de código.
+
+Por ejemplo:
+
+```python
+contador = 0
+
+while contador < 5:
+    if contador == 3:
+        break
+    print(contador)
+    contador += 1
+```
+
+En el código anterior, se crea una variable **contador** con el valor **0**. Luego, se ejecuta un While loop que imprime el valor del **contador** y luego incrementa el **contador** en **1** en cada iteración. Si el **contador** es igual a **3**, se ejecuta la palabra clave **break** y se sale del bucle.
+
+## For loop
+
+Para entender el concepto de For loop en Python, primero debemos comprender cómo funciona un bucle **for**. Un bucle **for** se utiliza para iterar sobre una secuencia de elementos, como una lista, una tupla, un diccionario, etc.
+
+La estructura básica de un For loop en Python es la siguiente:
+
+```python
+for elemento in secuencia:
+    # Bloque de código que se repetirá para cada elemento en la secuencia
+```
+
+En el código anterior, el bucle **for** recorre cada elemento en la secuencia y ejecuta el bloque de código para cada elemento.
+
+Por ejemplo:
+
+```python
+numeros = [1, 2, 3, 4, 5]
+
+for numero in numeros:
+    print(numero)
+```
+
+En el código anterior, se crea una lista **numeros** con los números del **1** al **5**. Luego, se ejecuta un For loop que imprime cada número en la lista.
+
+# Actividad
+
+## instrucciones
+
+1. Crea una lista llamada **numeros** que contenga los números del **1** al **10**.
+
+2. Crea una tupla llamada **colores** que contenga los colores **"rojo"**, **"verde"** y **"azul"**.
+
+3. Crea un diccionario llamado **persona** que contenga las claves **"nombre"**, **"edad"** y **"ciudad"** con los valores **"Diego"**, **36** y **"Quito"** respectivamente.
+
+4. Crea una variable booleana llamada **es_mayor_de_edad** y asígnale el valor **True**.
+
+5. Imprime en la consola las variables **numeros**, **colores**, **persona** y **es_mayor_de_edad**.
+
+6. ¿Qué tipo de datos es la variable **numeros**? ¿Y la variable **colores**? ¿Y la variable **persona**? ¿Y la variable **es_mayor_de_edad**?
+
+7. ¿Qué tipo de datos es la variable **numeros[0]**? ¿Y la variable **colores[1]**? ¿Y la variable **persona["nombre"]**? ¿Y la variable **es_mayor_de_edad**?
+
+8. ¿Qué tipo de datos es la variable **numeros[0:5]**? ¿Y la variable **colores[1:]**? ¿Y la variable **persona.keys()**? ¿Y la variable **es_mayor_de_edad**?
+
+9. ¿Qué tipo de datos es la variable **range(1, 10, 2)**? ¿Y la variable **range(10)**? ¿Y la variable **range(1, 10)**? ¿Y la variable **range(1, 10, 1)**?
+
+10. ¿Qué tipo de datos es la variable **range(1, 10, 2)[0]**? ¿Y la variable **range(10)[0]**? ¿Y la variable **range(1, 10)[0]**? ¿Y la variable **range(1, 10, 1)[0]**?
+
+<details>
+  <summary>Posibles soluciones</summary>
+
+1. La variable **numeros** es una lista.
+
+2. La variable **colores** es una tupla.
+
+3. La variable **persona** es un diccionario.
+
+4. La variable **es_mayor_de_edad** es un booleano.
+
+5. La variable **numeros[0]** es un número.
+
+6. La variable **colores[1]** es un String.
+
+7. La variable **persona["nombre"]** es un String.
+
+8. La variable **numeros[0:5]** es una lista.
+
+9. La variable **range(1, 10, 2)** es un objeto **range**.
+
+10. La variable **range(1, 10, 2)[0]** es un número.
+
+</details>
+
+# Conclusiones
+
+En esta sección, aprendimos sobre las estructuras de control de flujo en Python, como If, elif, else, And, Or, While loop y For loop. Estas estructuras nos permiten tomar decisiones, repetir tareas y ejecutar instrucciones en función de ciertas condiciones en un programa. Es importante comprender cómo funcionan estas estructuras para poder escribir código más eficiente y legible en Python.
+
+:::
