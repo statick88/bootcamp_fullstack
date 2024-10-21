@@ -1,0 +1,175 @@
+# Ejercicios Python - Nivel 4
+
+## Ejercicio 1: 
+
+- Crear un conjunto vacío y agregar elementos al mismo hasta que el usuario ingrese "fin".
+
+<details>
+<summary>Posible solución</summary>
+
+```python
+conjunto = set()
+while True:
+    elemento = input("Ingrese un elemento o 'fin' para terminar: ")
+    if elemento == "fin":
+        break
+    conjunto.add(elemento)
+print(conjunto)
+```
+</details>
+
+## Ejercicio 2:
+
+- Crear un diccionario vacío y agregar elementos al mismo hasta que el usuario ingrese "fin".
+- Cada elemento debe ser una tupla con dos elementos, el primero será la clave y el segundo el valor.
+- Si el usuario ingresa una clave que ya existe, se debe mostrar un mensaje de error y no agregar el elemento.
+
+<details>
+<summary>Posible solución</summary>
+
+```python
+diccionario = dict()
+while True:
+    clave = input("Ingrese una clave o 'fin' para terminar: ")
+    if clave == "fin":
+        break
+    if clave in diccionario:
+        print("La clave ya existe")
+        continue
+    valor = input("Ingrese un valor: ")
+    diccionario[clave] = valor
+print(diccionario)
+```
+
+</details>
+
+## Ejercicio 3:
+
+- Crear un diccionario con los nombres de los meses como claves y la cantidad de días que tienen como valor.
+- Mostrar los meses que tienen 31 días.
+- Mostrar los meses que tienen 30 días.
+- Mostrar los meses que tienen 28 días.
+
+<details>
+<summary>Posible solución</summary>
+
+```python
+meses = {
+    "enero": 31,
+    "febrero": 28,
+    "marzo": 31,
+    "abril": 30,
+    "mayo": 31,
+    "junio": 30,
+    "julio": 31,
+    "agosto": 31,
+    "septiembre": 30,
+    "octubre": 31,
+    "noviembre": 30,
+    "diciembre": 31
+}
+
+meses_31 = [mes for mes, dias in meses.items() if dias == 31]
+meses_30 = [mes for mes, dias in meses.items() if dias == 30]
+meses_28 = [mes for mes, dias in meses.items() if dias == 28]
+
+print("Meses con 31 días:", meses_31)
+print("Meses con 30 días:", meses_30)
+print("Meses con 28 días:", meses_28)
+```
+</details>
+
+## Ejercicio 4:
+
+- Crear un diccionario con los nombres de los meses como claves y la cantidad de paises de sur america mostrando mediante el pais la capital.
+- Mostrar la capital de Argentina.
+- Mostrar la capital de Brasil.
+- Mostrar la capital de Ecuador.
+
+<details>
+<summary>Posible solución</summary>
+
+```python
+paises = {
+    "Argentina": "Buenos Aires",
+    "Bolivia": "La Paz",
+    "Brasil": "Brasilia",
+    "Chile": "Santiago",
+    "Colombia": "Bogotá",
+    "Ecuador": "Quito",
+    "Guyana": "Georgetown",
+    "Paraguay": "Asunción",
+    "Perú": "Lima",
+    "Surinam": "Paramaribo",
+    "Uruguay": "Montevideo",
+    "Venezuela": "Caracas"
+}
+
+print("La capital de Argentina es", paises["Argentina"])
+print("La capital de Brasil es", paises["Brasil"])
+print("La capital de Ecuador es", paises["Ecuador"])
+```
+</details>
+
+## Ejercicio 5:
+
+- Crear un diccinario con los nombres de los presidentes de Ecuador y la fecha en la que asumieron el cargo.
+- Mostrar la fecha en la que asumió el presidente Eloy Alfaro.
+- Mostrar la fecha en la que asumió el presidente Garcia Moreno.
+
+<details>
+<summary>Posible solución</summary>
+
+```python
+presidentes = {
+
+    "Gustavo Noboa": "23 de noviembre de 2023",
+    "Guillermo Lasso": "24 de mayo de 2021",
+    "Lenín Moreno": "24 de mayo de 2017",
+    "Rafael Correa": "15 de enero de 2007",
+    "Jamil Mahuad": "10 de agosto de 1998",
+    "Abdalá Bucaram": "10 de agosto de 1996",
+    "Sixto Durán Ballén": "10 de agosto de 1992",
+    "Rodrigo Borja": "10 de agosto de 1988",
+    "León Febres Cordero": "10 de agosto de 1984",
+    "Osvaldo Hurtado": "10 de agosto de 1981",
+    "Jaime Roldós": "10 de agosto de 1979",
+    "Guillermo Rodríguez": "24 de mayo de 1972",
+    "José María Velasco Ibarra": "1 de septiembre de 1968",
+    "Otto Arosemena": "16 de febrero de 1966",
+    "Carlos Julio Arosemena": "1 de septiembre de 1961",
+    "Camilo Ponce Enríquez": "1 de septiembre de 1956",
+    "José María Velasco Ibarra": "1 de septiembre de 1952",
+    "Galalza Castro": "1 de septiembre de 1947",
+    "Carlos Arroyo del Río": "1 de septiembre de 1940",
+    "Andrés Córdova": "1 de septiembre de 1938",
+    "Alberto Enríquez Gallo": "1 de septiembre de 1937",
+    "Federico Páez": "1 de septiembre de 1935",
+    "José María Velasco Ibarra": "1 de septiembre de 1934",
+    "Abelardo Montalvo": "1 de septiembre de 1933",
+    "Neptalí Bonifaz": "1 de septiembre de 1931",
+    "Isidro Ayora": "1 de septiembre de 1926",
+    "Gonzalo Córdova": "1 de septiembre de 1924",
+    "José Luis Tamayo": "1 de septiembre de 1920",
+    "Leónidas Plaza": "1 de septiembre de 1912",
+    "Emilio Estrada": "1 de septiembre de 1911",
+    "Carlos Freile Zaldumbide": "1 de septiembre de 1907",
+    "Eloy Alfaro": "1 de septiembre de 1906",
+    "Leónidas Plaza": "1 de septiembre de 1901",
+    "Eloy Alfaro": "1 de septiembre de 1897",
+    "Antonio Flores Jijón": "1 de septiembre de 1888",
+    "José Plácido Caamaño": "1 de septiembre de 1883",
+    "Pedro José de Arteta": "1 de septiembre de 1882",
+    "Francisco Xavier León": "1 de septiembre de 1878",
+    "Antonio Borrero": "1 de septiembre de 1875",
+    "Gabriel García Moreno": "1 de septiembre de 1861",
+    "Francisco Robles": "1 de septiembre de 1856",
+    "Diego Noboa": "1 de septiembre de 1850",
+    "José Joaquín de Olmedo": "1 de septiembre de 1845",
+    "Juan José Flores": "1 de septiembre de 1830",
+}
+
+print("Eloy Alfaro asumió el", presidentes["Eloy Alfaro"])
+print("García Moreno asumió el", presidentes["Gabriel García Moreno"])
+```
+</details>

@@ -1,0 +1,79 @@
+# Ejercicios Python - Nivel 1
+
+## Ejercicio 1
+
+- Crear un programa que muestre por pantalla la cadena "Hola Mundo!".
+
+<details>
+<summary>Solución</summary>
+
+```python
+print("Hola Mundo!")
+```
+</details>
+
+## Ejercicio 2
+
+- Crear un programa que muestre por pantalla tu nombre.
+
+<details>
+<summary>Solución</summary>
+
+```python
+print("Tu nombre")
+```
+</details>
+
+## Ejercicio 3
+
+- Crear un programa que pida al usuario que introduzca su nombre y muestre por pantalla la cadena "Hola", seguido del nombre y un signo de exclamación.
+
+<details>
+<summary>Solución</summary>
+
+```python
+nombre = input("Introduce tu nombre: ")
+print("Hola", nombre, "!")
+```
+
+Otra forma de hacerlo:
+
+```python
+nombre = input("Introduce tu nombre: ")
+print(f"Hola {nombre}!")
+```
+
+</details>
+
+## Ejercicio 4
+
+- Crear un programa que pregunte al usuario por el número de horas trabajadas y el coste por hora. Después debe mostrar por pantalla la paga que le corresponde.
+
+<details>
+<summary>Solución</summary>
+
+```python
+horas = float(input("Introduce tus horas de trabajo: "))
+coste = float(input("Introduce lo que cobras por hora: "))
+paga = horas * coste
+print("Tu paga es de", paga)
+```
+
+</details>
+
+## Ejercicio 5
+
+- Crear un programa que pida al usuario una cantidad de dolares, una tasa de interés y un número de años. Mostrar por pantalla en cuanto se habrá convertido el capital inicial transcurridos esos años si cada año se aplica la tasa de interés introducida.
+- Formula del interés compuesto: Cn = C * (1 + x/100) ^ n
+
+<details>
+<summary>Solución</summary>
+
+```python
+cantidad = float(input("¿Cantidad a invertir? "))
+interes = float(input("¿Interés porcentual anual? "))
+años = int(input("¿Años?"))
+print("Capital final: ", round(cantidad * (interes / 100 + 1) ** años, 2))
+```
+
+</details>

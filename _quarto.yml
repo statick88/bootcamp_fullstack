@@ -1,0 +1,76 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Bootcamp Desarrollo Web FullStack"
+  author: "Diego Saavedra"
+  output-file: "bootcamp_desarrollo_web_fullstack"  
+  date: today
+  date-format: medium
+  favicon: logo.png
+  description: Bootcamp de Desarrollo Web FullStack con Python, Django y React
+  keyword: Python, Django, React, FullStack, Bootcamp
+  url: https://github.com/statick88/bootcamp_desarrollo_web_fullstack
+  page-navigation: true
+  sidebar: 
+    logo: logo.png
+    search: true
+    collapse-level: 1
+
+  repo-subdir: book
+  sharing: [twitter, linkedin]
+  downloads: [pdf, epub]
+  image: logo.png
+
+  page-footer:
+    center: 
+      - text: "About"
+        href: about.qmd
+      - text: "License"
+        href: license.qmd
+        
+  chapters:
+    - index.qmd
+    - part: "Unidad 1: Introducción e Instalaciones Necesarias"
+      chapters: 
+        - unidades/unidad1/1_intr.qmd
+
+bibliography: references.bib
+biblio-style: "apalike"
+
+format:
+  html:
+    number-sections: false
+    theme: 
+      dark:  solar #slate, darkly, solar, superhero, vapor
+      # light: cosmo
+    number-depth: 4
+    link-external-icon: true
+    link-external-newwindow: true
+    css: css/styles.css
+
+  pdf:
+    documentclass: scrreprt
+    classoption: ["onepage", "openany"]
+    papersize: a4
+    toc: true
+    margin-top: 35mm
+    margin-left: 30mm
+    margin-bottom: 30mm
+    margin-right: 30mm
+    titlepage-geometry: 
+      - top=35mm
+      - bottom=30mm
+      - right=30mm
+      - left=30mm
+  epub: 
+    belongs-to-collection: "Bootcamp Desarrollo Web FullStack"
+    group-position: 0
+    creator: "Lcdo. Diego Saavedra Mgtr."
+    rights: "© Statick | 2024"
+    fig-responsive: true
+    number-sections: true
+
+filters:
+  - naquiz

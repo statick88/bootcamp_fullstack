@@ -1,0 +1,42 @@
+# Bienvenido
+
+::: {.text-justify}
+::: justify
+
+::: {.text-center}
+¡Bienvenido al Curso Completo de Django y React! 
+:::
+En este curso, exploraremos todo, desde los fundamentos hasta las aplicaciones prácticas.
+
+## ¿De qué trata este curso?
+
+
+Este curso completo me llevará desde los fundamentos básicos de la programación hasta la construcción de aplicaciones prácticas utilizando los frameworks Django y la biblioteca de React. 
+
+A través de una combinación de teoría y ejercicios prácticos, me sumergiré en los conceptos esenciales del desarrollo web y avanzaré hacia la creación de proyectos del mundo real. 
+
+Desde la configuración del entorno de desarrollo hasta la construcción de una aplicación web de pila completa, este curso me proporcionará una comprensión sólida y experiencia práctica con Django y React.
+
+## ¿Para quién es este curso?
+
+Este curso está diseñado para principiantes y aquellos con poca o ninguna experiencia en programación.
+
+Ya sea que sea un estudiante curioso, un profesional que busca cambiar de carrera o simplemente alguien que quiere aprender desarrollo web, este curso es para usted. Desde adolescentes hasta adultos, todos son bienvenidos a participar y explorar el emocionante mundo del desarrollo web con Django y React.
+
+## ¿Cómo contribuir?
+
+Valoramos su contribución a este curso. Si encuentra algún error, desea sugerir mejoras o agregar contenido adicional, me encantaría saber de usted. 
+
+Puede contribuir a través del repositorio en linea, donde puede compartir sus comentarios y sugerencias. 
+
+Juntos, podemos mejorar continuamente este recurso educativo para beneficiar a la comunidad de estudiantes y entusiastas de la programación.
+
+Este ebook ha sido creado con el objetivo de proporcionar acceso gratuito y universal al conocimiento.
+
+Estará disponible en línea para cualquier persona, sin importar su ubicación o circunstancias, para acceder y aprender a su propio ritmo.
+
+Puede descargarlo en formato PDF, Epub o verlo en línea en cualquier momento y lugar.
+
+Esperamos que disfrute este emocionante viaje de aprendizaje y descubrimiento en el mundo del desarrollo web con Django y React!
+:::
+:::

@@ -1,0 +1,134 @@
+# Ejercicios Python - Nivel 5
+
+## Ejercicio 1: 
+
+Escribir una clase en Python llamada `Rectangulo` que contenga:
+
+- Dos atributos: `largo` y `ancho`
+- Un método llamado `area` que devuelva el área del rectángulo
+- Un método llamado `perimetro` que devuelva el perímetro del rectángulo
+
+<details>
+<summary>Posible solución</summary>
+
+```python
+class Rectangulo:
+    def __init__(self, largo, ancho):
+        self.largo = largo
+        self.ancho = ancho
+
+    def area(self):
+        return self.largo * self.ancho
+
+    def perimetro(self):
+        return 2 * (self.largo + self.ancho)
+```
+</details>
+
+## Ejercicio 2:
+
+Escribir una clase en Python llamada `Circulo` que contenga:
+
+- Un atributo: `radio`
+- Un método llamado `area` que devuelva el área del círculo
+- Un método llamado `perimetro` que devuelva el perímetro del círculo
+
+<details>
+<summary>Posible solución</summary>
+
+```python
+import math
+
+class Circulo:
+    def __init__(self, radio):
+        self.radio = radio
+
+    def area(self):
+        return math.pi * self.radio ** 2
+
+    def perimetro(self):
+        return 2 * math.pi * self.radio
+```
+</details>
+
+## Ejercicio 3:
+
+Escribir una clase en Python llamada `Triangulo` que contenga:
+
+- Tres atributos: `lado1`, `lado2` y `lado3`
+- Un método llamado `area` que devuelva el área del triángulo
+- Un método llamado `perimetro` que devuelva el perímetro del triángulo
+
+<details>
+<summary>Posible solución</summary>
+
+```python
+import math
+
+class Triangulo:
+    def __init__(self, lado1, lado2, lado3):
+        self.lado1 = lado1
+        self.lado2 = lado2
+        self.lado3 = lado3
+
+    def area(self):
+        s = (self.lado1 + self.lado2 + self.lado3) / 2
+        return math.sqrt(s * (s - self.lado1) * (s - self.lado2) * (s - self.lado3))
+
+    def perimetro(self):
+        return self.lado1 + self.lado2 + self.lado3
+```
+</details>
+
+## Ejercicio 4:
+
+Escribir una clase en Python llamada Monster que contenga:
+
+- Un atributo: `vida`
+- Un método llamado `atacar` que reciba un valor entero y lo reste a la vida del monstruo
+- Un método llamado `esta_vivo` que devuelva True si la vida del monstruo es mayor a 0 y False en caso contrario
+
+<details>
+<summary>Posible solución</summary>
+
+```python
+class Monster:
+    def __init__(self, vida):
+        self.vida = vida
+
+    def atacar(self, valor):
+        self.vida -= valor
+
+    def esta_vivo(self):
+        return self.vida > 0
+```
+
+</details>
+
+## Ejercicio 5:
+
+Escribir una clase en Python llamada `CuentaBancaria` que contenga:
+
+- Un atributo: `saldo`
+- Un método llamado `depositar` que reciba un valor entero y lo sume al saldo de la cuenta
+- Un método llamado `extraer` que reciba un valor entero y lo reste al saldo de la cuenta
+- Un método llamado `saldo_disponible` que devuelva el saldo de la cuenta
+
+<details>
+<summary>Posible solución</summary>
+
+```python
+class CuentaBancaria:
+    def __init__(self, saldo):
+        self.saldo = saldo
+
+    def depositar(self, valor):
+        self.saldo += valor
+
+    def extraer(self, valor):
+        self.saldo -= valor
+
+    def saldo_disponible(self):
+        return self.saldo
+```
+</details>

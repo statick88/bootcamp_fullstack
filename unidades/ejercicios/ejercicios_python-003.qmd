@@ -1,0 +1,81 @@
+# Ejercicios Python - Nivel 3
+
+## Ejercicio 1: 
+
+- Crear una lista vacía y agregar elementos a la misma hasta que el usuario ingrese "fin".
+
+<details>
+<summary>Posible solución</summary>
+
+```python
+lista = []
+while True:
+    elemento = input("Ingrese un elemento: ")
+    if elemento == "fin":
+        break
+    lista.append(elemento)
+print(lista)
+```
+</details>
+
+## Ejercicio 2:
+
+- Crear una lista con los números del 1 al 10 y mostrar los números pares.
+
+<details>
+<summary>Posible solución</summary>
+
+```python
+lista = list(range(1, 11))
+for numero in lista:
+    if numero % 2 == 0:
+        print(numero)
+```
+</details>
+
+## Ejercicio 3:
+
+- Crear una lista con los números del 1 al 10 y mostrar los números impares.
+
+<details>
+<summary>Posible solución</summary>
+
+```python
+lista = list(range(1, 11))
+for numero in lista:
+    if numero % 2 != 0:
+        print(numero)
+```
+</details>
+
+## Ejercicio 4:
+
+- Crear una lista de nombres de estudiantes y mostrar aquellos cuyos nombres comiencen con la letra "A".
+ 
+<details>
+<summary>Posible solución</summary>
+
+```python
+nombres = ["Ana", "Juan", "Pedro", "Andrea", "Lucía", "Antonio"]
+for nombre in nombres:
+    if nombre[0].lower() == "a":
+        print(nombre)
+```
+
+</details>
+
+## Ejercicio 5:
+
+- Crear una lista de números y mostrar aquellos que sean mayores a 100.
+
+<details>
+<summary>Posible solución</summary>
+
+```python
+numeros = [10, 20, 150, 200, 300, 400, 500]
+for numero in numeros:
+    if numero > 100:
+        print(numero)
+```
+</details>
+

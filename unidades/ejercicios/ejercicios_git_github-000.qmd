@@ -1,0 +1,103 @@
+# Ejercicios de Git y Github
+
+### Ejercicio 1
+
+1. Crear un repositorio en Github
+2. Clonar el repositorio en tu computadora
+3. Crear un archivo de texto con tu nombre y subirlo al repositorio
+4. Hacer un commit con el mensaje "Agrego mi nombre"
+5. Hacer un push al repositorio
+
+
+<details>
+<summary>Respuesta:</summary>
+``` bash
+git clone [url del repositorio]
+cd [nombre del repositorio]
+echo "Mi nombre es: [Tu nombre]" > nombre.txt
+git add nombre.txt
+git commit -m "Agrego mi nombre"
+git push origin master
+```
+</details>
+
+### Ejercicio 2
+
+1. Crear un repositorio en Github
+2. Clonar el repositorio en tu computadora
+3. Crear un archivo de python que imprima tu nombre
+4. Hacer un commit con el mensaje "Agrego archivo de python"
+5. Hacer un push al repositorio
+
+<details>
+<summary>Respuesta:</summary>
+``` bash
+git clone [url del repositorio]
+cd [nombre del repositorio]
+echo "print('Mi nombre es: [Tu nombre]')" > nombre.py
+git add nombre.py
+git commit -m "Agrego archivo de python"
+git push origin master
+```
+</details>
+
+### Ejercicio 3
+
+1. Crear un repositorio en Github
+2. Clonar el repositorio en tu computadora
+3. Crear un archivo de python que imprima un saludo de bienvenida
+4. Hacer un commit con el mensaje "Agrego saludo de bienvenida"
+5. Hacer un push al repositorio
+
+<details>
+<summary>Respuesta:</summary>
+``` bash
+git clone [url del repositorio]
+cd [nombre del repositorio]
+echo "print('Hola, bienvenido')" > saludo.py
+git add saludo.py
+git commit -m "Agrego saludo de bienvenida"
+git push origin master
+```
+</details>
+
+### Ejercicio 4
+
+1. Crear un repositorio en Github
+2. Clonar el repositorio en tu computadora
+3. Crear un archivo de python que imprima un saludo de despedida
+4. Hacer un commit con el mensaje "Agrego saludo de despedida"
+5. Hacer un push al repositorio
+
+<details>
+<summary>Respuesta:</summary>
+``` bash
+git clone [url del repositorio]
+cd [nombre del repositorio]
+echo "print('Adios, hasta luego')" > despedida.py
+git add despedida.py
+git commit -m "Agrego saludo de despedida"
+git push origin master
+```
+</details>
+
+### Ejercicio 5
+
+1. Crear un repositorio en Github
+2. Clonar el repositorio en tu computadora
+3. Crear un archivo de python que imprima un saludo de bienvenida y un saludo de despedida
+4. Hacer un commit con el mensaje "Agrego saludo de bienvenida y despedida"
+5. Hacer un push al repositorio
+
+<details>
+<summary>Respuesta:</summary>
+``` bash
+git clone [url del repositorio]
+cd [nombre del repositorio]
+echo "print('Hola, bienvenido')" > saludo.py
+echo "print('Adios, hasta luego')" > despedida.py
+git add saludo.py despedida.py
+git commit -m "Agrego saludo de bienvenida y despedida"
+git push origin master
+```
+</details> 

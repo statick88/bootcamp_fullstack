@@ -1,0 +1,95 @@
+# Ejercicios Python - Nivel 2
+
+## Ejercicio 1
+
+- Crear una función que reciba una lista de números y devuelva su media aritmética.
+- Ejemplo: media_aritmetica([1, 2, 3, 4, 5]) -> 3.0
+
+<details>
+<summary>Posible solución</summary>
+
+```python
+def media_aritmetica(lista):
+    return sum(lista) / len(lista)
+```
+</details>
+
+## Ejercicio 2
+
+- Crear una función que reciba una lista de números y devuelva su mediana.
+- Ejemplo: mediana([1, 2, 3, 4, 5]) -> 3.0
+
+<details>
+<summary>Posible solución</summary>
+
+```python
+def mediana(lista):
+    lista_ordenada = sorted(lista)
+    n = len(lista_ordenada)
+    if n % 2 == 0:
+        return (lista_ordenada[n // 2 - 1] + lista_ordenada[n // 2]) / 2
+    else:
+        return lista_ordenada[n // 2]
+```
+</details>
+
+## Ejercicio 3
+
+- Crear una función que reciba una lista de números y devuelva su moda.
+- Si hay más de una moda, devolver una lista con todas las modas.
+- Si no hay moda, devolver una lista vacía.
+- La moda es el número que más veces se repite en una lista.
+- Si todos los números se repiten el mismo número de veces, no hay moda.
+- Ejemplo: moda([1, 2, 3, 2, 3, 4]) -> [2, 3]
+
+<details>
+<summary>Posible solución</summary>
+
+```python
+def moda(lista):
+    frecuencias = {}
+    for numero in lista:
+        if numero in frecuencias:
+            frecuencias[numero] += 1
+        else:
+            frecuencias[numero] = 1
+    max_frecuencia = max(frecuencias.values())
+    modas = [numero for numero, frecuencia in frecuencias.items() if frecuencia == max_frecuencia]
+    return modas if len(modas) > 1 else modas[0] if modas else []
+```
+</details>
+
+## Ejercicio 4
+
+- Crear una función que reciba una lista de números y devuelva su desviación típica.
+- La desviación típica es la raíz cuadrada de la varianza.
+- La varianza es la media de los cuadrados de las diferencias entre cada número y la media aritmética.
+- Ejemplo: desviacion_tipica([1, 2, 3, 4, 5]) -> 1.4142135623730951
+
+<details>
+<summary>Posible solución</summary>
+
+```python
+def desviacion_tipica(lista):
+    media = sum(lista) / len(lista)
+    varianza = sum((numero - media) ** 2 for numero in lista) / len(lista)
+    return varianza ** 0.5
+```
+</details>
+
+## Ejercicio 5
+
+- Crear una función que reciba una lista de números y devuelva su coeficiente de variación.
+- El coeficiente de variación es la desviación típica dividida por la media aritmética.
+- Ejemplo: coeficiente_variacion([1, 2, 3, 4, 5]) -> 0.4472135954999579
+
+<details>
+<summary>Posible solución</summary>
+
+```python
+def coeficiente_variacion(lista):
+    media = sum(lista) / len(lista)
+    desviacion_tipica = sum((numero - media) ** 2 for numero in lista) / len(lista) ** 0.5
+    return desviacion_tipica / media
+```
+</details>

@@ -1,0 +1,310 @@
+# Desarrollo del Backend para un E-Commerce con Django Rest Framework
+
+## 1. Configuración Inicial del Proyecto
+
+### 1.1. Crear un Proyecto Django
+
+Abre tu terminal y ejecuta los siguientes comandos para crear un nuevo proyecto Django:
+
+``` bash
+python -m venv env
+source env/bin/activate
+pip install django==4.2
+django-admin startproject ecommerce_project .
+cd ecommerce_project
+```
+### 1.2 Crear una Aplicación Django
+
+Dentro del directorio del proyecto, crea una aplicación para manejar el e-commerce:
+
+``` bash
+python manage.py startapp products
+```
+
+### 1.3 Instalar Django Rest Framework
+
+Instala DRF usando pip:
+
+``` bash
+pip install djangorestframework
+```
+
+### 1.4 Configurar el Proyecto
+
+Añade 'rest_framework' y tu nueva aplicación 'products' a la lista INSTALLED_APPS en ecommerce_project/settings.py:
+
+``` python
+INSTALLED_APPS = [
+    # ... otras apps
+    'rest_framework',
+    'products',
+]
+```
+
+## 2. Definir el Modelo de Datos
+
+### 2.1 Crear Modelos en products/models.py
+
+Define los modelos para el e-commerce, como Product, Category, y Order:
+
+``` python
+from django.db import models
+
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+class Product(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
+    stock = models.PositiveIntegerField()
+
+    def __str__(self):
+        return self.name
+
+class Order(models.Model):
+    product = models.ForeignKey(Product, related_name='orders', on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField()
+    total_price = models.DecimalField(max_digits=10, decimal_places=2)
+    order_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Order {self.id} - {self.product.name}"
+```
+
+### 2.2 Crear y Aplicar Migraciones
+
+Genera y aplica las migraciones para los modelos:
+
+``` bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+## 3. Crear Serializers
+
+### 3.1 Definir Serializers en products/serializers.py
+
+Los serializers se encargan de transformar los modelos en formatos JSON y viceversa:
+
+``` python
+from rest_framework import serializers
+from .models import Category, Product, Order
+
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = '__all__'
+
+class ProductSerializer(serializers.ModelSerializer):
+    category = CategorySerializer()
+
+    class Meta:
+        model = Product
+        fields = '__all__'
+
+class OrderSerializer(serializers.ModelSerializer):
+    product = ProductSerializer()
+
+    class Meta:
+        model = Order
+        fields = '__all__'
+```
+
+## 4. Crear Vistas y Rutas
+
+### 4.1 Definir Vistas en products/views.py
+
+Utiliza las vistas basadas en clases de DRF para crear y manejar las operaciones CRUD:
+
+``` python
+from rest_framework import generics
+from .models import Category, Product, Order
+from .serializers import CategorySerializer, ProductSerializer, OrderSerializer
+
+class CategoryListCreate(generics.ListCreateAPIView):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+
+class CategoryDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+
+class ProductListCreate(generics.ListCreateAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+
+class ProductDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+
+class OrderListCreate(generics.ListCreateAPIView):
+    queryset = Order.objects.all()
+    serializer_class = OrderSerializer
+
+class OrderDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Order.objects.all()
+    serializer_class = OrderSerializer
+```
+
+## 4.2 Configurar Rutas en products/urls.py
+
+Define las rutas para acceder a las vistas:
+
+``` python
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('categories/', views.CategoryListCreate.as_view(), name='category-list-create'),
+    path('categories/<int:pk>/', views.CategoryDetail.as_view(), name='category-detail'),
+    path('products/', views.ProductListCreate.as_view(), name='product-list-create'),
+    path('products/<int:pk>/', views.ProductDetail.as_view(), name='product-detail'),
+    path('orders/', views.OrderListCreate.as_view(), name='order-list-create'),
+    path('orders/<int:pk>/', views.OrderDetail.as_view(), name='order-detail'),
+]
+```
+
+## 4.3 Incluir las URLs en ecommerce_project/urls.py
+
+Añade las URLs de la aplicación al archivo principal de URLs del proyecto:
+
+``` python
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('api/', include('products.urls')),
+]
+```
+
+## 5. Probar la API
+
+### 5.1 Ejecutar el Servidor de Desarrollo
+
+Inicia el servidor de desarrollo de Django:
+
+``` bash
+python manage.py runserver
+```
+
+## 5.2 Probar los Endpoints
+
+Utiliza herramientas como Postman o cURL para probar los endpoints:
+
+*   Listar categorías: GET /api/categories/
+*   Crear categoría: POST /api/categories/
+*   Obtener categoría específica: GET /api/categories/{id}/
+*   Actualizar categoría: PUT /api/categories/{id}/
+*   Eliminar categoría: DELETE /api/categories/{id}/
+
+Y lo mismo para productos y pedidos.
+
+*   Listar productos: GET /api/products/
+*   Crear producto: POST /api/products/
+*   Obtener producto específico: GET /api/products/{id}/
+*   Actualizar producto: PUT /api/products/{id}/
+*   Eliminar producto: DELETE /api/products/{id}/
+
+# Extra
+
+Agreguemos Swagger a nuestro proyecto para tener una documentación de nuestra API.
+
+## 1. Instalar Django Rest Swagger
+
+Instala Django Rest Swagger usando pip:
+
+``` bash
+pip install drf-yasg
+```
+
+## 2. Configurar Django Rest Swagger
+
+Añade 'rest_framework_swagger' a la lista INSTALLED_APPS en ecommerce_project/settings.py:
+
+``` python
+from django.contrib import admin
+from django.urls import path, include
+from rest_framework import permissions
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+
+schema_view = get_schema_view(
+    openapi.Info(
+        title="E-commerce API",
+        default_version='v1',
+        description="API documentation for the E-commerce project",
+        terms_of_service="https://www.google.com/policies/terms/",
+        contact=openapi.Contact(email="contact@ecommerce.local"),
+        license=openapi.License(name="BSD License"),
+    ),
+    public=True,
+    permission_classes=(permissions.AllowAny,),
+)
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('api/', include('products.urls')),
+    path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+]
+```
+
+## 3. Configurar las URLs
+
+Añade las URLs de Swagger al archivo principal de URLs del proyecto:
+
+``` python
+´´´
+from rest_framework_swagger.views import get_swagger_view
+
+schema_view = get_swagger_view(title='E-Commerce API')
+
+urlpatterns = [
+    ´´´
+    path('docs/', schema_view),
+]
+```
+
+:::{.callout-tip}
+Para evitar un error común es necesario instalr **setuptools** con el siguiente comando:
+
+``` bash
+pip install setuptools
+```
+:::
+
+Finalmente es necesario agregar el siguiente código al final del archivo settings.py
+
+``` python
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'drf_yasg',
+    'rest_framework',
+    'products',
+]
+
+´´´
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
+}
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8000",
+    "http://127.0.0.1:8000",
+    # Añade otros orígenes permitidos aquí
+]
+```
+
+## 4. Probar la Documentación
+
