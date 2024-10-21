@@ -1,0 +1,121 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Bootcamp Desarrollo Web FullStack",
+    "section": "",
+    "text": "Bienvenido",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenido</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#de-qué-trata-este-curso",
+    "href": "index.html#de-qué-trata-este-curso",
+    "title": "Bootcamp Desarrollo Web FullStack",
+    "section": "¿De qué trata este curso?",
+    "text": "¿De qué trata este curso?\nEste curso completo me llevará desde los fundamentos básicos de la programación hasta la construcción de aplicaciones prácticas utilizando los frameworks Django y la biblioteca de React.\nA través de una combinación de teoría y ejercicios prácticos, me sumergiré en los conceptos esenciales del desarrollo web y avanzaré hacia la creación de proyectos del mundo real.\nDesde la configuración del entorno de desarrollo hasta la construcción de una aplicación web de pila completa, este curso me proporcionará una comprensión sólida y experiencia práctica con Django y React.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenido</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#para-quién-es-este-curso",
+    "href": "index.html#para-quién-es-este-curso",
+    "title": "Bootcamp Desarrollo Web FullStack",
+    "section": "¿Para quién es este curso?",
+    "text": "¿Para quién es este curso?\nEste curso está diseñado para principiantes y aquellos con poca o ninguna experiencia en programación.\nYa sea que sea un estudiante curioso, un profesional que busca cambiar de carrera o simplemente alguien que quiere aprender desarrollo web, este curso es para usted. Desde adolescentes hasta adultos, todos son bienvenidos a participar y explorar el emocionante mundo del desarrollo web con Django y React.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenido</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#cómo-contribuir",
+    "href": "index.html#cómo-contribuir",
+    "title": "Bootcamp Desarrollo Web FullStack",
+    "section": "¿Cómo contribuir?",
+    "text": "¿Cómo contribuir?\nValoramos su contribución a este curso. Si encuentra algún error, desea sugerir mejoras o agregar contenido adicional, me encantaría saber de usted.\nPuede contribuir a través del repositorio en linea, donde puede compartir sus comentarios y sugerencias.\nJuntos, podemos mejorar continuamente este recurso educativo para beneficiar a la comunidad de estudiantes y entusiastas de la programación.\nEste ebook ha sido creado con el objetivo de proporcionar acceso gratuito y universal al conocimiento.\nEstará disponible en línea para cualquier persona, sin importar su ubicación o circunstancias, para acceder y aprender a su propio ritmo.\nPuede descargarlo en formato PDF, Epub o verlo en línea en cualquier momento y lugar.\nEsperamos que disfrute este emocionante viaje de aprendizaje y descubrimiento en el mundo del desarrollo web con Django y React!",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenido</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/1_intr.html#introducción-general-a-la-programación",
+    "href": "unidades/unidad1/1_intr.html#introducción-general-a-la-programación",
+    "title": "Introducción e Instalaciones Necesarias.",
+    "section": "Introducción General a la Programación",
+    "text": "Introducción General a la Programación\nSi más preámbulos, empecemos con la introducción general a la programación.\nEs el proceso de diseñar e implementar un programa de computadora, es decir, un conjunto de instrucciones que le dicen a una computadora qué hacer.\nEs una habilidad muy valiosa en el mundo actual, ya que la mayoría de las tareas que realizamos a diario involucran el uso de computadoras y software.\nNos permite automatizar tareas, resolver problemas de manera eficiente y crear aplicaciones y sistemas que nos ayudan en nuestra vida diaria.\nEn este módulo aprenderemos los fundamentos de la programación utilizando Python, un lenguaje de programación de alto nivel, interpretado y orientado a objetos.\nAntes de introducirnos en el aprendizaje del lenguaje de programación, es importante conocer que debemos desarrollar la lógica de la prograamción, es decir, la habilidad de pensar de manera lógica y estructurada para resolver problemas de manera eficiente.\nAnalicemos el siguiente problema para entender la importancia de la lógica de programación:\n\nProblema: Supongamos que queremos escribir un programa que imprima los números del 1 al 10.\n\n¿Cómo resolverías este problema?\nUna posible solución sería escribir un programa que imprima los números del 1 al 10 de manera secuencial.\nprint(1)\nprint(2)\nprint(3)\nprint(4)\nprint(5)\nprint(6)\nprint(7)\nprint(8)\nprint(9)\nprint(10)\nEn el ejemplo anterior, hemos resuelto el problema de imprimir los números del 1 al 10 de manera secuencial. Sin embargo, esta solución no es escalable, ya que si quisiéramos imprimir los números del 1 al 1000, tendríamos que escribir 1000 instrucciones de impresión.\nUna solución más eficiente sería utilizar un bucle para imprimir los números del 1 al 10 de manera automática.\nfor i in range(1, 11):\n    print(i)\nEn el ejemplo anterior, hemos utilizado un bucle for para imprimir los números del 1 al 10 de manera automática. Esta solución es más eficiente y escalable, ya que podemos cambiar el rango del bucle para imprimir los números del 1 al 1000 sin tener que modificar el código.\n\nProblema: Supongamos que queremos escribir un programa que imprima un saludo personalizado.\n\n¿Cómo resolverías este problema?\nUna posible solución sería escribir un programa que solicite al usuario su nombre y luego imprima un saludo personalizado.\nname = input(\"Ingrese su nombre: \")\nprint(\"Hola, \" + name + \"!\")\nEn el ejemplo anterior, hemos resuelto el problema de imprimir un saludo personalizado solicitando al usuario su nombre. Esta solución es interactiva y personalizada, ya que el saludo se adapta al nombre del usuario.\nEn resumen, la lógica de programación es la habilidad de pensar de manera lógica y estructurada para resolver problemas de manera eficiente. Es fundamental para desarrollar programas y sistemas que nos ayuden en nuestra vida diaria.\nA continuación te ofresco algunas páginas que puedes revisar por tu cuenta y que te permitirán practicar el desarrollo de la lógica de programación:\n\nCodeSignal\nLeetCode\nHackerRank\nCodecademy\nedX\nCoursera\nUdemy",
+    "crumbs": [
+      "Unidad 1: Introducción e Instalaciones Necesarias",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introducción e Instalaciones Necesarias.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/1_intr.html#instalación-de-python",
+    "href": "unidades/unidad1/1_intr.html#instalación-de-python",
+    "title": "Introducción e Instalaciones Necesarias.",
+    "section": "Instalación de Python",
+    "text": "Instalación de Python\n\n\n\n\nPython\n\n\n\nPara instalar Python en tu computadora, sigue los siguientes pasos:\n\nVe al sitio web oficial de Python en https://www.python.org/.\nHaz clic en el botón de descarga de Python.\nSelecciona la versión de Python que deseas instalar (recomendamos la versión más reciente).\nDescarga el instalador de Python para tu sistema operativo (Windows, macOS o Linux).\nEjecuta el instalador de Python y sigue las instrucciones en pantalla para completar la instalación.\n\nUna vez que hayas instalado Python en tu computadora, puedes verificar que la instalación se haya realizado correctamente abriendo una terminal y ejecutando el siguiente comando:\npython --version\nSi la instalación se realizó correctamente, verás la versión de Python instalada en tu computadora.",
+    "crumbs": [
+      "Unidad 1: Introducción e Instalaciones Necesarias",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introducción e Instalaciones Necesarias.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/1_intr.html#uso-de-repl-pep-8-y-zen-de-python",
+    "href": "unidades/unidad1/1_intr.html#uso-de-repl-pep-8-y-zen-de-python",
+    "title": "Introducción e Instalaciones Necesarias.",
+    "section": "Uso de REPL, PEP 8 y Zen de Python",
+    "text": "Uso de REPL, PEP 8 y Zen de Python\nEn esta sección, aprenderemos acerca de REPL, PEP 8 y Zen de Python.\n\nREPL\nREPL (Read-Eval-Print Loop) es un entorno interactivo que permite escribir y ejecutar código de Python de manera interactiva. Es una excelente herramienta para probar y experimentar con el lenguaje de programación.\nPara abrir el REPL de Python, abre una terminal y ejecuta el siguiente comando:\npython\nUna vez que hayas abierto el REPL de Python, puedes escribir y ejecutar código de Python de manera interactiva. Por ejemplo, puedes escribir una expresión matemática y ver el resultado:\n&gt;&gt;&gt; 2 + 2\n&gt;&gt;&gt; 4\n&gt;&gt;&gt; 3 * 4\n&gt;&gt;&gt; 12\n&gt;&gt;&gt; 10 / 2\n&gt;&gt;&gt; 5.0\n&gt;&gt;&gt; 2 ** 3\n&gt;&gt;&gt; 8\n&gt;&gt;&gt; \"Hola, Mundo!\"\n&gt;&gt;&gt; 'Hola, Mundo!'\n&gt;&gt;&gt; \"Hola, \" + \"Mundo!\"\n&gt;&gt;&gt; 'Hola, ' * 3\n&gt;&gt;&gt; 'Hola, Hola, Hola, '\n&gt;&gt;&gt; print(\"Hola, Mundo!\")\n&gt;&gt;&gt; Hola, Mundo!\nEn el ejemplo anterior, hemos utilizado el REPL de Python para ejecutar expresiones matemáticas y cadenas de texto. Es una excelente manera de probar y experimentar con el lenguaje de programación.",
+    "crumbs": [
+      "Unidad 1: Introducción e Instalaciones Necesarias",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introducción e Instalaciones Necesarias.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/1_intr.html#entornos-de-desarrollo",
+    "href": "unidades/unidad1/1_intr.html#entornos-de-desarrollo",
+    "title": "Introducción e Instalaciones Necesarias.",
+    "section": "Entornos de Desarrollo",
+    "text": "Entornos de Desarrollo\nUn entorno de desarrollo es un conjunto de herramientas que nos permiten escribir, depurar y ejecutar código de manera eficiente. Es fundamental para desarrollar programas y sistemas de manera efectiva.\nExisten varios entornos de desarrollo que podemos utilizar para programar en Python. Algunos de los más populares son:\n\nIDLE: Es el entorno de desarrollo integrado (IDE) oficial de Python. Viene incluido con la instalación de Python y es una excelente opción para programar en Python.\nPyCharm: Es un IDE de Python desarrollado por JetBrains. Es una excelente opción para programar en Python, ya que ofrece muchas características y herramientas útiles.\nVisual Studio Code: Es un editor de código desarrollado por Microsoft. Es una excelente opción para programar en Python, ya que ofrece muchas extensiones y herramientas útiles.\nJupyter Notebook: Es una aplicación web que nos permite crear y compartir documentos interactivos que contienen código de Python, visualizaciones y texto explicativo.\n\nEn este bootcam utilizaremos Visual Studio Code como editor de código para programar en Python. Sin embargo, te recomiendo que explores otros entornos de desarrollo y elijas el que mejor se adapte a tus necesidades y preferencias.",
+    "crumbs": [
+      "Unidad 1: Introducción e Instalaciones Necesarias",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introducción e Instalaciones Necesarias.</span>"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Acerca de mi",
+    "section": "",
+    "text": "¡Hola! Soy Diego Saavedra, un experto en desarrollo avanzado de software e investigación. Mi amplia experiencia abarca diversas tecnologías, incluyendo Python (Django, Flask, Fast API) y JavaScript (Express, Next, React, Nestjs), así como también tengo conocimientos sólidos en bases de datos, arquitecturas de software y liderazgo ágil.\nMi pasión por la innovación, el desarrollo y la educación me ha llevado a destacarme como un profesional versátil e invaluable. Estoy constantemente listo para enfrentar desafíos técnicos y liderar proyectos de vanguardia.\nMi formación académica incluye el ser estudiante de Doctorado centrado en la inteligencia artificial, estoy enfocando mi investigación en la detección de TDA+H y Asperger mediante Visión Artificial a traves de algoritmos de Inteligencia Artificial. Además, poseo una Maestría en Ciencias de la Computación, con un enfoque en el Deep Learning (Convolutional Neural Network) y la Atención.\nCon esta sólida base académica y experiencia profesional, estoy preparado para aportar soluciones innovadoras y liderar equipos hacia el éxito en cualquier proyecto tecnológico que se me presente.\nAdemás, tengo experiencia en el desarrollo móvil utilizando Flutter y en la implementación de soluciones backend utilizando servicios Backend as a Service (BaaS) como Firebase y Supabase.\nEn el ámbito de la educación, he sido docente de programación en institutos y universidades, actualmente soy parte del Departamento de Ciencias de la Computación en la Universidad de las Fuerzas Armadas ESPE, donde he impartido asignaturas de desarrollo de Software Web con tecnologías como JavaScript, Java y C# asi como sus respectivos frameworks.\nMi experiencia en el desarrollo de software y la investigación me ha permitido adquirir habilidades de liderazgo, trabajo en equipo y comunicación efectiva. Estoy seguro de que mi experiencia y habilidades serán de gran valor para cualquier proyecto tecnológico que se me presente.\nEn este curso aprenderás a desarrollar aplicaciones web con Python y Django, una de las tecnologías más populares y poderosas para el desarrollo de aplicaciones web. A lo largo del curso, aprenderás a crear aplicaciones web desde cero, utilizando Django y Python, y a implementar funcionalidades avanzadas como integración con APIs externas y mucho más.\nTambien veremos tecnologías como Git, Github, Docker, Python, Django, Django Rest Framework, Html5, Css3, JavaScript, Nodejs, Npm y React.\n\n\n¡Estoy emocionado de compartir contigo mi conocimiento y experiencia en el desarrollo de aplicaciones web con Python y Django!"
+  },
+  {
+    "objectID": "license.html",
+    "href": "license.html",
+    "title": "Licencia",
+    "section": "",
+    "text": "Uso Permitido\nPuedes utilizar el contenido de este curso con fines educativos y personales. Puedes modificar los ejemplos y el código proporcionado para tus propias necesidades de aprendizaje."
+  },
+  {
+    "objectID": "license.html#restricciones",
+    "href": "license.html#restricciones",
+    "title": "Licencia",
+    "section": "Restricciones",
+    "text": "Restricciones\nNo tienes permitido redistribuir, vender o utilizar el contenido de este curso para fines comerciales sin el permiso explícito de [Nombre de la Compañía]. Además, no tienes permitido copiar o duplicar el contenido del curso y presentarlo como propio."
+  },
+  {
+    "objectID": "license.html#atribución",
+    "href": "license.html#atribución",
+    "title": "Licencia",
+    "section": "Atribución",
+    "text": "Atribución\nSi compartes los ejemplos, los fragmentos de código o el contenido de este curso en línea, te pedimos que proporciones la atribución adecuada a [Nombre de la Compañía]."
+  },
+  {
+    "objectID": "license.html#cambios-en-la-licencia",
+    "href": "license.html#cambios-en-la-licencia",
+    "title": "Licencia",
+    "section": "Cambios en la Licencia",
+    "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
+  }
+]
