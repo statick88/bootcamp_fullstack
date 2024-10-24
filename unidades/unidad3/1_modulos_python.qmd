@@ -1,0 +1,350 @@
+# Módulos en Python
+
+:::{.center}
+![Python](https://www.python.org/static/img/python-logo.png)
+:::
+
+## Introducción a Módulos.
+
+Los módulos en python son archivos que contienen definiciones y declaraciones de python. Los módulos permiten organizar el código en archivos separados. Los módulos se utilizan para reutilizar código y para mantener el código organizado.
+
+Ejemplo:
+
+```python
+# modulo.py 
+def saludar():
+    print("Hola Mundo")
+```
+
+En el código anterior se define un módulo **modulo.py** que contiene una función **saludar**.
+
+Ejemplo:
+
+```python
+# modulo.py
+def despedir():
+    print("Adiós Mundo")
+```
+
+En el código anterior se define un módulo **modulo.py** que contiene una función **despedir**.
+
+## Creando el primer Módulo.
+
+Para crear nuestro primer módulo en python, creamos un archivo con extensión **.py** y definimos las funciones que queremos exportar.
+
+Ejemplo:
+
+```python
+# modulo_saludar.py
+
+def saludar(nombre):
+    print(f"Hola {nombre}")
+```
+
+En el código anterior se define un módulo **modulo_saludar.py** que contiene una función **saludar**.
+
+## Creando el segundo Módulo.
+
+Para crear nuestro segundo módulo en python, creamos un archivo con extensión **.py** y definimos las funciones que queremos exportar.
+
+Ejemplo:
+
+```python
+# modulo_despedir.py
+
+def despedir(nombre):
+    print(f"Adiós {nombre}")
+```
+
+En el código anterior se define un módulo **modulo_despedir.py** que contiene una función **despedir**.
+
+## Creando el archivo principal.
+
+Para utilizar los módulos en python, creamos un archivo principal con extensión **.py** e importamos los módulos que queremos utilizar.
+
+Ejemplo:
+
+```python
+# main.py
+import modulo_saludar
+import modulo_despedir
+
+__name__ == "__main__"
+modulo_saludar.saludar("Juan")
+modulo_despedir.despedir("Juan")
+```
+
+En el código anterior se importan los módulos **modulo_saludar** y **modulo_despedir** y se utilizan las funciones **saludar** y **despedir**.
+
+## Importando Módulos.
+
+Para importar un módulo en python se utiliza la palabra clave **import** seguida del nombre del módulo.
+
+:::{.callout-tip}
+Utilizaremos el mismo ejemplo anterior.
+:::
+
+Ejemplo:
+
+```python
+# main.py
+
+import modulo_saludar
+import modulo_despedir
+
+modulo_saludar.saludar("Juan")
+modulo_despedir.despedir("Juan")
+```
+
+En el código anterior se importan los módulos **modulo_saludar** y **modulo_despedir** y se utilizan las funciones **saludar** y **despedir**.
+
+## Renombrando Módulos.
+
+Para renombrar un módulo en python se utiliza la palabra clave **as** seguida del nuevo nombre.
+
+Ejemplo:
+
+```python
+# main.py
+
+import modulo_saludar as saludar
+import modulo_despedir as despedir
+
+saludar.saludar("Juan")
+despedir.despedir("Juan")
+```
+
+En el código anterior se importan los módulos **modulo_saludar** y **modulo_despedir** con los nombres **saludar** y **despedir** respectivamente.
+
+## Seleccionando Elementos
+
+Para importar elementos específicos de un módulo en python se utiliza la palabra clave **from** seguida del nombre del módulo y la palabra clave **import** seguida del nombre del elemento.
+
+Ejemplo:
+
+```python
+# main.py
+
+from modulo_saludar import saludar
+
+saludar("Juan")
+
+from modulo_despedir import despedir
+
+despedir("Juan")
+```
+
+En el código anterior se importan las funciones **saludar** y **despedir** del módulo **modulo_saludar** y **modulo_despedir** respectivamente.
+
+## Seleccionando lo importado y pip
+
+:::{.callout-info}
+Vamos a crear una aplicación divertida con emojis.
+:::
+
+Ejemplo:
+
+```python
+# modulo_emojis.py
+
+def sonreir():
+    print("😊")
+
+def llorar():
+    print("😢")
+
+# main.py
+
+from modulo_emojis import sonreir
+
+sonreir()
+
+from modulo_emojis import llorar
+
+llorar()
+```
+
+En el código anterior se definen dos funciones **sonreir** y **llorar** en el módulo **modulo_emojis**. En el archivo **main.py** se importan las funciones **sonreir** y **llorar** y se utilizan.
+
+## Instalando Módulos con pip
+
+Para instalar módulos en python se utiliza la herramienta **pip**. **pip** es un sistema de gestión de paquetes utilizado para instalar y administrar paquetes de software escritos en python.
+
+Ejemplo:
+
+```bash
+pip install numpy
+```
+
+En el código anterior se instala el módulo **numpy** utilizando **pip**.
+
+Ahora pra utilizar este módulo en nuestro código, simplemente lo importamos.
+
+Ejemplo:
+
+```python
+import numpy as np
+
+a = np.array([1, 2, 3, 4, 5])
+
+print(a)
+```
+
+## Actividad
+
+1. Crear un módulo **modulo_calculadora.py** que contenga las funciones **sumar**, **restar**, **multiplicar** y **dividir**.
+
+2. Crear un archivo **main.py** que importe el módulo **modulo_calculadora** y utilice las funciones **sumar**, **restar**, **multiplicar** y **dividir**.
+
+3. Ejecutar el archivo **main.py**.
+
+4. Instalar el módulo **numpy** utilizando **pip**.
+
+5. Crear un archivo **main_numpy.py** que importe el módulo **numpy** y utilice la función **array** para crear un arreglo de números.
+
+6. Ejecutar el archivo **main_numpy.py**.
+
+7. Crear un archivo **main_pandas.py** que importe el módulo **pandas** y utilice la función **DataFrame** para crear un DataFrame.
+
+8. Ejecutar el archivo **main_pandas.py**.
+
+9. Crear un archivo **main_matplotlib.py** que importe el módulo **matplotlib** y utilice la función **plot** para graficar una función.
+
+10. Ejecutar el archivo **main_matplotlib.py**.
+
+<details>
+<summary>Respuesta</summary>
+
+1. Crear un módulo **modulo_calculadora.py** que contenga las funciones **sumar**, **restar**, **multiplicar** y **dividir**.
+
+```python
+# modulo_calculadora.py
+
+def sumar(a, b):
+    return a + b
+
+def restar(a, b):
+    return a - b
+
+def multiplicar(a, b):
+    return a * b
+
+def dividir(a, b):
+    return a / b
+```
+
+En el código anterior se define un módulo **modulo_calculadora.py** que contiene las funciones **sumar**, **restar**, **multiplicar** y **dividir**.
+
+2. Crear un archivo **main.py** que importe el módulo **modulo_calculadora** y utilice las funciones **sumar**, **restar**, **multiplicar** y **dividir**.
+
+```python
+# main.py
+
+import modulo_calculadora
+
+print(modulo_calculadora.sumar(2, 3))
+print(modulo_calculadora.restar(5, 3))
+print(modulo_calculadora.multiplicar(2, 3))
+print(modulo_calculadora.dividir(6, 3))
+```
+
+En el código anterior se importa el módulo **modulo_calculadora** y se utilizan las funciones **sumar**, **restar**, **multiplicar** y **dividir**.
+
+3. Ejecutar el archivo **main.py**.
+
+```bash
+python main.py
+```
+
+El resultado es:
+
+```bash
+5
+2
+6
+2.0
+``` 
+
+4. Instalar el módulo **numpy** utilizando **pip**.
+
+```bash
+pip install numpy
+```
+
+5. Crear un archivo **main_numpy.py** que importe el módulo **numpy** y utilice la función **array** para crear un arreglo de números.
+
+```python
+
+# main_numpy.py
+
+import numpy as np
+
+a = np.array([1, 2, 3, 4, 5])
+
+print(a)
+```
+
+En el código anterior se importa el módulo **numpy** y se utiliza la función **array** para crear un arreglo de números.
+
+
+6. Ejecutar el archivo **main_numpy.py**.
+
+```bash
+python main_numpy.py
+```
+
+7. Crear un archivo **main_pandas.py** que importe el módulo **pandas** y utilice la función **DataFrame** para crear un DataFrame.
+
+```python
+# main_pandas.py
+
+import pandas as pd
+
+data = {
+    'Nombre': ['Juan', 'Maria', 'Pedro'],
+    'Edad': [20, 25, 30]
+}
+
+df = pd.DataFrame(data)
+
+print(df)
+```
+
+En el código anterior se importa el módulo **pandas** y se utiliza la función **DataFrame** para crear un DataFrame.
+
+8. Ejecutar el archivo **main_pandas.py**.
+
+```bash
+python main_pandas.py
+```
+
+9. Crear un archivo **main_matplotlib.py** que importe el módulo **matplotlib** y utilice la función **plot** para graficar una función.
+
+```python
+# main_matplotlib.py
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(0, 10, 100)
+
+y = np.sin(x)
+
+plt.plot(x, y)
+
+plt.show()
+```
+
+En el código anterior se importa el módulo **matplotlib** y se utiliza la función **plot** para graficar una función.
+
+10. Ejecutar el archivo **main_matplotlib.py**.
+
+```bash
+python main_matplotlib.py
+```
+
+</details>
+
+# Conclusiones
+
+Los módulos en python son archivos que contienen definiciones y declaraciones de python. Los módulos permiten organizar el código en archivos separados. Los módulos se utilizan para reutilizar código y para mantener el código organizado.

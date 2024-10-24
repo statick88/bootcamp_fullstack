@@ -117,7 +117,7 @@ Para instalar Python en tu computadora, sigue los siguientes pasos:
 4. Descarga el instalador de Python para tu sistema operativo (Windows, macOS o Linux).
 
 :::{.center}
-![Python](images/instalador_pyhton.png)
+![Python](images/instalador_python.png)
 :::
 
 5. Ejecuta el instalador de Python y sigue las instrucciones en pantalla para completar la instalación.

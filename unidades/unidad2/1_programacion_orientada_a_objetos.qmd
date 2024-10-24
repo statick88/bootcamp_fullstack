@@ -1,0 +1,278 @@
+:::{.justify}
+# Programacion Orientada a Objetos.
+
+:::{.center}
+![Python](https://www.python.org/static/img/python-logo.png)
+:::
+
+La Programación Orientada a Objetos (POO) es un paradigma de programación que utiliza objetos y sus interacciones para diseñar aplicaciones y programas de computadora. Está basado en varias técnicas, incluyendo herencia, encapsulación, polimorfismo y abstracción.
+
+Su sintaxis es más clara y sencilla de entender que otros paradigmas de programación. Al permitirnos modelar entidades del mundo real de forma más directa.
+
+Ejemplo:
+
+```python
+class Coche:
+    def __init__(self, marca, modelo, color):
+        self.marca = marca
+        self.modelo = modelo
+        self.color = color
+
+    def acelerar(self):
+        print(f"El coche {self.marca} {self.modelo} de color {self.color} está acelerando")
+
+    def frenar(self):
+        print(f"El coche {self.marca} {self.modelo} de color {self.color} está frenando")
+
+    def __str__(self):
+        return f"Coche {self.marca} {self.modelo} de color {self.color}"
+```
+
+En el código anterior se define una clase **Coche** con tres atributos **marca**, **modelo** y **color**. Además, se definen tres métodos **acelerar**, **frenar** y **__str__**. El método **__str__** es un método especial que se llama cuando se convierte un objeto a una cadena de texto.
+
+Para crear un objeto de la clase **Coche** se hace de la siguiente manera:
+
+```python
+coche = Coche("Toyota", "Corolla", "Rojo")
+print(coche)
+coche.acelerar()
+coche.frenar()
+```
+
+En el código anterior se crea un objeto **coche** de la clase **Coche** con los atributos **Toyota**, **Corolla** y **Rojo**. Luego se imprime el objeto **coche** y se llama a los métodos **acelerar** y **frenar**.
+
+## Objetos y Clases
+
+Los objetos son instancias de una clase. Una clase es una plantilla para crear objetos. Los objetos tienen atributos y métodos.
+
+## Atributos
+
+Los atributos son variables que pertenecen a un objeto. Los atributos pueden ser de cualquier tipo de datos.
+
+Ejemplo:
+
+```python
+class Coche:
+    def __init__(self, marca, modelo, color):
+        self.marca = marca
+        self.modelo = modelo
+        self.color = color
+```
+
+En el código anterior se definen tres atributos **marca**, **modelo** y **color**.
+
+## Métodos
+
+Los métodos son funciones que pertenecen a un objeto. Los métodos pueden acceder a los atributos de un objeto.
+
+Ejemplo:
+
+```python
+class Coche:
+    def acelerar(self):
+        print(f"El coche {self.marca} {self.modelo} de color {self.color} está acelerando")
+
+    def frenar(self):
+        print(f"El coche {self.marca} {self.modelo} de color {self.color} está frenando")
+```
+
+En el código anterior se definen dos métodos **acelerar** y **frenar**.
+
+## Self, Eliminar Propiedades y Objetos
+
+El primer parámetro de un método es **self**. **Self** es una referencia al objeto actual. Se utiliza para acceder a los atributos y métodos de un objeto.
+
+Ejemplo:
+
+```python
+class Coche:
+    def __init__(self, marca, modelo, color):
+        self.marca = marca
+        self.modelo = modelo
+        self.color = color
+
+    def acelerar(self):
+        print(f"El coche {self.marca} {self.modelo} de color {self.color} está acelerando")
+
+    def frenar(self):
+        print(f"El coche {self.marca} {self.modelo} de color {self.color} está frenando")
+
+    def __del__(self):
+        print(f"El coche {self.marca} {self.modelo} de color {self.color} ha sido eliminado")
+
+coche = Coche("Toyota", "Corolla", "Rojo")
+print(coche)
+coche.acelerar()
+coche.frenar()
+del coche
+```
+
+En el código anterior se define un método especial **__del__** que se llama cuando un objeto es eliminado.
+
+## Herencia, Polimorfismo y Encapsulación
+
+La herencia es una característica de la POO que permite crear una nueva clase a partir de una clase existente. La nueva clase hereda los atributos y métodos de la clase existente.
+
+El polimorfismo es una característica de la POO que permite que un objeto se computadora de diferentes maneras dependiendo del contexto.
+
+La encapsulación es una característica de la POO que permite ocultar los detalles de implementación de un objeto.
+
+Ejemplo:
+
+```python
+Class Deporte:
+    def __init__(self, nombre):
+        self.nombre = nombre
+
+    def jugar(self):
+        pass
+
+class Futbol(Deporte):
+  def jugar(self):
+      print(f"Jugando futbol")
+
+class Baloncesto(Deporte):
+  def jugar(self):
+      print(f"Jugando baloncesto")
+
+deporte = Futbol("Futbol")
+deporte.jugar()
+
+deporte = Baloncesto("Baloncesto")
+deporte.jugar()
+```
+
+En el código anterior se define una clase **Deporte** con un método **jugar**. Luego se definen dos clases **Futbol** y **Baloncesto** que heredan de la clase **Deporte** y sobrescriben el método **jugar**.
+
+## Actividad
+
+1. Crear una clase **Persona** con los atributos **nombre**, **edad** y **sexo**.
+
+2. Crear una clase **Estudiante** que herede de la clase **Persona** con los atributos **carnet** y **carrera**.
+
+3. Crear una clase **Profesor** que herede de la clase **Persona** con los atributos **codigo** y **especialidad**.
+
+4. Crear una clase **Curso** con los atributos **nombre**, **codigo** y **profesor**.
+
+5. Crear una clase **Universidad** con los atributos **nombre** y **cursos**.
+
+6. Crear un objeto **universidad** de la clase **Universidad** con el nombre **Universidad de El Salvador** y los siguientes cursos:
+
+- **Curso 1**: Nombre: **Matematicas**, Codigo: **MAT101**, Profesor: **Juan Perez**
+- **Curso 2**: Nombre: **Fisica**, Codigo: **FIS101**, Profesor: **Maria Lopez**
+- **Curso 3**: Nombre: **Quimica**, Codigo: **QUI101**, Profesor: **Pedro Ramirez**
+
+7. Imprimir el objeto **universidad**.
+
+8. Crear un objeto **estudiante** de la clase **Estudiante** con los siguientes atributos:
+
+- Nombre: **Carlos Perez**
+
+- Edad: **20**
+
+- Sexo: **Masculino**
+
+- Carnet: **202010101**
+
+- Carrera: **Ingenieria en Sistemas Informaticos**
+
+9. Imprimir el objeto **estudiante**.
+
+10. Crear un objeto **profesor** de la clase **Profesor** con los siguientes atributos:
+
+- Nombre: **Juan Perez**
+
+- Edad: **30**
+
+- Sexo: **Masculino**
+
+- Codigo: **202020202**
+
+- Especialidad: **Matematicas**
+
+11. Imprimir el objeto **profesor**.
+
+12. Crear un objeto **curso** de la clase **Curso** con los siguientes atributos:
+
+- Nombre: **Matematicas**
+
+- Codigo: **MAT101**
+
+- Profesor: **Juan Perez**
+
+13. Imprimir el objeto **curso**.
+
+14. Agregar el objeto **curso** al objeto **universidad**.
+
+15. Imprimir el objeto **universidad**.
+
+16. Crear un objeto **curso** de la clase **Curso** con los siguientes atributos:
+
+- Nombre: **Fisica**
+
+- Codigo: **FIS101**
+
+- Profesor: **Maria Lopez**
+
+<details>
+  <summary>Respuesta</summary>
+
+```python
+class Persona:
+    def __init__(self, nombre, edad, sexo):
+        self.nombre = nombre
+        self.edad = edad
+        self.sexo = sexo
+
+class Estudiante(Persona):
+    def __init__(self, nombre, edad, sexo, carnet, carrera):
+        super().__init__(nombre, edad, sexo)
+        self.carnet = carnet
+        self.carrera = carrera
+
+class Profesor(Persona):
+    def __init__(self, nombre, edad, sexo, codigo, especialidad):
+        super().__init__(nombre, edad, sexo)
+        self.codigo = codigo
+        self.especialidad = especialidad
+
+class Curso:
+    def __init__(self, nombre, codigo, profesor):
+        self.nombre = nombre
+        self.codigo = codigo
+        self.profesor = profesor
+
+class Universidad
+    def __init__(self, nombre):
+        self.nombre = nombre
+        self.cursos = []
+
+universidad = Universidad("Universidad de las Fuerzas Armadas ESPE")
+curso1 = Curso("Matematicas", "MAT101", "Juan Perez")
+curso2 = Curso("Fisica", "FIS101", "Maria Lopez")
+curso3 = Curso("Quimica", "QUI101", "Pedro Ramirez")
+universidad.cursos.append(curso1)
+universidad.cursos.append(curso2)
+universidad.cursos.append(curso3)
+print(universidad)
+
+estudiante = Estudiante("Carlos Perez", 20, "Masculino", "202010101", "Ingenieria en Sistemas Informaticos")
+print(estudiante)
+
+profesor = Profesor("Juan Perez", 30, "Masculino", "202020202", "Matematicas")
+print(profesor)
+
+curso = Curso("Matematicas", "MAT101", "Juan Perez")
+print(curso)
+
+curso = Curso("Fisica", "FIS101", "Maria Lopez")
+universidad.cursos.append(curso)
+print(universidad)
+```
+
+</details>
+
+# Conclusiones
+
+La Programación Orientada a Objetos (POO) es un paradigma de programación que utiliza objetos y sus interacciones para diseñar aplicaciones y programas de computadora. Está basado en varias técnicas, incluyendo herencia, encapsulación, polimorfismo y abstracción.
+:::

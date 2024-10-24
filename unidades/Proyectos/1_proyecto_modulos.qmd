@@ -1,0 +1,150 @@
+:::{.justify}
+
+# 📝 Gestor de Tareas con Prioridades
+
+:::{.center}
+![Gestor de Tareas](images/proyecto_modulos.png)
+:::
+
+Una aplicación interactiva que permite organizar tus tareas de manera eficiente, asignando prioridades y estableciendo fechas límite.
+
+## Módulos del Proyecto
+
+### 📋 Módulo de tareas
+
+- Crear una nueva tarea con título, descripción, fecha límite y prioridad.
+
+- Marcar tareas como completadas ✅ o en progreso 🔄.
+
+- Organizar las tareas en orden de prioridad 🔥 o por fecha límite 📅.
+
+
+## Funciones Clave
+
+- Prioriza tus tareas con un sistema de prioridades: baja, media y alta 🔥.
+
+### Desarrollo
+
+Creamos la siguiente estructura de carpetas para organizar nuestro proyecto:
+
+```plaintext
+proyecto_modulos/
+│
+├── tareas/
+│   ├── __init__.py
+│   ├── tareas.py
+│
+```
+
+En el archivo **tareas.py** definimos las clases y funciones necesarias para gestionar las tareas.
+
+```python
+# tareas.py
+
+class Tarea:
+    def __init__(self, titulo, descripcion, fecha_limite, prioridad):
+        self.titulo = titulo
+        self.descripcion = descripcion
+        self.fecha_limite = fecha_limite
+        self.prioridad = prioridad
+        self.completada = False
+
+    def marcar_completada(self):
+        self.completada = True
+
+    def marcar_en_progreso(self):
+        self.completada = False
+
+    def __str__(self):
+        return f"{self.titulo} - {self.prioridad} - {self.fecha_limite}"
+```
+
+En el archivo **__init__.py** definimos las funciones principales para interactuar con las tareas.
+
+```python
+# __init__.py
+
+from tareas import Tarea
+
+def crear_tarea(titulo, descripcion, fecha_limite, prioridad):
+    return Tarea(titulo, descripcion, fecha_limite, prioridad)
+
+def marcar_completada(tarea):
+    tarea.marcar_completada()
+
+def marcar_en_progreso(tarea):
+    tarea.marcar_en_progreso()
+```
+
+Con esta estructura básica, podemos empezar a desarrollar la funcionalidad de nuestro gestor de tareas. En los siguientes módulos, ampliaremos las capacidades de nuestra aplicación y añadiremos nuevas funcionalidades.
+
+Para poder probar nuestro código, podemos crear un script de prueba en la misma carpeta:
+
+```python
+# test.py
+
+from tareas import Tarea
+
+tarea1 = Tarea("Hacer la compra", "Comprar leche, pan y fruta", "2022-12-31", "alta")
+
+print(tarea1)
+```
+
+Al ejecutar el script de prueba, deberíamos ver la información de la tarea creada.
+
+```bash
+$ python test.py
+Hacer la compra - alta - 2022-12-31
+```
+# Extra 🎁
+
+- Añadir la funcionalidad de editar y eliminar tareas.
+
+```python
+def editar_tarea(tarea, titulo=None, descripcion=None, fecha_limite=None, prioridad=None):
+    if titulo:
+        tarea.titulo = titulo
+    if descripcion:
+        tarea.descripcion = descripcion
+    if fecha_limite:
+        tarea.fecha_limite = fecha_limite
+    if prioridad:
+        tarea.prioridad = prioridad
+```
+
+- Implementar un sistema de notificaciones para recordar las fechas límite de las tareas.
+
+```python
+import datetime
+
+def notificar_tareas(tareas):
+    hoy = datetime.date.today()
+    for tarea in tareas:
+        if tarea.fecha_limite == hoy:
+            print(f"¡Recuerda! La tarea '{tarea.titulo}' vence hoy.")
+```
+
+- Crear una interfaz gráfica para una mejor experiencia de usuario.
+
+```python
+import tkinter as tk
+
+root = tk.Tk()
+
+label = tk.Label(root, text="Gestor de Tareas")
+label.pack()
+
+root.mainloop()
+```
+
+# Conclusión
+
+Con estos módulos básicos, hemos sentado las bases para desarrollar un gestor de tareas con prioridades. A medida que añadamos más funcionalidades y módulos, nuestra aplicación se volverá más completa y útil para organizar nuestras tareas diarias.
+
+# Reto 💡
+
+- Implementar un sistema de categorías para organizar las tareas por proyectos o áreas de interés.
+
+:::
+
+

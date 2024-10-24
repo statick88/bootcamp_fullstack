@@ -40,6 +40,20 @@ book:
         - unidades/unidad1/4_control_de_flujo.qmd
         - unidades/unidad1/5_funciones_y_recursividad.qmd
 
+
+    - part: "Unidad 2: Programación Orientada a Objetos"
+      chapters: 
+        - unidades/unidad2/1_programacion_orientada_a_objetos.qmd
+
+    - part: "Unidad 3: Módulos y Paquetes"
+      chapters: 
+        - unidades/unidad3/1_modulos_python.qmd
+
+    - part: "Proyectos"
+      chapters: 
+        - unidades/Proyectos/1_proyecto_modulos.qmd
+        - unidades/Proyectos/2_proyecto_poo.qmd
+
 bibliography: references.bib
 biblio-style: "apalike"
 

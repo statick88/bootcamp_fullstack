@@ -10,115 +10,6 @@
     ]
   },
   {
-    "objectID": "index.html#de-qué-trata-este-curso",
-    "href": "index.html#de-qué-trata-este-curso",
-    "title": "Bootcamp Desarrollo Web FullStack",
-    "section": "¿De qué trata este curso?",
-    "text": "¿De qué trata este curso?\nEste curso completo me llevará desde los fundamentos básicos de la programación hasta la construcción de aplicaciones prácticas utilizando los frameworks Django y la biblioteca de React.\nA través de una combinación de teoría y ejercicios prácticos, me sumergiré en los conceptos esenciales del desarrollo web y avanzaré hacia la creación de proyectos del mundo real.\nDesde la configuración del entorno de desarrollo hasta la construcción de una aplicación web de pila completa, este curso me proporcionará una comprensión sólida y experiencia práctica con Django y React.",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenido</span>"
-    ]
-  },
-  {
-    "objectID": "index.html#para-quién-es-este-curso",
-    "href": "index.html#para-quién-es-este-curso",
-    "title": "Bootcamp Desarrollo Web FullStack",
-    "section": "¿Para quién es este curso?",
-    "text": "¿Para quién es este curso?\nEste curso está diseñado para principiantes y aquellos con poca o ninguna experiencia en programación.\nYa sea que sea un estudiante curioso, un profesional que busca cambiar de carrera o simplemente alguien que quiere aprender desarrollo web, este curso es para usted. Desde adolescentes hasta adultos, todos son bienvenidos a participar y explorar el emocionante mundo del desarrollo web con Django y React.",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenido</span>"
-    ]
-  },
-  {
-    "objectID": "index.html#cómo-contribuir",
-    "href": "index.html#cómo-contribuir",
-    "title": "Bootcamp Desarrollo Web FullStack",
-    "section": "¿Cómo contribuir?",
-    "text": "¿Cómo contribuir?\nValoramos su contribución a este bootcamp. Si encuentra algún error, desea sugerir mejoras o agregar contenido adicional, me encantaría saber de usted.\nPuede contribuir a través del repositorio en linea, donde puede compartir sus comentarios y sugerencias.\nJuntos, podemos mejorar continuamente este recurso educativo para beneficiar a la comunidad de estudiantes y entusiastas de la programación.\nEste ebook ha sido creado con el objetivo de proporcionar acceso gratuito y universal al conocimiento.\nEstará disponible en línea para cualquier persona, sin importar su ubicación o circunstancias, para acceder y aprender a su propio ritmo.\nPuede descargarlo en formato PDF, Epub o verlo en línea en cualquier momento y lugar.\nEsperamos que disfrute este emocionante viaje de aprendizaje y descubrimiento en el mundo del desarrollo web con Django, FastAPI y React!",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenido</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad1/1_intr.html#introducción-general-a-la-programación",
-    "href": "unidades/unidad1/1_intr.html#introducción-general-a-la-programación",
-    "title": "Introducción e Instalaciones Necesarias.",
-    "section": "Introducción General a la Programación",
-    "text": "Introducción General a la Programación\nSi más preámbulos, empecemos con la introducción general a la programación.\nEs el proceso de diseñar e implementar un programa de computadora, es decir, un conjunto de instrucciones que le dicen a una computadora qué hacer.\nEs una habilidad muy valiosa en el mundo actual, ya que la mayoría de las tareas que realizamos a diario involucran el uso de computadoras y software.\nNos permite automatizar tareas, resolver problemas de manera eficiente y crear aplicaciones y sistemas que nos ayudan en nuestra vida diaria.\nEn este módulo aprenderemos los fundamentos de la programación utilizando Python, un lenguaje de programación de alto nivel, interpretado y orientado a objetos.\nAntes de introducirnos en el aprendizaje del lenguaje de programación, es importante conocer que debemos desarrollar la lógica de la prograamción, es decir, la habilidad de pensar de manera lógica y estructurada para resolver problemas de manera eficiente.\nAnalicemos el siguiente problema para entender la importancia de la lógica de programación:\n\nProblema: Supongamos que queremos escribir un programa que imprima los números del 1 al 10.\n\n¿Cómo resolverías este problema?\nUna posible solución sería escribir un programa que imprima los números del 1 al 10 de manera secuencial.\nprint(1)\nprint(2)\nprint(3)\nprint(4)\nprint(5)\nprint(6)\nprint(7)\nprint(8)\nprint(9)\nprint(10)\nEn el ejemplo anterior, hemos resuelto el problema de imprimir los números del 1 al 10 de manera secuencial. Sin embargo, esta solución no es escalable, ya que si quisiéramos imprimir los números del 1 al 1000, tendríamos que escribir 1000 instrucciones de impresión.\nUna solución más eficiente sería utilizar un bucle para imprimir los números del 1 al 10 de manera automática.\nfor i in range(1, 11):\n    print(i)\nEn el ejemplo anterior, hemos utilizado un bucle for para imprimir los números del 1 al 10 de manera automática. Esta solución es más eficiente y escalable, ya que podemos cambiar el rango del bucle para imprimir los números del 1 al 1000 sin tener que modificar el código.\n\nProblema: Supongamos que queremos escribir un programa que imprima un saludo personalizado.\n\n¿Cómo resolverías este problema?\nUna posible solución sería escribir un programa que solicite al usuario su nombre y luego imprima un saludo personalizado.\nname = input(\"Ingrese su nombre: \")\nprint(\"Hola, \" + name + \"!\")\nEn el ejemplo anterior, hemos resuelto el problema de imprimir un saludo personalizado solicitando al usuario su nombre. Esta solución es interactiva y personalizada, ya que el saludo se adapta al nombre del usuario.\nEn resumen, la lógica de programación es la habilidad de pensar de manera lógica y estructurada para resolver problemas de manera eficiente. Es fundamental para desarrollar programas y sistemas que nos ayuden en nuestra vida diaria.\nA continuación te ofresco algunas páginas que puedes revisar por tu cuenta y que te permitirán practicar el desarrollo de la lógica de programación:\n\nCodeSignal\nLeetCode\nHackerRank\nCodecademy\nedX\nCoursera\nUdemy",
-    "crumbs": [
-      "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introducción e Instalaciones Necesarias.</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad1/1_intr.html#instalación-de-python",
-    "href": "unidades/unidad1/1_intr.html#instalación-de-python",
-    "title": "Introducción e Instalaciones Necesarias.",
-    "section": "Instalación de Python",
-    "text": "Instalación de Python\n\n\n\n\nPython\n\n\n\nPara instalar Python en tu computadora, sigue los siguientes pasos:\n\nVe al sitio web oficial de Python en https://www.python.org/.\nHaz clic en el botón de descarga de Python.\nSelecciona la versión de Python que deseas instalar (recomendamos la versión más reciente).\nDescarga el instalador de Python para tu sistema operativo (Windows, macOS o Linux).\nEjecuta el instalador de Python y sigue las instrucciones en pantalla para completar la instalación.\n\nUna vez que hayas instalado Python en tu computadora, puedes verificar que la instalación se haya realizado correctamente abriendo una terminal y ejecutando el siguiente comando:\npython --version\nSi la instalación se realizó correctamente, verás la versión de Python instalada en tu computadora.",
-    "crumbs": [
-      "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introducción e Instalaciones Necesarias.</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad1/1_intr.html#uso-de-repl-pep-8-y-zen-de-python",
-    "href": "unidades/unidad1/1_intr.html#uso-de-repl-pep-8-y-zen-de-python",
-    "title": "Introducción e Instalaciones Necesarias.",
-    "section": "Uso de REPL, PEP 8 y Zen de Python",
-    "text": "Uso de REPL, PEP 8 y Zen de Python\nEn esta sección, aprenderemos acerca de REPL, PEP 8 y Zen de Python.\n\nREPL\nREPL (Read-Eval-Print Loop) es un entorno interactivo que permite escribir y ejecutar código de Python de manera interactiva. Es una excelente herramienta para probar y experimentar con el lenguaje de programación.\nPara abrir el REPL de Python, abre una terminal y ejecuta el siguiente comando:\npython\nUna vez que hayas abierto el REPL de Python, puedes escribir y ejecutar código de Python de manera interactiva. Por ejemplo, puedes escribir una expresión matemática y ver el resultado:\n&gt;&gt;&gt; 2 + 2\n&gt;&gt;&gt; 4\n&gt;&gt;&gt; 3 * 4\n&gt;&gt;&gt; 12\n&gt;&gt;&gt; 10 / 2\n&gt;&gt;&gt; 5.0\n&gt;&gt;&gt; 2 ** 3\n&gt;&gt;&gt; 8\n&gt;&gt;&gt; \"Hola, Mundo!\"\n&gt;&gt;&gt; 'Hola, Mundo!'\n&gt;&gt;&gt; \"Hola, \" + \"Mundo!\"\n&gt;&gt;&gt; 'Hola, ' * 3\n&gt;&gt;&gt; 'Hola, Hola, Hola, '\n&gt;&gt;&gt; print(\"Hola, Mundo!\")\n&gt;&gt;&gt; Hola, Mundo!\nEn el ejemplo anterior, hemos utilizado el REPL de Python para ejecutar expresiones matemáticas y cadenas de texto. Es una excelente manera de probar y experimentar con el lenguaje de programación.",
-    "crumbs": [
-      "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introducción e Instalaciones Necesarias.</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad1/1_intr.html#entornos-de-desarrollo",
-    "href": "unidades/unidad1/1_intr.html#entornos-de-desarrollo",
-    "title": "Introducción e Instalaciones Necesarias.",
-    "section": "Entornos de Desarrollo",
-    "text": "Entornos de Desarrollo\nUn entorno de desarrollo es un conjunto de herramientas que nos permiten escribir, depurar y ejecutar código de manera eficiente. Es fundamental para desarrollar programas y sistemas de manera efectiva.\nExisten varios entornos de desarrollo que podemos utilizar para programar en Python. Algunos de los más populares son:\n\nIDLE: Es el entorno de desarrollo integrado (IDE) oficial de Python. Viene incluido con la instalación de Python y es una excelente opción para programar en Python.\nPyCharm: Es un IDE de Python desarrollado por JetBrains. Es una excelente opción para programar en Python, ya que ofrece muchas características y herramientas útiles.\nVisual Studio Code: Es un editor de código desarrollado por Microsoft. Es una excelente opción para programar en Python, ya que ofrece muchas extensiones y herramientas útiles.\nJupyter Notebook: Es una aplicación web que nos permite crear y compartir documentos interactivos que contienen código de Python, visualizaciones y texto explicativo.\n\nEn este bootcam utilizaremos Visual Studio Code como editor de código para programar en Python. Sin embargo, te recomiendo que explores otros entornos de desarrollo y elijas el que mejor se adapte a tus necesidades y preferencias.",
-    "crumbs": [
-      "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introducción e Instalaciones Necesarias.</span>"
-    ]
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Acerca de mi",
-    "section": "",
-    "text": "¡Hola! Soy Diego Saavedra, un experto en desarrollo avanzado de software e investigación. Mi amplia experiencia abarca diversas tecnologías, incluyendo Python (Django, Flask, Fast API) y JavaScript (Express, Next, React, Nestjs), así como también tengo conocimientos sólidos en bases de datos, arquitecturas de software y liderazgo ágil.\nMi pasión por la innovación, el desarrollo y la educación me ha llevado a destacarme como un profesional versátil e invaluable. Estoy constantemente listo para enfrentar desafíos técnicos y liderar proyectos de vanguardia.\nMi formación académica incluye el ser estudiante de Doctorado centrado en la inteligencia artificial, estoy enfocando mi investigación en la detección de TDA+H y Asperger mediante Visión Artificial a traves de algoritmos de Inteligencia Artificial. Además, poseo una Maestría en Ciencias de la Computación, con un enfoque en el Deep Learning (Convolutional Neural Network) y la Atención.\nCon esta sólida base académica y experiencia profesional, estoy preparado para aportar soluciones innovadoras y liderar equipos hacia el éxito en cualquier proyecto tecnológico que se me presente.\nAdemás, tengo experiencia en el desarrollo móvil utilizando Flutter y en la implementación de soluciones backend utilizando servicios Backend as a Service (BaaS) como Firebase y Supabase.\nEn el ámbito de la educación, he sido docente de programación en institutos y universidades, actualmente soy parte del Departamento de Ciencias de la Computación en la Universidad de las Fuerzas Armadas ESPE, donde he impartido asignaturas de desarrollo de Software Web con tecnologías como JavaScript, Java y C# asi como sus respectivos frameworks.\nMi experiencia en el desarrollo de software y la investigación me ha permitido adquirir habilidades de liderazgo, trabajo en equipo y comunicación efectiva. Estoy seguro de que mi experiencia y habilidades serán de gran valor para cualquier proyecto tecnológico que se me presente.\nEn este curso aprenderás a desarrollar aplicaciones web con Python y Django, una de las tecnologías más populares y poderosas para el desarrollo de aplicaciones web. A lo largo del curso, aprenderás a crear aplicaciones web desde cero, utilizando Django y Python, y a implementar funcionalidades avanzadas como integración con APIs externas y mucho más.\nTambien veremos tecnologías como Git, Github, Docker, Python, Django, Django Rest Framework, Html5, Css3, JavaScript, Nodejs, Npm y React.\n\n\n¡Estoy emocionado de compartir contigo mi conocimiento y experiencia en el desarrollo de aplicaciones web con Python y Django!"
-  },
-  {
-    "objectID": "license.html",
-    "href": "license.html",
-    "title": "Licencia",
-    "section": "",
-    "text": "Uso Permitido\nPuedes utilizar el contenido de este curso con fines educativos y personales. Puedes modificar los ejemplos y el código proporcionado para tus propias necesidades de aprendizaje."
-  },
-  {
-    "objectID": "license.html#restricciones",
-    "href": "license.html#restricciones",
-    "title": "Licencia",
-    "section": "Restricciones",
-    "text": "Restricciones\nNo tienes permitido redistribuir, vender o utilizar el contenido de este curso para fines comerciales sin el permiso explícito de [Nombre de la Compañía]. Además, no tienes permitido copiar o duplicar el contenido del curso y presentarlo como propio."
-  },
-  {
-    "objectID": "license.html#atribución",
-    "href": "license.html#atribución",
-    "title": "Licencia",
-    "section": "Atribución",
-    "text": "Atribución\nSi compartes los ejemplos, los fragmentos de código o el contenido de este curso en línea, te pedimos que proporciones la atribución adecuada a [Nombre de la Compañía]."
-  },
-  {
-    "objectID": "license.html#cambios-en-la-licencia",
-    "href": "license.html#cambios-en-la-licencia",
-    "title": "Licencia",
-    "section": "Cambios en la Licencia",
-    "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
-  },
-  {
     "objectID": "index.html#de-qué-trata-este-bootcamp",
     "href": "index.html#de-qué-trata-este-bootcamp",
     "title": "Bootcamp Desarrollo Web FullStack",
@@ -144,6 +35,16 @@
     "title": "Bootcamp Desarrollo Web FullStack",
     "section": "¿Qué aprenderás?",
     "text": "¿Qué aprenderás?\nAprenderás algunos lenguajes de programación como Python, JavaScript y TypeScript, así como algunos de los frameworks y bibliotecas más populares como Django, FastAPI y React.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenido</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#cómo-contribuir",
+    "href": "index.html#cómo-contribuir",
+    "title": "Bootcamp Desarrollo Web FullStack",
+    "section": "¿Cómo contribuir?",
+    "text": "¿Cómo contribuir?\nValoramos su contribución a este bootcamp. Si encuentra algún error, desea sugerir mejoras o agregar contenido adicional, me encantaría saber de usted.\nPuede contribuir a través del repositorio en linea, donde puede compartir sus comentarios y sugerencias.\nJuntos, podemos mejorar continuamente este recurso educativo para beneficiar a la comunidad de estudiantes y entusiastas de la programación.\nEste ebook ha sido creado con el objetivo de proporcionar acceso gratuito y universal al conocimiento.\nEstará disponible en línea para cualquier persona, sin importar su ubicación o circunstancias, para acceder y aprender a su propio ritmo.\nPuede descargarlo en formato PDF, Epub o verlo en línea en cualquier momento y lugar.\nEsperamos que disfrute este emocionante viaje de aprendizaje y descubrimiento en el mundo del desarrollo web con Django, FastAPI y React!",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenido</span>"
     ]
@@ -193,10 +94,32 @@
     ]
   },
   {
-    "objectID": "unidades/unidad1/2_introduccion_a_la_programacion.html",
-    "href": "unidades/unidad1/2_introduccion_a_la_programacion.html",
+    "objectID": "unidades/unidad1/1_introduccion.html#consejos-para-mejorar-la-lógica-de-programación.",
+    "href": "unidades/unidad1/1_introduccion.html#consejos-para-mejorar-la-lógica-de-programación.",
+    "title": "Introducción e Instalaciones Necesarias.",
+    "section": "5 Consejos para mejorar la lógica de programación.",
+    "text": "5 Consejos para mejorar la lógica de programación.\n\nPractica regularmente: La práctica es fundamental para mejorar la lógica de programación. Dedica tiempo a resolver problemas de programación y desafíos lógicos de manera regular.\nDescompón el problema: Divide los problemas complejos en problemas más pequeños y manejables. Esto te ayudará a abordar el problema de manera más efectiva y eficiente.\nUtiliza pseudocódigo: Antes de escribir código, utiliza pseudocódigo para planificar y diseñar tu solución. Esto te ayudará a visualizar el problema y encontrar una solución más clara.\nComenta tu código: Utiliza comentarios para explicar tu código y hacerlo más legible. Esto te ayudará a entender tu código y a identificar posibles errores.\nColabora con otros: Trabaja en equipo con otros programadores para resolver problemas de programación. La colaboración te permitirá aprender de otros y mejorar tus habilidades de programación.\n\n¡Espero que estos consejos te sean útiles para mejorar tu lógica de programación!",
+    "crumbs": [
+      "Unidad 1: Introducción e Instalaciones Necesarias",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introducción e Instalaciones Necesarias.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/1_introduccion.html#conclusiones",
+    "href": "unidades/unidad1/1_introduccion.html#conclusiones",
+    "title": "Introducción e Instalaciones Necesarias.",
+    "section": "Conclusiones",
+    "text": "Conclusiones\nEn este módulo hemos aprendido acerca de la introducción general a la programación, la instalación de Python, el uso de REPL, PEP 8 y Zen de Python, y los entornos de desarrollo que podemos utilizar para programar en Python.",
+    "crumbs": [
+      "Unidad 1: Introducción e Instalaciones Necesarias",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introducción e Instalaciones Necesarias.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad1/2_introduccion_a_la_programacion.html#qué-es-la-programación",
+    "href": "unidades/unidad1/2_introduccion_a_la_programacion.html#qué-es-la-programación",
     "title": "Introducción a la Programación con Python",
-    "section": "",
+    "section": "¿Qué es la programación?",
     "text": "¿Qué es la programación?\nLa programación es el proceso de diseñar e implementar un programa de computadora. Un programa es un conjunto de instrucciones que le dice a la computadora qué hacer. Estas instrucciones pueden ser escritas en diferentes lenguajes de programación, como Python, Java, C++, entre otros.",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
@@ -292,39 +215,6 @@
     ]
   },
   {
-    "objectID": "unidades/unidad1/2_introduccion_a_la_programacion.html#qué-es-la-programación",
-    "href": "unidades/unidad1/2_introduccion_a_la_programacion.html#qué-es-la-programación",
-    "title": "Introducción a la Programación con Python",
-    "section": "¿Qué es la programación?",
-    "text": "¿Qué es la programación?\nLa programación es el proceso de diseñar e implementar un programa de computadora. Un programa es un conjunto de instrucciones que le dice a la computadora qué hacer. Estas instrucciones pueden ser escritas en diferentes lenguajes de programación, como Python, Java, C++, entre otros.",
-    "crumbs": [
-      "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introducción a la Programación con Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad1/1_introduccion.html#consejos-para-mejorar-la-lógica-de-programación.",
-    "href": "unidades/unidad1/1_introduccion.html#consejos-para-mejorar-la-lógica-de-programación.",
-    "title": "Introducción e Instalaciones Necesarias.",
-    "section": "5 Consejos para mejorar la lógica de programación.",
-    "text": "5 Consejos para mejorar la lógica de programación.\n\nPractica regularmente: La práctica es fundamental para mejorar la lógica de programación. Dedica tiempo a resolver problemas de programación y desafíos lógicos de manera regular.\nDescompón el problema: Divide los problemas complejos en problemas más pequeños y manejables. Esto te ayudará a abordar el problema de manera más efectiva y eficiente.\nUtiliza pseudocódigo: Antes de escribir código, utiliza pseudocódigo para planificar y diseñar tu solución. Esto te ayudará a visualizar el problema y encontrar una solución más clara.\nComenta tu código: Utiliza comentarios para explicar tu código y hacerlo más legible. Esto te ayudará a entender tu código y a identificar posibles errores.\nColabora con otros: Trabaja en equipo con otros programadores para resolver problemas de programación. La colaboración te permitirá aprender de otros y mejorar tus habilidades de programación.\n\n¡Espero que estos consejos te sean útiles para mejorar tu lógica de programación!",
-    "crumbs": [
-      "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introducción e Instalaciones Necesarias.</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad1/1_introduccion.html#conclusiones",
-    "href": "unidades/unidad1/1_introduccion.html#conclusiones",
-    "title": "Introducción e Instalaciones Necesarias.",
-    "section": "Conclusiones",
-    "text": "Conclusiones\nEn este módulo hemos aprendido acerca de la introducción general a la programación, la instalación de Python, el uso de REPL, PEP 8 y Zen de Python, y los entornos de desarrollo que podemos utilizar para programar en Python.",
-    "crumbs": [
-      "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introducción e Instalaciones Necesarias.</span>"
-    ]
-  },
-  {
     "objectID": "unidades/unidad1/3_tipos_de_datos.html#string-y-números.",
     "href": "unidades/unidad1/3_tipos_de_datos.html#string-y-números.",
     "title": "Tipos de Datos",
@@ -380,11 +270,11 @@
     ]
   },
   {
-    "objectID": "unidades/unidad1/4_control_de_flujo.html",
-    "href": "unidades/unidad1/4_control_de_flujo.html",
+    "objectID": "unidades/unidad1/4_control_de_flujo.html#if-y-condicionales",
+    "href": "unidades/unidad1/4_control_de_flujo.html#if-y-condicionales",
     "title": "Control de Flujo",
-    "section": "",
-    "text": "If y Condicionales\nPara entender el concepto de If y Condicionales en Python, primero debemos comprender qué es una condición. Una condición es una expresión que se evalúa como verdadera o falsa. En Python, las condiciones se utilizan para tomar decisiones en un programa.\nLa estructura básica de un If en Python es la siguiente:\nEn el código anterior, si la condición es verdadera, se ejecutará el bloque de código dentro del If. Si la condición es falsa, el bloque de código no se ejecutará.\nPor ejemplo:\nEn el código anterior, si la variable edad es mayor o igual a 18, se imprimirá en la consola el mensaje “Eres mayor de edad”.",
+    "section": "If y Condicionales",
+    "text": "If y Condicionales\nPara entender el concepto de If y Condicionales en Python, primero debemos comprender qué es una condición. Una condición es una expresión que se evalúa como verdadera o falsa. En Python, las condiciones se utilizan para tomar decisiones en un programa.\nLa estructura básica de un If en Python es la siguiente:\nif condicion:\n    # Bloque de código si la condición es verdadera\nEn el código anterior, si la condición es verdadera, se ejecutará el bloque de código dentro del If. Si la condición es falsa, el bloque de código no se ejecutará.\nPor ejemplo:\nedad = 18\n\nif edad &gt;= 18:\n    print(\"Eres mayor de edad\")\nEn el código anterior, si la variable edad es mayor o igual a 18, se imprimirá en la consola el mensaje “Eres mayor de edad”.",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Control de Flujo</span>"
@@ -440,17 +330,6 @@
     "title": "Control de Flujo",
     "section": "For loop",
     "text": "For loop\nPara entender el concepto de For loop en Python, primero debemos comprender cómo funciona un bucle for. Un bucle for se utiliza para iterar sobre una secuencia de elementos, como una lista, una tupla, un diccionario, etc.\nLa estructura básica de un For loop en Python es la siguiente:\nfor elemento in secuencia:\n    # Bloque de código que se repetirá para cada elemento en la secuencia\nEn el código anterior, el bucle for recorre cada elemento en la secuencia y ejecuta el bloque de código para cada elemento.\nPor ejemplo:\nnumeros = [1, 2, 3, 4, 5]\n\nfor numero in numeros:\n    print(numero)\nEn el código anterior, se crea una lista numeros con los números del 1 al 5. Luego, se ejecuta un For loop que imprime cada número en la lista.",
-    "crumbs": [
-      "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Control de Flujo</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad1/4_control_de_flujo.html#if-y-condicionales",
-    "href": "unidades/unidad1/4_control_de_flujo.html#if-y-condicionales",
-    "title": "Control de Flujo",
-    "section": "If y Condicionales",
-    "text": "If y Condicionales\nPara entender el concepto de If y Condicionales en Python, primero debemos comprender qué es una condición. Una condición es una expresión que se evalúa como verdadera o falsa. En Python, las condiciones se utilizan para tomar decisiones en un programa.\nLa estructura básica de un If en Python es la siguiente:\nif condicion:\n    # Bloque de código si la condición es verdadera\nEn el código anterior, si la condición es verdadera, se ejecutará el bloque de código dentro del If. Si la condición es falsa, el bloque de código no se ejecutará.\nPor ejemplo:\nedad = 18\n\nif edad &gt;= 18:\n    print(\"Eres mayor de edad\")\nEn el código anterior, si la variable edad es mayor o igual a 18, se imprimirá en la consola el mensaje “Eres mayor de edad”.",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Control de Flujo</span>"
@@ -520,6 +399,371 @@
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Funciones y recursividad.</span>"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Acerca de mi",
+    "section": "",
+    "text": "¡Hola! Soy Diego Saavedra, un experto en desarrollo avanzado de software e investigación. Mi amplia experiencia abarca diversas tecnologías, incluyendo Python (Django, Flask, Fast API) y JavaScript (Express, Next, React, Nestjs), así como también tengo conocimientos sólidos en bases de datos, arquitecturas de software y liderazgo ágil.\nMi pasión por la innovación, el desarrollo y la educación me ha llevado a destacarme como un profesional versátil e invaluable. Estoy constantemente listo para enfrentar desafíos técnicos y liderar proyectos de vanguardia.\nMi formación académica incluye el ser estudiante de Doctorado centrado en la inteligencia artificial, estoy enfocando mi investigación en la detección de TDA+H y Asperger mediante Visión Artificial a traves de algoritmos de Inteligencia Artificial. Además, poseo una Maestría en Ciencias de la Computación, con un enfoque en el Deep Learning (Convolutional Neural Network) y la Atención.\nCon esta sólida base académica y experiencia profesional, estoy preparado para aportar soluciones innovadoras y liderar equipos hacia el éxito en cualquier proyecto tecnológico que se me presente.\nAdemás, tengo experiencia en el desarrollo móvil utilizando Flutter y en la implementación de soluciones backend utilizando servicios Backend as a Service (BaaS) como Firebase y Supabase.\nEn el ámbito de la educación, he sido docente de programación en institutos y universidades, actualmente soy parte del Departamento de Ciencias de la Computación en la Universidad de las Fuerzas Armadas ESPE, donde he impartido asignaturas de desarrollo de Software Web con tecnologías como JavaScript, Java y C# asi como sus respectivos frameworks.\nMi experiencia en el desarrollo de software y la investigación me ha permitido adquirir habilidades de liderazgo, trabajo en equipo y comunicación efectiva. Estoy seguro de que mi experiencia y habilidades serán de gran valor para cualquier proyecto tecnológico que se me presente.\nEn este curso aprenderás a desarrollar aplicaciones web con Python y Django, una de las tecnologías más populares y poderosas para el desarrollo de aplicaciones web. A lo largo del curso, aprenderás a crear aplicaciones web desde cero, utilizando Django y Python, y a implementar funcionalidades avanzadas como integración con APIs externas y mucho más.\nTambien veremos tecnologías como Git, Github, Docker, Python, Django, Django Rest Framework, Html5, Css3, JavaScript, Nodejs, Npm y React.\n\n\n¡Estoy emocionado de compartir contigo mi conocimiento y experiencia en el desarrollo de aplicaciones web con Python y Django!"
+  },
+  {
+    "objectID": "license.html",
+    "href": "license.html",
+    "title": "Licencia",
+    "section": "",
+    "text": "Uso Permitido\nPuedes utilizar el contenido de este curso con fines educativos y personales. Puedes modificar los ejemplos y el código proporcionado para tus propias necesidades de aprendizaje."
+  },
+  {
+    "objectID": "license.html#restricciones",
+    "href": "license.html#restricciones",
+    "title": "Licencia",
+    "section": "Restricciones",
+    "text": "Restricciones\nNo tienes permitido redistribuir, vender o utilizar el contenido de este curso para fines comerciales sin el permiso explícito de [Nombre de la Compañía]. Además, no tienes permitido copiar o duplicar el contenido del curso y presentarlo como propio."
+  },
+  {
+    "objectID": "license.html#atribución",
+    "href": "license.html#atribución",
+    "title": "Licencia",
+    "section": "Atribución",
+    "text": "Atribución\nSi compartes los ejemplos, los fragmentos de código o el contenido de este curso en línea, te pedimos que proporciones la atribución adecuada a [Nombre de la Compañía]."
+  },
+  {
+    "objectID": "license.html#cambios-en-la-licencia",
+    "href": "license.html#cambios-en-la-licencia",
+    "title": "Licencia",
+    "section": "Cambios en la Licencia",
+    "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
+  },
+  {
+    "objectID": "unidades/unidad2/1_programacion_orientada_a_objetos.html#objetos-y-clases",
+    "href": "unidades/unidad2/1_programacion_orientada_a_objetos.html#objetos-y-clases",
+    "title": "Programacion Orientada a Objetos.",
+    "section": "Objetos y Clases",
+    "text": "Objetos y Clases\nLos objetos son instancias de una clase. Una clase es una plantilla para crear objetos. Los objetos tienen atributos y métodos.",
+    "crumbs": [
+      "Unidad 2: Programación Orientada a Objetos",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Programacion Orientada a Objetos.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad2/1_programacion_orientada_a_objetos.html#atributos",
+    "href": "unidades/unidad2/1_programacion_orientada_a_objetos.html#atributos",
+    "title": "Programacion Orientada a Objetos.",
+    "section": "Atributos",
+    "text": "Atributos\nLos atributos son variables que pertenecen a un objeto. Los atributos pueden ser de cualquier tipo de datos.\nEjemplo:\nclass Coche:\n    def __init__(self, marca, modelo, color):\n        self.marca = marca\n        self.modelo = modelo\n        self.color = color\nEn el código anterior se definen tres atributos marca, modelo y color.",
+    "crumbs": [
+      "Unidad 2: Programación Orientada a Objetos",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Programacion Orientada a Objetos.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad2/1_programacion_orientada_a_objetos.html#métodos",
+    "href": "unidades/unidad2/1_programacion_orientada_a_objetos.html#métodos",
+    "title": "Programacion Orientada a Objetos.",
+    "section": "Métodos",
+    "text": "Métodos\nLos métodos son funciones que pertenecen a un objeto. Los métodos pueden acceder a los atributos de un objeto.\nEjemplo:\nclass Coche:\n    def acelerar(self):\n        print(f\"El coche {self.marca} {self.modelo} de color {self.color} está acelerando\")\n\n    def frenar(self):\n        print(f\"El coche {self.marca} {self.modelo} de color {self.color} está frenando\")\nEn el código anterior se definen dos métodos acelerar y frenar.",
+    "crumbs": [
+      "Unidad 2: Programación Orientada a Objetos",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Programacion Orientada a Objetos.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad2/1_programacion_orientada_a_objetos.html#self-eliminar-propiedades-y-objetos",
+    "href": "unidades/unidad2/1_programacion_orientada_a_objetos.html#self-eliminar-propiedades-y-objetos",
+    "title": "Programacion Orientada a Objetos.",
+    "section": "Self, Eliminar Propiedades y Objetos",
+    "text": "Self, Eliminar Propiedades y Objetos\nEl primer parámetro de un método es self. Self es una referencia al objeto actual. Se utiliza para acceder a los atributos y métodos de un objeto.\nEjemplo:\nclass Coche:\n    def __init__(self, marca, modelo, color):\n        self.marca = marca\n        self.modelo = modelo\n        self.color = color\n\n    def acelerar(self):\n        print(f\"El coche {self.marca} {self.modelo} de color {self.color} está acelerando\")\n\n    def frenar(self):\n        print(f\"El coche {self.marca} {self.modelo} de color {self.color} está frenando\")\n\n    def __del__(self):\n        print(f\"El coche {self.marca} {self.modelo} de color {self.color} ha sido eliminado\")\n\ncoche = Coche(\"Toyota\", \"Corolla\", \"Rojo\")\nprint(coche)\ncoche.acelerar()\ncoche.frenar()\ndel coche\nEn el código anterior se define un método especial del que se llama cuando un objeto es eliminado.",
+    "crumbs": [
+      "Unidad 2: Programación Orientada a Objetos",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Programacion Orientada a Objetos.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad2/1_programacion_orientada_a_objetos.html#herencia-polimorfismo-y-encapsulación",
+    "href": "unidades/unidad2/1_programacion_orientada_a_objetos.html#herencia-polimorfismo-y-encapsulación",
+    "title": "Programacion Orientada a Objetos.",
+    "section": "Herencia, Polimorfismo y Encapsulación",
+    "text": "Herencia, Polimorfismo y Encapsulación\nLa herencia es una característica de la POO que permite crear una nueva clase a partir de una clase existente. La nueva clase hereda los atributos y métodos de la clase existente.\nEl polimorfismo es una característica de la POO que permite que un objeto se computadora de diferentes maneras dependiendo del contexto.\nLa encapsulación es una característica de la POO que permite ocultar los detalles de implementación de un objeto.\nEjemplo:\nClass Deporte:\n    def __init__(self, nombre):\n        self.nombre = nombre\n\n    def jugar(self):\n        pass\n\nclass Futbol(Deporte):\n  def jugar(self):\n      print(f\"Jugando futbol\")\n\nclass Baloncesto(Deporte):\n  def jugar(self):\n      print(f\"Jugando baloncesto\")\n\ndeporte = Futbol(\"Futbol\")\ndeporte.jugar()\n\ndeporte = Baloncesto(\"Baloncesto\")\ndeporte.jugar()\nEn el código anterior se define una clase Deporte con un método jugar. Luego se definen dos clases Futbol y Baloncesto que heredan de la clase Deporte y sobrescriben el método jugar.",
+    "crumbs": [
+      "Unidad 2: Programación Orientada a Objetos",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Programacion Orientada a Objetos.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad2/1_programacion_orientada_a_objetos.html#actividad",
+    "href": "unidades/unidad2/1_programacion_orientada_a_objetos.html#actividad",
+    "title": "Programacion Orientada a Objetos.",
+    "section": "Actividad",
+    "text": "Actividad\n\nCrear una clase Persona con los atributos nombre, edad y sexo.\nCrear una clase Estudiante que herede de la clase Persona con los atributos carnet y carrera.\nCrear una clase Profesor que herede de la clase Persona con los atributos codigo y especialidad.\nCrear una clase Curso con los atributos nombre, codigo y profesor.\nCrear una clase Universidad con los atributos nombre y cursos.\nCrear un objeto universidad de la clase Universidad con el nombre Universidad de El Salvador y los siguientes cursos:\n\n\nCurso 1: Nombre: Matematicas, Codigo: MAT101, Profesor: Juan Perez\nCurso 2: Nombre: Fisica, Codigo: FIS101, Profesor: Maria Lopez\nCurso 3: Nombre: Quimica, Codigo: QUI101, Profesor: Pedro Ramirez\n\n\nImprimir el objeto universidad.\nCrear un objeto estudiante de la clase Estudiante con los siguientes atributos:\n\n\nNombre: Carlos Perez\nEdad: 20\nSexo: Masculino\nCarnet: 202010101\nCarrera: Ingenieria en Sistemas Informaticos\n\n\nImprimir el objeto estudiante.\nCrear un objeto profesor de la clase Profesor con los siguientes atributos:\n\n\nNombre: Juan Perez\nEdad: 30\nSexo: Masculino\nCodigo: 202020202\nEspecialidad: Matematicas\n\n\nImprimir el objeto profesor.\nCrear un objeto curso de la clase Curso con los siguientes atributos:\n\n\nNombre: Matematicas\nCodigo: MAT101\nProfesor: Juan Perez\n\n\nImprimir el objeto curso.\nAgregar el objeto curso al objeto universidad.\nImprimir el objeto universidad.\nCrear un objeto curso de la clase Curso con los siguientes atributos:\n\n\nNombre: Fisica\nCodigo: FIS101\nProfesor: Maria Lopez\n\n\n\nRespuesta\n\nclass Persona:\n    def __init__(self, nombre, edad, sexo):\n        self.nombre = nombre\n        self.edad = edad\n        self.sexo = sexo\n\nclass Estudiante(Persona):\n    def __init__(self, nombre, edad, sexo, carnet, carrera):\n        super().__init__(nombre, edad, sexo)\n        self.carnet = carnet\n        self.carrera = carrera\n\nclass Profesor(Persona):\n    def __init__(self, nombre, edad, sexo, codigo, especialidad):\n        super().__init__(nombre, edad, sexo)\n        self.codigo = codigo\n        self.especialidad = especialidad\n\nclass Curso:\n    def __init__(self, nombre, codigo, profesor):\n        self.nombre = nombre\n        self.codigo = codigo\n        self.profesor = profesor\n\nclass Universidad\n    def __init__(self, nombre):\n        self.nombre = nombre\n        self.cursos = []\n\nuniversidad = Universidad(\"Universidad de las Fuerzas Armadas ESPE\")\ncurso1 = Curso(\"Matematicas\", \"MAT101\", \"Juan Perez\")\ncurso2 = Curso(\"Fisica\", \"FIS101\", \"Maria Lopez\")\ncurso3 = Curso(\"Quimica\", \"QUI101\", \"Pedro Ramirez\")\nuniversidad.cursos.append(curso1)\nuniversidad.cursos.append(curso2)\nuniversidad.cursos.append(curso3)\nprint(universidad)\n\nestudiante = Estudiante(\"Carlos Perez\", 20, \"Masculino\", \"202010101\", \"Ingenieria en Sistemas Informaticos\")\nprint(estudiante)\n\nprofesor = Profesor(\"Juan Perez\", 30, \"Masculino\", \"202020202\", \"Matematicas\")\nprint(profesor)\n\ncurso = Curso(\"Matematicas\", \"MAT101\", \"Juan Perez\")\nprint(curso)\n\ncurso = Curso(\"Fisica\", \"FIS101\", \"Maria Lopez\")\nuniversidad.cursos.append(curso)\nprint(universidad)",
+    "crumbs": [
+      "Unidad 2: Programación Orientada a Objetos",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Programacion Orientada a Objetos.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad2/1_programacion_orientada_a_objetos.html",
+    "href": "unidades/unidad2/1_programacion_orientada_a_objetos.html",
+    "title": "Programacion Orientada a Objetos.",
+    "section": "",
+    "text": "Objetos y Clases\nLos objetos son instancias de una clase. Una clase es una plantilla para crear objetos. Los objetos tienen atributos y métodos.",
+    "crumbs": [
+      "Unidad 2: Programación Orientada a Objetos",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Programacion Orientada a Objetos.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html",
+    "href": "unidades/unidad3/1_modulos_python.html",
+    "title": "Módulos en Python",
+    "section": "",
+    "text": "Introducción a Módulos.\nLos módulos en python son archivos que contienen definiciones y declaraciones de python. Los módulos permiten organizar el código en archivos separados. Los módulos se utilizan para reutilizar código y para mantener el código organizado.\nEjemplo:\nEn el código anterior se define un módulo modulo.py que contiene una función saludar.\nEjemplo:\nEn el código anterior se define un módulo modulo.py que contiene una función despedir.",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html#introducción-a-módulos.",
+    "href": "unidades/unidad3/1_modulos_python.html#introducción-a-módulos.",
+    "title": "Módulos en Python",
+    "section": "",
+    "text": "# modulo.py \ndef saludar():\n    print(\"Hola Mundo\")\n\n\n# modulo.py\ndef despedir():\n    print(\"Adiós Mundo\")",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html#creando-el-primer-módulo.",
+    "href": "unidades/unidad3/1_modulos_python.html#creando-el-primer-módulo.",
+    "title": "Módulos en Python",
+    "section": "Creando el primer Módulo.",
+    "text": "Creando el primer Módulo.\nPara crear nuestro primer módulo en python, creamos un archivo con extensión .py y definimos las funciones que queremos exportar.\nEjemplo:\n# modulo_saludar.py\n\ndef saludar(nombre):\n    print(f\"Hola {nombre}\")\nEn el código anterior se define un módulo modulo_saludar.py que contiene una función saludar.",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html#importando-módulos.",
+    "href": "unidades/unidad3/1_modulos_python.html#importando-módulos.",
+    "title": "Módulos en Python",
+    "section": "Importando Módulos.",
+    "text": "Importando Módulos.\nPara importar un módulo en python se utiliza la palabra clave import seguida del nombre del módulo.\n\n\n\n\n\n\nTip\n\n\n\nUtilizaremos el mismo ejemplo anterior.\n\n\nEjemplo:\n# main.py\n\nimport modulo_saludar\nimport modulo_despedir\n\nmodulo_saludar.saludar(\"Juan\")\nmodulo_despedir.despedir(\"Juan\")\nEn el código anterior se importan los módulos modulo_saludar y modulo_despedir y se utilizan las funciones saludar y despedir.",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html#renombrando-módulos.",
+    "href": "unidades/unidad3/1_modulos_python.html#renombrando-módulos.",
+    "title": "Módulos en Python",
+    "section": "Renombrando Módulos.",
+    "text": "Renombrando Módulos.\nPara renombrar un módulo en python se utiliza la palabra clave as seguida del nuevo nombre.\nEjemplo:\n# main.py\n\nimport modulo_saludar as saludar\nimport modulo_despedir as despedir\n\nsaludar.saludar(\"Juan\")\ndespedir.despedir(\"Juan\")\nEn el código anterior se importan los módulos modulo_saludar y modulo_despedir con los nombres saludar y despedir respectivamente.",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html#seleccionando-elementos",
+    "href": "unidades/unidad3/1_modulos_python.html#seleccionando-elementos",
+    "title": "Módulos en Python",
+    "section": "Seleccionando Elementos",
+    "text": "Seleccionando Elementos\nPara importar elementos específicos de un módulo en python se utiliza la palabra clave from seguida del nombre del módulo y la palabra clave import seguida del nombre del elemento.\nEjemplo:\n# main.py\n\nfrom modulo_saludar import saludar\n\nsaludar(\"Juan\")\n\nfrom modulo_despedir import despedir\n\ndespedir(\"Juan\")\nEn el código anterior se importan las funciones saludar y despedir del módulo modulo_saludar y modulo_despedir respectivamente.",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html#seleccionando-lo-importado-y-pip",
+    "href": "unidades/unidad3/1_modulos_python.html#seleccionando-lo-importado-y-pip",
+    "title": "Módulos en Python",
+    "section": "Seleccionando lo importado y pip",
+    "text": "Seleccionando lo importado y pip\n\nVamos a crear una aplicación divertida con emojis.\n\nEjemplo:\n# modulo_emojis.py\n\ndef sonreir():\n    print(\"😊\")\n\ndef llorar():\n    print(\"😢\")\n\n# main.py\n\nfrom modulo_emojis import sonreir\n\nsonreir()\n\nfrom modulo_emojis import llorar\n\nllorar()\nEn el código anterior se definen dos funciones sonreir y llorar en el módulo modulo_emojis. En el archivo main.py se importan las funciones sonreir y llorar y se utilizan.",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html#instalando-módulos-con-pip",
+    "href": "unidades/unidad3/1_modulos_python.html#instalando-módulos-con-pip",
+    "title": "Módulos en Python",
+    "section": "Instalando Módulos con pip",
+    "text": "Instalando Módulos con pip\nPara instalar módulos en python se utiliza la herramienta pip. pip es un sistema de gestión de paquetes utilizado para instalar y administrar paquetes de software escritos en python.\nEjemplo:\npip install numpy\nEn el código anterior se instala el módulo numpy utilizando pip.\nAhora pra utilizar este módulo en nuestro código, simplemente lo importamos.\nEjemplo:\nimport numpy as np\n\na = np.array([1, 2, 3, 4, 5])\n\nprint(a)",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html#actividad",
+    "href": "unidades/unidad3/1_modulos_python.html#actividad",
+    "title": "Módulos en Python",
+    "section": "Actividad",
+    "text": "Actividad\n\nCrear un módulo modulo_calculadora.py que contenga las funciones sumar, restar, multiplicar y dividir.\nCrear un archivo main.py que importe el módulo modulo_calculadora y utilice las funciones sumar, restar, multiplicar y dividir.\nEjecutar el archivo main.py.\nInstalar el módulo numpy utilizando pip.\nCrear un archivo main_numpy.py que importe el módulo numpy y utilice la función array para crear un arreglo de números.\nEjecutar el archivo main_numpy.py.\nCrear un archivo main_pandas.py que importe el módulo pandas y utilice la función DataFrame para crear un DataFrame.\nEjecutar el archivo main_pandas.py.\nCrear un archivo main_matplotlib.py que importe el módulo matplotlib y utilice la función plot para graficar una función.\nEjecutar el archivo main_matplotlib.py.\n\n\n\nRespuesta\n\n\nCrear un módulo modulo_calculadora.py que contenga las funciones sumar, restar, multiplicar y dividir.\n\n# modulo_calculadora.py\n\ndef sumar(a, b):\n    return a + b\n\ndef restar(a, b):\n    return a - b\n\ndef multiplicar(a, b):\n    return a * b\n\ndef dividir(a, b):\n    return a / b\nEn el código anterior se define un módulo modulo_calculadora.py que contiene las funciones sumar, restar, multiplicar y dividir.\n\nCrear un archivo main.py que importe el módulo modulo_calculadora y utilice las funciones sumar, restar, multiplicar y dividir.\n\n# main.py\n\nimport modulo_calculadora\n\nprint(modulo_calculadora.sumar(2, 3))\nprint(modulo_calculadora.restar(5, 3))\nprint(modulo_calculadora.multiplicar(2, 3))\nprint(modulo_calculadora.dividir(6, 3))\nEn el código anterior se importa el módulo modulo_calculadora y se utilizan las funciones sumar, restar, multiplicar y dividir.\n\nEjecutar el archivo main.py.\n\npython main.py\nEl resultado es:\n5\n2\n6\n2.0\n\nInstalar el módulo numpy utilizando pip.\n\npip install numpy\n\nCrear un archivo main_numpy.py que importe el módulo numpy y utilice la función array para crear un arreglo de números.\n\n\n# main_numpy.py\n\nimport numpy as np\n\na = np.array([1, 2, 3, 4, 5])\n\nprint(a)\nEn el código anterior se importa el módulo numpy y se utiliza la función array para crear un arreglo de números.\n\nEjecutar el archivo main_numpy.py.\n\npython main_numpy.py\n\nCrear un archivo main_pandas.py que importe el módulo pandas y utilice la función DataFrame para crear un DataFrame.\n\n# main_pandas.py\n\nimport pandas as pd\n\ndata = {\n    'Nombre': ['Juan', 'Maria', 'Pedro'],\n    'Edad': [20, 25, 30]\n}\n\ndf = pd.DataFrame(data)\n\nprint(df)\nEn el código anterior se importa el módulo pandas y se utiliza la función DataFrame para crear un DataFrame.\n\nEjecutar el archivo main_pandas.py.\n\npython main_pandas.py\n\nCrear un archivo main_matplotlib.py que importe el módulo matplotlib y utilice la función plot para graficar una función.\n\n# main_matplotlib.py\n\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nx = np.linspace(0, 10, 100)\n\ny = np.sin(x)\n\nplt.plot(x, y)\n\nplt.show()\nEn el código anterior se importa el módulo matplotlib y se utiliza la función plot para graficar una función.\n\nEjecutar el archivo main_matplotlib.py.\n\npython main_matplotlib.py",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html#creando-el-segundo-módulo.",
+    "href": "unidades/unidad3/1_modulos_python.html#creando-el-segundo-módulo.",
+    "title": "Módulos en Python",
+    "section": "Creando el segundo Módulo.",
+    "text": "Creando el segundo Módulo.\nPara crear nuestro segundo módulo en python, creamos un archivo con extensión .py y definimos las funciones que queremos exportar.\nEjemplo:\n# modulo_despedir.py\n\ndef despedir(nombre):\n    print(f\"Adiós {nombre}\")\nEn el código anterior se define un módulo modulo_despedir.py que contiene una función despedir.",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html#creando-el-archivo-principal.",
+    "href": "unidades/unidad3/1_modulos_python.html#creando-el-archivo-principal.",
+    "title": "Módulos en Python",
+    "section": "Creando el archivo principal.",
+    "text": "Creando el archivo principal.\nPara utilizar los módulos en python, creamos un archivo principal con extensión .py e importamos los módulos que queremos utilizar.\nEjemplo:\n# main.py\nimport modulo_saludar\nimport modulo_despedir\n\n__name__ == \"__main__\"\nmodulo_saludar.saludar(\"Juan\")\nmodulo_despedir.despedir(\"Juan\")\nEn el código anterior se importan los módulos modulo_saludar y modulo_despedir y se utilizan las funciones saludar y despedir.",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/1_proyecto_modulos.html#módulos-del-proyecto",
+    "href": "unidades/Proyectos/1_proyecto_modulos.html#módulos-del-proyecto",
+    "title": "📝 Gestor de Tareas con Prioridades",
+    "section": "Módulos del Proyecto",
+    "text": "Módulos del Proyecto\n\n📋 Módulo de tareas\n\nCrear una nueva tarea con título, descripción, fecha límite y prioridad.\nMarcar tareas como completadas ✅ o en progreso 🔄.\nOrganizar las tareas en orden de prioridad 🔥 o por fecha límite 📅.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>📝 Gestor de Tareas con Prioridades</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/1_proyecto_modulos.html#funciones-clave",
+    "href": "unidades/Proyectos/1_proyecto_modulos.html#funciones-clave",
+    "title": "📝 Gestor de Tareas con Prioridades",
+    "section": "Funciones Clave",
+    "text": "Funciones Clave\n\nPrioriza tus tareas con un sistema de prioridades: baja, media y alta 🔥.\n\n\nDesarrollo\nCreamos la siguiente estructura de carpetas para organizar nuestro proyecto:\nproyecto_modulos/\n│\n├── tareas/\n│   ├── __init__.py\n│   ├── tareas.py\n│\nEn el archivo tareas.py definimos las clases y funciones necesarias para gestionar las tareas.\n# tareas.py\n\nclass Tarea:\n    def __init__(self, titulo, descripcion, fecha_limite, prioridad):\n        self.titulo = titulo\n        self.descripcion = descripcion\n        self.fecha_limite = fecha_limite\n        self.prioridad = prioridad\n        self.completada = False\n\n    def marcar_completada(self):\n        self.completada = True\n\n    def marcar_en_progreso(self):\n        self.completada = False\n\n    def __str__(self):\n        return f\"{self.titulo} - {self.prioridad} - {self.fecha_limite}\"\nEn el archivo init.py definimos las funciones principales para interactuar con las tareas.\n# __init__.py\n\nfrom tareas import Tarea\n\ndef crear_tarea(titulo, descripcion, fecha_limite, prioridad):\n    return Tarea(titulo, descripcion, fecha_limite, prioridad)\n\ndef marcar_completada(tarea):\n    tarea.marcar_completada()\n\ndef marcar_en_progreso(tarea):\n    tarea.marcar_en_progreso()\nCon esta estructura básica, podemos empezar a desarrollar la funcionalidad de nuestro gestor de tareas. En los siguientes módulos, ampliaremos las capacidades de nuestra aplicación y añadiremos nuevas funcionalidades.\nPara poder probar nuestro código, podemos crear un script de prueba en la misma carpeta:\n# test.py\n\nfrom tareas import Tarea\n\ntarea1 = Tarea(\"Hacer la compra\", \"Comprar leche, pan y fruta\", \"2022-12-31\", \"alta\")\n\nprint(tarea1)\nAl ejecutar el script de prueba, deberíamos ver la información de la tarea creada.\n$ python test.py\nHacer la compra - alta - 2022-12-31",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>📝 Gestor de Tareas con Prioridades</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/1_proyecto_modulos.html#módulo-de-tareas-1",
+    "href": "unidades/Proyectos/1_proyecto_modulos.html#módulo-de-tareas-1",
+    "title": "📝 Gestor de Tareas con Prioridades",
+    "section": "Módulo de Tareas:",
+    "text": "Módulo de Tareas:\n\nCrear una nueva tarea\n\nDescripción: Los usuarios pueden agregar una nueva tarea con un título, descripción, fecha límite y prioridad.\nInterfaz de Usuario: La interfaz debe tener campos para ingresar el título, descripción, fecha límite y prioridad de la tarea.\nValidación: Se debe validar que el título y la fecha límite no estén vacíos.\n\n\n\nMarcar tareas como completadas\n\nDescripción: Los usuarios pueden marcar una tarea como completada o en progreso.\nInterfaz de Usuario: Agregar un botón o casilla de verificación para marcar una tarea como completada.\nFuncionalidad: Al marcar una tarea como completada, se debe cambiar su estado y mostrarla en una sección aparte.\n\n\n\nOrganizar las Tareas\n\nDescripción: Los usuarios pueden organizar las tareas por prioridad o fecha límite.\nInterfaz de Usuario: Agregar botones o filtros para ordenar las tareas por prioridad o fecha límite.\nFuncionalidad: Al seleccionar una opción de ordenamiento, las tareas se reorganizan automáticamente en la lista.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>📝 Gestor de Tareas con Prioridades</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/1_proyecto_modulos.html#módulo-de-calendario-1",
+    "href": "unidades/Proyectos/1_proyecto_modulos.html#módulo-de-calendario-1",
+    "title": "📝 Gestor de Tareas con Prioridades",
+    "section": "Módulo de Calendario:",
+    "text": "Módulo de Calendario:\n\nMostrar tareas en un Calendario\n\nDescripción: Mostrar todas las tareas en un calendario interactivo.\nInterfaz de Usuario: Mostrar las tareas como eventos en un calendario mensual o semanal.\nVisualización: Resaltar las tareas vencidas o próximas tareas importantes con colores llamativos.\n\n\n\nFiltrar tareas en el calendario\n\nDescripción: Filtrar las tareas en el calendario por prioridad o estado.\nInterfaz de Usuario: Agregar botones o filtros para mostrar solo las tareas de alta prioridad o las tareas completadas.\nFuncionalidad: Al seleccionar un filtro, solo se mostrarán las tareas que cumplan con ese criterio.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>📝 Gestor de Tareas con Prioridades</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/1_proyecto_modulos.html#módulo-de-usuarios-1",
+    "href": "unidades/Proyectos/1_proyecto_modulos.html#módulo-de-usuarios-1",
+    "title": "📝 Gestor de Tareas con Prioridades",
+    "section": "Módulo de Usuarios:",
+    "text": "Módulo de Usuarios:\n\nCrear perfiles de usuarios\n\nDescripción: Crear perfiles de usuario para que varias personas puedan usar la aplicación.\nInterfaz de Usuario: Agregar un formulario de registro para que los usuarios puedan crear una cuenta.\nRoles de Usuario: Asignar diferentes roles como “Gestor” o “Ejecutor” para distribuir las responsabilidades.\n\n\n\nCompartir tareas en equipo\n\nDescripción: Permitir a los usuarios compartir tareas con otros miembros del equipo.\nInterfaz de Usuario: Agregar un botón de compartir tarea para enviar una tarea a otro usuario.\nColaboración: Los usuarios pueden ver las tareas compartidas y colaborar en su ejecución.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>📝 Gestor de Tareas con Prioridades</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/1_proyecto_modulos.html#módulo-de-alertas-1",
+    "href": "unidades/Proyectos/1_proyecto_modulos.html#módulo-de-alertas-1",
+    "title": "📝 Gestor de Tareas con Prioridades",
+    "section": "Módulo de Alertas:",
+    "text": "Módulo de Alertas:\n\nEnviar recordatorios automáticos\n\nDescripción: Enviar notificaciones automáticas a los usuarios cuando se acerque la fecha límite de una tarea.\nInterfaz de Usuario: Agregar un sistema de alertas para que los usuarios puedan recibir notificaciones en su teléfono o correo electrónico.\nPosponer tareas: Los usuarios pueden posponer una tarea y recibir un nuevo recordatorio luego de un tiempo.\n\n\n\n¡Con este gestor de tareas tendrás todo bajo control y nunca más olvidarás una fecha límite! 🌟",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>📝 Gestor de Tareas con Prioridades</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_proyecto_poo.html",
+    "href": "unidades/Proyectos/2_proyecto_poo.html",
+    "title": "🛒 Simulador de Tienda Online",
+    "section": "",
+    "text": "Módulos del Proyecto",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_proyecto_poo.html#módulos-del-proyecto",
+    "href": "unidades/Proyectos/2_proyecto_poo.html#módulos-del-proyecto",
+    "title": "🛒 Simulador de Tienda Online",
+    "section": "",
+    "text": "🛍️ Módulo de Productos\n\nDefinir productos con nombre, precio y cantidad en inventario.\nActualizar el inventario después de cada compra o cuando se agregan nuevos productos.\n\n\n\n🛒 Módulo de Carrito\n\nPermite a los clientes agregar o quitar productos de su carrito.\nCalcular el costo total de los productos en el carrito.\n\n\n\n👤 Módulo de Cliente\n\nGestionar la creación de nuevos clientes.\nMantener el historial de compras del cliente.\n\n\n\n📦 Módulo de Pedido\n\nProcesar un pedido, verificar disponibilidad en inventario, y generar la factura.\nActualizar el inventario después de la compra.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_proyecto_poo.html#productos",
+    "href": "unidades/Proyectos/2_proyecto_poo.html#productos",
+    "title": "🛒 Simulador de Tienda Online",
+    "section": "🛍️ Productos",
+    "text": "🛍️ Productos\nEn el archivo producto.py, definimos la clase Producto:\n# productos/producto.py\n\nclass Producto:\n    def __init__(self, nombre, precio, inventario):\n        self.nombre = nombre\n        self.precio = precio\n        self.inventario = inventario\n\n    def actualizar_inventario(self, cantidad):\n        self.inventario -= cantidad\n\n    def __str__(self):\n        return f\"{self.nombre} - ${self.precio} (Inventario: {self.inventario})\"",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_proyecto_poo.html#carrito",
+    "href": "unidades/Proyectos/2_proyecto_poo.html#carrito",
+    "title": "🛒 Simulador de Tienda Online",
+    "section": "🛒 Carrito",
+    "text": "🛒 Carrito\nEn el archivo carrito.py, definimos la clase Carrito:\n# carrito/carrito.py\n\nclass Carrito:\n    def __init__(self):\n        self.productos = {}\n\n    def agregar_producto(self, producto, cantidad):\n        if producto.nombre in self.productos:\n            self.productos[producto.nombre] += cantidad\n        else:\n            self.productos[producto.nombre] = cantidad\n\n    def eliminar_producto(self, producto):\n        if producto.nombre in self.productos:\n            del self.productos[producto.nombre]\n\n    def total(self):\n        return sum(producto.precio * cantidad for producto, cantidad in self.productos.items())\n\n    def __str__(self):\n        carrito_str = \"Carrito:\\n\"\n        for producto, cantidad in self.productos.items():\n            carrito_str += f\"{producto}: {cantidad}\\n\"\n        return carrito_str",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_proyecto_poo.html#clientes",
+    "href": "unidades/Proyectos/2_proyecto_poo.html#clientes",
+    "title": "🛒 Simulador de Tienda Online",
+    "section": "👤 Clientes",
+    "text": "👤 Clientes\nEn el archivo cliente.py, definimos la clase Cliente:\n# clientes/cliente.py\n\nclass Cliente:\n    def __init__(self, nombre, email):\n        self.nombre = nombre\n        self.email = email\n        self.historial_compras = []\n\n    def agregar_historial(self, pedido):\n        self.historial_compras.append(pedido)\n\n    def ver_historial(self):\n        if not self.historial_compras:\n            return \"No tienes compras aún.\"\n        return \"\\n\".join(str(pedido) for pedido in self.historial_compras)\n\n    def __str__(self):\n        return f\"Cliente: {self.nombre} ({self.email})\"",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_proyecto_poo.html#pedidos",
+    "href": "unidades/Proyectos/2_proyecto_poo.html#pedidos",
+    "title": "🛒 Simulador de Tienda Online",
+    "section": "📦 Pedidos",
+    "text": "📦 Pedidos\nEn el archivo pedido.py, definimos la clase Pedido:\n# pedidos/pedido.py\n\nclass Pedido:\n    def __init__(self, cliente, carrito):\n        self.cliente = cliente\n        self.carrito = carrito\n        self.total = carrito.total()\n\n    def procesar_pedido(self):\n        for producto, cantidad in self.carrito.productos.items():\n            producto.actualizar_inventario(cantidad)\n        self.cliente.agregar_historial(self)\n\n    def __str__(self):\n        return f\"Pedido de {self.cliente.nombre} - Total: ${self.total}\"",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
     ]
   }
 ]

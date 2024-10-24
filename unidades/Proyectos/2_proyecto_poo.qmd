@@ -1,0 +1,225 @@
+# 🛒 Simulador de Tienda Online
+
+:::{.center}
+![Tienda Online](images/tienda_online.png)
+:::
+
+Un proyecto interactivo que simula una tienda en línea donde los clientes pueden agregar productos al carrito, realizar pedidos, gestionar inventarios y procesar pagos.
+
+## Módulos del Proyecto
+
+### 🛍️ Módulo de Productos
+
+1. Definir productos con nombre, precio y cantidad en inventario.
+2. Actualizar el inventario después de cada compra o cuando se agregan nuevos productos.
+
+### 🛒 Módulo de Carrito
+
+1. Permite a los clientes agregar o quitar productos de su carrito.
+2. Calcular el costo total de los productos en el carrito.
+
+### 👤 Módulo de Cliente
+
+1. Gestionar la creación de nuevos clientes.
+2. Mantener el historial de compras del cliente.
+
+### 📦 Módulo de Pedido
+
+1. Procesar un pedido, verificar disponibilidad en inventario, y generar la factura.
+2. Actualizar el inventario después de la compra.
+
+# Desarrollo
+
+Creamos la siguiente estructura de carpetas para organizar nuestro proyecto:
+
+```plaintext
+tienda_online/
+│
+├── productos/
+│   ├── __init__.py
+│   ├── producto.py
+│
+├── clientes/
+│   ├── __init__.py
+│   ├── cliente.py
+│
+├── carrito/
+│   ├── __init__.py
+│   ├── carrito.py
+│
+├── pedidos/
+│   ├── __init__.py
+│   ├── pedido.py
+```
+Definimos las clases y funciones necesarias para gestionar la tienda en línea.
+
+## 🛍️ Productos
+
+En el archivo **producto.py**, definimos la clase **Producto**:
+
+```python
+# productos/producto.py
+
+class Producto:
+    def __init__(self, nombre, precio, inventario):
+        self.nombre = nombre
+        self.precio = precio
+        self.inventario = inventario
+
+    def actualizar_inventario(self, cantidad):
+        self.inventario -= cantidad
+
+    def __str__(self):
+        return f"{self.nombre} - ${self.precio} (Inventario: {self.inventario})"
+```
+
+## 🛒 Carrito
+
+En el archivo **carrito.py**, definimos la clase Carrito:
+
+```python
+# carrito/carrito.py
+
+class Carrito:
+    def __init__(self):
+        self.productos = {}
+
+    def agregar_producto(self, producto, cantidad):
+        if producto.nombre in self.productos:
+            self.productos[producto.nombre] += cantidad
+        else:
+            self.productos[producto.nombre] = cantidad
+
+    def eliminar_producto(self, producto):
+        if producto.nombre in self.productos:
+            del self.productos[producto.nombre]
+
+    def total(self):
+        return sum(producto.precio * cantidad for producto, cantidad in self.productos.items())
+
+    def __str__(self):
+        carrito_str = "Carrito:\n"
+        for producto, cantidad in self.productos.items():
+            carrito_str += f"{producto}: {cantidad}\n"
+        return carrito_str
+```
+
+## 👤 Clientes
+
+En el archivo **cliente.py**, definimos la clase **Cliente**:
+
+```python
+# clientes/cliente.py
+
+class Cliente:
+    def __init__(self, nombre, email):
+        self.nombre = nombre
+        self.email = email
+        self.historial_compras = []
+
+    def agregar_historial(self, pedido):
+        self.historial_compras.append(pedido)
+
+    def ver_historial(self):
+        if not self.historial_compras:
+            return "No tienes compras aún."
+        return "\n".join(str(pedido) for pedido in self.historial_compras)
+
+    def __str__(self):
+        return f"Cliente: {self.nombre} ({self.email})"
+```
+
+## 📦 Pedidos
+
+En el archivo **pedido.py**, definimos la clase **Pedido**:
+
+``` python
+# pedidos/pedido.py
+
+class Pedido:
+    def __init__(self, cliente, carrito):
+        self.cliente = cliente
+        self.carrito = carrito
+        self.total = carrito.total()
+
+    def procesar_pedido(self):
+        for producto, cantidad in self.carrito.productos.items():
+            producto.actualizar_inventario(cantidad)
+        self.cliente.agregar_historial(self)
+
+    def __str__(self):
+        return f"Pedido de {self.cliente.nombre} - Total: ${self.total}"
+```
+
+# Prueba del Simulador de Tienda Online
+
+En un archivo de prueba test.py, puedes simular una compra en la tienda:
+
+``` python
+# test.py
+
+from productos.producto import Producto
+from carrito.carrito import Carrito
+from clientes.cliente import Cliente
+from pedidos.pedido import Pedido
+
+# Crear productos
+producto1 = Producto("Camiseta", 20.0, 50)
+producto2 = Producto("Zapatos", 50.0, 20)
+
+# Crear un cliente
+cliente = Cliente("Juan Pérez", "juan@example.com")
+
+# Crear un carrito y agregar productos
+carrito = Carrito()
+carrito.agregar_producto(producto1, 2)
+carrito.agregar_producto(producto2, 1)
+
+print(carrito)  # Ver contenido del carrito
+
+# Crear y procesar el pedido
+pedido = Pedido(cliente, carrito)
+pedido.procesar_pedido()
+
+print(pedido)  # Ver detalles del pedido
+print(cliente.ver_historial())  # Ver historial de compras
+```
+Al ejecutar el archivo test.py, verás el contenido del carrito, el pedido procesado, y el historial de compras del cliente.
+
+# Extra 🎁
+
+- Añadir la funcionalidad de eliminar productos del carrito:
+
+```python
+def eliminar_producto(self, producto):
+    if producto in self.productos:
+        del self.productos[producto]
+```
+
+- Añadir un sistema de descuento:
+
+```python
+def aplicar_descuento(self, porcentaje):
+    self.total -= self.total * (porcentaje / 100)
+```
+
+- Añadir una interfaz gráfica usando Tkinter:
+
+```python
+import tkinter as tk
+
+root = tk.Tk()
+
+label = tk.Label(root, text="¡Bienvenido a la Tienda Online!")
+label.pack()
+
+root.mainloop()
+```
+
+# Conclusión
+
+Con esta estructura básica de POO, hemos creado un simulador de tienda online donde se gestionan productos, carritos, clientes y pedidos. A medida que avances, puedes agregar más características como métodos de pago, envío, y más opciones de interacción para los clientes.
+
+:::{.center}
+¡Diviértete desarrollando y mejorando tu tienda online! 🚀
+::::
