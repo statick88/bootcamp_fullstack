@@ -402,6 +402,281 @@
     ]
   },
   {
+    "objectID": "unidades/unidad2/1_programacion_orientada_a_objetos.html#objetos-y-clases",
+    "href": "unidades/unidad2/1_programacion_orientada_a_objetos.html#objetos-y-clases",
+    "title": "Programacion Orientada a Objetos.",
+    "section": "Objetos y Clases",
+    "text": "Objetos y Clases\nLos objetos son instancias de una clase. Una clase es una plantilla para crear objetos. Los objetos tienen atributos y métodos.",
+    "crumbs": [
+      "Unidad 2: Programación Orientada a Objetos",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Programacion Orientada a Objetos.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad2/1_programacion_orientada_a_objetos.html#atributos",
+    "href": "unidades/unidad2/1_programacion_orientada_a_objetos.html#atributos",
+    "title": "Programacion Orientada a Objetos.",
+    "section": "Atributos",
+    "text": "Atributos\nLos atributos son variables que pertenecen a un objeto. Los atributos pueden ser de cualquier tipo de datos.\nEjemplo:\nclass Coche:\n    def __init__(self, marca, modelo, color):\n        self.marca = marca\n        self.modelo = modelo\n        self.color = color\nEn el código anterior se definen tres atributos marca, modelo y color.",
+    "crumbs": [
+      "Unidad 2: Programación Orientada a Objetos",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Programacion Orientada a Objetos.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad2/1_programacion_orientada_a_objetos.html#métodos",
+    "href": "unidades/unidad2/1_programacion_orientada_a_objetos.html#métodos",
+    "title": "Programacion Orientada a Objetos.",
+    "section": "Métodos",
+    "text": "Métodos\nLos métodos son funciones que pertenecen a un objeto. Los métodos pueden acceder a los atributos de un objeto.\nEjemplo:\nclass Coche:\n    def acelerar(self):\n        print(f\"El coche {self.marca} {self.modelo} de color {self.color} está acelerando\")\n\n    def frenar(self):\n        print(f\"El coche {self.marca} {self.modelo} de color {self.color} está frenando\")\nEn el código anterior se definen dos métodos acelerar y frenar.",
+    "crumbs": [
+      "Unidad 2: Programación Orientada a Objetos",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Programacion Orientada a Objetos.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad2/1_programacion_orientada_a_objetos.html#self-eliminar-propiedades-y-objetos",
+    "href": "unidades/unidad2/1_programacion_orientada_a_objetos.html#self-eliminar-propiedades-y-objetos",
+    "title": "Programacion Orientada a Objetos.",
+    "section": "Self, Eliminar Propiedades y Objetos",
+    "text": "Self, Eliminar Propiedades y Objetos\nEl primer parámetro de un método es self. Self es una referencia al objeto actual. Se utiliza para acceder a los atributos y métodos de un objeto.\nEjemplo:\nclass Coche:\n    def __init__(self, marca, modelo, color):\n        self.marca = marca\n        self.modelo = modelo\n        self.color = color\n\n    def acelerar(self):\n        print(f\"El coche {self.marca} {self.modelo} de color {self.color} está acelerando\")\n\n    def frenar(self):\n        print(f\"El coche {self.marca} {self.modelo} de color {self.color} está frenando\")\n\n    def __del__(self):\n        print(f\"El coche {self.marca} {self.modelo} de color {self.color} ha sido eliminado\")\n\ncoche = Coche(\"Toyota\", \"Corolla\", \"Rojo\")\nprint(coche)\ncoche.acelerar()\ncoche.frenar()\ndel coche\nEn el código anterior se define un método especial del que se llama cuando un objeto es eliminado.",
+    "crumbs": [
+      "Unidad 2: Programación Orientada a Objetos",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Programacion Orientada a Objetos.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad2/1_programacion_orientada_a_objetos.html#herencia-polimorfismo-y-encapsulación",
+    "href": "unidades/unidad2/1_programacion_orientada_a_objetos.html#herencia-polimorfismo-y-encapsulación",
+    "title": "Programacion Orientada a Objetos.",
+    "section": "Herencia, Polimorfismo y Encapsulación",
+    "text": "Herencia, Polimorfismo y Encapsulación\nLa herencia es una característica de la POO que permite crear una nueva clase a partir de una clase existente. La nueva clase hereda los atributos y métodos de la clase existente.\nEl polimorfismo es una característica de la POO que permite que un objeto se computadora de diferentes maneras dependiendo del contexto.\nLa encapsulación es una característica de la POO que permite ocultar los detalles de implementación de un objeto.\nEjemplo:\nClass Deporte:\n    def __init__(self, nombre):\n        self.nombre = nombre\n\n    def jugar(self):\n        pass\n\nclass Futbol(Deporte):\n  def jugar(self):\n      print(f\"Jugando futbol\")\n\nclass Baloncesto(Deporte):\n  def jugar(self):\n      print(f\"Jugando baloncesto\")\n\ndeporte = Futbol(\"Futbol\")\ndeporte.jugar()\n\ndeporte = Baloncesto(\"Baloncesto\")\ndeporte.jugar()\nEn el código anterior se define una clase Deporte con un método jugar. Luego se definen dos clases Futbol y Baloncesto que heredan de la clase Deporte y sobrescriben el método jugar.",
+    "crumbs": [
+      "Unidad 2: Programación Orientada a Objetos",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Programacion Orientada a Objetos.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad2/1_programacion_orientada_a_objetos.html#actividad",
+    "href": "unidades/unidad2/1_programacion_orientada_a_objetos.html#actividad",
+    "title": "Programacion Orientada a Objetos.",
+    "section": "Actividad",
+    "text": "Actividad\n\nCrear una clase Persona con los atributos nombre, edad y sexo.\nCrear una clase Estudiante que herede de la clase Persona con los atributos carnet y carrera.\nCrear una clase Profesor que herede de la clase Persona con los atributos codigo y especialidad.\nCrear una clase Curso con los atributos nombre, codigo y profesor.\nCrear una clase Universidad con los atributos nombre y cursos.\nCrear un objeto universidad de la clase Universidad con el nombre Universidad de El Salvador y los siguientes cursos:\n\n\nCurso 1: Nombre: Matematicas, Codigo: MAT101, Profesor: Juan Perez\nCurso 2: Nombre: Fisica, Codigo: FIS101, Profesor: Maria Lopez\nCurso 3: Nombre: Quimica, Codigo: QUI101, Profesor: Pedro Ramirez\n\n\nImprimir el objeto universidad.\nCrear un objeto estudiante de la clase Estudiante con los siguientes atributos:\n\n\nNombre: Carlos Perez\nEdad: 20\nSexo: Masculino\nCarnet: 202010101\nCarrera: Ingenieria en Sistemas Informaticos\n\n\nImprimir el objeto estudiante.\nCrear un objeto profesor de la clase Profesor con los siguientes atributos:\n\n\nNombre: Juan Perez\nEdad: 30\nSexo: Masculino\nCodigo: 202020202\nEspecialidad: Matematicas\n\n\nImprimir el objeto profesor.\nCrear un objeto curso de la clase Curso con los siguientes atributos:\n\n\nNombre: Matematicas\nCodigo: MAT101\nProfesor: Juan Perez\n\n\nImprimir el objeto curso.\nAgregar el objeto curso al objeto universidad.\nImprimir el objeto universidad.\nCrear un objeto curso de la clase Curso con los siguientes atributos:\n\n\nNombre: Fisica\nCodigo: FIS101\nProfesor: Maria Lopez\n\n\n\nRespuesta\n\nclass Persona:\n    def __init__(self, nombre, edad, sexo):\n        self.nombre = nombre\n        self.edad = edad\n        self.sexo = sexo\n\nclass Estudiante(Persona):\n    def __init__(self, nombre, edad, sexo, carnet, carrera):\n        super().__init__(nombre, edad, sexo)\n        self.carnet = carnet\n        self.carrera = carrera\n\nclass Profesor(Persona):\n    def __init__(self, nombre, edad, sexo, codigo, especialidad):\n        super().__init__(nombre, edad, sexo)\n        self.codigo = codigo\n        self.especialidad = especialidad\n\nclass Curso:\n    def __init__(self, nombre, codigo, profesor):\n        self.nombre = nombre\n        self.codigo = codigo\n        self.profesor = profesor\n\nclass Universidad\n    def __init__(self, nombre):\n        self.nombre = nombre\n        self.cursos = []\n\nuniversidad = Universidad(\"Universidad de las Fuerzas Armadas ESPE\")\ncurso1 = Curso(\"Matematicas\", \"MAT101\", \"Juan Perez\")\ncurso2 = Curso(\"Fisica\", \"FIS101\", \"Maria Lopez\")\ncurso3 = Curso(\"Quimica\", \"QUI101\", \"Pedro Ramirez\")\nuniversidad.cursos.append(curso1)\nuniversidad.cursos.append(curso2)\nuniversidad.cursos.append(curso3)\nprint(universidad)\n\nestudiante = Estudiante(\"Carlos Perez\", 20, \"Masculino\", \"202010101\", \"Ingenieria en Sistemas Informaticos\")\nprint(estudiante)\n\nprofesor = Profesor(\"Juan Perez\", 30, \"Masculino\", \"202020202\", \"Matematicas\")\nprint(profesor)\n\ncurso = Curso(\"Matematicas\", \"MAT101\", \"Juan Perez\")\nprint(curso)\n\ncurso = Curso(\"Fisica\", \"FIS101\", \"Maria Lopez\")\nuniversidad.cursos.append(curso)\nprint(universidad)",
+    "crumbs": [
+      "Unidad 2: Programación Orientada a Objetos",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Programacion Orientada a Objetos.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html",
+    "href": "unidades/unidad3/1_modulos_python.html",
+    "title": "Módulos en Python",
+    "section": "",
+    "text": "Introducción a Módulos.\nLos módulos en python son archivos que contienen definiciones y declaraciones de python. Los módulos permiten organizar el código en archivos separados. Los módulos se utilizan para reutilizar código y para mantener el código organizado.\nEjemplo:\nEn el código anterior se define un módulo modulo.py que contiene una función saludar.\nEjemplo:\nEn el código anterior se define un módulo modulo.py que contiene una función despedir.",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html#introducción-a-módulos.",
+    "href": "unidades/unidad3/1_modulos_python.html#introducción-a-módulos.",
+    "title": "Módulos en Python",
+    "section": "",
+    "text": "# modulo.py \ndef saludar():\n    print(\"Hola Mundo\")\n\n\n# modulo.py\ndef despedir():\n    print(\"Adiós Mundo\")",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html#creando-el-primer-módulo.",
+    "href": "unidades/unidad3/1_modulos_python.html#creando-el-primer-módulo.",
+    "title": "Módulos en Python",
+    "section": "Creando el primer Módulo.",
+    "text": "Creando el primer Módulo.\nPara crear nuestro primer módulo en python, creamos un archivo con extensión .py y definimos las funciones que queremos exportar.\nEjemplo:\n# modulo_saludar.py\n\ndef saludar(nombre):\n    print(f\"Hola {nombre}\")\nEn el código anterior se define un módulo modulo_saludar.py que contiene una función saludar.",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html#creando-el-segundo-módulo.",
+    "href": "unidades/unidad3/1_modulos_python.html#creando-el-segundo-módulo.",
+    "title": "Módulos en Python",
+    "section": "Creando el segundo Módulo.",
+    "text": "Creando el segundo Módulo.\nPara crear nuestro segundo módulo en python, creamos un archivo con extensión .py y definimos las funciones que queremos exportar.\nEjemplo:\n# modulo_despedir.py\n\ndef despedir(nombre):\n    print(f\"Adiós {nombre}\")\nEn el código anterior se define un módulo modulo_despedir.py que contiene una función despedir.",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html#creando-el-archivo-principal.",
+    "href": "unidades/unidad3/1_modulos_python.html#creando-el-archivo-principal.",
+    "title": "Módulos en Python",
+    "section": "Creando el archivo principal.",
+    "text": "Creando el archivo principal.\nPara utilizar los módulos en python, creamos un archivo principal con extensión .py e importamos los módulos que queremos utilizar.\nEjemplo:\n# main.py\nimport modulo_saludar\nimport modulo_despedir\n\n__name__ == \"__main__\"\nmodulo_saludar.saludar(\"Juan\")\nmodulo_despedir.despedir(\"Juan\")\nEn el código anterior se importan los módulos modulo_saludar y modulo_despedir y se utilizan las funciones saludar y despedir.",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html#importando-módulos.",
+    "href": "unidades/unidad3/1_modulos_python.html#importando-módulos.",
+    "title": "Módulos en Python",
+    "section": "Importando Módulos.",
+    "text": "Importando Módulos.\nPara importar un módulo en python se utiliza la palabra clave import seguida del nombre del módulo.\n\n\n\n\n\n\nTip\n\n\n\nUtilizaremos el mismo ejemplo anterior.\n\n\nEjemplo:\n# main.py\n\nimport modulo_saludar\nimport modulo_despedir\n\nmodulo_saludar.saludar(\"Juan\")\nmodulo_despedir.despedir(\"Juan\")\nEn el código anterior se importan los módulos modulo_saludar y modulo_despedir y se utilizan las funciones saludar y despedir.",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html#renombrando-módulos.",
+    "href": "unidades/unidad3/1_modulos_python.html#renombrando-módulos.",
+    "title": "Módulos en Python",
+    "section": "Renombrando Módulos.",
+    "text": "Renombrando Módulos.\nPara renombrar un módulo en python se utiliza la palabra clave as seguida del nuevo nombre.\nEjemplo:\n# main.py\n\nimport modulo_saludar as saludar\nimport modulo_despedir as despedir\n\nsaludar.saludar(\"Juan\")\ndespedir.despedir(\"Juan\")\nEn el código anterior se importan los módulos modulo_saludar y modulo_despedir con los nombres saludar y despedir respectivamente.",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html#seleccionando-elementos",
+    "href": "unidades/unidad3/1_modulos_python.html#seleccionando-elementos",
+    "title": "Módulos en Python",
+    "section": "Seleccionando Elementos",
+    "text": "Seleccionando Elementos\nPara importar elementos específicos de un módulo en python se utiliza la palabra clave from seguida del nombre del módulo y la palabra clave import seguida del nombre del elemento.\nEjemplo:\n# main.py\n\nfrom modulo_saludar import saludar\n\nsaludar(\"Juan\")\n\nfrom modulo_despedir import despedir\n\ndespedir(\"Juan\")\nEn el código anterior se importan las funciones saludar y despedir del módulo modulo_saludar y modulo_despedir respectivamente.",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html#seleccionando-lo-importado-y-pip",
+    "href": "unidades/unidad3/1_modulos_python.html#seleccionando-lo-importado-y-pip",
+    "title": "Módulos en Python",
+    "section": "Seleccionando lo importado y pip",
+    "text": "Seleccionando lo importado y pip\n\nVamos a crear una aplicación divertida con emojis.\n\nEjemplo:\n# modulo_emojis.py\n\ndef sonreir():\n    print(\"😊\")\n\ndef llorar():\n    print(\"😢\")\n\n# main.py\n\nfrom modulo_emojis import sonreir\n\nsonreir()\n\nfrom modulo_emojis import llorar\n\nllorar()\nEn el código anterior se definen dos funciones sonreir y llorar en el módulo modulo_emojis. En el archivo main.py se importan las funciones sonreir y llorar y se utilizan.",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html#instalando-módulos-con-pip",
+    "href": "unidades/unidad3/1_modulos_python.html#instalando-módulos-con-pip",
+    "title": "Módulos en Python",
+    "section": "Instalando Módulos con pip",
+    "text": "Instalando Módulos con pip\nPara instalar módulos en python se utiliza la herramienta pip. pip es un sistema de gestión de paquetes utilizado para instalar y administrar paquetes de software escritos en python.\nEjemplo:\npip install numpy\nEn el código anterior se instala el módulo numpy utilizando pip.\nAhora pra utilizar este módulo en nuestro código, simplemente lo importamos.\nEjemplo:\nimport numpy as np\n\na = np.array([1, 2, 3, 4, 5])\n\nprint(a)",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html#actividad",
+    "href": "unidades/unidad3/1_modulos_python.html#actividad",
+    "title": "Módulos en Python",
+    "section": "Actividad",
+    "text": "Actividad\n\nCrear un módulo modulo_calculadora.py que contenga las funciones sumar, restar, multiplicar y dividir.\nCrear un archivo main.py que importe el módulo modulo_calculadora y utilice las funciones sumar, restar, multiplicar y dividir.\nEjecutar el archivo main.py.\nInstalar el módulo numpy utilizando pip.\nCrear un archivo main_numpy.py que importe el módulo numpy y utilice la función array para crear un arreglo de números.\nEjecutar el archivo main_numpy.py.\nCrear un archivo main_pandas.py que importe el módulo pandas y utilice la función DataFrame para crear un DataFrame.\nEjecutar el archivo main_pandas.py.\nCrear un archivo main_matplotlib.py que importe el módulo matplotlib y utilice la función plot para graficar una función.\nEjecutar el archivo main_matplotlib.py.\n\n\n\nRespuesta\n\n\nCrear un módulo modulo_calculadora.py que contenga las funciones sumar, restar, multiplicar y dividir.\n\n# modulo_calculadora.py\n\ndef sumar(a, b):\n    return a + b\n\ndef restar(a, b):\n    return a - b\n\ndef multiplicar(a, b):\n    return a * b\n\ndef dividir(a, b):\n    return a / b\nEn el código anterior se define un módulo modulo_calculadora.py que contiene las funciones sumar, restar, multiplicar y dividir.\n\nCrear un archivo main.py que importe el módulo modulo_calculadora y utilice las funciones sumar, restar, multiplicar y dividir.\n\n# main.py\n\nimport modulo_calculadora\n\nprint(modulo_calculadora.sumar(2, 3))\nprint(modulo_calculadora.restar(5, 3))\nprint(modulo_calculadora.multiplicar(2, 3))\nprint(modulo_calculadora.dividir(6, 3))\nEn el código anterior se importa el módulo modulo_calculadora y se utilizan las funciones sumar, restar, multiplicar y dividir.\n\nEjecutar el archivo main.py.\n\npython main.py\nEl resultado es:\n5\n2\n6\n2.0\n\nInstalar el módulo numpy utilizando pip.\n\npip install numpy\n\nCrear un archivo main_numpy.py que importe el módulo numpy y utilice la función array para crear un arreglo de números.\n\n\n# main_numpy.py\n\nimport numpy as np\n\na = np.array([1, 2, 3, 4, 5])\n\nprint(a)\nEn el código anterior se importa el módulo numpy y se utiliza la función array para crear un arreglo de números.\n\nEjecutar el archivo main_numpy.py.\n\npython main_numpy.py\n\nCrear un archivo main_pandas.py que importe el módulo pandas y utilice la función DataFrame para crear un DataFrame.\n\n# main_pandas.py\n\nimport pandas as pd\n\ndata = {\n    'Nombre': ['Juan', 'Maria', 'Pedro'],\n    'Edad': [20, 25, 30]\n}\n\ndf = pd.DataFrame(data)\n\nprint(df)\nEn el código anterior se importa el módulo pandas y se utiliza la función DataFrame para crear un DataFrame.\n\nEjecutar el archivo main_pandas.py.\n\npython main_pandas.py\n\nCrear un archivo main_matplotlib.py que importe el módulo matplotlib y utilice la función plot para graficar una función.\n\n# main_matplotlib.py\n\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nx = np.linspace(0, 10, 100)\n\ny = np.sin(x)\n\nplt.plot(x, y)\n\nplt.show()\nEn el código anterior se importa el módulo matplotlib y se utiliza la función plot para graficar una función.\n\nEjecutar el archivo main_matplotlib.py.\n\npython main_matplotlib.py",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/1_proyecto_modulos.html#módulos-del-proyecto",
+    "href": "unidades/Proyectos/1_proyecto_modulos.html#módulos-del-proyecto",
+    "title": "📝 Gestor de Tareas con Prioridades",
+    "section": "Módulos del Proyecto",
+    "text": "Módulos del Proyecto\n\n📋 Módulo de tareas\n\nCrear una nueva tarea con título, descripción, fecha límite y prioridad.\nMarcar tareas como completadas ✅ o en progreso 🔄.\nOrganizar las tareas en orden de prioridad 🔥 o por fecha límite 📅.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>📝 Gestor de Tareas con Prioridades</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/1_proyecto_modulos.html#funciones-clave",
+    "href": "unidades/Proyectos/1_proyecto_modulos.html#funciones-clave",
+    "title": "📝 Gestor de Tareas con Prioridades",
+    "section": "Funciones Clave",
+    "text": "Funciones Clave\n\nPrioriza tus tareas con un sistema de prioridades: baja, media y alta 🔥.\n\n\nDesarrollo\nCreamos la siguiente estructura de carpetas para organizar nuestro proyecto:\nproyecto_modulos/\n│\n├── tareas/\n│   ├── __init__.py\n│   ├── tareas.py\n│\nEn el archivo tareas.py definimos las clases y funciones necesarias para gestionar las tareas.\n# tareas.py\n\nclass Tarea:\n    def __init__(self, titulo, descripcion, fecha_limite, prioridad):\n        self.titulo = titulo\n        self.descripcion = descripcion\n        self.fecha_limite = fecha_limite\n        self.prioridad = prioridad\n        self.completada = False\n\n    def marcar_completada(self):\n        self.completada = True\n\n    def marcar_en_progreso(self):\n        self.completada = False\n\n    def __str__(self):\n        return f\"{self.titulo} - {self.prioridad} - {self.fecha_limite}\"\nEn el archivo init.py definimos las funciones principales para interactuar con las tareas.\n# __init__.py\n\nfrom tareas import Tarea\n\ndef crear_tarea(titulo, descripcion, fecha_limite, prioridad):\n    return Tarea(titulo, descripcion, fecha_limite, prioridad)\n\ndef marcar_completada(tarea):\n    tarea.marcar_completada()\n\ndef marcar_en_progreso(tarea):\n    tarea.marcar_en_progreso()\nCon esta estructura básica, podemos empezar a desarrollar la funcionalidad de nuestro gestor de tareas. En los siguientes módulos, ampliaremos las capacidades de nuestra aplicación y añadiremos nuevas funcionalidades.\nPara poder probar nuestro código, podemos crear un script de prueba en la misma carpeta:\n# test.py\n\nfrom tareas import Tarea\n\ntarea1 = Tarea(\"Hacer la compra\", \"Comprar leche, pan y fruta\", \"2022-12-31\", \"alta\")\n\nprint(tarea1)\nAl ejecutar el script de prueba, deberíamos ver la información de la tarea creada.\n$ python test.py\nHacer la compra - alta - 2022-12-31",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>📝 Gestor de Tareas con Prioridades</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_proyecto_poo.html",
+    "href": "unidades/Proyectos/2_proyecto_poo.html",
+    "title": "🛒 Simulador de Tienda Online",
+    "section": "",
+    "text": "Módulos del Proyecto",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_proyecto_poo.html#módulos-del-proyecto",
+    "href": "unidades/Proyectos/2_proyecto_poo.html#módulos-del-proyecto",
+    "title": "🛒 Simulador de Tienda Online",
+    "section": "",
+    "text": "🛍️ Módulo de Productos\n\nDefinir productos con nombre, precio y cantidad en inventario.\nActualizar el inventario después de cada compra o cuando se agregan nuevos productos.\n\n\n\n🛒 Módulo de Carrito\n\nPermite a los clientes agregar o quitar productos de su carrito.\nCalcular el costo total de los productos en el carrito.\n\n\n\n👤 Módulo de Cliente\n\nGestionar la creación de nuevos clientes.\nMantener el historial de compras del cliente.\n\n\n\n📦 Módulo de Pedido\n\nProcesar un pedido, verificar disponibilidad en inventario, y generar la factura.\nActualizar el inventario después de la compra.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_proyecto_poo.html#productos",
+    "href": "unidades/Proyectos/2_proyecto_poo.html#productos",
+    "title": "🛒 Simulador de Tienda Online",
+    "section": "🛍️ Productos",
+    "text": "🛍️ Productos\nEn el archivo producto.py, definimos la clase Producto:\n# productos/producto.py\n\nclass Producto:\n    def __init__(self, nombre, precio, inventario):\n        self.nombre = nombre\n        self.precio = precio\n        self.inventario = inventario\n\n    def actualizar_inventario(self, cantidad):\n        self.inventario -= cantidad\n\n    def __str__(self):\n        return f\"{self.nombre} - ${self.precio} (Inventario: {self.inventario})\"",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_proyecto_poo.html#carrito",
+    "href": "unidades/Proyectos/2_proyecto_poo.html#carrito",
+    "title": "🛒 Simulador de Tienda Online",
+    "section": "🛒 Carrito",
+    "text": "🛒 Carrito\nEn el archivo carrito.py, definimos la clase Carrito:\n# carrito/carrito.py\n\nclass Carrito:\n    def __init__(self):\n        self.productos = {}\n\n    def agregar_producto(self, producto, cantidad):\n        if producto.nombre in self.productos:\n            self.productos[producto.nombre] += cantidad\n        else:\n            self.productos[producto.nombre] = cantidad\n\n    def eliminar_producto(self, producto):\n        if producto.nombre in self.productos:\n            del self.productos[producto.nombre]\n\n    def total(self):\n        return sum(producto.precio * cantidad for producto, cantidad in self.productos.items())\n\n    def __str__(self):\n        carrito_str = \"Carrito:\\n\"\n        for producto, cantidad in self.productos.items():\n            carrito_str += f\"{producto}: {cantidad}\\n\"\n        return carrito_str",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_proyecto_poo.html#clientes",
+    "href": "unidades/Proyectos/2_proyecto_poo.html#clientes",
+    "title": "🛒 Simulador de Tienda Online",
+    "section": "👤 Clientes",
+    "text": "👤 Clientes\nEn el archivo cliente.py, definimos la clase Cliente:\n# clientes/cliente.py\n\nclass Cliente:\n    def __init__(self, nombre, email):\n        self.nombre = nombre\n        self.email = email\n        self.historial_compras = []\n\n    def agregar_historial(self, pedido):\n        self.historial_compras.append(pedido)\n\n    def ver_historial(self):\n        if not self.historial_compras:\n            return \"No tienes compras aún.\"\n        return \"\\n\".join(str(pedido) for pedido in self.historial_compras)\n\n    def __str__(self):\n        return f\"Cliente: {self.nombre} ({self.email})\"",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_proyecto_poo.html#pedidos",
+    "href": "unidades/Proyectos/2_proyecto_poo.html#pedidos",
+    "title": "🛒 Simulador de Tienda Online",
+    "section": "📦 Pedidos",
+    "text": "📦 Pedidos\nEn el archivo pedido.py, definimos la clase Pedido:\n# pedidos/pedido.py\n\nclass Pedido:\n    def __init__(self, cliente, carrito):\n        self.cliente = cliente\n        self.carrito = carrito\n        self.total = carrito.total()\n\n    def procesar_pedido(self):\n        for producto, cantidad in self.carrito.productos.items():\n            producto.actualizar_inventario(cantidad)\n        self.cliente.agregar_historial(self)\n\n    def __str__(self):\n        return f\"Pedido de {self.cliente.nombre} - Total: ${self.total}\"",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
+    ]
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "Acerca de mi",
