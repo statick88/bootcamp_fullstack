@@ -402,41 +402,6 @@
     ]
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Acerca de mi",
-    "section": "",
-    "text": "¡Hola! Soy Diego Saavedra, un experto en desarrollo avanzado de software e investigación. Mi amplia experiencia abarca diversas tecnologías, incluyendo Python (Django, Flask, Fast API) y JavaScript (Express, Next, React, Nestjs), así como también tengo conocimientos sólidos en bases de datos, arquitecturas de software y liderazgo ágil.\nMi pasión por la innovación, el desarrollo y la educación me ha llevado a destacarme como un profesional versátil e invaluable. Estoy constantemente listo para enfrentar desafíos técnicos y liderar proyectos de vanguardia.\nMi formación académica incluye el ser estudiante de Doctorado centrado en la inteligencia artificial, estoy enfocando mi investigación en la detección de TDA+H y Asperger mediante Visión Artificial a traves de algoritmos de Inteligencia Artificial. Además, poseo una Maestría en Ciencias de la Computación, con un enfoque en el Deep Learning (Convolutional Neural Network) y la Atención.\nCon esta sólida base académica y experiencia profesional, estoy preparado para aportar soluciones innovadoras y liderar equipos hacia el éxito en cualquier proyecto tecnológico que se me presente.\nAdemás, tengo experiencia en el desarrollo móvil utilizando Flutter y en la implementación de soluciones backend utilizando servicios Backend as a Service (BaaS) como Firebase y Supabase.\nEn el ámbito de la educación, he sido docente de programación en institutos y universidades, actualmente soy parte del Departamento de Ciencias de la Computación en la Universidad de las Fuerzas Armadas ESPE, donde he impartido asignaturas de desarrollo de Software Web con tecnologías como JavaScript, Java y C# asi como sus respectivos frameworks.\nMi experiencia en el desarrollo de software y la investigación me ha permitido adquirir habilidades de liderazgo, trabajo en equipo y comunicación efectiva. Estoy seguro de que mi experiencia y habilidades serán de gran valor para cualquier proyecto tecnológico que se me presente.\nEn este curso aprenderás a desarrollar aplicaciones web con Python y Django, una de las tecnologías más populares y poderosas para el desarrollo de aplicaciones web. A lo largo del curso, aprenderás a crear aplicaciones web desde cero, utilizando Django y Python, y a implementar funcionalidades avanzadas como integración con APIs externas y mucho más.\nTambien veremos tecnologías como Git, Github, Docker, Python, Django, Django Rest Framework, Html5, Css3, JavaScript, Nodejs, Npm y React.\n\n\n¡Estoy emocionado de compartir contigo mi conocimiento y experiencia en el desarrollo de aplicaciones web con Python y Django!"
-  },
-  {
-    "objectID": "license.html",
-    "href": "license.html",
-    "title": "Licencia",
-    "section": "",
-    "text": "Uso Permitido\nPuedes utilizar el contenido de este curso con fines educativos y personales. Puedes modificar los ejemplos y el código proporcionado para tus propias necesidades de aprendizaje."
-  },
-  {
-    "objectID": "license.html#restricciones",
-    "href": "license.html#restricciones",
-    "title": "Licencia",
-    "section": "Restricciones",
-    "text": "Restricciones\nNo tienes permitido redistribuir, vender o utilizar el contenido de este curso para fines comerciales sin el permiso explícito de [Nombre de la Compañía]. Además, no tienes permitido copiar o duplicar el contenido del curso y presentarlo como propio."
-  },
-  {
-    "objectID": "license.html#atribución",
-    "href": "license.html#atribución",
-    "title": "Licencia",
-    "section": "Atribución",
-    "text": "Atribución\nSi compartes los ejemplos, los fragmentos de código o el contenido de este curso en línea, te pedimos que proporciones la atribución adecuada a [Nombre de la Compañía]."
-  },
-  {
-    "objectID": "license.html#cambios-en-la-licencia",
-    "href": "license.html#cambios-en-la-licencia",
-    "title": "Licencia",
-    "section": "Cambios en la Licencia",
-    "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
-  },
-  {
     "objectID": "unidades/unidad2/1_programacion_orientada_a_objetos.html#objetos-y-clases",
     "href": "unidades/unidad2/1_programacion_orientada_a_objetos.html#objetos-y-clases",
     "title": "Programacion Orientada a Objetos.",
@@ -503,17 +468,6 @@
     ]
   },
   {
-    "objectID": "unidades/unidad2/1_programacion_orientada_a_objetos.html",
-    "href": "unidades/unidad2/1_programacion_orientada_a_objetos.html",
-    "title": "Programacion Orientada a Objetos.",
-    "section": "",
-    "text": "Objetos y Clases\nLos objetos son instancias de una clase. Una clase es una plantilla para crear objetos. Los objetos tienen atributos y métodos.",
-    "crumbs": [
-      "Unidad 2: Programación Orientada a Objetos",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Programacion Orientada a Objetos.</span>"
-    ]
-  },
-  {
     "objectID": "unidades/unidad3/1_modulos_python.html",
     "href": "unidades/unidad3/1_modulos_python.html",
     "title": "Módulos en Python",
@@ -541,6 +495,28 @@
     "title": "Módulos en Python",
     "section": "Creando el primer Módulo.",
     "text": "Creando el primer Módulo.\nPara crear nuestro primer módulo en python, creamos un archivo con extensión .py y definimos las funciones que queremos exportar.\nEjemplo:\n# modulo_saludar.py\n\ndef saludar(nombre):\n    print(f\"Hola {nombre}\")\nEn el código anterior se define un módulo modulo_saludar.py que contiene una función saludar.",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html#creando-el-segundo-módulo.",
+    "href": "unidades/unidad3/1_modulos_python.html#creando-el-segundo-módulo.",
+    "title": "Módulos en Python",
+    "section": "Creando el segundo Módulo.",
+    "text": "Creando el segundo Módulo.\nPara crear nuestro segundo módulo en python, creamos un archivo con extensión .py y definimos las funciones que queremos exportar.\nEjemplo:\n# modulo_despedir.py\n\ndef despedir(nombre):\n    print(f\"Adiós {nombre}\")\nEn el código anterior se define un módulo modulo_despedir.py que contiene una función despedir.",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html#creando-el-archivo-principal.",
+    "href": "unidades/unidad3/1_modulos_python.html#creando-el-archivo-principal.",
+    "title": "Módulos en Python",
+    "section": "Creando el archivo principal.",
+    "text": "Creando el archivo principal.\nPara utilizar los módulos en python, creamos un archivo principal con extensión .py e importamos los módulos que queremos utilizar.\nEjemplo:\n# main.py\nimport modulo_saludar\nimport modulo_despedir\n\n__name__ == \"__main__\"\nmodulo_saludar.saludar(\"Juan\")\nmodulo_despedir.despedir(\"Juan\")\nEn el código anterior se importan los módulos modulo_saludar y modulo_despedir y se utilizan las funciones saludar y despedir.",
     "crumbs": [
       "Unidad 3: Módulos y Paquetes",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
@@ -613,28 +589,6 @@
     ]
   },
   {
-    "objectID": "unidades/unidad3/1_modulos_python.html#creando-el-segundo-módulo.",
-    "href": "unidades/unidad3/1_modulos_python.html#creando-el-segundo-módulo.",
-    "title": "Módulos en Python",
-    "section": "Creando el segundo Módulo.",
-    "text": "Creando el segundo Módulo.\nPara crear nuestro segundo módulo en python, creamos un archivo con extensión .py y definimos las funciones que queremos exportar.\nEjemplo:\n# modulo_despedir.py\n\ndef despedir(nombre):\n    print(f\"Adiós {nombre}\")\nEn el código anterior se define un módulo modulo_despedir.py que contiene una función despedir.",
-    "crumbs": [
-      "Unidad 3: Módulos y Paquetes",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad3/1_modulos_python.html#creando-el-archivo-principal.",
-    "href": "unidades/unidad3/1_modulos_python.html#creando-el-archivo-principal.",
-    "title": "Módulos en Python",
-    "section": "Creando el archivo principal.",
-    "text": "Creando el archivo principal.\nPara utilizar los módulos en python, creamos un archivo principal con extensión .py e importamos los módulos que queremos utilizar.\nEjemplo:\n# main.py\nimport modulo_saludar\nimport modulo_despedir\n\n__name__ == \"__main__\"\nmodulo_saludar.saludar(\"Juan\")\nmodulo_despedir.despedir(\"Juan\")\nEn el código anterior se importan los módulos modulo_saludar y modulo_despedir y se utilizan las funciones saludar y despedir.",
-    "crumbs": [
-      "Unidad 3: Módulos y Paquetes",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
-    ]
-  },
-  {
     "objectID": "unidades/Proyectos/1_proyecto_modulos.html#módulos-del-proyecto",
     "href": "unidades/Proyectos/1_proyecto_modulos.html#módulos-del-proyecto",
     "title": "📝 Gestor de Tareas con Prioridades",
@@ -651,50 +605,6 @@
     "title": "📝 Gestor de Tareas con Prioridades",
     "section": "Funciones Clave",
     "text": "Funciones Clave\n\nPrioriza tus tareas con un sistema de prioridades: baja, media y alta 🔥.\n\n\nDesarrollo\nCreamos la siguiente estructura de carpetas para organizar nuestro proyecto:\nproyecto_modulos/\n│\n├── tareas/\n│   ├── __init__.py\n│   ├── tareas.py\n│\nEn el archivo tareas.py definimos las clases y funciones necesarias para gestionar las tareas.\n# tareas.py\n\nclass Tarea:\n    def __init__(self, titulo, descripcion, fecha_limite, prioridad):\n        self.titulo = titulo\n        self.descripcion = descripcion\n        self.fecha_limite = fecha_limite\n        self.prioridad = prioridad\n        self.completada = False\n\n    def marcar_completada(self):\n        self.completada = True\n\n    def marcar_en_progreso(self):\n        self.completada = False\n\n    def __str__(self):\n        return f\"{self.titulo} - {self.prioridad} - {self.fecha_limite}\"\nEn el archivo init.py definimos las funciones principales para interactuar con las tareas.\n# __init__.py\n\nfrom tareas import Tarea\n\ndef crear_tarea(titulo, descripcion, fecha_limite, prioridad):\n    return Tarea(titulo, descripcion, fecha_limite, prioridad)\n\ndef marcar_completada(tarea):\n    tarea.marcar_completada()\n\ndef marcar_en_progreso(tarea):\n    tarea.marcar_en_progreso()\nCon esta estructura básica, podemos empezar a desarrollar la funcionalidad de nuestro gestor de tareas. En los siguientes módulos, ampliaremos las capacidades de nuestra aplicación y añadiremos nuevas funcionalidades.\nPara poder probar nuestro código, podemos crear un script de prueba en la misma carpeta:\n# test.py\n\nfrom tareas import Tarea\n\ntarea1 = Tarea(\"Hacer la compra\", \"Comprar leche, pan y fruta\", \"2022-12-31\", \"alta\")\n\nprint(tarea1)\nAl ejecutar el script de prueba, deberíamos ver la información de la tarea creada.\n$ python test.py\nHacer la compra - alta - 2022-12-31",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>📝 Gestor de Tareas con Prioridades</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/1_proyecto_modulos.html#módulo-de-tareas-1",
-    "href": "unidades/Proyectos/1_proyecto_modulos.html#módulo-de-tareas-1",
-    "title": "📝 Gestor de Tareas con Prioridades",
-    "section": "Módulo de Tareas:",
-    "text": "Módulo de Tareas:\n\nCrear una nueva tarea\n\nDescripción: Los usuarios pueden agregar una nueva tarea con un título, descripción, fecha límite y prioridad.\nInterfaz de Usuario: La interfaz debe tener campos para ingresar el título, descripción, fecha límite y prioridad de la tarea.\nValidación: Se debe validar que el título y la fecha límite no estén vacíos.\n\n\n\nMarcar tareas como completadas\n\nDescripción: Los usuarios pueden marcar una tarea como completada o en progreso.\nInterfaz de Usuario: Agregar un botón o casilla de verificación para marcar una tarea como completada.\nFuncionalidad: Al marcar una tarea como completada, se debe cambiar su estado y mostrarla en una sección aparte.\n\n\n\nOrganizar las Tareas\n\nDescripción: Los usuarios pueden organizar las tareas por prioridad o fecha límite.\nInterfaz de Usuario: Agregar botones o filtros para ordenar las tareas por prioridad o fecha límite.\nFuncionalidad: Al seleccionar una opción de ordenamiento, las tareas se reorganizan automáticamente en la lista.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>📝 Gestor de Tareas con Prioridades</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/1_proyecto_modulos.html#módulo-de-calendario-1",
-    "href": "unidades/Proyectos/1_proyecto_modulos.html#módulo-de-calendario-1",
-    "title": "📝 Gestor de Tareas con Prioridades",
-    "section": "Módulo de Calendario:",
-    "text": "Módulo de Calendario:\n\nMostrar tareas en un Calendario\n\nDescripción: Mostrar todas las tareas en un calendario interactivo.\nInterfaz de Usuario: Mostrar las tareas como eventos en un calendario mensual o semanal.\nVisualización: Resaltar las tareas vencidas o próximas tareas importantes con colores llamativos.\n\n\n\nFiltrar tareas en el calendario\n\nDescripción: Filtrar las tareas en el calendario por prioridad o estado.\nInterfaz de Usuario: Agregar botones o filtros para mostrar solo las tareas de alta prioridad o las tareas completadas.\nFuncionalidad: Al seleccionar un filtro, solo se mostrarán las tareas que cumplan con ese criterio.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>📝 Gestor de Tareas con Prioridades</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/1_proyecto_modulos.html#módulo-de-usuarios-1",
-    "href": "unidades/Proyectos/1_proyecto_modulos.html#módulo-de-usuarios-1",
-    "title": "📝 Gestor de Tareas con Prioridades",
-    "section": "Módulo de Usuarios:",
-    "text": "Módulo de Usuarios:\n\nCrear perfiles de usuarios\n\nDescripción: Crear perfiles de usuario para que varias personas puedan usar la aplicación.\nInterfaz de Usuario: Agregar un formulario de registro para que los usuarios puedan crear una cuenta.\nRoles de Usuario: Asignar diferentes roles como “Gestor” o “Ejecutor” para distribuir las responsabilidades.\n\n\n\nCompartir tareas en equipo\n\nDescripción: Permitir a los usuarios compartir tareas con otros miembros del equipo.\nInterfaz de Usuario: Agregar un botón de compartir tarea para enviar una tarea a otro usuario.\nColaboración: Los usuarios pueden ver las tareas compartidas y colaborar en su ejecución.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>📝 Gestor de Tareas con Prioridades</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/1_proyecto_modulos.html#módulo-de-alertas-1",
-    "href": "unidades/Proyectos/1_proyecto_modulos.html#módulo-de-alertas-1",
-    "title": "📝 Gestor de Tareas con Prioridades",
-    "section": "Módulo de Alertas:",
-    "text": "Módulo de Alertas:\n\nEnviar recordatorios automáticos\n\nDescripción: Enviar notificaciones automáticas a los usuarios cuando se acerque la fecha límite de una tarea.\nInterfaz de Usuario: Agregar un sistema de alertas para que los usuarios puedan recibir notificaciones en su teléfono o correo electrónico.\nPosponer tareas: Los usuarios pueden posponer una tarea y recibir un nuevo recordatorio luego de un tiempo.\n\n\n\n¡Con este gestor de tareas tendrás todo bajo control y nunca más olvidarás una fecha límite! 🌟",
     "crumbs": [
       "Proyectos",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>📝 Gestor de Tareas con Prioridades</span>"
@@ -764,6 +674,151 @@
     "crumbs": [
       "Proyectos",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Acerca de mi",
+    "section": "",
+    "text": "¡Hola! Soy Diego Saavedra, un experto en desarrollo avanzado de software e investigación. Mi amplia experiencia abarca diversas tecnologías, incluyendo Python (Django, Flask, Fast API) y JavaScript (Express, Next, React, Nestjs), así como también tengo conocimientos sólidos en bases de datos, arquitecturas de software y liderazgo ágil.\nMi pasión por la innovación, el desarrollo y la educación me ha llevado a destacarme como un profesional versátil e invaluable. Estoy constantemente listo para enfrentar desafíos técnicos y liderar proyectos de vanguardia.\nMi formación académica incluye el ser estudiante de Doctorado centrado en la inteligencia artificial, estoy enfocando mi investigación en la detección de TDA+H y Asperger mediante Visión Artificial a traves de algoritmos de Inteligencia Artificial. Además, poseo una Maestría en Ciencias de la Computación, con un enfoque en el Deep Learning (Convolutional Neural Network) y la Atención.\nCon esta sólida base académica y experiencia profesional, estoy preparado para aportar soluciones innovadoras y liderar equipos hacia el éxito en cualquier proyecto tecnológico que se me presente.\nAdemás, tengo experiencia en el desarrollo móvil utilizando Flutter y en la implementación de soluciones backend utilizando servicios Backend as a Service (BaaS) como Firebase y Supabase.\nEn el ámbito de la educación, he sido docente de programación en institutos y universidades, actualmente soy parte del Departamento de Ciencias de la Computación en la Universidad de las Fuerzas Armadas ESPE, donde he impartido asignaturas de desarrollo de Software Web con tecnologías como JavaScript, Java y C# asi como sus respectivos frameworks.\nMi experiencia en el desarrollo de software y la investigación me ha permitido adquirir habilidades de liderazgo, trabajo en equipo y comunicación efectiva. Estoy seguro de que mi experiencia y habilidades serán de gran valor para cualquier proyecto tecnológico que se me presente.\nEn este curso aprenderás a desarrollar aplicaciones web con Python y Django, una de las tecnologías más populares y poderosas para el desarrollo de aplicaciones web. A lo largo del curso, aprenderás a crear aplicaciones web desde cero, utilizando Django y Python, y a implementar funcionalidades avanzadas como integración con APIs externas y mucho más.\nTambien veremos tecnologías como Git, Github, Docker, Python, Django, Django Rest Framework, Html5, Css3, JavaScript, Nodejs, Npm y React.\n\n\n¡Estoy emocionado de compartir contigo mi conocimiento y experiencia en el desarrollo de aplicaciones web con Python y Django!"
+  },
+  {
+    "objectID": "license.html",
+    "href": "license.html",
+    "title": "Licencia",
+    "section": "",
+    "text": "Uso Permitido\nPuedes utilizar el contenido de este curso con fines educativos y personales. Puedes modificar los ejemplos y el código proporcionado para tus propias necesidades de aprendizaje."
+  },
+  {
+    "objectID": "license.html#restricciones",
+    "href": "license.html#restricciones",
+    "title": "Licencia",
+    "section": "Restricciones",
+    "text": "Restricciones\nNo tienes permitido redistribuir, vender o utilizar el contenido de este curso para fines comerciales sin el permiso explícito de [Nombre de la Compañía]. Además, no tienes permitido copiar o duplicar el contenido del curso y presentarlo como propio."
+  },
+  {
+    "objectID": "license.html#atribución",
+    "href": "license.html#atribución",
+    "title": "Licencia",
+    "section": "Atribución",
+    "text": "Atribución\nSi compartes los ejemplos, los fragmentos de código o el contenido de este curso en línea, te pedimos que proporciones la atribución adecuada a [Nombre de la Compañía]."
+  },
+  {
+    "objectID": "license.html#cambios-en-la-licencia",
+    "href": "license.html#cambios-en-la-licencia",
+    "title": "Licencia",
+    "section": "Cambios en la Licencia",
+    "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
+  },
+  {
+    "objectID": "unidades/Proyectos/3_funciones.html#objetivos-del-laboratorio",
+    "href": "unidades/Proyectos/3_funciones.html#objetivos-del-laboratorio",
+    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
+    "section": "Objetivos del Laboratorio",
+    "text": "Objetivos del Laboratorio\n\nDesarrollar un juego de Ahorcado usando funciones en Python.\nUsar estructuras de datos como listas y cadenas de texto.\nImplementar lógica condicional y bucles para manejar el flujo del juego.\nMostrar mensajes finales (con emojis) según el resultado del juego.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/3_funciones.html#prerrequisitos",
+    "href": "unidades/Proyectos/3_funciones.html#prerrequisitos",
+    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
+    "section": "Prerrequisitos",
+    "text": "Prerrequisitos\n\nConocimiento básico de Python: funciones, listas, cadenas, condicionales y bucles.\nInstalación de Python 3 en tu equipo.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/3_funciones.html#paso-1-crear-la-estructura-inicial-del-proyecto",
+    "href": "unidades/Proyectos/3_funciones.html#paso-1-crear-la-estructura-inicial-del-proyecto",
+    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
+    "section": "Paso 1: Crear la Estructura Inicial del Proyecto",
+    "text": "Paso 1: Crear la Estructura Inicial del Proyecto\n\nCrear un archivo de Python:\nAbre tu editor de texto o IDE favorito (se recomienda utilizar Vscode) y crea un nuevo archivo llamado ahorcado.py.\nDefinir el objetivo del proyecto en el archivo:\nAñade un comentario en la primera línea que describa el propósito del proyecto:\n# Juego de Ahorcado en Python",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/3_funciones.html#paso-2-definir-las-etapas-del-ahorcado-en-ascii",
+    "href": "unidades/Proyectos/3_funciones.html#paso-2-definir-las-etapas-del-ahorcado-en-ascii",
+    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
+    "section": "Paso 2: Definir las Etapas del Ahorcado en ASCII",
+    "text": "Paso 2: Definir las Etapas del Ahorcado en ASCII\n\nCrear la lista AHORCADO_DIBUJO:\nDefine las etapas progresivas del dibujo del ahorcado usando una lista de cadenas en ASCII.\nCada elemento de la lista representa una etapa del juego.\nAHORCADO_DIBUJO = [\n    \"\"\"\n       |\n       |\n       |\n       |\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n       |\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n      /|\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n      /|\\\\\n       |\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n      /|\\\\\n       |\n      /\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n      /|\\\\\n       |\n      / \\\\\n    \"\"\"\n]\n\n\nPrueba del dibujo:\nPrueba imprimiendo cada elemento de la lista para asegurarte de que el dibujo es correcto.\nprint(len(AHORCADO_DIBUJO))\nfor etapa in AHORCADO_DIBUJO:\n    print(etapa)\n\n\n\n\n\n\nTip\n\n\n\nNota: Puedes ejecutar el código en tu terminal o en un entorno de Python para verificar que el dibujo se imprime correctamente.\n\n\n\n\n\n\n\n\nTip\n\n\n\nNo olvides utilizar la función print() para mostrar los elementos de la lista en la consola. Y los comentarios para poder identificar cada etapa del dibujo.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/3_funciones.html#paso-3-crear-la-función-para-mostrar-el-dibujo-del-ahorcado",
+    "href": "unidades/Proyectos/3_funciones.html#paso-3-crear-la-función-para-mostrar-el-dibujo-del-ahorcado",
+    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
+    "section": "Paso 3: Crear la Función para Mostrar el Dibujo del Ahorcado",
+    "text": "Paso 3: Crear la Función para Mostrar el Dibujo del Ahorcado\n\nDefinir la función mostrar_ahorcado:\nEsta función tomará el número de intentos fallidos como argumento e imprimirá la etapa correspondiente del ahorcado.\ndef mostrar_ahorcado(intentos_fallidos):\n    print(AHORCADO_DIBUJO[intentos_fallidos])\n\n\nPrueba de la función:\nLlama a mostrar_ahorcado varias veces con diferentes valores para verificar que cada etapa se muestra correctamente.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/3_funciones.html#paso-4-crear-funciones-para-el-flujo-del-juego",
+    "href": "unidades/Proyectos/3_funciones.html#paso-4-crear-funciones-para-el-flujo-del-juego",
+    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
+    "section": "Paso 4: Crear Funciones para el Flujo del Juego",
+    "text": "Paso 4: Crear Funciones para el Flujo del Juego\n\nFunción para Seleccionar Palabra Aleatoria:\nDefine una lista de palabras para que el juego seleccione aleatoriamente una de ellas.\nUsa la biblioteca random para elegir una palabra al azar.\nimport random\n\ndef seleccionar_palabra():\n    palabras = [\"python\", \"programacion\", \"juego\", \"ahorcado\", \"computadora\"]\n    return random.choice(palabras)\nEn el código anterior, la función seleccionar_palabra devuelve una palabra aleatoria de la lista de palabras. Tambien aparece el método choice de random que selecciona una palabra aleatoria de la lista.\n\n\nFunción para Mostrar el Estado Actual:\nEsta función mostrará el progreso actual del jugador, mostrando las letras adivinadas y guiones bajos _ para letras no adivinadas.\ndef mostrar_progreso(palabra, letras_adivinadas):\n    progreso = [letra if letra in letras_adivinadas else '_' for letra in palabra]\n    print(\" \".join(progreso))\nEl código anterior crea una lista de letras adivinadas y guiones bajos para las letras no adivinadas. Luego, une los elementos de la lista en una cadena con un espacio entre cada letra.\nEste proceso se conoce como list comprehension y es una forma concisa de crear listas en Python.\nPara ampliar la información sobre list comprehension, puedes consultar la documentación oficial de Python en el siguiente enlace: List Comprehensions\n\n\nFunción para Manejar el Intento del Jugador:\nDefine una función que reciba una letra y verifique si está en la palabra.\ndef intentar_letra(palabra, letra, letras_adivinadas):\n    if letra in palabra:\n        letras_adivinadas.add(letra)\n        return True\n    return False\nEn el código anterior, la función intentar_letra verifica si la letra está en la palabra y la agrega a la colección de letras adivinadas. Devuelve True si la letra está en la palabra y False si no lo está.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/3_funciones.html#paso-5-crear-la-función-principal-del-juego",
+    "href": "unidades/Proyectos/3_funciones.html#paso-5-crear-la-función-principal-del-juego",
+    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
+    "section": "Paso 5: Crear la Función Principal del Juego",
+    "text": "Paso 5: Crear la Función Principal del Juego\n\nConfigurar el Juego:\nDefine la función jugar_ahorcado() que controlará el flujo completo del juego.\nEstablece la palabra a adivinar, el número de intentos, y una colección para almacenar las letras adivinadas.\ndef jugar_ahorcado():\n    palabra = seleccionar_palabra()\n    letras_adivinadas = set()\n    intentos_fallidos = 0\n    max_intentos = len(AHORCADO_DIBUJO) - 1\nEn el código anterior, la función jugar_ahorcado selecciona una palabra aleatoria, inicializa una colección de letras adivinadas, y establece el número máximo de intentos.\n\n\nCiclo del Juego:\nCrea un bucle while que continúe mientras el jugador tenga intentos restantes y no haya adivinado la palabra completa.\n    while intentos_fallidos &lt; max_intentos:\n        mostrar_ahorcado(intentos_fallidos)\n        mostrar_progreso(palabra, letras_adivinadas)\n        \n        letra = input(\"Introduce una letra: \").lower()\n        \n        if letra in letras_adivinadas:\n            print(\"Ya intentaste esa letra.\")\n            continue\n        \n        if intentar_letra(palabra, letra, letras_adivinadas):\n            print(\"¡Correcto!\")\n            if all(l in letras_adivinadas for l in palabra):\n                mostrar_resultado(True)\n                break\n        else:\n            print(\"Incorrecto.\")\n            intentos_fallidos += 1\n    else:\n        mostrar_ahorcado(intentos_fallidos)\n        mostrar_resultado(False)\nEn el código anterior, el bucle while muestra el dibujo actual del ahorcado, el progreso del jugador y solicita una letra al jugador.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/3_funciones.html#paso-6-crear-función-de-resultado-final-con-emojis",
+    "href": "unidades/Proyectos/3_funciones.html#paso-6-crear-función-de-resultado-final-con-emojis",
+    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
+    "section": "Paso 6: Crear Función de Resultado Final con Emojis",
+    "text": "Paso 6: Crear Función de Resultado Final con Emojis\n\nDefinir mostrar_resultado:\nEsta función mostrará un mensaje final con un emoji dependiendo de si el jugador gana o pierde.\ndef mostrar_resultado(ganador):\n    if ganador:\n        print(\"¡Felicidades, ganaste! 😄\")\n    else:\n        print(\"Lo siento, perdiste. 😞\")\nEn el código anterior, la función mostrar_resultado imprime un mensaje de felicitación si el jugador gana y un mensaje de consuelo si pierde.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/3_funciones.html#paso-7-ejecutar-el-juego",
+    "href": "unidades/Proyectos/3_funciones.html#paso-7-ejecutar-el-juego",
+    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
+    "section": "Paso 7: Ejecutar el Juego",
+    "text": "Paso 7: Ejecutar el Juego\n\nEjecutar el Juego:\nAgrega una condición para ejecutar el juego cuando el archivo sea ejecutado directamente.\nif __name__ == \"__main__\":\n    jugar_ahorcado()\nEn el código anterior, la condición if name == “main”: verifica si el archivo se ejecuta directamente y llama a la función jugar_ahorcado en ese caso.\n\n\n\n\n\n\nTip\n\n\n\nNota: Puedes ejecutar el juego en tu terminal o en un entorno de Python para jugar al Ahorcado.\n\n\n\n\nPrueba Final:\nEjecuta ahorcado.py y juega una partida completa. Verifica que los mensajes y el flujo del juego sean los correctos.\npython ahorcado.py",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/3_funciones.html#paso-8-mejoras-opcionales",
+    "href": "unidades/Proyectos/3_funciones.html#paso-8-mejoras-opcionales",
+    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
+    "section": "Paso 8: Mejoras Opcionales",
+    "text": "Paso 8: Mejoras Opcionales\n\nAñadir Validación de Entradas: Controla que el jugador solo introduzca letras válidas.\n\nAgregar Dificultad: Permite al jugador elegir entre palabras cortas, medias y largas.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
     ]
   }
 ]

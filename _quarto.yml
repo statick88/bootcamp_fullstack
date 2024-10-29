@@ -51,6 +51,7 @@ book:
 
     - part: "Proyectos"
       chapters: 
+        - unidades/Proyectos/3_funciones.qmd
         - unidades/Proyectos/1_proyecto_modulos.qmd
         - unidades/Proyectos/2_proyecto_poo.qmd
 
