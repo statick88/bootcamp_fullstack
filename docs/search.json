@@ -6,6 +6,7 @@
     "section": "",
     "text": "Bienvenido",
     "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenido</span>"
     ]
   },
@@ -16,6 +17,7 @@
     "section": "¿De qué trata este Bootcamp?",
     "text": "¿De qué trata este Bootcamp?\nEste bootcamp está diseñado para enseñarle a desarrollar aplicaciones web modernas utilizando Django, Flask y React.",
     "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenido</span>"
     ]
   },
@@ -26,6 +28,7 @@
     "section": "¿Para quién es este bootcamp?",
     "text": "¿Para quién es este bootcamp?\nEste bootcamp es para cualquier persona interesada en aprender a desarrollar aplicaciones web modernas.",
     "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenido</span>"
     ]
   },
@@ -36,6 +39,7 @@
     "section": "¿Qué aprenderás?",
     "text": "¿Qué aprenderás?\nAprenderás algunos lenguajes de programación como Python, JavaScript y TypeScript, así como algunos de los frameworks y bibliotecas más populares como Django, FastAPI y React.",
     "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenido</span>"
     ]
   },
@@ -46,6 +50,7 @@
     "section": "¿Cómo contribuir?",
     "text": "¿Cómo contribuir?\nValoramos su contribución a este bootcamp. Si encuentra algún error, desea sugerir mejoras o agregar contenido adicional, me encantaría saber de usted.\nPuede contribuir a través del repositorio en linea, donde puede compartir sus comentarios y sugerencias.\nJuntos, podemos mejorar continuamente este recurso educativo para beneficiar a la comunidad de estudiantes y entusiastas de la programación.\nEste ebook ha sido creado con el objetivo de proporcionar acceso gratuito y universal al conocimiento.\nEstará disponible en línea para cualquier persona, sin importar su ubicación o circunstancias, para acceder y aprender a su propio ritmo.\nPuede descargarlo en formato PDF, Epub o verlo en línea en cualquier momento y lugar.\nEsperamos que disfrute este emocionante viaje de aprendizaje y descubrimiento en el mundo del desarrollo web con Django, FastAPI y React!",
     "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Bienvenido</span>"
     ]
   },
@@ -57,7 +62,7 @@
     "text": "Introducción General a la Programación\nSi más preámbulos, empecemos con la introducción general a la programación.\nEs el proceso de diseñar e implementar un programa de computadora, es decir, un conjunto de instrucciones que le dicen a una computadora qué hacer.\nEs una habilidad muy valiosa en el mundo actual, ya que la mayoría de las tareas que realizamos a diario involucran el uso de computadoras y software.\nNos permite automatizar tareas, resolver problemas de manera eficiente y crear aplicaciones y sistemas que nos ayudan en nuestra vida diaria.\nEn este módulo aprenderemos los fundamentos de la programación utilizando Python, un lenguaje de programación de alto nivel, interpretado y orientado a objetos.\nAntes de introducirnos en el aprendizaje del lenguaje de programación, es importante conocer que debemos desarrollar la lógica de la prograamción, es decir, la habilidad de pensar de manera lógica y estructurada para resolver problemas de manera eficiente.\nAnalicemos el siguiente problema para entender la importancia de la lógica de programación:\n\nProblema: Supongamos que queremos escribir un programa que imprima los números del 1 al 10.\n\n¿Cómo resolverías este problema?\nUna posible solución sería escribir un programa que imprima los números del 1 al 10 de manera secuencial.\nprint(1)\nprint(2)\nprint(3)\nprint(4)\nprint(5)\nprint(6)\nprint(7)\nprint(8)\nprint(9)\nprint(10)\nEn el ejemplo anterior, hemos resuelto el problema de imprimir los números del 1 al 10 de manera secuencial. Sin embargo, esta solución no es escalable, ya que si quisiéramos imprimir los números del 1 al 1000, tendríamos que escribir 1000 instrucciones de impresión.\nUna solución más eficiente sería utilizar un bucle para imprimir los números del 1 al 10 de manera automática.\nfor i in range(1, 11):\n    print(i)\nEn el ejemplo anterior, hemos utilizado un bucle for para imprimir los números del 1 al 10 de manera automática. Esta solución es más eficiente y escalable, ya que podemos cambiar el rango del bucle para imprimir los números del 1 al 1000 sin tener que modificar el código.\n\nProblema: Supongamos que queremos escribir un programa que imprima un saludo personalizado.\n\n¿Cómo resolverías este problema?\nUna posible solución sería escribir un programa que solicite al usuario su nombre y luego imprima un saludo personalizado.\nname = input(\"Ingrese su nombre: \")\nprint(\"Hola, \" + name + \"!\")\nEn el ejemplo anterior, hemos resuelto el problema de imprimir un saludo personalizado solicitando al usuario su nombre. Esta solución es interactiva y personalizada, ya que el saludo se adapta al nombre del usuario.\nEn resumen, la lógica de programación es la habilidad de pensar de manera lógica y estructurada para resolver problemas de manera eficiente. Es fundamental para desarrollar programas y sistemas que nos ayuden en nuestra vida diaria.\nA continuación te ofresco algunas páginas que puedes revisar por tu cuenta y que te permitirán practicar el desarrollo de la lógica de programación:\n\nHackerRank\nLeetCode\nRetod de Programación\nGeeks for Geeks",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introducción e Instalaciones Necesarias.</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introducción e Instalaciones Necesarias.</span>"
     ]
   },
   {
@@ -68,7 +73,7 @@
     "text": "Instalación de Python\n\n\n\n\nPython\n\n\n\nPara instalar Python en tu computadora, sigue los siguientes pasos:\n\nVe al sitio web oficial de Python en https://www.python.org/.\n\n\n\n\n\nPython\n\n\n\n\nHaz clic en el botón de descarga de Python.\n\n\n\n\n\nPython\n\n\n\n\nSelecciona la versión de Python que deseas instalar (recomendamos la versión más reciente).\nDescarga el instalador de Python para tu sistema operativo (Windows, macOS o Linux).\n\n\n\n\n\nPython\n\n\n\n\nEjecuta el instalador de Python y sigue las instrucciones en pantalla para completar la instalación.\n\n\n\n\n\nPython\n\n\n\nUna vez que hayas instalado Python en tu computadora, puedes verificar que la instalación se haya realizado correctamente abriendo una terminal y ejecutando el siguiente comando:\n\n\n\n\nPython\n\n\n\npython --version\nSi la instalación se realizó correctamente, verás la versión de Python instalada en tu computadora.",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introducción e Instalaciones Necesarias.</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introducción e Instalaciones Necesarias.</span>"
     ]
   },
   {
@@ -79,7 +84,7 @@
     "text": "Uso de REPL, PEP 8 y Zen de Python\nEn esta sección, aprenderemos acerca de REPL, PEP 8 y Zen de Python.\n\nREPL\nREPL (Read-Eval-Print Loop) es un entorno interactivo que permite escribir y ejecutar código de Python de manera interactiva. Es una excelente herramienta para probar y experimentar con el lenguaje de programación.\nPara abrir el REPL de Python, abre una terminal y ejecuta el siguiente comando:\npython\nUna vez que hayas abierto el REPL de Python, puedes escribir y ejecutar código de Python de manera interactiva. Por ejemplo, puedes escribir una expresión matemática y ver el resultado:\n&gt;&gt;&gt; 2 + 2\n&gt;&gt;&gt; 4\n&gt;&gt;&gt; 3 * 4\n&gt;&gt;&gt; 12\n&gt;&gt;&gt; 10 / 2\n&gt;&gt;&gt; 5.0\n&gt;&gt;&gt; 2 ** 3\n&gt;&gt;&gt; 8\n&gt;&gt;&gt; \"Hola, Mundo!\"\n&gt;&gt;&gt; 'Hola, Mundo!'\n&gt;&gt;&gt; \"Hola, \" + \"Mundo!\"\n&gt;&gt;&gt; 'Hola, ' * 3\n&gt;&gt;&gt; 'Hola, Hola, Hola, '\n&gt;&gt;&gt; print(\"Hola, Mundo!\")\n&gt;&gt;&gt; Hola, Mundo!",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introducción e Instalaciones Necesarias.</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introducción e Instalaciones Necesarias.</span>"
     ]
   },
   {
@@ -90,7 +95,7 @@
     "text": "Entornos de Desarrollo\nUn entorno de desarrollo es un conjunto de herramientas que nos permiten escribir, depurar y ejecutar código de manera eficiente. Es fundamental para desarrollar programas y sistemas de manera efectiva.\nExisten varios entornos de desarrollo que podemos utilizar para programar en Python. Algunos de los más populares son:\n\nIDLE: Es el entorno de desarrollo integrado (IDE) oficial de Python. Viene incluido con la instalación de Python y es una excelente opción para programar en Python.\n\n\n\n\n\nIDLE\n\n\n\n\nPyCharm: Es un IDE de Python desarrollado por JetBrains. Es una excelente opción para programar en Python, ya que ofrece muchas características y herramientas útiles.\n\n\n\n\n\nPyCharm\n\n\n\n\nVisual Studio Code: Es un editor de código desarrollado por Microsoft. Es una excelente opción para programar en Python, ya que ofrece muchas extensiones y herramientas útiles.\n\n\n\n\n\nVisual Studio Code\n\n\n\n\nJupyter Notebook: Es una aplicación web que nos permite crear y compartir documentos interactivos que contienen código de Python, visualizaciones y texto explicativo.\n\n\n\n\n\nJupyter Notebook\n\n\n\nEn este bootcam utilizaremos Visual Studio Code como editor de código para programar en Python. Sin embargo, te recomiendo que explores otros entornos de desarrollo y elijas el que mejor se adapte a tus necesidades y preferencias.",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introducción e Instalaciones Necesarias.</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introducción e Instalaciones Necesarias.</span>"
     ]
   },
   {
@@ -101,7 +106,7 @@
     "text": "5 Consejos para mejorar la lógica de programación.\n\nPractica regularmente: La práctica es fundamental para mejorar la lógica de programación. Dedica tiempo a resolver problemas de programación y desafíos lógicos de manera regular.\nDescompón el problema: Divide los problemas complejos en problemas más pequeños y manejables. Esto te ayudará a abordar el problema de manera más efectiva y eficiente.\nUtiliza pseudocódigo: Antes de escribir código, utiliza pseudocódigo para planificar y diseñar tu solución. Esto te ayudará a visualizar el problema y encontrar una solución más clara.\nComenta tu código: Utiliza comentarios para explicar tu código y hacerlo más legible. Esto te ayudará a entender tu código y a identificar posibles errores.\nColabora con otros: Trabaja en equipo con otros programadores para resolver problemas de programación. La colaboración te permitirá aprender de otros y mejorar tus habilidades de programación.\n\n¡Espero que estos consejos te sean útiles para mejorar tu lógica de programación!",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introducción e Instalaciones Necesarias.</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introducción e Instalaciones Necesarias.</span>"
     ]
   },
   {
@@ -112,7 +117,7 @@
     "text": "Conclusiones\nEn este módulo hemos aprendido acerca de la introducción general a la programación, la instalación de Python, el uso de REPL, PEP 8 y Zen de Python, y los entornos de desarrollo que podemos utilizar para programar en Python.",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introducción e Instalaciones Necesarias.</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introducción e Instalaciones Necesarias.</span>"
     ]
   },
   {
@@ -123,7 +128,7 @@
     "text": "¿Qué es la programación?\nLa programación es el proceso de diseñar e implementar un programa de computadora. Un programa es un conjunto de instrucciones que le dice a la computadora qué hacer. Estas instrucciones pueden ser escritas en diferentes lenguajes de programación, como Python, Java, C++, entre otros.",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introducción a la Programación con Python</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Introducción a la Programación con Python</span>"
     ]
   },
   {
@@ -134,7 +139,7 @@
     "text": "¿Qué es Python?\nPython es un lenguaje de programación de alto nivel, interpretado y orientado a objetos. Fue creado por Guido van Rossum en 1991 y es uno de los lenguajes de programación más populares en la actualidad. Python es conocido por su sintaxis simple y legible, lo que lo hace ideal para principiantes en programación.",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introducción a la Programación con Python</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Introducción a la Programación con Python</span>"
     ]
   },
   {
@@ -145,7 +150,7 @@
     "text": "¿Por qué aprender Python?\nPython es un lenguaje de programación versátil que se puede utilizar para una amplia variedad de aplicaciones, como desarrollo web, análisis de datos, inteligencia artificial, entre otros. Además, Python es fácil de aprender y de usar, lo que lo convierte en una excelente opción para aquellos que quieren iniciarse en la programación.",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introducción a la Programación con Python</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Introducción a la Programación con Python</span>"
     ]
   },
   {
@@ -156,7 +161,7 @@
     "text": "¿Qué aprenderemos en este bootcamp?\nEn este bootcamp aprenderemos los conceptos básicos de programación con Python, incluyendo variables, tipos de datos, operadores, estructuras de control, funciones, entre otros. Al final del bootcamp, tendrás los conocimientos necesarios para crear tus propios programas en Python y continuar tu aprendizaje en programación.\n¡Vamos a empezar!",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introducción a la Programación con Python</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Introducción a la Programación con Python</span>"
     ]
   },
   {
@@ -167,7 +172,7 @@
     "text": "Identación en Python\nPython utiliza la identación para definir bloques de código. La identación es el espacio en blanco al principio de una línea de código y se utiliza para indicar que una línea de código pertenece a un bloque de código. Por ejemplo, en el siguiente código, la línea print(“Hola, mundo!”) está identada con cuatro espacios, lo que indica que pertenece al bloque de código del if.\nif True:\n    print(\"Hola, mundo!\")\nEn el código anterior, la línea print(“Hola, mundo!”) se ejecutará si la condición del if es verdadera. Si la línea no estuviera identada, no se ejecutaría dentro del bloque de código del if.",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introducción a la Programación con Python</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Introducción a la Programación con Python</span>"
     ]
   },
   {
@@ -178,7 +183,7 @@
     "text": "Comentarios en python\nLos comentarios son líneas de texto que se utilizan para explicar el código y hacerlo más legible. En Python, los comentarios se crean utilizando el símbolo #. Todo lo que sigue al símbolo # en una línea se considera un comentario y no se ejecuta como código.\n# Este es un comentarios\nprint(\"Hola, mundo!\") # Este es otro comentarios\nEn el código anterior, la línea print(“Hola, mundo!”) se ejecutará, pero los comentarios no se ejecutarán.",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introducción a la Programación con Python</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Introducción a la Programación con Python</span>"
     ]
   },
   {
@@ -189,7 +194,7 @@
     "text": "Variables y Variables Múltiples\nUna variable es un contenedor que se utiliza para almacenar datos en un programa. En Python, una variable se crea asignando un valor a un nombre de variable. Por ejemplo, en el siguiente código, la variable nombre se crea y se le asigna el valor “Juan”.\nnombre = \"Juan\"\nprint(nombre)\nEn el código anterior, la variable nombre se imprime en la consola y se muestra el valor “Juan”.\nEn Python, también se pueden crear múltiples variables en una sola línea. Por ejemplo, en el siguiente código, se crean tres variables a, b y c y se les asignan los valores 1, 2 y 3 respectivamente.\na, b, c = 1, 2, 3\nprint(a, b, c)\nEn el código anterior, las variables a, b y c se imprimen en la consola y se muestran los valores 1, 2 y 3 respectivamente.",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introducción a la Programación con Python</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Introducción a la Programación con Python</span>"
     ]
   },
   {
@@ -200,7 +205,7 @@
     "text": "Concatenación de Cadenas\nLa concatenación de cadenas es la unión de dos o más cadenas en una sola cadena. En Python, se puede concatenar cadenas utilizando el operador +. Por ejemplo, en el siguiente código, se concatenan las cadenas “Hola” y “mundo” en una sola cadena.\nsaludo = \"Hola\" + \"mundo\"\nprint(saludo)\nEn el código anterior, la variable saludo se imprime en la consola y se muestra la cadena “Hola mundo”.\nAlgunos ejemplos adicionales de concatenación de cadenas son:\nnombre = \"Juan\"\napellido = \"Pérez\"\nnombre_completo = nombre + \" \" + apellido\nprint(nombre_completo)\nEn el código anterior, la variable nombre_completo se imprime en la consola y se muestra la cadena “Juan Pérez”.\nedad = 30\nmensaje = \"Tengo \" + str(edad) + \" años\"\nprint(mensaje)\nEn el código anterior, la variable mensaje se imprime en la consola y se muestra la cadena “Tengo 30 años”.",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introducción a la Programación con Python</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Introducción a la Programación con Python</span>"
     ]
   },
   {
@@ -211,7 +216,7 @@
     "text": "instrucciones\n\nCrea una variable llamada nombre y asígnale tu nombre.\nCrea una variable llamada edad y asígnale tu edad.\nCrea una variable llamada ciudad y asígnale tu ciudad de origen.\nImprime en la consola un mensaje que contenga tu nombre, edad y ciudad de origen utilizando la concatenación de cadenas.\nCrea una variable llamada mensaje y asígnale el siguiente mensaje: “Hola, mi nombre es [nombre], tengo [edad] años y soy de [ciudad].”\nImprime en la consola el mensaje utilizando la variable mensaje.\n\n\n\n🔍 Pistas\n\n\nPara concatenar cadenas en Python, utiliza el operador +.\n\nPara convertir un número entero en una cadena, utiliza la función str().",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introducción a la Programación con Python</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Introducción a la Programación con Python</span>"
     ]
   },
   {
@@ -222,7 +227,7 @@
     "text": "String y Números.\nLos String y los Números son dos de los tipos de datos más comunes en Python. Los String son secuencias de caracteres, como letras, números y símbolos, que se utilizan para representar texto. Los Números, por otro lado, son valores numéricos, como enteros y decimales, que se utilizan para realizar cálculos matemáticos.\n\nString\nLos String en Python se crean utilizando comillas simples ’ ’ o comillas dobles ” “. Por ejemplo:\nnombre = \"Juan\"\napellido = 'Pérez'\nEn el código anterior, se crean dos variables, nombre y apellido, que contienen los String “Juan” y “Pérez” respectivamente.\n\n\nNúmeros\nLos Números en Python pueden ser enteros o decimales. Los enteros son números enteros, como 1, 2, 3, mientras que los decimales son números con decimales, como 1.5, 2.75, 3.14. Por ejemplo:\nentero = 10\ndecimal = 3.14\nEn el código anterior, se crean dos variables, entero y decimal, que contienen los números 10 y 3.14 respectivamente.",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Tipos de Datos</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Tipos de Datos</span>"
     ]
   },
   {
@@ -233,7 +238,7 @@
     "text": "Listas y Tuplas.\nLas listas y las tuplas son dos tipos de datos en Python que se utilizan para almacenar colecciones de elementos. Las listas son colecciones ordenadas y modificables de elementos, mientras que las tuplas son colecciones ordenadas e inmutables de elementos.\n\nListas\nLas listas en Python se crean utilizando corchetes [ ] y pueden contener cualquier tipo de datos, como números, String, listas, tuplas, diccionarios, etc. Por ejemplo:\nnumeros = [1, 2, 3, 4, 5]\nnombres = [\"Juan\", \"María\", \"Pedro\"]\nEn el código anterior, se crean dos listas, numeros y nombres, que contienen los números 1, 2, 3, 4, 5 y los nombres “Juan”, “María”, “Pedro” respectivamente.\n\n\nTuplas\nLas tuplas en Python se crean utilizando paréntesis ( ) y pueden contener cualquier tipo de datos, como números, String, listas, tuplas, diccionarios, etc. Por ejemplo:\ncoordenadas = (10, 20)\ncolores = (\"rojo\", \"verde\", \"azul\")\nEn el código anterior, se crean dos tuplas, coordenadas y colores, que contienen las coordenadas (10, 20) y los colores “rojo”, “verde”, “azul” respectivamente.",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Tipos de Datos</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Tipos de Datos</span>"
     ]
   },
   {
@@ -244,7 +249,7 @@
     "text": "Diccionarios y Booleanos.\nLos diccionarios y los booleanos son dos tipos de datos en Python que se utilizan para almacenar información y tomar decisiones.\n\nDiccionarios\nLos diccionarios en Python se crean utilizando llaves { } y contienen pares de claves y valores. Por ejemplo:\npersona = {\"nombre\": \"Juan\", \"edad\": 30, \"ciudad\": \"Bogotá\"}\nEn el código anterior, se crea un diccionario persona que contiene las claves “nombre”, “edad” y “ciudad” con los valores “Juan”, 30 y “Bogotá” respectivamente.\n\n\nBooleanos\nLos booleanos en Python son valores lógicos que pueden ser True o False. Se utilizan para tomar decisiones en un programa. Por ejemplo:\nes_mayor_de_edad = True\nes_estudiante = False\nEn el código anterior, se crean dos variables booleanas, es_mayor_de_edad y es_estudiante, que contienen los valores True y False respectivamente.",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Tipos de Datos</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Tipos de Datos</span>"
     ]
   },
   {
@@ -255,7 +260,7 @@
     "text": "Range\nEl tipo de datos range en Python se utiliza para generar una secuencia de números. Se crea utilizando la función range() y puede contener hasta tres argumentos: start, stop y step. Por ejemplo:\nnumeros = range(1, 10, 2)\nEn el código anterior, se crea un objeto range llamado numeros que contiene los números 1, 3, 5, 7, 9.",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Tipos de Datos</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Tipos de Datos</span>"
     ]
   },
   {
@@ -266,7 +271,7 @@
     "text": "Instrucciones\n\nCrea una lista llamada numeros que contenga los números del 1 al 10.\nCrea una tupla llamada colores que contenga los colores “rojo”, “verde” y “azul”.\nCrea un diccionario llamado persona que contenga las claves “nombre”, “edad” y “ciudad” con los valores “Juan”, 30 y “Bogotá” respectivamente.\nCrea una variable booleana llamada es_mayor_de_edad y asígnale el valor True.\nImprime en la consola las variables numeros, colores, persona y es_mayor_de_edad.\n¿Qué tipo de datos es la variable numeros? ¿Y la variable colores? ¿Y la variable persona? ¿Y la variable es_mayor_de_edad?\n¿Qué tipo de datos es la variable numeros[0]? ¿Y la variable colores[1]? ¿Y la variable persona[“nombre”]? ¿Y la variable es_mayor_de_edad?\n¿Qué tipo de datos es la variable numeros[0:5]? ¿Y la variable colores[1:]? ¿Y la variable persona.keys()? ¿Y la variable es_mayor_de_edad?\n¿Qué tipo de datos es la variable range(1, 10, 2)? ¿Y la variable range(10)? ¿Y la variable range(1, 10)? ¿Y la variable range(1, 10, 1)?\n¿Qué tipo de datos es la variable range(1, 10, 2)[0]? ¿Y la variable range(10)[0]? ¿Y la variable range(1, 10)[0]? ¿Y la variable range(1, 10, 1)[0]?\n\n\n\nPosibles soluciones\n\n\nLa variable numeros es una lista.\nLa variable colores es una tupla.\nLa variable persona es un diccionario.\nLa variable es_mayor_de_edad es un booleano.\nLa variable numeros[0] es un número.\nLa variable colores[1] es un String.\nLa variable persona[“nombre”] es un String.\nLa variable numeros[0:5] es una lista.\nLa variable range(1, 10, 2) es un objeto range.\nLa variable range(1, 10, 2)[0] es un número.",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Tipos de Datos</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Tipos de Datos</span>"
     ]
   },
   {
@@ -277,7 +282,7 @@
     "text": "If y Condicionales\nPara entender el concepto de If y Condicionales en Python, primero debemos comprender qué es una condición. Una condición es una expresión que se evalúa como verdadera o falsa. En Python, las condiciones se utilizan para tomar decisiones en un programa.\nLa estructura básica de un If en Python es la siguiente:\nif condicion:\n    # Bloque de código si la condición es verdadera\nEn el código anterior, si la condición es verdadera, se ejecutará el bloque de código dentro del If. Si la condición es falsa, el bloque de código no se ejecutará.\nPor ejemplo:\nedad = 18\n\nif edad &gt;= 18:\n    print(\"Eres mayor de edad\")\nEn el código anterior, si la variable edad es mayor o igual a 18, se imprimirá en la consola el mensaje “Eres mayor de edad”.",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Control de Flujo</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Control de Flujo</span>"
     ]
   },
   {
@@ -288,7 +293,7 @@
     "text": "If, elif y else\nAdemás del If, Python también proporciona las palabras clave elif y else para tomar decisiones más complejas en un programa. La estructura básica de un If, elif y else en Python es la siguiente:\nif condicion1:\n    # Bloque de código si la condicion1 es verdadera\nelif condicion2:\n    # Bloque de código si la condicion2 es verdadera\nelse:\n    # Bloque de código si ninguna de las condiciones anteriores es verdadera\nEn el código anterior, si la condicion1 es verdadera, se ejecutará el bloque de código dentro del If. Si la condicion1 es falsa y la condicion2 es verdadera, se ejecutará el bloque de código dentro del elif. Si ninguna de las condiciones anteriores es verdadera, se ejecutará el bloque de código dentro del else.\nPor ejemplo:\nedad = 18\n\nif edad &lt; 18:\n    print(\"Eres menor de edad\")\nelif edad == 18:\n    print(\"Tienes 18 años\")\nelse:\n    print(\"Eres mayor de edad\")\nEn el código anterior, si la variable edad es menor que 18, se imprimirá en la consola el mensaje “Eres menor de edad”. Si la variable edad es igual a 18, se imprimirá en la consola el mensaje “Tienes 18 años”. Si ninguna de las condiciones anteriores es verdadera, se imprimirá en la consola el mensaje “Eres mayor de edad”.",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Control de Flujo</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Control de Flujo</span>"
     ]
   },
   {
@@ -299,7 +304,7 @@
     "text": "And y Or\nPara entender el concepto de And y Or en Python, primero debemos comprender cómo funcionan los operadores lógicos. Los operadores lógicos se utilizan para combinar o modificar condiciones en una expresión lógica.\nEn Python, los operadores lógicos más comunes son and y or. El operador and devuelve True si ambas condiciones son verdaderas. El operador or devuelve True si al menos una de las condiciones es verdadera.\nPor ejemplo:\nedad = 18\n\nif edad &gt;= 18 and edad &lt;= 30:\n    print(\"Tienes entre 18 y 30 años\")\nEn el código anterior, si la variable edad es mayor o igual a 18 y menor o igual a 30, se imprimirá en la consola el mensaje “Tienes entre 18 y 30 años”.",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Control de Flujo</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Control de Flujo</span>"
     ]
   },
   {
@@ -310,7 +315,7 @@
     "text": "While loop\nPara entender el concepto de While loop en Python, primero debemos comprender qué es un bucle. Un bucle es una estructura de control que se utiliza para repetir una secuencia de instrucciones varias veces. En Python, el bucle while se utiliza para repetir un bloque de código mientras una condición sea verdadera.\nLa estructura básica de un While loop en Python es la siguiente:\nwhile condicion:\n    # Bloque de código que se repetirá mientras la condición sea verdadera\nEn el código anterior, si la condición es verdadera, se ejecutará el bloque de código dentro del While loop. El bloque de código se repetirá hasta que la condición sea falsa.\nPor ejemplo:\ncontador = 0\n\nwhile contador &lt; 5:\n    print(contador)\n    contador += 1\nEn el código anterior, se crea una variable contador con el valor 0. Luego, se ejecuta un While loop que imprime el valor del contador y luego incrementa el contador en 1 en cada iteración. El bucle se repetirá hasta que el contador sea mayor o igual a 5.",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Control de Flujo</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Control de Flujo</span>"
     ]
   },
   {
@@ -321,7 +326,7 @@
     "text": "While, break y continue\nPara entender el concepto de While, break y continue en Python, primero debemos comprender cómo funcionan las palabras clave break y continue en un bucle while.\nLa palabra clave break se utiliza para salir de un bucle while antes de que la condición sea falsa. La palabra clave continue se utiliza para saltar a la siguiente iteración del bucle while sin ejecutar el resto del bloque de código.\nPor ejemplo:\ncontador = 0\n\nwhile contador &lt; 5:\n    if contador == 3:\n        break\n    print(contador)\n    contador += 1\nEn el código anterior, se crea una variable contador con el valor 0. Luego, se ejecuta un While loop que imprime el valor del contador y luego incrementa el contador en 1 en cada iteración. Si el contador es igual a 3, se ejecuta la palabra clave break y se sale del bucle.",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Control de Flujo</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Control de Flujo</span>"
     ]
   },
   {
@@ -332,7 +337,7 @@
     "text": "For loop\nPara entender el concepto de For loop en Python, primero debemos comprender cómo funciona un bucle for. Un bucle for se utiliza para iterar sobre una secuencia de elementos, como una lista, una tupla, un diccionario, etc.\nLa estructura básica de un For loop en Python es la siguiente:\nfor elemento in secuencia:\n    # Bloque de código que se repetirá para cada elemento en la secuencia\nEn el código anterior, el bucle for recorre cada elemento en la secuencia y ejecuta el bloque de código para cada elemento.\nPor ejemplo:\nnumeros = [1, 2, 3, 4, 5]\n\nfor numero in numeros:\n    print(numero)\nEn el código anterior, se crea una lista numeros con los números del 1 al 5. Luego, se ejecuta un For loop que imprime cada número en la lista.",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Control de Flujo</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Control de Flujo</span>"
     ]
   },
   {
@@ -343,7 +348,7 @@
     "text": "instrucciones\n\nCrea una lista llamada numeros que contenga los números del 1 al 10.\nCrea una tupla llamada colores que contenga los colores “rojo”, “verde” y “azul”.\nCrea un diccionario llamado persona que contenga las claves “nombre”, “edad” y “ciudad” con los valores “Diego”, 36 y “Quito” respectivamente.\nCrea una variable booleana llamada es_mayor_de_edad y asígnale el valor True.\nImprime en la consola las variables numeros, colores, persona y es_mayor_de_edad.\n¿Qué tipo de datos es la variable numeros? ¿Y la variable colores? ¿Y la variable persona? ¿Y la variable es_mayor_de_edad?\n¿Qué tipo de datos es la variable numeros[0]? ¿Y la variable colores[1]? ¿Y la variable persona[“nombre”]? ¿Y la variable es_mayor_de_edad?\n¿Qué tipo de datos es la variable numeros[0:5]? ¿Y la variable colores[1:]? ¿Y la variable persona.keys()? ¿Y la variable es_mayor_de_edad?\n¿Qué tipo de datos es la variable range(1, 10, 2)? ¿Y la variable range(10)? ¿Y la variable range(1, 10)? ¿Y la variable range(1, 10, 1)?\n¿Qué tipo de datos es la variable range(1, 10, 2)[0]? ¿Y la variable range(10)[0]? ¿Y la variable range(1, 10)[0]? ¿Y la variable range(1, 10, 1)[0]?\n\n\n\nPosibles soluciones\n\n\nLa variable numeros es una lista.\nLa variable colores es una tupla.\nLa variable persona es un diccionario.\nLa variable es_mayor_de_edad es un booleano.\nLa variable numeros[0] es un número.\nLa variable colores[1] es un String.\nLa variable persona[“nombre”] es un String.\nLa variable numeros[0:5] es una lista.\nLa variable range(1, 10, 2) es un objeto range.\nLa variable range(1, 10, 2)[0] es un número.",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Control de Flujo</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Control de Flujo</span>"
     ]
   },
   {
@@ -354,7 +359,7 @@
     "text": "Introducción a Funciones\nPara entender de mejor forma cómo funcionan las funciones en Python, vamos a crear una función que reciba dos números como parámetros y devuelva la suma de los mismos. Por ejemplo:\ndef sumar(a, b):\n    return a + b\nEn el código anterior, se define una función llamada sumar que recibe dos parámetros a y b y devuelve la suma de los mismos. Para llamar a la función sumar y obtener el resultado, se puede hacer de la siguiente manera:\nresultado = sumar(5, 3)\nprint(resultado)\nEn el código anterior, se llama a la función sumar con los números 5 y 3 como parámetros y se imprime en la consola el resultado 8.",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Funciones y recursividad.</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Funciones y recursividad.</span>"
     ]
   },
   {
@@ -365,7 +370,7 @@
     "text": "Parámetros y Argumentos\nEn Python, los parámetros son las variables que se definen en la declaración de la función, mientras que los argumentos son los valores que se pasan a la función cuando se llama. Por ejemplo:\ndef saludar(nombre):\n    print(\"Hola, \" + nombre + \"!\")\nEn el código anterior, la función saludar tiene un parámetro llamado nombre. Para llamar a la función saludar con un argumento, se puede hacer de la siguiente manera:\nsaludar(\"Juan\")\nEn el código anterior, se llama a la función saludar con el argumento “Juan” y se imprime en la consola el mensaje “Hola, Juan!”.",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Funciones y recursividad.</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Funciones y recursividad.</span>"
     ]
   },
   {
@@ -376,7 +381,7 @@
     "text": "Retorno de valores\nEn Python, las funciones pueden devolver valores utilizando la palabra clave return seguida del valor que se desea devolver. Por ejemplo:\ndef sumar(a, b):\n    return a + b\nEn el código anterior, la función sumar devuelve la suma de los números a y b. Para obtener el valor devuelto por la función, se puede asignar a una variable y luego imprimir en la consola. Por ejemplo:\nresultado = sumar(5, 3)\nprint(resultado)\nEn el código anterior, se llama a la función sumar con los números 5 y 3 como parámetros, se asigna el resultado a la variable resultado y se imprime en la consola el valor 8.",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Funciones y recursividad.</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Funciones y recursividad.</span>"
     ]
   },
   {
@@ -387,7 +392,7 @@
     "text": "Recursividad\nLa recursividad es un concepto en programación en el que una función se llama a sí misma para resolver un problema más pequeño. Por ejemplo, la función factorial se puede definir de forma recursiva de la siguiente manera:\ndef factorial(n):\n    if n == 0:\n        return 1\n    else:\n        return n * factorial(n - 1)\nEn el código anterior, la función factorial calcula el factorial de un número n de forma recursiva. Para llamar a la función factorial y obtener el resultado, se puede hacer de la siguiente manera:\nresultado = factorial(5)\nprint(resultado)\nEn el código anterior, se llama a la función factorial con el número 5 como parámetro y se imprime en la consola el resultado 120.\nOtro ejemplo de recursividad es la función Fibonacci, que calcula el enésimo término de la secuencia de Fibonacci de forma recursiva. Por ejemplo:\ndef fibonacci(n):\n    if n &lt;= 1:\n        return n\n    else:\n        return fibonacci(n - 1) + fibonacci(n - 2)\nEn el código anterior, la función fibonacci calcula el enésimo término de la secuencia de Fibonacci de forma recursiva. Para llamar a la función fibonacci y obtener el resultado, se puede hacer de la siguiente manera:\nresultado = fibonacci(10)\nprint(resultado)\nEn el código anterior, se llama a la función fibonacci con el número 10 como parámetro y se imprime en la consola el resultado 55.",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Funciones y recursividad.</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Funciones y recursividad.</span>"
     ]
   },
   {
@@ -398,7 +403,7 @@
     "text": "Instrucciones\n\nCrea una función llamada saludar que reciba un parámetro nombre y devuelva un saludo personalizado. Por ejemplo, si el nombre es “Juan”, la función debe devolver el mensaje “Hola, Juan!”.\nCrea una función llamada calcular_promedio que reciba una lista de números como parámetro y devuelva el promedio de los mismos. Por ejemplo, si la lista es [1, 2, 3, 4, 5], la función debe devolver 3.0.\nCrea una función llamada es_par que reciba un número como parámetro y devuelva True si el número es par y False si no lo es.\nCrea una función llamada calcular_factorial que reciba un número como parámetro y devuelva el factorial del mismo. Por ejemplo, si el número es 5, la función debe devolver 120.\nCrea una función llamada calcular_fibonacci que reciba un número como parámetro y devuelva el enésimo término de la secuencia de Fibonacci. Por ejemplo, si el número es 10, la función debe devolver 55.\nLlama a cada una de las funciones creadas con valores de ejemplo y muestra los resultados en la consola.\n\n\n\n🔍 Pistas\n\n\nPara definir una función en Python, utiliza la palabra clave def seguida del nombre de la función y los parámetros entre paréntesis.\n\nPara devolver un valor en una función, utiliza la palabra clave return seguida del valor que deseas devolver.\nPara llamar a una función en Python, simplemente escribe el nombre de la función seguido de paréntesis y los argumentos si es necesario.",
     "crumbs": [
       "Unidad 1: Introducción e Instalaciones Necesarias",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Funciones y recursividad.</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Funciones y recursividad.</span>"
     ]
   },
   {
@@ -409,7 +414,7 @@
     "text": "Objetos y Clases\nLos objetos son instancias de una clase. Una clase es una plantilla para crear objetos. Los objetos tienen atributos y métodos.",
     "crumbs": [
       "Unidad 2: Programación Orientada a Objetos",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Programacion Orientada a Objetos.</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Programacion Orientada a Objetos.</span>"
     ]
   },
   {
@@ -420,7 +425,7 @@
     "text": "Atributos\nLos atributos son variables que pertenecen a un objeto. Los atributos pueden ser de cualquier tipo de datos.\nEjemplo:\nclass Coche:\n    def __init__(self, marca, modelo, color):\n        self.marca = marca\n        self.modelo = modelo\n        self.color = color\nEn el código anterior se definen tres atributos marca, modelo y color.",
     "crumbs": [
       "Unidad 2: Programación Orientada a Objetos",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Programacion Orientada a Objetos.</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Programacion Orientada a Objetos.</span>"
     ]
   },
   {
@@ -431,7 +436,7 @@
     "text": "Métodos\nLos métodos son funciones que pertenecen a un objeto. Los métodos pueden acceder a los atributos de un objeto.\nEjemplo:\nclass Coche:\n    def acelerar(self):\n        print(f\"El coche {self.marca} {self.modelo} de color {self.color} está acelerando\")\n\n    def frenar(self):\n        print(f\"El coche {self.marca} {self.modelo} de color {self.color} está frenando\")\nEn el código anterior se definen dos métodos acelerar y frenar.",
     "crumbs": [
       "Unidad 2: Programación Orientada a Objetos",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Programacion Orientada a Objetos.</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Programacion Orientada a Objetos.</span>"
     ]
   },
   {
@@ -442,7 +447,7 @@
     "text": "Self, Eliminar Propiedades y Objetos\nEl primer parámetro de un método es self. Self es una referencia al objeto actual. Se utiliza para acceder a los atributos y métodos de un objeto.\nEjemplo:\nclass Coche:\n    def __init__(self, marca, modelo, color):\n        self.marca = marca\n        self.modelo = modelo\n        self.color = color\n\n    def acelerar(self):\n        print(f\"El coche {self.marca} {self.modelo} de color {self.color} está acelerando\")\n\n    def frenar(self):\n        print(f\"El coche {self.marca} {self.modelo} de color {self.color} está frenando\")\n\n    def __del__(self):\n        print(f\"El coche {self.marca} {self.modelo} de color {self.color} ha sido eliminado\")\n\ncoche = Coche(\"Toyota\", \"Corolla\", \"Rojo\")\nprint(coche)\ncoche.acelerar()\ncoche.frenar()\ndel coche\nEn el código anterior se define un método especial del que se llama cuando un objeto es eliminado.",
     "crumbs": [
       "Unidad 2: Programación Orientada a Objetos",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Programacion Orientada a Objetos.</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Programacion Orientada a Objetos.</span>"
     ]
   },
   {
@@ -453,7 +458,7 @@
     "text": "Herencia, Polimorfismo y Encapsulación\nLa herencia es una característica de la POO que permite crear una nueva clase a partir de una clase existente. La nueva clase hereda los atributos y métodos de la clase existente.\nEl polimorfismo es una característica de la POO que permite que un objeto se computadora de diferentes maneras dependiendo del contexto.\nLa encapsulación es una característica de la POO que permite ocultar los detalles de implementación de un objeto.\nEjemplo:\nClass Deporte:\n    def __init__(self, nombre):\n        self.nombre = nombre\n\n    def jugar(self):\n        pass\n\nclass Futbol(Deporte):\n  def jugar(self):\n      print(f\"Jugando futbol\")\n\nclass Baloncesto(Deporte):\n  def jugar(self):\n      print(f\"Jugando baloncesto\")\n\ndeporte = Futbol(\"Futbol\")\ndeporte.jugar()\n\ndeporte = Baloncesto(\"Baloncesto\")\ndeporte.jugar()\nEn el código anterior se define una clase Deporte con un método jugar. Luego se definen dos clases Futbol y Baloncesto que heredan de la clase Deporte y sobrescriben el método jugar.",
     "crumbs": [
       "Unidad 2: Programación Orientada a Objetos",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Programacion Orientada a Objetos.</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Programacion Orientada a Objetos.</span>"
     ]
   },
   {
@@ -464,7 +469,7 @@
     "text": "Actividad\n\nCrear una clase Persona con los atributos nombre, edad y sexo.\nCrear una clase Estudiante que herede de la clase Persona con los atributos carnet y carrera.\nCrear una clase Profesor que herede de la clase Persona con los atributos codigo y especialidad.\nCrear una clase Curso con los atributos nombre, codigo y profesor.\nCrear una clase Universidad con los atributos nombre y cursos.\nCrear un objeto universidad de la clase Universidad con el nombre Universidad de El Salvador y los siguientes cursos:\n\n\nCurso 1: Nombre: Matematicas, Codigo: MAT101, Profesor: Juan Perez\nCurso 2: Nombre: Fisica, Codigo: FIS101, Profesor: Maria Lopez\nCurso 3: Nombre: Quimica, Codigo: QUI101, Profesor: Pedro Ramirez\n\n\nImprimir el objeto universidad.\nCrear un objeto estudiante de la clase Estudiante con los siguientes atributos:\n\n\nNombre: Carlos Perez\nEdad: 20\nSexo: Masculino\nCarnet: 202010101\nCarrera: Ingenieria en Sistemas Informaticos\n\n\nImprimir el objeto estudiante.\nCrear un objeto profesor de la clase Profesor con los siguientes atributos:\n\n\nNombre: Juan Perez\nEdad: 30\nSexo: Masculino\nCodigo: 202020202\nEspecialidad: Matematicas\n\n\nImprimir el objeto profesor.\nCrear un objeto curso de la clase Curso con los siguientes atributos:\n\n\nNombre: Matematicas\nCodigo: MAT101\nProfesor: Juan Perez\n\n\nImprimir el objeto curso.\nAgregar el objeto curso al objeto universidad.\nImprimir el objeto universidad.\nCrear un objeto curso de la clase Curso con los siguientes atributos:\n\n\nNombre: Fisica\nCodigo: FIS101\nProfesor: Maria Lopez\n\n\n\nRespuesta\n\nclass Persona:\n    def __init__(self, nombre, edad, sexo):\n        self.nombre = nombre\n        self.edad = edad\n        self.sexo = sexo\n\nclass Estudiante(Persona):\n    def __init__(self, nombre, edad, sexo, carnet, carrera):\n        super().__init__(nombre, edad, sexo)\n        self.carnet = carnet\n        self.carrera = carrera\n\nclass Profesor(Persona):\n    def __init__(self, nombre, edad, sexo, codigo, especialidad):\n        super().__init__(nombre, edad, sexo)\n        self.codigo = codigo\n        self.especialidad = especialidad\n\nclass Curso:\n    def __init__(self, nombre, codigo, profesor):\n        self.nombre = nombre\n        self.codigo = codigo\n        self.profesor = profesor\n\nclass Universidad\n    def __init__(self, nombre):\n        self.nombre = nombre\n        self.cursos = []\n\nuniversidad = Universidad(\"Universidad de las Fuerzas Armadas ESPE\")\ncurso1 = Curso(\"Matematicas\", \"MAT101\", \"Juan Perez\")\ncurso2 = Curso(\"Fisica\", \"FIS101\", \"Maria Lopez\")\ncurso3 = Curso(\"Quimica\", \"QUI101\", \"Pedro Ramirez\")\nuniversidad.cursos.append(curso1)\nuniversidad.cursos.append(curso2)\nuniversidad.cursos.append(curso3)\nprint(universidad)\n\nestudiante = Estudiante(\"Carlos Perez\", 20, \"Masculino\", \"202010101\", \"Ingenieria en Sistemas Informaticos\")\nprint(estudiante)\n\nprofesor = Profesor(\"Juan Perez\", 30, \"Masculino\", \"202020202\", \"Matematicas\")\nprint(profesor)\n\ncurso = Curso(\"Matematicas\", \"MAT101\", \"Juan Perez\")\nprint(curso)\n\ncurso = Curso(\"Fisica\", \"FIS101\", \"Maria Lopez\")\nuniversidad.cursos.append(curso)\nprint(universidad)",
     "crumbs": [
       "Unidad 2: Programación Orientada a Objetos",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Programacion Orientada a Objetos.</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Programacion Orientada a Objetos.</span>"
     ]
   },
   {
@@ -475,7 +480,7 @@
     "text": "Introducción a Módulos.\nLos módulos en python son archivos que contienen definiciones y declaraciones de python. Los módulos permiten organizar el código en archivos separados. Los módulos se utilizan para reutilizar código y para mantener el código organizado.\nEjemplo:\nEn el código anterior se define un módulo modulo.py que contiene una función saludar.\nEjemplo:\nEn el código anterior se define un módulo modulo.py que contiene una función despedir.",
     "crumbs": [
       "Unidad 3: Módulos y Paquetes",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos en Python</span>"
     ]
   },
   {
@@ -486,7 +491,7 @@
     "text": "# modulo.py \ndef saludar():\n    print(\"Hola Mundo\")\n\n\n# modulo.py\ndef despedir():\n    print(\"Adiós Mundo\")",
     "crumbs": [
       "Unidad 3: Módulos y Paquetes",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos en Python</span>"
     ]
   },
   {
@@ -497,7 +502,7 @@
     "text": "Creando el primer Módulo.\nPara crear nuestro primer módulo en python, creamos un archivo con extensión .py y definimos las funciones que queremos exportar.\nEjemplo:\n# modulo_saludar.py\n\ndef saludar(nombre):\n    print(f\"Hola {nombre}\")\nEn el código anterior se define un módulo modulo_saludar.py que contiene una función saludar.",
     "crumbs": [
       "Unidad 3: Módulos y Paquetes",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos en Python</span>"
     ]
   },
   {
@@ -508,7 +513,7 @@
     "text": "Creando el segundo Módulo.\nPara crear nuestro segundo módulo en python, creamos un archivo con extensión .py y definimos las funciones que queremos exportar.\nEjemplo:\n# modulo_despedir.py\n\ndef despedir(nombre):\n    print(f\"Adiós {nombre}\")\nEn el código anterior se define un módulo modulo_despedir.py que contiene una función despedir.",
     "crumbs": [
       "Unidad 3: Módulos y Paquetes",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos en Python</span>"
     ]
   },
   {
@@ -519,7 +524,7 @@
     "text": "Creando el archivo principal.\nPara utilizar los módulos en python, creamos un archivo principal con extensión .py e importamos los módulos que queremos utilizar.\nEjemplo:\n# main.py\nimport modulo_saludar\nimport modulo_despedir\n\n__name__ == \"__main__\"\nmodulo_saludar.saludar(\"Juan\")\nmodulo_despedir.despedir(\"Juan\")\nEn el código anterior se importan los módulos modulo_saludar y modulo_despedir y se utilizan las funciones saludar y despedir.",
     "crumbs": [
       "Unidad 3: Módulos y Paquetes",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos en Python</span>"
     ]
   },
   {
@@ -530,7 +535,7 @@
     "text": "Importando Módulos.\nPara importar un módulo en python se utiliza la palabra clave import seguida del nombre del módulo.\n\n\n\n\n\n\nTip\n\n\n\nUtilizaremos el mismo ejemplo anterior.\n\n\nEjemplo:\n# main.py\n\nimport modulo_saludar\nimport modulo_despedir\n\nmodulo_saludar.saludar(\"Juan\")\nmodulo_despedir.despedir(\"Juan\")\nEn el código anterior se importan los módulos modulo_saludar y modulo_despedir y se utilizan las funciones saludar y despedir.",
     "crumbs": [
       "Unidad 3: Módulos y Paquetes",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos en Python</span>"
     ]
   },
   {
@@ -541,7 +546,7 @@
     "text": "Renombrando Módulos.\nPara renombrar un módulo en python se utiliza la palabra clave as seguida del nuevo nombre.\nEjemplo:\n# main.py\n\nimport modulo_saludar as saludar\nimport modulo_despedir as despedir\n\nsaludar.saludar(\"Juan\")\ndespedir.despedir(\"Juan\")\nEn el código anterior se importan los módulos modulo_saludar y modulo_despedir con los nombres saludar y despedir respectivamente.",
     "crumbs": [
       "Unidad 3: Módulos y Paquetes",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos en Python</span>"
     ]
   },
   {
@@ -552,7 +557,7 @@
     "text": "Seleccionando Elementos\nPara importar elementos específicos de un módulo en python se utiliza la palabra clave from seguida del nombre del módulo y la palabra clave import seguida del nombre del elemento.\nEjemplo:\n# main.py\n\nfrom modulo_saludar import saludar\n\nsaludar(\"Juan\")\n\nfrom modulo_despedir import despedir\n\ndespedir(\"Juan\")\nEn el código anterior se importan las funciones saludar y despedir del módulo modulo_saludar y modulo_despedir respectivamente.",
     "crumbs": [
       "Unidad 3: Módulos y Paquetes",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos en Python</span>"
     ]
   },
   {
@@ -563,7 +568,7 @@
     "text": "Seleccionando lo importado y pip\n\nVamos a crear una aplicación divertida con emojis.\n\nEjemplo:\n# modulo_emojis.py\n\ndef sonreir():\n    print(\"😊\")\n\ndef llorar():\n    print(\"😢\")\n\n# main.py\n\nfrom modulo_emojis import sonreir\n\nsonreir()\n\nfrom modulo_emojis import llorar\n\nllorar()\nEn el código anterior se definen dos funciones sonreir y llorar en el módulo modulo_emojis. En el archivo main.py se importan las funciones sonreir y llorar y se utilizan.",
     "crumbs": [
       "Unidad 3: Módulos y Paquetes",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos en Python</span>"
     ]
   },
   {
@@ -574,7 +579,7 @@
     "text": "Instalando Módulos con pip\nPara instalar módulos en python se utiliza la herramienta pip. pip es un sistema de gestión de paquetes utilizado para instalar y administrar paquetes de software escritos en python.\nEjemplo:\npip install numpy\nEn el código anterior se instala el módulo numpy utilizando pip.\nAhora pra utilizar este módulo en nuestro código, simplemente lo importamos.\nEjemplo:\nimport numpy as np\n\na = np.array([1, 2, 3, 4, 5])\n\nprint(a)",
     "crumbs": [
       "Unidad 3: Módulos y Paquetes",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos en Python</span>"
     ]
   },
   {
@@ -585,7 +590,7 @@
     "text": "Actividad\n\nCrear un módulo modulo_calculadora.py que contenga las funciones sumar, restar, multiplicar y dividir.\nCrear un archivo main.py que importe el módulo modulo_calculadora y utilice las funciones sumar, restar, multiplicar y dividir.\nEjecutar el archivo main.py.\nInstalar el módulo numpy utilizando pip.\nCrear un archivo main_numpy.py que importe el módulo numpy y utilice la función array para crear un arreglo de números.\nEjecutar el archivo main_numpy.py.\nCrear un archivo main_pandas.py que importe el módulo pandas y utilice la función DataFrame para crear un DataFrame.\nEjecutar el archivo main_pandas.py.\nCrear un archivo main_matplotlib.py que importe el módulo matplotlib y utilice la función plot para graficar una función.\nEjecutar el archivo main_matplotlib.py.\n\n\n\nRespuesta\n\n\nCrear un módulo modulo_calculadora.py que contenga las funciones sumar, restar, multiplicar y dividir.\n\n# modulo_calculadora.py\n\ndef sumar(a, b):\n    return a + b\n\ndef restar(a, b):\n    return a - b\n\ndef multiplicar(a, b):\n    return a * b\n\ndef dividir(a, b):\n    return a / b\nEn el código anterior se define un módulo modulo_calculadora.py que contiene las funciones sumar, restar, multiplicar y dividir.\n\nCrear un archivo main.py que importe el módulo modulo_calculadora y utilice las funciones sumar, restar, multiplicar y dividir.\n\n# main.py\n\nimport modulo_calculadora\n\nprint(modulo_calculadora.sumar(2, 3))\nprint(modulo_calculadora.restar(5, 3))\nprint(modulo_calculadora.multiplicar(2, 3))\nprint(modulo_calculadora.dividir(6, 3))\nEn el código anterior se importa el módulo modulo_calculadora y se utilizan las funciones sumar, restar, multiplicar y dividir.\n\nEjecutar el archivo main.py.\n\npython main.py\nEl resultado es:\n5\n2\n6\n2.0\n\nInstalar el módulo numpy utilizando pip.\n\npip install numpy\n\nCrear un archivo main_numpy.py que importe el módulo numpy y utilice la función array para crear un arreglo de números.\n\n\n# main_numpy.py\n\nimport numpy as np\n\na = np.array([1, 2, 3, 4, 5])\n\nprint(a)\nEn el código anterior se importa el módulo numpy y se utiliza la función array para crear un arreglo de números.\n\nEjecutar el archivo main_numpy.py.\n\npython main_numpy.py\n\nCrear un archivo main_pandas.py que importe el módulo pandas y utilice la función DataFrame para crear un DataFrame.\n\n# main_pandas.py\n\nimport pandas as pd\n\ndata = {\n    'Nombre': ['Juan', 'Maria', 'Pedro'],\n    'Edad': [20, 25, 30]\n}\n\ndf = pd.DataFrame(data)\n\nprint(df)\nEn el código anterior se importa el módulo pandas y se utiliza la función DataFrame para crear un DataFrame.\n\nEjecutar el archivo main_pandas.py.\n\npython main_pandas.py\n\nCrear un archivo main_matplotlib.py que importe el módulo matplotlib y utilice la función plot para graficar una función.\n\n# main_matplotlib.py\n\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nx = np.linspace(0, 10, 100)\n\ny = np.sin(x)\n\nplt.plot(x, y)\n\nplt.show()\nEn el código anterior se importa el módulo matplotlib y se utiliza la función plot para graficar una función.\n\nEjecutar el archivo main_matplotlib.py.\n\npython main_matplotlib.py",
     "crumbs": [
       "Unidad 3: Módulos y Paquetes",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Módulos en Python</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos en Python</span>"
     ]
   },
   {
@@ -596,7 +601,7 @@
     "text": "Módulos del Proyecto\n\n📋 Módulo de tareas\n\nCrear una nueva tarea con título, descripción, fecha límite y prioridad.\nMarcar tareas como completadas ✅ o en progreso 🔄.\nOrganizar las tareas en orden de prioridad 🔥 o por fecha límite 📅.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>📝 Gestor de Tareas con Prioridades</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>📝 Gestor de Tareas con Prioridades</span>"
     ]
   },
   {
@@ -607,7 +612,7 @@
     "text": "Funciones Clave\n\nPrioriza tus tareas con un sistema de prioridades: baja, media y alta 🔥.\n\n\nDesarrollo\nCreamos la siguiente estructura de carpetas para organizar nuestro proyecto:\nproyecto_modulos/\n│\n├── tareas/\n│   ├── __init__.py\n│   ├── tareas.py\n│\nEn el archivo tareas.py definimos las clases y funciones necesarias para gestionar las tareas.\n# tareas.py\n\nclass Tarea:\n    def __init__(self, titulo, descripcion, fecha_limite, prioridad):\n        self.titulo = titulo\n        self.descripcion = descripcion\n        self.fecha_limite = fecha_limite\n        self.prioridad = prioridad\n        self.completada = False\n\n    def marcar_completada(self):\n        self.completada = True\n\n    def marcar_en_progreso(self):\n        self.completada = False\n\n    def __str__(self):\n        return f\"{self.titulo} - {self.prioridad} - {self.fecha_limite}\"\nEn el archivo init.py definimos las funciones principales para interactuar con las tareas.\n# __init__.py\n\nfrom tareas import Tarea\n\ndef crear_tarea(titulo, descripcion, fecha_limite, prioridad):\n    return Tarea(titulo, descripcion, fecha_limite, prioridad)\n\ndef marcar_completada(tarea):\n    tarea.marcar_completada()\n\ndef marcar_en_progreso(tarea):\n    tarea.marcar_en_progreso()\nCon esta estructura básica, podemos empezar a desarrollar la funcionalidad de nuestro gestor de tareas. En los siguientes módulos, ampliaremos las capacidades de nuestra aplicación y añadiremos nuevas funcionalidades.\nPara poder probar nuestro código, podemos crear un script de prueba en la misma carpeta:\n# test.py\n\nfrom tareas import Tarea\n\ntarea1 = Tarea(\"Hacer la compra\", \"Comprar leche, pan y fruta\", \"2022-12-31\", \"alta\")\n\nprint(tarea1)\nAl ejecutar el script de prueba, deberíamos ver la información de la tarea creada.\n$ python test.py\nHacer la compra - alta - 2022-12-31",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>📝 Gestor de Tareas con Prioridades</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>📝 Gestor de Tareas con Prioridades</span>"
     ]
   },
   {
@@ -618,7 +623,7 @@
     "text": "Módulos del Proyecto",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
     ]
   },
   {
@@ -629,7 +634,7 @@
     "text": "🛍️ Módulo de Productos\n\nDefinir productos con nombre, precio y cantidad en inventario.\nActualizar el inventario después de cada compra o cuando se agregan nuevos productos.\n\n\n\n🛒 Módulo de Carrito\n\nPermite a los clientes agregar o quitar productos de su carrito.\nCalcular el costo total de los productos en el carrito.\n\n\n\n👤 Módulo de Cliente\n\nGestionar la creación de nuevos clientes.\nMantener el historial de compras del cliente.\n\n\n\n📦 Módulo de Pedido\n\nProcesar un pedido, verificar disponibilidad en inventario, y generar la factura.\nActualizar el inventario después de la compra.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
     ]
   },
   {
@@ -640,7 +645,7 @@
     "text": "🛍️ Productos\nEn el archivo producto.py, definimos la clase Producto:\n# productos/producto.py\n\nclass Producto:\n    def __init__(self, nombre, precio, inventario):\n        self.nombre = nombre\n        self.precio = precio\n        self.inventario = inventario\n\n    def actualizar_inventario(self, cantidad):\n        self.inventario -= cantidad\n\n    def __str__(self):\n        return f\"{self.nombre} - ${self.precio} (Inventario: {self.inventario})\"",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
     ]
   },
   {
@@ -651,7 +656,7 @@
     "text": "🛒 Carrito\nEn el archivo carrito.py, definimos la clase Carrito:\n# carrito/carrito.py\n\nclass Carrito:\n    def __init__(self):\n        self.productos = {}\n\n    def agregar_producto(self, producto, cantidad):\n        if producto.nombre in self.productos:\n            self.productos[producto.nombre] += cantidad\n        else:\n            self.productos[producto.nombre] = cantidad\n\n    def eliminar_producto(self, producto):\n        if producto.nombre in self.productos:\n            del self.productos[producto.nombre]\n\n    def total(self):\n        return sum(producto.precio * cantidad for producto, cantidad in self.productos.items())\n\n    def __str__(self):\n        carrito_str = \"Carrito:\\n\"\n        for producto, cantidad in self.productos.items():\n            carrito_str += f\"{producto}: {cantidad}\\n\"\n        return carrito_str",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
     ]
   },
   {
@@ -662,7 +667,7 @@
     "text": "👤 Clientes\nEn el archivo cliente.py, definimos la clase Cliente:\n# clientes/cliente.py\n\nclass Cliente:\n    def __init__(self, nombre, email):\n        self.nombre = nombre\n        self.email = email\n        self.historial_compras = []\n\n    def agregar_historial(self, pedido):\n        self.historial_compras.append(pedido)\n\n    def ver_historial(self):\n        if not self.historial_compras:\n            return \"No tienes compras aún.\"\n        return \"\\n\".join(str(pedido) for pedido in self.historial_compras)\n\n    def __str__(self):\n        return f\"Cliente: {self.nombre} ({self.email})\"",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
     ]
   },
   {
@@ -673,7 +678,7 @@
     "text": "📦 Pedidos\nEn el archivo pedido.py, definimos la clase Pedido:\n# pedidos/pedido.py\n\nclass Pedido:\n    def __init__(self, cliente, carrito):\n        self.cliente = cliente\n        self.carrito = carrito\n        self.total = carrito.total()\n\n    def procesar_pedido(self):\n        for producto, cantidad in self.carrito.productos.items():\n            producto.actualizar_inventario(cantidad)\n        self.cliente.agregar_historial(self)\n\n    def __str__(self):\n        return f\"Pedido de {self.cliente.nombre} - Total: ${self.total}\"",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
     ]
   },
   {
@@ -719,7 +724,7 @@
     "text": "Objetivos del Laboratorio\n\nDesarrollar un juego de Ahorcado usando funciones en Python.\nUsar estructuras de datos como listas y cadenas de texto.\nImplementar lógica condicional y bucles para manejar el flujo del juego.\nMostrar mensajes finales (con emojis) según el resultado del juego.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
     ]
   },
   {
@@ -730,7 +735,7 @@
     "text": "Prerrequisitos\n\nConocimiento básico de Python: funciones, listas, cadenas, condicionales y bucles.\nInstalación de Python 3 en tu equipo.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
     ]
   },
   {
@@ -741,7 +746,7 @@
     "text": "Paso 1: Crear la Estructura Inicial del Proyecto\n\nCrear un archivo de Python:\nAbre tu editor de texto o IDE favorito (se recomienda utilizar Vscode) y crea un nuevo archivo llamado ahorcado.py.\nDefinir el objetivo del proyecto en el archivo:\nAñade un comentario en la primera línea que describa el propósito del proyecto:\n# Juego de Ahorcado en Python",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
     ]
   },
   {
@@ -752,7 +757,7 @@
     "text": "Paso 2: Definir las Etapas del Ahorcado en ASCII\n\nCrear la lista AHORCADO_DIBUJO:\nDefine las etapas progresivas del dibujo del ahorcado usando una lista de cadenas en ASCII.\nCada elemento de la lista representa una etapa del juego.\nAHORCADO_DIBUJO = [\n    \"\"\"\n       |\n       |\n       |\n       |\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n       |\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n      /|\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n      /|\\\\\n       |\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n      /|\\\\\n       |\n      /\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n      /|\\\\\n       |\n      / \\\\\n    \"\"\"\n]\n\n\nPrueba del dibujo:\nPrueba imprimiendo cada elemento de la lista para asegurarte de que el dibujo es correcto.\nprint(len(AHORCADO_DIBUJO))\nfor etapa in AHORCADO_DIBUJO:\n    print(etapa)\n\n\n\n\n\n\nTip\n\n\n\nNota: Puedes ejecutar el código en tu terminal o en un entorno de Python para verificar que el dibujo se imprime correctamente.\n\n\n\n\n\n\n\n\nTip\n\n\n\nNo olvides utilizar la función print() para mostrar los elementos de la lista en la consola. Y los comentarios para poder identificar cada etapa del dibujo.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
     ]
   },
   {
@@ -763,7 +768,7 @@
     "text": "Paso 3: Crear la Función para Mostrar el Dibujo del Ahorcado\n\nDefinir la función mostrar_ahorcado:\nEsta función tomará el número de intentos fallidos como argumento e imprimirá la etapa correspondiente del ahorcado.\ndef mostrar_ahorcado(intentos_fallidos):\n    print(AHORCADO_DIBUJO[intentos_fallidos])\n\n\nPrueba de la función:\nLlama a mostrar_ahorcado varias veces con diferentes valores para verificar que cada etapa se muestra correctamente.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
     ]
   },
   {
@@ -774,7 +779,7 @@
     "text": "Paso 4: Crear Funciones para el Flujo del Juego\n\nFunción para Seleccionar Palabra Aleatoria:\nDefine una lista de palabras para que el juego seleccione aleatoriamente una de ellas.\nUsa la biblioteca random para elegir una palabra al azar.\nimport random\n\ndef seleccionar_palabra():\n    palabras = [\"python\", \"programacion\", \"juego\", \"ahorcado\", \"computadora\"]\n    return random.choice(palabras)\nEn el código anterior, la función seleccionar_palabra devuelve una palabra aleatoria de la lista de palabras. Tambien aparece el método choice de random que selecciona una palabra aleatoria de la lista.\n\n\nFunción para Mostrar el Estado Actual:\nEsta función mostrará el progreso actual del jugador, mostrando las letras adivinadas y guiones bajos _ para letras no adivinadas.\ndef mostrar_progreso(palabra, letras_adivinadas):\n    progreso = [letra if letra in letras_adivinadas else '_' for letra in palabra]\n    print(\" \".join(progreso))\nEl código anterior crea una lista de letras adivinadas y guiones bajos para las letras no adivinadas. Luego, une los elementos de la lista en una cadena con un espacio entre cada letra.\nEste proceso se conoce como list comprehension y es una forma concisa de crear listas en Python.\nPara ampliar la información sobre list comprehension, puedes consultar la documentación oficial de Python en el siguiente enlace: List Comprehensions\n\n\nFunción para Manejar el Intento del Jugador:\nDefine una función que reciba una letra y verifique si está en la palabra.\ndef intentar_letra(palabra, letra, letras_adivinadas):\n    if letra in palabra:\n        letras_adivinadas.add(letra)\n        return True\n    return False\nEn el código anterior, la función intentar_letra verifica si la letra está en la palabra y la agrega a la colección de letras adivinadas. Devuelve True si la letra está en la palabra y False si no lo está.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
     ]
   },
   {
@@ -785,7 +790,7 @@
     "text": "Paso 5: Crear la Función Principal del Juego\n\nConfigurar el Juego:\nDefine la función jugar_ahorcado() que controlará el flujo completo del juego.\nEstablece la palabra a adivinar, el número de intentos, y una colección para almacenar las letras adivinadas.\ndef jugar_ahorcado():\n    palabra = seleccionar_palabra()\n    letras_adivinadas = set()\n    intentos_fallidos = 0\n    max_intentos = len(AHORCADO_DIBUJO) - 1\nEn el código anterior, la función jugar_ahorcado selecciona una palabra aleatoria, inicializa una colección de letras adivinadas, y establece el número máximo de intentos.\n\n\nCiclo del Juego:\nCrea un bucle while que continúe mientras el jugador tenga intentos restantes y no haya adivinado la palabra completa.\n    while intentos_fallidos &lt; max_intentos:\n        mostrar_ahorcado(intentos_fallidos)\n        mostrar_progreso(palabra, letras_adivinadas)\n        \n        letra = input(\"Introduce una letra: \").lower()\n        \n        if letra in letras_adivinadas:\n            print(\"Ya intentaste esa letra.\")\n            continue\n        \n        if intentar_letra(palabra, letra, letras_adivinadas):\n            print(\"¡Correcto!\")\n            if all(l in letras_adivinadas for l in palabra):\n                mostrar_resultado(True)\n                break\n        else:\n            print(\"Incorrecto.\")\n            intentos_fallidos += 1\n    else:\n        mostrar_ahorcado(intentos_fallidos)\n        mostrar_resultado(False)\nEn el código anterior, el bucle while muestra el dibujo actual del ahorcado, el progreso del jugador y solicita una letra al jugador.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
     ]
   },
   {
@@ -796,7 +801,7 @@
     "text": "Paso 6: Crear Función de Resultado Final con Emojis\n\nDefinir mostrar_resultado:\nEsta función mostrará un mensaje final con un emoji dependiendo de si el jugador gana o pierde.\ndef mostrar_resultado(ganador):\n    if ganador:\n        print(\"¡Felicidades, ganaste! 😄\")\n    else:\n        print(\"Lo siento, perdiste. 😞\")\nEn el código anterior, la función mostrar_resultado imprime un mensaje de felicitación si el jugador gana y un mensaje de consuelo si pierde.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
     ]
   },
   {
@@ -807,7 +812,7 @@
     "text": "Paso 7: Ejecutar el Juego\n\nEjecutar el Juego:\nAgrega una condición para ejecutar el juego cuando el archivo sea ejecutado directamente.\nif __name__ == \"__main__\":\n    jugar_ahorcado()\nEn el código anterior, la condición if name == “main”: verifica si el archivo se ejecuta directamente y llama a la función jugar_ahorcado en ese caso.\n\n\n\n\n\n\nTip\n\n\n\nNota: Puedes ejecutar el juego en tu terminal o en un entorno de Python para jugar al Ahorcado.\n\n\n\n\nPrueba Final:\nEjecuta ahorcado.py y juega una partida completa. Verifica que los mensajes y el flujo del juego sean los correctos.\npython ahorcado.py",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
     ]
   },
   {
@@ -818,7 +823,278 @@
     "text": "Paso 8: Mejoras Opcionales\n\nAñadir Validación de Entradas: Controla que el jugador solo introduzca letras válidas.\n\nAgregar Dificultad: Permite al jugador elegir entre palabras cortas, medias y largas.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#qué-es-git-y-github",
+    "href": "unidades/unidad0/1_git_y_github.html#qué-es-git-y-github",
+    "title": "Git y GitHub 🕹️",
+    "section": "¿Qué es Git y GitHub? 🕹️",
+    "text": "¿Qué es Git y GitHub? 🕹️\n\nGit y GitHub son herramientas ampliamente utilizadas en el desarrollo de software para el control de versiones y la colaboración en proyectos.\nGit es un sistema de control de versiones distribuido que permite realizar un seguimiento de los cambios en el código fuente durante el desarrollo de software. Fue creado por Linus Torvalds en 2005 y se utiliza mediante la línea de comandos o a través de interfaces gráficas de usuario.\nGitHub, por otro lado, es una plataforma de alojamiento de repositorios Git en la nube. Proporciona un entorno colaborativo donde los desarrolladores pueden compartir y trabajar en proyectos de software de forma conjunta. Además, ofrece características adicionales como seguimiento de problemas, solicitudes de extracción y despliegue continuo.\n\nEn este tutorial, aprenderás los conceptos básicos de Git y GitHub, así como su uso en un proyecto de software real.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#quiénes-utilizan-git",
+    "href": "unidades/unidad0/1_git_y_github.html#quiénes-utilizan-git",
+    "title": "Git y GitHub 🕹️",
+    "section": "¿Quiénes utilizan Git? 🌍",
+    "text": "¿Quiénes utilizan Git? 🌍",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#cómo-se-utiliza-git",
+    "href": "unidades/unidad0/1_git_y_github.html#cómo-se-utiliza-git",
+    "title": "Git y GitHub 🕹️",
+    "section": "¿Cómo se utiliza Git? 💻",
+    "text": "¿Cómo se utiliza Git? 💻\n\n\n\nGit en Terminal\n\n\nSe utiliza mediante la línea de comandos o a través de interfaces gráficas de usuario. Proporciona comandos para realizar operaciones como:\n\nInicializar un repositorio,\nRealizar cambios,\nRevisar historial,\nFusionar ramas,\nEntre otros.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#para-qué-sirve-git",
+    "href": "unidades/unidad0/1_git_y_github.html#para-qué-sirve-git",
+    "title": "Git y GitHub 🕹️",
+    "section": "¿Para qué sirve Git? 📝",
+    "text": "¿Para qué sirve Git? 📝\n\n\n\n\nSeguimiento de Cambios con Git\n\n\n\nSirve para realizar un seguimiento de los cambios en el código fuente, coordinar el trabajo entre varios desarrolladores, revertir cambios no deseados y mantener un historial completo de todas las modificaciones realizadas en un proyecto.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#por-qué-utilizar-git",
+    "href": "unidades/unidad0/1_git_y_github.html#por-qué-utilizar-git",
+    "title": "Git y GitHub 🕹️",
+    "section": "¿Por qué utilizar Git? 🤔",
+    "text": "¿Por qué utilizar Git? 🤔\n\n\n\n\nVentajas de Git\n\n\n\nOfrece varias ventajas, como:\n\nLa capacidad de trabajar de forma distribuida\nLa gestión eficiente de ramas para desarrollar nuevas funcionalidades\nCorregir errores sin afectar la rama principal\nLa posibilidad de colaborar de forma efectiva con otros desarrolladores.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#dónde-puedo-utilizar-git",
+    "href": "unidades/unidad0/1_git_y_github.html#dónde-puedo-utilizar-git",
+    "title": "Git y GitHub 🕹️",
+    "section": "¿Dónde puedo utilizar Git? 🌐",
+    "text": "¿Dónde puedo utilizar Git? 🌐\n\n\n\n\nGit en Diferentes Sistemas Operativos\n\n\n\nPuede ser utilizado en cualquier sistema operativo, incluyendo Windows, macOS y Linux. Además, es compatible con una amplia variedad de plataformas de alojamiento de repositorios, siendo GitHub una de las más populares.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#pasos-básicos",
+    "href": "unidades/unidad0/1_git_y_github.html#pasos-básicos",
+    "title": "Git y GitHub 🕹️",
+    "section": "Pasos Básicos 📝",
+    "text": "Pasos Básicos 📝",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#instalación-de-visual-studio-code",
+    "href": "unidades/unidad0/1_git_y_github.html#instalación-de-visual-studio-code",
+    "title": "Git y GitHub 🕹️",
+    "section": "Instalación de Visual Studio Code 📥",
+    "text": "Instalación de Visual Studio Code 📥\n\n\n\nVisual Studio Code",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#introducción",
+    "href": "unidades/unidad0/1_git_y_github.html#introducción",
+    "title": "Git y GitHub 🕹️",
+    "section": "Introducción",
+    "text": "Introducción",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#sección-1-modificar-archivos-en-el-repositorio",
+    "href": "unidades/unidad0/1_git_y_github.html#sección-1-modificar-archivos-en-el-repositorio",
+    "title": "Git y GitHub 🕹️",
+    "section": "Sección 1: Modificar Archivos en el Repositorio",
+    "text": "Sección 1: Modificar Archivos en el Repositorio\nEn esta sección, aprenderemos cómo realizar cambios en nuestros archivos y reflejarlos en Git.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#mover-cambios-de-local-a-staging",
+    "href": "unidades/unidad0/1_git_y_github.html#mover-cambios-de-local-a-staging",
+    "title": "Git y GitHub 🕹️",
+    "section": "Mover Cambios de Local a Staging:",
+    "text": "Mover Cambios de Local a Staging:\n\nAbre el archivo hello_world.py en Visual Studio Code.\nModifica el mensaje de bienvenida a “Bienvenido” en lugar de “Bienvenio”.\nGuarda los cambios y abre una terminal en Visual Studio Code.\n\nHemos corregido un error en nuestro archivo y queremos reflejarlo en Git.\ndef welcome_message():\n    name = input(\"Ingrese su nombre: \")\n    print(\"Bienvenido,\", name, \"al curso de Django y React!\")\n\nif __name__ == \"__main__\":\n    welcome_message()",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#agregar-cambios-de-local-a-staging",
+    "href": "unidades/unidad0/1_git_y_github.html#agregar-cambios-de-local-a-staging",
+    "title": "Git y GitHub 🕹️",
+    "section": "Agregar Cambios de Local a Staging:",
+    "text": "Agregar Cambios de Local a Staging:\ngit add hello_world.py\nHemos añadido los cambios al área de preparación y están listos para ser confirmados en el próximo commit.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#sección-2-confirmar-cambios-en-un-commit",
+    "href": "unidades/unidad0/1_git_y_github.html#sección-2-confirmar-cambios-en-un-commit",
+    "title": "Git y GitHub 🕹️",
+    "section": "Sección 2: Confirmar Cambios en un Commit",
+    "text": "Sección 2: Confirmar Cambios en un Commit\nEn esta sección, aprenderemos cómo confirmar los cambios en un commit y guardarlos de manera permanente en nuestro repositorio.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#mover-cambios-de-staging-a-commit",
+    "href": "unidades/unidad0/1_git_y_github.html#mover-cambios-de-staging-a-commit",
+    "title": "Git y GitHub 🕹️",
+    "section": "Mover Cambios de Staging a Commit:",
+    "text": "Mover Cambios de Staging a Commit:\ngit commit -m \"Corregir mensaje de bienvenida\"\nHemos confirmado los cambios en un commit con un mensaje descriptivo.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#sección-3-creación-y-fusión-de-ramas",
+    "href": "unidades/unidad0/1_git_y_github.html#sección-3-creación-y-fusión-de-ramas",
+    "title": "Git y GitHub 🕹️",
+    "section": "Sección 3: Creación y Fusión de Ramas",
+    "text": "Sección 3: Creación y Fusión de Ramas\nEn esta sección, aprenderemos cómo crear y fusionar ramas en Git para desarrollar nuevas funcionalidades de forma aislada.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#crear-una-nueva-rama",
+    "href": "unidades/unidad0/1_git_y_github.html#crear-una-nueva-rama",
+    "title": "Git y GitHub 🕹️",
+    "section": "Crear una Nueva Rama:",
+    "text": "Crear una Nueva Rama:\ngit branch feature\nHemos creado una nueva rama llamada “feature” para desarrollar una nueva funcionalidad.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#implementar-funcionalidades-en-la-rama",
+    "href": "unidades/unidad0/1_git_y_github.html#implementar-funcionalidades-en-la-rama",
+    "title": "Git y GitHub 🕹️",
+    "section": "Implementar Funcionalidades en la Rama:",
+    "text": "Implementar Funcionalidades en la Rama:\n\nAbre el archivo hello_world.py en Visual Studio Code.\nAñade una nueva función para mostrar un mensaje de despedida.\nGuarda los cambios y abre una terminal en Visual Studio Code.\nAñade los cambios al área de preparación y confírmalos en un commit.\nCambia a la rama principal con git checkout main.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#fusionar-ramas-con-la-rama-principal",
+    "href": "unidades/unidad0/1_git_y_github.html#fusionar-ramas-con-la-rama-principal",
+    "title": "Git y GitHub 🕹️",
+    "section": "Fusionar Ramas con la Rama Principal:",
+    "text": "Fusionar Ramas con la Rama Principal:\ngit merge feature\nHemos fusionado la rama “feature” con la rama principal y añadido la nueva funcionalidad al proyecto.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#sección-4-revertir-cambios-en-un-archivo",
+    "href": "unidades/unidad0/1_git_y_github.html#sección-4-revertir-cambios-en-un-archivo",
+    "title": "Git y GitHub 🕹️",
+    "section": "Sección 4: Revertir Cambios en un Archivo",
+    "text": "Sección 4: Revertir Cambios en un Archivo\nEn esta sección, aprenderemos cómo revertir cambios en un archivo y deshacerlos en Git.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#revertir-cambios-en-un-archivo",
+    "href": "unidades/unidad0/1_git_y_github.html#revertir-cambios-en-un-archivo",
+    "title": "Git y GitHub 🕹️",
+    "section": "Revertir Cambios en un Archivo:",
+    "text": "Revertir Cambios en un Archivo:\ngit reset hello_world.py\nHemos revertido los cambios en el archivo hello_world.py y deshecho las modificaciones realizadas.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#conclusión",
+    "href": "unidades/unidad0/1_git_y_github.html#conclusión",
+    "title": "Git y GitHub 🕹️",
+    "section": "Conclusión",
+    "text": "Conclusión\nEn este tutorial, hemos aprendido a gestionar cambios en nuestro proyecto y moverlos entre diferentes estados en Git. Estos conceptos son fundamentales para trabajar de forma eficiente en proyectos de software y colaborar con otros desarrolladores.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/2_github_classroom.html",
+    "href": "unidades/unidad0/2_github_classroom.html",
+    "title": "GitHub Classroom 📒",
+    "section": "",
+    "text": "¿Qué es GitHub Classroom? 🤔",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>GitHub Classroom 📒</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/2_github_classroom.html#qué-es-github-classroom",
+    "href": "unidades/unidad0/2_github_classroom.html#qué-es-github-classroom",
+    "title": "GitHub Classroom 📒",
+    "section": "",
+    "text": "Github Classroom Windows\n\n\n\n\nGitHub Classroom es una extensión de GitHub que permite a los profesores crear y gestionar asignaciones utilizando repositorios de GitHub. Proporciona una forma organizada y eficiente de distribuir tareas a los estudiantes, recopilar y revisar su trabajo, y proporcionar retroalimentación.\n\n\nFuncionalidades Principales ⚙️\n\nCreación de Asignaciones: Los profesores pueden crear tareas y asignaciones directamente desde GitHub Classroom, proporcionando instrucciones detalladas y estableciendo criterios de evaluación.\nDistribución Automatizada: Una vez que se crea una asignación, GitHub Classroom genera automáticamente repositorios privados para cada estudiante o equipo, basándose en una plantilla predefinida.\nSeguimiento de Progreso: Los profesores pueden realizar un seguimiento del progreso de los estudiantes y revisar sus contribuciones a través de solicitudes de extracción (pull requests) y comentarios en el código.\nRevisión y Retroalimentación: Los estudiantes envían sus trabajos a través de solicitudes de extracción, lo que permite a los profesores revisar y proporcionar retroalimentación específica sobre su código.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>GitHub Classroom 📒</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/2_github_classroom.html#ejemplo-práctico",
+    "href": "unidades/unidad0/2_github_classroom.html#ejemplo-práctico",
+    "title": "GitHub Classroom 📒",
+    "section": "Ejemplo Práctico",
+    "text": "Ejemplo Práctico\n\nCreación de una Asignación en GitHub Classroom 📒\n\nIniciar Sesión: Ingresa a GitHub Classroom con tu cuenta de GitHub y selecciona la opción para crear una nueva asignación.\n\n\n\n\n\nDefinir la Tarea: Proporciona instrucciones claras y detalladas sobre la tarea, incluyendo cualquier código base o recursos necesarios. Establece los criterios de evaluación para guiar a los estudiantes.\n\n\n\n\n\nConfigurar la Plantilla: Selecciona una plantilla de repositorio existente o crea una nueva plantilla que servirá como base para los repositorios de los estudiantes.\n\n\n\n\n\nDistribuir la Asignación: Una vez configurada la asignación, comparte el enlace generado con tus estudiantes para que puedan acceder a sus repositorios privados.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>GitHub Classroom 📒</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/2_github_classroom.html#trabajo-de-los-estudiantes",
+    "href": "unidades/unidad0/2_github_classroom.html#trabajo-de-los-estudiantes",
+    "title": "GitHub Classroom 📒",
+    "section": "Trabajo de los Estudiantes 🧑‍💻",
+    "text": "Trabajo de los Estudiantes 🧑‍💻\n\nAceptar la Asignación: Los estudiantes reciben el enlace de la asignación y aceptan la tarea, lo que les permite crear un repositorio privado basado en la plantilla proporcionada.\n\n\n\n\n\nActualizar el Navegador: Los estudiantes actualizan su navegador para ver el nuevo repositorio creado en su cuenta de GitHub.\n\n\n\n\n\nClonar el Repositorio: Los estudiantes clonan el repositorio asignado en su computadora local utilizando el enlace proporcionado.\n\n\n\n\n\nUtilizar el comando git clone: Aplique el comando git clone para clonar el repositorio en su computadora local.\ngit clone &lt;enlace-del-repositorio&gt;\n\n\n\n\n\nDesarrollar la Tarea: Los estudiantes trabajan en la tarea, realizando los cambios necesarios y realizando commits de manera regular para mantener un historial de su trabajo.\n\n\n\n\n\n\nTip\n\n\n\nPuedes probar el test incorporado con el comando pytest en la terminal, para verificar que el código cumple con los requerimientos\n\n\npytest\nUna vez desarrollado el código de acuerdo a la asignación en local deberían pasar el o los test\n\n\n\n\n\nEnviar la Solicitud de Extracción: Una vez completada la tarea, los estudiantes envían una solicitud de extracción desde su rama hacia la rama principal del repositorio, solicitando la revisión del profesor.\n\n\n\n\n\nUna vez realizado el push se envía al respositorio principal y se ejecutan los test en Github\n\n\n\n\n\n\nTip\n\n\n\nSe recomienda hacer las pruebas en local antes de enviar los cambios al respositorio en Github\n\n\n\n\n\n\n\nEste Action lo que hace es evaluar los cambios realizados\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nSe recomienda hacer las pruebas en local antes de enviar los cambios al respositorio en Github\n\n\n\nRevisión y Retroalimentación: Los profesores revisan las solicitudes de extracción, proporcionan comentarios sobre el código y evalúan el trabajo de los estudiantes según los criterios establecidos.\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nGitHub Classroom ofrece una manera eficiente y organizada de administrar tareas y asignaciones en entornos educativos, fomentando la colaboración, el aprendizaje y la retroalimentación efectiva entre profesores y estudiantes.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>GitHub Classroom 📒</span>"
     ]
   }
 ]

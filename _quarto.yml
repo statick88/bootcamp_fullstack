@@ -31,15 +31,20 @@ book:
         href: license.qmd
         
   chapters:
-    - index.qmd
-    - part: "Unidad 1: Introducción e Instalaciones Necesarias"
-      chapters: 
-        - unidades/unidad1/1_introduccion.qmd
-        - unidades/unidad1/2_introduccion_a_la_programacion.qmd
-        - unidades/unidad1/3_tipos_de_datos.qmd
-        - unidades/unidad1/4_control_de_flujo.qmd
-        - unidades/unidad1/5_funciones_y_recursividad.qmd
 
+    - part: "Unidad 0: Introducción a Git y GitHub"
+      chapters:
+      - index.qmd
+      - unidades/unidad0/1_git_y_github.qmd
+      - unidades/unidad0/2_github_classroom.qmd
+
+    - part: "Unidad 1: Introducción e Instalaciones Necesarias"
+      chapters:
+      - unidades/unidad1/1_introduccion.qmd
+      - unidades/unidad1/2_introduccion_a_la_programacion.qmd
+      - unidades/unidad1/3_tipos_de_datos.qmd
+      - unidades/unidad1/4_control_de_flujo.qmd
+      - unidades/unidad1/5_funciones_y_recursividad.qmd
 
     - part: "Unidad 2: Programación Orientada a Objetos"
       chapters: 

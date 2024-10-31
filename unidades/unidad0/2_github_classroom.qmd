@@ -1,0 +1,132 @@
+# GitHub Classroom 📒
+
+::: center
+![Github Classroom](../../images/github%20classroom.png){fig-align="center" width="100"}
+:::
+
+::: justify
+GitHub Classroom es una herramienta poderosa que facilita la gestión de tareas y asignaciones en GitHub, especialmente diseñada para entornos educativos.
+:::
+
+## ¿Qué es GitHub Classroom? 🤔
+
+::: center
+![Github Classroom Windows](../../images/github-classroom-ventana.jpg){fig-align="center" width="400"}
+:::
+
+::: justify
+GitHub Classroom es una extensión de GitHub que permite a los profesores crear y gestionar asignaciones utilizando repositorios de GitHub. Proporciona una forma organizada y eficiente de distribuir tareas a los estudiantes, recopilar y revisar su trabajo, y proporcionar retroalimentación.
+:::
+
+### Funcionalidades Principales ⚙️
+
+::: justify
+**Creación de Asignaciones:** Los profesores pueden crear tareas y asignaciones directamente desde GitHub Classroom, proporcionando instrucciones detalladas y estableciendo criterios de evaluación.
+
+**Distribución Automatizada:** Una vez que se crea una asignación, GitHub Classroom genera automáticamente repositorios privados para cada estudiante o equipo, basándose en una plantilla predefinida.
+
+**Seguimiento de Progreso:** Los profesores pueden realizar un seguimiento del progreso de los estudiantes y revisar sus contribuciones a través de solicitudes de extracción (pull requests) y comentarios en el código.
+
+**Revisión y Retroalimentación:** Los estudiantes envían sus trabajos a través de solicitudes de extracción, lo que permite a los profesores revisar y proporcionar retroalimentación específica sobre su código.
+:::
+
+## Ejemplo Práctico
+
+### Creación de una Asignación en GitHub Classroom 📒
+
+::: justifyK
+**Iniciar Sesión:** Ingresa a GitHub Classroom con tu cuenta de GitHub y selecciona la opción para crear una nueva asignación.
+
+![](images/paste-2.png){fig-align="center"}
+
+**Definir la Tarea:** Proporciona instrucciones claras y detalladas sobre la tarea, incluyendo cualquier código base o recursos necesarios. Establece los criterios de evaluación para guiar a los estudiantes.
+
+![](images/paste-1.png){fig-align="center"}
+
+**Configurar la Plantilla:** Selecciona una plantilla de repositorio existente o crea una nueva plantilla que servirá como base para los repositorios de los estudiantes.
+
+![](images/paste-3.png){fig-align="center"}
+
+**Distribuir la Asignación:** Una vez configurada la asignación, comparte el enlace generado con tus estudiantes para que puedan acceder a sus repositorios privados.
+
+![](images/paste-4.png){fig-align="center"}
+:::
+
+## Trabajo de los Estudiantes 🧑‍💻
+
+::: justify
+**Aceptar la Asignación:** Los estudiantes reciben el enlace de la asignación y aceptan la tarea, lo que les permite crear un repositorio privado basado en la plantilla proporcionada.
+
+![](images/paste-6.png){fig-align="center"}
+
+**Actualizar el Navegador:** Los estudiantes actualizan su navegador para ver el nuevo repositorio creado en su cuenta de GitHub.
+
+![](images/paste-8.png){fig-align="center"}
+
+**Clonar el Repositorio:** Los estudiantes clonan el repositorio asignado en su computadora local utilizando el enlace proporcionado.
+
+![](images/paste-9.png){fig-align="center"}
+
+Utilizar el comando git clone: Aplique el comando git clone para clonar el repositorio en su computadora local.
+
+```bash
+git clone <enlace-del-repositorio>
+```
+
+![](images/paste-10.png){fig-align="center"}
+
+**Desarrollar la Tarea:** Los estudiantes trabajan en la tarea, realizando los cambios necesarios y realizando commits de manera regular para mantener un historial de su trabajo.
+
+::: callout-tip
+
+Puedes probar el test incorporado con el comando `pytest` en la terminal, para verificar que el código cumple con los requerimientos
+
+:::
+
+```bash
+pytest
+```
+
+Una vez desarrollado el código de acuerdo a la asignación en local deberían pasar el o los test
+
+![](images/paste-11.png){fig-align="center"}
+
+**Enviar la Solicitud de Extracción:** Una vez completada la tarea, los estudiantes envían una solicitud de extracción desde su rama hacia la rama principal del repositorio, solicitando la revisión del profesor.
+
+![](images/paste-12.png){fig-align="center"}
+
+Una vez realizado el `push` se envía al respositorio principal y se ejecutan los test en Github
+
+::: callout-tip
+
+Se recomienda hacer las pruebas en local antes de enviar los cambios al respositorio en Github
+
+:::
+
+![](images/paste-13.png){fig-align="center"}
+
+Este Action lo que hace es evaluar los cambios realizados
+
+![](images/paste-14.png){fig-align="center"}
+
+:::
+
+::: callout-tip
+
+Se recomienda hacer las pruebas en local antes de enviar los cambios al respositorio en Github
+
+:::
+
+::: justify
+
+**Revisión y Retroalimentación:** Los profesores revisan las solicitudes de extracción, proporcionan comentarios sobre el código y evalúan el trabajo de los estudiantes según los criterios establecidos.
+
+:::
+
+![](images/paste-15.png){fig-align="center"}
+
+::: callout-tip
+
+**GitHub Classroom** ofrece una manera eficiente y organizada de administrar tareas y asignaciones en entornos educativos, fomentando la colaboración, el aprendizaje y la retroalimentación efectiva entre profesores y estudiantes.
+
+:::
