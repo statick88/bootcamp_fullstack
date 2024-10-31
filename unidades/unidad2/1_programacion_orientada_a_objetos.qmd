@@ -61,6 +61,25 @@ class Coche:
 
 En el código anterior se definen tres atributos **marca**, **modelo** y **color**.
 
+## ¿Qué es self?
+
+Self es una palabra reservada en Python que se refiere al objeto actual. Se utiliza para acceder a los atributos y métodos de un objeto.
+
+En el ejemplo anterior, **self.marca**, **self.modelo** y **self.color** se refieren a los atributos de un objeto.
+
+Ejemplo:
+
+```python
+class Persona:
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+    def saludar(self):
+        print(f"Hola, mi nombre es {self.nombre} y tengo {self.edad} años")
+```
+
+En el ejemplo anterior se define una clase **Persona** con dos atributos **nombre** y **edad**. Además, se define un método **saludar** que imprime un mensaje con los atributos **nombre** y **edad**.
+
 ## Métodos
 
 Los métodos son funciones que pertenecen a un objeto. Los métodos pueden acceder a los atributos de un objeto.
@@ -107,42 +126,116 @@ coche.frenar()
 del coche
 ```
 
-En el código anterior se define un método especial **__del__** que se llama cuando un objeto es eliminado.
+En el código anterior se define un método especial **__del__** que se llama cuando un objeto es eliminado. Luego se crea un objeto **coche** de la clase **Coche** y se elimina el objeto **coche**.
+
+Por otra parte la palabra reservada **self** se utiliza para acceder a los atributos y métodos de un objeto.
+
+Tambien se está creando una instancia de la clase **Coche** y se está eliminando el objeto **coche**.
 
 ## Herencia, Polimorfismo y Encapsulación
 
+### Herencia
+
 La herencia es una característica de la POO que permite crear una nueva clase a partir de una clase existente. La nueva clase hereda los atributos y métodos de la clase existente.
-
-El polimorfismo es una característica de la POO que permite que un objeto se computadora de diferentes maneras dependiendo del contexto.
-
-La encapsulación es una característica de la POO que permite ocultar los detalles de implementación de un objeto.
 
 Ejemplo:
 
 ```python
-Class Deporte:
+class Animal:
     def __init__(self, nombre):
         self.nombre = nombre
+    def hablar(self):
+        pass
 
+class Perro(Animal):
+    def hablar(self):
+        print(f"{self.nombre} dice guau")
+
+class Gato(Animal):
+    def hablar(self):
+      print(f"{self.nombre} dice miau")
+
+
+animal = Perro("Firulais")
+animal2 = Gato("Garfield")
+```
+
+En el código anterior se define una clase **Animal** con un método **hablar**. Luego se definen dos clases **Perro** y **Gato** que heredan de la clase **Animal** y sobrescriben el método **hablar**.
+
+### Polimorfismo
+
+El polimorfismo es una característica de la POO que permite que un objeto se computadora de diferentes maneras dependiendo del contexto.
+
+Ejemplo: 
+
+```python
+class Deporte:
     def jugar(self):
         pass
 
 class Futbol(Deporte):
-  def jugar(self):
-      print(f"Jugando futbol")
+    def jugar(self):
+        print(f"Jugando futbol")
 
 class Baloncesto(Deporte):
-  def jugar(self):
+    def jugar(self):
       print(f"Jugando baloncesto")
 
-deporte = Futbol("Futbol")
+class Tenis(Deporte):
+    def jugar(self):
+      print(f"Jugando tenis")
+
+deporte = Futbol()
 deporte.jugar()
 
-deporte = Baloncesto("Baloncesto")
-deporte.jugar()
+deporte1 = Baloncesto()
+deporte1.jugar()
+
+deporte2 = Tenis()
+deporte2.jugar()
+```
+En el ejemplo anterior se define una clase **Deporte** con un método **jugar**. Luego se definen tres clases **Futbol**, **Baloncesto** y **Tenis** que heredan de la clase **Deporte** y sobrescriben el método **jugar**. Aunque los tres objetos son de la clase **Deporte**, se comportan de manera diferente.
+
+
+### Encapsulación
+
+La encapsulación es una característica de la POO que permite ocultar los detalles de implementación de un objeto. Los atributos y métodos de un objeto pueden ser públicos, protegidos o privados.
+
+Ejemplo:
+
+```python
+class CuentaBancaria :
+    def __init__(self, nombre, saldo):
+        self.nombre = nombre
+        self.__saldo = saldo
+    def depositar(self, cantidad):
+        self.__saldo += cantidad
+    def retirar(self, cantidad):
+        self.__saldo -= cantidad
+    def __str__(self):
+        return f"Cuenta Bancaria de {self.nombre} con saldo {self.__saldo}"
+
+cuenta = CuentaBancaria("Juan Perez", 1000)
+cuenta2 = CuentaBancaria("Maria Lopez", 2000)
+cuenta3 = CuentaBancaria("Pedro Ramirez", 3000)
+
+cuenta.depositar(500)
+cuenta.retirar(200)
+print(cuenta.nombre)
+print(cuenta.saldo)
+
+print(cuenta1.nombre)
+print(cuenta1.saldo)
+cuenta1.depositar(500)
+cuenta1.retirar(200)
+print(cuenta1.saldo)
+
+cuent3.depositar(1000)
+cuenta3.retirar(500)
+print(cuenta3.saldo)
 ```
 
-En el código anterior se define una clase **Deporte** con un método **jugar**. Luego se definen dos clases **Futbol** y **Baloncesto** que heredan de la clase **Deporte** y sobrescriben el método **jugar**.
+En el código anterior se define una clase **CuentaBancaria** con dos atributos **nombre** y **saldo**. El atributo **saldo** es privado y solo puede ser accedido desde la clase **CuentaBancaria**. Además, se definen tres métodos **depositar**, **retirar** y **__str__**. El método **__str__** es un método especial que se llama cuando se convierte un objeto a una cadena de texto.
 
 ## Actividad
 
