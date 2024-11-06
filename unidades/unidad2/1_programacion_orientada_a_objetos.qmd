@@ -132,6 +132,33 @@ Por otra parte la palabra reservada **self** se utiliza para acceder a los atrib
 
 Tambien se está creando una instancia de la clase **Coche** y se está eliminando el objeto **coche**.
 
+## Eliminar Propiedades y Objetos
+
+Para eliminar Propiedades y Objetos se utiliza la palabra reservada **del**.
+
+Como observamos en el código anterior la propiedad **__del__** se utiliza para eliminar un objeto.
+
+Ejemplo:
+
+```python
+class Persona:
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+    def __del__(self):
+        print(f"La persona {self.nombre} ha sido eliminada")
+
+persona = Persona("Juan Perez", 30)
+print(persona)
+del persona
+```
+
+En el código anterior se define un método especial **__del__** que se llama cuando un objeto es eliminado. Luego se crea un objeto **persona** de la clase **Persona** y se elimina el objeto **persona**. Al final obtendremos un mensaje como este:
+
+```python
+La persona Juan Perez ha sido eliminada
+```
+
 ## Herencia, Polimorfismo y Encapsulación
 
 ### Herencia

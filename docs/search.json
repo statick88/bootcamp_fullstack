@@ -1078,6 +1078,39 @@
     ]
   },
   {
+    "objectID": "unidades/Proyectos/4_proyecto_poo_2.html#requerimientos",
+    "href": "unidades/Proyectos/4_proyecto_poo_2.html#requerimientos",
+    "title": "🏫 Sistema Universitario",
+    "section": "Requerimientos",
+    "text": "Requerimientos\n\nConocimientos básicos de programación en Python.\nConocimientos básicos de programación orientada a objetos.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>🏫 Sistema Universitario</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/4_proyecto_poo_2.html#instrucciones.",
+    "href": "unidades/Proyectos/4_proyecto_poo_2.html#instrucciones.",
+    "title": "🏫 Sistema Universitario",
+    "section": "Instrucciones.",
+    "text": "Instrucciones.\n\nClase Persona: Define los atributos comunes nombre, edad y sexo.\nClase Estudiante: Hereda de Persona y agrega los atributos carnet y carrera.\nClase Profesor: Hereda de Persona y agrega los atributos codigo y especialidad.\nClase Curso: Contiene los atributos nombre, codigo y una instancia de Profesor.\nClase Universidad: Contiene el atributo nombre y una lista de cursos. Incluye un método para agregar cursos.\nCreación de objetos:\n\n\nSe crea un objeto universidad de la clase Universidad.\nSe crean los objetos profesor, curso y estudiante con los datos indicados.\nSe agrega cada curso a la universidad y luego se imprime la universidad con los cursos.\n\n\nImpresión:\n\n\nSe imprime la información de la universidad, el estudiante, el profesor y el curso de Matemáticas, según los requerimientos.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>🏫 Sistema Universitario</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/4_proyecto_poo_2.html#desarrollo",
+    "href": "unidades/Proyectos/4_proyecto_poo_2.html#desarrollo",
+    "title": "🏫 Sistema Universitario",
+    "section": "Desarrollo",
+    "text": "Desarrollo\n\nCrear la clase Persona.\n\nclass Persona:\n    def __init__(self, nombre, edad, sexo):\n        self.nombre = nombre\n        self.edad = edad\n        self.sexo = sexo\n\n    def __str__(self):\n        return f\"Nombre: {self.nombre}, Edad: {self.edad}, Sexo: {self.sexo}\"\nEn el codigo anterior se crea la clase Persona con los atributos nombre, edad y sexo. Además, se crea el método str para mostrar la información de la persona.\n\nCrear la clase Estudiante que hereda de Persona.\n\nclass Estudiante(Persona):\n    def __init__(self, nombre, edad, sexo, carnet, carrera):\n        super().__init__(nombre, edad, sexo)\n        self.carnet = carnet\n        self.carrera = carrera\n\n    def __str__(self):\n        return f\"{super().__str__()}, Carnet: {self.carnet}, Carrera: {self.carrera}\"\nEn el codigo anterior se crea la clase Estudiante que hereda de Persona. Se añaden los atributos carnet y carrera. Además, se sobreescribe el método str para mostrar la información del estudiante.\n\nCrear la clase Profesor que hereda de Persona.\n\nclass Profesor(Persona):\n    def __init__(self, nombre, edad, sexo, codigo, especialidad):\n        super().__init__(nombre, edad, sexo)\n        self.codigo = codigo\n        self.especialidad = especialidad\n\n    def __str__(self):\n        return f\"{super().__str__()}, Código: {self.codigo}, Especialidad: {self.especialidad}\"\nEn el codigo anterior se crea la clase Profesor que hereda de Persona. Se añaden los atributos codigo y especialidad. Además, se sobreescribe el método str para mostrar la información del profesor.\n\nCrear la clase Curso.\n\nclass Curso:\n    def __init__(self, nombre, codigo, profesor):\n        self.nombre = nombre\n        self.codigo = codigo\n        self.profesor = profesor\n\n    def __str__(self):\n        return f\"Curso: {self.nombre}, Código: {self.codigo}, Profesor: {self.profesor.nombre}\"\nEn el codigo anterior se crea la clase Curso con los atributos nombre, codigo y profesor. Además, se crea el método str para mostrar la información del curso.\n\nCrear la clase Universidad.\n\nclass Universidad:\n    def __init__(self, nombre):\n        self.nombre = nombre\n        self.cursos = []\n\n    def agregar_curso(self, curso):\n        self.cursos.append(curso)\n\n    def __str__(self):\n        cursos_str = \"\\n\".join([str(curso) for curso in self.cursos])\n        return f\"Universidad: {self.nombre}\\nCursos:\\n{cursos_str}\"\nEn el codigo anterior se crea la clase Universidad con los atributos nombre y cursos. Se añade el método agregar_curso para agregar un curso a la lista de cursos. Además, se sobreescribe el método str para mostrar la información de la universidad y los cursos.\n\nCar los objetos\n\n# Crear la universidad\nuniversidad = Universidad(\"Universidad de El Salvador\")\n\n# Crear los profesores\nprofesor_juan = Profesor(\"Juan Perez\", 30, \"Masculino\", \"202020202\", \"Matematicas\")\nprofesor_maria = Profesor(\"Maria Lopez\", 35, \"Femenino\", \"202020203\", \"Fisica\")\nprofesor_pedro = Profesor(\"Pedro Ramirez\", 40, \"Masculino\", \"202020204\", \"Quimica\")\n\n# Crear los cursos\ncurso_matematicas = Curso(\"Matematicas\", \"MAT101\", profesor_juan)\ncurso_fisica = Curso(\"Fisica\", \"FIS101\", profesor_maria)\ncurso_quimica = Curso(\"Quimica\", \"QUI101\", profesor_pedro)\n\n# Agregar los cursos a la universidad\nuniversidad.agregar_curso(curso_matematicas)\nuniversidad.agregar_curso(curso_fisica)\nuniversidad.agregar_curso(curso_quimica)\n\n# Crear el objeto estudiante\nestudiante_carlos = Estudiante(\"Carlos Perez\", 20, \"Masculino\", \"202010101\", \"Ingenieria en Sistemas Informaticos\")\nEn el codigo anterior se crean los objetos de la universidad, profesores, cursos y estudiante.\n\nImprimir la información\n\nprint(universidad)\nprint()\nprint(estudiante_carlos)\nprint()\nprint(profesor_juan)\nprint()\nprint(curso_matematicas)\n\n# Crear un nuevo curso de Fisica y agregarlo a la universidad\ncurso_nuevo_fisica = Curso(\"Fisica\", \"FIS101\", profesor_maria)\nuniversidad.agregar_curso(curso_nuevo_fisica)\n\n# Imprimir nuevamente la universidad con el nuevo curso agregado\nprint()\nprint(universidad)\nEn el codigo anterior se imprime la información de la universidad, estudiante, profesor y curso. Luego se crea un nuevo curso de Fisica y se agrega a la universidad, para finalmente imprimir nuevamente la información de la universidad.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>🏫 Sistema Universitario</span>"
+    ]
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "Acerca de mi",
@@ -1113,47 +1146,14 @@
     "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
   },
   {
-    "objectID": "unidades/Proyectos/4_proyecto_poo_2.html",
-    "href": "unidades/Proyectos/4_proyecto_poo_2.html",
-    "title": "Sistema Universitario",
-    "section": "",
-    "text": "Requerimientos",
+    "objectID": "unidades/unidad2/1_programacion_orientada_a_objetos.html#eliminar-propiedades-y-objetos",
+    "href": "unidades/unidad2/1_programacion_orientada_a_objetos.html#eliminar-propiedades-y-objetos",
+    "title": "Programacion Orientada a Objetos.",
+    "section": "Eliminar Propiedades y Objetos",
+    "text": "Eliminar Propiedades y Objetos\nPara eliminar Propiedades y Objetos se utiliza la palabra reservada del.\nComo observamos en el código anterior la propiedad del se utiliza para eliminar un objeto.\nEjemplo:\nclass Persona:\n    def __init__(self, nombre, edad):\n        self.nombre = nombre\n        self.edad = edad\n    def __del__(self):\n        print(f\"La persona {self.nombre} ha sido eliminada\")\n\npersona = Persona(\"Juan Perez\", 30)\nprint(persona)\ndel persona\nEn el código anterior se define un método especial del que se llama cuando un objeto es eliminado. Luego se crea un objeto persona de la clase Persona y se elimina el objeto persona. Al final obtendremos un mensaje como este:\nLa persona Juan Perez ha sido eliminada",
     "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Sistema Universitario</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/4_proyecto_poo_2.html#requerimientos",
-    "href": "unidades/Proyectos/4_proyecto_poo_2.html#requerimientos",
-    "title": "🏫 Sistema Universitario",
-    "section": "Requerimientos",
-    "text": "Requerimientos\n\nConocimientos básicos de programación en Python.\nConocimientos básicos de programación orientada a objetos.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>🏫 Sistema Universitario</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/4_proyecto_poo_2.html#desarrollo",
-    "href": "unidades/Proyectos/4_proyecto_poo_2.html#desarrollo",
-    "title": "🏫 Sistema Universitario",
-    "section": "Desarrollo",
-    "text": "Desarrollo\n\nCrear la clase Persona.\n\nclass Persona:\n    def __init__(self, nombre, edad, sexo):\n        self.nombre = nombre\n        self.edad = edad\n        self.sexo = sexo\n\n    def __str__(self):\n        return f\"Nombre: {self.nombre}, Edad: {self.edad}, Sexo: {self.sexo}\"\nEn el codigo anterior se crea la clase Persona con los atributos nombre, edad y sexo. Además, se crea el método str para mostrar la información de la persona.\n\nCrear la clase Estudiante que hereda de Persona.\n\nclass Estudiante(Persona):\n    def __init__(self, nombre, edad, sexo, carnet, carrera):\n        super().__init__(nombre, edad, sexo)\n        self.carnet = carnet\n        self.carrera = carrera\n\n    def __str__(self):\n        return f\"{super().__str__()}, Carnet: {self.carnet}, Carrera: {self.carrera}\"\nEn el codigo anterior se crea la clase Estudiante que hereda de Persona. Se añaden los atributos carnet y carrera. Además, se sobreescribe el método str para mostrar la información del estudiante.\n\nCrear la clase Profesor que hereda de Persona.\n\nclass Profesor(Persona):\n    def __init__(self, nombre, edad, sexo, codigo, especialidad):\n        super().__init__(nombre, edad, sexo)\n        self.codigo = codigo\n        self.especialidad = especialidad\n\n    def __str__(self):\n        return f\"{super().__str__()}, Código: {self.codigo}, Especialidad: {self.especialidad}\"\nEn el codigo anterior se crea la clase Profesor que hereda de Persona. Se añaden los atributos codigo y especialidad. Además, se sobreescribe el método str para mostrar la información del profesor.\n\nCrear la clase Curso.\n\nclass Curso:\n    def __init__(self, nombre, codigo, profesor):\n        self.nombre = nombre\n        self.codigo = codigo\n        self.profesor = profesor\n\n    def __str__(self):\n        return f\"Curso: {self.nombre}, Código: {self.codigo}, Profesor: {self.profesor.nombre}\"\nEn el codigo anterior se crea la clase Curso con los atributos nombre, codigo y profesor. Además, se crea el método str para mostrar la información del curso.\n\nCrear la clase Universidad.\n\nclass Universidad:\n    def __init__(self, nombre):\n        self.nombre = nombre\n        self.cursos = []\n\n    def agregar_curso(self, curso):\n        self.cursos.append(curso)\n\n    def __str__(self):\n        cursos_str = \"\\n\".join([str(curso) for curso in self.cursos])\n        return f\"Universidad: {self.nombre}\\nCursos:\\n{cursos_str}\"\nEn el codigo anterior se crea la clase Universidad con los atributos nombre y cursos. Se añade el método agregar_curso para agregar un curso a la lista de cursos. Además, se sobreescribe el método str para mostrar la información de la universidad y los cursos.\n\nCar los objetos\n\n# Crear la universidad\nuniversidad = Universidad(\"Universidad de El Salvador\")\n\n# Crear los profesores\nprofesor_juan = Profesor(\"Juan Perez\", 30, \"Masculino\", \"202020202\", \"Matematicas\")\nprofesor_maria = Profesor(\"Maria Lopez\", 35, \"Femenino\", \"202020203\", \"Fisica\")\nprofesor_pedro = Profesor(\"Pedro Ramirez\", 40, \"Masculino\", \"202020204\", \"Quimica\")\n\n# Crear los cursos\ncurso_matematicas = Curso(\"Matematicas\", \"MAT101\", profesor_juan)\ncurso_fisica = Curso(\"Fisica\", \"FIS101\", profesor_maria)\ncurso_quimica = Curso(\"Quimica\", \"QUI101\", profesor_pedro)\n\n# Agregar los cursos a la universidad\nuniversidad.agregar_curso(curso_matematicas)\nuniversidad.agregar_curso(curso_fisica)\nuniversidad.agregar_curso(curso_quimica)\n\n# Crear el objeto estudiante\nestudiante_carlos = Estudiante(\"Carlos Perez\", 20, \"Masculino\", \"202010101\", \"Ingenieria en Sistemas Informaticos\")\nEn el codigo anterior se crean los objetos de la universidad, profesores, cursos y estudiante.\n\nImprimir la información\n\nprint(universidad)\nprint()\nprint(estudiante_carlos)\nprint()\nprint(profesor_juan)\nprint()\nprint(curso_matematicas)\n\n# Crear un nuevo curso de Fisica y agregarlo a la universidad\ncurso_nuevo_fisica = Curso(\"Fisica\", \"FIS101\", profesor_maria)\nuniversidad.agregar_curso(curso_nuevo_fisica)\n\n# Imprimir nuevamente la universidad con el nuevo curso agregado\nprint()\nprint(universidad)\nEn el codigo anterior se imprime la información de la universidad, estudiante, profesor y curso. Luego se crea un nuevo curso de Fisica y se agrega a la universidad, para finalmente imprimir nuevamente la información de la universidad.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>🏫 Sistema Universitario</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/4_proyecto_poo_2.html#instrucciones.",
-    "href": "unidades/Proyectos/4_proyecto_poo_2.html#instrucciones.",
-    "title": "🏫 Sistema Universitario",
-    "section": "Instrucciones.",
-    "text": "Instrucciones.\n\nClase Persona: Define los atributos comunes nombre, edad y sexo.\nClase Estudiante: Hereda de Persona y agrega los atributos carnet y carrera.\nClase Profesor: Hereda de Persona y agrega los atributos codigo y especialidad.\nClase Curso: Contiene los atributos nombre, codigo y una instancia de Profesor.\nClase Universidad: Contiene el atributo nombre y una lista de cursos. Incluye un método para agregar cursos.\nCreación de objetos:\n\n\nSe crea un objeto universidad de la clase Universidad.\nSe crean los objetos profesor, curso y estudiante con los datos indicados.\nSe agrega cada curso a la universidad y luego se imprime la universidad con los cursos.\n\n\nImpresión:\n\n\nSe imprime la información de la universidad, el estudiante, el profesor y el curso de Matemáticas, según los requerimientos.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>🏫 Sistema Universitario</span>"
+      "Unidad 2: Programación Orientada a Objetos",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Programacion Orientada a Objetos.</span>"
     ]
   }
 ]
