@@ -737,6 +737,17 @@
     ]
   },
   {
+    "objectID": "unidades/unidad2/1_programacion_orientada_a_objetos.html#eliminar-propiedades-y-objetos",
+    "href": "unidades/unidad2/1_programacion_orientada_a_objetos.html#eliminar-propiedades-y-objetos",
+    "title": "Programacion Orientada a Objetos.",
+    "section": "Eliminar Propiedades y Objetos",
+    "text": "Eliminar Propiedades y Objetos\nPara eliminar Propiedades y Objetos se utiliza la palabra reservada del.\nComo observamos en el código anterior la propiedad del se utiliza para eliminar un objeto.\nEjemplo:\nclass Persona:\n    def __init__(self, nombre, edad):\n        self.nombre = nombre\n        self.edad = edad\n    def __del__(self):\n        print(f\"La persona {self.nombre} ha sido eliminada\")\n\npersona = Persona(\"Juan Perez\", 30)\nprint(persona)\ndel persona\nEn el código anterior se define un método especial del que se llama cuando un objeto es eliminado. Luego se crea un objeto persona de la clase Persona y se elimina el objeto persona. Al final obtendremos un mensaje como este:\nLa persona Juan Perez ha sido eliminada",
+    "crumbs": [
+      "Unidad 2: Programación Orientada a Objetos",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Programacion Orientada a Objetos.</span>"
+    ]
+  },
+  {
     "objectID": "unidades/unidad2/1_programacion_orientada_a_objetos.html#herencia-polimorfismo-y-encapsulación",
     "href": "unidades/unidad2/1_programacion_orientada_a_objetos.html#herencia-polimorfismo-y-encapsulación",
     "title": "Programacion Orientada a Objetos.",
@@ -1144,16 +1155,5 @@
     "title": "Licencia",
     "section": "Cambios en la Licencia",
     "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
-  },
-  {
-    "objectID": "unidades/unidad2/1_programacion_orientada_a_objetos.html#eliminar-propiedades-y-objetos",
-    "href": "unidades/unidad2/1_programacion_orientada_a_objetos.html#eliminar-propiedades-y-objetos",
-    "title": "Programacion Orientada a Objetos.",
-    "section": "Eliminar Propiedades y Objetos",
-    "text": "Eliminar Propiedades y Objetos\nPara eliminar Propiedades y Objetos se utiliza la palabra reservada del.\nComo observamos en el código anterior la propiedad del se utiliza para eliminar un objeto.\nEjemplo:\nclass Persona:\n    def __init__(self, nombre, edad):\n        self.nombre = nombre\n        self.edad = edad\n    def __del__(self):\n        print(f\"La persona {self.nombre} ha sido eliminada\")\n\npersona = Persona(\"Juan Perez\", 30)\nprint(persona)\ndel persona\nEn el código anterior se define un método especial del que se llama cuando un objeto es eliminado. Luego se crea un objeto persona de la clase Persona y se elimina el objeto persona. Al final obtendremos un mensaje como este:\nLa persona Juan Perez ha sido eliminada",
-    "crumbs": [
-      "Unidad 2: Programación Orientada a Objetos",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Programacion Orientada a Objetos.</span>"
-    ]
   }
 ]
