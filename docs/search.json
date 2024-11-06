@@ -55,6 +55,281 @@
     ]
   },
   {
+    "objectID": "unidades/unidad0/1_git_y_github.html#qué-es-git-y-github",
+    "href": "unidades/unidad0/1_git_y_github.html#qué-es-git-y-github",
+    "title": "Git y GitHub 🕹️",
+    "section": "¿Qué es Git y GitHub? 🕹️",
+    "text": "¿Qué es Git y GitHub? 🕹️\n\nGit y GitHub son herramientas ampliamente utilizadas en el desarrollo de software para el control de versiones y la colaboración en proyectos.\nGit es un sistema de control de versiones distribuido que permite realizar un seguimiento de los cambios en el código fuente durante el desarrollo de software. Fue creado por Linus Torvalds en 2005 y se utiliza mediante la línea de comandos o a través de interfaces gráficas de usuario.\nGitHub, por otro lado, es una plataforma de alojamiento de repositorios Git en la nube. Proporciona un entorno colaborativo donde los desarrolladores pueden compartir y trabajar en proyectos de software de forma conjunta. Además, ofrece características adicionales como seguimiento de problemas, solicitudes de extracción y despliegue continuo.\n\nEn este tutorial, aprenderás los conceptos básicos de Git y GitHub, así como su uso en un proyecto de software real.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#quiénes-utilizan-git",
+    "href": "unidades/unidad0/1_git_y_github.html#quiénes-utilizan-git",
+    "title": "Git y GitHub 🕹️",
+    "section": "¿Quiénes utilizan Git? 🌍",
+    "text": "¿Quiénes utilizan Git? 🌍",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#cómo-se-utiliza-git",
+    "href": "unidades/unidad0/1_git_y_github.html#cómo-se-utiliza-git",
+    "title": "Git y GitHub 🕹️",
+    "section": "¿Cómo se utiliza Git? 💻",
+    "text": "¿Cómo se utiliza Git? 💻\n\n\n\nGit en Terminal\n\n\nSe utiliza mediante la línea de comandos o a través de interfaces gráficas de usuario. Proporciona comandos para realizar operaciones como:\n\nInicializar un repositorio,\nRealizar cambios,\nRevisar historial,\nFusionar ramas,\nEntre otros.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#para-qué-sirve-git",
+    "href": "unidades/unidad0/1_git_y_github.html#para-qué-sirve-git",
+    "title": "Git y GitHub 🕹️",
+    "section": "¿Para qué sirve Git? 📝",
+    "text": "¿Para qué sirve Git? 📝\n\n\n\n\nSeguimiento de Cambios con Git\n\n\n\nSirve para realizar un seguimiento de los cambios en el código fuente, coordinar el trabajo entre varios desarrolladores, revertir cambios no deseados y mantener un historial completo de todas las modificaciones realizadas en un proyecto.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#por-qué-utilizar-git",
+    "href": "unidades/unidad0/1_git_y_github.html#por-qué-utilizar-git",
+    "title": "Git y GitHub 🕹️",
+    "section": "¿Por qué utilizar Git? 🤔",
+    "text": "¿Por qué utilizar Git? 🤔\n\n\n\n\nVentajas de Git\n\n\n\nOfrece varias ventajas, como:\n\nLa capacidad de trabajar de forma distribuida\nLa gestión eficiente de ramas para desarrollar nuevas funcionalidades\nCorregir errores sin afectar la rama principal\nLa posibilidad de colaborar de forma efectiva con otros desarrolladores.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#dónde-puedo-utilizar-git",
+    "href": "unidades/unidad0/1_git_y_github.html#dónde-puedo-utilizar-git",
+    "title": "Git y GitHub 🕹️",
+    "section": "¿Dónde puedo utilizar Git? 🌐",
+    "text": "¿Dónde puedo utilizar Git? 🌐\n\n\n\n\nGit en Diferentes Sistemas Operativos\n\n\n\nPuede ser utilizado en cualquier sistema operativo, incluyendo Windows, macOS y Linux. Además, es compatible con una amplia variedad de plataformas de alojamiento de repositorios, siendo GitHub una de las más populares.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#pasos-básicos",
+    "href": "unidades/unidad0/1_git_y_github.html#pasos-básicos",
+    "title": "Git y GitHub 🕹️",
+    "section": "Pasos Básicos 📝",
+    "text": "Pasos Básicos 📝",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#instalación-de-visual-studio-code",
+    "href": "unidades/unidad0/1_git_y_github.html#instalación-de-visual-studio-code",
+    "title": "Git y GitHub 🕹️",
+    "section": "Instalación de Visual Studio Code 📥",
+    "text": "Instalación de Visual Studio Code 📥\n\n\n\nVisual Studio Code",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#introducción",
+    "href": "unidades/unidad0/1_git_y_github.html#introducción",
+    "title": "Git y GitHub 🕹️",
+    "section": "Introducción",
+    "text": "Introducción",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#sección-1-modificar-archivos-en-el-repositorio",
+    "href": "unidades/unidad0/1_git_y_github.html#sección-1-modificar-archivos-en-el-repositorio",
+    "title": "Git y GitHub 🕹️",
+    "section": "Sección 1: Modificar Archivos en el Repositorio",
+    "text": "Sección 1: Modificar Archivos en el Repositorio\nEn esta sección, aprenderemos cómo realizar cambios en nuestros archivos y reflejarlos en Git.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#mover-cambios-de-local-a-staging",
+    "href": "unidades/unidad0/1_git_y_github.html#mover-cambios-de-local-a-staging",
+    "title": "Git y GitHub 🕹️",
+    "section": "Mover Cambios de Local a Staging:",
+    "text": "Mover Cambios de Local a Staging:\n\nAbre el archivo hello_world.py en Visual Studio Code.\nModifica el mensaje de bienvenida a “Bienvenido” en lugar de “Bienvenio”.\nGuarda los cambios y abre una terminal en Visual Studio Code.\n\nHemos corregido un error en nuestro archivo y queremos reflejarlo en Git.\ndef welcome_message():\n    name = input(\"Ingrese su nombre: \")\n    print(\"Bienvenido,\", name, \"al curso de Django y React!\")\n\nif __name__ == \"__main__\":\n    welcome_message()",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#agregar-cambios-de-local-a-staging",
+    "href": "unidades/unidad0/1_git_y_github.html#agregar-cambios-de-local-a-staging",
+    "title": "Git y GitHub 🕹️",
+    "section": "Agregar Cambios de Local a Staging:",
+    "text": "Agregar Cambios de Local a Staging:\ngit add hello_world.py\nHemos añadido los cambios al área de preparación y están listos para ser confirmados en el próximo commit.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#sección-2-confirmar-cambios-en-un-commit",
+    "href": "unidades/unidad0/1_git_y_github.html#sección-2-confirmar-cambios-en-un-commit",
+    "title": "Git y GitHub 🕹️",
+    "section": "Sección 2: Confirmar Cambios en un Commit",
+    "text": "Sección 2: Confirmar Cambios en un Commit\nEn esta sección, aprenderemos cómo confirmar los cambios en un commit y guardarlos de manera permanente en nuestro repositorio.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#mover-cambios-de-staging-a-commit",
+    "href": "unidades/unidad0/1_git_y_github.html#mover-cambios-de-staging-a-commit",
+    "title": "Git y GitHub 🕹️",
+    "section": "Mover Cambios de Staging a Commit:",
+    "text": "Mover Cambios de Staging a Commit:\ngit commit -m \"Corregir mensaje de bienvenida\"\nHemos confirmado los cambios en un commit con un mensaje descriptivo.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#sección-3-creación-y-fusión-de-ramas",
+    "href": "unidades/unidad0/1_git_y_github.html#sección-3-creación-y-fusión-de-ramas",
+    "title": "Git y GitHub 🕹️",
+    "section": "Sección 3: Creación y Fusión de Ramas",
+    "text": "Sección 3: Creación y Fusión de Ramas\nEn esta sección, aprenderemos cómo crear y fusionar ramas en Git para desarrollar nuevas funcionalidades de forma aislada.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#crear-una-nueva-rama",
+    "href": "unidades/unidad0/1_git_y_github.html#crear-una-nueva-rama",
+    "title": "Git y GitHub 🕹️",
+    "section": "Crear una Nueva Rama:",
+    "text": "Crear una Nueva Rama:\ngit branch feature\nHemos creado una nueva rama llamada “feature” para desarrollar una nueva funcionalidad.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#implementar-funcionalidades-en-la-rama",
+    "href": "unidades/unidad0/1_git_y_github.html#implementar-funcionalidades-en-la-rama",
+    "title": "Git y GitHub 🕹️",
+    "section": "Implementar Funcionalidades en la Rama:",
+    "text": "Implementar Funcionalidades en la Rama:\n\nAbre el archivo hello_world.py en Visual Studio Code.\nAñade una nueva función para mostrar un mensaje de despedida.\nGuarda los cambios y abre una terminal en Visual Studio Code.\nAñade los cambios al área de preparación y confírmalos en un commit.\nCambia a la rama principal con git checkout main.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#fusionar-ramas-con-la-rama-principal",
+    "href": "unidades/unidad0/1_git_y_github.html#fusionar-ramas-con-la-rama-principal",
+    "title": "Git y GitHub 🕹️",
+    "section": "Fusionar Ramas con la Rama Principal:",
+    "text": "Fusionar Ramas con la Rama Principal:\ngit merge feature\nHemos fusionado la rama “feature” con la rama principal y añadido la nueva funcionalidad al proyecto.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#sección-4-revertir-cambios-en-un-archivo",
+    "href": "unidades/unidad0/1_git_y_github.html#sección-4-revertir-cambios-en-un-archivo",
+    "title": "Git y GitHub 🕹️",
+    "section": "Sección 4: Revertir Cambios en un Archivo",
+    "text": "Sección 4: Revertir Cambios en un Archivo\nEn esta sección, aprenderemos cómo revertir cambios en un archivo y deshacerlos en Git.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#revertir-cambios-en-un-archivo",
+    "href": "unidades/unidad0/1_git_y_github.html#revertir-cambios-en-un-archivo",
+    "title": "Git y GitHub 🕹️",
+    "section": "Revertir Cambios en un Archivo:",
+    "text": "Revertir Cambios en un Archivo:\ngit reset hello_world.py\nHemos revertido los cambios en el archivo hello_world.py y deshecho las modificaciones realizadas.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/1_git_y_github.html#conclusión",
+    "href": "unidades/unidad0/1_git_y_github.html#conclusión",
+    "title": "Git y GitHub 🕹️",
+    "section": "Conclusión",
+    "text": "Conclusión\nEn este tutorial, hemos aprendido a gestionar cambios en nuestro proyecto y moverlos entre diferentes estados en Git. Estos conceptos son fundamentales para trabajar de forma eficiente en proyectos de software y colaborar con otros desarrolladores.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/2_github_classroom.html",
+    "href": "unidades/unidad0/2_github_classroom.html",
+    "title": "GitHub Classroom 📒",
+    "section": "",
+    "text": "¿Qué es GitHub Classroom? 🤔",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>GitHub Classroom 📒</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/2_github_classroom.html#qué-es-github-classroom",
+    "href": "unidades/unidad0/2_github_classroom.html#qué-es-github-classroom",
+    "title": "GitHub Classroom 📒",
+    "section": "",
+    "text": "Github Classroom Windows\n\n\n\n\nGitHub Classroom es una extensión de GitHub que permite a los profesores crear y gestionar asignaciones utilizando repositorios de GitHub. Proporciona una forma organizada y eficiente de distribuir tareas a los estudiantes, recopilar y revisar su trabajo, y proporcionar retroalimentación.\n\n\nFuncionalidades Principales ⚙️\n\nCreación de Asignaciones: Los profesores pueden crear tareas y asignaciones directamente desde GitHub Classroom, proporcionando instrucciones detalladas y estableciendo criterios de evaluación.\nDistribución Automatizada: Una vez que se crea una asignación, GitHub Classroom genera automáticamente repositorios privados para cada estudiante o equipo, basándose en una plantilla predefinida.\nSeguimiento de Progreso: Los profesores pueden realizar un seguimiento del progreso de los estudiantes y revisar sus contribuciones a través de solicitudes de extracción (pull requests) y comentarios en el código.\nRevisión y Retroalimentación: Los estudiantes envían sus trabajos a través de solicitudes de extracción, lo que permite a los profesores revisar y proporcionar retroalimentación específica sobre su código.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>GitHub Classroom 📒</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/2_github_classroom.html#ejemplo-práctico",
+    "href": "unidades/unidad0/2_github_classroom.html#ejemplo-práctico",
+    "title": "GitHub Classroom 📒",
+    "section": "Ejemplo Práctico",
+    "text": "Ejemplo Práctico\n\nCreación de una Asignación en GitHub Classroom 📒\n\nIniciar Sesión: Ingresa a GitHub Classroom con tu cuenta de GitHub y selecciona la opción para crear una nueva asignación.\n\n\n\n\n\nDefinir la Tarea: Proporciona instrucciones claras y detalladas sobre la tarea, incluyendo cualquier código base o recursos necesarios. Establece los criterios de evaluación para guiar a los estudiantes.\n\n\n\n\n\nConfigurar la Plantilla: Selecciona una plantilla de repositorio existente o crea una nueva plantilla que servirá como base para los repositorios de los estudiantes.\n\n\n\n\n\nDistribuir la Asignación: Una vez configurada la asignación, comparte el enlace generado con tus estudiantes para que puedan acceder a sus repositorios privados.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>GitHub Classroom 📒</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad0/2_github_classroom.html#trabajo-de-los-estudiantes",
+    "href": "unidades/unidad0/2_github_classroom.html#trabajo-de-los-estudiantes",
+    "title": "GitHub Classroom 📒",
+    "section": "Trabajo de los Estudiantes 🧑‍💻",
+    "text": "Trabajo de los Estudiantes 🧑‍💻\n\nAceptar la Asignación: Los estudiantes reciben el enlace de la asignación y aceptan la tarea, lo que les permite crear un repositorio privado basado en la plantilla proporcionada.\n\n\n\n\n\nActualizar el Navegador: Los estudiantes actualizan su navegador para ver el nuevo repositorio creado en su cuenta de GitHub.\n\n\n\n\n\nClonar el Repositorio: Los estudiantes clonan el repositorio asignado en su computadora local utilizando el enlace proporcionado.\n\n\n\n\n\nUtilizar el comando git clone: Aplique el comando git clone para clonar el repositorio en su computadora local.\ngit clone &lt;enlace-del-repositorio&gt;\n\n\n\n\n\nDesarrollar la Tarea: Los estudiantes trabajan en la tarea, realizando los cambios necesarios y realizando commits de manera regular para mantener un historial de su trabajo.\n\n\n\n\n\n\nTip\n\n\n\nPuedes probar el test incorporado con el comando pytest en la terminal, para verificar que el código cumple con los requerimientos\n\n\npytest\nUna vez desarrollado el código de acuerdo a la asignación en local deberían pasar el o los test\n\n\n\n\n\nEnviar la Solicitud de Extracción: Una vez completada la tarea, los estudiantes envían una solicitud de extracción desde su rama hacia la rama principal del repositorio, solicitando la revisión del profesor.\n\n\n\n\n\nUna vez realizado el push se envía al respositorio principal y se ejecutan los test en Github\n\n\n\n\n\n\nTip\n\n\n\nSe recomienda hacer las pruebas en local antes de enviar los cambios al respositorio en Github\n\n\n\n\n\n\n\nEste Action lo que hace es evaluar los cambios realizados\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nSe recomienda hacer las pruebas en local antes de enviar los cambios al respositorio en Github\n\n\n\nRevisión y Retroalimentación: Los profesores revisan las solicitudes de extracción, proporcionan comentarios sobre el código y evalúan el trabajo de los estudiantes según los criterios establecidos.\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nGitHub Classroom ofrece una manera eficiente y organizada de administrar tareas y asignaciones en entornos educativos, fomentando la colaboración, el aprendizaje y la retroalimentación efectiva entre profesores y estudiantes.",
+    "crumbs": [
+      "Unidad 0: Introducción a Git y GitHub",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>GitHub Classroom 📒</span>"
+    ]
+  },
+  {
     "objectID": "unidades/unidad1/1_introduccion.html#introducción-general-a-la-programación",
     "href": "unidades/unidad1/1_introduccion.html#introducción-general-a-la-programación",
     "title": "Introducción e Instalaciones Necesarias.",
@@ -429,6 +704,17 @@
     ]
   },
   {
+    "objectID": "unidades/unidad2/1_programacion_orientada_a_objetos.html#qué-es-self",
+    "href": "unidades/unidad2/1_programacion_orientada_a_objetos.html#qué-es-self",
+    "title": "Programacion Orientada a Objetos.",
+    "section": "¿Qué es self?",
+    "text": "¿Qué es self?\nSelf es una palabra reservada en Python que se refiere al objeto actual. Se utiliza para acceder a los atributos y métodos de un objeto.\nEn el ejemplo anterior, self.marca, self.modelo y self.color se refieren a los atributos de un objeto.\nEjemplo:\nclass Persona:\n    def __init__(self, nombre, edad):\n        self.nombre = nombre\n        self.edad = edad\n    def saludar(self):\n        print(f\"Hola, mi nombre es {self.nombre} y tengo {self.edad} años\")\nEn el ejemplo anterior se define una clase Persona con dos atributos nombre y edad. Además, se define un método saludar que imprime un mensaje con los atributos nombre y edad.",
+    "crumbs": [
+      "Unidad 2: Programación Orientada a Objetos",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Programacion Orientada a Objetos.</span>"
+    ]
+  },
+  {
     "objectID": "unidades/unidad2/1_programacion_orientada_a_objetos.html#métodos",
     "href": "unidades/unidad2/1_programacion_orientada_a_objetos.html#métodos",
     "title": "Programacion Orientada a Objetos.",
@@ -594,6 +880,116 @@
     ]
   },
   {
+    "objectID": "unidades/Proyectos/3_funciones.html#objetivos-del-laboratorio",
+    "href": "unidades/Proyectos/3_funciones.html#objetivos-del-laboratorio",
+    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
+    "section": "Objetivos del Laboratorio",
+    "text": "Objetivos del Laboratorio\n\nDesarrollar un juego de Ahorcado usando funciones en Python.\nUsar estructuras de datos como listas y cadenas de texto.\nImplementar lógica condicional y bucles para manejar el flujo del juego.\nMostrar mensajes finales (con emojis) según el resultado del juego.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/3_funciones.html#prerrequisitos",
+    "href": "unidades/Proyectos/3_funciones.html#prerrequisitos",
+    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
+    "section": "Prerrequisitos",
+    "text": "Prerrequisitos\n\nConocimiento básico de Python: funciones, listas, cadenas, condicionales y bucles.\nInstalación de Python 3 en tu equipo.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/3_funciones.html#paso-1-crear-la-estructura-inicial-del-proyecto",
+    "href": "unidades/Proyectos/3_funciones.html#paso-1-crear-la-estructura-inicial-del-proyecto",
+    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
+    "section": "Paso 1: Crear la Estructura Inicial del Proyecto",
+    "text": "Paso 1: Crear la Estructura Inicial del Proyecto\n\nCrear un archivo de Python:\nAbre tu editor de texto o IDE favorito (se recomienda utilizar Vscode) y crea un nuevo archivo llamado ahorcado.py.\nDefinir el objetivo del proyecto en el archivo:\nAñade un comentario en la primera línea que describa el propósito del proyecto:\n# Juego de Ahorcado en Python",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/3_funciones.html#paso-2-definir-las-etapas-del-ahorcado-en-ascii",
+    "href": "unidades/Proyectos/3_funciones.html#paso-2-definir-las-etapas-del-ahorcado-en-ascii",
+    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
+    "section": "Paso 2: Definir las Etapas del Ahorcado en ASCII",
+    "text": "Paso 2: Definir las Etapas del Ahorcado en ASCII\n\nCrear la lista AHORCADO_DIBUJO:\nDefine las etapas progresivas del dibujo del ahorcado usando una lista de cadenas en ASCII.\nCada elemento de la lista representa una etapa del juego.\nAHORCADO_DIBUJO = [\n    \"\"\"\n       |\n       |\n       |\n       |\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n       |\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n      /|\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n      /|\\\\\n       |\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n      /|\\\\\n       |\n      /\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n      /|\\\\\n       |\n      / \\\\\n    \"\"\"\n]\n\n\nPrueba del dibujo:\nPrueba imprimiendo cada elemento de la lista para asegurarte de que el dibujo es correcto.\nprint(len(AHORCADO_DIBUJO))\nfor etapa in AHORCADO_DIBUJO:\n    print(etapa)\n\n\n\n\n\n\nTip\n\n\n\nNota: Puedes ejecutar el código en tu terminal o en un entorno de Python para verificar que el dibujo se imprime correctamente.\n\n\n\n\n\n\n\n\nTip\n\n\n\nNo olvides utilizar la función print() para mostrar los elementos de la lista en la consola. Y los comentarios para poder identificar cada etapa del dibujo.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/3_funciones.html#paso-3-crear-la-función-para-mostrar-el-dibujo-del-ahorcado",
+    "href": "unidades/Proyectos/3_funciones.html#paso-3-crear-la-función-para-mostrar-el-dibujo-del-ahorcado",
+    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
+    "section": "Paso 3: Crear la Función para Mostrar el Dibujo del Ahorcado",
+    "text": "Paso 3: Crear la Función para Mostrar el Dibujo del Ahorcado\n\nDefinir la función mostrar_ahorcado:\nEsta función tomará el número de intentos fallidos como argumento e imprimirá la etapa correspondiente del ahorcado.\ndef mostrar_ahorcado(intentos_fallidos):\n    print(AHORCADO_DIBUJO[intentos_fallidos])\n\n\nPrueba de la función:\nLlama a mostrar_ahorcado varias veces con diferentes valores para verificar que cada etapa se muestra correctamente.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/3_funciones.html#paso-4-crear-funciones-para-el-flujo-del-juego",
+    "href": "unidades/Proyectos/3_funciones.html#paso-4-crear-funciones-para-el-flujo-del-juego",
+    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
+    "section": "Paso 4: Crear Funciones para el Flujo del Juego",
+    "text": "Paso 4: Crear Funciones para el Flujo del Juego\n\nFunción para Seleccionar Palabra Aleatoria:\nDefine una lista de palabras para que el juego seleccione aleatoriamente una de ellas.\nUsa la biblioteca random para elegir una palabra al azar.\nimport random\n\ndef seleccionar_palabra():\n    palabras = [\"python\", \"programacion\", \"juego\", \"ahorcado\", \"computadora\"]\n    return random.choice(palabras)\nEn el código anterior, la función seleccionar_palabra devuelve una palabra aleatoria de la lista de palabras. Tambien aparece el método choice de random que selecciona una palabra aleatoria de la lista.\n\n\nFunción para Mostrar el Estado Actual:\nEsta función mostrará el progreso actual del jugador, mostrando las letras adivinadas y guiones bajos _ para letras no adivinadas.\ndef mostrar_progreso(palabra, letras_adivinadas):\n    progreso = [letra if letra in letras_adivinadas else '_' for letra in palabra]\n    print(\" \".join(progreso))\nEl código anterior crea una lista de letras adivinadas y guiones bajos para las letras no adivinadas. Luego, une los elementos de la lista en una cadena con un espacio entre cada letra.\nEste proceso se conoce como list comprehension y es una forma concisa de crear listas en Python.\nPara ampliar la información sobre list comprehension, puedes consultar la documentación oficial de Python en el siguiente enlace: List Comprehensions\n\n\nFunción para Manejar el Intento del Jugador:\nDefine una función que reciba una letra y verifique si está en la palabra.\ndef intentar_letra(palabra, letra, letras_adivinadas):\n    if letra in palabra:\n        letras_adivinadas.add(letra)\n        return True\n    return False\nEn el código anterior, la función intentar_letra verifica si la letra está en la palabra y la agrega a la colección de letras adivinadas. Devuelve True si la letra está en la palabra y False si no lo está.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/3_funciones.html#paso-5-crear-la-función-principal-del-juego",
+    "href": "unidades/Proyectos/3_funciones.html#paso-5-crear-la-función-principal-del-juego",
+    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
+    "section": "Paso 5: Crear la Función Principal del Juego",
+    "text": "Paso 5: Crear la Función Principal del Juego\n\nConfigurar el Juego:\nDefine la función jugar_ahorcado() que controlará el flujo completo del juego.\nEstablece la palabra a adivinar, el número de intentos, y una colección para almacenar las letras adivinadas.\ndef jugar_ahorcado():\n    palabra = seleccionar_palabra()\n    letras_adivinadas = set()\n    intentos_fallidos = 0\n    max_intentos = len(AHORCADO_DIBUJO) - 1\nEn el código anterior, la función jugar_ahorcado selecciona una palabra aleatoria, inicializa una colección de letras adivinadas, y establece el número máximo de intentos.\n\n\nCiclo del Juego:\nCrea un bucle while que continúe mientras el jugador tenga intentos restantes y no haya adivinado la palabra completa.\n    while intentos_fallidos &lt; max_intentos:\n        mostrar_ahorcado(intentos_fallidos)\n        mostrar_progreso(palabra, letras_adivinadas)\n        \n        letra = input(\"Introduce una letra: \").lower()\n        \n        if letra in letras_adivinadas:\n            print(\"Ya intentaste esa letra.\")\n            continue\n        \n        if intentar_letra(palabra, letra, letras_adivinadas):\n            print(\"¡Correcto!\")\n            if all(l in letras_adivinadas for l in palabra):\n                mostrar_resultado(True)\n                break\n        else:\n            print(\"Incorrecto.\")\n            intentos_fallidos += 1\n    else:\n        mostrar_ahorcado(intentos_fallidos)\n        mostrar_resultado(False)\nEn el código anterior, el bucle while muestra el dibujo actual del ahorcado, el progreso del jugador y solicita una letra al jugador.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/3_funciones.html#paso-6-crear-función-de-resultado-final-con-emojis",
+    "href": "unidades/Proyectos/3_funciones.html#paso-6-crear-función-de-resultado-final-con-emojis",
+    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
+    "section": "Paso 6: Crear Función de Resultado Final con Emojis",
+    "text": "Paso 6: Crear Función de Resultado Final con Emojis\n\nDefinir mostrar_resultado:\nEsta función mostrará un mensaje final con un emoji dependiendo de si el jugador gana o pierde.\ndef mostrar_resultado(ganador):\n    if ganador:\n        print(\"¡Felicidades, ganaste! 😄\")\n    else:\n        print(\"Lo siento, perdiste. 😞\")\nEn el código anterior, la función mostrar_resultado imprime un mensaje de felicitación si el jugador gana y un mensaje de consuelo si pierde.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/3_funciones.html#paso-7-ejecutar-el-juego",
+    "href": "unidades/Proyectos/3_funciones.html#paso-7-ejecutar-el-juego",
+    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
+    "section": "Paso 7: Ejecutar el Juego",
+    "text": "Paso 7: Ejecutar el Juego\n\nEjecutar el Juego:\nAgrega una condición para ejecutar el juego cuando el archivo sea ejecutado directamente.\nif __name__ == \"__main__\":\n    jugar_ahorcado()\nEn el código anterior, la condición if name == “main”: verifica si el archivo se ejecuta directamente y llama a la función jugar_ahorcado en ese caso.\n\n\n\n\n\n\nTip\n\n\n\nNota: Puedes ejecutar el juego en tu terminal o en un entorno de Python para jugar al Ahorcado.\n\n\n\n\nPrueba Final:\nEjecuta ahorcado.py y juega una partida completa. Verifica que los mensajes y el flujo del juego sean los correctos.\npython ahorcado.py",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/3_funciones.html#paso-8-mejoras-opcionales",
+    "href": "unidades/Proyectos/3_funciones.html#paso-8-mejoras-opcionales",
+    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
+    "section": "Paso 8: Mejoras Opcionales",
+    "text": "Paso 8: Mejoras Opcionales\n\nAñadir Validación de Entradas: Controla que el jugador solo introduzca letras válidas.\n\nAgregar Dificultad: Permite al jugador elegir entre palabras cortas, medias y largas.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+    ]
+  },
+  {
     "objectID": "unidades/Proyectos/1_proyecto_modulos.html#módulos-del-proyecto",
     "href": "unidades/Proyectos/1_proyecto_modulos.html#módulos-del-proyecto",
     "title": "📝 Gestor de Tareas con Prioridades",
@@ -717,399 +1113,47 @@
     "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
   },
   {
-    "objectID": "unidades/Proyectos/3_funciones.html#objetivos-del-laboratorio",
-    "href": "unidades/Proyectos/3_funciones.html#objetivos-del-laboratorio",
-    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
-    "section": "Objetivos del Laboratorio",
-    "text": "Objetivos del Laboratorio\n\nDesarrollar un juego de Ahorcado usando funciones en Python.\nUsar estructuras de datos como listas y cadenas de texto.\nImplementar lógica condicional y bucles para manejar el flujo del juego.\nMostrar mensajes finales (con emojis) según el resultado del juego.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/3_funciones.html#prerrequisitos",
-    "href": "unidades/Proyectos/3_funciones.html#prerrequisitos",
-    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
-    "section": "Prerrequisitos",
-    "text": "Prerrequisitos\n\nConocimiento básico de Python: funciones, listas, cadenas, condicionales y bucles.\nInstalación de Python 3 en tu equipo.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/3_funciones.html#paso-1-crear-la-estructura-inicial-del-proyecto",
-    "href": "unidades/Proyectos/3_funciones.html#paso-1-crear-la-estructura-inicial-del-proyecto",
-    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
-    "section": "Paso 1: Crear la Estructura Inicial del Proyecto",
-    "text": "Paso 1: Crear la Estructura Inicial del Proyecto\n\nCrear un archivo de Python:\nAbre tu editor de texto o IDE favorito (se recomienda utilizar Vscode) y crea un nuevo archivo llamado ahorcado.py.\nDefinir el objetivo del proyecto en el archivo:\nAñade un comentario en la primera línea que describa el propósito del proyecto:\n# Juego de Ahorcado en Python",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/3_funciones.html#paso-2-definir-las-etapas-del-ahorcado-en-ascii",
-    "href": "unidades/Proyectos/3_funciones.html#paso-2-definir-las-etapas-del-ahorcado-en-ascii",
-    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
-    "section": "Paso 2: Definir las Etapas del Ahorcado en ASCII",
-    "text": "Paso 2: Definir las Etapas del Ahorcado en ASCII\n\nCrear la lista AHORCADO_DIBUJO:\nDefine las etapas progresivas del dibujo del ahorcado usando una lista de cadenas en ASCII.\nCada elemento de la lista representa una etapa del juego.\nAHORCADO_DIBUJO = [\n    \"\"\"\n       |\n       |\n       |\n       |\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n       |\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n      /|\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n      /|\\\\\n       |\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n      /|\\\\\n       |\n      /\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n      /|\\\\\n       |\n      / \\\\\n    \"\"\"\n]\n\n\nPrueba del dibujo:\nPrueba imprimiendo cada elemento de la lista para asegurarte de que el dibujo es correcto.\nprint(len(AHORCADO_DIBUJO))\nfor etapa in AHORCADO_DIBUJO:\n    print(etapa)\n\n\n\n\n\n\nTip\n\n\n\nNota: Puedes ejecutar el código en tu terminal o en un entorno de Python para verificar que el dibujo se imprime correctamente.\n\n\n\n\n\n\n\n\nTip\n\n\n\nNo olvides utilizar la función print() para mostrar los elementos de la lista en la consola. Y los comentarios para poder identificar cada etapa del dibujo.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/3_funciones.html#paso-3-crear-la-función-para-mostrar-el-dibujo-del-ahorcado",
-    "href": "unidades/Proyectos/3_funciones.html#paso-3-crear-la-función-para-mostrar-el-dibujo-del-ahorcado",
-    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
-    "section": "Paso 3: Crear la Función para Mostrar el Dibujo del Ahorcado",
-    "text": "Paso 3: Crear la Función para Mostrar el Dibujo del Ahorcado\n\nDefinir la función mostrar_ahorcado:\nEsta función tomará el número de intentos fallidos como argumento e imprimirá la etapa correspondiente del ahorcado.\ndef mostrar_ahorcado(intentos_fallidos):\n    print(AHORCADO_DIBUJO[intentos_fallidos])\n\n\nPrueba de la función:\nLlama a mostrar_ahorcado varias veces con diferentes valores para verificar que cada etapa se muestra correctamente.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/3_funciones.html#paso-4-crear-funciones-para-el-flujo-del-juego",
-    "href": "unidades/Proyectos/3_funciones.html#paso-4-crear-funciones-para-el-flujo-del-juego",
-    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
-    "section": "Paso 4: Crear Funciones para el Flujo del Juego",
-    "text": "Paso 4: Crear Funciones para el Flujo del Juego\n\nFunción para Seleccionar Palabra Aleatoria:\nDefine una lista de palabras para que el juego seleccione aleatoriamente una de ellas.\nUsa la biblioteca random para elegir una palabra al azar.\nimport random\n\ndef seleccionar_palabra():\n    palabras = [\"python\", \"programacion\", \"juego\", \"ahorcado\", \"computadora\"]\n    return random.choice(palabras)\nEn el código anterior, la función seleccionar_palabra devuelve una palabra aleatoria de la lista de palabras. Tambien aparece el método choice de random que selecciona una palabra aleatoria de la lista.\n\n\nFunción para Mostrar el Estado Actual:\nEsta función mostrará el progreso actual del jugador, mostrando las letras adivinadas y guiones bajos _ para letras no adivinadas.\ndef mostrar_progreso(palabra, letras_adivinadas):\n    progreso = [letra if letra in letras_adivinadas else '_' for letra in palabra]\n    print(\" \".join(progreso))\nEl código anterior crea una lista de letras adivinadas y guiones bajos para las letras no adivinadas. Luego, une los elementos de la lista en una cadena con un espacio entre cada letra.\nEste proceso se conoce como list comprehension y es una forma concisa de crear listas en Python.\nPara ampliar la información sobre list comprehension, puedes consultar la documentación oficial de Python en el siguiente enlace: List Comprehensions\n\n\nFunción para Manejar el Intento del Jugador:\nDefine una función que reciba una letra y verifique si está en la palabra.\ndef intentar_letra(palabra, letra, letras_adivinadas):\n    if letra in palabra:\n        letras_adivinadas.add(letra)\n        return True\n    return False\nEn el código anterior, la función intentar_letra verifica si la letra está en la palabra y la agrega a la colección de letras adivinadas. Devuelve True si la letra está en la palabra y False si no lo está.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/3_funciones.html#paso-5-crear-la-función-principal-del-juego",
-    "href": "unidades/Proyectos/3_funciones.html#paso-5-crear-la-función-principal-del-juego",
-    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
-    "section": "Paso 5: Crear la Función Principal del Juego",
-    "text": "Paso 5: Crear la Función Principal del Juego\n\nConfigurar el Juego:\nDefine la función jugar_ahorcado() que controlará el flujo completo del juego.\nEstablece la palabra a adivinar, el número de intentos, y una colección para almacenar las letras adivinadas.\ndef jugar_ahorcado():\n    palabra = seleccionar_palabra()\n    letras_adivinadas = set()\n    intentos_fallidos = 0\n    max_intentos = len(AHORCADO_DIBUJO) - 1\nEn el código anterior, la función jugar_ahorcado selecciona una palabra aleatoria, inicializa una colección de letras adivinadas, y establece el número máximo de intentos.\n\n\nCiclo del Juego:\nCrea un bucle while que continúe mientras el jugador tenga intentos restantes y no haya adivinado la palabra completa.\n    while intentos_fallidos &lt; max_intentos:\n        mostrar_ahorcado(intentos_fallidos)\n        mostrar_progreso(palabra, letras_adivinadas)\n        \n        letra = input(\"Introduce una letra: \").lower()\n        \n        if letra in letras_adivinadas:\n            print(\"Ya intentaste esa letra.\")\n            continue\n        \n        if intentar_letra(palabra, letra, letras_adivinadas):\n            print(\"¡Correcto!\")\n            if all(l in letras_adivinadas for l in palabra):\n                mostrar_resultado(True)\n                break\n        else:\n            print(\"Incorrecto.\")\n            intentos_fallidos += 1\n    else:\n        mostrar_ahorcado(intentos_fallidos)\n        mostrar_resultado(False)\nEn el código anterior, el bucle while muestra el dibujo actual del ahorcado, el progreso del jugador y solicita una letra al jugador.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/3_funciones.html#paso-6-crear-función-de-resultado-final-con-emojis",
-    "href": "unidades/Proyectos/3_funciones.html#paso-6-crear-función-de-resultado-final-con-emojis",
-    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
-    "section": "Paso 6: Crear Función de Resultado Final con Emojis",
-    "text": "Paso 6: Crear Función de Resultado Final con Emojis\n\nDefinir mostrar_resultado:\nEsta función mostrará un mensaje final con un emoji dependiendo de si el jugador gana o pierde.\ndef mostrar_resultado(ganador):\n    if ganador:\n        print(\"¡Felicidades, ganaste! 😄\")\n    else:\n        print(\"Lo siento, perdiste. 😞\")\nEn el código anterior, la función mostrar_resultado imprime un mensaje de felicitación si el jugador gana y un mensaje de consuelo si pierde.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/3_funciones.html#paso-7-ejecutar-el-juego",
-    "href": "unidades/Proyectos/3_funciones.html#paso-7-ejecutar-el-juego",
-    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
-    "section": "Paso 7: Ejecutar el Juego",
-    "text": "Paso 7: Ejecutar el Juego\n\nEjecutar el Juego:\nAgrega una condición para ejecutar el juego cuando el archivo sea ejecutado directamente.\nif __name__ == \"__main__\":\n    jugar_ahorcado()\nEn el código anterior, la condición if name == “main”: verifica si el archivo se ejecuta directamente y llama a la función jugar_ahorcado en ese caso.\n\n\n\n\n\n\nTip\n\n\n\nNota: Puedes ejecutar el juego en tu terminal o en un entorno de Python para jugar al Ahorcado.\n\n\n\n\nPrueba Final:\nEjecuta ahorcado.py y juega una partida completa. Verifica que los mensajes y el flujo del juego sean los correctos.\npython ahorcado.py",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/3_funciones.html#paso-8-mejoras-opcionales",
-    "href": "unidades/Proyectos/3_funciones.html#paso-8-mejoras-opcionales",
-    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
-    "section": "Paso 8: Mejoras Opcionales",
-    "text": "Paso 8: Mejoras Opcionales\n\nAñadir Validación de Entradas: Controla que el jugador solo introduzca letras válidas.\n\nAgregar Dificultad: Permite al jugador elegir entre palabras cortas, medias y largas.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad0/1_git_y_github.html#qué-es-git-y-github",
-    "href": "unidades/unidad0/1_git_y_github.html#qué-es-git-y-github",
-    "title": "Git y GitHub 🕹️",
-    "section": "¿Qué es Git y GitHub? 🕹️",
-    "text": "¿Qué es Git y GitHub? 🕹️\n\nGit y GitHub son herramientas ampliamente utilizadas en el desarrollo de software para el control de versiones y la colaboración en proyectos.\nGit es un sistema de control de versiones distribuido que permite realizar un seguimiento de los cambios en el código fuente durante el desarrollo de software. Fue creado por Linus Torvalds en 2005 y se utiliza mediante la línea de comandos o a través de interfaces gráficas de usuario.\nGitHub, por otro lado, es una plataforma de alojamiento de repositorios Git en la nube. Proporciona un entorno colaborativo donde los desarrolladores pueden compartir y trabajar en proyectos de software de forma conjunta. Además, ofrece características adicionales como seguimiento de problemas, solicitudes de extracción y despliegue continuo.\n\nEn este tutorial, aprenderás los conceptos básicos de Git y GitHub, así como su uso en un proyecto de software real.",
-    "crumbs": [
-      "Unidad 0: Introducción a Git y GitHub",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad0/1_git_y_github.html#quiénes-utilizan-git",
-    "href": "unidades/unidad0/1_git_y_github.html#quiénes-utilizan-git",
-    "title": "Git y GitHub 🕹️",
-    "section": "¿Quiénes utilizan Git? 🌍",
-    "text": "¿Quiénes utilizan Git? 🌍",
-    "crumbs": [
-      "Unidad 0: Introducción a Git y GitHub",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad0/1_git_y_github.html#cómo-se-utiliza-git",
-    "href": "unidades/unidad0/1_git_y_github.html#cómo-se-utiliza-git",
-    "title": "Git y GitHub 🕹️",
-    "section": "¿Cómo se utiliza Git? 💻",
-    "text": "¿Cómo se utiliza Git? 💻\n\n\n\nGit en Terminal\n\n\nSe utiliza mediante la línea de comandos o a través de interfaces gráficas de usuario. Proporciona comandos para realizar operaciones como:\n\nInicializar un repositorio,\nRealizar cambios,\nRevisar historial,\nFusionar ramas,\nEntre otros.",
-    "crumbs": [
-      "Unidad 0: Introducción a Git y GitHub",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad0/1_git_y_github.html#para-qué-sirve-git",
-    "href": "unidades/unidad0/1_git_y_github.html#para-qué-sirve-git",
-    "title": "Git y GitHub 🕹️",
-    "section": "¿Para qué sirve Git? 📝",
-    "text": "¿Para qué sirve Git? 📝\n\n\n\n\nSeguimiento de Cambios con Git\n\n\n\nSirve para realizar un seguimiento de los cambios en el código fuente, coordinar el trabajo entre varios desarrolladores, revertir cambios no deseados y mantener un historial completo de todas las modificaciones realizadas en un proyecto.",
-    "crumbs": [
-      "Unidad 0: Introducción a Git y GitHub",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad0/1_git_y_github.html#por-qué-utilizar-git",
-    "href": "unidades/unidad0/1_git_y_github.html#por-qué-utilizar-git",
-    "title": "Git y GitHub 🕹️",
-    "section": "¿Por qué utilizar Git? 🤔",
-    "text": "¿Por qué utilizar Git? 🤔\n\n\n\n\nVentajas de Git\n\n\n\nOfrece varias ventajas, como:\n\nLa capacidad de trabajar de forma distribuida\nLa gestión eficiente de ramas para desarrollar nuevas funcionalidades\nCorregir errores sin afectar la rama principal\nLa posibilidad de colaborar de forma efectiva con otros desarrolladores.",
-    "crumbs": [
-      "Unidad 0: Introducción a Git y GitHub",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad0/1_git_y_github.html#dónde-puedo-utilizar-git",
-    "href": "unidades/unidad0/1_git_y_github.html#dónde-puedo-utilizar-git",
-    "title": "Git y GitHub 🕹️",
-    "section": "¿Dónde puedo utilizar Git? 🌐",
-    "text": "¿Dónde puedo utilizar Git? 🌐\n\n\n\n\nGit en Diferentes Sistemas Operativos\n\n\n\nPuede ser utilizado en cualquier sistema operativo, incluyendo Windows, macOS y Linux. Además, es compatible con una amplia variedad de plataformas de alojamiento de repositorios, siendo GitHub una de las más populares.",
-    "crumbs": [
-      "Unidad 0: Introducción a Git y GitHub",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad0/1_git_y_github.html#pasos-básicos",
-    "href": "unidades/unidad0/1_git_y_github.html#pasos-básicos",
-    "title": "Git y GitHub 🕹️",
-    "section": "Pasos Básicos 📝",
-    "text": "Pasos Básicos 📝",
-    "crumbs": [
-      "Unidad 0: Introducción a Git y GitHub",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad0/1_git_y_github.html#instalación-de-visual-studio-code",
-    "href": "unidades/unidad0/1_git_y_github.html#instalación-de-visual-studio-code",
-    "title": "Git y GitHub 🕹️",
-    "section": "Instalación de Visual Studio Code 📥",
-    "text": "Instalación de Visual Studio Code 📥\n\n\n\nVisual Studio Code",
-    "crumbs": [
-      "Unidad 0: Introducción a Git y GitHub",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad0/1_git_y_github.html#introducción",
-    "href": "unidades/unidad0/1_git_y_github.html#introducción",
-    "title": "Git y GitHub 🕹️",
-    "section": "Introducción",
-    "text": "Introducción",
-    "crumbs": [
-      "Unidad 0: Introducción a Git y GitHub",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad0/1_git_y_github.html#sección-1-modificar-archivos-en-el-repositorio",
-    "href": "unidades/unidad0/1_git_y_github.html#sección-1-modificar-archivos-en-el-repositorio",
-    "title": "Git y GitHub 🕹️",
-    "section": "Sección 1: Modificar Archivos en el Repositorio",
-    "text": "Sección 1: Modificar Archivos en el Repositorio\nEn esta sección, aprenderemos cómo realizar cambios en nuestros archivos y reflejarlos en Git.",
-    "crumbs": [
-      "Unidad 0: Introducción a Git y GitHub",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad0/1_git_y_github.html#mover-cambios-de-local-a-staging",
-    "href": "unidades/unidad0/1_git_y_github.html#mover-cambios-de-local-a-staging",
-    "title": "Git y GitHub 🕹️",
-    "section": "Mover Cambios de Local a Staging:",
-    "text": "Mover Cambios de Local a Staging:\n\nAbre el archivo hello_world.py en Visual Studio Code.\nModifica el mensaje de bienvenida a “Bienvenido” en lugar de “Bienvenio”.\nGuarda los cambios y abre una terminal en Visual Studio Code.\n\nHemos corregido un error en nuestro archivo y queremos reflejarlo en Git.\ndef welcome_message():\n    name = input(\"Ingrese su nombre: \")\n    print(\"Bienvenido,\", name, \"al curso de Django y React!\")\n\nif __name__ == \"__main__\":\n    welcome_message()",
-    "crumbs": [
-      "Unidad 0: Introducción a Git y GitHub",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad0/1_git_y_github.html#agregar-cambios-de-local-a-staging",
-    "href": "unidades/unidad0/1_git_y_github.html#agregar-cambios-de-local-a-staging",
-    "title": "Git y GitHub 🕹️",
-    "section": "Agregar Cambios de Local a Staging:",
-    "text": "Agregar Cambios de Local a Staging:\ngit add hello_world.py\nHemos añadido los cambios al área de preparación y están listos para ser confirmados en el próximo commit.",
-    "crumbs": [
-      "Unidad 0: Introducción a Git y GitHub",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad0/1_git_y_github.html#sección-2-confirmar-cambios-en-un-commit",
-    "href": "unidades/unidad0/1_git_y_github.html#sección-2-confirmar-cambios-en-un-commit",
-    "title": "Git y GitHub 🕹️",
-    "section": "Sección 2: Confirmar Cambios en un Commit",
-    "text": "Sección 2: Confirmar Cambios en un Commit\nEn esta sección, aprenderemos cómo confirmar los cambios en un commit y guardarlos de manera permanente en nuestro repositorio.",
-    "crumbs": [
-      "Unidad 0: Introducción a Git y GitHub",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad0/1_git_y_github.html#mover-cambios-de-staging-a-commit",
-    "href": "unidades/unidad0/1_git_y_github.html#mover-cambios-de-staging-a-commit",
-    "title": "Git y GitHub 🕹️",
-    "section": "Mover Cambios de Staging a Commit:",
-    "text": "Mover Cambios de Staging a Commit:\ngit commit -m \"Corregir mensaje de bienvenida\"\nHemos confirmado los cambios en un commit con un mensaje descriptivo.",
-    "crumbs": [
-      "Unidad 0: Introducción a Git y GitHub",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad0/1_git_y_github.html#sección-3-creación-y-fusión-de-ramas",
-    "href": "unidades/unidad0/1_git_y_github.html#sección-3-creación-y-fusión-de-ramas",
-    "title": "Git y GitHub 🕹️",
-    "section": "Sección 3: Creación y Fusión de Ramas",
-    "text": "Sección 3: Creación y Fusión de Ramas\nEn esta sección, aprenderemos cómo crear y fusionar ramas en Git para desarrollar nuevas funcionalidades de forma aislada.",
-    "crumbs": [
-      "Unidad 0: Introducción a Git y GitHub",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad0/1_git_y_github.html#crear-una-nueva-rama",
-    "href": "unidades/unidad0/1_git_y_github.html#crear-una-nueva-rama",
-    "title": "Git y GitHub 🕹️",
-    "section": "Crear una Nueva Rama:",
-    "text": "Crear una Nueva Rama:\ngit branch feature\nHemos creado una nueva rama llamada “feature” para desarrollar una nueva funcionalidad.",
-    "crumbs": [
-      "Unidad 0: Introducción a Git y GitHub",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad0/1_git_y_github.html#implementar-funcionalidades-en-la-rama",
-    "href": "unidades/unidad0/1_git_y_github.html#implementar-funcionalidades-en-la-rama",
-    "title": "Git y GitHub 🕹️",
-    "section": "Implementar Funcionalidades en la Rama:",
-    "text": "Implementar Funcionalidades en la Rama:\n\nAbre el archivo hello_world.py en Visual Studio Code.\nAñade una nueva función para mostrar un mensaje de despedida.\nGuarda los cambios y abre una terminal en Visual Studio Code.\nAñade los cambios al área de preparación y confírmalos en un commit.\nCambia a la rama principal con git checkout main.",
-    "crumbs": [
-      "Unidad 0: Introducción a Git y GitHub",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad0/1_git_y_github.html#fusionar-ramas-con-la-rama-principal",
-    "href": "unidades/unidad0/1_git_y_github.html#fusionar-ramas-con-la-rama-principal",
-    "title": "Git y GitHub 🕹️",
-    "section": "Fusionar Ramas con la Rama Principal:",
-    "text": "Fusionar Ramas con la Rama Principal:\ngit merge feature\nHemos fusionado la rama “feature” con la rama principal y añadido la nueva funcionalidad al proyecto.",
-    "crumbs": [
-      "Unidad 0: Introducción a Git y GitHub",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad0/1_git_y_github.html#sección-4-revertir-cambios-en-un-archivo",
-    "href": "unidades/unidad0/1_git_y_github.html#sección-4-revertir-cambios-en-un-archivo",
-    "title": "Git y GitHub 🕹️",
-    "section": "Sección 4: Revertir Cambios en un Archivo",
-    "text": "Sección 4: Revertir Cambios en un Archivo\nEn esta sección, aprenderemos cómo revertir cambios en un archivo y deshacerlos en Git.",
-    "crumbs": [
-      "Unidad 0: Introducción a Git y GitHub",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad0/1_git_y_github.html#revertir-cambios-en-un-archivo",
-    "href": "unidades/unidad0/1_git_y_github.html#revertir-cambios-en-un-archivo",
-    "title": "Git y GitHub 🕹️",
-    "section": "Revertir Cambios en un Archivo:",
-    "text": "Revertir Cambios en un Archivo:\ngit reset hello_world.py\nHemos revertido los cambios en el archivo hello_world.py y deshecho las modificaciones realizadas.",
-    "crumbs": [
-      "Unidad 0: Introducción a Git y GitHub",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad0/1_git_y_github.html#conclusión",
-    "href": "unidades/unidad0/1_git_y_github.html#conclusión",
-    "title": "Git y GitHub 🕹️",
-    "section": "Conclusión",
-    "text": "Conclusión\nEn este tutorial, hemos aprendido a gestionar cambios en nuestro proyecto y moverlos entre diferentes estados en Git. Estos conceptos son fundamentales para trabajar de forma eficiente en proyectos de software y colaborar con otros desarrolladores.",
-    "crumbs": [
-      "Unidad 0: Introducción a Git y GitHub",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Git y GitHub 🕹️</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad0/2_github_classroom.html",
-    "href": "unidades/unidad0/2_github_classroom.html",
-    "title": "GitHub Classroom 📒",
+    "objectID": "unidades/Proyectos/4_proyecto_poo_2.html",
+    "href": "unidades/Proyectos/4_proyecto_poo_2.html",
+    "title": "Sistema Universitario",
     "section": "",
-    "text": "¿Qué es GitHub Classroom? 🤔",
+    "text": "Requerimientos",
     "crumbs": [
-      "Unidad 0: Introducción a Git y GitHub",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>GitHub Classroom 📒</span>"
+      "Proyectos",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Sistema Universitario</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad0/2_github_classroom.html#qué-es-github-classroom",
-    "href": "unidades/unidad0/2_github_classroom.html#qué-es-github-classroom",
-    "title": "GitHub Classroom 📒",
-    "section": "",
-    "text": "Github Classroom Windows\n\n\n\n\nGitHub Classroom es una extensión de GitHub que permite a los profesores crear y gestionar asignaciones utilizando repositorios de GitHub. Proporciona una forma organizada y eficiente de distribuir tareas a los estudiantes, recopilar y revisar su trabajo, y proporcionar retroalimentación.\n\n\nFuncionalidades Principales ⚙️\n\nCreación de Asignaciones: Los profesores pueden crear tareas y asignaciones directamente desde GitHub Classroom, proporcionando instrucciones detalladas y estableciendo criterios de evaluación.\nDistribución Automatizada: Una vez que se crea una asignación, GitHub Classroom genera automáticamente repositorios privados para cada estudiante o equipo, basándose en una plantilla predefinida.\nSeguimiento de Progreso: Los profesores pueden realizar un seguimiento del progreso de los estudiantes y revisar sus contribuciones a través de solicitudes de extracción (pull requests) y comentarios en el código.\nRevisión y Retroalimentación: Los estudiantes envían sus trabajos a través de solicitudes de extracción, lo que permite a los profesores revisar y proporcionar retroalimentación específica sobre su código.",
+    "objectID": "unidades/Proyectos/4_proyecto_poo_2.html#requerimientos",
+    "href": "unidades/Proyectos/4_proyecto_poo_2.html#requerimientos",
+    "title": "🏫 Sistema Universitario",
+    "section": "Requerimientos",
+    "text": "Requerimientos\n\nConocimientos básicos de programación en Python.\nConocimientos básicos de programación orientada a objetos.",
     "crumbs": [
-      "Unidad 0: Introducción a Git y GitHub",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>GitHub Classroom 📒</span>"
+      "Proyectos",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>🏫 Sistema Universitario</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad0/2_github_classroom.html#ejemplo-práctico",
-    "href": "unidades/unidad0/2_github_classroom.html#ejemplo-práctico",
-    "title": "GitHub Classroom 📒",
-    "section": "Ejemplo Práctico",
-    "text": "Ejemplo Práctico\n\nCreación de una Asignación en GitHub Classroom 📒\n\nIniciar Sesión: Ingresa a GitHub Classroom con tu cuenta de GitHub y selecciona la opción para crear una nueva asignación.\n\n\n\n\n\nDefinir la Tarea: Proporciona instrucciones claras y detalladas sobre la tarea, incluyendo cualquier código base o recursos necesarios. Establece los criterios de evaluación para guiar a los estudiantes.\n\n\n\n\n\nConfigurar la Plantilla: Selecciona una plantilla de repositorio existente o crea una nueva plantilla que servirá como base para los repositorios de los estudiantes.\n\n\n\n\n\nDistribuir la Asignación: Una vez configurada la asignación, comparte el enlace generado con tus estudiantes para que puedan acceder a sus repositorios privados.",
+    "objectID": "unidades/Proyectos/4_proyecto_poo_2.html#desarrollo",
+    "href": "unidades/Proyectos/4_proyecto_poo_2.html#desarrollo",
+    "title": "🏫 Sistema Universitario",
+    "section": "Desarrollo",
+    "text": "Desarrollo\n\nCrear la clase Persona.\n\nclass Persona:\n    def __init__(self, nombre, edad, sexo):\n        self.nombre = nombre\n        self.edad = edad\n        self.sexo = sexo\n\n    def __str__(self):\n        return f\"Nombre: {self.nombre}, Edad: {self.edad}, Sexo: {self.sexo}\"\nEn el codigo anterior se crea la clase Persona con los atributos nombre, edad y sexo. Además, se crea el método str para mostrar la información de la persona.\n\nCrear la clase Estudiante que hereda de Persona.\n\nclass Estudiante(Persona):\n    def __init__(self, nombre, edad, sexo, carnet, carrera):\n        super().__init__(nombre, edad, sexo)\n        self.carnet = carnet\n        self.carrera = carrera\n\n    def __str__(self):\n        return f\"{super().__str__()}, Carnet: {self.carnet}, Carrera: {self.carrera}\"\nEn el codigo anterior se crea la clase Estudiante que hereda de Persona. Se añaden los atributos carnet y carrera. Además, se sobreescribe el método str para mostrar la información del estudiante.\n\nCrear la clase Profesor que hereda de Persona.\n\nclass Profesor(Persona):\n    def __init__(self, nombre, edad, sexo, codigo, especialidad):\n        super().__init__(nombre, edad, sexo)\n        self.codigo = codigo\n        self.especialidad = especialidad\n\n    def __str__(self):\n        return f\"{super().__str__()}, Código: {self.codigo}, Especialidad: {self.especialidad}\"\nEn el codigo anterior se crea la clase Profesor que hereda de Persona. Se añaden los atributos codigo y especialidad. Además, se sobreescribe el método str para mostrar la información del profesor.\n\nCrear la clase Curso.\n\nclass Curso:\n    def __init__(self, nombre, codigo, profesor):\n        self.nombre = nombre\n        self.codigo = codigo\n        self.profesor = profesor\n\n    def __str__(self):\n        return f\"Curso: {self.nombre}, Código: {self.codigo}, Profesor: {self.profesor.nombre}\"\nEn el codigo anterior se crea la clase Curso con los atributos nombre, codigo y profesor. Además, se crea el método str para mostrar la información del curso.\n\nCrear la clase Universidad.\n\nclass Universidad:\n    def __init__(self, nombre):\n        self.nombre = nombre\n        self.cursos = []\n\n    def agregar_curso(self, curso):\n        self.cursos.append(curso)\n\n    def __str__(self):\n        cursos_str = \"\\n\".join([str(curso) for curso in self.cursos])\n        return f\"Universidad: {self.nombre}\\nCursos:\\n{cursos_str}\"\nEn el codigo anterior se crea la clase Universidad con los atributos nombre y cursos. Se añade el método agregar_curso para agregar un curso a la lista de cursos. Además, se sobreescribe el método str para mostrar la información de la universidad y los cursos.\n\nCar los objetos\n\n# Crear la universidad\nuniversidad = Universidad(\"Universidad de El Salvador\")\n\n# Crear los profesores\nprofesor_juan = Profesor(\"Juan Perez\", 30, \"Masculino\", \"202020202\", \"Matematicas\")\nprofesor_maria = Profesor(\"Maria Lopez\", 35, \"Femenino\", \"202020203\", \"Fisica\")\nprofesor_pedro = Profesor(\"Pedro Ramirez\", 40, \"Masculino\", \"202020204\", \"Quimica\")\n\n# Crear los cursos\ncurso_matematicas = Curso(\"Matematicas\", \"MAT101\", profesor_juan)\ncurso_fisica = Curso(\"Fisica\", \"FIS101\", profesor_maria)\ncurso_quimica = Curso(\"Quimica\", \"QUI101\", profesor_pedro)\n\n# Agregar los cursos a la universidad\nuniversidad.agregar_curso(curso_matematicas)\nuniversidad.agregar_curso(curso_fisica)\nuniversidad.agregar_curso(curso_quimica)\n\n# Crear el objeto estudiante\nestudiante_carlos = Estudiante(\"Carlos Perez\", 20, \"Masculino\", \"202010101\", \"Ingenieria en Sistemas Informaticos\")\nEn el codigo anterior se crean los objetos de la universidad, profesores, cursos y estudiante.\n\nImprimir la información\n\nprint(universidad)\nprint()\nprint(estudiante_carlos)\nprint()\nprint(profesor_juan)\nprint()\nprint(curso_matematicas)\n\n# Crear un nuevo curso de Fisica y agregarlo a la universidad\ncurso_nuevo_fisica = Curso(\"Fisica\", \"FIS101\", profesor_maria)\nuniversidad.agregar_curso(curso_nuevo_fisica)\n\n# Imprimir nuevamente la universidad con el nuevo curso agregado\nprint()\nprint(universidad)\nEn el codigo anterior se imprime la información de la universidad, estudiante, profesor y curso. Luego se crea un nuevo curso de Fisica y se agrega a la universidad, para finalmente imprimir nuevamente la información de la universidad.",
     "crumbs": [
-      "Unidad 0: Introducción a Git y GitHub",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>GitHub Classroom 📒</span>"
+      "Proyectos",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>🏫 Sistema Universitario</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad0/2_github_classroom.html#trabajo-de-los-estudiantes",
-    "href": "unidades/unidad0/2_github_classroom.html#trabajo-de-los-estudiantes",
-    "title": "GitHub Classroom 📒",
-    "section": "Trabajo de los Estudiantes 🧑‍💻",
-    "text": "Trabajo de los Estudiantes 🧑‍💻\n\nAceptar la Asignación: Los estudiantes reciben el enlace de la asignación y aceptan la tarea, lo que les permite crear un repositorio privado basado en la plantilla proporcionada.\n\n\n\n\n\nActualizar el Navegador: Los estudiantes actualizan su navegador para ver el nuevo repositorio creado en su cuenta de GitHub.\n\n\n\n\n\nClonar el Repositorio: Los estudiantes clonan el repositorio asignado en su computadora local utilizando el enlace proporcionado.\n\n\n\n\n\nUtilizar el comando git clone: Aplique el comando git clone para clonar el repositorio en su computadora local.\ngit clone &lt;enlace-del-repositorio&gt;\n\n\n\n\n\nDesarrollar la Tarea: Los estudiantes trabajan en la tarea, realizando los cambios necesarios y realizando commits de manera regular para mantener un historial de su trabajo.\n\n\n\n\n\n\nTip\n\n\n\nPuedes probar el test incorporado con el comando pytest en la terminal, para verificar que el código cumple con los requerimientos\n\n\npytest\nUna vez desarrollado el código de acuerdo a la asignación en local deberían pasar el o los test\n\n\n\n\n\nEnviar la Solicitud de Extracción: Una vez completada la tarea, los estudiantes envían una solicitud de extracción desde su rama hacia la rama principal del repositorio, solicitando la revisión del profesor.\n\n\n\n\n\nUna vez realizado el push se envía al respositorio principal y se ejecutan los test en Github\n\n\n\n\n\n\nTip\n\n\n\nSe recomienda hacer las pruebas en local antes de enviar los cambios al respositorio en Github\n\n\n\n\n\n\n\nEste Action lo que hace es evaluar los cambios realizados\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nSe recomienda hacer las pruebas en local antes de enviar los cambios al respositorio en Github\n\n\n\nRevisión y Retroalimentación: Los profesores revisan las solicitudes de extracción, proporcionan comentarios sobre el código y evalúan el trabajo de los estudiantes según los criterios establecidos.\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nGitHub Classroom ofrece una manera eficiente y organizada de administrar tareas y asignaciones en entornos educativos, fomentando la colaboración, el aprendizaje y la retroalimentación efectiva entre profesores y estudiantes.",
+    "objectID": "unidades/Proyectos/4_proyecto_poo_2.html#instrucciones.",
+    "href": "unidades/Proyectos/4_proyecto_poo_2.html#instrucciones.",
+    "title": "🏫 Sistema Universitario",
+    "section": "Instrucciones.",
+    "text": "Instrucciones.\n\nClase Persona: Define los atributos comunes nombre, edad y sexo.\nClase Estudiante: Hereda de Persona y agrega los atributos carnet y carrera.\nClase Profesor: Hereda de Persona y agrega los atributos codigo y especialidad.\nClase Curso: Contiene los atributos nombre, codigo y una instancia de Profesor.\nClase Universidad: Contiene el atributo nombre y una lista de cursos. Incluye un método para agregar cursos.\nCreación de objetos:\n\n\nSe crea un objeto universidad de la clase Universidad.\nSe crean los objetos profesor, curso y estudiante con los datos indicados.\nSe agrega cada curso a la universidad y luego se imprime la universidad con los cursos.\n\n\nImpresión:\n\n\nSe imprime la información de la universidad, el estudiante, el profesor y el curso de Matemáticas, según los requerimientos.",
     "crumbs": [
-      "Unidad 0: Introducción a Git y GitHub",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>GitHub Classroom 📒</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad2/1_programacion_orientada_a_objetos.html#qué-es-self",
-    "href": "unidades/unidad2/1_programacion_orientada_a_objetos.html#qué-es-self",
-    "title": "Programacion Orientada a Objetos.",
-    "section": "¿Qué es self?",
-    "text": "¿Qué es self?\nSelf es una palabra reservada en Python que se refiere al objeto actual. Se utiliza para acceder a los atributos y métodos de un objeto.\nEn el ejemplo anterior, self.marca, self.modelo y self.color se refieren a los atributos de un objeto.\nEjemplo:\nclass Persona:\n    def __init__(self, nombre, edad):\n        self.nombre = nombre\n        self.edad = edad\n    def saludar(self):\n        print(f\"Hola, mi nombre es {self.nombre} y tengo {self.edad} años\")\nEn el ejemplo anterior se define una clase Persona con dos atributos nombre y edad. Además, se define un método saludar que imprime un mensaje con los atributos nombre y edad.",
-    "crumbs": [
-      "Unidad 2: Programación Orientada a Objetos",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Programacion Orientada a Objetos.</span>"
+      "Proyectos",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>🏫 Sistema Universitario</span>"
     ]
   }
 ]

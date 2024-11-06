@@ -59,6 +59,8 @@ book:
         - unidades/Proyectos/3_funciones.qmd
         - unidades/Proyectos/1_proyecto_modulos.qmd
         - unidades/Proyectos/2_proyecto_poo.qmd
+        - unidades/Proyectos/4_proyecto_poo_2.qmd
+
 
 bibliography: references.bib
 biblio-style: "apalike"

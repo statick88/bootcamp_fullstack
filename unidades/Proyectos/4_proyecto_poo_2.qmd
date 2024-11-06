@@ -1,0 +1,173 @@
+:::{.justify}
+# 🏫 Sistema Universitario
+
+::: {.center}
+![Universidad](./images/universidad.png)
+:::
+
+En este laboratorio vamos a aprender a utilizar la POO mediante la creación de un sistema Universitario.
+
+## Requerimientos
+
+- Conocimientos básicos de programación en Python.
+
+- Conocimientos básicos de programación orientada a objetos.
+
+## Instrucciones.
+
+1. **Clase Persona**: Define los atributos comunes nombre, edad y sexo.
+
+2. **Clase Estudiante**: Hereda de Persona y agrega los atributos carnet y carrera.
+
+3. **Clase Profesor**: Hereda de Persona y agrega los atributos codigo y especialidad.
+
+4. **Clase Curso**: Contiene los atributos nombre, codigo y una instancia de Profesor.
+
+5. **Clase Universidad**: Contiene el atributo nombre y una lista de cursos. Incluye un método para agregar cursos.
+
+6. Creación de objetos:
+
+- Se crea un objeto universidad de la clase Universidad.
+
+- Se crean los objetos profesor, curso y estudiante con los datos indicados.
+
+- Se agrega cada curso a la universidad y luego se imprime la universidad con los cursos.
+
+7. Impresión:
+
+- Se imprime la información de la universidad, el estudiante, el profesor y el curso de Matemáticas, según los requerimientos.
+
+## Desarrollo
+
+1. Crear la clase Persona.
+
+```python
+class Persona:
+    def __init__(self, nombre, edad, sexo):
+        self.nombre = nombre
+        self.edad = edad
+        self.sexo = sexo
+
+    def __str__(self):
+        return f"Nombre: {self.nombre}, Edad: {self.edad}, Sexo: {self.sexo}"
+```
+
+En el codigo anterior se crea la clase Persona con los atributos nombre, edad y sexo. Además, se crea el método **__str__** para mostrar la información de la persona.
+
+2. Crear la clase Estudiante que hereda de Persona.
+
+```python
+class Estudiante(Persona):
+    def __init__(self, nombre, edad, sexo, carnet, carrera):
+        super().__init__(nombre, edad, sexo)
+        self.carnet = carnet
+        self.carrera = carrera
+
+    def __str__(self):
+        return f"{super().__str__()}, Carnet: {self.carnet}, Carrera: {self.carrera}"
+```
+
+En el codigo anterior se crea la clase Estudiante que hereda de Persona. Se añaden los atributos carnet y carrera. Además, se sobreescribe el método **__str__** para mostrar la información del estudiante.
+
+3. Crear la clase Profesor que hereda de Persona.
+
+```python
+class Profesor(Persona):
+    def __init__(self, nombre, edad, sexo, codigo, especialidad):
+        super().__init__(nombre, edad, sexo)
+        self.codigo = codigo
+        self.especialidad = especialidad
+
+    def __str__(self):
+        return f"{super().__str__()}, Código: {self.codigo}, Especialidad: {self.especialidad}"
+```
+
+En el codigo anterior se crea la clase Profesor que hereda de Persona. Se añaden los atributos codigo y especialidad. Además, se sobreescribe el método **__str__** para mostrar la información del profesor.
+
+4. Crear la clase Curso.
+
+```python
+class Curso:
+    def __init__(self, nombre, codigo, profesor):
+        self.nombre = nombre
+        self.codigo = codigo
+        self.profesor = profesor
+
+    def __str__(self):
+        return f"Curso: {self.nombre}, Código: {self.codigo}, Profesor: {self.profesor.nombre}"
+```
+
+En el codigo anterior se crea la clase Curso con los atributos nombre, codigo y profesor. Además, se crea el método **__str__** para mostrar la información del curso.
+
+5. Crear la clase Universidad.
+
+```python
+class Universidad:
+    def __init__(self, nombre):
+        self.nombre = nombre
+        self.cursos = []
+
+    def agregar_curso(self, curso):
+        self.cursos.append(curso)
+
+    def __str__(self):
+        cursos_str = "\n".join([str(curso) for curso in self.cursos])
+        return f"Universidad: {self.nombre}\nCursos:\n{cursos_str}"
+```
+
+En el codigo anterior se crea la clase Universidad con los atributos nombre y cursos. Se añade el método **agregar_curso** para agregar un curso a la lista de cursos. Además, se sobreescribe el método **__str__** para mostrar la información de la universidad y los cursos.
+
+6. Car los objetos
+
+```python
+# Crear la universidad
+universidad = Universidad("Universidad de El Salvador")
+
+# Crear los profesores
+profesor_juan = Profesor("Juan Perez", 30, "Masculino", "202020202", "Matematicas")
+profesor_maria = Profesor("Maria Lopez", 35, "Femenino", "202020203", "Fisica")
+profesor_pedro = Profesor("Pedro Ramirez", 40, "Masculino", "202020204", "Quimica")
+
+# Crear los cursos
+curso_matematicas = Curso("Matematicas", "MAT101", profesor_juan)
+curso_fisica = Curso("Fisica", "FIS101", profesor_maria)
+curso_quimica = Curso("Quimica", "QUI101", profesor_pedro)
+
+# Agregar los cursos a la universidad
+universidad.agregar_curso(curso_matematicas)
+universidad.agregar_curso(curso_fisica)
+universidad.agregar_curso(curso_quimica)
+
+# Crear el objeto estudiante
+estudiante_carlos = Estudiante("Carlos Perez", 20, "Masculino", "202010101", "Ingenieria en Sistemas Informaticos")
+```
+
+En el codigo anterior se crean los objetos de la universidad, profesores, cursos y estudiante.
+
+7. Imprimir la información
+
+```python
+print(universidad)
+print()
+print(estudiante_carlos)
+print()
+print(profesor_juan)
+print()
+print(curso_matematicas)
+
+# Crear un nuevo curso de Fisica y agregarlo a la universidad
+curso_nuevo_fisica = Curso("Fisica", "FIS101", profesor_maria)
+universidad.agregar_curso(curso_nuevo_fisica)
+
+# Imprimir nuevamente la universidad con el nuevo curso agregado
+print()
+print(universidad)
+```
+
+En el codigo anterior se imprime la información de la universidad, estudiante, profesor y curso. Luego se crea un nuevo curso de Fisica y se agrega a la universidad, para finalmente imprimir nuevamente la información de la universidad.
+
+# Conclusión
+
+En este laboratorio hemos aprendido a utilizar la programación orientada a objetos mediante la creación de un sistema universitario. Hemos definido clases para Persona, Estudiante, Profesor, Curso y Universidad, y hemos creado objetos con los datos indicados. Además, hemos agregado cursos a la universidad y hemos mostrado la información de la universidad, estudiante, profesor y curso.
+
+:::
