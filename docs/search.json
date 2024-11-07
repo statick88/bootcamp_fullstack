@@ -772,12 +772,12 @@
   {
     "objectID": "unidades/unidad3/1_modulos_python.html",
     "href": "unidades/unidad3/1_modulos_python.html",
-    "title": "Módulos en Python",
+    "title": "Módulos",
     "section": "",
-    "text": "Introducción a Módulos.\nLos módulos en python son archivos que contienen definiciones y declaraciones de python. Los módulos permiten organizar el código en archivos separados. Los módulos se utilizan para reutilizar código y para mantener el código organizado.\nEjemplo:\nEn el código anterior se define un módulo modulo.py que contiene una función saludar.\nEjemplo:\nEn el código anterior se define un módulo modulo.py que contiene una función despedir.",
+    "text": "Introducción a Módulos\nEn Python, un módulo es un archivo que contiene código, generalmente funciones, clases, y variables, que puedes importar y reutilizar en diferentes partes de tu programa. Esto te ayuda a dividir tu código en partes organizadas y reutilizables, haciendo que el desarrollo sea más eficiente y limpio.\nPor ejemplo, imagina que quieres crear un módulo para realizar saludos y otro para despedidas:\nEjemplo 1: Módulo de saludo\nEjemplo 2: Módulo de despedida\nEstos módulos contienen funciones que realizan acciones específicas: uno saluda y el otro se despide. Ahora veremos cómo crear y utilizar módulos en Python.",
     "crumbs": [
       "Unidad 3: Módulos y Paquetes",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos en Python</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
     ]
   },
   {
@@ -1155,5 +1155,379 @@
     "title": "Licencia",
     "section": "Cambios en la Licencia",
     "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html#introducción-a-módulos",
+    "href": "unidades/unidad3/1_modulos_python.html#introducción-a-módulos",
+    "title": "Módulos",
+    "section": "Introducción a Módulos",
+    "text": "Introducción a Módulos\nEn Python, un módulo es un archivo que contiene código, generalmente funciones, clases, y variables, que puedes importar y reutilizar en diferentes partes de tu programa. Esto te ayuda a dividir tu código en partes organizadas y reutilizables, haciendo que el desarrollo sea más eficiente y limpio.\nPor ejemplo, imagina que quieres crear un módulo para realizar saludos y otro para despedidas:\nEjemplo 1: Módulo de saludo\n# modulo_saludo.py\ndef saludar():\n    print(\"Hola Mundo\")\nEjemplo 2: Módulo de despedida\n# modulo_despedida.py\ndef despedir():\n    print(\"Adiós Mundo\")\nEstos módulos contienen funciones que realizan acciones específicas: uno saluda y el otro se despide. Ahora veremos cómo crear y utilizar módulos en Python.",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html#creando-módulos-personalizados",
+    "href": "unidades/unidad3/1_modulos_python.html#creando-módulos-personalizados",
+    "title": "Módulos",
+    "section": "Creando Módulos Personalizados",
+    "text": "Creando Módulos Personalizados\nPara crear un módulo en Python, solo necesitas crear un archivo .py y definir en él las funciones o clases que deseas usar. A continuación, veamos cómo crear módulos más complejos.\nEjemplo: Módulo de saludo con nombre\n# modulo_saludar.py\n\ndef saludar(nombre):\n    print(f\"Hola, {nombre}!\")\nEste módulo acepta un argumento nombre, permitiéndote personalizar el saludo.",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html#usando-módulos-en-un-archivo-principal",
+    "href": "unidades/unidad3/1_modulos_python.html#usando-módulos-en-un-archivo-principal",
+    "title": "Módulos",
+    "section": "Usando Módulos en un Archivo Principal",
+    "text": "Usando Módulos en un Archivo Principal\nPara utilizar los módulos que has creado, necesitas importarlos en un archivo principal. Aquí, importamos ambos módulos anteriores y ejecutamos las funciones:\n# main.py\nimport modulo_saludar\nimport modulo_despedida\n\nif __name__ == \"__main__\":\n    modulo_saludar.saludar(\"Juan\")\n    modulo_despedida.despedir()\nEn este ejemplo, importamos los módulos modulo_saludar y modulo_despedida y usamos las funciones saludar y despedir.",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html#importando-y-renombrando-módulos",
+    "href": "unidades/unidad3/1_modulos_python.html#importando-y-renombrando-módulos",
+    "title": "Módulos",
+    "section": "Importando y Renombrando Módulos",
+    "text": "Importando y Renombrando Módulos\nA veces, renombrar un módulo en el momento de importarlo hace el código más claro. Esto se logra con la palabra clave as:\n# main.py\nimport modulo_saludar as saludo\nimport modulo_despedida as despedida\n\nsaludo.saludar(\"Ana\")\ndespedida.despedir()\nEsto permite usar nombres cortos y descriptivos en el código.",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html#importando-funciones-específicas-de-un-módulo",
+    "href": "unidades/unidad3/1_modulos_python.html#importando-funciones-específicas-de-un-módulo",
+    "title": "Módulos",
+    "section": "Importando Funciones Específicas de un Módulo",
+    "text": "Importando Funciones Específicas de un Módulo\nSi solo necesitas una función de un módulo, puedes importarla directamente:\nfrom modulo_saludar import saludar\n\nsaludar(\"Carlos\")\nAquí importamos únicamente la función saludar de modulo_saludar, sin necesidad de importar el módulo completo.",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html#usando-módulos-externos-con-pip",
+    "href": "unidades/unidad3/1_modulos_python.html#usando-módulos-externos-con-pip",
+    "title": "Módulos",
+    "section": "Usando Módulos Externos con pip",
+    "text": "Usando Módulos Externos con pip\nAdemás de tus propios módulos, Python permite instalar y utilizar módulos externos usando pip, el gestor de paquetes de Python. Veamos un ejemplo con numpy, un módulo popular para trabajar con arreglos numéricos.",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html#instalando-un-módulo-con-pip",
+    "href": "unidades/unidad3/1_modulos_python.html#instalando-un-módulo-con-pip",
+    "title": "Módulos",
+    "section": "Instalando un módulo con pip",
+    "text": "Instalando un módulo con pip\npip install numpy",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html#usando-el-módulo-instalado",
+    "href": "unidades/unidad3/1_modulos_python.html#usando-el-módulo-instalado",
+    "title": "Módulos",
+    "section": "Usando el módulo instalado",
+    "text": "Usando el módulo instalado\nimport numpy as np\n\na = np.array([1, 2, 3, 4, 5])\nprint(a)\nEste ejemplo muestra cómo instalar y utilizar numpy para crear un arreglo.",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html#instalando-otro-módulo",
+    "href": "unidades/unidad3/1_modulos_python.html#instalando-otro-módulo",
+    "title": "Módulos",
+    "section": "Instalando otro módulo",
+    "text": "Instalando otro módulo\nAdemás de numpy, Python tiene muchos módulos útiles para diferentes tareas. Por ejemplo, emojis es un módulo que te permite imprimir emojis en la consola.\npip install emojis",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad3/1_modulos_python.html#usando-el-módulo-emojis",
+    "href": "unidades/unidad3/1_modulos_python.html#usando-el-módulo-emojis",
+    "title": "Módulos",
+    "section": "Usando el módulo emojis",
+    "text": "Usando el módulo emojis\nimport emojis\n\nprint(emojis.encode(\":smile:\"))\nEste ejemplo muestra cómo instalar y utilizar el módulo emojis para imprimir emojis en la consola.\n😄",
+    "crumbs": [
+      "Unidad 3: Módulos y Paquetes",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Módulos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/1_docker.html",
+    "href": "unidades/unidad4/1_docker.html",
+    "title": "Docker",
+    "section": "",
+    "text": "Ejemplos:",
+    "crumbs": [
+      "Unidad 4: Docker",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Docker</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/1_docker.html#qué-es-y-conceptos-básicos",
+    "href": "unidades/unidad4/1_docker.html#qué-es-y-conceptos-básicos",
+    "title": "Docker",
+    "section": "",
+    "text": "Imagen: Es un paquete que contiene una aplicación y todas sus dependencias. Las imágenes se utilizan para crear contenedores.\nContenedor: Es una instancia en ejecución de una imagen. Puedes crear, iniciar, detener, mover o eliminar un contenedor utilizando la API de Docker o la CLI.\nDockerfile: Es un archivo de texto que contiene instrucciones para construir una imagen. Puedes crear una imagen a partir de un Dockerfile utilizando el comando docker build.\nDocker Compose: Es una herramienta que te permite definir y ejecutar aplicaciones Docker de múltiples contenedores. Puedes utilizar un archivo YAML para configurar los servicios de tu aplicación.\nKubernetes: Es una plataforma de código abierto que te permite automatizar, escalar y administrar aplicaciones en contenedores. Kubernetes es una herramienta avanzada para orquestar contenedores en un clúster.",
+    "crumbs": [
+      "Unidad 4: Docker",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Docker</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/1_docker.html#instalación-de-docker",
+    "href": "unidades/unidad4/1_docker.html#instalación-de-docker",
+    "title": "Docker",
+    "section": "Instalación de Docker",
+    "text": "Instalación de Docker",
+    "crumbs": [
+      "Unidad 4: Docker",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Docker</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/1_docker.html#creación-y-gestión-de-contenedores",
+    "href": "unidades/unidad4/1_docker.html#creación-y-gestión-de-contenedores",
+    "title": "Docker",
+    "section": "Creación y gestión de contenedores",
+    "text": "Creación y gestión de contenedores",
+    "crumbs": [
+      "Unidad 4: Docker",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Docker</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/1_docker.html#dockerfile-y-docker-compose",
+    "href": "unidades/unidad4/1_docker.html#dockerfile-y-docker-compose",
+    "title": "Docker",
+    "section": "Dockerfile y Docker Compose",
+    "text": "Dockerfile y Docker Compose",
+    "crumbs": [
+      "Unidad 4: Docker",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Docker</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/1_docker.html#uso-de-volúmenes-y-redes",
+    "href": "unidades/unidad4/1_docker.html#uso-de-volúmenes-y-redes",
+    "title": "Docker",
+    "section": "Uso de volúmenes y redes",
+    "text": "Uso de volúmenes y redes",
+    "crumbs": [
+      "Unidad 4: Docker",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Docker</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/1_docker.html#qué-es-docker",
+    "href": "unidades/unidad4/1_docker.html#qué-es-docker",
+    "title": "Docker",
+    "section": "",
+    "text": "Imagen: Es un paquete que contiene una aplicación y todas sus dependencias. Las imágenes se utilizan para crear contenedores.\nContenedor: Es una instancia en ejecución de una imagen. Puedes crear, iniciar, detener, mover o eliminar un contenedor utilizando la API de Docker o la CLI.\nDockerfile: Es un archivo de texto que contiene instrucciones para construir una imagen. Puedes crear una imagen a partir de un Dockerfile utilizando el comando docker build.\nDocker Compose: Es una herramienta que te permite definir y ejecutar aplicaciones Docker de múltiples contenedores. Puedes utilizar un archivo YAML para configurar los servicios de tu aplicación.\nKubernetes: Es una plataforma de código abierto que te permite automatizar, escalar y administrar aplicaciones en contenedores. Kubernetes es una herramienta avanzada para orquestar contenedores en un clúster.",
+    "crumbs": [
+      "Unidad 4: Docker",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Docker</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/1_docker.html#ejemplos",
+    "href": "unidades/unidad4/1_docker.html#ejemplos",
+    "title": "Docker",
+    "section": "Ejemplos:",
+    "text": "Ejemplos:\nDescargar una imagen:\ndocker pull docker/getting-started\n\n\n\nEste comando descarga la imagen getting-started desde el registro público de Docker.\nCorrer un contenedor en el puerto 80:\ndocker run -d -p 80:80 docker/getting-started\n\n\n\nEste comando ejecuta un contenedor desenlazado en segundo plano (-d) y mapea el puerto 80 de la máquina host al puerto 80 del contenedor (-p 80:80).\nDescargar una imagen desde un registro.\n\n\n\n\n\n\nTip\n\n\n\nEl comando -p se utiliza para mapear los puertos de la máquina host al contenedor, muchas personas consideran que significa “puerto”. Sin embargo en realidad significa “publicar” o “publicar puerto”.",
+    "crumbs": [
+      "Unidad 4: Docker",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Docker</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/1_docker.html#comandos-básicos-de-docker",
+    "href": "unidades/unidad4/1_docker.html#comandos-básicos-de-docker",
+    "title": "Docker",
+    "section": "Comandos básicos de Docker:",
+    "text": "Comandos básicos de Docker:\nDescargar una imagen desde un registro.\ndocker pull &lt;IMAGE_NAME:TAG&gt;\nListar las imágenes descargadas.\ndocker images\nListar contenedores en ejecución.\ndocker ps\nListar todos los contenedores, incluyendo los detenidos.\ndocker ps -a\nEjecutar un contenedor a partir de una imagen.\ndocker run -d -p &lt;HOST_PORT&gt;:&lt;CONTAINER_PORT&gt; &lt;IMAGE_NAME:TAG&gt;\nDetener un contenedor en ejecución.\ndocker stop &lt;CONTAINER_ID&gt;\nIniciar un contenedor detenio.\ndocker start &lt;CONTAINER_ID&gt;\nEliminar un contenedor.\ndocker rm &lt;CONTAINER_ID&gt;\nEliminar una imagen.\ndocker rmi &lt;IMAGE_NAME:TAG&gt;",
+    "crumbs": [
+      "Unidad 4: Docker",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Docker</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/1_docker.html#atajos-y-comandos-adicionales",
+    "href": "unidades/unidad4/1_docker.html#atajos-y-comandos-adicionales",
+    "title": "Docker",
+    "section": "Atajos y Comandos Adicionales:",
+    "text": "Atajos y Comandos Adicionales:\nEjecutar comandos dentro de un contenedor en ejecución.\ndocker inspect &lt;CONTAINER_ID or IMAGE_NAME:TAG&gt;\nVer los logs de un contenedor.\ndocker logs &lt;CONTAINER_ID&gt;\nUtilizar Docker Compose para gestionar aplicaciones multi-contenedor.\ndocker-compose up -d",
+    "crumbs": [
+      "Unidad 4: Docker",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Docker</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/1_docker.html#práctica",
+    "href": "unidades/unidad4/1_docker.html#práctica",
+    "title": "Docker",
+    "section": "Práctica:",
+    "text": "Práctica:\n\nDescarga la imagen de Nginx desde el registro público.\nCrea y ejecuta un contenedor de Nginx en el puerto 8080.\nDetén y elimina el contenedor creado\nUtiliza los comandos para detener y eliminar un contenedor.\n\n\n\nResolución de la Actividad Práctica\n\n\nAbre tu terminal o línea de comandos.\nDescarga la imagen de Nginx desde el registro público de Docker:\n\ndocker pull nginx\n\nCrea y ejecuta un contenedor de Nginx en el puerto 8080:\n\ndocker run -d -p 8080:80 nginx\nElige un puerto en tu máquina local (por ejemplo, 8080) para mapearlo al puerto 80 del contenedor.\n\nVerifica que el contenedor esté en ejecución:\n\ndocker ps\n\nSi el contenedor está en ejecución, detenlo utilizando el siguiente comando:\n\ndocker stop &lt;CONTAINER_ID&gt;\nReemplaza  con el ID real del contenedor que obtuviste en el paso anterior.\n\nElimina el contenedor detenido:\n\ndocker rm &lt;CONTAINER_ID&gt;\nReemplaza  con el ID real del contenedor.\n\n\n\n\n\n\n\nTip\n\n\n\nCombina los comandos docker ps, docker stop, y docker rm para gestionar contenedores eficientemente.\n¡Practica estos pasos para familiarizarte con el ciclo de vida de los contenedores Docker!",
+    "crumbs": [
+      "Unidad 4: Docker",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Docker</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/1_docker.html#qué-aprendimos",
+    "href": "unidades/unidad4/1_docker.html#qué-aprendimos",
+    "title": "Docker",
+    "section": "¿Qué Aprendimos?",
+    "text": "¿Qué Aprendimos?\n\n\nAprendimos a descargar imágenes, correr contenedores y gestionarlos básicamente.\nEntendimos la importancia de las banderas en los comandos Docker.\nPracticamos la creación y gestión de contenedores Docker.",
+    "crumbs": [
+      "Unidad 4: Docker",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Docker</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/2_docker_compose.html",
+    "href": "unidades/unidad4/2_docker_compose.html",
+    "title": "Dockerfile y Docker Compose",
+    "section": "",
+    "text": "Introducción\nDockerfile y Docker Compose son herramientas esenciales para la construcción y gestión de aplicaciones Docker. Un Dockerfile es un archivo de texto que define cómo se construirá una imagen Docker, mientras que Docker Compose es una herramienta para definir y gestionar aplicaciones Docker con múltiples contenedores. En esta lección, aprenderemos cómo usar Dockerfile y Docker Compose para personalizar imágenes Docker y orquestar servicios en un entorno multi-contenedor.\nA continuación veremos algunos conceptos básicos sobre Dockerfile y Docker Compose.",
+    "crumbs": [
+      "Unidad 4: Docker",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Dockerfile y Docker Compose</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/2_docker_compose.html#introducción",
+    "href": "unidades/unidad4/2_docker_compose.html#introducción",
+    "title": "Dockerfile y Docker Compose",
+    "section": "Introducción",
+    "text": "Introducción\nDockerfile y Docker Compose son herramientas esenciales para la construcción y gestión de aplicaciones Docker. Un Dockerfile es un archivo de texto que define cómo se construirá una imagen Docker, mientras que Docker Compose es una herramienta para definir y gestionar aplicaciones Docker con múltiples contenedores. En esta lección, aprenderemos cómo usar Dockerfile y Docker Compose para personalizar imágenes Docker y orquestar servicios en un entorno multi-contenedor.\nA continuación veremos algunos conceptos básicos sobre Dockerfile y Docker Compose.\n\nDockerfile\nUn Dockerfile es un archivo de texto que contiene una serie de instrucciones para construir una imagen Docker. Estas instrucciones incluyen la configuración del sistema operativo base, la instalación de paquetes y dependencias, la configuración de variables de entorno y la definición de comandos para ejecutar la aplicación.\n\n\nDocker Compose\nDocker Compose es una herramienta para definir y gestionar aplicaciones Docker con múltiples contenedores. Permite definir servicios, redes y volúmenes en un archivo YAML y orquestar la ejecución de los contenedores en un entorno de desarrollo o producción.",
+    "crumbs": [
+      "Unidad 4: Docker",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Dockerfile y Docker Compose</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/2_docker_compose.html#ejemplos",
+    "href": "unidades/unidad4/2_docker_compose.html#ejemplos",
+    "title": "Dockerfile y Docker Compose",
+    "section": "Ejemplos:",
+    "text": "Ejemplos:\nEn este ejemplo vamos a dockerizar una aplicación nodejs con un servidor sencillo en express.\nEmpezamos por el código de nuestra aplicación:\nPara ello creamos un nuevo proyecto nodejs con el siguiente comando:\nnpm init -y\nInstalamos el paquete express con el siguiente comando:\nnpm install express\nCreamos los siguientes archivos:\n\nserver.js\npackage.json\nDockerfile\ndocker-compose.yml\n\n\nserver.js\nconst express = require('express');\nconst app = express();\nconst port = 3000;\n\napp.get('/', (req, res) =&gt; {\n  res.send('Hello, World!');\n});\n\napp.listen(port, () =&gt; {\n  console.log(`Server running at http://localhost:${port}/`);\n});\n\n\nDockerfile\n# Use the official Node.js 14 image\nFROM node:14\n\n# Set the working directory in the container\nWORKDIR /app\n\n# Copy the dependencies file to the working directory\nCOPY package.json .\n\n# Install dependencies\nRUN npm install\n\n# Copy the app code to the working directory\nCOPY . .\n\n# Expose the port the app runs on\nEXPOSE 3000\n\n# Serve the app\nCMD [\"node\", \"server.js\"]\n\n\ndocker-compose.yml\nservices:\n  myapp:\n    build:\n      context: .\n      dockerfile: Dockerfile\n    ports:\n      - \"3000:3000\"\n    volumes:\n      - .:/app\nEn este ejemplo, el Dockerfile define una imagen Docker para una aplicación Node.js. El archivo docker-compose.yml define un servicio llamado myapp que utiliza el Dockerfile.nodejs para construir la imagen y expone el puerto 3000 para acceder a la aplicación.\n\n\n\n\n\n\nTip\n\n\n\nEl puerto del lado izquierdo de los 2 puntos en el archivo docker-compose.yml es el puerto en el host, mientras que el puerto del lado derecho es el puerto en el contenedor.\n\n\nPara probar nuestro ejemplo, ejecutamos el siguiente comando:\ndocker-compose up -d\nEsto construirá la imagen Docker y ejecutará el contenedor en segundo plano. Podemos acceder a la aplicación en http://localhost:3000.\nPara verificar que el contenedor está en ejecución, ejecutamos el siguiente comando:\ndocker ps\nPodemos utilizar una aplicación como Thunder Client o Postman para enviar una solicitud HTTP a la aplicación y ver la respuesta.\nPara detener y eliminar el contenedor, ejecutamos el siguiente comando:\ndocker-compose down\n\n\n\n\n\n\nTip\n\n\n\nRecuerda: La imagen que se crea a partir del Dockerfile se almacena en el caché local de Docker. Si realizas cambios en el Dockerfile y deseas reconstruir la imagen, puedes usar el comando\ndocker-compose up --build",
+    "crumbs": [
+      "Unidad 4: Docker",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Dockerfile y Docker Compose</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/2_docker_compose.html#práctica",
+    "href": "unidades/unidad4/2_docker_compose.html#práctica",
+    "title": "Dockerfile y Docker Compose",
+    "section": "Práctica:",
+    "text": "Práctica:\n\nCrea un Dockerfile para una aplicación Python simple.\nConfigura un archivo docker-compose.yml para ejecutar la aplicación.\n\n\n\nResolución de la Actividad Práctica\n\nEjemplo de aplicación Python simple:\n# app.py\nprint(\"Hello, World!\")\nEjemplo de Dockerfile:\nFROM python:3.12\nWORKDIR /app\nCOPY . .\nCMD [\"python\", \"app.py\"]\nEjemplo de docker-compose.yml:\nservices:\n  myapp:\n    build:\n      context: .\n      dockerfile: Dockerfile.python\n    image: my-python-app",
+    "crumbs": [
+      "Unidad 4: Docker",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Dockerfile y Docker Compose</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/3_DevContainers.html",
+    "href": "unidades/unidad4/3_DevContainers.html",
+    "title": "DevContainers",
+    "section": "",
+    "text": "¿Qué son los DevContainers?\nLos DevContainers son entornos de desarrollo basados en contenedores Docker que permiten a los desarrolladores crear, compartir y ejecutar aplicaciones en un entorno aislado y portátil. Los DevContainers proporcionan un entorno de desarrollo consistente y reproducible, lo que garantiza que las aplicaciones se ejecuten de la misma manera en diferentes entornos.\nLos DevContainers son una herramienta poderosa para el desarrollo de software, ya que permiten a los desarrolladores trabajar en un entorno aislado y preconfigurado, sin tener que preocuparse por la configuración del sistema operativo, las dependencias de software o las bibliotecas de terceros.",
+    "crumbs": [
+      "Unidad 4: Docker",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>DevContainers</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/3_DevContainers.html#qué-son-los-devcontainers",
+    "href": "unidades/unidad4/3_DevContainers.html#qué-son-los-devcontainers",
+    "title": "DevContainers",
+    "section": "¿Qué son los DevContainers?",
+    "text": "¿Qué son los DevContainers?\nLos DevContainers son entornos de desarrollo basados en contenedores Docker que permiten a los desarrolladores crear, compartir y ejecutar aplicaciones en un entorno aislado y portátil. Los DevContainers proporcionan un entorno de desarrollo consistente y reproducible, lo que garantiza que las aplicaciones se ejecuten de la misma manera en diferentes entornos.\nLos DevContainers son una herramienta poderosa para el desarrollo de software, ya que permiten a los desarrolladores trabajar en un entorno aislado y preconfigurado, sin tener que preocuparse por la configuración del sistema operativo, las dependencias de software o las bibliotecas de terceros.",
+    "crumbs": [
+      "Unidad 4: Docker",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>DevContainers</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/3_DevContainers.html#ejemplos",
+    "href": "unidades/unidad4/3_DevContainers.html#ejemplos",
+    "title": "DevContainers",
+    "section": "Ejemplos:",
+    "text": "Ejemplos:\nEn la parte inferior izquierda de Visual Studio Code existe un botón que hace referencia a los DevContainers, al hacer clic en este botón se abrirá un menú con las opciones para crear, abrir o configurar un DevContainer.\nEn este punto damos clic en New DevContainer y seleccionamos la opción Python 3. Esto creará un archivo .devcontainer con la configuración necesaria para ejecutar la aplicación en un contenedor Docker.\n\n\n\n\nNew DevContainer\n\n\n\nEn la imágen anterior podemos observar el menú de DevContainer, en esta sección es posible seleccionar New DevContainer. Al seleccionar esta opción se desplegará un menú con las opciones de configuración de DevContainer.\n\n\n\n\nPython 3 DevContainer\n\n\n\nEn la imágen anterior se describe la búsqueda de diferentes plantillas, en este caso seleccionamos Python 3. Al seleccionar esta opción se creará un archivo .devcontainer con la configuración necesaria para ejecutar la aplicación en un contenedor Docker.\n\n\n\n\nCreate DevContainer\n\n\n\nFinalmente seleccoinamos la opción Create DevContainers para crear el archivo .devcontainer con la configuración necesaria para ejecutar la aplicación en un contenedor Docker.\n\n\n\n\nCreate DevContainer\n\n\n\nAhora solo resta esperar como se observa en la imágen anterior la creación del DevContainer. Una vez finalizado el proceso, se abrirá una nueva ventana con el archivo main.py en el editor de código y se mostrará un mensaje en la parte inferior derecha indicando que se está construyendo el contenedor.\n\n\n\n\nPython in DevContainer\n\n\n\nCreamos una aplicación Hola Mundo en Python para ser ejecutada en un DevContainer:\nCrear un archivo main.py con el siguiente código:\n# main.py\nprint(\"Hola, Mundo!\")\nUna vez creado el DevContainer se mostrará un mensaje en la parte inferior derecha indicando que se está construyendo el contenedor. En este punto se puede ejecutar la aplicación en el contenedor Docker haciendo clic en el botón Run en la parte superior derecha.\nPuedes verificar que la versión de python en el terminal del DevContainer creado es diferente a la del Sistema Operativo en el que te encuentres y la instalación global del sistema.",
+    "crumbs": [
+      "Unidad 4: Docker",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>DevContainers</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/3_DevContainers.html#instalación-y-uso",
+    "href": "unidades/unidad4/3_DevContainers.html#instalación-y-uso",
+    "title": "DevContainers",
+    "section": "Instalación y Uso",
+    "text": "Instalación y Uso\nPara utilizar DevContainers, es necesario tener instalado Docker en el sistema. Una vez instalado Docker, se puede instalar una extensión de DevContainers en el editor de código favorito, como Visual Studio Code, y utilizarla para crear, compartir y ejecutar DevContainers.\n\n\n\n\nDevContainer en Visual Studio Code",
+    "crumbs": [
+      "Unidad 4: Docker",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>DevContainers</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/3_DevContainers.html#ventajas-de-los-devcontainers",
+    "href": "unidades/unidad4/3_DevContainers.html#ventajas-de-los-devcontainers",
+    "title": "DevContainers",
+    "section": "Ventajas de los DevContainers",
+    "text": "Ventajas de los DevContainers\nLos DevContainers ofrecen varias ventajas para los desarrolladores:\n\nPortabilidad: Los DevContainers son portátiles y se pueden compartir fácilmente entre desarrolladores, lo que facilita la colaboración en proyectos.\nConsistencia: Los DevContainers proporcionan un entorno de desarrollo consistente y reproducible, lo que garantiza que las aplicaciones se ejecuten de la misma manera en diferentes entornos.\nAislamiento: Los DevContainers aíslan las aplicaciones de su entorno, lo que evita conflictos entre dependencias de software y bibliotecas de terceros.\nProductividad: Los DevContainers permiten a los desarrolladores trabajar en un entorno preconfigurado y listo para usar, lo que aumenta la productividad y reduce el tiempo de configuración.\nSeguridad: Los DevContainers proporcionan un entorno de desarrollo seguro y aislado, lo que protege las aplicaciones y los datos de posibles amenazas de seguridad.",
+    "crumbs": [
+      "Unidad 4: Docker",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>DevContainers</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/3_DevContainers.html#conclusión",
+    "href": "unidades/unidad4/3_DevContainers.html#conclusión",
+    "title": "DevContainers",
+    "section": "Conclusión",
+    "text": "Conclusión\nLos DevContainers son una herramienta poderosa para el desarrollo de software, ya que permiten a los desarrolladores crear, compartir y ejecutar aplicaciones en un entorno aislado y portátil. Los DevContainers proporcionan un entorno de desarrollo consistente y reproducible, lo que garantiza que las aplicaciones se ejecuten de la misma manera en diferentes entornos. Con los DevContainers, los desarrolladores pueden trabajar de manera más eficiente y productiva, sin tener que preocuparse por la configuración del sistema operativo, las dependencias de software o las bibliotecas de terceros.",
+    "crumbs": [
+      "Unidad 4: Docker",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>DevContainers</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/3_DevContainers.html#práctica",
+    "href": "unidades/unidad4/3_DevContainers.html#práctica",
+    "title": "DevContainers",
+    "section": "Práctica",
+    "text": "Práctica\n\nCrear un nuevo DevContainer con una plantilla en Python.\nCrear un archivo main.py con un código sencillo en Python.\nEjecutar la aplicación en el DevContainer.",
+    "crumbs": [
+      "Unidad 4: Docker",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>DevContainers</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad4/3_DevContainers.html#conclusiones",
+    "href": "unidades/unidad4/3_DevContainers.html#conclusiones",
+    "title": "DevContainers",
+    "section": "Conclusiones",
+    "text": "Conclusiones\nLos DevContainers son una herramienta poderosa para el desarrollo de software, ya que permiten a los desarrolladores trabajar en un entorno aislado y preconfigurado, sin tener que preocuparse por la configuración del sistema operativo, las dependencias de software o las bibliotecas de terceros. Los DevContainers proporcionan un entorno de desarrollo consistente y reproducible, lo que garantiza que las aplicaciones se ejecuten de la misma manera en diferentes entornos.",
+    "crumbs": [
+      "Unidad 4: Docker",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>DevContainers</span>"
+    ]
   }
 ]

@@ -8,7 +8,7 @@
 
 <meta name="description" content="Bootcamp de Desarrollo Web FullStack con Python, Django y React">
 
-<title>Bootcamp Desarrollo Web FullStack - Módulos en Python</title>
+<title>Bootcamp Desarrollo Web FullStack - Módulos</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../unidades/Proyectos/3_funciones.html" rel="next">
+<link href="../../unidades/unidad4/1_docker.html" rel="next">
 <link href="../../unidades/unidad2/1_programacion_orientada_a_objetos.html" rel="prev">
 <link href="../../logo.jpeg" rel="icon" type="image/jpeg">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
@@ -121,7 +121,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad3/1_modulos_python.html">Unidad 3: Módulos y Paquetes</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad3/1_modulos_python.html"><span class="chapter-title">Módulos en Python</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad3/1_modulos_python.html">Unidad 3: Módulos y Paquetes</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad3/1_modulos_python.html"><span class="chapter-title">Módulos</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -275,7 +275,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad3/1_modulos_python.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Módulos en Python</span></a>
+  <a href="../../unidades/unidad3/1_modulos_python.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Módulos</span></a>
   </div>
 </li>
       </ul>
@@ -283,12 +283,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
- <span class="menu-text">Proyectos</span></a>
+ <span class="menu-text">Unidad 4: Docker</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad4/1_docker.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1_docker.html</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+ <span class="menu-text">Proyectos</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../unidades/Proyectos/3_funciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span></a>
@@ -317,30 +333,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#introducción-a-módulos." id="toc-introducción-a-módulos." class="nav-link active" data-scroll-target="#introducción-a-módulos.">Introducción a Módulos.</a></li>
-  <li><a href="#creando-el-primer-módulo." id="toc-creando-el-primer-módulo." class="nav-link" data-scroll-target="#creando-el-primer-módulo.">Creando el primer Módulo.</a></li>
-  <li><a href="#creando-el-segundo-módulo." id="toc-creando-el-segundo-módulo." class="nav-link" data-scroll-target="#creando-el-segundo-módulo.">Creando el segundo Módulo.</a></li>
-  <li><a href="#creando-el-archivo-principal." id="toc-creando-el-archivo-principal." class="nav-link" data-scroll-target="#creando-el-archivo-principal.">Creando el archivo principal.</a></li>
-  <li><a href="#importando-módulos." id="toc-importando-módulos." class="nav-link" data-scroll-target="#importando-módulos.">Importando Módulos.</a></li>
-  <li><a href="#renombrando-módulos." id="toc-renombrando-módulos." class="nav-link" data-scroll-target="#renombrando-módulos.">Renombrando Módulos.</a></li>
-  <li><a href="#seleccionando-elementos" id="toc-seleccionando-elementos" class="nav-link" data-scroll-target="#seleccionando-elementos">Seleccionando Elementos</a></li>
-  <li><a href="#seleccionando-lo-importado-y-pip" id="toc-seleccionando-lo-importado-y-pip" class="nav-link" data-scroll-target="#seleccionando-lo-importado-y-pip">Seleccionando lo importado y pip</a></li>
-  <li><a href="#instalando-módulos-con-pip" id="toc-instalando-módulos-con-pip" class="nav-link" data-scroll-target="#instalando-módulos-con-pip">Instalando Módulos con pip</a></li>
-  <li><a href="#actividad" id="toc-actividad" class="nav-link" data-scroll-target="#actividad">Actividad</a></li>
-  <li><a href="#conclusiones" id="toc-conclusiones" class="nav-link" data-scroll-target="#conclusiones">Conclusiones</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad3/1_modulos_python.html">Unidad 3: Módulos y Paquetes</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad3/1_modulos_python.html"><span class="chapter-title">Módulos en Python</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad3/1_modulos_python.html">Unidad 3: Módulos y Paquetes</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad3/1_modulos_python.html"><span class="chapter-title">Módulos</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Módulos en Python</span></h1>
+<h1 class="title"><span class="chapter-title">Módulos</span></h1>
 </div>
 
 
@@ -357,6 +357,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<div class="justify">
 <div class="center">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -365,167 +366,100 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </div>
-<section id="introducción-a-módulos." class="level2">
-<h2 class="anchored" data-anchor-id="introducción-a-módulos.">Introducción a Módulos.</h2>
-<p>Los módulos en python son archivos que contienen definiciones y declaraciones de python. Los módulos permiten organizar el código en archivos separados. Los módulos se utilizan para reutilizar código y para mantener el código organizado.</p>
-<p>Ejemplo:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># modulo.py </span></span>
+<section id="introducción-a-módulos" class="level2">
+<h2 class="anchored" data-anchor-id="introducción-a-módulos">Introducción a Módulos</h2>
+<p>En Python, un módulo es un archivo que contiene código, generalmente funciones, clases, y variables, que puedes importar y reutilizar en diferentes partes de tu programa. Esto te ayuda a dividir tu código en partes organizadas y reutilizables, haciendo que el desarrollo sea más eficiente y limpio.</p>
+<p>Por ejemplo, imagina que quieres crear un módulo para realizar saludos y otro para despedidas:</p>
+<p>Ejemplo 1: Módulo de saludo</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># modulo_saludo.py</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> saludar():</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hola Mundo"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En el código anterior se define un módulo <strong>modulo.py</strong> que contiene una función <strong>saludar</strong>.</p>
-<p>Ejemplo:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># modulo.py</span></span>
+<p>Ejemplo 2: Módulo de despedida</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># modulo_despedida.py</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> despedir():</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Adiós Mundo"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En el código anterior se define un módulo <strong>modulo.py</strong> que contiene una función <strong>despedir</strong>.</p>
+<p>Estos módulos contienen funciones que realizan acciones específicas: uno saluda y el otro se despide. Ahora veremos cómo crear y utilizar módulos en Python.</p>
 </section>
-<section id="creando-el-primer-módulo." class="level2">
-<h2 class="anchored" data-anchor-id="creando-el-primer-módulo.">Creando el primer Módulo.</h2>
-<p>Para crear nuestro primer módulo en python, creamos un archivo con extensión <strong>.py</strong> y definimos las funciones que queremos exportar.</p>
-<p>Ejemplo:</p>
+<section id="creando-módulos-personalizados" class="level2">
+<h2 class="anchored" data-anchor-id="creando-módulos-personalizados">Creando Módulos Personalizados</h2>
+<p>Para crear un módulo en Python, solo necesitas crear un archivo .py y definir en él las funciones o clases que deseas usar. A continuación, veamos cómo crear módulos más complejos.</p>
+<p>Ejemplo: Módulo de saludo con nombre</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># modulo_saludar.py</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> saludar(nombre):</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Hola </span><span class="sc">{</span>nombre<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En el código anterior se define un módulo <strong>modulo_saludar.py</strong> que contiene una función <strong>saludar</strong>.</p>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Hola, </span><span class="sc">{</span>nombre<span class="sc">}</span><span class="ss">!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Este módulo acepta un argumento nombre, permitiéndote personalizar el saludo.</p>
 </section>
-<section id="creando-el-segundo-módulo." class="level2">
-<h2 class="anchored" data-anchor-id="creando-el-segundo-módulo.">Creando el segundo Módulo.</h2>
-<p>Para crear nuestro segundo módulo en python, creamos un archivo con extensión <strong>.py</strong> y definimos las funciones que queremos exportar.</p>
-<p>Ejemplo:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># modulo_despedir.py</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> despedir(nombre):</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Adiós </span><span class="sc">{</span>nombre<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En el código anterior se define un módulo <strong>modulo_despedir.py</strong> que contiene una función <strong>despedir</strong>.</p>
+<section id="usando-módulos-en-un-archivo-principal" class="level2">
+<h2 class="anchored" data-anchor-id="usando-módulos-en-un-archivo-principal">Usando Módulos en un Archivo Principal</h2>
+<p>Para utilizar los módulos que has creado, necesitas importarlos en un archivo principal. Aquí, importamos ambos módulos anteriores y ejecutamos las funciones:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># main.py</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> modulo_saludar</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> modulo_despedida</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    modulo_saludar.saludar(<span class="st">"Juan"</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    modulo_despedida.despedir()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este ejemplo, importamos los módulos modulo_saludar y modulo_despedida y usamos las funciones saludar y despedir.</p>
 </section>
-<section id="creando-el-archivo-principal." class="level2">
-<h2 class="anchored" data-anchor-id="creando-el-archivo-principal.">Creando el archivo principal.</h2>
-<p>Para utilizar los módulos en python, creamos un archivo principal con extensión <strong>.py</strong> e importamos los módulos que queremos utilizar.</p>
-<p>Ejemplo:</p>
+<section id="importando-y-renombrando-módulos" class="level2">
+<h2 class="anchored" data-anchor-id="importando-y-renombrando-módulos">Importando y Renombrando Módulos</h2>
+<p>A veces, renombrar un módulo en el momento de importarlo hace el código más claro. Esto se logra con la palabra clave as:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># main.py</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> modulo_saludar</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> modulo_despedir</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> modulo_saludar <span class="im">as</span> saludo</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> modulo_despedida <span class="im">as</span> despedida</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>modulo_saludar.saludar(<span class="st">"Juan"</span>)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>modulo_despedir.despedir(<span class="st">"Juan"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En el código anterior se importan los módulos <strong>modulo_saludar</strong> y <strong>modulo_despedir</strong> y se utilizan las funciones <strong>saludar</strong> y <strong>despedir</strong>.</p>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>saludo.saludar(<span class="st">"Ana"</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>despedida.despedir()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Esto permite usar nombres cortos y descriptivos en el código.</p>
 </section>
-<section id="importando-módulos." class="level2">
-<h2 class="anchored" data-anchor-id="importando-módulos.">Importando Módulos.</h2>
-<p>Para importar un módulo en python se utiliza la palabra clave <strong>import</strong> seguida del nombre del módulo.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Utilizaremos el mismo ejemplo anterior.</p>
-</div>
-</div>
-<p>Ejemplo:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># main.py</span></span>
+<section id="importando-funciones-específicas-de-un-módulo" class="level2">
+<h2 class="anchored" data-anchor-id="importando-funciones-específicas-de-un-módulo">Importando Funciones Específicas de un Módulo</h2>
+<p>Si solo necesitas una función de un módulo, puedes importarla directamente:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> modulo_saludar <span class="im">import</span> saludar</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> modulo_saludar</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> modulo_despedir</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>modulo_saludar.saludar(<span class="st">"Juan"</span>)</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>modulo_despedir.despedir(<span class="st">"Juan"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En el código anterior se importan los módulos <strong>modulo_saludar</strong> y <strong>modulo_despedir</strong> y se utilizan las funciones <strong>saludar</strong> y <strong>despedir</strong>.</p>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>saludar(<span class="st">"Carlos"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Aquí importamos únicamente la función saludar de modulo_saludar, sin necesidad de importar el módulo completo.</p>
 </section>
-<section id="renombrando-módulos." class="level2">
-<h2 class="anchored" data-anchor-id="renombrando-módulos.">Renombrando Módulos.</h2>
-<p>Para renombrar un módulo en python se utiliza la palabra clave <strong>as</strong> seguida del nuevo nombre.</p>
-<p>Ejemplo:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># main.py</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> modulo_saludar <span class="im">as</span> saludar</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> modulo_despedir <span class="im">as</span> despedir</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>saludar.saludar(<span class="st">"Juan"</span>)</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>despedir.despedir(<span class="st">"Juan"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En el código anterior se importan los módulos <strong>modulo_saludar</strong> y <strong>modulo_despedir</strong> con los nombres <strong>saludar</strong> y <strong>despedir</strong> respectivamente.</p>
+<section id="usando-módulos-externos-con-pip" class="level2">
+<h2 class="anchored" data-anchor-id="usando-módulos-externos-con-pip">Usando Módulos Externos con pip</h2>
+<p>Además de tus propios módulos, Python permite instalar y utilizar módulos externos usando pip, el gestor de paquetes de Python. Veamos un ejemplo con numpy, un módulo popular para trabajar con arreglos numéricos.</p>
 </section>
-<section id="seleccionando-elementos" class="level2">
-<h2 class="anchored" data-anchor-id="seleccionando-elementos">Seleccionando Elementos</h2>
-<p>Para importar elementos específicos de un módulo en python se utiliza la palabra clave <strong>from</strong> seguida del nombre del módulo y la palabra clave <strong>import</strong> seguida del nombre del elemento.</p>
-<p>Ejemplo:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># main.py</span></span>
+<section id="instalando-un-módulo-con-pip" class="level2">
+<h2 class="anchored" data-anchor-id="instalando-un-módulo-con-pip">Instalando un módulo con pip</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install numpy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="usando-el-módulo-instalado" class="level2">
+<h2 class="anchored" data-anchor-id="usando-el-módulo-instalado">Usando el módulo instalado</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> modulo_saludar <span class="im">import</span> saludar</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>saludar(<span class="st">"Juan"</span>)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> modulo_despedir <span class="im">import</span> despedir</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>despedir(<span class="st">"Juan"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En el código anterior se importan las funciones <strong>saludar</strong> y <strong>despedir</strong> del módulo <strong>modulo_saludar</strong> y <strong>modulo_despedir</strong> respectivamente.</p>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Este ejemplo muestra cómo instalar y utilizar numpy para crear un arreglo.</p>
 </section>
-<section id="seleccionando-lo-importado-y-pip" class="level2">
-<h2 class="anchored" data-anchor-id="seleccionando-lo-importado-y-pip">Seleccionando lo importado y pip</h2>
-<div class="callout-info">
-<p>Vamos a crear una aplicación divertida con emojis.</p>
-</div>
-<p>Ejemplo:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># modulo_emojis.py</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sonreir():</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"😊"</span>)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> llorar():</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"😢"</span>)</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co"># main.py</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> modulo_emojis <span class="im">import</span> sonreir</span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>sonreir()</span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> modulo_emojis <span class="im">import</span> llorar</span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>llorar()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En el código anterior se definen dos funciones <strong>sonreir</strong> y <strong>llorar</strong> en el módulo <strong>modulo_emojis</strong>. En el archivo <strong>main.py</strong> se importan las funciones <strong>sonreir</strong> y <strong>llorar</strong> y se utilizan.</p>
+<section id="instalando-otro-módulo" class="level2">
+<h2 class="anchored" data-anchor-id="instalando-otro-módulo">Instalando otro módulo</h2>
+<p>Además de numpy, Python tiene muchos módulos útiles para diferentes tareas. Por ejemplo, emojis es un módulo que te permite imprimir emojis en la consola.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install emojis</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="instalando-módulos-con-pip" class="level2">
-<h2 class="anchored" data-anchor-id="instalando-módulos-con-pip">Instalando Módulos con pip</h2>
-<p>Para instalar módulos en python se utiliza la herramienta <strong>pip</strong>. <strong>pip</strong> es un sistema de gestión de paquetes utilizado para instalar y administrar paquetes de software escritos en python.</p>
-<p>Ejemplo:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install numpy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En el código anterior se instala el módulo <strong>numpy</strong> utilizando <strong>pip</strong>.</p>
-<p>Ahora pra utilizar este módulo en nuestro código, simplemente lo importamos.</p>
-<p>Ejemplo:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="usando-el-módulo-emojis" class="level2">
+<h2 class="anchored" data-anchor-id="usando-el-módulo-emojis">Usando el módulo emojis</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> emojis</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(emojis.encode(<span class="st">":smile:"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Este ejemplo muestra cómo instalar y utilizar el módulo emojis para imprimir emojis en la consola.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">😄</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="actividad" class="level2">
-<h2 class="anchored" data-anchor-id="actividad">Actividad</h2>
+<section id="actividad-práctica" class="level1">
+<h1>Actividad Práctica</h1>
+<p>Sigue estos pasos para practicar la creación y uso de módulos en Python.</p>
 <ol type="1">
-<li><p>Crear un módulo <strong>modulo_calculadora.py</strong> que contenga las funciones <strong>sumar</strong>, <strong>restar</strong>, <strong>multiplicar</strong> y <strong>dividir</strong>.</p></li>
-<li><p>Crear un archivo <strong>main.py</strong> que importe el módulo <strong>modulo_calculadora</strong> y utilice las funciones <strong>sumar</strong>, <strong>restar</strong>, <strong>multiplicar</strong> y <strong>dividir</strong>.</p></li>
-<li><p>Ejecutar el archivo <strong>main.py</strong>.</p></li>
-<li><p>Instalar el módulo <strong>numpy</strong> utilizando <strong>pip</strong>.</p></li>
-<li><p>Crear un archivo <strong>main_numpy.py</strong> que importe el módulo <strong>numpy</strong> y utilice la función <strong>array</strong> para crear un arreglo de números.</p></li>
-<li><p>Ejecutar el archivo <strong>main_numpy.py</strong>.</p></li>
-<li><p>Crear un archivo <strong>main_pandas.py</strong> que importe el módulo <strong>pandas</strong> y utilice la función <strong>DataFrame</strong> para crear un DataFrame.</p></li>
-<li><p>Ejecutar el archivo <strong>main_pandas.py</strong>.</p></li>
-<li><p>Crear un archivo <strong>main_matplotlib.py</strong> que importe el módulo <strong>matplotlib</strong> y utilice la función <strong>plot</strong> para graficar una función.</p></li>
-<li><p>Ejecutar el archivo <strong>main_matplotlib.py</strong>.</p></li>
+<li>Crear un módulo modulo_calculadora.py que contenga las funciones sumar, restar, multiplicar, y dividir:</li>
 </ol>
 <details>
 <summary>
-Respuesta
+Ver solución
 </summary>
-<ol type="1">
-<li>Crear un módulo <strong>modulo_calculadora.py</strong> que contenga las funciones <strong>sumar</strong>, <strong>restar</strong>, <strong>multiplicar</strong> y <strong>dividir</strong>.</li>
-</ol>
 <div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># modulo_calculadora.py</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sumar(a, b):</span>
@@ -539,96 +473,74 @@ Respuesta
 <span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dividir(a, b):</span>
 <span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">/</span> b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En el código anterior se define un módulo <strong>modulo_calculadora.py</strong> que contiene las funciones <strong>sumar</strong>, <strong>restar</strong>, <strong>multiplicar</strong> y <strong>dividir</strong>.</p>
-<ol start="2" type="1">
-<li>Crear un archivo <strong>main.py</strong> que importe el módulo <strong>modulo_calculadora</strong> y utilice las funciones <strong>sumar</strong>, <strong>restar</strong>, <strong>multiplicar</strong> y <strong>dividir</strong>.</li>
-</ol>
+<p>Crear un archivo main.py que importe el módulo modulo_calculadora y utilice sus funciones:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># main.py</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> modulo_calculadora</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(modulo_calculadora.sumar(<span class="dv">2</span>, <span class="dv">3</span>))</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(modulo_calculadora.restar(<span class="dv">5</span>, <span class="dv">3</span>))</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(modulo_calculadora.multiplicar(<span class="dv">2</span>, <span class="dv">3</span>))</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(modulo_calculadora.dividir(<span class="dv">6</span>, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En el código anterior se importa el módulo <strong>modulo_calculadora</strong> y se utilizan las funciones <strong>sumar</strong>, <strong>restar</strong>, <strong>multiplicar</strong> y <strong>dividir</strong>.</p>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> modulo_calculadora</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(modulo_calculadora.sumar(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(modulo_calculadora.restar(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(modulo_calculadora.multiplicar(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(modulo_calculadora.dividir(<span class="dv">10</span>, <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<ol start="2" type="1">
+<li>Instalar numpy y crear un archivo main_numpy.py que lo use para crear un arreglo:</li>
+</ol>
+<details>
+<summary>
+Ver solución
+</summary>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># main_numpy.py</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Crear un archivo main_pandas.py que utilice pandas para crear un DataFrame y lo imprima:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># main_pandas.py</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {<span class="st">'Nombre'</span>: [<span class="st">'Juan'</span>, <span class="st">'Ana'</span>, <span class="st">'Luis'</span>], <span class="st">'Edad'</span>: [<span class="dv">23</span>, <span class="dv">30</span>, <span class="dv">27</span>]}</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <ol start="3" type="1">
-<li>Ejecutar el archivo <strong>main.py</strong>.</li>
+<li>Crear un archivo main_matplotlib.py para graficar una función:</li>
 </ol>
-<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> main.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>El resultado es:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">5</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="ex">2</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="ex">6</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="ex">2.0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details>
+<summary>
+Ver solución
+</summary>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># main_matplotlib.py</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">100</span>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.sin(x)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <ol start="4" type="1">
-<li>Instalar el módulo <strong>numpy</strong> utilizando <strong>pip</strong>.</li>
+<li>Instalar el módulo emojis y crear un archivo main_emojis.py que imprima emojis en la consola:</li>
 </ol>
-<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install numpy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="5" type="1">
-<li>Crear un archivo <strong>main_numpy.py</strong> que importe el módulo <strong>numpy</strong> y utilice la función <strong>array</strong> para crear un arreglo de números.</li>
-</ol>
-<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># main_numpy.py</span></span>
+<details>
+<summary>
+Ver solución
+</summary>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># main_emojis.py</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> emojis</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En el código anterior se importa el módulo <strong>numpy</strong> y se utiliza la función <strong>array</strong> para crear un arreglo de números.</p>
-<ol start="6" type="1">
-<li>Ejecutar el archivo <strong>main_numpy.py</strong>.</li>
-</ol>
-<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> main_numpy.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="7" type="1">
-<li>Crear un archivo <strong>main_pandas.py</strong> que importe el módulo <strong>pandas</strong> y utilice la función <strong>DataFrame</strong> para crear un DataFrame.</li>
-</ol>
-<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># main_pandas.py</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Nombre'</span>: [<span class="st">'Juan'</span>, <span class="st">'Maria'</span>, <span class="st">'Pedro'</span>],</span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Edad'</span>: [<span class="dv">20</span>, <span class="dv">25</span>, <span class="dv">30</span>]</span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En el código anterior se importa el módulo <strong>pandas</strong> y se utiliza la función <strong>DataFrame</strong> para crear un DataFrame.</p>
-<ol start="8" type="1">
-<li>Ejecutar el archivo <strong>main_pandas.py</strong>.</li>
-</ol>
-<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> main_pandas.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="9" type="1">
-<li>Crear un archivo <strong>main_matplotlib.py</strong> que importe el módulo <strong>matplotlib</strong> y utilice la función <strong>plot</strong> para graficar una función.</li>
-</ol>
-<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># main_matplotlib.py</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">100</span>)</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.sin(x)</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y)</span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En el código anterior se importa el módulo <strong>matplotlib</strong> y se utiliza la función <strong>plot</strong> para graficar una función.</p>
-<ol start="10" type="1">
-<li>Ejecutar el archivo <strong>main_matplotlib.py</strong>.</li>
-</ol>
-<div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> main_matplotlib.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(emojis.encode(<span class="st">":smile:"</span>))</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(emojis.encode(<span class="st">":heart:"</span>))</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(emojis.encode(<span class="st">":rocket:"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </section>
-<section id="conclusiones" class="level1">
-<h1>Conclusiones</h1>
-<p>Los módulos en python son archivos que contienen definiciones y declaraciones de python. Los módulos permiten organizar el código en archivos separados. Los módulos se utilizan para reutilizar código y para mantener el código organizado.</p>
-
-
+<section id="conclusión" class="level1">
+<h1>Conclusión</h1>
+<p>Los módulos en Python son una herramienta poderosa para estructurar y reutilizar código. Con módulos, puedes dividir tu código en archivos independientes y organizados, lo cual facilita el desarrollo de aplicaciones escalables y mantenibles.</p>
 </section>
+</div>
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1198,8 +1110,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../unidades/Proyectos/3_funciones.html" class="pagination-link" aria-label="🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python">
-        <span class="nav-page-text"><span class="chapter-title">🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../unidades/unidad4/1_docker.html" class="pagination-link" aria-label="1_docker.html">
+        <span class="nav-page-text"><span class="chapter-title">1_docker.html</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

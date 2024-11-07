@@ -54,13 +54,18 @@ book:
       chapters: 
         - unidades/unidad3/1_modulos_python.qmd
 
+    - part: "Unidad 4: Docker"
+      chapters: 
+        - unidades/unidad4/1_docker.qmd
+        - unidades/unidad4/2_docker_compose.qmd
+        - unidades/unidad4/3_DevContainers.qmd
+
     - part: "Proyectos"
       chapters: 
         - unidades/Proyectos/3_funciones.qmd
         - unidades/Proyectos/1_proyecto_modulos.qmd
         - unidades/Proyectos/2_proyecto_poo.qmd
         - unidades/Proyectos/4_proyecto_poo_2.qmd
-
 
 bibliography: references.bib
 biblio-style: "apalike"

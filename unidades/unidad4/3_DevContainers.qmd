@@ -1,0 +1,79 @@
+:::{.justify}
+# DevContainers
+
+:::{.center}
+![DevContainers](./images/dev-containers.png){width=200px}
+:::
+
+## ¿Qué son los DevContainers?
+
+Los DevContainers son entornos de desarrollo basados en contenedores Docker que permiten a los desarrolladores crear, compartir y ejecutar aplicaciones en un entorno aislado y portátil. Los DevContainers proporcionan un entorno de desarrollo consistente y reproducible, lo que garantiza que las aplicaciones se ejecuten de la misma manera en diferentes entornos.
+
+Los DevContainers son una herramienta poderosa para el desarrollo de software, ya que permiten a los desarrolladores trabajar en un entorno aislado y preconfigurado, sin tener que preocuparse por la configuración del sistema operativo, las dependencias de software o las bibliotecas de terceros.
+
+## Instalación y Uso
+
+Para utilizar DevContainers, es necesario tener instalado Docker en el sistema. Una vez instalado Docker, se puede instalar una extensión de DevContainers en el editor de código favorito, como Visual Studio Code, y utilizarla para crear, compartir y ejecutar DevContainers.
+
+:::{.center}
+![DevContainer en Visual Studio Code](./images/devContainer-extension.png)
+:::
+
+## Ejemplos:
+
+En la parte inferior izquierda de Visual Studio Code existe un botón que hace referencia a los **DevContainers**, al hacer clic en este botón se abrirá un menú con las opciones para crear, abrir o configurar un DevContainer.
+
+En este punto damos clic en **New DevContainer** y seleccionamos la opción **Python 3**. Esto creará un archivo **.devcontainer** con la configuración necesaria para ejecutar la aplicación en un contenedor Docker.
+
+:::{.center}
+![New DevContainer](./images/new_DevContainer.png)
+:::
+
+En la imágen anterior podemos observar el menú de DevContainer, en esta sección es posible seleccionar **New DevContainer**. Al seleccionar esta opción se desplegará un menú con las opciones de configuración de DevContainer.
+
+:::{.center}
+![Python 3 DevContainer](./images/python3_DevContainer.png)
+:::
+
+En la imágen anterior se describe la búsqueda de diferentes plantillas, en este caso seleccionamos **Python 3**. Al seleccionar esta opción se creará un archivo **.devcontainer** con la configuración necesaria para ejecutar la aplicación en un contenedor Docker.
+
+:::{.center}
+![Create DevContainer](./images/create_DevContainers.png)
+:::
+
+Finalmente seleccoinamos la opción **Create DevContainers** para crear el archivo **.devcontainer** con la configuración necesaria para ejecutar la aplicación en un contenedor Docker.
+
+:::{.center}
+![Create DevContainer](./images/creando_DevContainer.png)
+:::
+
+Ahora solo resta esperar como se observa en la imágen anterior la creación del **DevContainer**. Una vez finalizado el proceso, se abrirá una nueva ventana con el archivo **main.py** en el editor de código y se mostrará un mensaje en la parte inferior derecha indicando que se está construyendo el contenedor.
+
+:::{.center}
+![Python in DevContainer](./images/python_in_DevContainer.png)
+:::
+
+Creamos una aplicación Hola Mundo en Python para ser ejecutada en un DevContainer:
+
+Crear un archivo **main.py** con el siguiente código:
+
+```python
+# main.py
+print("Hola, Mundo!")
+```
+Una vez creado el **DevContainer** se mostrará un mensaje en la parte inferior derecha indicando que se está construyendo el contenedor. En este punto se puede ejecutar la aplicación en el contenedor Docker haciendo clic en el botón **Run** en la parte superior derecha.
+
+Puedes verificar que la versión de python en el terminal del DevContainer creado es diferente a la del Sistema Operativo en el que te encuentres y la instalación global del sistema.
+
+## Práctica
+
+- Crear un nuevo DevContainer con una plantilla en Python.
+
+- Crear un archivo **main.py** con un código sencillo en Python.
+
+- Ejecutar la aplicación en el DevContainer.
+
+## Conclusiones
+
+Los DevContainers son una herramienta poderosa para el desarrollo de software, ya que permiten a los desarrolladores trabajar en un entorno aislado y preconfigurado, sin tener que preocuparse por la configuración del sistema operativo, las dependencias de software o las bibliotecas de terceros. Los DevContainers proporcionan un entorno de desarrollo consistente y reproducible, lo que garantiza que las aplicaciones se ejecuten de la misma manera en diferentes entornos.
+:::
