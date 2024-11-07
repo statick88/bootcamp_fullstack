@@ -231,38 +231,55 @@ La encapsulación es una característica de la POO que permite ocultar los detal
 Ejemplo:
 
 ```python
-class CuentaBancaria :
+class CuentaBancaria:
     def __init__(self, nombre, saldo):
         self.nombre = nombre
-        self.__saldo = saldo
+        self.__saldo = saldo  # El saldo es privado
+
     def depositar(self, cantidad):
         self.__saldo += cantidad
+
     def retirar(self, cantidad):
-        self.__saldo -= cantidad
+        if cantidad <= self.__saldo:
+            self.__saldo -= cantidad
+        else:
+            print("Fondos insuficientes")
+
+    def obtener_saldo(self):
+        return self.__saldo  # Método para acceder al saldo
+
     def __str__(self):
         return f"Cuenta Bancaria de {self.nombre} con saldo {self.__saldo}"
 
-cuenta = CuentaBancaria("Juan Perez", 1000)
+
+# Creación de instancias de cuentas bancarias
+cuenta1 = CuentaBancaria("Juan Perez", 1000)
 cuenta2 = CuentaBancaria("Maria Lopez", 2000)
 cuenta3 = CuentaBancaria("Pedro Ramirez", 3000)
 
-cuenta.depositar(500)
-cuenta.retirar(200)
-print(cuenta.nombre)
-print(cuenta.saldo)
-
-print(cuenta1.nombre)
-print(cuenta1.saldo)
+# Operaciones en las cuentas
 cuenta1.depositar(500)
 cuenta1.retirar(200)
-print(cuenta1.saldo)
+print(cuenta1.nombre)
+print(cuenta1.obtener_saldo())  # Acceso al saldo a través de un método
 
-cuent3.depositar(1000)
+print(cuenta2.nombre)
+cuenta2.depositar(500)
+cuenta2.retirar(200)
+print(cuenta2.obtener_saldo())
+
+print(cuenta3.nombre)
+cuenta3.depositar(1000)
 cuenta3.retirar(500)
-print(cuenta3.saldo)
+print(cuenta3.obtener_saldo())
 ```
+La encapsulación es un principio fundamental en la programación orientada a objetos que permite proteger los datos de un objeto. En Python, se logra utilizando variables privadas y métodos de acceso para controlar cómo se accede y modifica la información dentro de una clase.
 
-En el código anterior se define una clase **CuentaBancaria** con dos atributos **nombre** y **saldo**. El atributo **saldo** es privado y solo puede ser accedido desde la clase **CuentaBancaria**. Además, se definen tres métodos **depositar**, **retirar** y **__str__**. El método **__str__** es un método especial que se llama cuando se convierte un objeto a una cadena de texto.
+En el ejemplo de CuentaBancaria, el atributo __saldo es privado (indicado por el prefijo __) y no puede ser accedido directamente desde fuera de la clase. Esto significa que no se puede escribir cuenta1.__saldo para leer o modificar el saldo.
+
+Para interactuar con el saldo de manera segura, la clase proporciona métodos públicos como depositar y retirar, que permiten modificar el saldo solo bajo condiciones controladas. En este caso, se agregó un método obtener_saldo para acceder al saldo de manera segura. Este enfoque evita que se altere el saldo de forma indebida y permite implementar lógica adicional, como verificar si hay fondos suficientes antes de retirar una cantidad.
+
+Este ejemplo demuestra cómo la encapsulación ayuda a proteger y controlar el acceso a los datos de un objeto, asegurando que su estado interno se gestione correctamente.
 
 ## Actividad
 

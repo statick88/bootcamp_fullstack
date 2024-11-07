@@ -519,36 +519,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="encapsulación">Encapsulación</h3>
 <p>La encapsulación es una característica de la POO que permite ocultar los detalles de implementación de un objeto. Los atributos y métodos de un objeto pueden ser públicos, protegidos o privados.</p>
 <p>Ejemplo:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CuentaBancaria :</span>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CuentaBancaria:</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nombre, saldo):</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.nombre <span class="op">=</span> nombre</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.__saldo <span class="op">=</span> saldo</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> depositar(<span class="va">self</span>, cantidad):</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.__saldo <span class="op">+=</span> cantidad</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> retirar(<span class="va">self</span>, cantidad):</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.__saldo <span class="op">-=</span> cantidad</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"Cuenta Bancaria de </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>nombre<span class="sc">}</span><span class="ss"> con saldo </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>__saldo<span class="sc">}</span><span class="ss">"</span></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>cuenta <span class="op">=</span> CuentaBancaria(<span class="st">"Juan Perez"</span>, <span class="dv">1000</span>)</span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>cuenta2 <span class="op">=</span> CuentaBancaria(<span class="st">"Maria Lopez"</span>, <span class="dv">2000</span>)</span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>cuenta3 <span class="op">=</span> CuentaBancaria(<span class="st">"Pedro Ramirez"</span>, <span class="dv">3000</span>)</span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>cuenta.depositar(<span class="dv">500</span>)</span>
-<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>cuenta.retirar(<span class="dv">200</span>)</span>
-<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cuenta.nombre)</span>
-<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cuenta.saldo)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.__saldo <span class="op">=</span> saldo  <span class="co"># El saldo es privado</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> depositar(<span class="va">self</span>, cantidad):</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.__saldo <span class="op">+=</span> cantidad</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> retirar(<span class="va">self</span>, cantidad):</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> cantidad <span class="op">&lt;=</span> <span class="va">self</span>.__saldo:</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.__saldo <span class="op">-=</span> cantidad</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Fondos insuficientes"</span>)</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> obtener_saldo(<span class="va">self</span>):</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.__saldo  <span class="co"># Método para acceder al saldo</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"Cuenta Bancaria de </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>nombre<span class="sc">}</span><span class="ss"> con saldo </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>__saldo<span class="sc">}</span><span class="ss">"</span></span>
 <span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cuenta1.nombre)</span>
-<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cuenta1.saldo)</span>
-<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>cuenta1.depositar(<span class="dv">500</span>)</span>
-<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>cuenta1.retirar(<span class="dv">200</span>)</span>
-<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cuenta1.saldo)</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Creación de instancias de cuentas bancarias</span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>cuenta1 <span class="op">=</span> CuentaBancaria(<span class="st">"Juan Perez"</span>, <span class="dv">1000</span>)</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>cuenta2 <span class="op">=</span> CuentaBancaria(<span class="st">"Maria Lopez"</span>, <span class="dv">2000</span>)</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>cuenta3 <span class="op">=</span> CuentaBancaria(<span class="st">"Pedro Ramirez"</span>, <span class="dv">3000</span>)</span>
 <span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>cuent3.depositar(<span class="dv">1000</span>)</span>
-<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>cuenta3.retirar(<span class="dv">500</span>)</span>
-<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cuenta3.saldo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En el código anterior se define una clase <strong>CuentaBancaria</strong> con dos atributos <strong>nombre</strong> y <strong>saldo</strong>. El atributo <strong>saldo</strong> es privado y solo puede ser accedido desde la clase <strong>CuentaBancaria</strong>. Además, se definen tres métodos <strong>depositar</strong>, <strong>retirar</strong> y <strong><strong>str</strong></strong>. El método <strong><strong>str</strong></strong> es un método especial que se llama cuando se convierte un objeto a una cadena de texto.</p>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Operaciones en las cuentas</span></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>cuenta1.depositar(<span class="dv">500</span>)</span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>cuenta1.retirar(<span class="dv">200</span>)</span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cuenta1.nombre)</span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cuenta1.obtener_saldo())  <span class="co"># Acceso al saldo a través de un método</span></span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cuenta2.nombre)</span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>cuenta2.depositar(<span class="dv">500</span>)</span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>cuenta2.retirar(<span class="dv">200</span>)</span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cuenta2.obtener_saldo())</span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cuenta3.nombre)</span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a>cuenta3.depositar(<span class="dv">1000</span>)</span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>cuenta3.retirar(<span class="dv">500</span>)</span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cuenta3.obtener_saldo())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>La encapsulación es un principio fundamental en la programación orientada a objetos que permite proteger los datos de un objeto. En Python, se logra utilizando variables privadas y métodos de acceso para controlar cómo se accede y modifica la información dentro de una clase.</p>
+<p>En el ejemplo de CuentaBancaria, el atributo <strong>saldo es privado (indicado por el prefijo </strong>) y no puede ser accedido directamente desde fuera de la clase. Esto significa que no se puede escribir cuenta1.__saldo para leer o modificar el saldo.</p>
+<p>Para interactuar con el saldo de manera segura, la clase proporciona métodos públicos como depositar y retirar, que permiten modificar el saldo solo bajo condiciones controladas. En este caso, se agregó un método obtener_saldo para acceder al saldo de manera segura. Este enfoque evita que se altere el saldo de forma indebida y permite implementar lógica adicional, como verificar si hay fondos suficientes antes de retirar una cantidad.</p>
+<p>Este ejemplo demuestra cómo la encapsulación ayuda a proteger y controlar el acceso a los datos de un objeto, asegurando que su estado interno se gestione correctamente.</p>
 </section>
 </section>
 <section id="actividad" class="level2">
