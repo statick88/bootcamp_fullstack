@@ -60,6 +60,10 @@ book:
         - unidades/unidad4/2_docker_compose.qmd
         - unidades/unidad4/3_DevContainers.qmd
 
+    - part: "Unidad 5: Desarrollo Web"
+      chapters:
+        - unidades/unidad6/intro_web.qmd
+
     - part: "Proyectos"
       chapters: 
         - unidades/Proyectos/3_funciones.qmd
