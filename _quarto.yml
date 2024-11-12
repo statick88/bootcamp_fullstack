@@ -5,7 +5,7 @@ project:
 book:
   title: "Bootcamp Desarrollo Web FullStack"
   author: "Diego Saavedra"
-  output-file: "bootcamp_desarrollo_web_fullstack"  
+  output-file: "bootcamp_desarrollo_web_fullstack"
   date: today
   date-format: medium
   favicon: logo.jpeg
@@ -13,7 +13,7 @@ book:
   keyword: Python, Django, React, FullStack, Bootcamp
   url: https://github.com/statick88/bootcamp_desarrollo_web_fullstack
   page-navigation: true
-  sidebar: 
+  sidebar:
     logo: logo.jpeg
     search: true
     collapse-level: 1
@@ -24,52 +24,56 @@ book:
   image: logo.jpeg
 
   page-footer:
-    center: 
+    center:
       - text: "About"
         href: about.qmd
       - text: "License"
         href: license.qmd
-        
-  chapters:
 
+  chapters:
     - part: "Unidad 0: Introducción a Git y GitHub"
       chapters:
-      - index.qmd
-      - unidades/unidad0/1_git_y_github.qmd
-      - unidades/unidad0/2_github_classroom.qmd
+        - index.qmd
+        - unidades/unidad0/1_git_y_github.qmd
+        - unidades/unidad0/2_github_classroom.qmd
 
     - part: "Unidad 1: Introducción e Instalaciones Necesarias"
       chapters:
-      - unidades/unidad1/1_introduccion.qmd
-      - unidades/unidad1/2_introduccion_a_la_programacion.qmd
-      - unidades/unidad1/3_tipos_de_datos.qmd
-      - unidades/unidad1/4_control_de_flujo.qmd
-      - unidades/unidad1/5_funciones_y_recursividad.qmd
+        - unidades/unidad1/1_introduccion.qmd
+        - unidades/unidad1/2_introduccion_a_la_programacion.qmd
+        - unidades/unidad1/3_tipos_de_datos.qmd
+        - unidades/unidad1/4_control_de_flujo.qmd
+        - unidades/unidad1/5_funciones_y_recursividad.qmd
 
     - part: "Unidad 2: Programación Orientada a Objetos"
-      chapters: 
+      chapters:
         - unidades/unidad2/1_programacion_orientada_a_objetos.qmd
 
     - part: "Unidad 3: Módulos y Paquetes"
-      chapters: 
+      chapters:
         - unidades/unidad3/1_modulos_python.qmd
 
     - part: "Unidad 4: Docker"
-      chapters: 
+      chapters:
         - unidades/unidad4/1_docker.qmd
         - unidades/unidad4/2_docker_compose.qmd
         - unidades/unidad4/3_DevContainers.qmd
+
+    - part: "Unidad 5: Django"
+      chapters:
+        - unidades/unidad5/intro.qmd
 
     - part: "Unidad 5: Desarrollo Web"
       chapters:
         - unidades/unidad6/intro_web.qmd
 
     - part: "Proyectos"
-      chapters: 
+      chapters:
         - unidades/Proyectos/3_funciones.qmd
         - unidades/Proyectos/1_proyecto_modulos.qmd
         - unidades/Proyectos/2_proyecto_poo.qmd
         - unidades/Proyectos/4_proyecto_poo_2.qmd
+        - unidades/Proyectos/5_DevContainers.qmd
 
 bibliography: references.bib
 biblio-style: "apalike"
@@ -77,8 +81,8 @@ biblio-style: "apalike"
 format:
   html:
     number-sections: false
-    theme: 
-      dark:  solar #slate, darkly, solar, superhero, vapor
+    theme:
+      dark: solar #slate, darkly, solar, superhero, vapor
       # light: cosmo
     number-depth: 4
     link-external-icon: true
@@ -94,12 +98,12 @@ format:
     margin-left: 30mm
     margin-bottom: 30mm
     margin-right: 30mm
-    titlepage-geometry: 
+    titlepage-geometry:
       - top=35mm
       - bottom=30mm
       - right=30mm
       - left=30mm
-  epub: 
+  epub:
     belongs-to-collection: "Bootcamp Desarrollo Web FullStack"
     group-position: 0
     creator: "Lcdo. Diego Saavedra Mgtr."

@@ -1,0 +1,138 @@
+:::{.justify}
+# Laboratorio: DevContainer con NGINX
+
+# Objetivo:
+
+Crear un entorno de desarrollo dentro de un contenedor Docker que ejecute NGINX para servir una página estática simple.
+
+## 1. Estructura del Proyecto
+
+El proyecto tendrá la siguiente estructura de directorios y archivos:
+
+```plaintext
+DevContainers/
+│
+├── .devcontainer/
+│   ├── Dockerfile
+│   └── devcontainer.json
+│
+├── html/
+    └── index.html
+```
+Ahora vamos a crear el archivo **index.html/**
+
+**html/index.html**
+
+El archivo HTML que NGINX servirá cuando accedas a <http://localhost:80>.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+</body>
+</html>
+```
+Este es un archivo HTML simple que contiene un título y un encabezado.
+
+Ahora vamos a crar el archivo **Dockerfile**.
+
+**.devcontainer/Dockerfile**
+
+Este archivo Dockerfile se utiliza para construir la imagen del contenedor que ejecutará NGINX.
+
+```dockerfile
+# Usa una imagen base de Ubuntu
+FROM mcr.microsoft.com/devcontainers/base:jammy
+
+# Instala NGINX
+RUN apt-get update && apt-get install -y nginx && apt-get clean
+
+# Expone el puerto 80 para NGINX
+EXPOSE 80
+
+# Comando para iniciar NGINX en primer plano
+CMD ["nginx", "-g", "daemon off;"]
+```
+El Dockerfile está basado en Ubuntu (jammy) e instala NGINX. Luego, expone el puerto 80 y configura NGINX para que se ejecute en primer plano (esto es necesario para que el contenedor no termine inmediatamente después de iniciarse).
+
+Ahora crearermos el archivo **devcontainer.json**.
+
+**.devcontainer/devcontainer.json**
+
+El archivo de configuración del DevContainer, que especifica cómo se debe construir y configurar el contenedor.
+
+```json
+{
+  "name": "DevContainer with NGINX",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "forwardPorts": [80],
+  "postCreateCommand": "echo 'DevContainer with NGINX is ready!'",
+  "remoteUser": "root",
+  "mounts": [
+    "source=${localWorkspaceFolder}/html,target=/usr/share/nginx/html,type=bind"
+  ]
+}
+```
+- **build**: Este campo indica que se debe usar el Dockerfile para construir la imagen del contenedor.
+
+- **forwardPorts**: Mapea el puerto 80 del contenedor al puerto 80 de la máquina local para que NGINX sea accesible desde el navegador.
+
+- **mounts**: Se vincula el directorio local html al directorio **/usr/share/nginx/html** del contenedor, para que el archivo **index.html** sea servido por NGINX.
+
+## 3. Instrucciones de Creación y Ejecución
+
+**Crea el proyecto**: Crea un directorio de trabajo, por ejemplo DevContainers, y dentro de él agrega los archivos de configuración mencionados anteriormente.
+
+**Abre el proyecto en Visual Studio Code**: Abre la carpeta DevContainers en Visual Studio Code.
+
+**Construye el contenedor**: Al abrir el proyecto en VS Code, si tienes configurado DevContainers, automáticamente debería preguntar si deseas abrirlo en un contenedor. Selecciona "Reopen in Container".
+
+**Verifica la creación del contenedor**: El contenedor se construirá utilizando el Dockerfile y configurará NGINX automáticamente. El puerto 80 será accesible en tu máquina local.
+
+**Accede a tu página web**: Una vez que el contenedor se haya iniciado, abre tu navegador y ve a <http://localhost:80>. Deberías ver la página con el mensaje **"Hello World!"**.
+
+## 2. Archivos de Configuración
+
+Es posible que tengamos que configurar el archivo **/etc/nginx/sites-available/default**
+
+Este archivo de configuración de NGINX para servir los archivos desde la carpeta **/usr/share/nginx/html**.
+
+```nginx
+server {
+    listen 80;
+    server_name localhost;
+
+    root /usr/share/nginx/html;  # Asegúrate de que esté apuntando a esta carpeta
+    index index.html index.htm;
+
+    location / {
+        try_files $uri $uri/ =404;  # Verifica que esta línea esté configurada para servir archivos correctamente
+    }
+}
+```
+Este archivo configura el servidor para escuchar en el **puerto 80** y servir archivos desde la carpeta **/usr/share/nginx/html**. 
+
+Si el archivo solicitado no se encuentra, se mostrará un error 404.
+
+## Problemas Comunes
+
+**NGINX no se inicia**: Si después de construir el contenedor NGINX no está corriendo, puedes iniciarlo manualmente con el siguiente comando:
+
+```bash
+service nginx start
+```
+**Cambios no reflejados**: Si haces cambios en el archivo index.html, es posible que necesites **reiniciar NGINX** para que se apliquen:
+
+```bash
+service nginx restart
+```
+**No se mapea el puerto correctamente**: Si no puedes acceder a la página en el navegador, verifica que el puerto esté correctamente mapeado en la configuración del contenedor. Revisa el archivo **devcontainer.json** y asegúrate de que **forwardPorts** esté configurado correctamente como **\[80\]**.
+:::

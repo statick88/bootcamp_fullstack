@@ -206,6 +206,11 @@ fetch('https://api.ejemplo.com/data')
 //   "edad": 30
 // }
 ```
+# Extra
+
+## Server Site Rendering:
+
+**Definición**:  
 
 ## Conclusión
 
