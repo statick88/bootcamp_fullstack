@@ -1,0 +1,287 @@
+# Laboratorio: Calculadora en Python
+
+## Paso 1: Configuración inicial del proyecto
+
+### Crear el directorio del proyecto
+
+Comienza creando un nuevo directorio para el proyecto:
+
+```bash
+mkdir calculadora
+cd calculadora
+```
+Inicializar un repositorio Git
+Inicializa un repositorio Git en la carpeta del proyecto:
+
+```bash
+git init
+Crear el archivo main.py
+```
+Crea un archivo main.py que será el punto de entrada del programa:
+
+```bash
+touch main.py
+Primer commit
+```
+Añadimos el archivo inicial al control de versiones:
+
+```bash
+git add main.py
+git commit -m "Inicio del proyecto: archivo main.py creado"
+```
+
+## Paso 2: Agregar las operaciones básicas (suma, resta, multiplicación, división)
+
+### Código inicial
+
+Abre el archivo **main.py** y añade el siguiente código para implementar las operaciones básicas:
+
+```python
+def suma(a, b):
+    """Devuelve la suma de dos números."""
+    return a + b
+
+
+def resta(a, b):
+    """Devuelve la resta de dos números."""
+    return a - b
+
+
+def multiplicacion(a, b):
+    """Devuelve la multiplicación de dos números."""
+    return a * b
+
+
+def division(a, b):
+    """Devuelve la división de dos números. Maneja división entre cero."""
+    try:
+        return a / b
+    except ZeroDivisionError:
+        return "Error: No se puede dividir entre cero."
+
+
+# Punto de entrada
+if __name__ == "__main__":
+    print("Bienvenido a la calculadora básica")
+    num1 = float(input("Ingrese el primer número: "))
+    num2 = float(input("Ingrese el segundo número: "))
+
+    print(f"Suma: {suma(num1, num2)}")
+    print(f"Resta: {resta(num1, num2)}")
+    print(f"Multiplicación: {multiplicacion(num1, num2)}")
+    print(f"División: {division(num1, num2)}")
+```
+
+### Crear un commit
+
+Guarda los cambios y realiza un commit con la descripción del avance:
+
+```bash
+git add main.py
+git commit -m "Implementadas las operaciones básicas (suma, resta, multiplicación, división)"
+```
+
+## Paso 3: Agregar funcionalidad de radicación y potenciación
+
+### Actualizar main.py
+
+Añadimos funciones para radicación y potenciación, y las integramos al flujo del programa:
+
+```python
+def radicacion(base, indice):
+    """Devuelve la raíz de un número dado el índice."""
+    try:
+        return base ** (1 / indice)
+    except ZeroDivisionError:
+        return "Error: El índice de la raíz no puede ser cero."
+
+
+def potenciacion(base, exponente):
+    """Devuelve la potencia de un número dado un exponente."""
+    return base ** exponente
+
+
+# Punto de entrada actualizado
+if __name__ == "__main__":
+    print("Bienvenido a la calculadora extendida")
+    num1 = float(input("Ingrese el primer número: "))
+    num2 = float(input("Ingrese el segundo número: "))
+
+    print(f"Suma: {suma(num1, num2)}")
+    print(f"Resta: {resta(num1, num2)}")
+    print(f"Multiplicación: {multiplicacion(num1, num2)}")
+    print(f"División: {division(num1, num2)}")
+    print(f"Radicación: {radicacion(num1, num2)}")
+    print(f"Potenciación: {potenciacion(num1, num2)}")
+```
+
+### Crear un commit
+
+Guarda los cambios y realiza un commit:
+
+```bash
+git add main.py
+git commit -m "Añadidas las operaciones de radicación y potenciación"
+```
+## Paso 4: Refactorización del código en múltiples archivos
+
+### Crear estructura modular
+
+Organizamos las operaciones en un archivo separado llamado **operaciones.py**.
+
+```bash
+touch operaciones.py
+```
+En el archivo operaciones.py, coloca las funciones:
+
+```python
+# operaciones.py
+
+def suma(a, b):
+    """Devuelve la suma de dos números."""
+    return a + b
+
+
+def resta(a, b):
+    """Devuelve la resta de dos números."""
+    return a - b
+
+
+def multiplicacion(a, b):
+    """Devuelve la multiplicación de dos números."""
+    return a * b
+
+
+def division(a, b):
+    """Devuelve la división de dos números. Maneja división entre cero."""
+    try:
+        resultado = a / b
+    except ZeroDivisionError:
+        return "Error: No se puede dividir entre cero."
+    else:
+        return resultado
+    finally:
+        pass
+
+
+def radicacion(base, indice):
+    """Devuelve la raíz de un número dado el índice."""
+    try:
+        return base ** (1 / indice)
+    except ZeroDivisionError:
+        return "Error: El índice de la raíz no puede ser cero."
+
+
+def potenciacion(base, exponente):
+    """Devuelve la potencia de un número dado un exponente."""
+    return base ** exponente
+```
+
+### Actualizar main.py
+
+Actualiza **main.py** para importar las funciones desde operaciones.py:
+
+```python
+# main.py
+from operaciones import suma, resta, multiplicacion, division, radicacion, potenciacion
+
+if __name__ == "__main__":
+    print("Bienvenido a la calculadora modular")
+    num1 = float(input("Ingrese el primer número: "))
+    num2 = float(input("Ingrese el segundo número: "))
+
+    print(f"Suma: {suma(num1, num2)}")
+    print(f"Resta: {resta(num1, num2)}")
+    print(f"Multiplicación: {multiplicacion(num1, num2)}")
+    print(f"División: {division(num1, num2)}")
+    print(f"Radicación: {radicacion(num1, num2)}")
+    print(f"Potenciación: {potenciacion(num1, num2)}")
+```
+
+### Crear un commit
+
+Guarda los cambios y realiza un commit:
+
+```bash
+git add main.py operaciones.py
+git commit -m "Refactorización: código modularizado en main.py y operaciones.py"
+```
+
+## Paso 5: Manejo de errores más detallado
+
+### Mejorar el manejo de errores en division
+
+Modifica la función division para agregar un bloque else para manejar operaciones exitosas y un finally para mostrar un mensaje final:
+
+```python
+def division(a, b):
+    """Devuelve la división de dos números."""
+    try:
+        resultado = a / b
+    except ZeroDivisionError:
+        print("Operación de división intentada.")  # Mostrar mensaje solo si ocurre un error
+        return "Error: No se puede dividir entre cero."
+    else:
+        return resultado
+    finally:
+        pass  # El bloque finally se puede dejar vacío o eliminarlo si no es necesario
+```
+### Crear un commit
+
+Realiza un nuevo commit con los cambios:
+
+```bash
+git add operaciones.py
+git commit -m "Mejorado el manejo de errores con else y finally en división"
+```
+
+## Paso 6: Testeo automatizado
+
+### Crear pruebas unitarias
+
+Ahora implementamos pruebas unitarias para validar cada operación usando el módulo unittest. Crea un archivo test_calculadora.py con el siguiente contenido:
+
+```python
+# test_calculadora.py
+import unittest
+from operaciones import suma, resta, multiplicacion, division, radicacion, potenciacion
+
+class TestCalculadora(unittest.TestCase):
+
+    def test_suma(self):
+        self.assertEqual(suma(2, 3), 5)
+
+    def test_resta(self):
+        self.assertEqual(resta(5, 3), 2)
+
+    def test_multiplicacion(self):
+        self.assertEqual(multiplicacion(2, 3), 6)
+
+    def test_division(self):
+        self.assertEqual(division(6, 3), 2)
+
+    def test_division_por_cero(self):
+        self.assertEqual(division(6, 0), "Error: No se puede dividir entre cero")
+
+    def test_radicacion(self):
+        self.assertEqual(radicacion(16, 4), 2)
+
+    def test_potenciacion(self):
+        self.assertEqual(potenciacion(2, 3), 8)
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+### Ejecutar las pruebas
+
+Para ejecutar las pruebas, usa el siguiente comando:
+
+```bash
+python -m unittest test_calculadora.py
+```
+
+## Siguientes pasos
+
+- **Interfaz de usuario**: Agregar un menú para que el usuario elija las operaciones. Esto mejorará la interacción con la calculadora.
+- **Mejoras adicionales**: Explorar la posibilidad de agregar operaciones avanzadas como trigonometría o logaritmos.

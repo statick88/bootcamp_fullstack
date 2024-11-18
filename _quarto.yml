@@ -74,6 +74,7 @@ book:
         - unidades/Proyectos/2_proyecto_poo.qmd
         - unidades/Proyectos/4_proyecto_poo_2.qmd
         - unidades/Proyectos/5_DevContainers.qmd
+        - unidades/Proyectos/6_calculadora.qmd
 
 bibliography: references.bib
 biblio-style: "apalike"
