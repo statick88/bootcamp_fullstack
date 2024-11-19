@@ -124,4 +124,5 @@ Cuando ejecutes el programa, el depurador se activará en pdb.set_trace(). Desde
 - **q**: Sale del depurador
 
 </details>
+
 :::
