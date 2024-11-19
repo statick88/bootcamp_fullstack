@@ -1,0 +1,86 @@
+
+:::{.justify}
+## Programación Funcional
+
+::: {.center}
+![Programación Funcional](./images/funciones.png)
+:::
+
+
+Python soporta parcialmente la programación funcional, lo que permite escribir código más limpio y conciso.
+
+### Conceptos clave
+
+- **lambda**: Funciones anónimas.
+
+- **map**: Aplica una función a cada ítem de un iterable.
+
+- **filter**: Filtra elementos de un iterable según una condición.
+
+- **reduce**: Reducción de un iterable a un único valor.
+
+### Comprensión de listas y generadores.
+
+Ejemplo
+
+```python
+# Uso de lambda y map
+numeros = [1, 2, 3, 4]
+dobles = list(map(lambda x: x * 2, numeros))
+print(dobles)
+
+# Uso de filter
+pares = list(filter(lambda x: x % 2 == 0, numeros))
+print(pares)
+
+# Uso de reduce
+from functools import reduce
+suma = reduce(lambda x, y: x + y, numeros)
+print(suma)
+```
+### Ejemplo Práctico
+
+**Objetivo**:
+
+Aprender a utilizar funciones lambda y operaciones como map, filter y reduce para trabajar con colecciones de datos.
+
+**Descripción**:
+
+Crear un programa que utilice una lista de números para aplicar operaciones funcionales usando lambda, map, filter y reduce.
+
+**Instrucciones**:
+
+- Crea una lista de números del 1 al 10.
+
+- Usa map con una función lambda para obtener el doble de cada número.
+
+- Usa filter para filtrar solo los números pares.
+
+- Usa reduce para obtener la suma de todos los números en la lista.
+
+<details>
+  <summary>Posibles soluciones</summary>
+
+**Código**:
+
+```python
+from functools import reduce
+
+# Lista de números
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# Usando map con lambda
+dobles = list(map(lambda x: x * 2, numeros))
+print(f"Lista de dobles: {dobles}")
+
+# Usando filter con lambda
+pares = list(filter(lambda x: x % 2 == 0, numeros))
+print(f"Números pares: {pares}")
+
+# Usando reduce con lambda
+suma = reduce(lambda x, y: x + y, numeros)
+print(f"Suma de números: {suma}")
+```
+</details>
+
+:::

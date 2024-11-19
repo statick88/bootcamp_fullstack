@@ -1,0 +1,127 @@
+:::{.justify}
+## Pruebas y Debugging
+
+:::{.center}
+![Pruebas y Debugging](./images/pruebas.png)
+:::
+
+Escribir pruebas y depurar el código son prácticas esenciales para garantizar la calidad y facilitar el mantenimiento.
+
+### Conceptos clave
+
+- **unittest y pytest**: Frameworks para pruebas.
+
+- **assert**: Para comprobar condiciones.
+
+- **pdb**: Para depuración interactiva.
+
+Ejemplo
+```python
+# Prueba simple con unittest
+import unittest
+
+def suma(a, b):
+    return a + b
+
+class TestSuma(unittest.TestCase):
+    def test_suma(self):
+        self.assertEqual(suma(1, 2), 3)
+
+if __name__ == '__main__':
+    unittest.main()
+```
+### Ejemplo Práctico
+
+**Objetivo**:
+
+Aprender a escribir pruebas unitarias y utilizar herramientas de depuración para asegurar la calidad del código.
+
+**Descripción**:
+
+En este tema se cubren pruebas unitarias con unittest, depuración con pdb y el uso de pytest para realizar pruebas automatizadas.
+
+**Instrucciones**:
+
+- Escribe pruebas unitarias para una función que realiza una operación matemática (suma).
+
+- Aprende a utilizar el depurador pdb para inspeccionar el flujo de ejecución.
+
+**Ejemplos prácticos**:
+
+#### 1. Pruebas con unittest:
+
+El módulo unittest permite crear casos de prueba, asegurando que el código funcione correctamente.
+
+<details>
+  <summary>Posibles soluciones</summary>
+
+```python
+import unittest
+
+# Función simple que vamos a probar
+def suma(a, b):
+    return a + b
+
+# Clase de prueba
+class TestSuma(unittest.TestCase):
+    def test_suma(self):
+        self.assertEqual(suma(1, 2), 3)  # Verifica que la suma de 1 y 2 sea 3
+
+if __name__ == '__main__':
+    unittest.main()  # Ejecuta las pruebas
+```
+
+</details>
+
+#### 2. Pruebas con pytest:
+
+pytest es una alternativa moderna y más sencilla para realizar pruebas. Aquí utilizamos el mismo ejemplo de la función suma.
+
+<details>
+  <summary>Posibles soluciones</summary>
+
+```python
+# Guarda esto en un archivo llamado test_funciones.py
+
+def suma(a, b):
+    return a + b
+
+def test_suma():
+    assert suma(1, 2) == 3  # Verifica que la suma de 1 y 2 sea 3
+```
+Ejecuta las pruebas con el comando:
+
+```bash
+pytest test_funciones.py
+```
+</details>
+
+#### 3. Depuración con pdb:
+
+El depurador pdb permite interactuar con el código paso a paso, inspectando variables y el flujo de ejecución.
+
+<details>
+  <summary>Posibles soluciones</summary>
+
+```python
+import pdb
+
+def suma(a, b):
+    pdb.set_trace()  # Aquí se activa el depurador
+    return a + b
+
+resultado = suma(1, 2)
+print(f"Resultado: {resultado}")
+```
+Cuando ejecutes el programa, el depurador se activará en pdb.set_trace(). Desde ahí, podrás usar comandos como n para avanzar a la siguiente línea o p para imprimir el valor de una variable.
+
+**Comandos útiles de pdb**:
+
+- **n**: Ejecuta la siguiente línea de código.
+
+- **p variable**: Muestra el valor de una variable.
+
+- **q**: Sale del depurador
+
+</details>
+:::

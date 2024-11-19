@@ -8,7 +8,7 @@
 
 <meta name="description" content="Bootcamp de Desarrollo Web FullStack con Python, Django y React">
 
-<title>Introducción a la web – Bootcamp Desarrollo Web FullStack</title>
+<title>Excepciones y Manejo de Errores – Bootcamp Desarrollo Web FullStack</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../unidades/Proyectos/3_funciones.html" rel="next">
+<link href="../../unidades/unidad5/2_lectura_y_escritura_de_archivos.html" rel="next">
 <link href="../../unidades/unidad5/intro.html" rel="prev">
 <link href="../../logo.jpeg" rel="icon" type="image/jpeg">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
@@ -121,7 +121,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad6/intro_web.html">Unidad 5: Desarrollo Web</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad6/intro_web.html"><span class="chapter-title">Introducción a la web</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad5/intro.html">Unidad 5: Python Avanzado</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad5/1_exepciones_manejo_de_errores.html"><span class="chapter-title">Excepciones y Manejo de Errores</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -308,45 +308,79 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
  <span class="menu-text">Unidad 5: Python Avanzado</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../unidades/unidad5/intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Conceptos Avanzados en Python</span></a>
   </div>
 </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Unidad 5: Desarrollo Web</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad6/intro_web.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Introducción a la web</span></a>
+  <a href="../../unidades/unidad5/1_exepciones_manejo_de_errores.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Excepciones y Manejo de Errores</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad5/2_lectura_y_escritura_de_archivos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lectura y Escritura de Archivos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad5/3_programacion_funcional.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Programación Funcional</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad5/4_comprension_y_generadores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Comprensiones y Generadores</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad5/5_modulos_y_paquetes_avanzados.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulos y Paquetes Avanzados</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad5/6_decoradores_y_context_managers.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Decoradores y Context Managers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad5/7_colecciones_de_datos_y_estructuras_especializadas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Colecciones de Datos y Estructuras Especializadas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad5/8_manipulacion_de_fechas_y_tiempos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Manipulación de Fechas y Tiempos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad5/9_concurrencia_y_paralelismo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Concurrencia y Paralelismo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad5/10_pruebas_y_debugging.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Pruebas y Debugging</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
  <span class="menu-text">Proyectos</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../unidades/Proyectos/3_funciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span></a>
@@ -384,37 +418,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#qué-es-la-web" id="toc-qué-es-la-web" class="nav-link active" data-scroll-target="#qué-es-la-web">¿Qué es la web?</a></li>
-  <li><a href="#diferencia-entre-internet-y-la-web" id="toc-diferencia-entre-internet-y-la-web" class="nav-link" data-scroll-target="#diferencia-entre-internet-y-la-web">Diferencia entre Internet y la Web:</a></li>
-  <li><a href="#ejemplo-de-productosservicios" id="toc-ejemplo-de-productosservicios" class="nav-link" data-scroll-target="#ejemplo-de-productosservicios">Ejemplo de productos/servicios:</a></li>
-  <li><a href="#cómo-funciona-la-web" id="toc-cómo-funciona-la-web" class="nav-link" data-scroll-target="#cómo-funciona-la-web">¿Cómo funciona la web?</a></li>
-  <li><a href="#qué-es-un-navegador-web" id="toc-qué-es-un-navegador-web" class="nav-link" data-scroll-target="#qué-es-un-navegador-web">¿Qué es un navegador web?</a></li>
-  <li><a href="#qué-es-html" id="toc-qué-es-html" class="nav-link" data-scroll-target="#qué-es-html">¿Qué es HTML?</a></li>
-  <li><a href="#qué-es-css" id="toc-qué-es-css" class="nav-link" data-scroll-target="#qué-es-css">¿Qué es CSS?</a></li>
-  <li><a href="#qué-es-javascript" id="toc-qué-es-javascript" class="nav-link" data-scroll-target="#qué-es-javascript">¿Qué es JavaScript?</a></li>
-  <li><a href="#qué-es-node.js" id="toc-qué-es-node.js" class="nav-link" data-scroll-target="#qué-es-node.js">¿Qué es Node.js?</a></li>
-  <li><a href="#qué-es-react" id="toc-qué-es-react" class="nav-link" data-scroll-target="#qué-es-react">¿Qué es React?</a></li>
-  <li><a href="#frontend-vs.-backend" id="toc-frontend-vs.-backend" class="nav-link" data-scroll-target="#frontend-vs.-backend">Frontend vs.&nbsp;Backend</a></li>
-  <li><a href="#api-y-api-rest" id="toc-api-y-api-rest" class="nav-link" data-scroll-target="#api-y-api-rest">API y API REST</a></li>
-  <li><a href="#extra" id="toc-extra" class="nav-link" data-scroll-target="#extra">Extra</a>
-  <ul class="collapse">
-  <li><a href="#server-site-rendering" id="toc-server-site-rendering" class="nav-link" data-scroll-target="#server-site-rendering">Server Site Rendering:</a></li>
-  <li><a href="#conclusión" id="toc-conclusión" class="nav-link" data-scroll-target="#conclusión">Conclusión</a></li>
-  </ul></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad6/intro_web.html">Unidad 5: Desarrollo Web</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad6/intro_web.html"><span class="chapter-title">Introducción a la web</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad5/intro.html">Unidad 5: Python Avanzado</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad5/1_exepciones_manejo_de_errores.html"><span class="chapter-title">Excepciones y Manejo de Errores</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Introducción a la web</span></h1>
+<h1 class="title"><span class="chapter-title">Excepciones y Manejo de Errores</span></h1>
 </div>
 
 
@@ -431,181 +443,81 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="[.center]">
+<div class="justify">
+<div class="center">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="./images/intro_to_web.png" class="img-fluid figure-img" width="200"></p>
-<figcaption>Intro to Web</figcaption>
+<p><img src="./images/exepciones.png" class="img-fluid figure-img"></p>
+<figcaption>Excepciones y Manejo de Errores</figcaption>
 </figure>
 </div>
 </div>
-<section id="qué-es-la-web" class="level2">
-<h2 class="anchored" data-anchor-id="qué-es-la-web">¿Qué es la web?</h2>
-<p><strong>Definición</strong>: La web es un sistema de documentos interconectados que se acceden a través de Internet.</p>
+<p>El manejo adecuado de errores es esencial para escribir código robusto. Las excepciones permiten manejar situaciones inesperadas durante la ejecución de un programa sin que este termine abruptamente.</p>
+<section id="conceptos-clave" class="level3">
+<h3 class="anchored" data-anchor-id="conceptos-clave">Conceptos clave</h3>
+<ul>
+<li><strong>try</strong>: Bloque donde intentamos ejecutar código que puede generar una excepción.</li>
+<li><strong>except</strong>: Bloque donde capturamos y gestionamos una excepción.</li>
+<li><strong>else</strong>: Bloque que se ejecuta si no hay excepciones.</li>
+<li><strong>finally</strong>: Bloque que se ejecuta independientemente de si hubo una excepción o no.</li>
+</ul>
 </section>
-<section id="diferencia-entre-internet-y-la-web" class="level2">
-<h2 class="anchored" data-anchor-id="diferencia-entre-internet-y-la-web">Diferencia entre Internet y la Web:</h2>
-<p>Internet es una red global de computadoras conectadas entre sí que permite el intercambio de información (red de redes). La Web (o la World Wide Web, WWW) es una forma específica de acceder a la información a través de documentos interconectados (páginas web) usando navegadores. La web es solo una parte de Internet.</p>
+<section id="ejemplo" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo">Ejemplo</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    numero <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Introduce un número: "</span>))</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ValueError</span> <span class="im">as</span> e:</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Error: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">. Introduce un número válido."</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"El número es </span><span class="sc">{</span>numero<span class="sc">}</span><span class="ss">."</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="cf">finally</span>:</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Operación terminada."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="ejemplo-de-productosservicios" class="level2">
-<h2 class="anchored" data-anchor-id="ejemplo-de-productosservicios">Ejemplo de productos/servicios:</h2>
-<p><strong>Google Search</strong>: Un motor de búsqueda que accede a la web para ofrecer resultados.</p>
-<p><strong>Facebook, Twitter, Instagram</strong>: Redes sociales que permiten interactuar con contenido en la web.</p>
-</section>
-<section id="cómo-funciona-la-web" class="level2">
-<h2 class="anchored" data-anchor-id="cómo-funciona-la-web">¿Cómo funciona la web?</h2>
-<p>Proceso de carga de una página web:</p>
-<ol type="1">
-<li><p>Un usuario escribe una URL en su navegador (ej., www.ejemplo.com).</p></li>
-<li><p>El navegador envía una solicitud HTTP a un servidor web donde está alojada la página.</p></li>
-<li><p>El servidor responde con archivos HTML, CSS y JavaScript.</p></li>
-<li><p>El navegador interpreta estos archivos y muestra la página web.</p></li>
-</ol>
-<p><strong>Ejemplo de productos/servicios</strong>:</p>
-<p><strong>Amazon</strong>: Cuando accedes a la tienda, tu navegador hace solicitudes HTTP al servidor de Amazon para cargar los productos, imágenes, y precios.</p>
-</section>
-<section id="qué-es-un-navegador-web" class="level2">
-<h2 class="anchored" data-anchor-id="qué-es-un-navegador-web">¿Qué es un navegador web?</h2>
-<p><strong>Definición</strong>: El navegador es un software que permite acceder a las páginas web. Interpreta el código HTML, CSS y JavaScript para mostrar la información en forma de contenido visual.</p>
-<p><strong>Ejemplo de productos/servicios</strong>:</p>
-<p>Google Chrome, Mozilla Firefox, Safari: Son navegadores que permiten ver páginas web y usar aplicaciones en línea como Gmail, YouTube, etc.</p>
-</section>
-<section id="qué-es-html" class="level2">
-<h2 class="anchored" data-anchor-id="qué-es-html">¿Qué es HTML?</h2>
-<p><strong>Definición</strong>: HTML (HyperText Markup Language) es el lenguaje de marcado estándar utilizado para crear páginas web. Define la estructura de los documentos web mediante etiquetas.</p>
-<p><strong>Ejemplo de productos/servicios</strong>:</p>
-<p><strong>Wikipedia</strong>: La información se estructura usando HTML, con encabezados, párrafos, listas y enlaces para organizar el contenido.</p>
-<p><strong>Ejemplo de código básico HTML</strong>:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>Mi Página Web<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>Bienvenidos a mi sitio web<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Este es un párrafo de texto.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://www.google.com"</span><span class="dt">&gt;</span>Ir a Google<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="qué-es-css" class="level2">
-<h2 class="anchored" data-anchor-id="qué-es-css">¿Qué es CSS?</h2>
-<p><strong>Definición</strong>: CSS (Cascading Style Sheets) es un lenguaje utilizado para describir la presentación de un documento HTML. Permite estilizar elementos como el color, tamaño y disposición de los elementos en la página.</p>
-<p><strong>Ejemplo de productos/servicios</strong>:</p>
-<p><strong>Netflix</strong>: La interfaz de usuario de Netflix se diseña con CSS para que el contenido (películas, series) se muestre de manera atractiva y organizada.</p>
-<p><strong>Ejemplo de código CSS</strong>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>body {</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">,</span> <span class="dv">sans-serif</span><span class="op">;</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">#f0f0f0</span><span class="op">;</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<section id="excepciones-personalizadas" class="level3">
+<h3 class="anchored" data-anchor-id="excepciones-personalizadas">Excepciones personalizadas</h3>
+<p>Podemos crear nuestras propias excepciones para situaciones específicas.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MiError(<span class="pp">Exception</span>):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, mensaje):</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.mensaje <span class="op">=</span> mensaje</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(<span class="va">self</span>.mensaje)</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>h1 {</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">#2c3e50</span><span class="op">;</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>p {</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">16</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">raise</span> MiError(<span class="st">"Algo salió mal"</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> MiError <span class="im">as</span> e:</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Capturado: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="qué-es-javascript" class="level2">
-<h2 class="anchored" data-anchor-id="qué-es-javascript">¿Qué es JavaScript?</h2>
-<p><strong>Definición</strong>: JavaScript es un lenguaje de programación que permite agregar interactividad a las páginas web. Se ejecuta en el navegador del usuario, lo que permite crear dinámicamente contenido o interactuar con el servidor sin necesidad de recargar la página.</p>
-<p><strong>Conceptos básicos de JavaScript</strong>:</p>
-<p><strong>Variables</strong>: Contienen datos (números, cadenas de texto, etc.).</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> nombre <span class="op">=</span> <span class="st">"Juan"</span><span class="op">;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>Funciones<span class="op">:</span> Bloques de código que realizan una tarea específica<span class="op">.</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>javascript</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>Copiar código</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">saludar</span>() {</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"¡Hola, "</span> <span class="op">+</span> nombre <span class="op">+</span> <span class="st">"!"</span>)<span class="op">;</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">saludar</span>()<span class="op">;</span>  <span class="co">// Imprime: ¡Hola, Juan!</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>Eventos<span class="op">:</span> JavaScript se utiliza para manejar eventos como clics o movimientos del ratón<span class="op">.</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>javascript</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>Copiar código</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"boton"</span>)<span class="op">.</span><span class="at">onclick</span> <span class="op">=</span> <span class="kw">function</span>() {</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">alert</span>(<span class="st">"¡Botón presionado!"</span>)<span class="op">;</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Ejemplo de productos/servicios</strong>:</p>
-<p><strong>Google Maps</strong>: Utiliza JavaScript para mostrar mapas interactivos y permitir que los usuarios hagan clic en ubicaciones. <strong>YouTube</strong>: Utiliza JavaScript para permitir la reproducción de videos y la interacción con la interfaz.</p>
+<section id="ejemplo-práctico" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo-práctico">Ejemplo Práctico</h3>
+<p><strong>Objetivo</strong>:</p>
+<p>Aprender a manejar excepciones en Python para crear un programa robusto que gestione entradas de usuario incorrectas.</p>
+<p><strong>Descripción</strong>: Crear un programa que pida al usuario un número, y en caso de que se ingrese algo que no sea un número, maneje el error de manera adecuada, mostrando un mensaje informativo.</p>
+<p><strong>Instrucciones</strong>:</p>
+<ul>
+<li><p>Utiliza un bloque try-except para manejar excepciones de tipo ValueError.</p></li>
+<li><p>Agrega un bloque else para confirmar la entrada del usuario si es válida.</p></li>
+<li><p>Incluye un bloque finally que imprima un mensaje de despedida.</p></li>
+</ul>
+<details>
+<summary>
+Posibles soluciones
+</summary>
+<p><strong>Código</strong>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> pedir_numero():</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        numero <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Introduce un número: "</span>))</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">ValueError</span>:</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"¡Error! No has introducido un número válido."</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Has introducido el número: </span><span class="sc">{</span>numero<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">finally</span>:</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Fin del programa"</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>pedir_numero()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </section>
-<section id="qué-es-node.js" class="level2">
-<h2 class="anchored" data-anchor-id="qué-es-node.js">¿Qué es Node.js?</h2>
-<p><strong>Definición</strong>: Node.js es un entorno de ejecución para JavaScript en el lado del servidor. Permite usar JavaScript para crear aplicaciones backend, lo que facilita la construcción de aplicaciones completas con JavaScript tanto en el frontend como en el backend.</p>
-<p><strong>Ejemplo de productos/servicios</strong>:</p>
-<p><strong>Netflix (backend)</strong>: Utiliza Node.js para manejar grandes volúmenes de datos y conexiones en tiempo real para la transmisión de contenido.</p>
-<p><strong>Ejemplo de código básico en Node.js</strong>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> http <span class="op">=</span> <span class="pp">require</span>(<span class="st">'http'</span>)<span class="op">;</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> server <span class="op">=</span> http<span class="op">.</span><span class="fu">createServer</span>((req<span class="op">,</span> res) <span class="kw">=&gt;</span> {</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  res<span class="op">.</span><span class="fu">write</span>(<span class="st">'¡Hola Mundo!'</span>)<span class="op">;</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  res<span class="op">.</span><span class="fu">end</span>()<span class="op">;</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>server<span class="op">.</span><span class="fu">listen</span>(<span class="dv">3000</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">'Servidor corriendo en http://localhost:3000'</span>)<span class="op">;</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="qué-es-react" class="level2">
-<h2 class="anchored" data-anchor-id="qué-es-react">¿Qué es React?</h2>
-<p><strong>Definicióno</strong>: React es una biblioteca de JavaScript para construir interfaces de usuario. Permite crear aplicaciones web interactivas mediante la construcción de componentes reutilizables que gestionan su propio estado.</p>
-<p><strong>Ejemplo de productos/servicios</strong>:</p>
-<p><strong>Facebook</strong>: Fue desarrollado con React para construir interfaces de usuario rápidas y reactivas. <strong>Instagram</strong>: Utiliza React para gestionar la interacción con las publicaciones, los comentarios y las actualizaciones en tiempo real.</p>
-<p><strong>Ejemplo de código básico en React</strong>:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> React<span class="op">,</span> { useState } <span class="im">from</span> <span class="st">'react'</span><span class="op">;</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">App</span>() {</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> [contador<span class="op">,</span> setContador] <span class="op">=</span> <span class="fu">useState</span>(<span class="dv">0</span>)<span class="op">;</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>div<span class="op">&gt;</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;</span>h1<span class="op">&gt;</span><span class="dt">Contador</span><span class="op">:</span> {contador}<span class="op">&lt;/</span>h1<span class="op">&gt;</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;</span>button onClick<span class="op">=</span>{() <span class="kw">=&gt;</span> <span class="fu">setContador</span>(contador <span class="op">+</span> <span class="dv">1</span>)}<span class="op">&gt;</span>Incrementar<span class="op">&lt;/</span>button<span class="op">&gt;</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;/</span>div<span class="op">&gt;</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  )<span class="op">;</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> App<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="frontend-vs.-backend" class="level2">
-<h2 class="anchored" data-anchor-id="frontend-vs.-backend">Frontend vs.&nbsp;Backend</h2>
-<p><strong>Definición</strong>:</p>
-<p><strong>Frontend</strong>: Es la parte de la aplicación con la que interactúan los usuarios. Incluye todo lo que se ve en la pantalla: diseño, contenido y la lógica de interactividad (HTML, CSS, JavaScript, React).</p>
-<p><strong>Backend</strong>: Es la parte “invisible” que maneja los datos y la lógica del servidor. Se encarga de procesar las solicitudes de los usuarios, interactuar con bases de datos y enviar respuestas al frontend (Node.js, Python, Ruby, PHP).</p>
-<p><strong>Ejemplo de productos/servicios</strong>:</p>
-<p><strong>Amazon (Frontend)</strong>: La página que ves cuando compras algo, donde se muestran los productos, el carrito y el proceso de pago.</p>
-<p><strong>Amazon (Backend)</strong>: Los sistemas que gestionan los inventarios, las transacciones y la autenticación de usuarios.</p>
-</section>
-<section id="api-y-api-rest" class="level2">
-<h2 class="anchored" data-anchor-id="api-y-api-rest">API y API REST</h2>
-<p><strong>Definición</strong>:</p>
-<p><strong>API (Interfaz de Programación de Aplicaciones)</strong>: Es un conjunto de reglas y herramientas que permiten que diferentes aplicaciones se comuniquen entre sí. En la web, las APIs permiten que el frontend y el backend intercambien datos.</p>
-<p><strong>API REST (Representational State Transfer)</strong>: Es un estilo arquitectónico para diseñar APIs que usan HTTP y siguen principios como la claridad en las URLs, el uso de métodos HTTP (GET, POST, PUT, DELETE) y la estructura de datos en formato JSON.</p>
-<p><strong>Ejemplo de productos/servicios</strong>:</p>
-<p><strong>Twitter API</strong>: Permite a las aplicaciones externas interactuar con Twitter, como publicar tuits o leer mensajes.</p>
-<p><strong>Spotify API</strong>: Permite integrar las funciones de Spotify (como reproducir canciones) en otras aplicaciones.</p>
-<p><strong>Ejemplo de llamada a una API REST</strong>:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fetch</span>(<span class="st">'https://api.ejemplo.com/data'</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">then</span>(response <span class="kw">=&gt;</span> response<span class="op">.</span><span class="fu">json</span>())</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">then</span>(data <span class="kw">=&gt;</span> <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(data))<span class="op">;</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">// Ejemplo de respuesta:</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">// {</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">//   "nombre": "Juan",</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">//   "edad": 30</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">// }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="extra" class="level1">
-<h1>Extra</h1>
-<section id="server-site-rendering" class="level2">
-<h2 class="anchored" data-anchor-id="server-site-rendering">Server Site Rendering:</h2>
-<p><strong>Definición</strong>:</p>
-</section>
-<section id="conclusión" class="level2">
-<h2 class="anchored" data-anchor-id="conclusión">Conclusión</h2>
-<p>La web es un sistema de documentos interconectados que se acceden a través de Internet. Los navegadores web permiten acceder a la web y mostrar páginas creadas con HTML, CSS y JavaScript. Node.js permite ejecutar JavaScript en el lado del servidor, mientras que React facilita la creación de interfaces de usuario interactivas. Las APIs y las APIs REST permiten que las aplicaciones se comuniquen entre sí y compartan datos.</p>
+</div>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1183,8 +1095,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../unidades/Proyectos/3_funciones.html" class="pagination-link" aria-label="🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python">
-        <span class="nav-page-text"><span class="chapter-title">🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../unidades/unidad5/2_lectura_y_escritura_de_archivos.html" class="pagination-link" aria-label="Lectura y Escritura de Archivos">
+        <span class="nav-page-text"><span class="chapter-title">Lectura y Escritura de Archivos</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

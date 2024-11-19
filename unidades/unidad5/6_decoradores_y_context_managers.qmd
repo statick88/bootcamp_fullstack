@@ -1,0 +1,95 @@
+:::{.justify}
+## Decoradores y Context Managers
+
+:::{.center}
+![Decoradores](./images/decoradores.png)
+:::
+
+Los decoradores permiten modificar el comportamiento de una función, mientras que los context managers gestionan recursos como archivos o conexiones a bases de datos.
+
+### Conceptos clave
+
+- **@decorator**: Sintaxis para aplicar un decorador.
+
+- **with y __enter__, __exit__**: Para crear context managers.
+
+Ejemplo
+
+```python
+# Decorador
+def mi_decorador(func):
+    def wrapper():
+        print("Antes de la función")
+        func()
+        print("Después de la función")
+    return wrapper
+
+@mi_decorador
+def saludo():
+    print("Hola")
+
+saludo()
+
+# Context manager
+class MiContexto:
+    def __enter__(self):
+        print("Entrando al contexto")
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        print("Saliendo del contexto")
+
+with MiContexto():
+    print("Dentro del contexto")
+```
+### Ejemplo Práctico
+
+**Objetivo**:
+
+Aprender a crear decoradores y context managers en Python.
+
+**Descripción**:
+Crea un decorador que registre la ejecución de una función y un context manager que gestione un archivo de log.
+
+**Instrucciones**:
+
+- Crea un decorador que imprima la fecha y hora de la ejecución de una función.
+
+- Crea un context manager que gestione la apertura y cierre de un archivo de log.
+
+<details>
+  <summary>Posibles soluciones</summary>
+
+**Código**:
+
+```python
+import time
+
+# Decorador que registra la ejecución de una función
+def registrar(func):
+    def wrapper(*args, **kwargs):
+        print(f"Ejecutando {func.__name__} a las {time.strftime('%H:%M:%S')}")
+        return func(*args, **kwargs)
+    return wrapper
+
+@registrar
+def saludo():
+    print("¡Hola, Mundo!")
+
+saludo()
+
+# Context manager para log
+class LogManager:
+    def __enter__(self):
+        self.archivo = open('log.txt', 'a')
+        return self.archivo
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        self.archivo.close()
+
+with LogManager() as log:
+    log.write(f"Acción registrada a las {time.strftime('%H:%M:%S')}\n")
+```
+</details>
+
+:::

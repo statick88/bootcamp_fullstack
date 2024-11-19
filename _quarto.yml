@@ -59,13 +59,23 @@ book:
         - unidades/unidad4/2_docker_compose.qmd
         - unidades/unidad4/3_DevContainers.qmd
 
-    - part: "Unidad 5: Django"
+    - part: "Unidad 5: Python Avanzado"
       chapters:
         - unidades/unidad5/intro.qmd
+        - unidades/unidad5/1_exepciones_manejo_de_errores.qmd
+        - unidades/unidad5/2_lectura_y_escritura_de_archivos.qmd
+        - unidades/unidad5/3_programacion_funcional.qmd
+        - unidades/unidad5/4_comprension_y_generadores.qmd
+        - unidades/unidad5/5_modulos_y_paquetes_avanzados.qmd
+        - unidades/unidad5/6_decoradores_y_context_managers.qmd
+        - unidades/unidad5/7_colecciones_de_datos_y_estructuras_especializadas.qmd
+        - unidades/unidad5/8_manipulacion_de_fechas_y_tiempos.qmd
+        - unidades/unidad5/9_concurrencia_y_paralelismo.qmd
+        - unidades/unidad5/10_pruebas_y_debugging.qmd
 
-    - part: "Unidad 5: Desarrollo Web"
-      chapters:
-        - unidades/unidad6/intro_web.qmd
+    # - part: "Unidad 5: Desarrollo Web"
+    #   chapters:
+    #     - unidades/unidad6/intro_web.qmd
 
     - part: "Proyectos"
       chapters:

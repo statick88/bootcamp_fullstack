@@ -1582,18 +1582,18 @@
     "text": "Paso 1: Configuración inicial del proyecto",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
     ]
   },
   {
     "objectID": "unidades/Proyectos/6_calculadora.html#paso-1-configuración-inicial-del-proyecto",
     "href": "unidades/Proyectos/6_calculadora.html#paso-1-configuración-inicial-del-proyecto",
     "title": "Laboratorio: Calculadora en Python",
-    "section": "",
-    "text": "Crear el directorio del proyecto\nComienza creando un nuevo directorio para el proyecto:\nmkdir calculadora\ncd calculadora\nInicializar un repositorio Git Inicializa un repositorio Git en la carpeta del proyecto:\ngit init\nCrear el archivo main.py\nCrea un archivo main.py que será el punto de entrada del programa:\ntouch main.py\nPrimer commit\nAñadimos el archivo inicial al control de versiones:\ngit add main.py\ngit commit -m \"Inicio del proyecto: archivo main.py creado\"",
+    "section": "Paso 1: Configuración inicial del proyecto",
+    "text": "Paso 1: Configuración inicial del proyecto\n\nCrear el directorio del proyecto\nComienza creando un nuevo directorio para el proyecto:\nmkdir calculadora\ncd calculadora\nInicializar un repositorio Git Inicializa un repositorio Git en la carpeta del proyecto:\ngit init\nCrear el archivo main.py\nCrea un archivo main.py que será el punto de entrada del programa:\ntouch main.py\nPrimer commit\nAñadimos el archivo inicial al control de versiones:\ngit add main.py\ngit commit -m \"Inicio del proyecto: archivo main.py creado\"",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
     ]
   },
   {
@@ -1601,10 +1601,10 @@
     "href": "unidades/Proyectos/6_calculadora.html#paso-2-agregar-las-operaciones-básicas-suma-resta-multiplicación-división",
     "title": "Laboratorio: Calculadora en Python",
     "section": "Paso 2: Agregar las operaciones básicas (suma, resta, multiplicación, división)",
-    "text": "Paso 2: Agregar las operaciones básicas (suma, resta, multiplicación, división)\n\nCódigo inicial\nAbre el archivo main.py y añade el siguiente código para implementar las operaciones básicas:\ndef suma(a, b):\n    \"\"\"Devuelve la suma de dos números.\"\"\"\n    return a + b\n\n\ndef resta(a, b):\n    \"\"\"Devuelve la resta de dos números.\"\"\"\n    return a - b\n\n\ndef multiplicacion(a, b):\n    \"\"\"Devuelve la multiplicación de dos números.\"\"\"\n    return a * b\n\n\ndef division(a, b):\n    \"\"\"Devuelve la división de dos números. Maneja división entre cero.\"\"\"\n    try:\n        return a / b\n    except ZeroDivisionError:\n        return \"Error: No se puede dividir entre cero.\"\n\n\n# Punto de entrada\nif __name__ == \"__main__\":\n    print(\"Bienvenido a la calculadora básica\")\n    num1 = float(input(\"Ingrese el primer número: \"))\n    num2 = float(input(\"Ingrese el segundo número: \"))\n\n    print(f\"Suma: {suma(num1, num2)}\")\n    print(f\"Resta: {resta(num1, num2)}\")\n    print(f\"Multiplicación: {multiplicacion(num1, num2)}\")\n    print(f\"División: {division(num1, num2)}\")\n\n\nCrear un commit\nGuarda los cambios y realiza un commit con la descripción del avance:\ngit add main.py\ngit commit -m \"Implementadas las operaciones básicas (suma, resta, multiplicación, división)\"",
+    "text": "Paso 2: Agregar las operaciones básicas (suma, resta, multiplicación, división)\n\nCódigo inicial\nAbre el archivo main.py y añade el siguiente código para implementar las operaciones básicas:\ndef suma(a, b):\n    \"\"\"Devuelve la suma de dos números.\"\"\"\n    return a + b\n\n\ndef resta(a, b):\n    \"\"\"Devuelve la resta de dos números.\"\"\"\n    return a - b\n\n\ndef multiplicacion(a, b):\n    \"\"\"Devuelve la multiplicación de dos números.\"\"\"\n    return a * b\n\n\ndef division(a, b):\n    \"\"\"Devuelve la división de dos números. Maneja división entre cero.\"\"\"\n    try:\n        return a / b\n    except ZeroDivisionError:\n        return \"Error: No se puede dividir entre cero.\"\n\n\n# Punto de entrada\nif __name__ == \"__main__\":\n    print(\"Bienvenido a la calculadora básica\")\n    num1 = float(input(\"Ingrese el primer número: \"))\n    num2 = float(input(\"Ingrese el segundo número: \"))\n\n    print(f\"Suma: {suma(num1, num2)}\")\n    print(f\"Resta: {resta(num1, num2)}\")\n    print(f\"Multiplicación: {multiplicacion(num1, num2)}\")\n    print(f\"División: {division(num1, num2)}\")\n\n\nCrear un commit\nGuarda los cambios y realiza un commit con la descripción del avance:\ngit add main.py\ngit commit -m \"Implementadas las operaciones básicas\"",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
     ]
   },
   {
@@ -1615,7 +1615,7 @@
     "text": "Paso 3: Agregar funcionalidad de radicación y potenciación\n\nActualizar main.py\nAñadimos funciones para radicación y potenciación, y las integramos al flujo del programa:\ndef radicacion(base, indice):\n    \"\"\"Devuelve la raíz de un número dado el índice.\"\"\"\n    try:\n        return base ** (1 / indice)\n    except ZeroDivisionError:\n        return \"Error: El índice de la raíz no puede ser cero.\"\n\n\ndef potenciacion(base, exponente):\n    \"\"\"Devuelve la potencia de un número dado un exponente.\"\"\"\n    return base ** exponente\n\n\n# Punto de entrada actualizado\nif __name__ == \"__main__\":\n    print(\"Bienvenido a la calculadora extendida\")\n    num1 = float(input(\"Ingrese el primer número: \"))\n    num2 = float(input(\"Ingrese el segundo número: \"))\n\n    print(f\"Suma: {suma(num1, num2)}\")\n    print(f\"Resta: {resta(num1, num2)}\")\n    print(f\"Multiplicación: {multiplicacion(num1, num2)}\")\n    print(f\"División: {division(num1, num2)}\")\n    print(f\"Radicación: {radicacion(num1, num2)}\")\n    print(f\"Potenciación: {potenciacion(num1, num2)}\")\n\n\nCrear un commit\nGuarda los cambios y realiza un commit:\ngit add main.py\ngit commit -m \"Añadidas las operaciones de radicación y potenciación\"",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
     ]
   },
   {
@@ -1626,7 +1626,7 @@
     "text": "Paso 4: Refactorización del código en múltiples archivos\n\nCrear estructura modular\nOrganizamos las operaciones en un archivo separado llamado operaciones.py.\ntouch operaciones.py\nEn el archivo operaciones.py, coloca las funciones:\n# operaciones.py\n\ndef suma(a, b):\n    \"\"\"Devuelve la suma de dos números.\"\"\"\n    return a + b\n\n\ndef resta(a, b):\n    \"\"\"Devuelve la resta de dos números.\"\"\"\n    return a - b\n\n\ndef multiplicacion(a, b):\n    \"\"\"Devuelve la multiplicación de dos números.\"\"\"\n    return a * b\n\n\ndef division(a, b):\n    \"\"\"Devuelve la división de dos números. Maneja división entre cero.\"\"\"\n    try:\n        resultado = a / b\n    except ZeroDivisionError:\n        return \"Error: No se puede dividir entre cero.\"\n    else:\n        return resultado\n    finally:\n        pass\n\n\ndef radicacion(base, indice):\n    \"\"\"Devuelve la raíz de un número dado el índice.\"\"\"\n    try:\n        return base ** (1 / indice)\n    except ZeroDivisionError:\n        return \"Error: El índice de la raíz no puede ser cero.\"\n\n\ndef potenciacion(base, exponente):\n    \"\"\"Devuelve la potencia de un número dado un exponente.\"\"\"\n    return base ** exponente\n\n\nActualizar main.py\nActualiza main.py para importar las funciones desde operaciones.py:\n# main.py\nfrom operaciones import suma, resta, multiplicacion, division, radicacion, potenciacion\n\nif __name__ == \"__main__\":\n    print(\"Bienvenido a la calculadora modular\")\n    num1 = float(input(\"Ingrese el primer número: \"))\n    num2 = float(input(\"Ingrese el segundo número: \"))\n\n    print(f\"Suma: {suma(num1, num2)}\")\n    print(f\"Resta: {resta(num1, num2)}\")\n    print(f\"Multiplicación: {multiplicacion(num1, num2)}\")\n    print(f\"División: {division(num1, num2)}\")\n    print(f\"Radicación: {radicacion(num1, num2)}\")\n    print(f\"Potenciación: {potenciacion(num1, num2)}\")\n\n\nCrear un commit\nGuarda los cambios y realiza un commit:\ngit add main.py operaciones.py\ngit commit -m \"Refactorización: código modularizado en main.py y operaciones.py\"",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
     ]
   },
   {
@@ -1637,7 +1637,7 @@
     "text": "Paso 5: Manejo de errores más detallado\n\nMejorar el manejo de errores en division\nModifica la función division para agregar un bloque else para manejar operaciones exitosas y un finally para mostrar un mensaje final:\ndef division(a, b):\n    \"\"\"Devuelve la división de dos números.\"\"\"\n    try:\n        resultado = a / b\n    except ZeroDivisionError:\n        print(\"Operación de división intentada.\")  # Mostrar mensaje solo si ocurre un error\n        return \"Error: No se puede dividir entre cero.\"\n    else:\n        return resultado\n    finally:\n        pass  # El bloque finally se puede dejar vacío o eliminarlo si no es necesario\n\n\nCrear un commit\nRealiza un nuevo commit con los cambios:\ngit add operaciones.py\ngit commit -m \"Mejorado el manejo de errores con else y finally en división\"",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
     ]
   },
   {
@@ -1659,7 +1659,7 @@
     "text": "Paso 6: Testeo automatizado\n\nCrear pruebas unitarias\nAhora implementamos pruebas unitarias para validar cada operación usando el módulo unittest. Crea un archivo test_calculadora.py con el siguiente contenido:\n# test_calculadora.py\nimport unittest\nfrom operaciones import suma, resta, multiplicacion, division, radicacion, potenciacion\n\nclass TestCalculadora(unittest.TestCase):\n\n    def test_suma(self):\n        self.assertEqual(suma(2, 3), 5)\n\n    def test_resta(self):\n        self.assertEqual(resta(5, 3), 2)\n\n    def test_multiplicacion(self):\n        self.assertEqual(multiplicacion(2, 3), 6)\n\n    def test_division(self):\n        self.assertEqual(division(6, 3), 2)\n\n    def test_division_por_cero(self):\n        self.assertEqual(division(6, 0), \"Error: No se puede dividir entre cero\")\n\n    def test_radicacion(self):\n        self.assertEqual(radicacion(16, 4), 2)\n\n    def test_potenciacion(self):\n        self.assertEqual(potenciacion(2, 3), 8)\n\nif __name__ == \"__main__\":\n    unittest.main()\n\n\nEjecutar las pruebas\nPara ejecutar las pruebas, usa el siguiente comando:\npython -m unittest test_calculadora.py",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
     ]
   },
   {
@@ -1670,7 +1670,7 @@
     "text": "Siguientes pasos\n\nInterfaz de usuario: Agregar un menú para que el usuario elija las operaciones. Esto mejorará la interacción con la calculadora.\nMejoras adicionales: Explorar la posibilidad de agregar operaciones avanzadas como trigonometría o logaritmos.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
     ]
   },
   {
@@ -1678,9 +1678,9 @@
     "href": "unidades/unidad5/intro.html",
     "title": "Conceptos Avanzados en Python",
     "section": "",
-    "text": "1. Excepciones y Manejo de Errores\nEl manejo adecuado de errores es esencial para escribir código robusto. Las excepciones permiten manejar situaciones inesperadas durante la ejecución de un programa sin que este termine abruptamente.",
+    "text": "En este capitulo en particular aprenderemos los conceptos avanzados que necesitamos conocer de Python para poder avanzar con temas relacionados al desarrollo de software.\nEn el mismo aprenderemos:\n\nExepciones y Manejo de Errores\nLectura y Escritura de Archivos\nProgramación Funcional\nComprención y Generadores\nMódulos y Paquetes\nDecoradores y Context Managers\nColecciones de Datos y Estructuras Especializadas\nManipulación de Fechas y Tiempos\nConcurrencia y Paralelismo\nPruebas y Debugging\n\nEste capítulo cubre varios de los aspectos más avanzados de Python, y proporciona una base sólida para desarrollar aplicaciones web fullstack más complejas. Los ejemplos prácticos te ayudarán a entender cómo aplicar estos conceptos en situaciones reales.",
     "crumbs": [
-      "Unidad 5: Django",
+      "Unidad 5: Python Avanzado",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Conceptos Avanzados en Python</span>"
     ]
   },
@@ -1691,7 +1691,7 @@
     "section": "1. Excepciones y Manejo de Errores",
     "text": "1. Excepciones y Manejo de Errores\n\n\n\n\nExcepciones y Manejo de Errores\n\n\n\nEl manejo adecuado de errores es esencial para escribir código robusto. Las excepciones permiten manejar situaciones inesperadas durante la ejecución de un programa sin que este termine abruptamente.\n\nConceptos clave\n\ntry: Bloque donde intentamos ejecutar código que puede generar una excepción.\nexcept: Bloque donde capturamos y gestionamos una excepción.\nelse: Bloque que se ejecuta si no hay excepciones.\nfinally: Bloque que se ejecuta independientemente de si hubo una excepción o no.\n\n\n\nEjemplo\ntry:\n    numero = int(input(\"Introduce un número: \"))\nexcept ValueError as e:\n    print(f\"Error: {e}. Introduce un número válido.\")\nelse:\n    print(f\"El número es {numero}.\")\nfinally:\n    print(\"Operación terminada.\")\n\n\nExcepciones personalizadas\nPodemos crear nuestras propias excepciones para situaciones específicas.\nclass MiError(Exception):\n    def __init__(self, mensaje):\n        self.mensaje = mensaje\n        super().__init__(self.mensaje)\n\ntry:\n    raise MiError(\"Algo salió mal\")\nexcept MiError as e:\n    print(f\"Capturado: {e}\")\n\n\nEjemplo Práctico\nObjetivo:\nAprender a manejar excepciones en Python para crear un programa robusto que gestione entradas de usuario incorrectas.\nDescripción: Crear un programa que pida al usuario un número, y en caso de que se ingrese algo que no sea un número, maneje el error de manera adecuada, mostrando un mensaje informativo.\nInstrucciones:\n\nUtiliza un bloque try-except para manejar excepciones de tipo ValueError.\nAgrega un bloque else para confirmar la entrada del usuario si es válida.\nIncluye un bloque finally que imprima un mensaje de despedida.\n\nCódigo:\ndef pedir_numero():\n    try:\n        numero = int(input(\"Introduce un número: \"))\n    except ValueError:\n        print(\"¡Error! No has introducido un número válido.\")\n    else:\n        print(f\"Has introducido el número: {numero}\")\n    finally:\n        print(\"Fin del programa\")\n\npedir_numero()",
     "crumbs": [
-      "Unidad 5: Django",
+      "Unidad 5: Python Avanzado",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Conceptos Avanzados en Python</span>"
     ]
   },
@@ -1702,7 +1702,7 @@
     "section": "2. Lectura y Escritura de Archivos",
     "text": "2. Lectura y Escritura de Archivos\n\n\n\n\nLectura y Escritura de Archivos\n\n\n\nLeer y escribir archivos es una habilidad básica en el desarrollo de aplicaciones, como para guardar configuraciones o almacenar datos de usuarios.\n\nConceptos clave\n\nopen: Función para abrir archivos.\nModos de apertura:\n\n‘r’: Lectura.\n‘w’: Escritura.\n‘a’: Añadir datos.\n\n\nEl contexto with: Manejo automático de recursos.\nEjemplo\n# Escritura en archivo\nwith open('archivo.txt', 'w') as f:\n    f.write(\"Hola, Mundo!\\n\")\n\n# Lectura de archivo\nwith open('archivo.txt', 'r') as f:\n    contenido = f.read()\n    print(contenido)\n\n\nArchivos binarios\nPodemos manejar archivos binarios usando el modo ‘rb’ o ‘wb’:\n# Lectura binaria\nwith open('imagen.jpg', 'rb') as f:\n    datos = f.read()\n\n\nEjemplo Práctico\nObjetivo:\nAprender a leer y escribir archivos de texto en Python.\nDescripción: Crear un programa que pida al usuario un texto y lo escriba en un archivo de texto. Luego, el programa debe leer el archivo y mostrar su contenido.\nInstrucciones:\n\nPide un texto al usuario.\nEscribe ese texto en un archivo llamado entrada.txt.\nLuego, lee el archivo y muestra su contenido en la consola.\n\nCódigo:\ndef escribir_y_leer_archivo():\n    # Escribir en el archivo\n    with open('entrada.txt', 'w') as archivo:\n        texto = input(\"Escribe algo: \")\n        archivo.write(texto)\n    \n    # Leer el archivo\n    with open('entrada.txt', 'r') as archivo:\n        contenido = archivo.read()\n        print(f\"Contenido del archivo: {contenido}\")\n\nescribir_y_leer_archivo()",
     "crumbs": [
-      "Unidad 5: Django",
+      "Unidad 5: Python Avanzado",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Conceptos Avanzados en Python</span>"
     ]
   },
@@ -1713,7 +1713,7 @@
     "section": "3. Programación Funcional",
     "text": "3. Programación Funcional\n\n\n\n\nProgramación Funcional\n\n\n\nPython soporta parcialmente la programación funcional, lo que permite escribir código más limpio y conciso.\n\nConceptos clave\n\nlambda: Funciones anónimas.\nmap: Aplica una función a cada ítem de un iterable.\nfilter: Filtra elementos de un iterable según una condición.\nreduce: Reducción de un iterable a un único valor.\n\n\n\nComprensión de listas y generadores.\nEjemplo\n# Uso de lambda y map\nnumeros = [1, 2, 3, 4]\ndobles = list(map(lambda x: x * 2, numeros))\nprint(dobles)\n\n# Uso de filter\npares = list(filter(lambda x: x % 2 == 0, numeros))\nprint(pares)\n\n# Uso de reduce\nfrom functools import reduce\nsuma = reduce(lambda x, y: x + y, numeros)\nprint(suma)\n\n\nEjemplo Práctico\nObjetivo:\nAprender a utilizar funciones lambda y operaciones como map, filter y reduce para trabajar con colecciones de datos.\nDescripción:\nCrear un programa que utilice una lista de números para aplicar operaciones funcionales usando lambda, map, filter y reduce.\nInstrucciones:\n\nCrea una lista de números del 1 al 10.\nUsa map con una función lambda para obtener el doble de cada número.\nUsa filter para filtrar solo los números pares.\nUsa reduce para obtener la suma de todos los números en la lista.\n\nCódigo:\nfrom functools import reduce\n\n# Lista de números\nnumeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\n\n# Usando map con lambda\ndobles = list(map(lambda x: x * 2, numeros))\nprint(f\"Lista de dobles: {dobles}\")\n\n# Usando filter con lambda\npares = list(filter(lambda x: x % 2 == 0, numeros))\nprint(f\"Números pares: {pares}\")\n\n# Usando reduce con lambda\nsuma = reduce(lambda x, y: x + y, numeros)\nprint(f\"Suma de números: {suma}\")",
     "crumbs": [
-      "Unidad 5: Django",
+      "Unidad 5: Python Avanzado",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Conceptos Avanzados en Python</span>"
     ]
   },
@@ -1724,7 +1724,7 @@
     "section": "4. Comprensiones y Generadores",
     "text": "4. Comprensiones y Generadores\n\n\n\n\nComprensiones y Generadores\n\n\n\nLas comprensiones proporcionan una manera más compacta de crear colecciones. Los generadores permiten trabajar con grandes volúmenes de datos de manera eficiente.\n\nConceptos clave\n\nComprensión de listas, diccionarios y conjuntos.\nGeneradores y yield.\n\nEjemplo\n# Comprensión de lista\ncuadrados = [x**2 for x in range(5)]\nprint(cuadrados)\n\n# Generador\ndef contador():\n    for i in range(5):\n        yield i\n\ngen = contador()\nfor valor in gen:\n    print(valor)\n\n\nEjemplo Práctico\nObjetivo:\nAprender a crear listas, diccionarios y generadores utilizando comprensiones y el comando yield.\nDescripción:\nCrea un programa que use comprensiones de listas y diccionarios para realizar operaciones sobre una lista de palabras, y usa un generador para crear una secuencia de números.\nInstrucciones:\n\nUsa una comprensión de lista para crear una lista de las longitudes de las palabras.\nUsa una comprensión de diccionario para contar la frecuencia de cada letra en un conjunto de palabras.\nUsa un generador para producir los primeros 10 números pares.\n\nCódigo:\n# Lista de palabras\npalabras = [\"python\", \"django\", \"flask\", \"javascript\"]\n\n# Comprensión de lista para obtener las longitudes de las palabras\nlongitudes = [len(palabra) for palabra in palabras]\nprint(f\"Longitudes de las palabras: {longitudes}\")\n\n# Comprensión de diccionario para contar las frecuencias de las letras\nfrecuencia = {letra: palabras[0].count(letra) for letra in palabras[0]}\nprint(f\"Frecuencia de letras en la primera palabra: {frecuencia}\")\n\n# Generador para números pares\ndef generador_pares():\n    for i in range(0, 20, 2):\n        yield i\n\n# Mostrar los números generados\nfor numero in generador_pares():\n    print(numero)",
     "crumbs": [
-      "Unidad 5: Django",
+      "Unidad 5: Python Avanzado",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Conceptos Avanzados en Python</span>"
     ]
   },
@@ -1735,7 +1735,7 @@
     "section": "5. Módulos y Paquetes Avanzados",
     "text": "5. Módulos y Paquetes Avanzados\n\n\n\n\nMódulos y Paquetes\n\n\n\nOrganizar el código en módulos y paquetes es fundamental para proyectos grandes.\n\nConceptos clave\n\nImportación relativa y absoluta.\ninit.py: Archivo necesario para que un directorio sea reconocido como un paquete.\nGestión de dependencias.\n\nEjemplo\n# Importación absoluta\nimport mi_modulo\n\n# Importación relativa\nfrom . import mi_modulo\n\n\nEjemplo Práctico\nObjetivo:\nAprender a organizar el código en módulos y paquetes para proyectos más grandes.\nDescripción:\nCrea un proyecto con múltiples archivos Python y organiza el código en módulos. Simula un programa de gestión de tareas.\nInstrucciones:\n\nCrea una carpeta llamada tareas.\nDentro de esa carpeta, crea tres archivos:\ninit.py: Para inicializar el paquete.\ngestor.py: Para gestionar tareas.\nprincipal.py: Para ejecutar el programa.\n\nCódigo:\ngestor.py:\ndef agregar_tarea(tarea):\n    tareas.append(tarea)\n    print(f\"Tarea '{tarea}' agregada.\")\n    \ndef listar_tareas():\n    for tarea in tareas:\n        print(f\"- {tarea}\")\n\ntareas = []\nprincipal.py:\nfrom tareas.gestor import agregar_tarea, listar_tareas\n\nagregar_tarea(\"Estudiar Python\")\nagregar_tarea(\"Leer libro de programación\")\nlistar_tareas()",
     "crumbs": [
-      "Unidad 5: Django",
+      "Unidad 5: Python Avanzado",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Conceptos Avanzados en Python</span>"
     ]
   },
@@ -1746,7 +1746,7 @@
     "section": "6. Decoradores y Context Managers",
     "text": "6. Decoradores y Context Managers\n\n\n\n\nDecoradores\n\n\n\nLos decoradores permiten modificar el comportamiento de una función, mientras que los context managers gestionan recursos como archivos o conexiones a bases de datos.\n\nConceptos clave\n\n(decorator?): Sintaxis para aplicar un decorador.\nwith y enter, exit: Para crear context managers.\n\nEjemplo\n# Decorador\ndef mi_decorador(func):\n    def wrapper():\n        print(\"Antes de la función\")\n        func()\n        print(\"Después de la función\")\n    return wrapper\n\n@mi_decorador\ndef saludo():\n    print(\"Hola\")\n\nsaludo()\n\n# Context manager\nclass MiContexto:\n    def __enter__(self):\n        print(\"Entrando al contexto\")\n        return self\n\n    def __exit__(self, exc_type, exc_value, traceback):\n        print(\"Saliendo del contexto\")\n\nwith MiContexto():\n    print(\"Dentro del contexto\")\n\n\nEjemplo Práctico\nObjetivo:\nAprender a crear decoradores y context managers en Python.\nDescripción: Crea un decorador que registre la ejecución de una función y un context manager que gestione un archivo de log.\nInstrucciones:\n\nCrea un decorador que imprima la fecha y hora de la ejecución de una función.\nCrea un context manager que gestione la apertura y cierre de un archivo de log.\n\nCódigo:\nimport time\n\n# Decorador que registra la ejecución de una función\ndef registrar(func):\n    def wrapper(*args, **kwargs):\n        print(f\"Ejecutando {func.__name__} a las {time.strftime('%H:%M:%S')}\")\n        return func(*args, **kwargs)\n    return wrapper\n\n@registrar\ndef saludo():\n    print(\"¡Hola, Mundo!\")\n\nsaludo()\n\n# Context manager para log\nclass LogManager:\n    def __enter__(self):\n        self.archivo = open('log.txt', 'a')\n        return self.archivo\n\n    def __exit__(self, exc_type, exc_value, traceback):\n        self.archivo.close()\n\nwith LogManager() as log:\n    log.write(f\"Acción registrada a las {time.strftime('%H:%M:%S')}\\n\")",
     "crumbs": [
-      "Unidad 5: Django",
+      "Unidad 5: Python Avanzado",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Conceptos Avanzados en Python</span>"
     ]
   },
@@ -1757,7 +1757,7 @@
     "section": "7. Colecciones de Datos y Estructuras Especializadas",
     "text": "7. Colecciones de Datos y Estructuras Especializadas\n\n\n\n\nColecciones\n\n\n\nLa librería collections ofrece estructuras de datos útiles para optimizar el código.\n\nConceptos clave\n\nCounter: Cuenta elementos.\ndeque: Cola de doble extremo.\ndefaultdict: Diccionario con valores predeterminados.\nnamedtuple: Tupla con nombre.\n\nEjemplo\nfrom collections import Counter, deque, defaultdict, namedtuple\n\n# Counter\nc = Counter([1, 2, 2, 3])\nprint(c)\n\n# deque\nd = deque([1, 2, 3])\nd.append(4)\nprint(d)\n\n# defaultdict\ndd = defaultdict(int)\ndd['a'] += 1\nprint(dd)\n\n# namedtuple\nPersona = namedtuple('Persona', 'nombre edad')\npersona = Persona(nombre='Juan', edad=30)\nprint(persona.nombre)\n\n\nEjemplo Práctico\nObjetivo:\nAprender a utilizar estructuras de datos avanzadas como Counter, deque y defaultdict.\nDescripción:\nCrea un programa que utilice Counter para contar elementos, deque para manipular una cola y defaultdict para un diccionario con valores predeterminados.\nInstrucciones:\n\nUsa Counter para contar las palabras en una frase.\nUsa deque para simular una cola.\nUsa defaultdict para contar ocurrencias de letras en un texto. | Código:\n\nfrom collections import Counter, deque, defaultdict\n\n# Usando Counter\nfrase = \"python python flask flask flask\"\ncontador = Counter(frase.split())\nprint(contador)\n\n# Usando deque\ncola = deque([1, 2, 3])\ncola.append(4)\ncola.popleft()\nprint(cola)\n\n# Usando defaultdict\ntexto = \"hola mundo\"\nletras = defaultdict(int)\nfor letra in texto:\n    letras[letra] += 1\nprint(letras)",
     "crumbs": [
-      "Unidad 5: Django",
+      "Unidad 5: Python Avanzado",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Conceptos Avanzados en Python</span>"
     ]
   },
@@ -1768,7 +1768,7 @@
     "section": "8. Manipulación de Fechas y Tiempos",
     "text": "8. Manipulación de Fechas y Tiempos\n\n\n\n\nFechas\n\n\n\nTrabajar con fechas y horas es una parte fundamental en muchas aplicaciones.\n\nConceptos clave\n\ndatetime: Para trabajar con fechas y horas.\ntime: Para trabajar con tiempos.\npytz: Para manejar zonas horarias.\n\nEjemplo\nfrom datetime import datetime\n\n# Fecha y hora actuales\nahora = datetime.now()\nprint(ahora)\n\n# Formateo de fecha\nfecha_formateada = ahora.strftime(\"%Y-%m-%d %H:%M:%S\")\nprint(fecha_formateada)\n\n\nEjemplo Práctico\nObjetivo:\nAprender a trabajar con fechas y horas utilizando el módulo datetime.\nDescripción: Crea un programa que calcule el tiempo restante hasta un evento futuro.\nInstrucciones:\n\nUsa datetime para calcular la fecha y hora actuales.\nCalcula el tiempo restante hasta un evento programado (por ejemplo, fin de año).\n\nCódigo:\nfrom datetime import datetime\n\n# Fecha actual\nfecha_actual = datetime.now()\nprint(f\"Fecha y hora actuales: {fecha_actual}\")\n\n# Fecha de un evento\nevento = datetime(2024, 12, 31, 23, 59, 59)\n\n# Tiempo restante\ntiempo_restante = evento - fecha_actual\nprint(f\"Tiempo restante hasta el evento: {tiempo_restante}\")",
     "crumbs": [
-      "Unidad 5: Django",
+      "Unidad 5: Python Avanzado",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Conceptos Avanzados en Python</span>"
     ]
   },
@@ -1779,7 +1779,7 @@
     "section": "9. Concurrencia y Paralelismo",
     "text": "9. Concurrencia y Paralelismo\nEn aplicaciones que requieren ejecutar múltiples tareas simultáneamente, la concurrencia y el paralelismo permiten mejorar el rendimiento.\n\nConceptos clave\n\nthreading: Hilos de ejecución.\nmultiprocessing: Procesos independientes.\nasyncio y async/await: Manejo de tareas asincrónicas.\n\nEjemplo\nimport threading\n\ndef tarea():\n    print(\"Tarea ejecutada por hilo\")\n\n# Crear un hilo\nhilo = threading.Thread(target=tarea)\nhilo.start()\nhilo.join()\n\n\nEjemplo Práctico\nObjetivo:\nAprender a utilizar técnicas de concurrencia y paralelismo para ejecutar tareas de manera simultánea y mejorar el rendimiento de las aplicaciones.\nDescripción:\nEn este ejemplo se utilizan tres enfoques diferentes de concurrencia: threading, multiprocessing y asyncio. Cada uno es útil en diferentes escenarios según la naturaleza de la tarea que se quiere realizar.\nInstrucciones:\n\nCrea una función simple que imprima un mensaje.\nImplementa la ejecución concurrente de esa función utilizando threading, multiprocessing y asyncio.\n\nEjemplos prácticos:\n\n1. Uso de threading:\nEl módulo threading permite ejecutar funciones de forma concurrente en múltiples hilos dentro de un solo proceso.\nimport threading\n\ndef tarea():\n    print(\"Tarea ejecutada por hilo\")\n\n# Crear un hilo\nhilo = threading.Thread(target=tarea)\nhilo.start()\nhilo.join()  # Esperar a que termine la ejecución del hilo\nprint(\"Hilo terminado\")\n\n\n2. Uso de multiprocessing:\nEl módulo multiprocessing permite ejecutar funciones en múltiples procesos independientes, lo que es útil para tareas que consumen mucho CPU.\nimport multiprocessing\n\ndef tarea():\n    print(\"Tarea ejecutada por proceso\")\n\n# Crear un proceso\nproceso = multiprocessing.Process(target=tarea)\nproceso.start()\nproceso.join()  # Esperar a que termine la ejecución del proceso\nprint(\"Proceso terminado\")\n\n\n3. Uso de asyncio y async/await:\nEl módulo asyncio permite manejar operaciones de entrada/salida asincrónicas de manera eficiente, sin bloquear el hilo principal.\nimport asyncio\n\nasync def tarea():\n    print(\"Tarea asincrónica ejecutada\")\n    await asyncio.sleep(2)  # Simula una tarea asincrónica con espera\n    print(\"Tarea asincrónica terminada\")\n\n# Ejecutar tareas asincrónicas\nasync def main():\n    await asyncio.gather(tarea(), tarea())\n\nasyncio.run(main())  # Ejecuta el bucle de eventos",
     "crumbs": [
-      "Unidad 5: Django",
+      "Unidad 5: Python Avanzado",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Conceptos Avanzados en Python</span>"
     ]
   },
@@ -1790,8 +1790,118 @@
     "section": "10. Pruebas y Debugging",
     "text": "10. Pruebas y Debugging\n\n\n\n\nPruebas y Debugging\n\n\n\nEscribir pruebas y depurar el código son prácticas esenciales para garantizar la calidad y facilitar el mantenimiento.\n\nConceptos clave\n\nunittest y pytest: Frameworks para pruebas.\nassert: Para comprobar condiciones.\npdb: Para depuración interactiva.\n\nEjemplo\n# Prueba simple con unittest\nimport unittest\n\ndef suma(a, b):\n    return a + b\n\nclass TestSuma(unittest.TestCase):\n    def test_suma(self):\n        self.assertEqual(suma(1, 2), 3)\n\nif __name__ == '__main__':\n    unittest.main()\n\n\nEjemplo Práctico\nObjetivo:\nAprender a escribir pruebas unitarias y utilizar herramientas de depuración para asegurar la calidad del código.\nDescripción:\nEn este tema se cubren pruebas unitarias con unittest, depuración con pdb y el uso de pytest para realizar pruebas automatizadas.\nInstrucciones:\n\nEscribe pruebas unitarias para una función que realiza una operación matemática (suma).\nAprende a utilizar el depurador pdb para inspeccionar el flujo de ejecución.\n\nEjemplos prácticos:\n\n1. Pruebas con unittest:\nEl módulo unittest permite crear casos de prueba, asegurando que el código funcione correctamente.\nimport unittest\n\n# Función simple que vamos a probar\ndef suma(a, b):\n    return a + b\n\n# Clase de prueba\nclass TestSuma(unittest.TestCase):\n    def test_suma(self):\n        self.assertEqual(suma(1, 2), 3)  # Verifica que la suma de 1 y 2 sea 3\n\nif __name__ == '__main__':\n    unittest.main()  # Ejecuta las pruebas\n\n\n2. Pruebas con pytest:\npytest es una alternativa moderna y más sencilla para realizar pruebas. Aquí utilizamos el mismo ejemplo de la función suma.\n# Guarda esto en un archivo llamado test_funciones.py\n\ndef suma(a, b):\n    return a + b\n\ndef test_suma():\n    assert suma(1, 2) == 3  # Verifica que la suma de 1 y 2 sea 3\nEjecuta las pruebas con el comando:\npytest test_funciones.py\n\n\n3. Depuración con pdb:\nEl depurador pdb permite interactuar con el código paso a paso, inspectando variables y el flujo de ejecución.\nimport pdb\n\ndef suma(a, b):\n    pdb.set_trace()  # Aquí se activa el depurador\n    return a + b\n\nresultado = suma(1, 2)\nprint(f\"Resultado: {resultado}\")\nCuando ejecutes el programa, el depurador se activará en pdb.set_trace(). Desde ahí, podrás usar comandos como n para avanzar a la siguiente línea o p para imprimir el valor de una variable.\nComandos útiles de pdb:\n\nn: Ejecuta la siguiente línea de código.\np variable: Muestra el valor de una variable.\nq: Sale del depurador\n\nEste capítulo cubre varios de los aspectos más avanzados de Python, y proporciona una base sólida para desarrollar aplicaciones web fullstack más complejas. Los ejemplos prácticos te ayudarán a entender cómo aplicar estos conceptos en situaciones reales.",
     "crumbs": [
-      "Unidad 5: Django",
+      "Unidad 5: Python Avanzado",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Conceptos Avanzados en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/1_exepciones_manejo_de_errores.html",
+    "href": "unidades/unidad5/1_exepciones_manejo_de_errores.html",
+    "title": "Excepciones y Manejo de Errores",
+    "section": "",
+    "text": "Excepciones y Manejo de Errores\n\n\n\nEl manejo adecuado de errores es esencial para escribir código robusto. Las excepciones permiten manejar situaciones inesperadas durante la ejecución de un programa sin que este termine abruptamente.\n\nConceptos clave\n\ntry: Bloque donde intentamos ejecutar código que puede generar una excepción.\nexcept: Bloque donde capturamos y gestionamos una excepción.\nelse: Bloque que se ejecuta si no hay excepciones.\nfinally: Bloque que se ejecuta independientemente de si hubo una excepción o no.\n\n\n\nEjemplo\ntry:\n    numero = int(input(\"Introduce un número: \"))\nexcept ValueError as e:\n    print(f\"Error: {e}. Introduce un número válido.\")\nelse:\n    print(f\"El número es {numero}.\")\nfinally:\n    print(\"Operación terminada.\")\n\n\nExcepciones personalizadas\nPodemos crear nuestras propias excepciones para situaciones específicas.\nclass MiError(Exception):\n    def __init__(self, mensaje):\n        self.mensaje = mensaje\n        super().__init__(self.mensaje)\n\ntry:\n    raise MiError(\"Algo salió mal\")\nexcept MiError as e:\n    print(f\"Capturado: {e}\")\n\n\nEjemplo Práctico\nObjetivo:\nAprender a manejar excepciones en Python para crear un programa robusto que gestione entradas de usuario incorrectas.\nDescripción: Crear un programa que pida al usuario un número, y en caso de que se ingrese algo que no sea un número, maneje el error de manera adecuada, mostrando un mensaje informativo.\nInstrucciones:\n\nUtiliza un bloque try-except para manejar excepciones de tipo ValueError.\nAgrega un bloque else para confirmar la entrada del usuario si es válida.\nIncluye un bloque finally que imprima un mensaje de despedida.\n\n\n\nPosibles soluciones\n\nCódigo:\ndef pedir_numero():\n    try:\n        numero = int(input(\"Introduce un número: \"))\n    except ValueError:\n        print(\"¡Error! No has introducido un número válido.\")\n    else:\n        print(f\"Has introducido el número: {numero}\")\n    finally:\n        print(\"Fin del programa\")\n\npedir_numero()",
+    "crumbs": [
+      "Unidad 5: Python Avanzado",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Excepciones y Manejo de Errores</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/2_lectura_y_escritura_de_archivos.html",
+    "href": "unidades/unidad5/2_lectura_y_escritura_de_archivos.html",
+    "title": "Lectura y Escritura de Archivos",
+    "section": "",
+    "text": "Lectura y Escritura de Archivos\n\n\n\nLeer y escribir archivos es una habilidad básica en el desarrollo de aplicaciones, como para guardar configuraciones o almacenar datos de usuarios.\n\nConceptos clave\n\nopen: Función para abrir archivos.\nModos de apertura:\n\n‘r’: Lectura.\n‘w’: Escritura.\n‘a’: Añadir datos.\n\n\nEl contexto with: Manejo automático de recursos.\nEjemplo\n# Escritura en archivo\nwith open('archivo.txt', 'w') as f:\n    f.write(\"Hola, Mundo!\\n\")\n\n# Lectura de archivo\nwith open('archivo.txt', 'r') as f:\n    contenido = f.read()\n    print(contenido)\n\n\nArchivos binarios\nPodemos manejar archivos binarios usando el modo ‘rb’ o ‘wb’:\n# Lectura binaria\nwith open('imagen.jpg', 'rb') as f:\n    datos = f.read()\n\n\nEjemplo Práctico\nObjetivo:\nAprender a leer y escribir archivos de texto en Python.\nDescripción: Crear un programa que pida al usuario un texto y lo escriba en un archivo de texto. Luego, el programa debe leer el archivo y mostrar su contenido.\nInstrucciones:\n\nPide un texto al usuario.\nEscribe ese texto en un archivo llamado entrada.txt.\nLuego, lee el archivo y muestra su contenido en la consola.\n\n\n\nPosibles soluciones\n\nCódigo:\ndef escribir_y_leer_archivo():\n    # Escribir en el archivo\n    with open('entrada.txt', 'w') as archivo:\n        texto = input(\"Escribe algo: \")\n        archivo.write(texto)\n    \n    # Leer el archivo\n    with open('entrada.txt', 'r') as archivo:\n        contenido = archivo.read()\n        print(f\"Contenido del archivo: {contenido}\")\n\nescribir_y_leer_archivo()\n:::",
+    "crumbs": [
+      "Unidad 5: Python Avanzado",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Lectura y Escritura de Archivos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/3_programacion_funcional.html",
+    "href": "unidades/unidad5/3_programacion_funcional.html",
+    "title": "Programación Funcional",
+    "section": "",
+    "text": "Programación Funcional\n\n\n\nPython soporta parcialmente la programación funcional, lo que permite escribir código más limpio y conciso.\n\nConceptos clave\n\nlambda: Funciones anónimas.\nmap: Aplica una función a cada ítem de un iterable.\nfilter: Filtra elementos de un iterable según una condición.\nreduce: Reducción de un iterable a un único valor.\n\n\n\nComprensión de listas y generadores.\nEjemplo\n# Uso de lambda y map\nnumeros = [1, 2, 3, 4]\ndobles = list(map(lambda x: x * 2, numeros))\nprint(dobles)\n\n# Uso de filter\npares = list(filter(lambda x: x % 2 == 0, numeros))\nprint(pares)\n\n# Uso de reduce\nfrom functools import reduce\nsuma = reduce(lambda x, y: x + y, numeros)\nprint(suma)\n\n\nEjemplo Práctico\nObjetivo:\nAprender a utilizar funciones lambda y operaciones como map, filter y reduce para trabajar con colecciones de datos.\nDescripción:\nCrear un programa que utilice una lista de números para aplicar operaciones funcionales usando lambda, map, filter y reduce.\nInstrucciones:\n\nCrea una lista de números del 1 al 10.\nUsa map con una función lambda para obtener el doble de cada número.\nUsa filter para filtrar solo los números pares.\nUsa reduce para obtener la suma de todos los números en la lista.\n\n\n\nPosibles soluciones\n\nCódigo:\nfrom functools import reduce\n\n# Lista de números\nnumeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\n\n# Usando map con lambda\ndobles = list(map(lambda x: x * 2, numeros))\nprint(f\"Lista de dobles: {dobles}\")\n\n# Usando filter con lambda\npares = list(filter(lambda x: x % 2 == 0, numeros))\nprint(f\"Números pares: {pares}\")\n\n# Usando reduce con lambda\nsuma = reduce(lambda x, y: x + y, numeros)\nprint(f\"Suma de números: {suma}\")",
+    "crumbs": [
+      "Unidad 5: Python Avanzado",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Programación Funcional</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/4_comprension_y_generadores.html",
+    "href": "unidades/unidad5/4_comprension_y_generadores.html",
+    "title": "Comprensiones y Generadores",
+    "section": "",
+    "text": "Comprensiones y Generadores\n\n\n\nLas comprensiones proporcionan una manera más compacta de crear colecciones. Los generadores permiten trabajar con grandes volúmenes de datos de manera eficiente.\n\nConceptos clave\n\nComprensión de listas, diccionarios y conjuntos.\nGeneradores y yield.\n\nEjemplo\n# Comprensión de lista\ncuadrados = [x**2 for x in range(5)]\nprint(cuadrados)\n\n# Generador\ndef contador():\n    for i in range(5):\n        yield i\n\ngen = contador()\nfor valor in gen:\n    print(valor)\n\n\nEjemplo Práctico\nObjetivo:\nAprender a crear listas, diccionarios y generadores utilizando comprensiones y el comando yield.\nDescripción:\nCrea un programa que use comprensiones de listas y diccionarios para realizar operaciones sobre una lista de palabras, y usa un generador para crear una secuencia de números.\nInstrucciones:\n\nUsa una comprensión de lista para crear una lista de las longitudes de las palabras.\nUsa una comprensión de diccionario para contar la frecuencia de cada letra en un conjunto de palabras.\nUsa un generador para producir los primeros 10 números pares.\n\n\n\nPosibles soluciones\n\nCódigo:\n# Lista de palabras\npalabras = [\"python\", \"django\", \"flask\", \"javascript\"]\n\n# Comprensión de lista para obtener las longitudes de las palabras\nlongitudes = [len(palabra) for palabra in palabras]\nprint(f\"Longitudes de las palabras: {longitudes}\")\n\n# Comprensión de diccionario para contar las frecuencias de las letras\nfrecuencia = {letra: palabras[0].count(letra) for letra in palabras[0]}\nprint(f\"Frecuencia de letras en la primera palabra: {frecuencia}\")\n\n# Generador para números pares\ndef generador_pares():\n    for i in range(0, 20, 2):\n        yield i\n\n# Mostrar los números generados\nfor numero in generador_pares():\n    print(numero)",
+    "crumbs": [
+      "Unidad 5: Python Avanzado",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Comprensiones y Generadores</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/5_modulos_y_paquetes_avanzados.html",
+    "href": "unidades/unidad5/5_modulos_y_paquetes_avanzados.html",
+    "title": "Módulos y Paquetes Avanzados",
+    "section": "",
+    "text": "Módulos y Paquetes\n\n\n\nOrganizar el código en módulos y paquetes es fundamental para proyectos grandes.\n\nConceptos clave\n\nImportación relativa y absoluta.\ninit.py: Archivo necesario para que un directorio sea reconocido como un paquete.\nGestión de dependencias.\n\nEjemplo\n# Importación absoluta\nimport mi_modulo\n\n# Importación relativa\nfrom . import mi_modulo\n\n\nEjemplo Práctico\nObjetivo:\nAprender a organizar el código en módulos y paquetes para proyectos más grandes.\nDescripción:\nCrea un proyecto con múltiples archivos Python y organiza el código en módulos. Simula un programa de gestión de tareas.\nInstrucciones:\n\nCrea una carpeta llamada tareas.\nDentro de esa carpeta, crea tres archivos:\ninit.py: Para inicializar el paquete.\ngestor.py: Para gestionar tareas.\nprincipal.py: Para ejecutar el programa.\n\n\n\nPosibles soluciones\n\nCódigo:\ngestor.py:\ndef agregar_tarea(tarea):\n    tareas.append(tarea)\n    print(f\"Tarea '{tarea}' agregada.\")\n    \ndef listar_tareas():\n    for tarea in tareas:\n        print(f\"- {tarea}\")\n\ntareas = []\nprincipal.py:\nfrom tareas.gestor import agregar_tarea, listar_tareas\n\nagregar_tarea(\"Estudiar Python\")\nagregar_tarea(\"Leer libro de programación\")\nlistar_tareas()",
+    "crumbs": [
+      "Unidad 5: Python Avanzado",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Módulos y Paquetes Avanzados</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/6_decoradores_y_context_managers.html",
+    "href": "unidades/unidad5/6_decoradores_y_context_managers.html",
+    "title": "Decoradores y Context Managers",
+    "section": "",
+    "text": "Decoradores\n\n\n\nLos decoradores permiten modificar el comportamiento de una función, mientras que los context managers gestionan recursos como archivos o conexiones a bases de datos.\n\nConceptos clave\n\n(decorator?): Sintaxis para aplicar un decorador.\nwith y enter, exit: Para crear context managers.\n\nEjemplo\n# Decorador\ndef mi_decorador(func):\n    def wrapper():\n        print(\"Antes de la función\")\n        func()\n        print(\"Después de la función\")\n    return wrapper\n\n@mi_decorador\ndef saludo():\n    print(\"Hola\")\n\nsaludo()\n\n# Context manager\nclass MiContexto:\n    def __enter__(self):\n        print(\"Entrando al contexto\")\n        return self\n\n    def __exit__(self, exc_type, exc_value, traceback):\n        print(\"Saliendo del contexto\")\n\nwith MiContexto():\n    print(\"Dentro del contexto\")\n\n\nEjemplo Práctico\nObjetivo:\nAprender a crear decoradores y context managers en Python.\nDescripción: Crea un decorador que registre la ejecución de una función y un context manager que gestione un archivo de log.\nInstrucciones:\n\nCrea un decorador que imprima la fecha y hora de la ejecución de una función.\nCrea un context manager que gestione la apertura y cierre de un archivo de log.\n\n\n\nPosibles soluciones\n\nCódigo:\nimport time\n\n# Decorador que registra la ejecución de una función\ndef registrar(func):\n    def wrapper(*args, **kwargs):\n        print(f\"Ejecutando {func.__name__} a las {time.strftime('%H:%M:%S')}\")\n        return func(*args, **kwargs)\n    return wrapper\n\n@registrar\ndef saludo():\n    print(\"¡Hola, Mundo!\")\n\nsaludo()\n\n# Context manager para log\nclass LogManager:\n    def __enter__(self):\n        self.archivo = open('log.txt', 'a')\n        return self.archivo\n\n    def __exit__(self, exc_type, exc_value, traceback):\n        self.archivo.close()\n\nwith LogManager() as log:\n    log.write(f\"Acción registrada a las {time.strftime('%H:%M:%S')}\\n\")",
+    "crumbs": [
+      "Unidad 5: Python Avanzado",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Decoradores y Context Managers</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/7_colecciones_de_datos_y_estructuras_especializadas.html",
+    "href": "unidades/unidad5/7_colecciones_de_datos_y_estructuras_especializadas.html",
+    "title": "Colecciones de Datos y Estructuras Especializadas",
+    "section": "",
+    "text": "Colecciones\n\n\n\nLa librería collections ofrece estructuras de datos útiles para optimizar el código.\n\nConceptos clave\n\nCounter: Cuenta elementos.\ndeque: Cola de doble extremo.\ndefaultdict: Diccionario con valores predeterminados.\nnamedtuple: Tupla con nombre.\n\nEjemplo\nfrom collections import Counter, deque, defaultdict, namedtuple\n\n# Counter\nc = Counter([1, 2, 2, 3])\nprint(c)\n\n# deque\nd = deque([1, 2, 3])\nd.append(4)\nprint(d)\n\n# defaultdict\ndd = defaultdict(int)\ndd['a'] += 1\nprint(dd)\n\n# namedtuple\nPersona = namedtuple('Persona', 'nombre edad')\npersona = Persona(nombre='Juan', edad=30)\nprint(persona.nombre)\n\n\nEjemplo Práctico\nObjetivo:\nAprender a utilizar estructuras de datos avanzadas como Counter, deque y defaultdict.\nDescripción:\nCrea un programa que utilice Counter para contar elementos, deque para manipular una cola y defaultdict para un diccionario con valores predeterminados.\nInstrucciones:\n\nUsa Counter para contar las palabras en una frase.\nUsa deque para simular una cola.\nUsa defaultdict para contar ocurrencias de letras en un texto.\n\n\n\nPosibles soluciones\n\nCódigo:\nfrom collections import Counter, deque, defaultdict\n\n# Usando Counter\nfrase = \"python python flask flask flask\"\ncontador = Counter(frase.split())\nprint(contador)\n\n# Usando deque\ncola = deque([1, 2, 3])\ncola.append(4)\ncola.popleft()\nprint(cola)\n\n# Usando defaultdict\ntexto = \"hola mundo\"\nletras = defaultdict(int)\nfor letra in texto:\n    letras[letra] += 1\nprint(letras)",
+    "crumbs": [
+      "Unidad 5: Python Avanzado",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Colecciones de Datos y Estructuras Especializadas</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/8_manipulacion_de_fechas_y_tiempos.html",
+    "href": "unidades/unidad5/8_manipulacion_de_fechas_y_tiempos.html",
+    "title": "Manipulación de Fechas y Tiempos",
+    "section": "",
+    "text": "Fechas\n\n\n\nTrabajar con fechas y horas es una parte fundamental en muchas aplicaciones.\n\nConceptos clave\n\ndatetime: Para trabajar con fechas y horas.\ntime: Para trabajar con tiempos.\npytz: Para manejar zonas horarias.\n\nEjemplo\nfrom datetime import datetime\n\n# Fecha y hora actuales\nahora = datetime.now()\nprint(ahora)\n\n# Formateo de fecha\nfecha_formateada = ahora.strftime(\"%Y-%m-%d %H:%M:%S\")\nprint(fecha_formateada)\n\n\nEjemplo Práctico\nObjetivo:\nAprender a trabajar con fechas y horas utilizando el módulo datetime.\nDescripción: Crea un programa que calcule el tiempo restante hasta un evento futuro.\nInstrucciones:\n\nUsa datetime para calcular la fecha y hora actuales.\nCalcula el tiempo restante hasta un evento programado (por ejemplo, fin de año).\n\n\n\nPosibles soluciones\n\nCódigo:\nfrom datetime import datetime\n\n# Fecha actual\nfecha_actual = datetime.now()\nprint(f\"Fecha y hora actuales: {fecha_actual}\")\n\n# Fecha de un evento\nevento = datetime(2024, 12, 31, 23, 59, 59)\n\n# Tiempo restante\ntiempo_restante = evento - fecha_actual\nprint(f\"Tiempo restante hasta el evento: {tiempo_restante}\")",
+    "crumbs": [
+      "Unidad 5: Python Avanzado",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Manipulación de Fechas y Tiempos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/9_concurrencia_y_paralelismo.html",
+    "href": "unidades/unidad5/9_concurrencia_y_paralelismo.html",
+    "title": "Concurrencia y Paralelismo",
+    "section": "",
+    "text": "En aplicaciones que requieren ejecutar múltiples tareas simultáneamente, la concurrencia y el paralelismo permiten mejorar el rendimiento.\n\nConceptos clave\n\nthreading: Hilos de ejecución.\nmultiprocessing: Procesos independientes.\nasyncio y async/await: Manejo de tareas asincrónicas.\n\nEjemplo\nimport threading\n\ndef tarea():\n    print(\"Tarea ejecutada por hilo\")\n\n# Crear un hilo\nhilo = threading.Thread(target=tarea)\nhilo.start()\nhilo.join()\n\n\nEjemplo Práctico\nObjetivo:\nAprender a utilizar técnicas de concurrencia y paralelismo para ejecutar tareas de manera simultánea y mejorar el rendimiento de las aplicaciones.\nDescripción:\nEn este ejemplo se utilizan tres enfoques diferentes de concurrencia: threading, multiprocessing y asyncio. Cada uno es útil en diferentes escenarios según la naturaleza de la tarea que se quiere realizar.\nInstrucciones:\n\nCrea una función simple que imprima un mensaje.\nImplementa la ejecución concurrente de esa función utilizando threading, multiprocessing y asyncio.\n\nEjemplos prácticos:\n\n1. Uso de threading:\nEl módulo threading permite ejecutar funciones de forma concurrente en múltiples hilos dentro de un solo proceso.\nimport threading\n\ndef tarea():\n    print(\"Tarea ejecutada por hilo\")\n\n# Crear un hilo\nhilo = threading.Thread(target=tarea)\nhilo.start()\nhilo.join()  # Esperar a que termine la ejecución del hilo\nprint(\"Hilo terminado\")\n\n\n2. Uso de multiprocessing:\nEl módulo multiprocessing permite ejecutar funciones en múltiples procesos independientes, lo que es útil para tareas que consumen mucho CPU.\nimport multiprocessing\n\ndef tarea():\n    print(\"Tarea ejecutada por proceso\")\n\n# Crear un proceso\nproceso = multiprocessing.Process(target=tarea)\nproceso.start()\nproceso.join()  # Esperar a que termine la ejecución del proceso\nprint(\"Proceso terminado\")\n\n\n3. Uso de asyncio y async/await:\nEl módulo asyncio permite manejar operaciones de entrada/salida asincrónicas de manera eficiente, sin bloquear el hilo principal.\nimport asyncio\n\nasync def tarea():\n    print(\"Tarea asincrónica ejecutada\")\n    await asyncio.sleep(2)  # Simula una tarea asincrónica con espera\n    print(\"Tarea asincrónica terminada\")\n\n# Ejecutar tareas asincrónicas\nasync def main():\n    await asyncio.gather(tarea(), tarea())\n\nasyncio.run(main())  # Ejecuta el bucle de eventos",
+    "crumbs": [
+      "Unidad 5: Python Avanzado",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Concurrencia y Paralelismo</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad5/10_pruebas_y_debugging.html",
+    "href": "unidades/unidad5/10_pruebas_y_debugging.html",
+    "title": "Pruebas y Debugging",
+    "section": "",
+    "text": "Pruebas y Debugging\n\n\n\nEscribir pruebas y depurar el código son prácticas esenciales para garantizar la calidad y facilitar el mantenimiento.\n\nConceptos clave\n\nunittest y pytest: Frameworks para pruebas.\nassert: Para comprobar condiciones.\npdb: Para depuración interactiva.\n\nEjemplo\n# Prueba simple con unittest\nimport unittest\n\ndef suma(a, b):\n    return a + b\n\nclass TestSuma(unittest.TestCase):\n    def test_suma(self):\n        self.assertEqual(suma(1, 2), 3)\n\nif __name__ == '__main__':\n    unittest.main()\n\n\nEjemplo Práctico\nObjetivo:\nAprender a escribir pruebas unitarias y utilizar herramientas de depuración para asegurar la calidad del código.\nDescripción:\nEn este tema se cubren pruebas unitarias con unittest, depuración con pdb y el uso de pytest para realizar pruebas automatizadas.\nInstrucciones:\n\nEscribe pruebas unitarias para una función que realiza una operación matemática (suma).\nAprende a utilizar el depurador pdb para inspeccionar el flujo de ejecución.\n\nEjemplos prácticos:\n\n1. Pruebas con unittest:\nEl módulo unittest permite crear casos de prueba, asegurando que el código funcione correctamente.\n\n\nPosibles soluciones\n\nimport unittest\n\n# Función simple que vamos a probar\ndef suma(a, b):\n    return a + b\n\n# Clase de prueba\nclass TestSuma(unittest.TestCase):\n    def test_suma(self):\n        self.assertEqual(suma(1, 2), 3)  # Verifica que la suma de 1 y 2 sea 3\n\nif __name__ == '__main__':\n    unittest.main()  # Ejecuta las pruebas\n\n\n\n2. Pruebas con pytest:\npytest es una alternativa moderna y más sencilla para realizar pruebas. Aquí utilizamos el mismo ejemplo de la función suma.\n\n\nPosibles soluciones\n\n# Guarda esto en un archivo llamado test_funciones.py\n\ndef suma(a, b):\n    return a + b\n\ndef test_suma():\n    assert suma(1, 2) == 3  # Verifica que la suma de 1 y 2 sea 3\nEjecuta las pruebas con el comando:\npytest test_funciones.py\n\n\n\n3. Depuración con pdb:\nEl depurador pdb permite interactuar con el código paso a paso, inspectando variables y el flujo de ejecución.\n\n\nPosibles soluciones\n\nimport pdb\n\ndef suma(a, b):\n    pdb.set_trace()  # Aquí se activa el depurador\n    return a + b\n\nresultado = suma(1, 2)\nprint(f\"Resultado: {resultado}\")\nCuando ejecutes el programa, el depurador se activará en pdb.set_trace(). Desde ahí, podrás usar comandos como n para avanzar a la siguiente línea o p para imprimir el valor de una variable.\nComandos útiles de pdb:\n\nn: Ejecuta la siguiente línea de código.\np variable: Muestra el valor de una variable.\nq: Sale del depurador",
+    "crumbs": [
+      "Unidad 5: Python Avanzado",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Pruebas y Debugging</span>"
     ]
   }
 ]

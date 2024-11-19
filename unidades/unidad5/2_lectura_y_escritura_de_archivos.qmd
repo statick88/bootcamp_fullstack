@@ -1,0 +1,83 @@
+:::{.justify}
+## Lectura y Escritura de Archivos
+
+::: {.center}
+![Lectura y Escritura de Archivos](./images/archivos.png)
+:::
+
+
+Leer y escribir archivos es una habilidad básica en el desarrollo de aplicaciones, como para guardar configuraciones o almacenar datos de usuarios.
+
+### Conceptos clave
+
+- **open**: Función para abrir archivos.
+
+- **Modos de apertura**:
+
+  - **'r'**: Lectura.
+  
+  - **'w'**: Escritura.
+  
+  - **'a'**: Añadir datos.
+
+**El contexto with**: Manejo automático de recursos.
+
+Ejemplo
+
+```python
+# Escritura en archivo
+with open('archivo.txt', 'w') as f:
+    f.write("Hola, Mundo!\n")
+
+# Lectura de archivo
+with open('archivo.txt', 'r') as f:
+    contenido = f.read()
+    print(contenido)
+```
+
+### Archivos binarios
+
+Podemos manejar archivos binarios usando el modo **'rb'** o **'wb'**:
+
+```python
+# Lectura binaria
+with open('imagen.jpg', 'rb') as f:
+    datos = f.read()
+```
+### Ejemplo Práctico
+
+**Objetivo**:
+
+Aprender a leer y escribir archivos de texto en Python.
+
+**Descripción**:
+Crear un programa que pida al usuario un texto y lo escriba en un archivo de texto. Luego, el programa debe leer el archivo y mostrar su contenido.
+
+**Instrucciones**:
+
+- Pide un texto al usuario.
+
+- Escribe ese texto en un archivo llamado entrada.txt.
+
+- Luego, lee el archivo y muestra su contenido en la consola.
+
+<details>
+  <summary>Posibles soluciones</summary>
+
+**Código**:
+
+```python
+def escribir_y_leer_archivo():
+    # Escribir en el archivo
+    with open('entrada.txt', 'w') as archivo:
+        texto = input("Escribe algo: ")
+        archivo.write(texto)
+    
+    # Leer el archivo
+    with open('entrada.txt', 'r') as archivo:
+        contenido = archivo.read()
+        print(f"Contenido del archivo: {contenido}")
+
+escribir_y_leer_archivo()
+```
+:::

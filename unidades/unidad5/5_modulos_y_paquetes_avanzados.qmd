@@ -1,0 +1,79 @@
+
+:::{.justify}
+## Módulos y Paquetes Avanzados
+
+:::{.center}
+![Módulos y Paquetes](./images/modulos_y_paquetes.png)
+:::
+
+Organizar el código en módulos y paquetes es fundamental para proyectos grandes.
+
+### Conceptos clave
+
+- Importación relativa y absoluta.
+
+- **__init__.py**: Archivo necesario para que un directorio sea reconocido como un paquete.
+
+- Gestión de dependencias.
+
+Ejemplo
+```python
+# Importación absoluta
+import mi_modulo
+
+# Importación relativa
+from . import mi_modulo
+```
+
+### Ejemplo Práctico
+
+**Objetivo**:
+
+Aprender a organizar el código en módulos y paquetes para proyectos más grandes.
+
+**Descripción**:
+
+Crea un proyecto con múltiples archivos Python y organiza el código en módulos. Simula un programa de gestión de tareas.
+
+**Instrucciones**:
+
+- Crea una carpeta llamada tareas.
+
+- Dentro de esa carpeta, crea tres archivos:
+
+- __init__.py: Para inicializar el paquete.
+
+- gestor.py: Para gestionar tareas.
+
+- principal.py: Para ejecutar el programa.
+
+<details>
+  <summary>Posibles soluciones</summary>
+
+**Código**:
+
+**gestor.py**:
+
+```python
+def agregar_tarea(tarea):
+    tareas.append(tarea)
+    print(f"Tarea '{tarea}' agregada.")
+    
+def listar_tareas():
+    for tarea in tareas:
+        print(f"- {tarea}")
+
+tareas = []
+```
+
+**principal.py**:
+
+```python
+from tareas.gestor import agregar_tarea, listar_tareas
+
+agregar_tarea("Estudiar Python")
+agregar_tarea("Leer libro de programación")
+listar_tareas()
+```
+</details>
+:::

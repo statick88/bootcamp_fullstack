@@ -1,0 +1,80 @@
+:::{.justify}
+## Excepciones y Manejo de Errores
+
+::: {.center}
+![Excepciones y Manejo de Errores](./images/exepciones.png)
+:::
+
+El manejo adecuado de errores es esencial para escribir código robusto. Las excepciones permiten manejar situaciones inesperadas durante la ejecución de un programa sin que este termine abruptamente.
+
+### Conceptos clave
+- **try**: Bloque donde intentamos ejecutar código que puede generar una excepción.
+- **except**: Bloque donde capturamos y gestionamos una excepción.
+- **else**: Bloque que se ejecuta si no hay excepciones.
+- **finally**: Bloque que se ejecuta independientemente de si hubo una excepción o no.
+
+### Ejemplo
+
+```python
+try:
+    numero = int(input("Introduce un número: "))
+except ValueError as e:
+    print(f"Error: {e}. Introduce un número válido.")
+else:
+    print(f"El número es {numero}.")
+finally:
+    print("Operación terminada.")
+```
+### Excepciones personalizadas
+
+Podemos crear nuestras propias excepciones para situaciones específicas.
+
+```python
+class MiError(Exception):
+    def __init__(self, mensaje):
+        self.mensaje = mensaje
+        super().__init__(self.mensaje)
+
+try:
+    raise MiError("Algo salió mal")
+except MiError as e:
+    print(f"Capturado: {e}")
+```
+
+### Ejemplo Práctico
+
+**Objetivo**:
+
+Aprender a manejar excepciones en Python para crear un programa robusto que gestione entradas de usuario incorrectas.
+
+**Descripción**:
+Crear un programa que pida al usuario un número, y en caso de que se ingrese algo que no sea un número, maneje el error de manera adecuada, mostrando un mensaje informativo.
+
+**Instrucciones**:
+
+- Utiliza un bloque try-except para manejar excepciones de tipo ValueError.
+
+- Agrega un bloque else para confirmar la entrada del usuario si es válida.
+
+- Incluye un bloque finally que imprima un mensaje de despedida.
+
+
+<details>
+  <summary>Posibles soluciones</summary>
+
+**Código**:
+```python
+def pedir_numero():
+    try:
+        numero = int(input("Introduce un número: "))
+    except ValueError:
+        print("¡Error! No has introducido un número válido.")
+    else:
+        print(f"Has introducido el número: {numero}")
+    finally:
+        print("Fin del programa")
+
+pedir_numero()
+```
+</details>
+:::

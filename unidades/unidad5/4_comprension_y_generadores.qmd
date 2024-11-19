@@ -1,0 +1,78 @@
+
+## Comprensiones y Generadores
+
+::: {.center}
+![Comprensiones y Generadores](./images/comprensiones_y_generadores.png)
+:::
+
+Las comprensiones proporcionan una manera más compacta de crear colecciones. Los generadores permiten trabajar con grandes volúmenes de datos de manera eficiente.
+
+### Conceptos clave
+
+- Comprensión de listas, diccionarios y conjuntos.
+
+- Generadores y yield.
+
+Ejemplo
+
+```python
+# Comprensión de lista
+cuadrados = [x**2 for x in range(5)]
+print(cuadrados)
+
+# Generador
+def contador():
+    for i in range(5):
+        yield i
+
+gen = contador()
+for valor in gen:
+    print(valor)
+```
+
+### Ejemplo Práctico
+
+**Objetivo**:
+
+Aprender a crear listas, diccionarios y generadores utilizando comprensiones y el comando yield.
+
+**Descripción**:
+
+Crea un programa que use comprensiones de listas y diccionarios para realizar operaciones sobre una lista de palabras, y usa un generador para crear una secuencia de números.
+
+**Instrucciones**:
+
+- Usa una comprensión de lista para crear una lista de las longitudes de las palabras.
+
+- Usa una comprensión de diccionario para contar la frecuencia de cada letra en un conjunto de palabras.
+
+- Usa un generador para producir los primeros 10 números pares.
+
+<details>
+  <summary>Posibles soluciones</summary>
+
+
+**Código**:
+```python
+# Lista de palabras
+palabras = ["python", "django", "flask", "javascript"]
+
+# Comprensión de lista para obtener las longitudes de las palabras
+longitudes = [len(palabra) for palabra in palabras]
+print(f"Longitudes de las palabras: {longitudes}")
+
+# Comprensión de diccionario para contar las frecuencias de las letras
+frecuencia = {letra: palabras[0].count(letra) for letra in palabras[0]}
+print(f"Frecuencia de letras en la primera palabra: {frecuencia}")
+
+# Generador para números pares
+def generador_pares():
+    for i in range(0, 20, 2):
+        yield i
+
+# Mostrar los números generados
+for numero in generador_pares():
+    print(numero)
+```
+</details>
+

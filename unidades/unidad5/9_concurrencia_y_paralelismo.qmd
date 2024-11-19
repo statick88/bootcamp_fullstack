@@ -1,0 +1,97 @@
+:::{.justify}
+## Concurrencia y Paralelismo
+
+En aplicaciones que requieren ejecutar múltiples tareas simultáneamente, la concurrencia y el paralelismo permiten mejorar el rendimiento.
+
+### Conceptos clave
+
+- **threading**: Hilos de ejecución.
+
+- **multiprocessing**: Procesos independientes.
+
+- **asyncio y async/await**: Manejo de tareas asincrónicas.
+
+Ejemplo
+
+```python
+import threading
+
+def tarea():
+    print("Tarea ejecutada por hilo")
+
+# Crear un hilo
+hilo = threading.Thread(target=tarea)
+hilo.start()
+hilo.join()
+```
+### Ejemplo Práctico
+
+**Objetivo**:
+
+Aprender a utilizar técnicas de concurrencia y paralelismo para ejecutar tareas de manera simultánea y mejorar el rendimiento de las aplicaciones.
+
+**Descripción**:
+
+En este ejemplo se utilizan tres enfoques diferentes de concurrencia: threading, multiprocessing y asyncio. Cada uno es útil en diferentes escenarios según la naturaleza de la tarea que se quiere realizar.
+
+**Instrucciones**:
+
+- Crea una función simple que imprima un mensaje.
+
+- Implementa la ejecución concurrente de esa función utilizando threading, multiprocessing y asyncio.
+
+**Ejemplos prácticos**:
+
+#### 1. Uso de threading:
+
+El módulo threading permite ejecutar funciones de forma concurrente en múltiples hilos dentro de un solo proceso.
+
+```python
+import threading
+
+def tarea():
+    print("Tarea ejecutada por hilo")
+
+# Crear un hilo
+hilo = threading.Thread(target=tarea)
+hilo.start()
+hilo.join()  # Esperar a que termine la ejecución del hilo
+print("Hilo terminado")
+```
+#### 2. Uso de multiprocessing:
+
+El módulo multiprocessing permite ejecutar funciones en múltiples procesos independientes, lo que es útil para tareas que consumen mucho CPU.
+
+```python
+import multiprocessing
+
+def tarea():
+    print("Tarea ejecutada por proceso")
+
+# Crear un proceso
+proceso = multiprocessing.Process(target=tarea)
+proceso.start()
+proceso.join()  # Esperar a que termine la ejecución del proceso
+print("Proceso terminado")
+```
+
+#### 3. Uso de asyncio y async/await:
+
+El módulo asyncio permite manejar operaciones de entrada/salida asincrónicas de manera eficiente, sin bloquear el hilo principal.
+
+```python
+import asyncio
+
+async def tarea():
+    print("Tarea asincrónica ejecutada")
+    await asyncio.sleep(2)  # Simula una tarea asincrónica con espera
+    print("Tarea asincrónica terminada")
+
+# Ejecutar tareas asincrónicas
+async def main():
+    await asyncio.gather(tarea(), tarea())
+
+asyncio.run(main())  # Ejecuta el bucle de eventos
+```
+
+:::

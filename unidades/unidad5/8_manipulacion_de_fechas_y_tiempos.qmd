@@ -1,0 +1,68 @@
+
+:::{.justify}
+## Manipulación de Fechas y Tiempos
+
+:::{.center}
+![Fechas](./images/fechas.png)
+:::
+
+Trabajar con fechas y horas es una parte fundamental en muchas aplicaciones.
+
+### Conceptos clave
+
+- **datetime**: Para trabajar con fechas y horas.
+
+- **time**: Para trabajar con tiempos.
+
+- **pytz**: Para manejar zonas horarias.
+
+Ejemplo
+
+```python
+from datetime import datetime
+
+# Fecha y hora actuales
+ahora = datetime.now()
+print(ahora)
+
+# Formateo de fecha
+fecha_formateada = ahora.strftime("%Y-%m-%d %H:%M:%S")
+print(fecha_formateada)
+```
+### Ejemplo Práctico
+
+**Objetivo**:
+
+Aprender a trabajar con fechas y horas utilizando el módulo datetime.
+
+**Descripción**:
+Crea un programa que calcule el tiempo restante hasta un evento futuro.
+
+**Instrucciones**:
+
+- Usa datetime para calcular la fecha y hora actuales.
+
+- Calcula el tiempo restante hasta un evento programado (por ejemplo, fin de año).
+
+<details>
+  <summary>Posibles soluciones</summary>
+
+**Código**:
+
+```python
+from datetime import datetime
+
+# Fecha actual
+fecha_actual = datetime.now()
+print(f"Fecha y hora actuales: {fecha_actual}")
+
+# Fecha de un evento
+evento = datetime(2024, 12, 31, 23, 59, 59)
+
+# Tiempo restante
+tiempo_restante = evento - fecha_actual
+print(f"Tiempo restante hasta el evento: {tiempo_restante}")
+```
+</details>
+
+:::

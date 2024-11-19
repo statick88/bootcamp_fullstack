@@ -1,0 +1,90 @@
+
+## Colecciones de Datos y Estructuras Especializadas
+
+:::{.center}
+![Colecciones](./images/colecciones.png)
+:::
+
+La librería collections ofrece estructuras de datos útiles para optimizar el código.
+
+### Conceptos clave
+
+- **Counter**: Cuenta elementos.
+
+- **deque**: Cola de doble extremo.
+
+- **defaultdict**: Diccionario con valores predeterminados.
+
+- **namedtuple**: Tupla con nombre.
+
+Ejemplo
+
+```python
+from collections import Counter, deque, defaultdict, namedtuple
+
+# Counter
+c = Counter([1, 2, 2, 3])
+print(c)
+
+# deque
+d = deque([1, 2, 3])
+d.append(4)
+print(d)
+
+# defaultdict
+dd = defaultdict(int)
+dd['a'] += 1
+print(dd)
+
+# namedtuple
+Persona = namedtuple('Persona', 'nombre edad')
+persona = Persona(nombre='Juan', edad=30)
+print(persona.nombre)
+```
+### Ejemplo Práctico
+
+**Objetivo**:
+
+Aprender a utilizar estructuras de datos avanzadas como Counter, deque y defaultdict.
+
+**Descripción**:
+
+Crea un programa que utilice Counter para contar elementos, deque para manipular una cola y defaultdict para un diccionario con valores predeterminados.
+
+**Instrucciones**:
+
+- Usa Counter para contar las palabras en una frase.
+
+- Usa deque para simular una cola.
+
+- Usa defaultdict para contar ocurrencias de letras en un texto.
+
+<details>
+  <summary>Posibles soluciones</summary>
+
+
+**Código**:
+```python
+from collections import Counter, deque, defaultdict
+
+# Usando Counter
+frase = "python python flask flask flask"
+contador = Counter(frase.split())
+print(contador)
+
+# Usando deque
+cola = deque([1, 2, 3])
+cola.append(4)
+cola.popleft()
+print(cola)
+
+# Usando defaultdict
+texto = "hola mundo"
+letras = defaultdict(int)
+for letra in texto:
+    letras[letra] += 1
+print(letras)
+```
+</details>
+
+
