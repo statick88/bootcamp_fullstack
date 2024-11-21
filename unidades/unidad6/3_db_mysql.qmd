@@ -1,0 +1,205 @@
+:::{.justify}
+# Bases de Datos en MySQL
+
+:::{.center}
+![MySQL](./images/mysql_logo.png){fig-align="center" width="200"}
+:::
+
+MySQL es uno de los sistemas de gestión de bases de datos relacionales más populares. Es ampliamente utilizado en aplicaciones web y empresariales debido a su estabilidad, rendimiento y soporte para múltiples usuarios y transacciones complejas.
+
+## Conceptos Clave
+
+**Relacional**: MySQL organiza los datos en tablas que se relacionan entre sí.
+
+**Escalabilidad**: Adecuado para aplicaciones pequeñas y grandes.
+
+**Transacciones**: Admite transacciones para garantizar la integridad de los datos.
+
+**SQL estándar**: Usa SQL para definir, consultar y manipular datos.
+
+**Comunidad activa**: Gran cantidad de documentación y soporte.
+
+## Configuración de MySQL con Docker
+
+### Instrucciones
+
+**Crear un contenedor de MySQL con Docker**:
+
+Ejecuta el siguiente comando para iniciar un servidor MySQL en Docker.
+
+```bash
+docker run --name mysql-database -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=tienda -p 3306:3306 -d mysql:8.0
+```
+### Parámetros:
+
+**--name**: Nombre del contenedor.
+**MYSQL_ROOT_PASSWORD**: Contraseña para el usuario root.
+**MYSQL_DATABASE**: Nombre de la base de datos que se creará al iniciar.
+**-p 3306:3306**: Mapea el puerto del contenedor al puerto local.
+**mysql**:8.0: Imagen oficial de MySQL.
+
+**Acceder al contenedor (opcional)**:
+
+```bash
+docker exec -it mysql-database mysql -uroot -proot
+```
+
+## Ejemplos
+
+**Ejemplo 1**: Conexión a la base de datos desde Python
+
+:::{.center}
+![MySQL Conexión](./images/mysql1_code001.png){fig-align="center" width="400}
+:::
+
+
+```python
+import mysql.connector
+
+conexion = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="root",
+    database="tienda"
+)
+
+if conexion.is_connected():
+    print("Conexión exitosa a MySQL")
+conexion.close()
+```
+
+**Ejemplo 2**: Crear una tabla
+
+:::{.center}
+![MySQL Crear Tabla](./images/mysql_code002.png){fig-align="center" width="800"}
+:::
+```python
+conexion = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="root",
+    database="tienda"
+)
+cursor = conexion.cursor()
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS productos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
+    precio DECIMAL(10, 2) NOT NULL
+)
+""")
+conexion.commit()
+conexion.close()
+```
+**Ejemplo 3**: Insertar datos
+
+:::{.center}
+![MySQL Insertar Datos](./images/mysql_code002.png){fig-align="center" width="800"}
+:::
+```python
+conexion = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="root",
+    database="tienda"
+)
+cursor = conexion.cursor()
+cursor.execute("INSERT INTO productos (nombre, precio) VALUES (%s, %s)", ("Laptop", 1299.99))
+conexion.commit()
+conexion.close()
+```
+**Ejemplo 4**: Consultar datos
+
+:::{.center}
+![MySQL Consultar Datos](./images/mysql_code003.png){fig-align="center" width="800"}
+:::
+
+```python
+conexion = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="root",
+    database="tienda"
+)
+cursor = conexion.cursor()
+cursor.execute("SELECT * FROM productos")
+for fila in cursor.fetchall():
+    print(fila)
+conexion.close()
+```
+## Ejemplo Práctico
+
+**Objetivo**: Crear, administrar y consultar productos en una base de datos MySQL usando Python.
+
+**Descripción**: Se implementará un sistema que permite agregar, listar, y buscar productos. La base de datos será configurada mediante Docker.
+
+## Instrucciones:
+
+1. Configura un contenedor de MySQL usando Docker.
+2. Crea una tabla productos en la base de datos tienda.
+3. Implementa funciones para administrar los productos desde Python.
+
+<details>
+  <summary>Posible solución</summary>
+
+Código:
+
+:::{.center}
+![MySQL Ejemplo Práctico](./images/mysql_code004.png){fig-align="center" width="800}
+:::
+
+```python
+import mysql.connector
+
+def conectar():
+    return mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="root",
+        database="tienda"
+    )
+
+def crear_tabla():
+    conexion = conectar()
+    cursor = conexion.cursor()
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS productos (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        nombre VARCHAR(255) NOT NULL,
+        precio DECIMAL(10, 2) NOT NULL
+    )
+    """)
+    conexion.commit()
+    conexion.close()
+
+def agregar_producto(nombre, precio):
+    conexion = conectar()
+    cursor = conexion.cursor()
+    cursor.execute("INSERT INTO productos (nombre, precio) VALUES (%s, %s)", (nombre, precio))
+    conexion.commit()
+    conexion.close()
+
+def listar_productos():
+    conexion = conectar()
+    cursor = conexion.cursor()
+    cursor.execute("SELECT * FROM productos")
+    for fila in cursor.fetchall():
+        print(fila)
+    conexion.close()
+
+# Uso
+crear_tabla()
+agregar_producto("Mouse", 19.99)
+agregar_producto("Teclado", 49.99)
+print("Productos registrados:")
+listar_productos()
+```
+
+</details>
+
+# Conclusiones
+
+1. MySQL es una base de datos relacional popular con soporte para múltiples usuarios y transacciones.
+2. Docker facilita la configuración de entornos de desarrollo con contenedores aislados.
+3. Python se puede utilizar para interactuar con bases de datos MySQL mediante el conector **mysql-connector-python**.
+:::

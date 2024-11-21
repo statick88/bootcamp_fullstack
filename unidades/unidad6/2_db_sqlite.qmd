@@ -1,0 +1,154 @@
+:::{.justify}
+# Bases de Datos con SQLite3
+
+:::{.center}
+![SQLite3](./images/sqlite_logo.png){fig-align="center" width="200"}
+:::
+
+SQLite3 es una base de datos ligera, fácil de configurar y embebida en aplicaciones. Es ideal para prototipos, aplicaciones pequeñas y herramientas locales que no requieren un servidor independiente.
+
+## Conceptos Clave
+
+- **Ligereza**: No requiere configuración de servidor, los datos se almacenan en un archivo local.
+- **SQL estándar**: Utiliza el lenguaje SQL para consultas y administración.
+- **Portabilidad**: Las bases de datos se almacenan en archivos que pueden moverse fácilmente entre sistemas.
+- **Uso común**: Perfecta para entornos de prueba o proyectos con requisitos mínimos.
+
+## Ejemplos
+
+**Ejemplo 1**: Crear una base de datos y una tabla
+
+:::{.center}
+![SQLite3 Crear Base de Datos](./images/sqlite3_code001.png){fig-align="center" width="400}
+:::
+
+```python
+import sqlite3
+
+conexion = sqlite3.connect("mi_base_datos.db")
+cursor = conexion.cursor()
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS productos (
+    id INTEGER PRIMARY KEY,
+    nombre TEXT NOT NULL,
+    precio REAL NOT NULL
+)
+""")
+conexion.commit()
+conexion.close()
+```
+En el ejemplo anterior, se crea una base de datos llamada mi_base_datos.db con una tabla productos que contiene columnas para id, nombre y precio.
+
+**Ejemplo 2**: Insertar datos
+
+:::{.center}
+![SQLite3 Insertar Datos](./images/sqlite3_code002.png){fig-align="center" width="400}
+:::
+
+```python
+conexion = sqlite3.connect("mi_base_datos.db")
+cursor = conexion.cursor()
+cursor.execute("INSERT INTO productos (nombre, precio) VALUES ('Laptop', 1200.50)")
+conexion.commit()
+conexion.close()
+```
+En este caso, se inserta un nuevo producto en la tabla productos con nombre "Laptop" y precio 1200.50.
+
+**Ejemplo 3**: Leer datos
+
+:::{.center}
+![SQLite3 Leer Datos](./images/sqlite3_code003.png){fig-align="center" width="400}
+:::
+```python
+conexion = sqlite3.connect("mi_base_datos.db")
+cursor = conexion.cursor()
+cursor.execute("SELECT * FROM productos")
+print(cursor.fetchall())
+conexion.close()
+```
+La consulta SELECT * FROM productos recupera todos los registros de la tabla productos y los imprime en pantalla.
+
+**Ejemplo 4**: Actualizar y eliminar datos
+
+:::{.center}
+![SQLite3 Actualizar y Eliminar Datos](./images/sqlite3_code004.png){fig-align="center" width="400}
+:::
+
+```python
+conexion = sqlite3.connect("mi_base_datos.db")
+cursor = conexion.cursor()
+cursor.execute("UPDATE productos SET precio = 1100.00 WHERE nombre = 'Laptop'")
+cursor.execute("DELETE FROM productos WHERE nombre = 'Laptop'")
+conexion.commit()
+conexion.close()
+```
+## Ejemplo Práctico
+
+**Objetivo**: Crear, administrar y consultar una base de datos de "productos".
+
+**Descripción**: Se implementará un pequeño sistema que permite agregar, listar y buscar productos utilizando SQLite3.
+
+### Instrucciones:
+
+1. Crea una base de datos llamada tienda.db.
+
+2. Define una tabla productos con columnas id, nombre y precio.
+
+3. Permite agregar y listar productos desde un script Python.
+
+<details>
+  <summary>Posible solución</summary>
+
+Código:
+
+:::{.center}
+![SQLite3 Ejemplo Práctico](./images/sqlite3_code005.png){fig-align="center" width="400}
+:::
+
+```python
+import sqlite3
+
+def conectar():
+    return sqlite3.connect("tienda.db")
+
+def crear_tabla():
+    conexion = conectar()
+    cursor = conexion.cursor()
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS productos (
+        id INTEGER PRIMARY KEY,
+        nombre TEXT NOT NULL,
+        precio REAL NOT NULL
+    )
+    """)
+    conexion.commit()
+    conexion.close()
+
+def agregar_producto(nombre, precio):
+    conexion = conectar()
+    cursor = conexion.cursor()
+    cursor.execute("INSERT INTO productos (nombre, precio) VALUES (?, ?)", (nombre, precio))
+    conexion.commit()
+    conexion.close()
+
+def listar_productos():
+    conexion = conectar()
+    cursor = conexion.cursor()
+    cursor.execute("SELECT * FROM productos")
+    for fila in cursor.fetchall():
+        print(fila)
+    conexion.close()
+
+# Uso
+crear_tabla()
+agregar_producto("Mouse", 25.99)
+agregar_producto("Teclado", 45.50)
+print("Productos registrados:")
+listar_productos()
+```
+</details>
+
+# Conclusiones
+
+SQLite3 es una excelente opción para proyectos pequeños y prototipos que requieren una base de datos local. Su facilidad de uso y portabilidad lo convierten en una herramienta versátil para el desarrollo de aplicaciones.
+:::

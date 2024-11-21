@@ -1012,783 +1012,11 @@
     ]
   },
   {
-    "objectID": "unidades/unidad6/intro_web.html",
-    "href": "unidades/unidad6/intro_web.html",
-    "title": "Introducción a la web",
-    "section": "",
-    "text": "¿Qué es la web?\nDefinición: La web es un sistema de documentos interconectados que se acceden a través de Internet.",
-    "crumbs": [
-      "Unidad 5: Desarrollo Web",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Introducción a la web</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/intro_web.html#diferencia-entre-internet-y-la-web",
-    "href": "unidades/unidad6/intro_web.html#diferencia-entre-internet-y-la-web",
-    "title": "Introducción a la web",
-    "section": "Diferencia entre Internet y la Web:",
-    "text": "Diferencia entre Internet y la Web:\nInternet es una red global de computadoras conectadas entre sí que permite el intercambio de información (red de redes). La Web (o la World Wide Web, WWW) es una forma específica de acceder a la información a través de documentos interconectados (páginas web) usando navegadores. La web es solo una parte de Internet.",
-    "crumbs": [
-      "Unidad 5: Desarrollo Web",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Introducción a la web</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/intro_web.html#ejemplo-de-productosservicios",
-    "href": "unidades/unidad6/intro_web.html#ejemplo-de-productosservicios",
-    "title": "Introducción a la web",
-    "section": "Ejemplo de productos/servicios:",
-    "text": "Ejemplo de productos/servicios:\nGoogle Search: Un motor de búsqueda que accede a la web para ofrecer resultados.\nFacebook, Twitter, Instagram: Redes sociales que permiten interactuar con contenido en la web.",
-    "crumbs": [
-      "Unidad 5: Desarrollo Web",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Introducción a la web</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/intro_web.html#cómo-funciona-la-web",
-    "href": "unidades/unidad6/intro_web.html#cómo-funciona-la-web",
-    "title": "Introducción a la web",
-    "section": "¿Cómo funciona la web?",
-    "text": "¿Cómo funciona la web?\nProceso de carga de una página web:\n\nUn usuario escribe una URL en su navegador (ej., www.ejemplo.com).\nEl navegador envía una solicitud HTTP a un servidor web donde está alojada la página.\nEl servidor responde con archivos HTML, CSS y JavaScript.\nEl navegador interpreta estos archivos y muestra la página web.\n\nEjemplo de productos/servicios:\nAmazon: Cuando accedes a la tienda, tu navegador hace solicitudes HTTP al servidor de Amazon para cargar los productos, imágenes, y precios.",
-    "crumbs": [
-      "Unidad 5: Desarrollo Web",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Introducción a la web</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/intro_web.html#qué-es-un-navegador-web",
-    "href": "unidades/unidad6/intro_web.html#qué-es-un-navegador-web",
-    "title": "Introducción a la web",
-    "section": "¿Qué es un navegador web?",
-    "text": "¿Qué es un navegador web?\nDefinición: El navegador es un software que permite acceder a las páginas web. Interpreta el código HTML, CSS y JavaScript para mostrar la información en forma de contenido visual.\nEjemplo de productos/servicios:\nGoogle Chrome, Mozilla Firefox, Safari: Son navegadores que permiten ver páginas web y usar aplicaciones en línea como Gmail, YouTube, etc.",
-    "crumbs": [
-      "Unidad 5: Desarrollo Web",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Introducción a la web</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/intro_web.html#qué-es-html",
-    "href": "unidades/unidad6/intro_web.html#qué-es-html",
-    "title": "Introducción a la web",
-    "section": "¿Qué es HTML?",
-    "text": "¿Qué es HTML?\nDefinición: HTML (HyperText Markup Language) es el lenguaje de marcado estándar utilizado para crear páginas web. Define la estructura de los documentos web mediante etiquetas.\nEjemplo de productos/servicios:\nWikipedia: La información se estructura usando HTML, con encabezados, párrafos, listas y enlaces para organizar el contenido.\nEjemplo de código básico HTML:\n&lt;html&gt;\n  &lt;head&gt;\n    &lt;title&gt;Mi Página Web&lt;/title&gt;\n  &lt;/head&gt;\n  &lt;body&gt;\n    &lt;h1&gt;Bienvenidos a mi sitio web&lt;/h1&gt;\n    &lt;p&gt;Este es un párrafo de texto.&lt;/p&gt;\n    &lt;a href=\"https://www.google.com\"&gt;Ir a Google&lt;/a&gt;\n  &lt;/body&gt;\n&lt;/html&gt;",
-    "crumbs": [
-      "Unidad 5: Desarrollo Web",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Introducción a la web</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/intro_web.html#qué-es-css",
-    "href": "unidades/unidad6/intro_web.html#qué-es-css",
-    "title": "Introducción a la web",
-    "section": "¿Qué es CSS?",
-    "text": "¿Qué es CSS?\nDefinición: CSS (Cascading Style Sheets) es un lenguaje utilizado para describir la presentación de un documento HTML. Permite estilizar elementos como el color, tamaño y disposición de los elementos en la página.\nEjemplo de productos/servicios:\nNetflix: La interfaz de usuario de Netflix se diseña con CSS para que el contenido (películas, series) se muestre de manera atractiva y organizada.\nEjemplo de código CSS:\nbody {\n  font-family: Arial, sans-serif;\n  background-color: #f0f0f0;\n}\n\nh1 {\n  color: #2c3e50;\n}\n\np {\n  font-size: 16px;\n}",
-    "crumbs": [
-      "Unidad 5: Desarrollo Web",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Introducción a la web</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/intro_web.html#qué-es-javascript",
-    "href": "unidades/unidad6/intro_web.html#qué-es-javascript",
-    "title": "Introducción a la web",
-    "section": "¿Qué es JavaScript?",
-    "text": "¿Qué es JavaScript?\nDefinición: JavaScript es un lenguaje de programación que permite agregar interactividad a las páginas web. Se ejecuta en el navegador del usuario, lo que permite crear dinámicamente contenido o interactuar con el servidor sin necesidad de recargar la página.\nConceptos básicos de JavaScript:\nVariables: Contienen datos (números, cadenas de texto, etc.).\nlet nombre = \"Juan\";\nFunciones: Bloques de código que realizan una tarea específica.\njavascript\nCopiar código\nfunction saludar() {\n  console.log(\"¡Hola, \" + nombre + \"!\");\n}\nsaludar();  // Imprime: ¡Hola, Juan!\nEventos: JavaScript se utiliza para manejar eventos como clics o movimientos del ratón.\njavascript\nCopiar código\ndocument.getElementById(\"boton\").onclick = function() {\n  alert(\"¡Botón presionado!\");\n}\nEjemplo de productos/servicios:\nGoogle Maps: Utiliza JavaScript para mostrar mapas interactivos y permitir que los usuarios hagan clic en ubicaciones. YouTube: Utiliza JavaScript para permitir la reproducción de videos y la interacción con la interfaz.",
-    "crumbs": [
-      "Unidad 5: Desarrollo Web",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Introducción a la web</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/intro_web.html#qué-es-node.js",
-    "href": "unidades/unidad6/intro_web.html#qué-es-node.js",
-    "title": "Introducción a la web",
-    "section": "¿Qué es Node.js?",
-    "text": "¿Qué es Node.js?\nDefinición: Node.js es un entorno de ejecución para JavaScript en el lado del servidor. Permite usar JavaScript para crear aplicaciones backend, lo que facilita la construcción de aplicaciones completas con JavaScript tanto en el frontend como en el backend.\nEjemplo de productos/servicios:\nNetflix (backend): Utiliza Node.js para manejar grandes volúmenes de datos y conexiones en tiempo real para la transmisión de contenido.\nEjemplo de código básico en Node.js:\nconst http = require('http');\nconst server = http.createServer((req, res) =&gt; {\n  res.write('¡Hola Mundo!');\n  res.end();\n});\nserver.listen(3000, () =&gt; {\n  console.log('Servidor corriendo en http://localhost:3000');\n});",
-    "crumbs": [
-      "Unidad 5: Desarrollo Web",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Introducción a la web</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/intro_web.html#qué-es-react",
-    "href": "unidades/unidad6/intro_web.html#qué-es-react",
-    "title": "Introducción a la web",
-    "section": "¿Qué es React?",
-    "text": "¿Qué es React?\nDefinicióno: React es una biblioteca de JavaScript para construir interfaces de usuario. Permite crear aplicaciones web interactivas mediante la construcción de componentes reutilizables que gestionan su propio estado.\nEjemplo de productos/servicios:\nFacebook: Fue desarrollado con React para construir interfaces de usuario rápidas y reactivas. Instagram: Utiliza React para gestionar la interacción con las publicaciones, los comentarios y las actualizaciones en tiempo real.\nEjemplo de código básico en React:\nimport React, { useState } from 'react';\n\nfunction App() {\n  const [contador, setContador] = useState(0);\n\n  return (\n    &lt;div&gt;\n      &lt;h1&gt;Contador: {contador}&lt;/h1&gt;\n      &lt;button onClick={() =&gt; setContador(contador + 1)}&gt;Incrementar&lt;/button&gt;\n    &lt;/div&gt;\n  );\n}\n\nexport default App;",
-    "crumbs": [
-      "Unidad 5: Desarrollo Web",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Introducción a la web</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/intro_web.html#frontend-vs.-backend",
-    "href": "unidades/unidad6/intro_web.html#frontend-vs.-backend",
-    "title": "Introducción a la web",
-    "section": "Frontend vs. Backend",
-    "text": "Frontend vs. Backend\nDefinición:\nFrontend: Es la parte de la aplicación con la que interactúan los usuarios. Incluye todo lo que se ve en la pantalla: diseño, contenido y la lógica de interactividad (HTML, CSS, JavaScript, React).\nBackend: Es la parte “invisible” que maneja los datos y la lógica del servidor. Se encarga de procesar las solicitudes de los usuarios, interactuar con bases de datos y enviar respuestas al frontend (Node.js, Python, Ruby, PHP).\nEjemplo de productos/servicios:\nAmazon (Frontend): La página que ves cuando compras algo, donde se muestran los productos, el carrito y el proceso de pago.\nAmazon (Backend): Los sistemas que gestionan los inventarios, las transacciones y la autenticación de usuarios.",
-    "crumbs": [
-      "Unidad 5: Desarrollo Web",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Introducción a la web</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/intro_web.html#api-y-api-rest",
-    "href": "unidades/unidad6/intro_web.html#api-y-api-rest",
-    "title": "Introducción a la web",
-    "section": "API y API REST",
-    "text": "API y API REST\nDefinición:\nAPI (Interfaz de Programación de Aplicaciones): Es un conjunto de reglas y herramientas que permiten que diferentes aplicaciones se comuniquen entre sí. En la web, las APIs permiten que el frontend y el backend intercambien datos.\nAPI REST (Representational State Transfer): Es un estilo arquitectónico para diseñar APIs que usan HTTP y siguen principios como la claridad en las URLs, el uso de métodos HTTP (GET, POST, PUT, DELETE) y la estructura de datos en formato JSON.\nEjemplo de productos/servicios:\nTwitter API: Permite a las aplicaciones externas interactuar con Twitter, como publicar tuits o leer mensajes.\nSpotify API: Permite integrar las funciones de Spotify (como reproducir canciones) en otras aplicaciones.\nEjemplo de llamada a una API REST:\nfetch('https://api.ejemplo.com/data')\n  .then(response =&gt; response.json())\n  .then(data =&gt; console.log(data));\n\n// Ejemplo de respuesta:\n\n// {\n//   \"nombre\": \"Juan\",\n//   \"edad\": 30\n// }",
-    "crumbs": [
-      "Unidad 5: Desarrollo Web",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Introducción a la web</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/intro_web.html#server-site-rendering",
-    "href": "unidades/unidad6/intro_web.html#server-site-rendering",
-    "title": "Introducción a la web",
-    "section": "Server Site Rendering:",
-    "text": "Server Site Rendering:\nDefinición:",
-    "crumbs": [
-      "Unidad 5: Desarrollo Web",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Introducción a la web</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad6/intro_web.html#conclusión",
-    "href": "unidades/unidad6/intro_web.html#conclusión",
-    "title": "Introducción a la web",
-    "section": "Conclusión",
-    "text": "Conclusión\nLa web es un sistema de documentos interconectados que se acceden a través de Internet. Los navegadores web permiten acceder a la web y mostrar páginas creadas con HTML, CSS y JavaScript. Node.js permite ejecutar JavaScript en el lado del servidor, mientras que React facilita la creación de interfaces de usuario interactivas. Las APIs y las APIs REST permiten que las aplicaciones se comuniquen entre sí y compartan datos.",
-    "crumbs": [
-      "Unidad 5: Desarrollo Web",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Introducción a la web</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/3_funciones.html#objetivos-del-laboratorio",
-    "href": "unidades/Proyectos/3_funciones.html#objetivos-del-laboratorio",
-    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
-    "section": "Objetivos del Laboratorio",
-    "text": "Objetivos del Laboratorio\n\nDesarrollar un juego de Ahorcado usando funciones en Python.\nUsar estructuras de datos como listas y cadenas de texto.\nImplementar lógica condicional y bucles para manejar el flujo del juego.\nMostrar mensajes finales (con emojis) según el resultado del juego.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/3_funciones.html#prerrequisitos",
-    "href": "unidades/Proyectos/3_funciones.html#prerrequisitos",
-    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
-    "section": "Prerrequisitos",
-    "text": "Prerrequisitos\n\nConocimiento básico de Python: funciones, listas, cadenas, condicionales y bucles.\nInstalación de Python 3 en tu equipo.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/3_funciones.html#paso-1-crear-la-estructura-inicial-del-proyecto",
-    "href": "unidades/Proyectos/3_funciones.html#paso-1-crear-la-estructura-inicial-del-proyecto",
-    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
-    "section": "Paso 1: Crear la Estructura Inicial del Proyecto",
-    "text": "Paso 1: Crear la Estructura Inicial del Proyecto\n\nCrear un archivo de Python:\nAbre tu editor de texto o IDE favorito (se recomienda utilizar Vscode) y crea un nuevo archivo llamado ahorcado.py.\nDefinir el objetivo del proyecto en el archivo:\nAñade un comentario en la primera línea que describa el propósito del proyecto:\n# Juego de Ahorcado en Python",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/3_funciones.html#paso-2-definir-las-etapas-del-ahorcado-en-ascii",
-    "href": "unidades/Proyectos/3_funciones.html#paso-2-definir-las-etapas-del-ahorcado-en-ascii",
-    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
-    "section": "Paso 2: Definir las Etapas del Ahorcado en ASCII",
-    "text": "Paso 2: Definir las Etapas del Ahorcado en ASCII\n\nCrear la lista AHORCADO_DIBUJO:\nDefine las etapas progresivas del dibujo del ahorcado usando una lista de cadenas en ASCII.\nCada elemento de la lista representa una etapa del juego.\nAHORCADO_DIBUJO = [\n    \"\"\"\n       |\n       |\n       |\n       |\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n       |\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n      /|\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n      /|\\\\\n       |\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n      /|\\\\\n       |\n      /\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n      /|\\\\\n       |\n      / \\\\\n    \"\"\"\n]\n\n\nPrueba del dibujo:\nPrueba imprimiendo cada elemento de la lista para asegurarte de que el dibujo es correcto.\nprint(len(AHORCADO_DIBUJO))\nfor etapa in AHORCADO_DIBUJO:\n    print(etapa)\n\n\n\n\n\n\nTip\n\n\n\nNota: Puedes ejecutar el código en tu terminal o en un entorno de Python para verificar que el dibujo se imprime correctamente.\n\n\n\n\n\n\n\n\nTip\n\n\n\nNo olvides utilizar la función print() para mostrar los elementos de la lista en la consola. Y los comentarios para poder identificar cada etapa del dibujo.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/3_funciones.html#paso-3-crear-la-función-para-mostrar-el-dibujo-del-ahorcado",
-    "href": "unidades/Proyectos/3_funciones.html#paso-3-crear-la-función-para-mostrar-el-dibujo-del-ahorcado",
-    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
-    "section": "Paso 3: Crear la Función para Mostrar el Dibujo del Ahorcado",
-    "text": "Paso 3: Crear la Función para Mostrar el Dibujo del Ahorcado\n\nDefinir la función mostrar_ahorcado:\nEsta función tomará el número de intentos fallidos como argumento e imprimirá la etapa correspondiente del ahorcado.\ndef mostrar_ahorcado(intentos_fallidos):\n    print(AHORCADO_DIBUJO[intentos_fallidos])\n\n\nPrueba de la función:\nLlama a mostrar_ahorcado varias veces con diferentes valores para verificar que cada etapa se muestra correctamente.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/3_funciones.html#paso-4-crear-funciones-para-el-flujo-del-juego",
-    "href": "unidades/Proyectos/3_funciones.html#paso-4-crear-funciones-para-el-flujo-del-juego",
-    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
-    "section": "Paso 4: Crear Funciones para el Flujo del Juego",
-    "text": "Paso 4: Crear Funciones para el Flujo del Juego\n\nFunción para Seleccionar Palabra Aleatoria:\nDefine una lista de palabras para que el juego seleccione aleatoriamente una de ellas.\nUsa la biblioteca random para elegir una palabra al azar.\nimport random\n\ndef seleccionar_palabra():\n    palabras = [\"python\", \"programacion\", \"juego\", \"ahorcado\", \"computadora\"]\n    return random.choice(palabras)\nEn el código anterior, la función seleccionar_palabra devuelve una palabra aleatoria de la lista de palabras. Tambien aparece el método choice de random que selecciona una palabra aleatoria de la lista.\n\n\nFunción para Mostrar el Estado Actual:\nEsta función mostrará el progreso actual del jugador, mostrando las letras adivinadas y guiones bajos _ para letras no adivinadas.\ndef mostrar_progreso(palabra, letras_adivinadas):\n    progreso = [letra if letra in letras_adivinadas else '_' for letra in palabra]\n    print(\" \".join(progreso))\nEl código anterior crea una lista de letras adivinadas y guiones bajos para las letras no adivinadas. Luego, une los elementos de la lista en una cadena con un espacio entre cada letra.\nEste proceso se conoce como list comprehension y es una forma concisa de crear listas en Python.\nPara ampliar la información sobre list comprehension, puedes consultar la documentación oficial de Python en el siguiente enlace: List Comprehensions\n\n\nFunción para Manejar el Intento del Jugador:\nDefine una función que reciba una letra y verifique si está en la palabra.\ndef intentar_letra(palabra, letra, letras_adivinadas):\n    if letra in palabra:\n        letras_adivinadas.add(letra)\n        return True\n    return False\nEn el código anterior, la función intentar_letra verifica si la letra está en la palabra y la agrega a la colección de letras adivinadas. Devuelve True si la letra está en la palabra y False si no lo está.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/3_funciones.html#paso-5-crear-la-función-principal-del-juego",
-    "href": "unidades/Proyectos/3_funciones.html#paso-5-crear-la-función-principal-del-juego",
-    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
-    "section": "Paso 5: Crear la Función Principal del Juego",
-    "text": "Paso 5: Crear la Función Principal del Juego\n\nConfigurar el Juego:\nDefine la función jugar_ahorcado() que controlará el flujo completo del juego.\nEstablece la palabra a adivinar, el número de intentos, y una colección para almacenar las letras adivinadas.\ndef jugar_ahorcado():\n    palabra = seleccionar_palabra()\n    letras_adivinadas = set()\n    intentos_fallidos = 0\n    max_intentos = len(AHORCADO_DIBUJO) - 1\nEn el código anterior, la función jugar_ahorcado selecciona una palabra aleatoria, inicializa una colección de letras adivinadas, y establece el número máximo de intentos.\n\n\nCiclo del Juego:\nCrea un bucle while que continúe mientras el jugador tenga intentos restantes y no haya adivinado la palabra completa.\n    while intentos_fallidos &lt; max_intentos:\n        mostrar_ahorcado(intentos_fallidos)\n        mostrar_progreso(palabra, letras_adivinadas)\n        \n        letra = input(\"Introduce una letra: \").lower()\n        \n        if letra in letras_adivinadas:\n            print(\"Ya intentaste esa letra.\")\n            continue\n        \n        if intentar_letra(palabra, letra, letras_adivinadas):\n            print(\"¡Correcto!\")\n            if all(l in letras_adivinadas for l in palabra):\n                mostrar_resultado(True)\n                break\n        else:\n            print(\"Incorrecto.\")\n            intentos_fallidos += 1\n    else:\n        mostrar_ahorcado(intentos_fallidos)\n        mostrar_resultado(False)\nEn el código anterior, el bucle while muestra el dibujo actual del ahorcado, el progreso del jugador y solicita una letra al jugador.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/3_funciones.html#paso-6-crear-función-de-resultado-final-con-emojis",
-    "href": "unidades/Proyectos/3_funciones.html#paso-6-crear-función-de-resultado-final-con-emojis",
-    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
-    "section": "Paso 6: Crear Función de Resultado Final con Emojis",
-    "text": "Paso 6: Crear Función de Resultado Final con Emojis\n\nDefinir mostrar_resultado:\nEsta función mostrará un mensaje final con un emoji dependiendo de si el jugador gana o pierde.\ndef mostrar_resultado(ganador):\n    if ganador:\n        print(\"¡Felicidades, ganaste! 😄\")\n    else:\n        print(\"Lo siento, perdiste. 😞\")\nEn el código anterior, la función mostrar_resultado imprime un mensaje de felicitación si el jugador gana y un mensaje de consuelo si pierde.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/3_funciones.html#paso-7-ejecutar-el-juego",
-    "href": "unidades/Proyectos/3_funciones.html#paso-7-ejecutar-el-juego",
-    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
-    "section": "Paso 7: Ejecutar el Juego",
-    "text": "Paso 7: Ejecutar el Juego\n\nEjecutar el Juego:\nAgrega una condición para ejecutar el juego cuando el archivo sea ejecutado directamente.\nif __name__ == \"__main__\":\n    jugar_ahorcado()\nEn el código anterior, la condición if name == “main”: verifica si el archivo se ejecuta directamente y llama a la función jugar_ahorcado en ese caso.\n\n\n\n\n\n\nTip\n\n\n\nNota: Puedes ejecutar el juego en tu terminal o en un entorno de Python para jugar al Ahorcado.\n\n\n\n\nPrueba Final:\nEjecuta ahorcado.py y juega una partida completa. Verifica que los mensajes y el flujo del juego sean los correctos.\npython ahorcado.py",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/3_funciones.html#paso-8-mejoras-opcionales",
-    "href": "unidades/Proyectos/3_funciones.html#paso-8-mejoras-opcionales",
-    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
-    "section": "Paso 8: Mejoras Opcionales",
-    "text": "Paso 8: Mejoras Opcionales\n\nAñadir Validación de Entradas: Controla que el jugador solo introduzca letras válidas.\n\nAgregar Dificultad: Permite al jugador elegir entre palabras cortas, medias y largas.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/1_proyecto_modulos.html#módulos-del-proyecto",
-    "href": "unidades/Proyectos/1_proyecto_modulos.html#módulos-del-proyecto",
-    "title": "📝 Gestor de Tareas con Prioridades",
-    "section": "Módulos del Proyecto",
-    "text": "Módulos del Proyecto\n\n📋 Módulo de tareas\n\nCrear una nueva tarea con título, descripción, fecha límite y prioridad.\nMarcar tareas como completadas ✅ o en progreso 🔄.\nOrganizar las tareas en orden de prioridad 🔥 o por fecha límite 📅.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>📝 Gestor de Tareas con Prioridades</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/1_proyecto_modulos.html#funciones-clave",
-    "href": "unidades/Proyectos/1_proyecto_modulos.html#funciones-clave",
-    "title": "📝 Gestor de Tareas con Prioridades",
-    "section": "Funciones Clave",
-    "text": "Funciones Clave\n\nPrioriza tus tareas con un sistema de prioridades: baja, media y alta 🔥.\n\n\nDesarrollo\nCreamos la siguiente estructura de carpetas para organizar nuestro proyecto:\nproyecto_modulos/\n│\n├── tareas/\n│   ├── __init__.py\n│   ├── tareas.py\n│\nEn el archivo tareas.py definimos las clases y funciones necesarias para gestionar las tareas.\n# tareas.py\n\nclass Tarea:\n    def __init__(self, titulo, descripcion, fecha_limite, prioridad):\n        self.titulo = titulo\n        self.descripcion = descripcion\n        self.fecha_limite = fecha_limite\n        self.prioridad = prioridad\n        self.completada = False\n\n    def marcar_completada(self):\n        self.completada = True\n\n    def marcar_en_progreso(self):\n        self.completada = False\n\n    def __str__(self):\n        return f\"{self.titulo} - {self.prioridad} - {self.fecha_limite}\"\nEn el archivo init.py definimos las funciones principales para interactuar con las tareas.\n# __init__.py\n\nfrom tareas import Tarea\n\ndef crear_tarea(titulo, descripcion, fecha_limite, prioridad):\n    return Tarea(titulo, descripcion, fecha_limite, prioridad)\n\ndef marcar_completada(tarea):\n    tarea.marcar_completada()\n\ndef marcar_en_progreso(tarea):\n    tarea.marcar_en_progreso()\nCon esta estructura básica, podemos empezar a desarrollar la funcionalidad de nuestro gestor de tareas. En los siguientes módulos, ampliaremos las capacidades de nuestra aplicación y añadiremos nuevas funcionalidades.\nPara poder probar nuestro código, podemos crear un script de prueba en la misma carpeta:\n# test.py\n\nfrom tareas import Tarea\n\ntarea1 = Tarea(\"Hacer la compra\", \"Comprar leche, pan y fruta\", \"2022-12-31\", \"alta\")\n\nprint(tarea1)\nAl ejecutar el script de prueba, deberíamos ver la información de la tarea creada.\n$ python test.py\nHacer la compra - alta - 2022-12-31",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>📝 Gestor de Tareas con Prioridades</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/2_proyecto_poo.html",
-    "href": "unidades/Proyectos/2_proyecto_poo.html",
-    "title": "🛒 Simulador de Tienda Online",
-    "section": "",
-    "text": "Módulos del Proyecto\nUn proyecto interactivo que simula una tienda en línea donde los clientes pueden agregar productos al carrito, realizar pedidos, gestionar inventarios y procesar pagos.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>18</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/2_proyecto_poo.html#módulos-del-proyecto",
-    "href": "unidades/Proyectos/2_proyecto_poo.html#módulos-del-proyecto",
-    "title": "🛒 Simulador de Tienda Online",
-    "section": "",
-    "text": "🛍️ Módulo de Productos\n\nDefinir productos con nombre, precio y cantidad en inventario.\nActualizar el inventario después de cada compra o cuando se agregan nuevos productos.\n\n\n\n🛒 Módulo de Carrito\n\nPermite a los clientes agregar o quitar productos de su carrito.\nCalcular el costo total de los productos en el carrito.\n\n\n\n👤 Módulo de Cliente\n\nGestionar la creación de nuevos clientes.\nMantener el historial de compras del cliente.\n\n\n\n📦 Módulo de Pedido\n\nProcesar un pedido, verificar disponibilidad en inventario, y generar la factura.\nActualizar el inventario después de la compra.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>18</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/2_proyecto_poo.html#productos",
-    "href": "unidades/Proyectos/2_proyecto_poo.html#productos",
-    "title": "🛒 Simulador de Tienda Online",
-    "section": "🛍️ Productos",
-    "text": "🛍️ Productos\nEn el archivo producto.py, definimos la clase Producto:\n# productos/producto.py\n\nclass Producto:\n    def __init__(self, nombre, precio, inventario):\n        self.nombre = nombre\n        self.precio = precio\n        self.inventario = inventario\n\n    def actualizar_inventario(self, cantidad):\n        self.inventario -= cantidad\n\n    def __str__(self):\n        return f\"{self.nombre} - ${self.precio} (Inventario: {self.inventario})\"",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>18</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/2_proyecto_poo.html#carrito",
-    "href": "unidades/Proyectos/2_proyecto_poo.html#carrito",
-    "title": "🛒 Simulador de Tienda Online",
-    "section": "🛒 Carrito",
-    "text": "🛒 Carrito\nEn el archivo carrito.py, definimos la clase Carrito:\n# carrito/carrito.py\n\nclass Carrito:\n    def __init__(self):\n        self.productos = {}\n\n    def agregar_producto(self, producto, cantidad):\n        if producto.nombre in self.productos:\n            self.productos[producto.nombre] += cantidad\n        else:\n            self.productos[producto.nombre] = cantidad\n\n    def eliminar_producto(self, producto):\n        if producto.nombre in self.productos:\n            del self.productos[producto.nombre]\n\n    def total(self):\n        return sum(producto.precio * cantidad for producto, cantidad in self.productos.items())\n\n    def __str__(self):\n        carrito_str = \"Carrito:\\n\"\n        for producto, cantidad in self.productos.items():\n            carrito_str += f\"{producto}: {cantidad}\\n\"\n        return carrito_str",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>18</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/2_proyecto_poo.html#clientes",
-    "href": "unidades/Proyectos/2_proyecto_poo.html#clientes",
-    "title": "🛒 Simulador de Tienda Online",
-    "section": "👤 Clientes",
-    "text": "👤 Clientes\nEn el archivo cliente.py, definimos la clase Cliente:\n# clientes/cliente.py\n\nclass Cliente:\n    def __init__(self, nombre, email):\n        self.nombre = nombre\n        self.email = email\n        self.historial_compras = []\n\n    def agregar_historial(self, pedido):\n        self.historial_compras.append(pedido)\n\n    def ver_historial(self):\n        if not self.historial_compras:\n            return \"No tienes compras aún.\"\n        return \"\\n\".join(str(pedido) for pedido in self.historial_compras)\n\n    def __str__(self):\n        return f\"Cliente: {self.nombre} ({self.email})\"",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>18</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/2_proyecto_poo.html#pedidos",
-    "href": "unidades/Proyectos/2_proyecto_poo.html#pedidos",
-    "title": "🛒 Simulador de Tienda Online",
-    "section": "📦 Pedidos",
-    "text": "📦 Pedidos\nEn el archivo pedido.py, definimos la clase Pedido:\n# pedidos/pedido.py\n\nclass Pedido:\n    def __init__(self, cliente, carrito):\n        self.cliente = cliente\n        self.carrito = carrito\n        self.total = carrito.total()\n\n    def procesar_pedido(self):\n        for producto, cantidad in self.carrito.productos.items():\n            producto.actualizar_inventario(cantidad)\n        self.cliente.agregar_historial(self)\n\n    def __str__(self):\n        return f\"Pedido de {self.cliente.nombre} - Total: ${self.total}\"",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>18</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/4_proyecto_poo_2.html#objetivos",
-    "href": "unidades/Proyectos/4_proyecto_poo_2.html#objetivos",
-    "title": "🏫 Sistema Universitario",
-    "section": "Objetivos",
-    "text": "Objetivos\n\nDefinir clases en Python.\nCrear objetos de clases.\nUtilizar herencia en clases.\nMostrar información de objetos. ## Requerimientos\nConocimientos básicos de programación en Python.\nConocimientos básicos de programación orientada a objetos.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>19</span>  <span class='chapter-title'>🏫 Sistema Universitario</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/4_proyecto_poo_2.html#instrucciones.",
-    "href": "unidades/Proyectos/4_proyecto_poo_2.html#instrucciones.",
-    "title": "🏫 Sistema Universitario",
-    "section": "Instrucciones.",
-    "text": "Instrucciones.\n\nClase Persona: Define los atributos comunes nombre, edad y sexo.\nClase Estudiante: Hereda de Persona y agrega los atributos carnet y carrera.\nClase Profesor: Hereda de Persona y agrega los atributos codigo y especialidad.\nClase Curso: Contiene los atributos nombre, codigo y una instancia de Profesor.\nClase Universidad: Contiene el atributo nombre y una lista de cursos. Incluye un método para agregar cursos.\nCreación de objetos:\n\n\nSe crea un objeto universidad de la clase Universidad.\nSe crean los objetos profesor, curso y estudiante con los datos indicados.\nSe agrega cada curso a la universidad y luego se imprime la universidad con los cursos.\n\n\nImpresión:\n\n\nSe imprime la información de la universidad, el estudiante, el profesor y el curso de Matemáticas, según los requerimientos.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>19</span>  <span class='chapter-title'>🏫 Sistema Universitario</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/4_proyecto_poo_2.html#desarrollo",
-    "href": "unidades/Proyectos/4_proyecto_poo_2.html#desarrollo",
-    "title": "🏫 Sistema Universitario",
-    "section": "Desarrollo",
-    "text": "Desarrollo\n\nCrear la clase Persona.\n\nclass Persona:\n    def __init__(self, nombre, edad, sexo):\n        self.nombre = nombre\n        self.edad = edad\n        self.sexo = sexo\n\n    def __str__(self):\n        return f\"Nombre: {self.nombre}, Edad: {self.edad}, Sexo: {self.sexo}\"\nEn el codigo anterior se crea la clase Persona con los atributos nombre, edad y sexo. Además, se crea el método str para mostrar la información de la persona.\n\nCrear la clase Estudiante que hereda de Persona.\n\nclass Estudiante(Persona):\n    def __init__(self, nombre, edad, sexo, carnet, carrera):\n        super().__init__(nombre, edad, sexo)\n        self.carnet = carnet\n        self.carrera = carrera\n\n    def __str__(self):\n        return f\"{super().__str__()}, Carnet: {self.carnet}, Carrera: {self.carrera}\"\nEn el codigo anterior se crea la clase Estudiante que hereda de Persona. Se añaden los atributos carnet y carrera. Además, se sobreescribe el método str para mostrar la información del estudiante.\n\nCrear la clase Profesor que hereda de Persona.\n\nclass Profesor(Persona):\n    def __init__(self, nombre, edad, sexo, codigo, especialidad):\n        super().__init__(nombre, edad, sexo)\n        self.codigo = codigo\n        self.especialidad = especialidad\n\n    def __str__(self):\n        return f\"{super().__str__()}, Código: {self.codigo}, Especialidad: {self.especialidad}\"\nEn el codigo anterior se crea la clase Profesor que hereda de Persona. Se añaden los atributos codigo y especialidad. Además, se sobreescribe el método str para mostrar la información del profesor.\n\nCrear la clase Curso.\n\nclass Curso:\n    def __init__(self, nombre, codigo, profesor):\n        self.nombre = nombre\n        self.codigo = codigo\n        self.profesor = profesor\n\n    def __str__(self):\n        return f\"Curso: {self.nombre}, Código: {self.codigo}, Profesor: {self.profesor.nombre}\"\nEn el codigo anterior se crea la clase Curso con los atributos nombre, codigo y profesor. Además, se crea el método str para mostrar la información del curso.\n\nCrear la clase Universidad.\n\nclass Universidad:\n    def __init__(self, nombre):\n        self.nombre = nombre\n        self.cursos = []\n\n    def agregar_curso(self, curso):\n        self.cursos.append(curso)\n\n    def __str__(self):\n        cursos_str = \"\\n\".join([str(curso) for curso in self.cursos])\n        return f\"Universidad: {self.nombre}\\nCursos:\\n{cursos_str}\"\nEn el codigo anterior se crea la clase Universidad con los atributos nombre y cursos. Se añade el método agregar_curso para agregar un curso a la lista de cursos. Además, se sobreescribe el método str para mostrar la información de la universidad y los cursos.\n\nCar los objetos\n\n# Crear la universidad\nuniversidad = Universidad(\"Universidad de El Salvador\")\n\n# Crear los profesores\nprofesor_juan = Profesor(\"Juan Perez\", 30, \"Masculino\", \"202020202\", \"Matematicas\")\nprofesor_maria = Profesor(\"Maria Lopez\", 35, \"Femenino\", \"202020203\", \"Fisica\")\nprofesor_pedro = Profesor(\"Pedro Ramirez\", 40, \"Masculino\", \"202020204\", \"Quimica\")\n\n# Crear los cursos\ncurso_matematicas = Curso(\"Matematicas\", \"MAT101\", profesor_juan)\ncurso_fisica = Curso(\"Fisica\", \"FIS101\", profesor_maria)\ncurso_quimica = Curso(\"Quimica\", \"QUI101\", profesor_pedro)\n\n# Agregar los cursos a la universidad\nuniversidad.agregar_curso(curso_matematicas)\nuniversidad.agregar_curso(curso_fisica)\nuniversidad.agregar_curso(curso_quimica)\n\n# Crear el objeto estudiante\nestudiante_carlos = Estudiante(\"Carlos Perez\", 20, \"Masculino\", \"202010101\", \"Ingenieria en Sistemas Informaticos\")\nEn el codigo anterior se crean los objetos de la universidad, profesores, cursos y estudiante.\n\nImprimir la información\n\nprint(universidad)\nprint()\nprint(estudiante_carlos)\nprint()\nprint(profesor_juan)\nprint()\nprint(curso_matematicas)\n\n# Crear un nuevo curso de Fisica y agregarlo a la universidad\ncurso_nuevo_fisica = Curso(\"Fisica\", \"FIS101\", profesor_maria)\nuniversidad.agregar_curso(curso_nuevo_fisica)\n\n# Imprimir nuevamente la universidad con el nuevo curso agregado\nprint()\nprint(universidad)\nEn el codigo anterior se imprime la información de la universidad, estudiante, profesor y curso. Luego se crea un nuevo curso de Fisica y se agrega a la universidad, para finalmente imprimir nuevamente la información de la universidad.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>19</span>  <span class='chapter-title'>🏫 Sistema Universitario</span>"
-    ]
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Acerca de mi",
-    "section": "",
-    "text": "¡Hola! Soy Diego Saavedra, un experto en desarrollo avanzado de software e investigación. Mi amplia experiencia abarca diversas tecnologías, incluyendo Python (Django, Flask, Fast API) y JavaScript (Express, Next, React, Nestjs), así como también tengo conocimientos sólidos en bases de datos, arquitecturas de software y liderazgo ágil.\nMi pasión por la innovación, el desarrollo y la educación me ha llevado a destacarme como un profesional versátil e invaluable. Estoy constantemente listo para enfrentar desafíos técnicos y liderar proyectos de vanguardia.\nMi formación académica incluye el ser estudiante de Doctorado centrado en la inteligencia artificial, estoy enfocando mi investigación en la detección de TDA+H y Asperger mediante Visión Artificial a traves de algoritmos de Inteligencia Artificial. Además, poseo una Maestría en Ciencias de la Computación, con un enfoque en el Deep Learning (Convolutional Neural Network) y la Atención.\nCon esta sólida base académica y experiencia profesional, estoy preparado para aportar soluciones innovadoras y liderar equipos hacia el éxito en cualquier proyecto tecnológico que se me presente.\nAdemás, tengo experiencia en el desarrollo móvil utilizando Flutter y en la implementación de soluciones backend utilizando servicios Backend as a Service (BaaS) como Firebase y Supabase.\nEn el ámbito de la educación, he sido docente de programación en institutos y universidades, actualmente soy parte del Departamento de Ciencias de la Computación en la Universidad de las Fuerzas Armadas ESPE, donde he impartido asignaturas de desarrollo de Software Web con tecnologías como JavaScript, Java y C# asi como sus respectivos frameworks.\nMi experiencia en el desarrollo de software y la investigación me ha permitido adquirir habilidades de liderazgo, trabajo en equipo y comunicación efectiva. Estoy seguro de que mi experiencia y habilidades serán de gran valor para cualquier proyecto tecnológico que se me presente.\nEn este curso aprenderás a desarrollar aplicaciones web con Python y Django, una de las tecnologías más populares y poderosas para el desarrollo de aplicaciones web. A lo largo del curso, aprenderás a crear aplicaciones web desde cero, utilizando Django y Python, y a implementar funcionalidades avanzadas como integración con APIs externas y mucho más.\nTambien veremos tecnologías como Git, Github, Docker, Python, Django, Django Rest Framework, Html5, Css3, JavaScript, Nodejs, Npm y React.\n\n\n¡Estoy emocionado de compartir contigo mi conocimiento y experiencia en el desarrollo de aplicaciones web con Python y Django!"
-  },
-  {
-    "objectID": "license.html",
-    "href": "license.html",
-    "title": "Licencia",
-    "section": "",
-    "text": "Uso Permitido\nEste curso y su contenido están protegidos por derechos de autor y son propiedad de [Nombre de la Compañía]. El contenido de este curso se proporciona con el propósito de educación y aprendizaje.\nPuedes utilizar el contenido de este curso con fines educativos y personales. Puedes modificar los ejemplos y el código proporcionado para tus propias necesidades de aprendizaje."
-  },
-  {
-    "objectID": "license.html#restricciones",
-    "href": "license.html#restricciones",
-    "title": "Licencia",
-    "section": "Restricciones",
-    "text": "Restricciones\nNo tienes permitido redistribuir, vender o utilizar el contenido de este curso para fines comerciales sin el permiso explícito de [Nombre de la Compañía]. Además, no tienes permitido copiar o duplicar el contenido del curso y presentarlo como propio."
-  },
-  {
-    "objectID": "license.html#atribución",
-    "href": "license.html#atribución",
-    "title": "Licencia",
-    "section": "Atribución",
-    "text": "Atribución\nSi compartes los ejemplos, los fragmentos de código o el contenido de este curso en línea, te pedimos que proporciones la atribución adecuada a [Nombre de la Compañía]."
-  },
-  {
-    "objectID": "license.html#cambios-en-la-licencia",
-    "href": "license.html#cambios-en-la-licencia",
-    "title": "Licencia",
-    "section": "Cambios en la Licencia",
-    "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
-  },
-  {
-    "objectID": "unidades/Proyectos/5_DevContainers.html",
-    "href": "unidades/Proyectos/5_DevContainers.html",
-    "title": "Laboratorio: DevContainer con NGINX",
-    "section": "",
-    "text": "Objetivo:\nCrear un entorno de desarrollo dentro de un contenedor Docker que ejecute NGINX para servir una página estática simple.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Laboratorio: DevContainer con NGINX</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/5_DevContainers.html#requisitos-previos",
-    "href": "unidades/Proyectos/5_DevContainers.html#requisitos-previos",
-    "title": "Laboratorio: Configuración y uso de DevContainers desde cero",
-    "section": "Requisitos previos",
-    "text": "Requisitos previos\nAntes de empezar, asegúrate de tener los siguientes requisitos:\n\nDocker instalado y en ejecución.\nVisual Studio Code (VSCode) con la extensión “Remote - Containers” instalada.\nAcceso a internet para descargar imágenes de contenedores y herramientas.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Laboratorio: Configuración y uso de DevContainers desde cero</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/5_DevContainers.html#paso-1-crear-un-proyecto-de-devcontainer",
-    "href": "unidades/Proyectos/5_DevContainers.html#paso-1-crear-un-proyecto-de-devcontainer",
-    "title": "Laboratorio: Configuración y uso de DevContainers desde cero",
-    "section": "Paso 1: Crear un proyecto de DevContainer",
-    "text": "Paso 1: Crear un proyecto de DevContainer\nInicia VSCode y abre tu carpeta de trabajo:\nAbre la carpeta en la que quieras configurar tu DevContainer. Si ya tienes un proyecto, simplemente abre esa carpeta. Si no, crea un nuevo proyecto.\nCrea un archivo .devcontainer en la raíz del proyecto:\nEn la raíz de tu proyecto, crea una carpeta llamada .devcontainer. En esta carpeta, necesitarás dos archivos:\n\nDockerfile (define la imagen base y la instalación de dependencias).\ndevcontainer.json (configura el DevContainer).\n\nCrea la carpeta .devcontainer:\nmkdir .devcontainer\nY dentro de ella, crea los archivos Dockerfile y devcontainer.json.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Laboratorio: Configuración y uso de DevContainers desde cero</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/5_DevContainers.html#paso-2-configuración-del-dockerfile",
-    "href": "unidades/Proyectos/5_DevContainers.html#paso-2-configuración-del-dockerfile",
-    "title": "Laboratorio: Configuración y uso de DevContainers desde cero",
-    "section": "Paso 2: Configuración del Dockerfile",
-    "text": "Paso 2: Configuración del Dockerfile\nEl archivo Dockerfile define cómo será configurado el contenedor. Aquí tienes un ejemplo básico usando una imagen base de Ubuntu e instalando NGINX:\nDockerfile:\n# Usa una imagen base de Ubuntu\nFROM ubuntu:20.04\n\n# Actualiza los paquetes e instala las dependencias necesarias\nRUN apt-get update && apt-get install -y nginx && apt-get clean\n\n# Expone el puerto 80 para NGINX\nEXPOSE 80\n\n# Inicia NGINX en primer plano\nCMD [\"nginx\", \"-g\", \"daemon off;\"]\nEste archivo establece:\n\nLa imagen base de Ubuntu.\nLa instalación de NGINX.\nLa exposición del puerto 80.\nEl comando para iniciar NGINX en primer plano cuando se inicie el contenedor.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Laboratorio: Configuración y uso de DevContainers desde cero</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/5_DevContainers.html#paso-3-configuración-del-devcontainer.json",
-    "href": "unidades/Proyectos/5_DevContainers.html#paso-3-configuración-del-devcontainer.json",
-    "title": "Laboratorio: Configuración y uso de DevContainers desde cero",
-    "section": "Paso 3: Configuración del devcontainer.json",
-    "text": "Paso 3: Configuración del devcontainer.json\nEl archivo devcontainer.json define cómo se configura el contenedor de desarrollo. Aquí tienes un ejemplo básico:\ndevcontainer.json:\n{\n    \"name\": \"Ubuntu with NGINX\",\n    \"build\": {\n        \"dockerfile\": \"Dockerfile\"\n    },\n    \"forwardPorts\": [80],\n    \"postCreateCommand\": \"echo 'DevContainer with NGINX is ready!'\",\n    \"remoteUser\": \"root\",\n    \"mounts\": [\n        \"source=${localWorkspaceFolder}/html,target=/usr/share/nginx/html,type=bind\"\n    ]\n}\nExplicación de las configuraciones:\n\nname: Nombre del contenedor.\nbuild: Especifica que el contenedor se construirá usando el Dockerfile.\nforwardPorts: Expone el puerto 80 del contenedor en el puerto 80 de tu máquina local.\n\n– postCreateCommand**: Ejecuta un comando después de que el contenedor esté creado. Aquí solo imprimimos un mensaje.\n\nremoteUser: Define el usuario que se usará en el contenedor, en este caso root.\nmounts: Monta la carpeta html de tu máquina local dentro del contenedor, lo que permite que los archivos se sincronicen automáticamente.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Laboratorio: Configuración y uso de DevContainers desde cero</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/5_DevContainers.html#paso-4-crear-el-contenido-html",
-    "href": "unidades/Proyectos/5_DevContainers.html#paso-4-crear-el-contenido-html",
-    "title": "Laboratorio: Configuración y uso de DevContainers desde cero",
-    "section": "Paso 4: Crear el contenido HTML",
-    "text": "Paso 4: Crear el contenido HTML\nEn la carpeta raíz de tu proyecto, crea una carpeta html y coloca tu archivo HTML allí. Este archivo será servido por NGINX en el contenedor.\nhtml/index.html:\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;Document&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Hello World!&lt;/h1&gt;\n&lt;/body&gt;\n&lt;/html&gt;\nEste archivo HTML básico será servido por NGINX en tu contenedor.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Laboratorio: Configuración y uso de DevContainers desde cero</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/5_DevContainers.html#paso-5-construir-y-abrir-el-devcontainer",
-    "href": "unidades/Proyectos/5_DevContainers.html#paso-5-construir-y-abrir-el-devcontainer",
-    "title": "Laboratorio: Configuración y uso de DevContainers desde cero",
-    "section": "Paso 5: Construir y abrir el DevContainer",
-    "text": "Paso 5: Construir y abrir el DevContainer\nAbrir en VSCode: Abre el proyecto en VSCode.\nConectar al DevContainer: Abre el panel de comandos (Ctrl+Shift+P), y ejecuta el comando:\nRemote-Containers: Reopen in Container\nVSCode ahora construirá y abrirá el contenedor, usando la configuración definida en el Dockerfile y devcontainer.json.\nVer el servidor web: Una vez que el contenedor esté en ejecución, abre tu navegador y visita http://localhost. Deberías ver el mensaje “Hello World!” servido por NGINX.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Laboratorio: Configuración y uso de DevContainers desde cero</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/5_DevContainers.html#paso-6-personalizar-el-devcontainer",
-    "href": "unidades/Proyectos/5_DevContainers.html#paso-6-personalizar-el-devcontainer",
-    "title": "Laboratorio: Configuración y uso de DevContainers desde cero",
-    "section": "Paso 6: Personalizar el DevContainer",
-    "text": "Paso 6: Personalizar el DevContainer\nPuedes agregar más herramientas o configuraciones personalizadas según lo que necesites en tu entorno de desarrollo. Por ejemplo, si quieres instalar Node.js, PHP o cualquier otro software, puedes agregarlo al Dockerfile:\n# Instalar Node.js\nRUN apt-get install -y nodejs npm\nCada vez que hagas cambios en el Dockerfile o el devcontainer.json, deberás reconstruir el contenedor para que los cambios surtan efecto.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Laboratorio: Configuración y uso de DevContainers desde cero</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/5_DevContainers.html#paso-7-uso-de-devcontainers-en-proyectos-colaborativos",
-    "href": "unidades/Proyectos/5_DevContainers.html#paso-7-uso-de-devcontainers-en-proyectos-colaborativos",
-    "title": "Laboratorio: Configuración y uso de DevContainers desde cero",
-    "section": "Paso 7: Uso de DevContainers en proyectos colaborativos",
-    "text": "Paso 7: Uso de DevContainers en proyectos colaborativos\nUna de las grandes ventajas de los DevContainers es que puedes compartir tu configuración con otros miembros del equipo. Simplemente sube el archivo .devcontainer a tu repositorio y cualquier desarrollador podrá abrir el proyecto en un contenedor con el mismo entorno.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Laboratorio: Configuración y uso de DevContainers desde cero</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/5_DevContainers.html#estructura-del-proyecto",
-    "href": "unidades/Proyectos/5_DevContainers.html#estructura-del-proyecto",
-    "title": "Laboratorio: DevContainer con NGINX",
-    "section": "1. Estructura del Proyecto",
-    "text": "1. Estructura del Proyecto\nEl proyecto tendrá la siguiente estructura de directorios y archivos:\nDevContainers/\n│\n├── .devcontainer/\n│   ├── Dockerfile\n│   └── devcontainer.json\n│\n├── html/\n    └── index.html\nAhora vamos a crear el archivo index.html/\nhtml/index.html\nEl archivo HTML que NGINX servirá cuando accedas a http://localhost:80.\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;Document&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Hello World!&lt;/h1&gt;\n&lt;/body&gt;\n&lt;/html&gt;\nEste es un archivo HTML simple que contiene un título y un encabezado.\nAhora vamos a crar el archivo Dockerfile.\n.devcontainer/Dockerfile\nEste archivo Dockerfile se utiliza para construir la imagen del contenedor que ejecutará NGINX.\n# Usa una imagen base de Ubuntu\nFROM mcr.microsoft.com/devcontainers/base:jammy\n\n# Instala NGINX\nRUN apt-get update && apt-get install -y nginx && apt-get clean\n\n# Expone el puerto 80 para NGINX\nEXPOSE 80\n\n# Comando para iniciar NGINX en primer plano\nCMD [\"nginx\", \"-g\", \"daemon off;\"]\nEl Dockerfile está basado en Ubuntu (jammy) e instala NGINX. Luego, expone el puerto 80 y configura NGINX para que se ejecute en primer plano (esto es necesario para que el contenedor no termine inmediatamente después de iniciarse).\nAhora crearermos el archivo devcontainer.json.\n.devcontainer/devcontainer.json\nEl archivo de configuración del DevContainer, que especifica cómo se debe construir y configurar el contenedor.\n{\n  \"name\": \"DevContainer with NGINX\",\n  \"build\": {\n    \"dockerfile\": \"Dockerfile\"\n  },\n  \"forwardPorts\": [80],\n  \"postCreateCommand\": \"echo 'DevContainer with NGINX is ready!'\",\n  \"remoteUser\": \"root\",\n  \"mounts\": [\n    \"source=${localWorkspaceFolder}/html,target=/usr/share/nginx/html,type=bind\"\n  ]\n}\n\nbuild: Este campo indica que se debe usar el Dockerfile para construir la imagen del contenedor.\nforwardPorts: Mapea el puerto 80 del contenedor al puerto 80 de la máquina local para que NGINX sea accesible desde el navegador.\nmounts: Se vincula el directorio local html al directorio /usr/share/nginx/html del contenedor, para que el archivo index.html sea servido por NGINX.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Laboratorio: DevContainer con NGINX</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/5_DevContainers.html#instrucciones-de-creación-y-ejecución",
-    "href": "unidades/Proyectos/5_DevContainers.html#instrucciones-de-creación-y-ejecución",
-    "title": "Laboratorio: DevContainer con NGINX",
-    "section": "3. Instrucciones de Creación y Ejecución",
-    "text": "3. Instrucciones de Creación y Ejecución\nCrea el proyecto: Crea un directorio de trabajo, por ejemplo DevContainers, y dentro de él agrega los archivos de configuración mencionados anteriormente.\nAbre el proyecto en Visual Studio Code: Abre la carpeta DevContainers en Visual Studio Code.\nConstruye el contenedor: Al abrir el proyecto en VS Code, si tienes configurado DevContainers, automáticamente debería preguntar si deseas abrirlo en un contenedor. Selecciona “Reopen in Container”.\nVerifica la creación del contenedor: El contenedor se construirá utilizando el Dockerfile y configurará NGINX automáticamente. El puerto 80 será accesible en tu máquina local.\nAccede a tu página web: Una vez que el contenedor se haya iniciado, abre tu navegador y ve a http://localhost:80. Deberías ver la página con el mensaje “Hello World!”.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Laboratorio: DevContainer con NGINX</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/5_DevContainers.html#archivos-de-configuración",
-    "href": "unidades/Proyectos/5_DevContainers.html#archivos-de-configuración",
-    "title": "Laboratorio: DevContainer con NGINX",
-    "section": "2. Archivos de Configuración",
-    "text": "2. Archivos de Configuración\nEs posible que tengamos que configurar el archivo /etc/nginx/sites-available/default\nEste archivo de configuración de NGINX para servir los archivos desde la carpeta /usr/share/nginx/html.\nserver {\n    listen 80;\n    server_name localhost;\n\n    root /usr/share/nginx/html;  # Asegúrate de que esté apuntando a esta carpeta\n    index index.html index.htm;\n\n    location / {\n        try_files $uri $uri/ =404;  # Verifica que esta línea esté configurada para servir archivos correctamente\n    }\n}\nEste archivo configura el servidor para escuchar en el puerto 80 y servir archivos desde la carpeta /usr/share/nginx/html.\nSi el archivo solicitado no se encuentra, se mostrará un error 404.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Laboratorio: DevContainer con NGINX</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/5_DevContainers.html#problemas-comunes",
-    "href": "unidades/Proyectos/5_DevContainers.html#problemas-comunes",
-    "title": "Laboratorio: DevContainer con NGINX",
-    "section": "Problemas Comunes",
-    "text": "Problemas Comunes\nNGINX no se inicia: Si después de construir el contenedor NGINX no está corriendo, puedes iniciarlo manualmente con el siguiente comando:\nservice nginx start\nCambios no reflejados: Si haces cambios en el archivo index.html, es posible que necesites reiniciar NGINX para que se apliquen:\nservice nginx restart\nNo se mapea el puerto correctamente: Si no puedes acceder a la página en el navegador, verifica que el puerto esté correctamente mapeado en la configuración del contenedor. Revisa el archivo devcontainer.json y asegúrate de que forwardPorts esté configurado correctamente como [80].",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Laboratorio: DevContainer con NGINX</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/6_calculadora.html",
-    "href": "unidades/Proyectos/6_calculadora.html",
-    "title": "Laboratorio: Calculadora en Python",
-    "section": "",
-    "text": "Paso 1: Configuración inicial del proyecto",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/6_calculadora.html#paso-1-configuración-inicial-del-proyecto",
-    "href": "unidades/Proyectos/6_calculadora.html#paso-1-configuración-inicial-del-proyecto",
-    "title": "Laboratorio: Calculadora en Python",
-    "section": "Paso 1: Configuración inicial del proyecto",
-    "text": "Paso 1: Configuración inicial del proyecto\n\nCrear el directorio del proyecto\nComienza creando un nuevo directorio para el proyecto:\nmkdir calculadora\ncd calculadora\nInicializar un repositorio Git Inicializa un repositorio Git en la carpeta del proyecto:\ngit init\nCrear el archivo main.py\nCrea un archivo main.py que será el punto de entrada del programa:\ntouch main.py\nPrimer commit\nAñadimos el archivo inicial al control de versiones:\ngit add main.py\ngit commit -m \"Inicio del proyecto: archivo main.py creado\"",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/6_calculadora.html#paso-2-agregar-las-operaciones-básicas-suma-resta-multiplicación-división",
-    "href": "unidades/Proyectos/6_calculadora.html#paso-2-agregar-las-operaciones-básicas-suma-resta-multiplicación-división",
-    "title": "Laboratorio: Calculadora en Python",
-    "section": "Paso 2: Agregar las operaciones básicas (suma, resta, multiplicación, división)",
-    "text": "Paso 2: Agregar las operaciones básicas (suma, resta, multiplicación, división)\n\nCódigo inicial\nAbre el archivo main.py y añade el siguiente código para implementar las operaciones básicas:\ndef suma(a, b):\n    \"\"\"Devuelve la suma de dos números.\"\"\"\n    return a + b\n\n\ndef resta(a, b):\n    \"\"\"Devuelve la resta de dos números.\"\"\"\n    return a - b\n\n\ndef multiplicacion(a, b):\n    \"\"\"Devuelve la multiplicación de dos números.\"\"\"\n    return a * b\n\n\ndef division(a, b):\n    \"\"\"Devuelve la división de dos números. Maneja división entre cero.\"\"\"\n    try:\n        return a / b\n    except ZeroDivisionError:\n        return \"Error: No se puede dividir entre cero.\"\n\n\n# Punto de entrada\nif __name__ == \"__main__\":\n    print(\"Bienvenido a la calculadora básica\")\n    num1 = float(input(\"Ingrese el primer número: \"))\n    num2 = float(input(\"Ingrese el segundo número: \"))\n\n    print(f\"Suma: {suma(num1, num2)}\")\n    print(f\"Resta: {resta(num1, num2)}\")\n    print(f\"Multiplicación: {multiplicacion(num1, num2)}\")\n    print(f\"División: {division(num1, num2)}\")\n\n\nCrear un commit\nGuarda los cambios y realiza un commit con la descripción del avance:\ngit add main.py\ngit commit -m \"Implementadas las operaciones básicas\"",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/6_calculadora.html#paso-3-agregar-funcionalidad-de-radicación-y-potenciación",
-    "href": "unidades/Proyectos/6_calculadora.html#paso-3-agregar-funcionalidad-de-radicación-y-potenciación",
-    "title": "Laboratorio: Calculadora en Python",
-    "section": "Paso 3: Agregar funcionalidad de radicación y potenciación",
-    "text": "Paso 3: Agregar funcionalidad de radicación y potenciación\n\nActualizar main.py\nAñadimos funciones para radicación y potenciación, y las integramos al flujo del programa:\ndef radicacion(base, indice):\n    \"\"\"Devuelve la raíz de un número dado el índice.\"\"\"\n    try:\n        return base ** (1 / indice)\n    except ZeroDivisionError:\n        return \"Error: El índice de la raíz no puede ser cero.\"\n\n\ndef potenciacion(base, exponente):\n    \"\"\"Devuelve la potencia de un número dado un exponente.\"\"\"\n    return base ** exponente\n\n\n# Punto de entrada actualizado\nif __name__ == \"__main__\":\n    print(\"Bienvenido a la calculadora extendida\")\n    num1 = float(input(\"Ingrese el primer número: \"))\n    num2 = float(input(\"Ingrese el segundo número: \"))\n\n    print(f\"Suma: {suma(num1, num2)}\")\n    print(f\"Resta: {resta(num1, num2)}\")\n    print(f\"Multiplicación: {multiplicacion(num1, num2)}\")\n    print(f\"División: {division(num1, num2)}\")\n    print(f\"Radicación: {radicacion(num1, num2)}\")\n    print(f\"Potenciación: {potenciacion(num1, num2)}\")\n\n\nCrear un commit\nGuarda los cambios y realiza un commit:\ngit add main.py\ngit commit -m \"Añadidas las operaciones de radicación y potenciación\"",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/6_calculadora.html#paso-4-refactorización-del-código-en-múltiples-archivos",
-    "href": "unidades/Proyectos/6_calculadora.html#paso-4-refactorización-del-código-en-múltiples-archivos",
-    "title": "Laboratorio: Calculadora en Python",
-    "section": "Paso 4: Refactorización del código en múltiples archivos",
-    "text": "Paso 4: Refactorización del código en múltiples archivos\n\nCrear estructura modular\nOrganizamos las operaciones en un archivo separado llamado operaciones.py.\ntouch operaciones.py\nEn el archivo operaciones.py, coloca las funciones:\n# operaciones.py\n\ndef suma(a, b):\n    \"\"\"Devuelve la suma de dos números.\"\"\"\n    return a + b\n\n\ndef resta(a, b):\n    \"\"\"Devuelve la resta de dos números.\"\"\"\n    return a - b\n\n\ndef multiplicacion(a, b):\n    \"\"\"Devuelve la multiplicación de dos números.\"\"\"\n    return a * b\n\n\ndef division(a, b):\n    \"\"\"Devuelve la división de dos números. Maneja división entre cero.\"\"\"\n    try:\n        resultado = a / b\n    except ZeroDivisionError:\n        return \"Error: No se puede dividir entre cero.\"\n    else:\n        return resultado\n    finally:\n        pass\n\n\ndef radicacion(base, indice):\n    \"\"\"Devuelve la raíz de un número dado el índice.\"\"\"\n    try:\n        return base ** (1 / indice)\n    except ZeroDivisionError:\n        return \"Error: El índice de la raíz no puede ser cero.\"\n\n\ndef potenciacion(base, exponente):\n    \"\"\"Devuelve la potencia de un número dado un exponente.\"\"\"\n    return base ** exponente\n\n\nActualizar main.py\nActualiza main.py para importar las funciones desde operaciones.py:\n# main.py\nfrom operaciones import suma, resta, multiplicacion, division, radicacion, potenciacion\n\nif __name__ == \"__main__\":\n    print(\"Bienvenido a la calculadora modular\")\n    num1 = float(input(\"Ingrese el primer número: \"))\n    num2 = float(input(\"Ingrese el segundo número: \"))\n\n    print(f\"Suma: {suma(num1, num2)}\")\n    print(f\"Resta: {resta(num1, num2)}\")\n    print(f\"Multiplicación: {multiplicacion(num1, num2)}\")\n    print(f\"División: {division(num1, num2)}\")\n    print(f\"Radicación: {radicacion(num1, num2)}\")\n    print(f\"Potenciación: {potenciacion(num1, num2)}\")\n\n\nCrear un commit\nGuarda los cambios y realiza un commit:\ngit add main.py operaciones.py\ngit commit -m \"Refactorización: código modularizado en main.py y operaciones.py\"",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/6_calculadora.html#paso-5-manejo-de-errores-más-detallado",
-    "href": "unidades/Proyectos/6_calculadora.html#paso-5-manejo-de-errores-más-detallado",
-    "title": "Laboratorio: Calculadora en Python",
-    "section": "Paso 5: Manejo de errores más detallado",
-    "text": "Paso 5: Manejo de errores más detallado\n\nMejorar el manejo de errores en division\nModifica la función division para agregar un bloque else para manejar operaciones exitosas y un finally para mostrar un mensaje final:\ndef division(a, b):\n    \"\"\"Devuelve la división de dos números.\"\"\"\n    try:\n        resultado = a / b\n    except ZeroDivisionError:\n        print(\"Operación de división intentada.\")  # Mostrar mensaje solo si ocurre un error\n        return \"Error: No se puede dividir entre cero.\"\n    else:\n        return resultado\n    finally:\n        pass  # El bloque finally se puede dejar vacío o eliminarlo si no es necesario\n\n\nCrear un commit\nRealiza un nuevo commit con los cambios:\ngit add operaciones.py\ngit commit -m \"Mejorado el manejo de errores con else y finally en división\"",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/6_calculadora.html#paso-6-siguientes-pasos",
-    "href": "unidades/Proyectos/6_calculadora.html#paso-6-siguientes-pasos",
-    "title": "Laboratorio Calculadora",
-    "section": "Paso 6: Siguientes pasos",
-    "text": "Paso 6: Siguientes pasos\n\nTesteo automatizado: Implementar tests para validar cada operación.\nInterfaz de usuario: Agregar un menú para que el usuario elija las operaciones.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Laboratorio Calculadora</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/6_calculadora.html#paso-6-testeo-automatizado",
-    "href": "unidades/Proyectos/6_calculadora.html#paso-6-testeo-automatizado",
-    "title": "Laboratorio: Calculadora en Python",
-    "section": "Paso 6: Testeo automatizado",
-    "text": "Paso 6: Testeo automatizado\n\nCrear pruebas unitarias\nAhora implementamos pruebas unitarias para validar cada operación usando el módulo unittest. Crea un archivo test_calculadora.py con el siguiente contenido:\n# test_calculadora.py\nimport unittest\nfrom operaciones import suma, resta, multiplicacion, division, radicacion, potenciacion\n\nclass TestCalculadora(unittest.TestCase):\n\n    def test_suma(self):\n        self.assertEqual(suma(2, 3), 5)\n\n    def test_resta(self):\n        self.assertEqual(resta(5, 3), 2)\n\n    def test_multiplicacion(self):\n        self.assertEqual(multiplicacion(2, 3), 6)\n\n    def test_division(self):\n        self.assertEqual(division(6, 3), 2)\n\n    def test_division_por_cero(self):\n        self.assertEqual(division(6, 0), \"Error: No se puede dividir entre cero\")\n\n    def test_radicacion(self):\n        self.assertEqual(radicacion(16, 4), 2)\n\n    def test_potenciacion(self):\n        self.assertEqual(potenciacion(2, 3), 8)\n\nif __name__ == \"__main__\":\n    unittest.main()\n\n\nEjecutar las pruebas\nPara ejecutar las pruebas, usa el siguiente comando:\npython -m unittest test_calculadora.py",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/6_calculadora.html#siguientes-pasos",
-    "href": "unidades/Proyectos/6_calculadora.html#siguientes-pasos",
-    "title": "Laboratorio: Calculadora en Python",
-    "section": "Siguientes pasos",
-    "text": "Siguientes pasos\n\nInterfaz de usuario: Agregar un menú para que el usuario elija las operaciones. Esto mejorará la interacción con la calculadora.\nMejoras adicionales: Explorar la posibilidad de agregar operaciones avanzadas como trigonometría o logaritmos.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
-    ]
-  },
-  {
     "objectID": "unidades/unidad5/intro.html",
     "href": "unidades/unidad5/intro.html",
     "title": "Conceptos Avanzados en Python",
     "section": "",
     "text": "En este capitulo en particular aprenderemos los conceptos avanzados que necesitamos conocer de Python para poder avanzar con temas relacionados al desarrollo de software.\nEn el mismo aprenderemos:\n\nExepciones y Manejo de Errores\nLectura y Escritura de Archivos\nProgramación Funcional\nComprención y Generadores\nMódulos y Paquetes\nDecoradores y Context Managers\nColecciones de Datos y Estructuras Especializadas\nManipulación de Fechas y Tiempos\nConcurrencia y Paralelismo\nPruebas y Debugging\n\nEste capítulo cubre varios de los aspectos más avanzados de Python, y proporciona una base sólida para desarrollar aplicaciones web fullstack más complejas. Los ejemplos prácticos te ayudarán a entender cómo aplicar estos conceptos en situaciones reales.",
-    "crumbs": [
-      "Unidad 5: Python Avanzado",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Conceptos Avanzados en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad5/intro.html#excepciones-y-manejo-de-errores",
-    "href": "unidades/unidad5/intro.html#excepciones-y-manejo-de-errores",
-    "title": "Conceptos Avanzados en Python",
-    "section": "1. Excepciones y Manejo de Errores",
-    "text": "1. Excepciones y Manejo de Errores\n\n\n\n\nExcepciones y Manejo de Errores\n\n\n\nEl manejo adecuado de errores es esencial para escribir código robusto. Las excepciones permiten manejar situaciones inesperadas durante la ejecución de un programa sin que este termine abruptamente.\n\nConceptos clave\n\ntry: Bloque donde intentamos ejecutar código que puede generar una excepción.\nexcept: Bloque donde capturamos y gestionamos una excepción.\nelse: Bloque que se ejecuta si no hay excepciones.\nfinally: Bloque que se ejecuta independientemente de si hubo una excepción o no.\n\n\n\nEjemplo\ntry:\n    numero = int(input(\"Introduce un número: \"))\nexcept ValueError as e:\n    print(f\"Error: {e}. Introduce un número válido.\")\nelse:\n    print(f\"El número es {numero}.\")\nfinally:\n    print(\"Operación terminada.\")\n\n\nExcepciones personalizadas\nPodemos crear nuestras propias excepciones para situaciones específicas.\nclass MiError(Exception):\n    def __init__(self, mensaje):\n        self.mensaje = mensaje\n        super().__init__(self.mensaje)\n\ntry:\n    raise MiError(\"Algo salió mal\")\nexcept MiError as e:\n    print(f\"Capturado: {e}\")\n\n\nEjemplo Práctico\nObjetivo:\nAprender a manejar excepciones en Python para crear un programa robusto que gestione entradas de usuario incorrectas.\nDescripción: Crear un programa que pida al usuario un número, y en caso de que se ingrese algo que no sea un número, maneje el error de manera adecuada, mostrando un mensaje informativo.\nInstrucciones:\n\nUtiliza un bloque try-except para manejar excepciones de tipo ValueError.\nAgrega un bloque else para confirmar la entrada del usuario si es válida.\nIncluye un bloque finally que imprima un mensaje de despedida.\n\nCódigo:\ndef pedir_numero():\n    try:\n        numero = int(input(\"Introduce un número: \"))\n    except ValueError:\n        print(\"¡Error! No has introducido un número válido.\")\n    else:\n        print(f\"Has introducido el número: {numero}\")\n    finally:\n        print(\"Fin del programa\")\n\npedir_numero()",
-    "crumbs": [
-      "Unidad 5: Python Avanzado",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Conceptos Avanzados en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad5/intro.html#lectura-y-escritura-de-archivos",
-    "href": "unidades/unidad5/intro.html#lectura-y-escritura-de-archivos",
-    "title": "Conceptos Avanzados en Python",
-    "section": "2. Lectura y Escritura de Archivos",
-    "text": "2. Lectura y Escritura de Archivos\n\n\n\n\nLectura y Escritura de Archivos\n\n\n\nLeer y escribir archivos es una habilidad básica en el desarrollo de aplicaciones, como para guardar configuraciones o almacenar datos de usuarios.\n\nConceptos clave\n\nopen: Función para abrir archivos.\nModos de apertura:\n\n‘r’: Lectura.\n‘w’: Escritura.\n‘a’: Añadir datos.\n\n\nEl contexto with: Manejo automático de recursos.\nEjemplo\n# Escritura en archivo\nwith open('archivo.txt', 'w') as f:\n    f.write(\"Hola, Mundo!\\n\")\n\n# Lectura de archivo\nwith open('archivo.txt', 'r') as f:\n    contenido = f.read()\n    print(contenido)\n\n\nArchivos binarios\nPodemos manejar archivos binarios usando el modo ‘rb’ o ‘wb’:\n# Lectura binaria\nwith open('imagen.jpg', 'rb') as f:\n    datos = f.read()\n\n\nEjemplo Práctico\nObjetivo:\nAprender a leer y escribir archivos de texto en Python.\nDescripción: Crear un programa que pida al usuario un texto y lo escriba en un archivo de texto. Luego, el programa debe leer el archivo y mostrar su contenido.\nInstrucciones:\n\nPide un texto al usuario.\nEscribe ese texto en un archivo llamado entrada.txt.\nLuego, lee el archivo y muestra su contenido en la consola.\n\nCódigo:\ndef escribir_y_leer_archivo():\n    # Escribir en el archivo\n    with open('entrada.txt', 'w') as archivo:\n        texto = input(\"Escribe algo: \")\n        archivo.write(texto)\n    \n    # Leer el archivo\n    with open('entrada.txt', 'r') as archivo:\n        contenido = archivo.read()\n        print(f\"Contenido del archivo: {contenido}\")\n\nescribir_y_leer_archivo()",
-    "crumbs": [
-      "Unidad 5: Python Avanzado",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Conceptos Avanzados en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad5/intro.html#programación-funcional",
-    "href": "unidades/unidad5/intro.html#programación-funcional",
-    "title": "Conceptos Avanzados en Python",
-    "section": "3. Programación Funcional",
-    "text": "3. Programación Funcional\n\n\n\n\nProgramación Funcional\n\n\n\nPython soporta parcialmente la programación funcional, lo que permite escribir código más limpio y conciso.\n\nConceptos clave\n\nlambda: Funciones anónimas.\nmap: Aplica una función a cada ítem de un iterable.\nfilter: Filtra elementos de un iterable según una condición.\nreduce: Reducción de un iterable a un único valor.\n\n\n\nComprensión de listas y generadores.\nEjemplo\n# Uso de lambda y map\nnumeros = [1, 2, 3, 4]\ndobles = list(map(lambda x: x * 2, numeros))\nprint(dobles)\n\n# Uso de filter\npares = list(filter(lambda x: x % 2 == 0, numeros))\nprint(pares)\n\n# Uso de reduce\nfrom functools import reduce\nsuma = reduce(lambda x, y: x + y, numeros)\nprint(suma)\n\n\nEjemplo Práctico\nObjetivo:\nAprender a utilizar funciones lambda y operaciones como map, filter y reduce para trabajar con colecciones de datos.\nDescripción:\nCrear un programa que utilice una lista de números para aplicar operaciones funcionales usando lambda, map, filter y reduce.\nInstrucciones:\n\nCrea una lista de números del 1 al 10.\nUsa map con una función lambda para obtener el doble de cada número.\nUsa filter para filtrar solo los números pares.\nUsa reduce para obtener la suma de todos los números en la lista.\n\nCódigo:\nfrom functools import reduce\n\n# Lista de números\nnumeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\n\n# Usando map con lambda\ndobles = list(map(lambda x: x * 2, numeros))\nprint(f\"Lista de dobles: {dobles}\")\n\n# Usando filter con lambda\npares = list(filter(lambda x: x % 2 == 0, numeros))\nprint(f\"Números pares: {pares}\")\n\n# Usando reduce con lambda\nsuma = reduce(lambda x, y: x + y, numeros)\nprint(f\"Suma de números: {suma}\")",
-    "crumbs": [
-      "Unidad 5: Python Avanzado",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Conceptos Avanzados en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad5/intro.html#comprensiones-y-generadores",
-    "href": "unidades/unidad5/intro.html#comprensiones-y-generadores",
-    "title": "Conceptos Avanzados en Python",
-    "section": "4. Comprensiones y Generadores",
-    "text": "4. Comprensiones y Generadores\n\n\n\n\nComprensiones y Generadores\n\n\n\nLas comprensiones proporcionan una manera más compacta de crear colecciones. Los generadores permiten trabajar con grandes volúmenes de datos de manera eficiente.\n\nConceptos clave\n\nComprensión de listas, diccionarios y conjuntos.\nGeneradores y yield.\n\nEjemplo\n# Comprensión de lista\ncuadrados = [x**2 for x in range(5)]\nprint(cuadrados)\n\n# Generador\ndef contador():\n    for i in range(5):\n        yield i\n\ngen = contador()\nfor valor in gen:\n    print(valor)\n\n\nEjemplo Práctico\nObjetivo:\nAprender a crear listas, diccionarios y generadores utilizando comprensiones y el comando yield.\nDescripción:\nCrea un programa que use comprensiones de listas y diccionarios para realizar operaciones sobre una lista de palabras, y usa un generador para crear una secuencia de números.\nInstrucciones:\n\nUsa una comprensión de lista para crear una lista de las longitudes de las palabras.\nUsa una comprensión de diccionario para contar la frecuencia de cada letra en un conjunto de palabras.\nUsa un generador para producir los primeros 10 números pares.\n\nCódigo:\n# Lista de palabras\npalabras = [\"python\", \"django\", \"flask\", \"javascript\"]\n\n# Comprensión de lista para obtener las longitudes de las palabras\nlongitudes = [len(palabra) for palabra in palabras]\nprint(f\"Longitudes de las palabras: {longitudes}\")\n\n# Comprensión de diccionario para contar las frecuencias de las letras\nfrecuencia = {letra: palabras[0].count(letra) for letra in palabras[0]}\nprint(f\"Frecuencia de letras en la primera palabra: {frecuencia}\")\n\n# Generador para números pares\ndef generador_pares():\n    for i in range(0, 20, 2):\n        yield i\n\n# Mostrar los números generados\nfor numero in generador_pares():\n    print(numero)",
-    "crumbs": [
-      "Unidad 5: Python Avanzado",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Conceptos Avanzados en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad5/intro.html#módulos-y-paquetes-avanzados",
-    "href": "unidades/unidad5/intro.html#módulos-y-paquetes-avanzados",
-    "title": "Conceptos Avanzados en Python",
-    "section": "5. Módulos y Paquetes Avanzados",
-    "text": "5. Módulos y Paquetes Avanzados\n\n\n\n\nMódulos y Paquetes\n\n\n\nOrganizar el código en módulos y paquetes es fundamental para proyectos grandes.\n\nConceptos clave\n\nImportación relativa y absoluta.\ninit.py: Archivo necesario para que un directorio sea reconocido como un paquete.\nGestión de dependencias.\n\nEjemplo\n# Importación absoluta\nimport mi_modulo\n\n# Importación relativa\nfrom . import mi_modulo\n\n\nEjemplo Práctico\nObjetivo:\nAprender a organizar el código en módulos y paquetes para proyectos más grandes.\nDescripción:\nCrea un proyecto con múltiples archivos Python y organiza el código en módulos. Simula un programa de gestión de tareas.\nInstrucciones:\n\nCrea una carpeta llamada tareas.\nDentro de esa carpeta, crea tres archivos:\ninit.py: Para inicializar el paquete.\ngestor.py: Para gestionar tareas.\nprincipal.py: Para ejecutar el programa.\n\nCódigo:\ngestor.py:\ndef agregar_tarea(tarea):\n    tareas.append(tarea)\n    print(f\"Tarea '{tarea}' agregada.\")\n    \ndef listar_tareas():\n    for tarea in tareas:\n        print(f\"- {tarea}\")\n\ntareas = []\nprincipal.py:\nfrom tareas.gestor import agregar_tarea, listar_tareas\n\nagregar_tarea(\"Estudiar Python\")\nagregar_tarea(\"Leer libro de programación\")\nlistar_tareas()",
-    "crumbs": [
-      "Unidad 5: Python Avanzado",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Conceptos Avanzados en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad5/intro.html#decoradores-y-context-managers",
-    "href": "unidades/unidad5/intro.html#decoradores-y-context-managers",
-    "title": "Conceptos Avanzados en Python",
-    "section": "6. Decoradores y Context Managers",
-    "text": "6. Decoradores y Context Managers\n\n\n\n\nDecoradores\n\n\n\nLos decoradores permiten modificar el comportamiento de una función, mientras que los context managers gestionan recursos como archivos o conexiones a bases de datos.\n\nConceptos clave\n\n(decorator?): Sintaxis para aplicar un decorador.\nwith y enter, exit: Para crear context managers.\n\nEjemplo\n# Decorador\ndef mi_decorador(func):\n    def wrapper():\n        print(\"Antes de la función\")\n        func()\n        print(\"Después de la función\")\n    return wrapper\n\n@mi_decorador\ndef saludo():\n    print(\"Hola\")\n\nsaludo()\n\n# Context manager\nclass MiContexto:\n    def __enter__(self):\n        print(\"Entrando al contexto\")\n        return self\n\n    def __exit__(self, exc_type, exc_value, traceback):\n        print(\"Saliendo del contexto\")\n\nwith MiContexto():\n    print(\"Dentro del contexto\")\n\n\nEjemplo Práctico\nObjetivo:\nAprender a crear decoradores y context managers en Python.\nDescripción: Crea un decorador que registre la ejecución de una función y un context manager que gestione un archivo de log.\nInstrucciones:\n\nCrea un decorador que imprima la fecha y hora de la ejecución de una función.\nCrea un context manager que gestione la apertura y cierre de un archivo de log.\n\nCódigo:\nimport time\n\n# Decorador que registra la ejecución de una función\ndef registrar(func):\n    def wrapper(*args, **kwargs):\n        print(f\"Ejecutando {func.__name__} a las {time.strftime('%H:%M:%S')}\")\n        return func(*args, **kwargs)\n    return wrapper\n\n@registrar\ndef saludo():\n    print(\"¡Hola, Mundo!\")\n\nsaludo()\n\n# Context manager para log\nclass LogManager:\n    def __enter__(self):\n        self.archivo = open('log.txt', 'a')\n        return self.archivo\n\n    def __exit__(self, exc_type, exc_value, traceback):\n        self.archivo.close()\n\nwith LogManager() as log:\n    log.write(f\"Acción registrada a las {time.strftime('%H:%M:%S')}\\n\")",
-    "crumbs": [
-      "Unidad 5: Python Avanzado",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Conceptos Avanzados en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad5/intro.html#colecciones-de-datos-y-estructuras-especializadas",
-    "href": "unidades/unidad5/intro.html#colecciones-de-datos-y-estructuras-especializadas",
-    "title": "Conceptos Avanzados en Python",
-    "section": "7. Colecciones de Datos y Estructuras Especializadas",
-    "text": "7. Colecciones de Datos y Estructuras Especializadas\n\n\n\n\nColecciones\n\n\n\nLa librería collections ofrece estructuras de datos útiles para optimizar el código.\n\nConceptos clave\n\nCounter: Cuenta elementos.\ndeque: Cola de doble extremo.\ndefaultdict: Diccionario con valores predeterminados.\nnamedtuple: Tupla con nombre.\n\nEjemplo\nfrom collections import Counter, deque, defaultdict, namedtuple\n\n# Counter\nc = Counter([1, 2, 2, 3])\nprint(c)\n\n# deque\nd = deque([1, 2, 3])\nd.append(4)\nprint(d)\n\n# defaultdict\ndd = defaultdict(int)\ndd['a'] += 1\nprint(dd)\n\n# namedtuple\nPersona = namedtuple('Persona', 'nombre edad')\npersona = Persona(nombre='Juan', edad=30)\nprint(persona.nombre)\n\n\nEjemplo Práctico\nObjetivo:\nAprender a utilizar estructuras de datos avanzadas como Counter, deque y defaultdict.\nDescripción:\nCrea un programa que utilice Counter para contar elementos, deque para manipular una cola y defaultdict para un diccionario con valores predeterminados.\nInstrucciones:\n\nUsa Counter para contar las palabras en una frase.\nUsa deque para simular una cola.\nUsa defaultdict para contar ocurrencias de letras en un texto. | Código:\n\nfrom collections import Counter, deque, defaultdict\n\n# Usando Counter\nfrase = \"python python flask flask flask\"\ncontador = Counter(frase.split())\nprint(contador)\n\n# Usando deque\ncola = deque([1, 2, 3])\ncola.append(4)\ncola.popleft()\nprint(cola)\n\n# Usando defaultdict\ntexto = \"hola mundo\"\nletras = defaultdict(int)\nfor letra in texto:\n    letras[letra] += 1\nprint(letras)",
-    "crumbs": [
-      "Unidad 5: Python Avanzado",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Conceptos Avanzados en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad5/intro.html#manipulación-de-fechas-y-tiempos",
-    "href": "unidades/unidad5/intro.html#manipulación-de-fechas-y-tiempos",
-    "title": "Conceptos Avanzados en Python",
-    "section": "8. Manipulación de Fechas y Tiempos",
-    "text": "8. Manipulación de Fechas y Tiempos\n\n\n\n\nFechas\n\n\n\nTrabajar con fechas y horas es una parte fundamental en muchas aplicaciones.\n\nConceptos clave\n\ndatetime: Para trabajar con fechas y horas.\ntime: Para trabajar con tiempos.\npytz: Para manejar zonas horarias.\n\nEjemplo\nfrom datetime import datetime\n\n# Fecha y hora actuales\nahora = datetime.now()\nprint(ahora)\n\n# Formateo de fecha\nfecha_formateada = ahora.strftime(\"%Y-%m-%d %H:%M:%S\")\nprint(fecha_formateada)\n\n\nEjemplo Práctico\nObjetivo:\nAprender a trabajar con fechas y horas utilizando el módulo datetime.\nDescripción: Crea un programa que calcule el tiempo restante hasta un evento futuro.\nInstrucciones:\n\nUsa datetime para calcular la fecha y hora actuales.\nCalcula el tiempo restante hasta un evento programado (por ejemplo, fin de año).\n\nCódigo:\nfrom datetime import datetime\n\n# Fecha actual\nfecha_actual = datetime.now()\nprint(f\"Fecha y hora actuales: {fecha_actual}\")\n\n# Fecha de un evento\nevento = datetime(2024, 12, 31, 23, 59, 59)\n\n# Tiempo restante\ntiempo_restante = evento - fecha_actual\nprint(f\"Tiempo restante hasta el evento: {tiempo_restante}\")",
-    "crumbs": [
-      "Unidad 5: Python Avanzado",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Conceptos Avanzados en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad5/intro.html#concurrencia-y-paralelismo",
-    "href": "unidades/unidad5/intro.html#concurrencia-y-paralelismo",
-    "title": "Conceptos Avanzados en Python",
-    "section": "9. Concurrencia y Paralelismo",
-    "text": "9. Concurrencia y Paralelismo\nEn aplicaciones que requieren ejecutar múltiples tareas simultáneamente, la concurrencia y el paralelismo permiten mejorar el rendimiento.\n\nConceptos clave\n\nthreading: Hilos de ejecución.\nmultiprocessing: Procesos independientes.\nasyncio y async/await: Manejo de tareas asincrónicas.\n\nEjemplo\nimport threading\n\ndef tarea():\n    print(\"Tarea ejecutada por hilo\")\n\n# Crear un hilo\nhilo = threading.Thread(target=tarea)\nhilo.start()\nhilo.join()\n\n\nEjemplo Práctico\nObjetivo:\nAprender a utilizar técnicas de concurrencia y paralelismo para ejecutar tareas de manera simultánea y mejorar el rendimiento de las aplicaciones.\nDescripción:\nEn este ejemplo se utilizan tres enfoques diferentes de concurrencia: threading, multiprocessing y asyncio. Cada uno es útil en diferentes escenarios según la naturaleza de la tarea que se quiere realizar.\nInstrucciones:\n\nCrea una función simple que imprima un mensaje.\nImplementa la ejecución concurrente de esa función utilizando threading, multiprocessing y asyncio.\n\nEjemplos prácticos:\n\n1. Uso de threading:\nEl módulo threading permite ejecutar funciones de forma concurrente en múltiples hilos dentro de un solo proceso.\nimport threading\n\ndef tarea():\n    print(\"Tarea ejecutada por hilo\")\n\n# Crear un hilo\nhilo = threading.Thread(target=tarea)\nhilo.start()\nhilo.join()  # Esperar a que termine la ejecución del hilo\nprint(\"Hilo terminado\")\n\n\n2. Uso de multiprocessing:\nEl módulo multiprocessing permite ejecutar funciones en múltiples procesos independientes, lo que es útil para tareas que consumen mucho CPU.\nimport multiprocessing\n\ndef tarea():\n    print(\"Tarea ejecutada por proceso\")\n\n# Crear un proceso\nproceso = multiprocessing.Process(target=tarea)\nproceso.start()\nproceso.join()  # Esperar a que termine la ejecución del proceso\nprint(\"Proceso terminado\")\n\n\n3. Uso de asyncio y async/await:\nEl módulo asyncio permite manejar operaciones de entrada/salida asincrónicas de manera eficiente, sin bloquear el hilo principal.\nimport asyncio\n\nasync def tarea():\n    print(\"Tarea asincrónica ejecutada\")\n    await asyncio.sleep(2)  # Simula una tarea asincrónica con espera\n    print(\"Tarea asincrónica terminada\")\n\n# Ejecutar tareas asincrónicas\nasync def main():\n    await asyncio.gather(tarea(), tarea())\n\nasyncio.run(main())  # Ejecuta el bucle de eventos",
-    "crumbs": [
-      "Unidad 5: Python Avanzado",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Conceptos Avanzados en Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad5/intro.html#pruebas-y-debugging",
-    "href": "unidades/unidad5/intro.html#pruebas-y-debugging",
-    "title": "Conceptos Avanzados en Python",
-    "section": "10. Pruebas y Debugging",
-    "text": "10. Pruebas y Debugging\n\n\n\n\nPruebas y Debugging\n\n\n\nEscribir pruebas y depurar el código son prácticas esenciales para garantizar la calidad y facilitar el mantenimiento.\n\nConceptos clave\n\nunittest y pytest: Frameworks para pruebas.\nassert: Para comprobar condiciones.\npdb: Para depuración interactiva.\n\nEjemplo\n# Prueba simple con unittest\nimport unittest\n\ndef suma(a, b):\n    return a + b\n\nclass TestSuma(unittest.TestCase):\n    def test_suma(self):\n        self.assertEqual(suma(1, 2), 3)\n\nif __name__ == '__main__':\n    unittest.main()\n\n\nEjemplo Práctico\nObjetivo:\nAprender a escribir pruebas unitarias y utilizar herramientas de depuración para asegurar la calidad del código.\nDescripción:\nEn este tema se cubren pruebas unitarias con unittest, depuración con pdb y el uso de pytest para realizar pruebas automatizadas.\nInstrucciones:\n\nEscribe pruebas unitarias para una función que realiza una operación matemática (suma).\nAprende a utilizar el depurador pdb para inspeccionar el flujo de ejecución.\n\nEjemplos prácticos:\n\n1. Pruebas con unittest:\nEl módulo unittest permite crear casos de prueba, asegurando que el código funcione correctamente.\nimport unittest\n\n# Función simple que vamos a probar\ndef suma(a, b):\n    return a + b\n\n# Clase de prueba\nclass TestSuma(unittest.TestCase):\n    def test_suma(self):\n        self.assertEqual(suma(1, 2), 3)  # Verifica que la suma de 1 y 2 sea 3\n\nif __name__ == '__main__':\n    unittest.main()  # Ejecuta las pruebas\n\n\n2. Pruebas con pytest:\npytest es una alternativa moderna y más sencilla para realizar pruebas. Aquí utilizamos el mismo ejemplo de la función suma.\n# Guarda esto en un archivo llamado test_funciones.py\n\ndef suma(a, b):\n    return a + b\n\ndef test_suma():\n    assert suma(1, 2) == 3  # Verifica que la suma de 1 y 2 sea 3\nEjecuta las pruebas con el comando:\npytest test_funciones.py\n\n\n3. Depuración con pdb:\nEl depurador pdb permite interactuar con el código paso a paso, inspectando variables y el flujo de ejecución.\nimport pdb\n\ndef suma(a, b):\n    pdb.set_trace()  # Aquí se activa el depurador\n    return a + b\n\nresultado = suma(1, 2)\nprint(f\"Resultado: {resultado}\")\nCuando ejecutes el programa, el depurador se activará en pdb.set_trace(). Desde ahí, podrás usar comandos como n para avanzar a la siguiente línea o p para imprimir el valor de una variable.\nComandos útiles de pdb:\n\nn: Ejecuta la siguiente línea de código.\np variable: Muestra el valor de una variable.\nq: Sale del depurador\n\nEste capítulo cubre varios de los aspectos más avanzados de Python, y proporciona una base sólida para desarrollar aplicaciones web fullstack más complejas. Los ejemplos prácticos te ayudarán a entender cómo aplicar estos conceptos en situaciones reales.",
     "crumbs": [
       "Unidad 5: Python Avanzado",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Conceptos Avanzados en Python</span>"
@@ -1902,6 +1130,459 @@
     "crumbs": [
       "Unidad 5: Python Avanzado",
       "<span class='chapter-number'>24</span>  <span class='chapter-title'>Pruebas y Debugging</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/3_funciones.html#objetivos-del-laboratorio",
+    "href": "unidades/Proyectos/3_funciones.html#objetivos-del-laboratorio",
+    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
+    "section": "Objetivos del Laboratorio",
+    "text": "Objetivos del Laboratorio\n\nDesarrollar un juego de Ahorcado usando funciones en Python.\nUsar estructuras de datos como listas y cadenas de texto.\nImplementar lógica condicional y bucles para manejar el flujo del juego.\nMostrar mensajes finales (con emojis) según el resultado del juego.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/3_funciones.html#prerrequisitos",
+    "href": "unidades/Proyectos/3_funciones.html#prerrequisitos",
+    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
+    "section": "Prerrequisitos",
+    "text": "Prerrequisitos\n\nConocimiento básico de Python: funciones, listas, cadenas, condicionales y bucles.\nInstalación de Python 3 en tu equipo.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/3_funciones.html#paso-1-crear-la-estructura-inicial-del-proyecto",
+    "href": "unidades/Proyectos/3_funciones.html#paso-1-crear-la-estructura-inicial-del-proyecto",
+    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
+    "section": "Paso 1: Crear la Estructura Inicial del Proyecto",
+    "text": "Paso 1: Crear la Estructura Inicial del Proyecto\n\nCrear un archivo de Python:\nAbre tu editor de texto o IDE favorito (se recomienda utilizar Vscode) y crea un nuevo archivo llamado ahorcado.py.\nDefinir el objetivo del proyecto en el archivo:\nAñade un comentario en la primera línea que describa el propósito del proyecto:\n# Juego de Ahorcado en Python",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/3_funciones.html#paso-2-definir-las-etapas-del-ahorcado-en-ascii",
+    "href": "unidades/Proyectos/3_funciones.html#paso-2-definir-las-etapas-del-ahorcado-en-ascii",
+    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
+    "section": "Paso 2: Definir las Etapas del Ahorcado en ASCII",
+    "text": "Paso 2: Definir las Etapas del Ahorcado en ASCII\n\nCrear la lista AHORCADO_DIBUJO:\nDefine las etapas progresivas del dibujo del ahorcado usando una lista de cadenas en ASCII.\nCada elemento de la lista representa una etapa del juego.\nAHORCADO_DIBUJO = [\n    \"\"\"\n       |\n       |\n       |\n       |\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n       |\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n      /|\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n      /|\\\\\n       |\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n      /|\\\\\n       |\n      /\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n      /|\\\\\n       |\n      / \\\\\n    \"\"\"\n]\n\n\nPrueba del dibujo:\nPrueba imprimiendo cada elemento de la lista para asegurarte de que el dibujo es correcto.\nprint(len(AHORCADO_DIBUJO))\nfor etapa in AHORCADO_DIBUJO:\n    print(etapa)\n\n\n\n\n\n\nTip\n\n\n\nNota: Puedes ejecutar el código en tu terminal o en un entorno de Python para verificar que el dibujo se imprime correctamente.\n\n\n\n\n\n\n\n\nTip\n\n\n\nNo olvides utilizar la función print() para mostrar los elementos de la lista en la consola. Y los comentarios para poder identificar cada etapa del dibujo.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/3_funciones.html#paso-3-crear-la-función-para-mostrar-el-dibujo-del-ahorcado",
+    "href": "unidades/Proyectos/3_funciones.html#paso-3-crear-la-función-para-mostrar-el-dibujo-del-ahorcado",
+    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
+    "section": "Paso 3: Crear la Función para Mostrar el Dibujo del Ahorcado",
+    "text": "Paso 3: Crear la Función para Mostrar el Dibujo del Ahorcado\n\nDefinir la función mostrar_ahorcado:\nEsta función tomará el número de intentos fallidos como argumento e imprimirá la etapa correspondiente del ahorcado.\ndef mostrar_ahorcado(intentos_fallidos):\n    print(AHORCADO_DIBUJO[intentos_fallidos])\n\n\nPrueba de la función:\nLlama a mostrar_ahorcado varias veces con diferentes valores para verificar que cada etapa se muestra correctamente.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/3_funciones.html#paso-4-crear-funciones-para-el-flujo-del-juego",
+    "href": "unidades/Proyectos/3_funciones.html#paso-4-crear-funciones-para-el-flujo-del-juego",
+    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
+    "section": "Paso 4: Crear Funciones para el Flujo del Juego",
+    "text": "Paso 4: Crear Funciones para el Flujo del Juego\n\nFunción para Seleccionar Palabra Aleatoria:\nDefine una lista de palabras para que el juego seleccione aleatoriamente una de ellas.\nUsa la biblioteca random para elegir una palabra al azar.\nimport random\n\ndef seleccionar_palabra():\n    palabras = [\"python\", \"programacion\", \"juego\", \"ahorcado\", \"computadora\"]\n    return random.choice(palabras)\nEn el código anterior, la función seleccionar_palabra devuelve una palabra aleatoria de la lista de palabras. Tambien aparece el método choice de random que selecciona una palabra aleatoria de la lista.\n\n\nFunción para Mostrar el Estado Actual:\nEsta función mostrará el progreso actual del jugador, mostrando las letras adivinadas y guiones bajos _ para letras no adivinadas.\ndef mostrar_progreso(palabra, letras_adivinadas):\n    progreso = [letra if letra in letras_adivinadas else '_' for letra in palabra]\n    print(\" \".join(progreso))\nEl código anterior crea una lista de letras adivinadas y guiones bajos para las letras no adivinadas. Luego, une los elementos de la lista en una cadena con un espacio entre cada letra.\nEste proceso se conoce como list comprehension y es una forma concisa de crear listas en Python.\nPara ampliar la información sobre list comprehension, puedes consultar la documentación oficial de Python en el siguiente enlace: List Comprehensions\n\n\nFunción para Manejar el Intento del Jugador:\nDefine una función que reciba una letra y verifique si está en la palabra.\ndef intentar_letra(palabra, letra, letras_adivinadas):\n    if letra in palabra:\n        letras_adivinadas.add(letra)\n        return True\n    return False\nEn el código anterior, la función intentar_letra verifica si la letra está en la palabra y la agrega a la colección de letras adivinadas. Devuelve True si la letra está en la palabra y False si no lo está.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/3_funciones.html#paso-5-crear-la-función-principal-del-juego",
+    "href": "unidades/Proyectos/3_funciones.html#paso-5-crear-la-función-principal-del-juego",
+    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
+    "section": "Paso 5: Crear la Función Principal del Juego",
+    "text": "Paso 5: Crear la Función Principal del Juego\n\nConfigurar el Juego:\nDefine la función jugar_ahorcado() que controlará el flujo completo del juego.\nEstablece la palabra a adivinar, el número de intentos, y una colección para almacenar las letras adivinadas.\ndef jugar_ahorcado():\n    palabra = seleccionar_palabra()\n    letras_adivinadas = set()\n    intentos_fallidos = 0\n    max_intentos = len(AHORCADO_DIBUJO) - 1\nEn el código anterior, la función jugar_ahorcado selecciona una palabra aleatoria, inicializa una colección de letras adivinadas, y establece el número máximo de intentos.\n\n\nCiclo del Juego:\nCrea un bucle while que continúe mientras el jugador tenga intentos restantes y no haya adivinado la palabra completa.\n    while intentos_fallidos &lt; max_intentos:\n        mostrar_ahorcado(intentos_fallidos)\n        mostrar_progreso(palabra, letras_adivinadas)\n        \n        letra = input(\"Introduce una letra: \").lower()\n        \n        if letra in letras_adivinadas:\n            print(\"Ya intentaste esa letra.\")\n            continue\n        \n        if intentar_letra(palabra, letra, letras_adivinadas):\n            print(\"¡Correcto!\")\n            if all(l in letras_adivinadas for l in palabra):\n                mostrar_resultado(True)\n                break\n        else:\n            print(\"Incorrecto.\")\n            intentos_fallidos += 1\n    else:\n        mostrar_ahorcado(intentos_fallidos)\n        mostrar_resultado(False)\nEn el código anterior, el bucle while muestra el dibujo actual del ahorcado, el progreso del jugador y solicita una letra al jugador.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/3_funciones.html#paso-6-crear-función-de-resultado-final-con-emojis",
+    "href": "unidades/Proyectos/3_funciones.html#paso-6-crear-función-de-resultado-final-con-emojis",
+    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
+    "section": "Paso 6: Crear Función de Resultado Final con Emojis",
+    "text": "Paso 6: Crear Función de Resultado Final con Emojis\n\nDefinir mostrar_resultado:\nEsta función mostrará un mensaje final con un emoji dependiendo de si el jugador gana o pierde.\ndef mostrar_resultado(ganador):\n    if ganador:\n        print(\"¡Felicidades, ganaste! 😄\")\n    else:\n        print(\"Lo siento, perdiste. 😞\")\nEn el código anterior, la función mostrar_resultado imprime un mensaje de felicitación si el jugador gana y un mensaje de consuelo si pierde.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/3_funciones.html#paso-7-ejecutar-el-juego",
+    "href": "unidades/Proyectos/3_funciones.html#paso-7-ejecutar-el-juego",
+    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
+    "section": "Paso 7: Ejecutar el Juego",
+    "text": "Paso 7: Ejecutar el Juego\n\nEjecutar el Juego:\nAgrega una condición para ejecutar el juego cuando el archivo sea ejecutado directamente.\nif __name__ == \"__main__\":\n    jugar_ahorcado()\nEn el código anterior, la condición if name == “main”: verifica si el archivo se ejecuta directamente y llama a la función jugar_ahorcado en ese caso.\n\n\n\n\n\n\nTip\n\n\n\nNota: Puedes ejecutar el juego en tu terminal o en un entorno de Python para jugar al Ahorcado.\n\n\n\n\nPrueba Final:\nEjecuta ahorcado.py y juega una partida completa. Verifica que los mensajes y el flujo del juego sean los correctos.\npython ahorcado.py",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/3_funciones.html#paso-8-mejoras-opcionales",
+    "href": "unidades/Proyectos/3_funciones.html#paso-8-mejoras-opcionales",
+    "title": "🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python",
+    "section": "Paso 8: Mejoras Opcionales",
+    "text": "Paso 8: Mejoras Opcionales\n\nAñadir Validación de Entradas: Controla que el jugador solo introduzca letras válidas.\n\nAgregar Dificultad: Permite al jugador elegir entre palabras cortas, medias y largas.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/1_proyecto_modulos.html#módulos-del-proyecto",
+    "href": "unidades/Proyectos/1_proyecto_modulos.html#módulos-del-proyecto",
+    "title": "📝 Gestor de Tareas con Prioridades",
+    "section": "Módulos del Proyecto",
+    "text": "Módulos del Proyecto\n\n📋 Módulo de tareas\n\nCrear una nueva tarea con título, descripción, fecha límite y prioridad.\nMarcar tareas como completadas ✅ o en progreso 🔄.\nOrganizar las tareas en orden de prioridad 🔥 o por fecha límite 📅.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>📝 Gestor de Tareas con Prioridades</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/1_proyecto_modulos.html#funciones-clave",
+    "href": "unidades/Proyectos/1_proyecto_modulos.html#funciones-clave",
+    "title": "📝 Gestor de Tareas con Prioridades",
+    "section": "Funciones Clave",
+    "text": "Funciones Clave\n\nPrioriza tus tareas con un sistema de prioridades: baja, media y alta 🔥.\n\n\nDesarrollo\nCreamos la siguiente estructura de carpetas para organizar nuestro proyecto:\nproyecto_modulos/\n│\n├── tareas/\n│   ├── __init__.py\n│   ├── tareas.py\n│\nEn el archivo tareas.py definimos las clases y funciones necesarias para gestionar las tareas.\n# tareas.py\n\nclass Tarea:\n    def __init__(self, titulo, descripcion, fecha_limite, prioridad):\n        self.titulo = titulo\n        self.descripcion = descripcion\n        self.fecha_limite = fecha_limite\n        self.prioridad = prioridad\n        self.completada = False\n\n    def marcar_completada(self):\n        self.completada = True\n\n    def marcar_en_progreso(self):\n        self.completada = False\n\n    def __str__(self):\n        return f\"{self.titulo} - {self.prioridad} - {self.fecha_limite}\"\nEn el archivo init.py definimos las funciones principales para interactuar con las tareas.\n# __init__.py\n\nfrom tareas import Tarea\n\ndef crear_tarea(titulo, descripcion, fecha_limite, prioridad):\n    return Tarea(titulo, descripcion, fecha_limite, prioridad)\n\ndef marcar_completada(tarea):\n    tarea.marcar_completada()\n\ndef marcar_en_progreso(tarea):\n    tarea.marcar_en_progreso()\nCon esta estructura básica, podemos empezar a desarrollar la funcionalidad de nuestro gestor de tareas. En los siguientes módulos, ampliaremos las capacidades de nuestra aplicación y añadiremos nuevas funcionalidades.\nPara poder probar nuestro código, podemos crear un script de prueba en la misma carpeta:\n# test.py\n\nfrom tareas import Tarea\n\ntarea1 = Tarea(\"Hacer la compra\", \"Comprar leche, pan y fruta\", \"2022-12-31\", \"alta\")\n\nprint(tarea1)\nAl ejecutar el script de prueba, deberíamos ver la información de la tarea creada.\n$ python test.py\nHacer la compra - alta - 2022-12-31",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>📝 Gestor de Tareas con Prioridades</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_proyecto_poo.html",
+    "href": "unidades/Proyectos/2_proyecto_poo.html",
+    "title": "🛒 Simulador de Tienda Online",
+    "section": "",
+    "text": "Módulos del Proyecto\nUn proyecto interactivo que simula una tienda en línea donde los clientes pueden agregar productos al carrito, realizar pedidos, gestionar inventarios y procesar pagos.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_proyecto_poo.html#módulos-del-proyecto",
+    "href": "unidades/Proyectos/2_proyecto_poo.html#módulos-del-proyecto",
+    "title": "🛒 Simulador de Tienda Online",
+    "section": "",
+    "text": "🛍️ Módulo de Productos\n\nDefinir productos con nombre, precio y cantidad en inventario.\nActualizar el inventario después de cada compra o cuando se agregan nuevos productos.\n\n\n\n🛒 Módulo de Carrito\n\nPermite a los clientes agregar o quitar productos de su carrito.\nCalcular el costo total de los productos en el carrito.\n\n\n\n👤 Módulo de Cliente\n\nGestionar la creación de nuevos clientes.\nMantener el historial de compras del cliente.\n\n\n\n📦 Módulo de Pedido\n\nProcesar un pedido, verificar disponibilidad en inventario, y generar la factura.\nActualizar el inventario después de la compra.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_proyecto_poo.html#productos",
+    "href": "unidades/Proyectos/2_proyecto_poo.html#productos",
+    "title": "🛒 Simulador de Tienda Online",
+    "section": "🛍️ Productos",
+    "text": "🛍️ Productos\nEn el archivo producto.py, definimos la clase Producto:\n# productos/producto.py\n\nclass Producto:\n    def __init__(self, nombre, precio, inventario):\n        self.nombre = nombre\n        self.precio = precio\n        self.inventario = inventario\n\n    def actualizar_inventario(self, cantidad):\n        self.inventario -= cantidad\n\n    def __str__(self):\n        return f\"{self.nombre} - ${self.precio} (Inventario: {self.inventario})\"",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_proyecto_poo.html#carrito",
+    "href": "unidades/Proyectos/2_proyecto_poo.html#carrito",
+    "title": "🛒 Simulador de Tienda Online",
+    "section": "🛒 Carrito",
+    "text": "🛒 Carrito\nEn el archivo carrito.py, definimos la clase Carrito:\n# carrito/carrito.py\n\nclass Carrito:\n    def __init__(self):\n        self.productos = {}\n\n    def agregar_producto(self, producto, cantidad):\n        if producto.nombre in self.productos:\n            self.productos[producto.nombre] += cantidad\n        else:\n            self.productos[producto.nombre] = cantidad\n\n    def eliminar_producto(self, producto):\n        if producto.nombre in self.productos:\n            del self.productos[producto.nombre]\n\n    def total(self):\n        return sum(producto.precio * cantidad for producto, cantidad in self.productos.items())\n\n    def __str__(self):\n        carrito_str = \"Carrito:\\n\"\n        for producto, cantidad in self.productos.items():\n            carrito_str += f\"{producto}: {cantidad}\\n\"\n        return carrito_str",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_proyecto_poo.html#clientes",
+    "href": "unidades/Proyectos/2_proyecto_poo.html#clientes",
+    "title": "🛒 Simulador de Tienda Online",
+    "section": "👤 Clientes",
+    "text": "👤 Clientes\nEn el archivo cliente.py, definimos la clase Cliente:\n# clientes/cliente.py\n\nclass Cliente:\n    def __init__(self, nombre, email):\n        self.nombre = nombre\n        self.email = email\n        self.historial_compras = []\n\n    def agregar_historial(self, pedido):\n        self.historial_compras.append(pedido)\n\n    def ver_historial(self):\n        if not self.historial_compras:\n            return \"No tienes compras aún.\"\n        return \"\\n\".join(str(pedido) for pedido in self.historial_compras)\n\n    def __str__(self):\n        return f\"Cliente: {self.nombre} ({self.email})\"",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_proyecto_poo.html#pedidos",
+    "href": "unidades/Proyectos/2_proyecto_poo.html#pedidos",
+    "title": "🛒 Simulador de Tienda Online",
+    "section": "📦 Pedidos",
+    "text": "📦 Pedidos\nEn el archivo pedido.py, definimos la clase Pedido:\n# pedidos/pedido.py\n\nclass Pedido:\n    def __init__(self, cliente, carrito):\n        self.cliente = cliente\n        self.carrito = carrito\n        self.total = carrito.total()\n\n    def procesar_pedido(self):\n        for producto, cantidad in self.carrito.productos.items():\n            producto.actualizar_inventario(cantidad)\n        self.cliente.agregar_historial(self)\n\n    def __str__(self):\n        return f\"Pedido de {self.cliente.nombre} - Total: ${self.total}\"",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/4_proyecto_poo_2.html#objetivos",
+    "href": "unidades/Proyectos/4_proyecto_poo_2.html#objetivos",
+    "title": "🏫 Sistema Universitario",
+    "section": "Objetivos",
+    "text": "Objetivos\n\nDefinir clases en Python.\nCrear objetos de clases.\nUtilizar herencia en clases.\nMostrar información de objetos. ## Requerimientos\nConocimientos básicos de programación en Python.\nConocimientos básicos de programación orientada a objetos.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>🏫 Sistema Universitario</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/4_proyecto_poo_2.html#instrucciones.",
+    "href": "unidades/Proyectos/4_proyecto_poo_2.html#instrucciones.",
+    "title": "🏫 Sistema Universitario",
+    "section": "Instrucciones.",
+    "text": "Instrucciones.\n\nClase Persona: Define los atributos comunes nombre, edad y sexo.\nClase Estudiante: Hereda de Persona y agrega los atributos carnet y carrera.\nClase Profesor: Hereda de Persona y agrega los atributos codigo y especialidad.\nClase Curso: Contiene los atributos nombre, codigo y una instancia de Profesor.\nClase Universidad: Contiene el atributo nombre y una lista de cursos. Incluye un método para agregar cursos.\nCreación de objetos:\n\n\nSe crea un objeto universidad de la clase Universidad.\nSe crean los objetos profesor, curso y estudiante con los datos indicados.\nSe agrega cada curso a la universidad y luego se imprime la universidad con los cursos.\n\n\nImpresión:\n\n\nSe imprime la información de la universidad, el estudiante, el profesor y el curso de Matemáticas, según los requerimientos.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>🏫 Sistema Universitario</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/4_proyecto_poo_2.html#desarrollo",
+    "href": "unidades/Proyectos/4_proyecto_poo_2.html#desarrollo",
+    "title": "🏫 Sistema Universitario",
+    "section": "Desarrollo",
+    "text": "Desarrollo\n\nCrear la clase Persona.\n\nclass Persona:\n    def __init__(self, nombre, edad, sexo):\n        self.nombre = nombre\n        self.edad = edad\n        self.sexo = sexo\n\n    def __str__(self):\n        return f\"Nombre: {self.nombre}, Edad: {self.edad}, Sexo: {self.sexo}\"\nEn el codigo anterior se crea la clase Persona con los atributos nombre, edad y sexo. Además, se crea el método str para mostrar la información de la persona.\n\nCrear la clase Estudiante que hereda de Persona.\n\nclass Estudiante(Persona):\n    def __init__(self, nombre, edad, sexo, carnet, carrera):\n        super().__init__(nombre, edad, sexo)\n        self.carnet = carnet\n        self.carrera = carrera\n\n    def __str__(self):\n        return f\"{super().__str__()}, Carnet: {self.carnet}, Carrera: {self.carrera}\"\nEn el codigo anterior se crea la clase Estudiante que hereda de Persona. Se añaden los atributos carnet y carrera. Además, se sobreescribe el método str para mostrar la información del estudiante.\n\nCrear la clase Profesor que hereda de Persona.\n\nclass Profesor(Persona):\n    def __init__(self, nombre, edad, sexo, codigo, especialidad):\n        super().__init__(nombre, edad, sexo)\n        self.codigo = codigo\n        self.especialidad = especialidad\n\n    def __str__(self):\n        return f\"{super().__str__()}, Código: {self.codigo}, Especialidad: {self.especialidad}\"\nEn el codigo anterior se crea la clase Profesor que hereda de Persona. Se añaden los atributos codigo y especialidad. Además, se sobreescribe el método str para mostrar la información del profesor.\n\nCrear la clase Curso.\n\nclass Curso:\n    def __init__(self, nombre, codigo, profesor):\n        self.nombre = nombre\n        self.codigo = codigo\n        self.profesor = profesor\n\n    def __str__(self):\n        return f\"Curso: {self.nombre}, Código: {self.codigo}, Profesor: {self.profesor.nombre}\"\nEn el codigo anterior se crea la clase Curso con los atributos nombre, codigo y profesor. Además, se crea el método str para mostrar la información del curso.\n\nCrear la clase Universidad.\n\nclass Universidad:\n    def __init__(self, nombre):\n        self.nombre = nombre\n        self.cursos = []\n\n    def agregar_curso(self, curso):\n        self.cursos.append(curso)\n\n    def __str__(self):\n        cursos_str = \"\\n\".join([str(curso) for curso in self.cursos])\n        return f\"Universidad: {self.nombre}\\nCursos:\\n{cursos_str}\"\nEn el codigo anterior se crea la clase Universidad con los atributos nombre y cursos. Se añade el método agregar_curso para agregar un curso a la lista de cursos. Además, se sobreescribe el método str para mostrar la información de la universidad y los cursos.\n\nCar los objetos\n\n# Crear la universidad\nuniversidad = Universidad(\"Universidad de El Salvador\")\n\n# Crear los profesores\nprofesor_juan = Profesor(\"Juan Perez\", 30, \"Masculino\", \"202020202\", \"Matematicas\")\nprofesor_maria = Profesor(\"Maria Lopez\", 35, \"Femenino\", \"202020203\", \"Fisica\")\nprofesor_pedro = Profesor(\"Pedro Ramirez\", 40, \"Masculino\", \"202020204\", \"Quimica\")\n\n# Crear los cursos\ncurso_matematicas = Curso(\"Matematicas\", \"MAT101\", profesor_juan)\ncurso_fisica = Curso(\"Fisica\", \"FIS101\", profesor_maria)\ncurso_quimica = Curso(\"Quimica\", \"QUI101\", profesor_pedro)\n\n# Agregar los cursos a la universidad\nuniversidad.agregar_curso(curso_matematicas)\nuniversidad.agregar_curso(curso_fisica)\nuniversidad.agregar_curso(curso_quimica)\n\n# Crear el objeto estudiante\nestudiante_carlos = Estudiante(\"Carlos Perez\", 20, \"Masculino\", \"202010101\", \"Ingenieria en Sistemas Informaticos\")\nEn el codigo anterior se crean los objetos de la universidad, profesores, cursos y estudiante.\n\nImprimir la información\n\nprint(universidad)\nprint()\nprint(estudiante_carlos)\nprint()\nprint(profesor_juan)\nprint()\nprint(curso_matematicas)\n\n# Crear un nuevo curso de Fisica y agregarlo a la universidad\ncurso_nuevo_fisica = Curso(\"Fisica\", \"FIS101\", profesor_maria)\nuniversidad.agregar_curso(curso_nuevo_fisica)\n\n# Imprimir nuevamente la universidad con el nuevo curso agregado\nprint()\nprint(universidad)\nEn el codigo anterior se imprime la información de la universidad, estudiante, profesor y curso. Luego se crea un nuevo curso de Fisica y se agrega a la universidad, para finalmente imprimir nuevamente la información de la universidad.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>🏫 Sistema Universitario</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/5_DevContainers.html",
+    "href": "unidades/Proyectos/5_DevContainers.html",
+    "title": "Laboratorio: DevContainer con NGINX",
+    "section": "",
+    "text": "Objetivo:\nCrear un entorno de desarrollo dentro de un contenedor Docker que ejecute NGINX para servir una página estática simple.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Laboratorio: DevContainer con NGINX</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/5_DevContainers.html#estructura-del-proyecto",
+    "href": "unidades/Proyectos/5_DevContainers.html#estructura-del-proyecto",
+    "title": "Laboratorio: DevContainer con NGINX",
+    "section": "1. Estructura del Proyecto",
+    "text": "1. Estructura del Proyecto\nEl proyecto tendrá la siguiente estructura de directorios y archivos:\nDevContainers/\n│\n├── .devcontainer/\n│   ├── Dockerfile\n│   └── devcontainer.json\n│\n├── html/\n    └── index.html\nAhora vamos a crear el archivo index.html/\nhtml/index.html\nEl archivo HTML que NGINX servirá cuando accedas a http://localhost:80.\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;Document&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Hello World!&lt;/h1&gt;\n&lt;/body&gt;\n&lt;/html&gt;\nEste es un archivo HTML simple que contiene un título y un encabezado.\nAhora vamos a crar el archivo Dockerfile.\n.devcontainer/Dockerfile\nEste archivo Dockerfile se utiliza para construir la imagen del contenedor que ejecutará NGINX.\n# Usa una imagen base de Ubuntu\nFROM mcr.microsoft.com/devcontainers/base:jammy\n\n# Instala NGINX\nRUN apt-get update && apt-get install -y nginx && apt-get clean\n\n# Expone el puerto 80 para NGINX\nEXPOSE 80\n\n# Comando para iniciar NGINX en primer plano\nCMD [\"nginx\", \"-g\", \"daemon off;\"]\nEl Dockerfile está basado en Ubuntu (jammy) e instala NGINX. Luego, expone el puerto 80 y configura NGINX para que se ejecute en primer plano (esto es necesario para que el contenedor no termine inmediatamente después de iniciarse).\nAhora crearermos el archivo devcontainer.json.\n.devcontainer/devcontainer.json\nEl archivo de configuración del DevContainer, que especifica cómo se debe construir y configurar el contenedor.\n{\n  \"name\": \"DevContainer with NGINX\",\n  \"build\": {\n    \"dockerfile\": \"Dockerfile\"\n  },\n  \"forwardPorts\": [80],\n  \"postCreateCommand\": \"echo 'DevContainer with NGINX is ready!'\",\n  \"remoteUser\": \"root\",\n  \"mounts\": [\n    \"source=${localWorkspaceFolder}/html,target=/usr/share/nginx/html,type=bind\"\n  ]\n}\n\nbuild: Este campo indica que se debe usar el Dockerfile para construir la imagen del contenedor.\nforwardPorts: Mapea el puerto 80 del contenedor al puerto 80 de la máquina local para que NGINX sea accesible desde el navegador.\nmounts: Se vincula el directorio local html al directorio /usr/share/nginx/html del contenedor, para que el archivo index.html sea servido por NGINX.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Laboratorio: DevContainer con NGINX</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/5_DevContainers.html#instrucciones-de-creación-y-ejecución",
+    "href": "unidades/Proyectos/5_DevContainers.html#instrucciones-de-creación-y-ejecución",
+    "title": "Laboratorio: DevContainer con NGINX",
+    "section": "3. Instrucciones de Creación y Ejecución",
+    "text": "3. Instrucciones de Creación y Ejecución\nCrea el proyecto: Crea un directorio de trabajo, por ejemplo DevContainers, y dentro de él agrega los archivos de configuración mencionados anteriormente.\nAbre el proyecto en Visual Studio Code: Abre la carpeta DevContainers en Visual Studio Code.\nConstruye el contenedor: Al abrir el proyecto en VS Code, si tienes configurado DevContainers, automáticamente debería preguntar si deseas abrirlo en un contenedor. Selecciona “Reopen in Container”.\nVerifica la creación del contenedor: El contenedor se construirá utilizando el Dockerfile y configurará NGINX automáticamente. El puerto 80 será accesible en tu máquina local.\nAccede a tu página web: Una vez que el contenedor se haya iniciado, abre tu navegador y ve a http://localhost:80. Deberías ver la página con el mensaje “Hello World!”.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Laboratorio: DevContainer con NGINX</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/5_DevContainers.html#archivos-de-configuración",
+    "href": "unidades/Proyectos/5_DevContainers.html#archivos-de-configuración",
+    "title": "Laboratorio: DevContainer con NGINX",
+    "section": "2. Archivos de Configuración",
+    "text": "2. Archivos de Configuración\nEs posible que tengamos que configurar el archivo /etc/nginx/sites-available/default\nEste archivo de configuración de NGINX para servir los archivos desde la carpeta /usr/share/nginx/html.\nserver {\n    listen 80;\n    server_name localhost;\n\n    root /usr/share/nginx/html;  # Asegúrate de que esté apuntando a esta carpeta\n    index index.html index.htm;\n\n    location / {\n        try_files $uri $uri/ =404;  # Verifica que esta línea esté configurada para servir archivos correctamente\n    }\n}\nEste archivo configura el servidor para escuchar en el puerto 80 y servir archivos desde la carpeta /usr/share/nginx/html.\nSi el archivo solicitado no se encuentra, se mostrará un error 404.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Laboratorio: DevContainer con NGINX</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/5_DevContainers.html#problemas-comunes",
+    "href": "unidades/Proyectos/5_DevContainers.html#problemas-comunes",
+    "title": "Laboratorio: DevContainer con NGINX",
+    "section": "Problemas Comunes",
+    "text": "Problemas Comunes\nNGINX no se inicia: Si después de construir el contenedor NGINX no está corriendo, puedes iniciarlo manualmente con el siguiente comando:\nservice nginx start\nCambios no reflejados: Si haces cambios en el archivo index.html, es posible que necesites reiniciar NGINX para que se apliquen:\nservice nginx restart\nNo se mapea el puerto correctamente: Si no puedes acceder a la página en el navegador, verifica que el puerto esté correctamente mapeado en la configuración del contenedor. Revisa el archivo devcontainer.json y asegúrate de que forwardPorts esté configurado correctamente como [80].",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Laboratorio: DevContainer con NGINX</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/6_calculadora.html#paso-1-configuración-inicial-del-proyecto",
+    "href": "unidades/Proyectos/6_calculadora.html#paso-1-configuración-inicial-del-proyecto",
+    "title": "Laboratorio: Calculadora en Python",
+    "section": "Paso 1: Configuración inicial del proyecto",
+    "text": "Paso 1: Configuración inicial del proyecto\n\nCrear el directorio del proyecto\nComienza creando un nuevo directorio para el proyecto:\nmkdir calculadora\ncd calculadora\nInicializar un repositorio Git Inicializa un repositorio Git en la carpeta del proyecto:\ngit init\nCrear el archivo main.py\nCrea un archivo main.py que será el punto de entrada del programa:\ntouch main.py\nPrimer commit\nAñadimos el archivo inicial al control de versiones:\ngit add main.py\ngit commit -m \"Inicio del proyecto: archivo main.py creado\"",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/6_calculadora.html#paso-2-agregar-las-operaciones-básicas-suma-resta-multiplicación-división",
+    "href": "unidades/Proyectos/6_calculadora.html#paso-2-agregar-las-operaciones-básicas-suma-resta-multiplicación-división",
+    "title": "Laboratorio: Calculadora en Python",
+    "section": "Paso 2: Agregar las operaciones básicas (suma, resta, multiplicación, división)",
+    "text": "Paso 2: Agregar las operaciones básicas (suma, resta, multiplicación, división)\n\nCódigo inicial\nAbre el archivo main.py y añade el siguiente código para implementar las operaciones básicas:\ndef suma(a, b):\n    \"\"\"Devuelve la suma de dos números.\"\"\"\n    return a + b\n\n\ndef resta(a, b):\n    \"\"\"Devuelve la resta de dos números.\"\"\"\n    return a - b\n\n\ndef multiplicacion(a, b):\n    \"\"\"Devuelve la multiplicación de dos números.\"\"\"\n    return a * b\n\n\ndef division(a, b):\n    \"\"\"Devuelve la división de dos números. Maneja división entre cero.\"\"\"\n    try:\n        return a / b\n    except ZeroDivisionError:\n        return \"Error: No se puede dividir entre cero.\"\n\n\n# Punto de entrada\nif __name__ == \"__main__\":\n    print(\"Bienvenido a la calculadora básica\")\n    num1 = float(input(\"Ingrese el primer número: \"))\n    num2 = float(input(\"Ingrese el segundo número: \"))\n\n    print(f\"Suma: {suma(num1, num2)}\")\n    print(f\"Resta: {resta(num1, num2)}\")\n    print(f\"Multiplicación: {multiplicacion(num1, num2)}\")\n    print(f\"División: {division(num1, num2)}\")\n\n\nCrear un commit\nGuarda los cambios y realiza un commit con la descripción del avance:\ngit add main.py\ngit commit -m \"Implementadas las operaciones básicas\"",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/6_calculadora.html#paso-3-agregar-funcionalidad-de-radicación-y-potenciación",
+    "href": "unidades/Proyectos/6_calculadora.html#paso-3-agregar-funcionalidad-de-radicación-y-potenciación",
+    "title": "Laboratorio: Calculadora en Python",
+    "section": "Paso 3: Agregar funcionalidad de radicación y potenciación",
+    "text": "Paso 3: Agregar funcionalidad de radicación y potenciación\n\nActualizar main.py\nAñadimos funciones para radicación y potenciación, y las integramos al flujo del programa:\ndef radicacion(base, indice):\n    \"\"\"Devuelve la raíz de un número dado el índice.\"\"\"\n    try:\n        return base ** (1 / indice)\n    except ZeroDivisionError:\n        return \"Error: El índice de la raíz no puede ser cero.\"\n\n\ndef potenciacion(base, exponente):\n    \"\"\"Devuelve la potencia de un número dado un exponente.\"\"\"\n    return base ** exponente\n\n\n# Punto de entrada actualizado\nif __name__ == \"__main__\":\n    print(\"Bienvenido a la calculadora extendida\")\n    num1 = float(input(\"Ingrese el primer número: \"))\n    num2 = float(input(\"Ingrese el segundo número: \"))\n\n    print(f\"Suma: {suma(num1, num2)}\")\n    print(f\"Resta: {resta(num1, num2)}\")\n    print(f\"Multiplicación: {multiplicacion(num1, num2)}\")\n    print(f\"División: {division(num1, num2)}\")\n    print(f\"Radicación: {radicacion(num1, num2)}\")\n    print(f\"Potenciación: {potenciacion(num1, num2)}\")\n\n\nCrear un commit\nGuarda los cambios y realiza un commit:\ngit add main.py\ngit commit -m \"Añadidas las operaciones de radicación y potenciación\"",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/6_calculadora.html#paso-4-refactorización-del-código-en-múltiples-archivos",
+    "href": "unidades/Proyectos/6_calculadora.html#paso-4-refactorización-del-código-en-múltiples-archivos",
+    "title": "Laboratorio: Calculadora en Python",
+    "section": "Paso 4: Refactorización del código en múltiples archivos",
+    "text": "Paso 4: Refactorización del código en múltiples archivos\n\nCrear estructura modular\nOrganizamos las operaciones en un archivo separado llamado operaciones.py.\ntouch operaciones.py\nEn el archivo operaciones.py, coloca las funciones:\n# operaciones.py\n\ndef suma(a, b):\n    \"\"\"Devuelve la suma de dos números.\"\"\"\n    return a + b\n\n\ndef resta(a, b):\n    \"\"\"Devuelve la resta de dos números.\"\"\"\n    return a - b\n\n\ndef multiplicacion(a, b):\n    \"\"\"Devuelve la multiplicación de dos números.\"\"\"\n    return a * b\n\n\ndef division(a, b):\n    \"\"\"Devuelve la división de dos números. Maneja división entre cero.\"\"\"\n    try:\n        resultado = a / b\n    except ZeroDivisionError:\n        return \"Error: No se puede dividir entre cero.\"\n    else:\n        return resultado\n    finally:\n        pass\n\n\ndef radicacion(base, indice):\n    \"\"\"Devuelve la raíz de un número dado el índice.\"\"\"\n    try:\n        return base ** (1 / indice)\n    except ZeroDivisionError:\n        return \"Error: El índice de la raíz no puede ser cero.\"\n\n\ndef potenciacion(base, exponente):\n    \"\"\"Devuelve la potencia de un número dado un exponente.\"\"\"\n    return base ** exponente\n\n\nActualizar main.py\nActualiza main.py para importar las funciones desde operaciones.py:\n# main.py\nfrom operaciones import suma, resta, multiplicacion, division, radicacion, potenciacion\n\nif __name__ == \"__main__\":\n    print(\"Bienvenido a la calculadora modular\")\n    num1 = float(input(\"Ingrese el primer número: \"))\n    num2 = float(input(\"Ingrese el segundo número: \"))\n\n    print(f\"Suma: {suma(num1, num2)}\")\n    print(f\"Resta: {resta(num1, num2)}\")\n    print(f\"Multiplicación: {multiplicacion(num1, num2)}\")\n    print(f\"División: {division(num1, num2)}\")\n    print(f\"Radicación: {radicacion(num1, num2)}\")\n    print(f\"Potenciación: {potenciacion(num1, num2)}\")\n\n\nCrear un commit\nGuarda los cambios y realiza un commit:\ngit add main.py operaciones.py\ngit commit -m \"Refactorización: código modularizado en main.py y operaciones.py\"",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/6_calculadora.html#paso-5-manejo-de-errores-más-detallado",
+    "href": "unidades/Proyectos/6_calculadora.html#paso-5-manejo-de-errores-más-detallado",
+    "title": "Laboratorio: Calculadora en Python",
+    "section": "Paso 5: Manejo de errores más detallado",
+    "text": "Paso 5: Manejo de errores más detallado\n\nMejorar el manejo de errores en division\nModifica la función division para agregar un bloque else para manejar operaciones exitosas y un finally para mostrar un mensaje final:\ndef division(a, b):\n    \"\"\"Devuelve la división de dos números.\"\"\"\n    try:\n        resultado = a / b\n    except ZeroDivisionError:\n        print(\"Operación de división intentada.\")  # Mostrar mensaje solo si ocurre un error\n        return \"Error: No se puede dividir entre cero.\"\n    else:\n        return resultado\n    finally:\n        pass  # El bloque finally se puede dejar vacío o eliminarlo si no es necesario\n\n\nCrear un commit\nRealiza un nuevo commit con los cambios:\ngit add operaciones.py\ngit commit -m \"Mejorado el manejo de errores con else y finally en división\"",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/6_calculadora.html#paso-6-testeo-automatizado",
+    "href": "unidades/Proyectos/6_calculadora.html#paso-6-testeo-automatizado",
+    "title": "Laboratorio: Calculadora en Python",
+    "section": "Paso 6: Testeo automatizado",
+    "text": "Paso 6: Testeo automatizado\n\nCrear pruebas unitarias\nAhora implementamos pruebas unitarias para validar cada operación usando el módulo unittest. Crea un archivo test_calculadora.py con el siguiente contenido:\n# test_calculadora.py\nimport unittest\nfrom operaciones import suma, resta, multiplicacion, division, radicacion, potenciacion\n\nclass TestCalculadora(unittest.TestCase):\n\n    def test_suma(self):\n        self.assertEqual(suma(2, 3), 5)\n\n    def test_resta(self):\n        self.assertEqual(resta(5, 3), 2)\n\n    def test_multiplicacion(self):\n        self.assertEqual(multiplicacion(2, 3), 6)\n\n    def test_division(self):\n        self.assertEqual(division(6, 3), 2)\n\n    def test_division_por_cero(self):\n        self.assertEqual(division(6, 0), \"Error: No se puede dividir entre cero\")\n\n    def test_radicacion(self):\n        self.assertEqual(radicacion(16, 4), 2)\n\n    def test_potenciacion(self):\n        self.assertEqual(potenciacion(2, 3), 8)\n\nif __name__ == \"__main__\":\n    unittest.main()\n\n\nEjecutar las pruebas\nPara ejecutar las pruebas, usa el siguiente comando:\npython -m unittest test_calculadora.py",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/6_calculadora.html#siguientes-pasos",
+    "href": "unidades/Proyectos/6_calculadora.html#siguientes-pasos",
+    "title": "Laboratorio: Calculadora en Python",
+    "section": "Siguientes pasos",
+    "text": "Siguientes pasos\n\nInterfaz de usuario: Agregar un menú para que el usuario elija las operaciones. Esto mejorará la interacción con la calculadora.\nMejoras adicionales: Explorar la posibilidad de agregar operaciones avanzadas como trigonometría o logaritmos.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Acerca de mi",
+    "section": "",
+    "text": "¡Hola! Soy Diego Saavedra, un experto en desarrollo avanzado de software e investigación. Mi amplia experiencia abarca diversas tecnologías, incluyendo Python (Django, Flask, Fast API) y JavaScript (Express, Next, React, Nestjs), así como también tengo conocimientos sólidos en bases de datos, arquitecturas de software y liderazgo ágil.\nMi pasión por la innovación, el desarrollo y la educación me ha llevado a destacarme como un profesional versátil e invaluable. Estoy constantemente listo para enfrentar desafíos técnicos y liderar proyectos de vanguardia.\nMi formación académica incluye el ser estudiante de Doctorado centrado en la inteligencia artificial, estoy enfocando mi investigación en la detección de TDA+H y Asperger mediante Visión Artificial a traves de algoritmos de Inteligencia Artificial. Además, poseo una Maestría en Ciencias de la Computación, con un enfoque en el Deep Learning (Convolutional Neural Network) y la Atención.\nCon esta sólida base académica y experiencia profesional, estoy preparado para aportar soluciones innovadoras y liderar equipos hacia el éxito en cualquier proyecto tecnológico que se me presente.\nAdemás, tengo experiencia en el desarrollo móvil utilizando Flutter y en la implementación de soluciones backend utilizando servicios Backend as a Service (BaaS) como Firebase y Supabase.\nEn el ámbito de la educación, he sido docente de programación en institutos y universidades, actualmente soy parte del Departamento de Ciencias de la Computación en la Universidad de las Fuerzas Armadas ESPE, donde he impartido asignaturas de desarrollo de Software Web con tecnologías como JavaScript, Java y C# asi como sus respectivos frameworks.\nMi experiencia en el desarrollo de software y la investigación me ha permitido adquirir habilidades de liderazgo, trabajo en equipo y comunicación efectiva. Estoy seguro de que mi experiencia y habilidades serán de gran valor para cualquier proyecto tecnológico que se me presente.\nEn este curso aprenderás a desarrollar aplicaciones web con Python y Django, una de las tecnologías más populares y poderosas para el desarrollo de aplicaciones web. A lo largo del curso, aprenderás a crear aplicaciones web desde cero, utilizando Django y Python, y a implementar funcionalidades avanzadas como integración con APIs externas y mucho más.\nTambien veremos tecnologías como Git, Github, Docker, Python, Django, Django Rest Framework, Html5, Css3, JavaScript, Nodejs, Npm y React.\n\n\n¡Estoy emocionado de compartir contigo mi conocimiento y experiencia en el desarrollo de aplicaciones web con Python y Django!"
+  },
+  {
+    "objectID": "license.html",
+    "href": "license.html",
+    "title": "Licencia",
+    "section": "",
+    "text": "Uso Permitido\nEste curso y su contenido están protegidos por derechos de autor y son propiedad de [Nombre de la Compañía]. El contenido de este curso se proporciona con el propósito de educación y aprendizaje.\nPuedes utilizar el contenido de este curso con fines educativos y personales. Puedes modificar los ejemplos y el código proporcionado para tus propias necesidades de aprendizaje."
+  },
+  {
+    "objectID": "license.html#restricciones",
+    "href": "license.html#restricciones",
+    "title": "Licencia",
+    "section": "Restricciones",
+    "text": "Restricciones\nNo tienes permitido redistribuir, vender o utilizar el contenido de este curso para fines comerciales sin el permiso explícito de [Nombre de la Compañía]. Además, no tienes permitido copiar o duplicar el contenido del curso y presentarlo como propio."
+  },
+  {
+    "objectID": "license.html#atribución",
+    "href": "license.html#atribución",
+    "title": "Licencia",
+    "section": "Atribución",
+    "text": "Atribución\nSi compartes los ejemplos, los fragmentos de código o el contenido de este curso en línea, te pedimos que proporciones la atribución adecuada a [Nombre de la Compañía]."
+  },
+  {
+    "objectID": "license.html#cambios-en-la-licencia",
+    "href": "license.html#cambios-en-la-licencia",
+    "title": "Licencia",
+    "section": "Cambios en la Licencia",
+    "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
+  },
+  {
+    "objectID": "unidades/unidad6/4_db_postgresql.html#conceptos-clave",
+    "href": "unidades/unidad6/4_db_postgresql.html#conceptos-clave",
+    "title": "Bases de Datos en PostgreSQL",
+    "section": "Conceptos Clave",
+    "text": "Conceptos Clave\nACID: Garantiza la confiabilidad de las transacciones.\nExtensibilidad: Admite tipos de datos personalizados y funciones definidas por el usuario.\nConsultas avanzadas: Optimiza las consultas complejas.\nOpen Source: Altamente personalizable y gratuito.\nIntegridad: Gestión avanzada de claves foráneas y restricciones.",
+    "crumbs": [
+      "Unidad 6: Bases de Datos",
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Bases de Datos en PostgreSQL</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_db_postgresql.html#configuración-de-postgresql-con-docker",
+    "href": "unidades/unidad6/4_db_postgresql.html#configuración-de-postgresql-con-docker",
+    "title": "Bases de Datos en PostgreSQL",
+    "section": "Configuración de PostgreSQL con Docker",
+    "text": "Configuración de PostgreSQL con Docker\n\nInstrucciones\nCrear un contenedor de PostgreSQL con Docker:\nEjecuta el siguiente comando para iniciar un servidor PostgreSQL en Docker.\ndocker run --name postgres-database -e POSTGRES_PASSWORD=root -e POSTGRES_DB=tienda -p 5432:5432 -d postgres:15\n\n\nParámetros:\n\n–name: Nombre del contenedor.\nPOSTGRES_PASSWORDx: Contraseña para el usuario postgres.\nPOSTGRES_DB: Nombre de la base de datos inicial.\n-p 5432:5432: Mapea el puerto del contenedor al puerto local.\npostgres:15: Imagen oficial de PostgreSQL.\n\n\n\nAcceder al contenedor (opcional):\ndocker exec -it postgres-database psql -U postgres",
+    "crumbs": [
+      "Unidad 6: Bases de Datos",
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Bases de Datos en PostgreSQL</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_db_postgresql.html#ejemplos",
+    "href": "unidades/unidad6/4_db_postgresql.html#ejemplos",
+    "title": "Bases de Datos en PostgreSQL",
+    "section": "Ejemplos",
+    "text": "Ejemplos\nEjemplo 1: Conexión a PostgreSQL desde Python\n\n\n\n\nPostgreSQL Conexión\n\n\n\nimport psycopg2\n\nconexion = psycopg2.connect(\n    host=\"localhost\",\n    database=\"tienda\",\n    user=\"postgres\",\n    password=\"root\"\n)\n\nif conexion:\n    print(\"Conexión exitosa a PostgreSQL\")\nconexion.close()\nEjemplo 2: Crear una tabla\n\n{fig-align=“center” width=“800}\n\nconexion = psycopg2.connect(\n    host=\"localhost\",\n    database=\"tienda\",\n    user=\"postgres\",\n    password=\"root\"\n)\ncursor = conexion.cursor()\ncursor.execute(\"\"\"\nCREATE TABLE IF NOT EXISTS productos (\n    id SERIAL PRIMARY KEY,\n    nombre VARCHAR(255) NOT NULL,\n    precio NUMERIC(10, 2) NOT NULL\n)\n\"\"\")\nconexion.commit()\nconexion.close()\nEjemplo 3: Insertar datos\n\n\n\n\nPostgreSQL Insertar Datos\n\n\n\nconexion = psycopg2.connect(\n    host=\"localhost\",\n    database=\"tienda\",\n    user=\"postgres\",\n    password=\"root\"\n)\ncursor = conexion.cursor()\ncursor.execute(\"INSERT INTO productos (nombre, precio) VALUES (%s, %s)\", (\"Monitor\", 299.99))\nconexion.commit()\nconexion.close()\nEjemplo 4: Consultar datos\n\n\n\n\nPostgreSQL Consultar Datos\n\n\n\nconexion = psycopg2.connect(\n    host=\"localhost\",\n    database=\"tienda\",\n    user=\"postgres\",\n    password=\"root\"\n)\ncursor = conexion.cursor()\ncursor.execute(\"SELECT * FROM productos\")\nfor fila in cursor.fetchall():\n    print(fila)\nconexion.close()",
+    "crumbs": [
+      "Unidad 6: Bases de Datos",
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Bases de Datos en PostgreSQL</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_db_postgresql.html#ejemplo-práctico",
+    "href": "unidades/unidad6/4_db_postgresql.html#ejemplo-práctico",
+    "title": "Bases de Datos en PostgreSQL",
+    "section": "Ejemplo Práctico",
+    "text": "Ejemplo Práctico\nObjetivo: Administrar una base de datos PostgreSQL usando Python para crear, listar y eliminar productos.\nDescripción: El ejemplo incluye la configuración del contenedor Docker y el código Python para interactuar con PostgreSQL.",
+    "crumbs": [
+      "Unidad 6: Bases de Datos",
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Bases de Datos en PostgreSQL</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad6/4_db_postgresql.html#instrucciones-1",
+    "href": "unidades/unidad6/4_db_postgresql.html#instrucciones-1",
+    "title": "Bases de Datos en PostgreSQL",
+    "section": "Instrucciones:",
+    "text": "Instrucciones:\n\nConfigura un contenedor PostgreSQL usando Docker.\nCrea una tabla productos en la base de datos tienda.\nImplementa funciones para agregar, listar y eliminar productos desde Python.\n\n\n\nPosible solución\n\nCódigo:\n\n\n\n\nPostgreSQL Ejemplo Práctico\n\n\n\nimport psycopg2\n\ndef conectar():\n    return psycopg2.connect(\n        host=\"localhost\",\n        database=\"tienda\",\n        user=\"postgres\",\n        password=\"root\"\n    )\n\ndef crear_tabla():\n    conexion = conectar()\n    cursor = conexion.cursor()\n    cursor.execute(\"\"\"\n    CREATE TABLE IF NOT EXISTS productos (\n        id SERIAL PRIMARY KEY,\n        nombre VARCHAR(255) NOT NULL,\n        precio NUMERIC(10, 2) NOT NULL\n    )\n    \"\"\")\n    conexion.commit()\n    conexion.close()\n\ndef agregar_producto(nombre, precio):\n    conexion = conectar()\n    cursor = conexion.cursor()\n    cursor.execute(\"INSERT INTO productos (nombre, precio) VALUES (%s, %s)\", (nombre, precio))\n    conexion.commit()\n    conexion.close()\n\ndef listar_productos():\n    conexion = conectar()\n    cursor = conexion.cursor()\n    cursor.execute(\"SELECT * FROM productos\")\n    for fila in cursor.fetchall():\n        print(fila)\n    conexion.close()\n\ndef eliminar_producto(id_producto):\n    conexion = conectar()\n    cursor = conexion.cursor()\n    cursor.execute(\"DELETE FROM productos WHERE id = %s\", (id_producto,))\n    conexion.commit()\n    conexion.close()\n\n# Uso\ncrear_tabla()\nagregar_producto(\"Laptop\", 1299.99)\nagregar_producto(\"Auriculares\", 79.99)\nprint(\"Productos registrados:\")\nlistar_productos()\neliminar_producto(1)\nprint(\"Productos después de eliminar:\")\nlistar_productos()",
+    "crumbs": [
+      "Unidad 6: Bases de Datos",
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Bases de Datos en PostgreSQL</span>"
     ]
   }
 ]

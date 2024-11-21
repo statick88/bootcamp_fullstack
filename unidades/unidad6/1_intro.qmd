@@ -1,0 +1,117 @@
+:::{.justify}
+# Introducción a Bases de Datos
+
+:::{.center}
+![Bases de Datos](./images/db_logo.png){fig-align="center" width="200"}
+:::
+
+Las bases de datos son un componente esencial para el desarrollo de software, ya que permiten el almacenamiento, gestión y consulta de información estructurada. En este capítulo, exploraremos los fundamentos y las operaciones básicas de bases de datos en diferentes tecnologías.
+
+## 1. Fundamentos de Bases de Datos
+
+Las bases de datos son sistemas organizados para almacenar información, permitiendo consultas eficientes, actualizaciones seguras y una administración centralizada de los datos. Son esenciales para casi todas las aplicaciones modernas, desde sistemas empresariales hasta redes sociales.
+
+### Conceptos Clave
+
+- **Modelo de datos**: Estructura para definir cómo se almacenarán los datos (relacional, no relacional).
+- **Consultas**: Lenguaje para interactuar con los datos (SQL para bases relacionales, JSON para bases no relacionales).
+- **ACID**: Propiedades fundamentales para garantizar consistencia en transacciones.
+- **Normalización**: Proceso de organización para reducir redundancia y mejorar integridad.
+
+#### Ejemplos
+
+**Ejemplo 1**: Estructura básica de una base de datos relacional
+
+```sql
+CREATE TABLE usuarios (
+    id INT PRIMARY KEY,
+    nombre VARCHAR(50),
+    email VARCHAR(100)
+); 
+```
+En el ejemplo anterior, se crea una tabla llamada usuarios con tres columnas: id, nombre y email.
+
+**Ejemplo 2**: Consulta básica
+```sql
+SELECT * FROM usuarios WHERE email LIKE '%@gmail.com';
+```
+En el ejemplo anterior, se seleccionan todos los usuarios cuyo email contiene "@gmail.com".
+
+**Ejemplo 3**: Transacción básica
+
+```sql
+BEGIN TRANSACTION;
+INSERT INTO usuarios (id, nombre, email) VALUES (1, 'Ana', 'ana@gmail.com');
+DELETE FROM usuarios WHERE id = 1;
+ROLLBACK;
+```
+En el ejemplo anterior, se inicia una transacción, se inserta un usuario, se elimina y se revierte la operación.
+
+**Ejemplo 4**: Uso de índices para mejorar consultas
+```sql
+CREATE INDEX idx_email ON usuarios(email);
+SELECT * FROM usuarios WHERE email = 'ana@gmail.com';
+```
+En el ejemplo anterior, se crea un índice en la columna email para acelerar la búsqueda de usuarios por email.
+
+## Ejemplo Práctico
+
+**Objetivo**: Crear una base de datos relacional básica y ejecutar una consulta de ejemplo.
+
+**Descripción**: En este ejercicio, se creará una base de datos SQLite para almacenar información de usuarios y se ejecutarán operaciones básicas como inserciones y consultas.
+
+### Instrucciones:
+
+1. Crea un archivo Python que conecte a una base de datos SQLite.
+
+2. Crea una tabla llamada usuarios.
+
+3. Inserta tres registros.
+
+4. Recupera y muestra los datos.
+
+<details>
+  <summary>Posibles soluciones</summary>
+
+**Código**:
+
+```python
+import sqlite3
+
+# Conexión a la base de datos SQLite
+conexion = sqlite3.connect("mi_base_datos.db")
+cursor = conexion.cursor()
+
+# Crear tabla
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INTEGER PRIMARY KEY,
+    nombre TEXT NOT NULL,
+    email TEXT NOT NULL
+)
+""")
+
+# Insertar registros
+usuarios = [
+    (1, 'Ana', 'ana@gmail.com'),
+    (2, 'Carlos', 'carlos@gmail.com'),
+    (3, 'Luis', 'luis@gmail.com')
+]
+cursor.executemany("INSERT INTO usuarios VALUES (?, ?, ?)", usuarios)
+conexion.commit()
+
+# Recuperar datos
+cursor.execute("SELECT * FROM usuarios")
+for fila in cursor.fetchall():
+    print(fila)
+
+# Cerrar conexión
+conexion.close()
+```
+
+</details>
+
+# Conclusiones
+
+Las bases de datos son una parte fundamental de la infraestructura tecnológica actual, permitiendo el almacenamiento y gestión eficiente de grandes volúmenes de información. Conocer los conceptos básicos y las operaciones comunes en bases de datos es esencial para cualquier desarrollador de software.
+:::

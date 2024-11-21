@@ -73,9 +73,12 @@ book:
         - unidades/unidad5/9_concurrencia_y_paralelismo.qmd
         - unidades/unidad5/10_pruebas_y_debugging.qmd
 
-    # - part: "Unidad 5: Desarrollo Web"
-    #   chapters:
-    #     - unidades/unidad6/intro_web.qmd
+    - part: "Unidad 6: Bases de Datos"
+      chapters:
+        - unidades/unidad6/1_intro.qmd
+        - unidades/unidad6/2_db_sqlite.qmd
+        - unidades/unidad6/3_db_mysql.qmd
+        - unidades/unidad6/4_db_postgresql.qmd
 
     - part: "Proyectos"
       chapters:

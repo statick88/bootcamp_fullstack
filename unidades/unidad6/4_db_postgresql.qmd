@@ -1,0 +1,213 @@
+:::{.justify}
+# Bases de Datos en PostgreSQL
+
+PostgreSQL es una de las bases de datos relacionales más avanzadas y robustas, conocida por su capacidad de manejo de datos complejos y cumplimiento estricto de los estándares SQL. Es ideal para proyectos que requieren transacciones complejas, extensibilidad y consistencia.
+
+## Conceptos Clave
+
+**ACID**: Garantiza la confiabilidad de las transacciones.
+
+**Extensibilidad**: Admite tipos de datos personalizados y funciones definidas por el usuario.
+
+**Consultas avanzadas**: Optimiza las consultas complejas.
+
+**Open Source**: Altamente personalizable y gratuito.
+
+**Integridad**: Gestión avanzada de claves foráneas y restricciones.
+
+## Configuración de PostgreSQL con Docker
+
+### Instrucciones
+
+**Crear un contenedor de PostgreSQL con Docker**:
+
+Ejecuta el siguiente comando para iniciar un servidor PostgreSQL en Docker.
+
+```bash
+docker run --name postgres-database -e POSTGRES_PASSWORD=root -e POSTGRES_DB=tienda -p 5432:5432 -d postgres:15
+```
+### Parámetros:
+
+- **--name**: Nombre del contenedor.
+- **POSTGRES_PASSWORDx**: Contraseña para el usuario postgres.
+- **POSTGRES_DB**: Nombre de la base de datos inicial.
+- **-p 5432:5432**: Mapea el puerto del contenedor al puerto local.
+- **postgres:15**: Imagen oficial de PostgreSQL.
+
+### Acceder al contenedor (opcional):
+
+```bash
+docker exec -it postgres-database psql -U postgres
+```
+
+## Ejemplos
+
+**Ejemplo 1**: Conexión a PostgreSQL desde Python
+
+:::{.center}
+![PostgreSQL Conexión](./images/postgresql_code001.png){fig-align="center" width="400}
+:::
+
+```python
+import psycopg2
+
+conexion = psycopg2.connect(
+    host="localhost",
+    database="tienda",
+    user="postgres",
+    password="root"
+)
+
+if conexion:
+    print("Conexión exitosa a PostgreSQL")
+conexion.close()
+```
+
+**Ejemplo 2**: Crear una tabla
+
+:::{.center}
+![PostgreSQL Crear Tabla](./images/postgresql_code002.png){fig-align="center" width="800}
+:::
+```python
+conexion = psycopg2.connect(
+    host="localhost",
+    database="tienda",
+    user="postgres",
+    password="root"
+)
+cursor = conexion.cursor()
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS productos (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
+    precio NUMERIC(10, 2) NOT NULL
+)
+""")
+conexion.commit()
+conexion.close()
+```
+
+**Ejemplo 3**: Insertar datos
+
+:::{.center}
+![PostgreSQL Insertar Datos](./images/postgresql_code003.png){fig-align="center" width="800}
+:::
+
+```python
+conexion = psycopg2.connect(
+    host="localhost",
+    database="tienda",
+    user="postgres",
+    password="root"
+)
+cursor = conexion.cursor()
+cursor.execute("INSERT INTO productos (nombre, precio) VALUES (%s, %s)", ("Monitor", 299.99))
+conexion.commit()
+conexion.close()
+```
+
+**Ejemplo 4**: Consultar datos
+
+:::{.center}
+![PostgreSQL Consultar Datos](./images/postgresql_code004.png){fig-align="center" width="800"}
+:::
+```python
+conexion = psycopg2.connect(
+    host="localhost",
+    database="tienda",
+    user="postgres",
+    password="root"
+)
+cursor = conexion.cursor()
+cursor.execute("SELECT * FROM productos")
+for fila in cursor.fetchall():
+    print(fila)
+conexion.close()
+```
+
+## Ejemplo Práctico
+
+**Objetivo**: Administrar una base de datos PostgreSQL usando Python para crear, listar y eliminar productos.
+
+**Descripción**: El ejemplo incluye la configuración del contenedor Docker y el código Python para interactuar con PostgreSQL.
+
+## Instrucciones:
+
+1. Configura un contenedor PostgreSQL usando Docker.
+
+2. Crea una tabla productos en la base de datos tienda.
+
+3. Implementa funciones para agregar, listar y eliminar productos desde Python.
+
+<details>
+  <summary>Posible solución</summary>
+
+**Código**:
+
+:::{.center}
+![PostgreSQL Ejemplo Práctico](./images/postgresql_code005.png){fig-align="center" width="800"}
+:::
+
+```python
+import psycopg2
+
+def conectar():
+    return psycopg2.connect(
+        host="localhost",
+        database="tienda",
+        user="postgres",
+        password="root"
+    )
+
+def crear_tabla():
+    conexion = conectar()
+    cursor = conexion.cursor()
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS productos (
+        id SERIAL PRIMARY KEY,
+        nombre VARCHAR(255) NOT NULL,
+        precio NUMERIC(10, 2) NOT NULL
+    )
+    """)
+    conexion.commit()
+    conexion.close()
+
+def agregar_producto(nombre, precio):
+    conexion = conectar()
+    cursor = conexion.cursor()
+    cursor.execute("INSERT INTO productos (nombre, precio) VALUES (%s, %s)", (nombre, precio))
+    conexion.commit()
+    conexion.close()
+
+def listar_productos():
+    conexion = conectar()
+    cursor = conexion.cursor()
+    cursor.execute("SELECT * FROM productos")
+    for fila in cursor.fetchall():
+        print(fila)
+    conexion.close()
+
+def eliminar_producto(id_producto):
+    conexion = conectar()
+    cursor = conexion.cursor()
+    cursor.execute("DELETE FROM productos WHERE id = %s", (id_producto,))
+    conexion.commit()
+    conexion.close()
+
+# Uso
+crear_tabla()
+agregar_producto("Laptop", 1299.99)
+agregar_producto("Auriculares", 79.99)
+print("Productos registrados:")
+listar_productos()
+eliminar_producto(1)
+print("Productos después de eliminar:")
+listar_productos()
+```
+
+</details>
+
+# Conclusiones
+
+PostgreSQL es una base de datos potente y versátil que ofrece una amplia gama de funcionalidades para el manejo de datos. Su capacidad de extensibilidad y cumplimiento de los estándares SQL la convierten en una excelente opción para proyectos de cualquier tamaño y complejidad.
+:::
