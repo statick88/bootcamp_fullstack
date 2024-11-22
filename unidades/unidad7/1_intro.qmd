@@ -1,0 +1,218 @@
+:::{.justify}
+# Introducción a los Frameworks en Python
+
+:::{.center}
+![Frameworks en Python](./images/frameworks_python.png){fig-align="center" width="600}
+:::
+
+Los frameworks son herramientas que facilitan el desarrollo de aplicaciones web al proporcionar una estructura y funcionalidades predefinidas. En Python, existen varios frameworks populares que permiten crear aplicaciones web de forma rápida y eficiente. Algunos de los frameworks más utilizados en Python son Flask, Django y FastAPI. En este tutorial, se presentarán estos frameworks y se mostrarán ejemplos de cómo crear aplicaciones web simples con cada uno de ellos.
+
+## Creación de Entornos Virtuales
+
+:::{.center}
+![Entornos Virtuales](./images/venv.png){fig-align="center" width="400}
+:::
+
+Antes de comenzar a trabajar con los frameworks, es recomendable crear un entorno virtual para cada proyecto. Los entornos virtuales permiten aislar las dependencias de cada proyecto y evitar conflictos entre versiones de paquetes. A continución, se muestran los comandos para crear un entorno virtual con **venv**:
+
+1. Crea un nuevo directorio para el proyecto:
+
+```bash
+mkdir mi_proyecto
+cd mi_proyecto
+```
+
+2. Crea un entorno virtual:
+
+```bash
+python -m venv env
+```
+
+3. Activa el entorno virtual:
+
+- En Windows:
+
+```bash
+env\Scripts\activate
+```
+
+- En macOS y Linux:
+
+```bash
+source env/bin/activate
+```
+
+Con el entorno virtual activado, puedes instalar las dependencias específicas de tu proyecto sin afectar al sistema global de Python.
+
+## Flask
+
+:::{.center}
+![Flask](./images/flask_logo.png){fig-align="center" width="200"}
+:::
+
+Flask es un microframework para Python que permite crear aplicaciones web de forma rápida y sencilla. A continuación, se muestra un ejemplo de una aplicación web simple que muestra un mensaje de bienvenida.
+
+### Ejemplo
+
+1. Instala Flask:
+
+```bash
+pip install Flask
+```
+
+2. Crea un archivo **app.py** con el siguiente contenido:
+
+```python
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return 'Hello, World!'
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+En el ejemplo anterior, se crea una aplicación web con Flask que muestra el mensaje "Hello, World!" en la ruta raíz (/).
+
+3. Ejecuta la aplicación:
+
+```bash
+python app.py
+```
+
+:::{.center}
+![Flask](./images/flask_code001.png){fig-align="center" width="800"}
+:::
+
+En la captura de pantalla anterior, se muestra el código de la aplicación Flask que se ejecuta en el servidor de desarrollo.
+
+4. Abre un navegador web y accede a la dirección <http://localhost:5000> para ver el mensaje de bienvenida.
+
+:::{.center}
+![Flask](./images/flask_code002.png){fig-align="center" width="800"}
+:::
+
+## Django
+
+:::{.center}
+![Django](./images/django_logo.png){fig-align="center" width="200"}
+:::
+
+Django es un framework web de alto nivel para Python que facilita el desarrollo de aplicaciones web complejas. A continuación, se muestra un ejemplo de una aplicación web simple que muestra un mensaje de bienvenida.
+
+### Ejemplo
+
+1. Instala Django:
+
+```bash
+pip install Django
+```
+
+2. Crea un proyecto Django:
+
+```bash
+django-admin startproject myproject
+```
+
+3. Crea una aplicación dentro del proyecto:
+
+```bash
+cd myproject
+python manage.py startapp myapp
+```
+
+4. Define una vista en el archivo **views.py** de la aplicación:
+
+```python
+from django.http import HttpResponse
+
+def index(request):
+    return HttpResponse('¡Hola, Mundo!')
+```
+
+5. Configura la URL en el archivo **urls.py** del proyecto:
+
+```python
+from django.urls import path
+
+from myapp import views
+
+urlpatterns = [
+    path('', views.index),
+]
+```
+
+6. Ejecuta el servidor de desarrollo:
+
+```bash
+python manage.py runserver
+```
+
+7. Abre un navegador web y accede a la dirección <http://localhost:8000> para ver el mensaje de bienvenida.
+
+:::{.center}
+![Django](./images/django_code001.png){fig-align="center" width="800}
+:::
+
+En la captura de pantalla anterior, se muestra el código de la aplicación Django que se ejecuta en el servidor de desarrollo.
+
+:::{.center}
+![Django](./images/django_code002.png){fig-align="center" width="800}
+:::
+
+En la captura de pantalla anterior, se muestra el mensaje de bienvenida en el navegador web al acceder a la dirección <http://localhost:8000>.
+
+## FastAPI
+
+:::{.center}
+![FastAPI](./images/fastapi_logo.png){fig-align="center" width="200"}
+:::
+
+FastAPI es un framework web moderno y rápido para Python que permite crear APIs de forma sencilla y eficiente. A continuación, se muestra un ejemplo de una API simple que devuelve un mensaje de bienvenida.
+
+### Ejemplo
+
+1. Instala FastAPI:
+
+```bash
+pip install fastapi
+```
+
+2. Crea un archivo **main.py** con el siguiente contenido:
+
+```python
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get('/')
+def read_root():
+    return {'message': '¡Hola, Mundo!'}
+```
+
+En el ejemplo anterior, se crea una API con FastAPI que devuelve un diccionario con el mensaje "¡Hola, Mundo!" en la ruta raíz (/).
+
+3. Ejecuta la aplicación:
+
+```bash
+uvicorn main:app --reload
+```
+
+4. Abre un navegador web y accede a la dirección <http://localhost:8000> para ver el mensaje de bienvenida.
+
+:::{.center}
+![FastAPI](./images/fastapi_code1.png){fig-align="center" width="800"}
+:::
+
+En la captura de pantalla anterior, se muestra el código de la API FastAPI que se ejecuta en el servidor de desarrollo.
+
+:::{.center}
+![FastAPI](./images/fastapi_code002.png){fig-align="center" width="800"}
+:::
+
+## Conclusiones
+
+En este tutorial, se presentaron algunos de los frameworks más populares para el desarrollo web en Python, incluyendo Flask, Django y FastAPI. Cada uno de estos frameworks tiene sus propias características y ventajas, por lo que es importante elegir el que mejor se adapte a tus necesidades y preferencias. Con estos frameworks, puedes crear aplicaciones web y APIs de forma rápida y sencilla, lo que te permitirá desarrollar proyectos web de manera eficiente y productiva. ¡Esperamos que este tutorial te haya sido útil y te inspire a explorar más sobre el desarrollo web en Python!
+:::
