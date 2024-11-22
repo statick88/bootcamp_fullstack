@@ -1214,7 +1214,7 @@
     "href": "unidades/unidad6/3_db_mysql.html#ejemplos",
     "title": "Bases de Datos en MySQL",
     "section": "Ejemplos",
-    "text": "Ejemplos\nEjemplo 1: Conexión a la base de datos desde Python\n\n\n\n\nMySQL Conexión\n\n\n\nimport mysql.connector\n\nconexion = mysql.connector.connect(\n    host=\"localhost\",\n    user=\"root\",\n    password=\"root\",\n    database=\"tienda\"\n)\n\nif conexion.is_connected():\n    print(\"Conexión exitosa a MySQL\")\nconexion.close()\nEjemplo 2: Crear una tabla\n\n\n\n\nMySQL Crear Tabla\n\n\n\nconexion = mysql.connector.connect(\n    host=\"localhost\",\n    user=\"root\",\n    password=\"root\",\n    database=\"tienda\"\n)\ncursor = conexion.cursor()\ncursor.execute(\"\"\"\nCREATE TABLE IF NOT EXISTS productos (\n    id INT AUTO_INCREMENT PRIMARY KEY,\n    nombre VARCHAR(255) NOT NULL,\n    precio DECIMAL(10, 2) NOT NULL\n)\n\"\"\")\nconexion.commit()\nconexion.close()\nEjemplo 3: Insertar datos\n\n\n\n\nMySQL Insertar Datos\n\n\n\nconexion = mysql.connector.connect(\n    host=\"localhost\",\n    user=\"root\",\n    password=\"root\",\n    database=\"tienda\"\n)\ncursor = conexion.cursor()\ncursor.execute(\"INSERT INTO productos (nombre, precio) VALUES (%s, %s)\", (\"Laptop\", 1299.99))\nconexion.commit()\nconexion.close()\nEjemplo 4: Consultar datos\n\n\n\n\nMySQL Consultar Datos\n\n\n\nconexion = mysql.connector.connect(\n    host=\"localhost\",\n    user=\"root\",\n    password=\"root\",\n    database=\"tienda\"\n)\ncursor = conexion.cursor()\ncursor.execute(\"SELECT * FROM productos\")\nfor fila in cursor.fetchall():\n    print(fila)\nconexion.close()",
+    "text": "Ejemplos\nEjemplo 1: Conexión a la base de datos desde Python\n\n\n\n\nMySQL Conexión\n\n\n\nimport mysql.connector\n\nconexion = mysql.connector.connect(\n    host=\"localhost\",\n    user=\"root\",\n    password=\"root\",\n    database=\"tienda\"\n)\n\nif conexion.is_connected():\n    print(\"Conexión exitosa a MySQL\")\nconexion.close()\nEn el ejemplo anterior, se establece una conexión a la base de datos MySQL llamada tienda con el usuario root y la contraseña root.\nEjemplo 2: Crear una tabla\n\n\n\n\nMySQL Crear Tabla\n\n\n\nconexion = mysql.connector.connect(\n    host=\"localhost\",\n    user=\"root\",\n    password=\"root\",\n    database=\"tienda\"\n)\ncursor = conexion.cursor()\ncursor.execute(\"\"\"\nCREATE TABLE IF NOT EXISTS productos (\n    id INT AUTO_INCREMENT PRIMARY KEY,\n    nombre VARCHAR(255) NOT NULL,\n    precio DECIMAL(10, 2) NOT NULL\n)\n\"\"\")\nconexion.commit()\nconexion.close()\nEn este caso, se crea una tabla productos con columnas para id, nombre y precio.\nEjemplo 3: Insertar datos\n\n\n\n\nMySQL Insertar Datos\n\n\n\nconexion = mysql.connector.connect(\n    host=\"localhost\",\n    user=\"root\",\n    password=\"root\",\n    database=\"tienda\"\n)\ncursor = conexion.cursor()\ncursor.execute(\"INSERT INTO productos (nombre, precio) VALUES (%s, %s)\", (\"Laptop\", 1299.99))\nconexion.commit()\nconexion.close()\nEn este caso, se inserta un nuevo producto en la tabla productos con nombre “Laptop” y precio 1299.99.\nEjemplo 4: Consultar datos\n\n\n\n\nMySQL Consultar Datos\n\n\n\nconexion = mysql.connector.connect(\n    host=\"localhost\",\n    user=\"root\",\n    password=\"root\",\n    database=\"tienda\"\n)\ncursor = conexion.cursor()\ncursor.execute(\"SELECT * FROM productos\")\nfor fila in cursor.fetchall():\n    print(fila)\nconexion.close()\nLa consulta SELECT * FROM productos recupera todos los registros de la tabla productos y los imprime en pantalla.",
     "crumbs": [
       "Unidad 6: Bases de Datos",
       "<span class='chapter-number'>27</span>  <span class='chapter-title'>Bases de Datos en MySQL</span>"
@@ -1269,7 +1269,7 @@
     "href": "unidades/unidad6/4_db_postgresql.html#ejemplos",
     "title": "Bases de Datos en PostgreSQL",
     "section": "Ejemplos",
-    "text": "Ejemplos\nEjemplo 1: Conexión a PostgreSQL desde Python\n\n\n\n\nPostgreSQL Conexión\n\n\n\nimport psycopg2\n\nconexion = psycopg2.connect(\n    host=\"localhost\",\n    database=\"tienda\",\n    user=\"postgres\",\n    password=\"root\"\n)\n\nif conexion:\n    print(\"Conexión exitosa a PostgreSQL\")\nconexion.close()\nEjemplo 2: Crear una tabla\n\n{fig-align=“center” width=“800}\n\nconexion = psycopg2.connect(\n    host=\"localhost\",\n    database=\"tienda\",\n    user=\"postgres\",\n    password=\"root\"\n)\ncursor = conexion.cursor()\ncursor.execute(\"\"\"\nCREATE TABLE IF NOT EXISTS productos (\n    id SERIAL PRIMARY KEY,\n    nombre VARCHAR(255) NOT NULL,\n    precio NUMERIC(10, 2) NOT NULL\n)\n\"\"\")\nconexion.commit()\nconexion.close()\nEjemplo 3: Insertar datos\n\n\n\n\nPostgreSQL Insertar Datos\n\n\n\nconexion = psycopg2.connect(\n    host=\"localhost\",\n    database=\"tienda\",\n    user=\"postgres\",\n    password=\"root\"\n)\ncursor = conexion.cursor()\ncursor.execute(\"INSERT INTO productos (nombre, precio) VALUES (%s, %s)\", (\"Monitor\", 299.99))\nconexion.commit()\nconexion.close()\nEjemplo 4: Consultar datos\n\n\n\n\nPostgreSQL Consultar Datos\n\n\n\nconexion = psycopg2.connect(\n    host=\"localhost\",\n    database=\"tienda\",\n    user=\"postgres\",\n    password=\"root\"\n)\ncursor = conexion.cursor()\ncursor.execute(\"SELECT * FROM productos\")\nfor fila in cursor.fetchall():\n    print(fila)\nconexion.close()",
+    "text": "Ejemplos\nEjemplo 1: Conexión a PostgreSQL desde Python\n\n\n\n\nPostgreSQL Conexión\n\n\n\nimport psycopg2\n\nconexion = psycopg2.connect(\n    host=\"localhost\",\n    database=\"tienda\",\n    user=\"postgres\",\n    password=\"root\"\n)\n\nif conexion:\n    print(\"Conexión exitosa a PostgreSQL\")\nconexion.close()\nEn el ejemplo anterior, se establece una conexión a la base de datos PostgreSQL llamada tienda con el usuario postgres y la contraseña root.\nEjemplo 2: Crear una tabla\n\n{fig-align=“center” width=“800}\n\nconexion = psycopg2.connect(\n    host=\"localhost\",\n    database=\"tienda\",\n    user=\"postgres\",\n    password=\"root\"\n)\ncursor = conexion.cursor()\ncursor.execute(\"\"\"\nCREATE TABLE IF NOT EXISTS productos (\n    id SERIAL PRIMARY KEY,\n    nombre VARCHAR(255) NOT NULL,\n    precio NUMERIC(10, 2) NOT NULL\n)\n\"\"\")\nconexion.commit()\nconexion.close()\nEn este caso, se crea una tabla productos con columnas para id, nombre y precio.\nEjemplo 3: Insertar datos\n\n\n\n\nPostgreSQL Insertar Datos\n\n\n\nconexion = psycopg2.connect(\n    host=\"localhost\",\n    database=\"tienda\",\n    user=\"postgres\",\n    password=\"root\"\n)\ncursor = conexion.cursor()\ncursor.execute(\"INSERT INTO productos (nombre, precio) VALUES (%s, %s)\", (\"Monitor\", 299.99))\nconexion.commit()\nconexion.close()\nEn este caso, se inserta un nuevo producto en la tabla productos con nombre “Monitor” y precio 299.99.\nEjemplo 4: Consultar datos\n\n\n\n\nPostgreSQL Consultar Datos\n\n\n\nconexion = psycopg2.connect(\n    host=\"localhost\",\n    database=\"tienda\",\n    user=\"postgres\",\n    password=\"root\"\n)\ncursor = conexion.cursor()\ncursor.execute(\"SELECT * FROM productos\")\nfor fila in cursor.fetchall():\n    print(fila)\nconexion.close()\nLa consulta SELECT * FROM productos recupera todos los registros de la tabla productos y los imprime en pantalla.",
     "crumbs": [
       "Unidad 6: Bases de Datos",
       "<span class='chapter-number'>28</span>  <span class='chapter-title'>Bases de Datos en PostgreSQL</span>"
@@ -1324,7 +1324,7 @@
     "href": "unidades/unidad6/5_db_mongo.html#ejemplos",
     "title": "Bases de Datos MongoDB",
     "section": "Ejemplos",
-    "text": "Ejemplos\nEjemplo 1: Conexión a MongoDB desde Python\nInstala la librería pymongo:\npip install pymongo\nConecta a la base de datos:\n\n\n\n\nMongoDB Conexión\n\n\n\nfrom pymongo import MongoClient\n\ncliente = MongoClient(\"mongodb://localhost:27017/\")\ndb = cliente[\"tienda\"]\nprint(\"Conexión exitosa a MongoDB\")\nEjemplo 2: Crear una colección e insertar documentos\n\n\n\n\nMongoDB Insertar Documento\n\n\n\ncoleccion = db[\"productos\"]\nproducto = {\"nombre\": \"Teclado\", \"precio\": 49.99}\ncoleccion.insert_one(producto)\nprint(\"Documento insertado:\", producto)\nEjemplo 3: Consultar documentos\n\n\n\n\nMongoDB Consultar Documentos\n\n\n\nfor producto in coleccion.find():\n    print(producto)\nEjemplo 4: Actualizar documentos\n\n\n\n\nMongoDB Actualizar Documento\n\n\n\ncoleccion.update_one(\n    {\"nombre\": \"Teclado\"},\n    {\"$set\": {\"precio\": 39.99}}\n)\nprint(\"Precio actualizado\")",
+    "text": "Ejemplos\nEjemplo 1: Conexión a MongoDB desde Python\nInstala la librería pymongo:\npip install pymongo\nConecta a la base de datos:\n\n\n\n\nMongoDB Conexión\n\n\n\nfrom pymongo import MongoClient\n\ncliente = MongoClient(\"mongodb://localhost:27017/\")\ndb = cliente[\"tienda\"]\nprint(\"Conexión exitosa a MongoDB\")\nEn el ejemplo anterior, se establece una conexión a la base de datos MongoDB llamada tienda.\nEjemplo 2: Crear una colección e insertar documentos\n\n\n\n\nMongoDB Insertar Documento\n\n\n\ncoleccion = db[\"productos\"]\nproducto = {\"nombre\": \"Teclado\", \"precio\": 49.99}\ncoleccion.insert_one(producto)\nprint(\"Documento insertado:\", producto)\nEn este caso, se crea una colección llamada productos y se inserta un documento con nombre “Teclado” y precio 49.99.\nEjemplo 3: Consultar documentos\n\n\n\n\nMongoDB Consultar Documentos\n\n\n\nfor producto in coleccion.find():\n    print(producto)\nEn este ejemplo, se recuperan todos los documentos de la colección productos y se imprimen en pantalla\nEjemplo 4: Actualizar documentos\n\n\n\n\nMongoDB Actualizar Documento\n\n\n\ncoleccion.update_one(\n    {\"nombre\": \"Teclado\"},\n    {\"$set\": {\"precio\": 39.99}}\n)\nprint(\"Precio actualizado\")\nEn este caso, se actualiza el precio del producto “Teclado” a 39.99.",
     "crumbs": [
       "Unidad 6: Bases de Datos",
       "<span class='chapter-number'>29</span>  <span class='chapter-title'>Bases de Datos MongoDB</span>"
@@ -2299,5 +2299,71 @@
     "title": "Licencia",
     "section": "Cambios en la Licencia",
     "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
+  },
+  {
+    "objectID": "unidades/unidad7/1_intro.html",
+    "href": "unidades/unidad7/1_intro.html",
+    "title": "Introducción a los Frameworks en Python",
+    "section": "",
+    "text": "## Flask",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Introducción a los Frameworks en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad7/1_intro.html#flask",
+    "href": "unidades/unidad7/1_intro.html#flask",
+    "title": "Introducción a los Frameworks en Python",
+    "section": "Flask",
+    "text": "Flask\n\n\n\n\nFlask\n\n\n\nFlask es un microframework para Python que permite crear aplicaciones web de forma rápida y sencilla. A continuación, se muestra un ejemplo de una aplicación web simple que muestra un mensaje de bienvenida.\n\nEjemplo\n\nInstala Flask:\n\npip install Flask\n\nCrea un archivo app.py con el siguiente contenido:\n\nfrom flask import Flask\n\napp = Flask(__name__)\n\n@app.route('/')\ndef index():\n    return 'Hello, World!'\n\nif __name__ == '__main__':\n    app.run(debug=True)\nEn el ejemplo anterior, se crea una aplicación web con Flask que muestra el mensaje “Hello, World!” en la ruta raíz (/).\n\nEjecuta la aplicación:\n\npython app.py\n\n\n\n\nFlask\n\n\n\nEn la captura de pantalla anterior, se muestra el código de la aplicación Flask que se ejecuta en el servidor de desarrollo.\n\nAbre un navegador web y accede a la dirección http://localhost:5000 para ver el mensaje de bienvenida.\n\n\n\n\n\nFlask",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Introducción a los Frameworks en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad7/1_intro.html#django",
+    "href": "unidades/unidad7/1_intro.html#django",
+    "title": "Introducción a los Frameworks en Python",
+    "section": "Django",
+    "text": "Django\n\n\n\n\nDjango\n\n\n\nDjango es un framework web de alto nivel para Python que facilita el desarrollo de aplicaciones web complejas. A continuación, se muestra un ejemplo de una aplicación web simple que muestra un mensaje de bienvenida.\n\nEjemplo\n\nInstala Django:\n\npip install Django\n\nCrea un proyecto Django:\n\ndjango-admin startproject myproject\n\nCrea una aplicación dentro del proyecto:\n\ncd myproject\npython manage.py startapp myapp\n\nDefine una vista en el archivo views.py de la aplicación:\n\nfrom django.http import HttpResponse\n\ndef index(request):\n    return HttpResponse('¡Hola, Mundo!')\n\nConfigura la URL en el archivo urls.py del proyecto:\n\nfrom django.urls import path\n\nfrom myapp import views\n\nurlpatterns = [\n    path('', views.index),\n]\n\nEjecuta el servidor de desarrollo:\n\npython manage.py runserver\n\nAbre un navegador web y accede a la dirección http://localhost:8000 para ver el mensaje de bienvenida.\n\n\n\n\n\nDjango\n\n\n\nEn la captura de pantalla anterior, se muestra el código de la aplicación Django que se ejecuta en el servidor de desarrollo.\n\n\n\n\nDjango\n\n\n\nEn la captura de pantalla anterior, se muestra el mensaje de bienvenida en el navegador web al acceder a la dirección http://localhost:8000.",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Introducción a los Frameworks en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad7/1_intro.html#fastapi",
+    "href": "unidades/unidad7/1_intro.html#fastapi",
+    "title": "Introducción a los Frameworks en Python",
+    "section": "FastAPI",
+    "text": "FastAPI\n\n\n\n\nFastAPI\n\n\n\nFastAPI es un framework web moderno y rápido para Python que permite crear APIs de forma sencilla y eficiente. A continuación, se muestra un ejemplo de una API simple que devuelve un mensaje de bienvenida.\n\nEjemplo\n\nInstala FastAPI:\n\npip install fastapi\n\nCrea un archivo main.py con el siguiente contenido:\n\nfrom fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get('/')\ndef read_root():\n    return {'message': '¡Hola, Mundo!'}\nEn el ejemplo anterior, se crea una API con FastAPI que devuelve un diccionario con el mensaje “¡Hola, Mundo!” en la ruta raíz (/).\n\nEjecuta la aplicación:\n\nuvicorn main:app --reload\n\nAbre un navegador web y accede a la dirección http://localhost:8000 para ver el mensaje de bienvenida.\n\n\n\n\n\nFastAPI\n\n\n\nEn la captura de pantalla anterior, se muestra el código de la API FastAPI que se ejecuta en el servidor de desarrollo.\n\n\n\n\nFastAPI",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Introducción a los Frameworks en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad7/1_intro.html#conclusiones",
+    "href": "unidades/unidad7/1_intro.html#conclusiones",
+    "title": "Introducción a los Frameworks en Python",
+    "section": "Conclusiones",
+    "text": "Conclusiones\nEn este tutorial, se presentaron algunos de los frameworks más populares para el desarrollo web en Python, incluyendo Flask, Django y FastAPI. Cada uno de estos frameworks tiene sus propias características y ventajas, por lo que es importante elegir el que mejor se adapte a tus necesidades y preferencias. Con estos frameworks, puedes crear aplicaciones web y APIs de forma rápida y sencilla, lo que te permitirá desarrollar proyectos web de manera eficiente y productiva. ¡Esperamos que este tutorial te haya sido útil y te inspire a explorar más sobre el desarrollo web en Python!",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Introducción a los Frameworks en Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad7/1_intro.html#creación-de-entornos-virtuales",
+    "href": "unidades/unidad7/1_intro.html#creación-de-entornos-virtuales",
+    "title": "Introducción a los Frameworks en Python",
+    "section": "Creación de Entornos Virtuales",
+    "text": "Creación de Entornos Virtuales\n\n\n\n\nEntornos Virtuales\n\n\n\nAntes de comenzar a trabajar con los frameworks, es recomendable crear un entorno virtual para cada proyecto. Los entornos virtuales permiten aislar las dependencias de cada proyecto y evitar conflictos entre versiones de paquetes. A continución, se muestran los comandos para crear un entorno virtual con venv:\n\nCrea un nuevo directorio para el proyecto:\n\nmkdir mi_proyecto\ncd mi_proyecto\n\nCrea un entorno virtual:\n\npython -m venv env\n\nActiva el entorno virtual:\n\n\nEn Windows:\n\nenv\\Scripts\\activate\n\nEn macOS y Linux:\n\nsource env/bin/activate\nCon el entorno virtual activado, puedes instalar las dependencias específicas de tu proyecto sin afectar al sistema global de Python.",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Introducción a los Frameworks en Python</span>"
+    ]
   }
 ]

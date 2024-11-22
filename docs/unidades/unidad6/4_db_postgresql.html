@@ -589,6 +589,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> conexion:</span>
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Conexión exitosa a PostgreSQL"</span>)</span>
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>conexion.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En el ejemplo anterior, se establece una conexión a la base de datos PostgreSQL llamada tienda con el usuario postgres y la contraseña root.</p>
 <p><strong>Ejemplo 2</strong>: Crear una tabla</p>
 <div class="center">
 <p><img src="./images/postgresql_code002.png" class="img-fluid" alt="PostgreSQL Crear Tabla">{fig-align=“center” width=“800}</p>
@@ -609,6 +610,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span>)</span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>conexion.commit()</span>
 <span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>conexion.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este caso, se crea una tabla productos con columnas para id, nombre y precio.</p>
 <p><strong>Ejemplo 3</strong>: Insertar datos</p>
 <div class="center">
 <div class="quarto-figure quarto-figure-center">
@@ -628,6 +630,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>cursor.execute(<span class="st">"INSERT INTO productos (nombre, precio) VALUES (</span><span class="sc">%s</span><span class="st">, </span><span class="sc">%s</span><span class="st">)"</span>, (<span class="st">"Monitor"</span>, <span class="fl">299.99</span>))</span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>conexion.commit()</span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>conexion.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este caso, se inserta un nuevo producto en la tabla productos con nombre “Monitor” y precio 299.99.</p>
 <p><strong>Ejemplo 4</strong>: Consultar datos</p>
 <div class="center">
 <div class="quarto-figure quarto-figure-center">
@@ -648,6 +651,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> fila <span class="kw">in</span> cursor.fetchall():</span>
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(fila)</span>
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>conexion.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>La consulta SELECT * FROM productos recupera todos los registros de la tabla productos y los imprime en pantalla.</p>
 </section>
 <section id="ejemplo-práctico" class="level2">
 <h2 class="anchored" data-anchor-id="ejemplo-práctico">Ejemplo Práctico</h2>
