@@ -1,0 +1,185 @@
+:::{.justify}
+# Fase 5: Implementación de Pruebas e Integración Continua
+
+## Objetivo
+
+Agregar pruebas unitarias y de integración para asegurar la funcionalidad del sistema. Configurar un flujo de integración continua (CI) usando GitHub Actions para garantizar que los cambios en el código no rompan la aplicación.
+
+## Conceptos Clave
+
+- **Pruebas Unitarias**: Validan funcionalidades específicas de componentes individuales del sistema.
+- **Pruebas de Integración**: Aseguran que los componentes interactúen correctamente entre sí.
+- **Integración Continua (CI)**: Automatiza la ejecución de pruebas en cada cambio del código mediante herramientas como GitHub Actions.
+
+## Instrucciones
+
+### 1. Configurar un entorno de pruebas
+
+Asegúrate de que tienes las siguientes dependencias instaladas:
+
+```bash
+pip install pytest pytest-mock
+```
+Crea un archivo **requirements.txt** para incluir las dependencias de desarrollo:
+
+```plaintext
+pytest
+pytest-mock
+```
+Agrega este archivo al control de versiones:
+
+```bash
+git add requirements-dev.txt
+git commit -m "Añadido archivo requirements-dev.txt para dependencias de desarrollo"
+```
+### 2. Escribir pruebas unitarias para el servidor
+
+Crea un directorio **tests/** y un archivo **tests/test_server.py** para las pruebas del servidor:
+
+```python
+"""
+Pruebas unitarias para server.py
+"""
+
+import socket
+import threading
+import pytest
+from src.server import ChatServer
+
+
+@pytest.fixture
+def server():
+    """
+    Configura una instancia del servidor para pruebas.
+    """
+    chat_server = ChatServer("127.0.0.1", 12345)
+    threading.Thread(target=chat_server.start, daemon=True).start()
+    return chat_server
+
+
+def test_server_initialization(server):
+    """
+    Prueba que el servidor se inicializa correctamente.
+    """
+    assert server.host == "127.0.0.1"
+    assert server.port == 12345
+    assert server.clients == []
+
+
+def test_client_connection(server):
+    """
+    Prueba que un cliente puede conectarse al servidor.
+    """
+    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    client_socket.connect((server.host, server.port))
+    assert client_socket
+    client_socket.close()
+```
+### 3. Escribir pruebas para el cliente
+
+Crea el archivo **tests/test_client.py**:
+
+```python
+"""
+Pruebas unitarias para client.py
+"""
+
+import pytest
+from src.client import ChatClientGUI
+
+
+@pytest.fixture
+def client():
+    """
+    Configura un cliente de chat para pruebas.
+    """
+    return ChatClientGUI("127.0.0.1", 12345)
+
+
+def test_client_initialization(client):
+    """
+    Prueba que el cliente se inicializa correctamente.
+    """
+    assert client.host == "127.0.0.1"
+    assert client.port == 12345
+    assert client.nickname == ""
+```
+### 4. Ejecutar las pruebas
+
+Ejecuta las pruebas localmente para verificar que todo funcione correctamente:
+
+```bash
+pytest tests/
+```
+Si todo está correcto, verás un resultado como este:
+
+```plaintext
+========================= test session starts =========================
+collected 3 items
+
+tests/test_client.py ..                                           [ 66%]
+tests/test_server.py ..                                           [100%]
+
+========================== 3 passed in 0.10s =========================
+```
+
+### 5. Configurar integración continua con GitHub Actions
+
+Crea el archivo **.github/workflows/ci.yml** con la siguiente configuración:
+
+```yaml
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.12"
+
+    - name: Install dependencies
+      run: |
+        python -m venv venv
+        . venv/bin/activate
+        pip install -r requirements.txt
+        pip install -r requirements-dev.txt
+
+    - name: Run tests
+      run: |
+        . venv/bin/activate
+        pytest tests/
+```
+Sube los cambios al repositorio:
+
+```bash
+git add .github/workflows/ci.yml
+git commit -m "Añadido pipeline de CI con GitHub Actions"
+git push origin main
+```
+Verifica en GitHub que las pruebas se ejecuten automáticamente al hacer un push o pull request.
+
+## Pruebas y Validación
+
+- Realiza cambios controlados en el código y verifica que GitHub Actions detecta errores.
+- Asegúrate de que las pruebas pasen tanto localmente como en el flujo de CI.
+
+## Conclusiones
+
+La incorporación de pruebas unitarias e integración continua asegura la calidad del software y evita errores al integrar cambios. Este flujo refleja prácticas profesionales utilizadas en la industria.
+:::
+
+

@@ -1,6 +1,10 @@
 :::{.justify}
 # Bases de Datos en PostgreSQL
 
+:::{.center}
+![PostgreSQL Database](./images/postgresql_logo.png){fig-align="center" width="200"}
+:::
+
 PostgreSQL es una de las bases de datos relacionales más avanzadas y robustas, conocida por su capacidad de manejo de datos complejos y cumplimiento estricto de los estándares SQL. Es ideal para proyectos que requieren transacciones complejas, extensibilidad y consistencia.
 
 ## Conceptos Clave

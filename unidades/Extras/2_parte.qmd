@@ -1,0 +1,171 @@
+# Fase 2: Implementación del Servidor CLI
+
+## Objetivo
+
+Implementar la lógica básica del servidor para gestionar conexiones y comunicaciones entre clientes. Este servidor será accesible a través de la línea de comandos.
+
+## Conceptos Clave
+
+- **Sockets TCP**: Configuración de sockets para aceptar conexiones y transmitir datos.
+
+- **Hilos (Threads)**: Manejo concurrente de clientes usando la biblioteca threading.
+
+- **Estrategias de Broadcasting**: Comunicación eficiente con múltiples clientes.
+
+## Instrucciones
+
+### 1. Actualizar el código del servidor
+
+Abrir **src/server.py** y completar las clases con la lógica básica:
+
+```python
+"""
+Módulo: server.py
+Descripción: Define el servidor del sistema de chat local.
+"""
+
+import socket
+import threading
+
+class ChatServer:
+    def __init__(self, host, port):
+        """
+        Inicializa el servidor con la dirección y puerto especificados.
+
+        :param host: Dirección IP del servidor.
+        :param port: Puerto del servidor.
+        """
+        self.host = host
+        self.port = port
+        self.server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.clients = {}
+
+    def start_server(self):
+        """
+        Inicia el servidor, permitiendo conexiones entrantes de clientes.
+        """
+        self.server_socket.bind((self.host, self.port))
+        self.server_socket.listen()
+        print(f"Servidor escuchando en {self.host}:{self.port}")
+
+        while True:
+            client_socket, client_address = self.server_socket.accept()
+            print(f"Conexión aceptada de {client_address}")
+            threading.Thread(
+                target=self.handle_client, args=(client_socket, client_address)
+            ).start()
+
+    def handle_client(self, client_socket, client_address):
+        """
+        Maneja la interacción con un cliente específico.
+
+        :param client_socket: Socket del cliente.
+        :param client_address: Dirección del cliente.
+        """
+        nickname = client_socket.recv(1024).decode("utf-8")
+        self.clients[client_socket] = nickname
+        print(f"{nickname} ({client_address}) se ha conectado")
+
+        self.broadcast(f"{nickname} se ha unido al chat", client_socket)
+
+        while True:
+            try:
+                message = client_socket.recv(1024).decode("utf-8")
+                if not message:
+                    break
+                print(f"Mensaje de {nickname}: {message}")
+                self.broadcast(f"{nickname}: {message}", client_socket)
+            except Exception as e:
+                print(f"Error en cliente {nickname}: {e}")
+                break
+
+        print(f"{nickname} ({client_address}) se ha desconectado")
+        self.broadcast(f"{nickname} se ha desconectado", client_socket)
+        client_socket.close()
+        del self.clients[client_socket]
+
+    def broadcast(self, message, sender_socket):
+        """
+        Envia un mensaje a todos los clientes conectados excepto al remitente.
+
+        :param message: Mensaje a transmitir.
+        :param sender_socket: Socket del remitente.
+        """
+        for client_socket in self.clients.keys():
+            if client_socket != sender_socket:
+                try:
+                    client_socket.sendall(message.encode("utf-8"))
+                except Exception as e:
+                    print(f"Error al enviar mensaje: {e}")
+
+
+if __name__ == "__main__":
+    SERVER_HOST = "127.0.0.1"
+    SERVER_PORT = 12345
+    server = ChatServer(SERVER_HOST, SERVER_PORT)
+    server.start_server()
+```
+## 2. Probar el servidor
+
+Asegúrate de que el entorno virtual esté activo:
+
+```bash
+source venv/bin/activate  # En Windows: venv\Scripts\activate
+```
+
+### Ejecuta el servidor:
+
+```bash
+python src/server.py
+```
+Verifica que el servidor comienza a escuchar en la dirección configurada.
+
+## 3. Agregar pruebas unitarias básicas
+
+Edita **tests/test_server.py** para agregar un caso inicial (simulación simple de conexión):
+
+```python
+import unittest
+from src.server import ChatServer
+
+class TestChatServer(unittest.TestCase):
+    def setUp(self):
+        self.server = ChatServer("127.0.0.1", 12345)
+
+    def test_server_initialization(self):
+        self.assertEqual(self.server.host, "127.0.0.1")
+        self.assertEqual(self.server.port, 12345)
+        self.assertIsInstance(self.server.clients, dict)
+
+if __name__ == "__main__":
+    unittest.main()
+```
+Ejecuta las pruebas:
+
+```bash
+python -m unittest discover -s tests
+```
+
+## 4. Versionar los cambios
+
+Agrega y confirma los archivos modificados:
+
+```bash
+git add .
+git commit -m "Fase 2: Implementación del servidor básico"
+```
+(Opcional) Crea un repositorio remoto en GitHub:
+
+```bash
+git remote add origin <URL_DEL_REPOSITORIO>
+git push -u origin main
+```
+
+## Pruebas
+
+- Ejecuta el servidor y asegúrate de que no haya errores.
+- Ejecuta las pruebas unitarias.
+
+## Conclusiones
+
+En esta fase, se implementó un servidor funcional que puede aceptar múltiples conexiones de clientes y gestionar sus mensajes de forma concurrente. Los estudiantes ahora comprenden la importancia de los sockets y los hilos para crear aplicaciones escalables.

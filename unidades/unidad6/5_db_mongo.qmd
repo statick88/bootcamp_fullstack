@@ -1,0 +1,173 @@
+:::{.justify}
+# Bases de Datos MongoDB
+
+:::{.center}
+![MongoDB Database](./images/mongodb_logo.png){fig-align="center" width="200"}
+:::
+
+MongoDB es una base de datos NoSQL diseñada para manejar datos no estructurados y semi-estructurados de manera eficiente. Utiliza un modelo basado en documentos, lo que la hace ideal para aplicaciones que requieren alta flexibilidad y escalabilidad.
+
+## Conceptos Clave
+
+- **Documentos**: La unidad básica de datos, almacenados en formato BSON (similar a JSON).
+- **Colecciones**: Agrupaciones de documentos similares.
+- **NoSQL**: No utiliza tablas o esquemas predefinidos, ofreciendo flexibilidad en los datos.
+- **Consultas**: Potentes y basadas en JSON.
+- **Escalabilidad**: Compatible con particionamiento horizontal y réplicas.
+
+## Configuración de MongoDB con Docker
+
+### Instrucciones
+
+**Crear un contenedor de MongoDB con Docker**:
+
+Ejecuta el siguiente comando para iniciar un servidor MongoDB.
+
+```bash
+docker run --name mongodb-container -d -p 27017:27017 mongo:6.0
+```
+
+### Parámetros:
+
+- **--name**: Nombre del contenedor.
+- **-d**: Ejecuta el contenedor en segundo plano.
+- **-p 27017:27017**: Mapea el puerto del contenedor al puerto local.
+- **mongo:6.0**: Imagen oficial de MongoDB.
+
+Conectar a MongoDB desde un cliente (opcional):
+
+Puedes usar herramientas como MongoDB Compass o Visual Studio Code con extensiones para MongoDB.
+
+## Ejemplos
+
+**Ejemplo 1**: Conexión a MongoDB desde Python
+
+Instala la librería pymongo:
+
+```bash
+pip install pymongo
+```
+Conecta a la base de datos:
+
+:::{.center}
+![MongoDB Conexión](./images/mongodb_code001.png){fig-align="center" width="400}
+:::
+
+```python
+from pymongo import MongoClient
+
+cliente = MongoClient("mongodb://localhost:27017/")
+db = cliente["tienda"]
+print("Conexión exitosa a MongoDB")
+```
+
+**Ejemplo 2**: Crear una colección e insertar documentos
+
+:::{.center}
+![MongoDB Insertar Documento](./images/mongodb_code002.png){fig-align="center" width="800"}
+:::
+```python
+coleccion = db["productos"]
+producto = {"nombre": "Teclado", "precio": 49.99}
+coleccion.insert_one(producto)
+print("Documento insertado:", producto)
+```
+**Ejemplo 3**: Consultar documentos
+
+:::{.center}
+![MongoDB Consultar Documentos](./images/mongodb_code003.png){fig-align="center" width="800"}
+:::
+
+```python
+for producto in coleccion.find():
+    print(producto)
+```
+
+**Ejemplo 4**: Actualizar documentos
+
+:::{.center}
+![MongoDB Actualizar Documento](./images/mongodb_code004.png){fig-align="center" width="800"}
+:::
+
+```python
+coleccion.update_one(
+    {"nombre": "Teclado"},
+    {"$set": {"precio": 39.99}}
+)
+print("Precio actualizado")
+```
+
+## Ejemplo Práctico
+
+**Objetivo**: Crear una base de datos MongoDB para gestionar productos, implementando operaciones de inserción, consulta, actualización y eliminación.
+
+**Descripción**: Usaremos Docker para iniciar MongoDB y Python para manipular los datos almacenados en documentos dentro de una colección.
+
+## Instrucciones:
+
+1. Configura un contenedor MongoDB utilizando Docker.
+2. Conéctate a la base de datos desde Python.
+3. Realiza operaciones CRUD en una colección llamada productos.
+
+<details>
+  <summary>Posible solución</summary>
+
+**Código**:
+
+```python
+from pymongo import MongoClient
+
+# Conectar a MongoDB
+def conectar():
+    cliente = MongoClient("mongodb://localhost:27017/")
+    return cliente["tienda"]
+
+# Crear colección e insertar documento
+def agregar_producto(nombre, precio):
+    db = conectar()
+    coleccion = db["productos"]
+    producto = {"nombre": nombre, "precio": precio}
+    coleccion.insert_one(producto)
+    print(f"Producto agregado: {producto}")
+
+# Consultar todos los documentos
+def listar_productos():
+    db = conectar()
+    coleccion = db["productos"]
+    print("Lista de productos:")
+    for producto in coleccion.find():
+        print(producto)
+
+# Actualizar documento
+def actualizar_producto(nombre, nuevo_precio):
+    db = conectar()
+    coleccion = db["productos"]
+    coleccion.update_one(
+        {"nombre": nombre},
+        {"$set": {"precio": nuevo_precio}}
+    )
+    print(f"Producto '{nombre}' actualizado con precio {nuevo_precio}")
+
+# Eliminar documento
+def eliminar_producto(nombre):
+    db = conectar()
+    coleccion = db["productos"]
+    coleccion.delete_one({"nombre": nombre})
+    print(f"Producto '{nombre}' eliminado")
+
+# Uso
+agregar_producto("Monitor", 199.99)
+agregar_producto("Mouse", 29.99)
+listar_productos()
+actualizar_producto("Monitor", 149.99)
+listar_productos()
+eliminar_producto("Mouse")
+listar_productos()
+```
+
+</details>
+
+# Conclusiones
+
+En este tutorial, aprendimos a trabajar con bases de datos relacionales y NoSQL utilizando Python. Aprendimos a conectarnos a bases de datos PostgreSQL y MongoDB, y a realizar operaciones CRUD como inserción, consulta, actualización y eliminación de datos.
+:::

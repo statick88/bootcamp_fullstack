@@ -1,0 +1,201 @@
+:::{.justify}
+# Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter
+
+## Objetivo
+
+Desarrollar una interfaz gráfica para el cliente del chat usando la biblioteca Tkinter. La interfaz permitirá una experiencia más amigable para enviar y recibir mensajes en tiempo real.
+
+## Conceptos Clave
+
+- **Interfaz Gráfica (GUI)**: Uso de Tkinter para construir interfaces gráficas básicas en Python.
+- Interactividad**: Implementar botones, entradas de texto y listas para mostrar mensajes.
+- **Hilos en la GUI**: Asegurar que la aplicación gráfica sea responsiva mientras maneja múltiples tareas como enviar y recibir mensajes.
+
+## Instrucciones
+
+### 1. Crear la estructura inicial para la GUI
+
+Edita el archivo **src/client.py** para añadir funcionalidades gráficas. Comienza reemplazando la clase ChatClient por una versión ampliada con Tkinter:
+
+```python
+"""
+Módulo: client.py
+Descripción: Cliente de chat con interfaz gráfica (Tkinter).
+"""
+
+import socket
+import tkinter as tk
+import threading
+
+
+class ChatClientGUI:
+    def __init__(self, host, port):
+        """
+        Inicializa el cliente con la dirección y puerto del servidor, y configura la GUI.
+
+        :param host: Dirección IP del servidor.
+        :param port: Puerto del servidor.
+        """
+        self.host = host
+        self.port = port
+        self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.nickname = ""
+        self.running = True
+        self.chat_window = None
+        self.message_box = None
+        self.entry_box = None
+
+    def connect_to_server(self):
+        """
+        Conecta el cliente al servidor y envía el nickname.
+        """
+        try:
+            self.client_socket.connect((self.host, self.port))
+            print("Conectado al servidor")
+        except Exception as e:
+            print(f"No se pudo conectar al servidor: {e}")
+
+    def send_message(self, message):
+        """
+        Envía un mensaje al servidor.
+        :param message: Mensaje a enviar.
+        """
+        try:
+            self.client_socket.sendall(message.encode("utf-8"))
+        except Exception as e:
+            print(f"Error al enviar mensaje: {e}")
+
+    def receive_messages(self):
+        """
+        Recibe mensajes del servidor y los muestra en la GUI.
+        """
+        while self.running:
+            try:
+                message = self.client_socket.recv(1024).decode("utf-8")
+                if message:
+                    self.chat_window.after(0, self.display_message, message)
+                else:
+                    break
+            except Exception as e:
+                print(f"Error al recibir mensaje: {e}")
+                break
+
+    def display_message(self, message):
+        """
+        Muestra un mensaje en la ventana de chat.
+        :param message: Mensaje recibido.
+        """
+        self.message_box.insert(tk.END, message)
+        self.message_box.yview(tk.END)
+
+    def setup_gui(self):
+        """
+        Configura la ventana principal de la interfaz gráfica.
+        """
+        self.window = tk.Tk()
+        self.window.title("Chat Cliente")
+
+        # Ventana de ingreso de nickname
+        self.nickname_window = tk.Frame(self.window)
+        self.nickname_window.pack(padx=10, pady=10)
+
+        self.nickname_label = tk.Label(self.nickname_window, text="Nick:")
+        self.nickname_label.pack(padx=10, pady=10)
+
+        self.nickname_entry = tk.Entry(self.nickname_window)
+        self.nickname_entry.pack(padx=10, pady=10)
+
+        self.nickname_button = tk.Button(
+            self.nickname_window, text="OK", command=self.set_nickname
+        )
+        self.nickname_button.pack(padx=10, pady=10)
+
+        self.window.mainloop()
+
+    def set_nickname(self):
+        """
+        Configura el nickname del usuario y prepara la ventana de chat.
+        """
+        self.nickname = self.nickname_entry.get()
+        if self.nickname:
+            self.client_socket.sendall(self.nickname.encode("utf-8"))
+            self.nickname_window.pack_forget()  # Oculta la ventana de nickname
+            self.create_chat_window()  # Muestra la ventana de chat
+
+    def create_chat_window(self):
+        """
+        Crea la ventana de chat principal con opciones para enviar y recibir mensajes.
+        """
+        self.chat_window = tk.Frame(self.window)
+        self.chat_window.pack(padx=10, pady=10)
+
+        self.message_box = tk.Listbox(self.chat_window, height=15, width=50)
+        self.message_box.pack(padx=10, pady=10)
+
+        self.entry_box = tk.Entry(self.chat_window, width=40)
+        self.entry_box.pack(padx=10, pady=10)
+
+        self.send_button = tk.Button(
+            self.chat_window, text="Enviar", command=self.on_send_message
+        )
+        self.send_button.pack(padx=10, pady=10)
+
+        # Hilo para recibir mensajes
+        threading.Thread(target=self.receive_messages, daemon=True).start()
+
+    def on_send_message(self):
+        """
+        Envía un mensaje al servidor y lo muestra en el cliente.
+        """
+        message = self.entry_box.get()
+        if message:
+            self.send_message(message)
+            self.display_message(f"{self.nickname}: {message}")
+            self.entry_box.delete(0, tk.END)
+
+
+if __name__ == "__main__":
+    SERVER_HOST = "127.0.0.1"
+    SERVER_PORT = 12345
+    client = ChatClientGUI(SERVER_HOST, SERVER_PORT)
+    client.connect_to_server()
+    client.setup_gui()
+```
+### 2. Probar la interfaz gráfica
+
+Asegúrate de que el servidor está ejecutándose:
+
+```bash
+python src/server.py
+```
+Inicia el cliente con la nueva interfaz gráfica:
+
+```bash
+python src/client.py
+```
+Conecta múltiples clientes y verifica que puedan enviar y recibir mensajes. Asegúrate de que la interfaz es funcional.
+
+## 3. Versionar los cambios
+
+Agrega y confirma los archivos modificados:
+
+```bash
+git add .
+git commit -m "Fase 4: Implementación de la interfaz gráfica del cliente con Tkinter"
+```
+Sube los cambios al repositorio remoto:
+
+```bash
+git push origin main
+```
+
+## Pruebas
+
+- Verifica que el cliente gráfico se conecta correctamente al servidor.
+- Confirma que los mensajes enviados y recibidos se muestran correctamente en la interfaz.
+- Realiza pruebas con múltiples clientes para asegurar la funcionalidad del sistema completo.
+
+## Conclusiones
+
+En esta fase, se extendió el cliente del chat incorporando una interfaz gráfica interactiva. Esto proporciona una experiencia de usuario más amigable y permite manejar tareas de comunicación en segundo plano sin afectar la responsividad de la interfaz.
+:::

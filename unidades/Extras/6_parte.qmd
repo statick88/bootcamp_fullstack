@@ -1,0 +1,146 @@
+:::{.justify}
+# Fase 6: Documentación del Laboratorio y Reflexión Final
+
+## Objetivo
+
+Crear una documentación completa para el laboratorio, detallando cada paso realizado en las fases anteriores, junto con preguntas de reflexión para evaluar el aprendizaje de los estudiantes.
+
+- **Sección 1**: Introducción al Laboratorio
+  - Título del Laboratorio
+  - Desarrollo de un Chat Local Cliente-Servidor con Pruebas e Integración Continua.
+
+- Descripción
+  - En este laboratorio, los estudiantes desarrollarán una aplicación de chat local utilizando Python. El proyecto sigue un flujo profesional, incluyendo análisis de requisitos, diseño, codificación, pruebas, y despliegue de un pipeline de integración continua con GitHub Actions.
+
+- Objetivo General
+  - Comprender y aplicar un flujo profesional de desarrollo de software para construir aplicaciones cliente-servidor con Python.
+
+- Sección 2: Instrucciones Prácticas
+  - Parte 1: Configuración Inicial
+
+- Crear el repositorio:
+
+  - Usa GitHub para crear un nuevo repositorio.
+  - Clona el repositorio en tu máquina local:
+
+```bash
+git clone <URL del repositorio>
+```
+- Estructura del proyecto:
+
+Crea los siguientes directorios y archivos iniciales:
+
+```plaintext
+chat-project/
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+├── src/
+│   ├── client.py
+│   ├── server.py
+├── tests/
+│   ├── test_client.py
+│   ├── test_server.py
+├── requirements.txt
+├── requirements-dev.txt
+├── .gitignore
+└── README.md
+```
+- Entorno virtual:
+
+  - Crea un entorno virtual y activa:
+
+```bash
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate  # Windows
+```
+
+- Instala dependencias:
+
+  - Añade las librerías necesarias a requirements.txt y requirements-dev.txt, e instálalas:
+
+```bash
+pip install -r requirements.txt
+pip install -r requirements-dev.txt
+```
+
+# **Parte 2**: Codificación por Fases
+
+## Implementa las clases base:
+
+- Define las clases ChatServer y ChatClientGUI con métodos iniciales vacíos (pass).
+- Añade funcionalidades gradualmente, como se explicó en fases anteriores.
+
+## Pruebas:
+
+- Implementa pruebas unitarias y de integración en la carpeta tests/.
+
+### Ejecuta las pruebas:
+
+```bash
+pytest tests/
+```
+## Integración continua:
+
+- Configura el pipeline de CI en GitHub Actions para validar las pruebas automáticamente.
+
+## Interfaz gráfica (opcional):
+
+- Implementa la GUI en client.py usando Tkinter.
+
+**Sección 3**: Preguntas de Reflexión
+
+## Diseño y Arquitectura:
+
+- ¿Qué ventajas tiene dividir el proyecto en módulos (src/ y tests/)?
+- ¿Cómo mejora el diseño la inclusión de docstrings en las clases y funciones?
+
+## Pruebas:
+
+- ¿Por qué es importante incluir pruebas unitarias e integración en proyectos colaborativos?
+- ¿Qué aprendiste al ejecutar y depurar tus pruebas?
+
+## Integración Continua:
+
+- ¿Cómo asegura la CI la calidad del código en un proyecto con múltiples desarrolladores?
+- ¿Qué beneficios aporta GitHub Actions en comparación con ejecutar pruebas localmente?
+
+## Desafíos Técnicos:
+
+- ¿Qué desafíos enfrentaste al implementar la comunicación entre cliente y servidor?
+- ¿Cómo los resolviste?
+
+**Sección 4**: Conclusión
+
+## Resultados Obtenidos:
+
+- Los estudiantes construyeron un sistema cliente-servidor funcional con comunicación en tiempo real.
+- Implementaron pruebas automatizadas y configuraron CI, simulando un flujo profesional de desarrollo.
+
+## Lecciones Clave:
+
+- La planificación y estructura del proyecto son esenciales para su éxito.
+- La automatización de pruebas y flujos de trabajo asegura la calidad del software.
+
+## Próximos Pasos:
+
+- Implementar características avanzadas como manejo de usuarios, historial de chat, o cifrado de mensajes.
+- Extender el proyecto para que funcione a través de redes externas.
+
+## Entrega Final
+
+### Repositorio GitHub:
+
+- Sube todo el proyecto a un repositorio en GitHub.
+- Asegúrate de que el README.md incluya instrucciones claras para ejecutar la aplicación y el flujo de CI.
+
+## Evidencias:
+
+- Capturas de pantalla de las pruebas exitosas.
+- URL del repositorio de GitHub.
+
+:::{.center}
+¡Felicidades por completar el laboratorio! 🎉
+:::
+:::

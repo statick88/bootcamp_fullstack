@@ -1,0 +1,108 @@
+:::{.justify}
+# Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor
+
+:::{.center}
+![Chat local con Sockets y Tkinter](./images/chat_image.png){fig-align="center"} 
+:::
+
+## Introducción
+
+En este laboratorio práctico, los estudiantes aprenderán a desarrollar un sistema de chat cliente-servidor utilizando Python. Este laboratorio está diseñado para simular un flujo de trabajo profesional, combinando técnicas modernas de desarrollo como pruebas automatizadas, integración continua y control de versiones con Git y GitHub.
+
+El laboratorio está dividido en varias fases que permiten a los estudiantes comprender y aplicar los fundamentos del desarrollo de aplicaciones de red, utilizando un enfoque incremental para construir funcionalidad de manera ordenada.
+
+## Lo que Vamos a Desarrollar
+ 
+### Análisis de Requisitos:
+
+- Identificar las funcionalidades clave del sistema, como enviar y recibir mensajes en tiempo real.
+
+### Historias de Usuario:
+
+- Desarrollar casos prácticos para simular cómo interactuarán los usuarios con el sistema.
+
+### Diseño y Arquitectura:
+
+- Crear la estructura del proyecto con carpetas organizadas y archivos bien definidos.
+- Implementar un diseño modular que facilite la colaboración y el mantenimiento.
+
+### Codificación:
+
+- Construir el servidor y cliente del sistema en Python utilizando socket.
+- Desarrollar pruebas unitarias e integración con pytest.
+
+### Integración Continua:
+
+- Configurar GitHub Actions para ejecutar pruebas automáticamente con cada cambio en el código.
+
+### Extensión con GUI:
+
+- Implementar una interfaz gráfica para el cliente utilizando Tkinter.
+
+## Objetivos Específicos
+
+- **Entender el Proceso de Desarrollo**: Aplicar principios de diseño modular y buenas prácticas de programación.
+- **Desarrollar Habilidades en Python**: Usar bibliotecas estándar como socket y tkinter.
+- **Aprender Herramientas Profesionales**: Configurar entornos virtuales, pruebas automatizadas e integración continua.
+- **Simular el Trabajo en Equipo**: Utilizar Git y GitHub para la gestión de código y colaboración.
+
+## Materiales y Herramientas Necesarias
+
+### Software:
+
+- Python 3.10 o superior.
+- Git y una cuenta de GitHub.
+- Editor de código (Visual Studio Code, PyCharm, o similar).
+- Librerías y Dependencias:
+- pytest para pruebas.
+- tkinter para la interfaz gráfica.
+
+### Conocimientos Previos Requeridos:
+
+- Conceptos básicos de Python.
+- Familiaridad con Git y GitHub.
+- Conocimientos básicos de programación orientada a objetos (POO).
+
+### Estructura del Laboratorio
+
+#### **Fase 1**: Preparación del Entorno y Repositorio.
+
+- Configuración inicial del proyecto con Git y creación del entorno virtual.
+
+#### **Fase 2**: Creación de Clases Base.
+
+- Implementar las clases del cliente y servidor con métodos vacíos.
+
+#### **Fase 3**: Comunicación Cliente-Servidor.
+
+- Desarrollar y probar la funcionalidad de envío y recepción de mensajes.
+
+#### **Fase 4**: Pruebas Automatizadas.
+
+- Crear pruebas unitarias e integración para garantizar la funcionalidad.
+
+#### **Fase 5**: Configuración de CI/CD.
+
+- Configurar GitHub Actions para pruebas automatizadas.
+
+#### Fase 6: Implementación de Interfaz Gráfica.
+
+- Extender el cliente para incluir una GUI con Tkinter.
+
+#### **Fase 7**: Documentación y Reflexión.
+
+- Elaborar conclusiones y responder preguntas de reflexión.
+
+## Resultados Esperados
+
+Al finalizar este laboratorio, los estudiantes tendrán:
+
+- Un sistema de chat cliente-servidor funcional.
+- Un repositorio GitHub estructurado con código bien documentado.
+- Pruebas automatizadas y un pipeline de CI funcionando correctamente.
+- Experiencia en herramientas y técnicas utilizadas en entornos profesionales.
+
+:::{.center}
+¡Comencemos con el desarrollo! 🎉
+:::
+:::

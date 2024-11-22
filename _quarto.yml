@@ -79,6 +79,7 @@ book:
         - unidades/unidad6/2_db_sqlite.qmd
         - unidades/unidad6/3_db_mysql.qmd
         - unidades/unidad6/4_db_postgresql.qmd
+        - unidades/unidad6/5_db_mongo.qmd
 
     - part: "Proyectos"
       chapters:
@@ -88,6 +89,15 @@ book:
         - unidades/Proyectos/4_proyecto_poo_2.qmd
         - unidades/Proyectos/5_DevContainers.qmd
         - unidades/Proyectos/6_calculadora.qmd
+
+    - part: "Extras"
+      chapters:
+        - unidades/Extras/0_parte.qmd
+        - unidades/Extras/1_parte.qmd
+        - unidades/Extras/2_parte.qmd
+        - unidades/Extras/4_parte.qmd
+        - unidades/Extras/5_parte.qmd
+        - unidades/Extras/6_parte.qmd
 
 bibliography: references.bib
 biblio-style: "apalike"

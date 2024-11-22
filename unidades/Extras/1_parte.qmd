@@ -1,0 +1,140 @@
+:::{.justify}
+# Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto
+
+## Objetivo
+
+Que los estudiantes comprendan el flujo de desarrollo de una aplicación profesional, desde la planificación hasta la implementación, utilizando herramientas de control de versiones, entornos virtuales y mejores prácticas en Python.
+
+## Conceptos Clave
+
+- **Programación en red**: Uso de sockets para la comunicación cliente-servidor.
+- **Diseño modular**: Organización del código en clases y métodos.
+- **Entornos virtuales**: Aislamiento de dependencias con venv.
+- **Control de versiones**: Uso de Git y GitHub.
+- **Interfaces gráficas**: Uso de tkinter para desarrollar la GUI del cliente.
+- **Historias de usuario**: Identificación de requerimientos clave mediante ejemplos prácticos.
+
+## Historias de Usuario
+
+- **HU1**: Como usuario, quiero conectarme al servidor con un apodo único, para identificarme en el chat.
+- **HU2**: Como usuario, quiero enviar mensajes al chat y que otros los reciban, para comunicarme con los demás.
+- **HU3**: Como usuario, quiero recibir mensajes enviados por otros usuarios en tiempo real, para estar informado de las conversaciones.
+- **HU4**: Como administrador, quiero registrar y gestionar conexiones de clientes, para mantener el control del servidor.
+
+### Instrucciones: Fase 1
+
+- Crear un directorio de proyecto
+
+```bash
+mkdir chat_app
+cd chat_app
+```
+### Inicializar un repositorio Git
+
+```bash
+git init
+git branch -M main
+```
+- Configurar un entorno virtual
+
+```bash
+python3 -m venv env
+source env/bin/activate  # En Windows: env\Scripts\activate
+```
+- Crear el archivo **.gitignore** Contenido sugerido para ignorar archivos innecesarios:
+
+```markdown
+env/
+__pycache__/
+*.pyc
+*.pyo
+```
+Crear un archivo **requirements.txt** Inicialmente vacío. Agregaremos dependencias más adelante.
+
+Estructurar el proyecto
+
+```bash
+mkdir src
+touch src/server.py src/client.py
+mkdir tests
+touch tests/test_server.py tests/test_client.py
+```
+## Planificar la arquitectura inicial
+
+- El servidor manejará conexiones y permitirá la comunicación entre clientes.
+
+- El cliente tendrá una interfaz de línea de comandos (CLI) en esta fase inicial.
+
+## Codificar clases base En server.py:
+
+```python
+"""
+Módulo: server.py
+Descripción: Define el servidor del sistema de chat local.
+"""
+import socket
+import threading
+
+class ChatServer:
+    def __init__(self, host, port):
+        """Inicializa el servidor con la dirección y puerto especificados."""
+        pass
+
+    def start_server(self):
+        """Inicia el servidor y espera conexiones entrantes."""
+        pass
+
+    def handle_client(self, client_socket, client_address):
+        """Maneja la comunicación con un cliente específico."""
+        pass
+
+    def broadcast(self, message, sender_socket):
+        """Envía un mensaje a todos los clientes excepto al remitente."""
+        pass
+```
+
+## En client.py:
+
+```python
+"""
+Módulo: client.py
+Descripción: Define el cliente del sistema de chat local.
+"""
+import socket
+
+class ChatClient:
+    def __init__(self, host, port):
+        """Inicializa el cliente con la dirección del servidor y el puerto."""
+        pass
+
+    def connect_to_server(self):
+        """Establece conexión con el servidor."""
+        pass
+
+    def send_message(self, message):
+        """Envía un mensaje al servidor."""
+        pass
+
+    def receive_messages(self):
+        """Recibe mensajes del servidor."""
+        pass
+```
+## Agregar y confirmar cambios en Git
+
+```bash
+git add .
+git commit -m "Fase 1: Configuración inicial y clases base con métodos vacíos"
+```
+
+## Pruebas
+
+- En esta fase, no se ejecuta ningún código, pero verifica que los archivos y directorios existen.
+
+- Asegúrate de que el entorno virtual esté activo antes de cualquier ejecución futura.
+
+# Conclusiones
+
+En esta primera fase, los estudiantes aprenden a configurar un proyecto profesional, organizarlo en módulos y versionarlo con Git. Esto sienta las bases para futuras fases en las que se llenarán los métodos y se implementará la lógica del servidor y cliente.
+:::
+
+
