@@ -67,6 +67,8 @@ if conexion:
 conexion.close()
 ```
 
+En el ejemplo anterior, se establece una conexión a la base de datos PostgreSQL llamada tienda con el usuario postgres y la contraseña root.
+
 **Ejemplo 2**: Crear una tabla
 
 :::{.center}
@@ -90,6 +92,7 @@ CREATE TABLE IF NOT EXISTS productos (
 conexion.commit()
 conexion.close()
 ```
+En este caso, se crea una tabla productos con columnas para id, nombre y precio.
 
 **Ejemplo 3**: Insertar datos
 
@@ -109,6 +112,7 @@ cursor.execute("INSERT INTO productos (nombre, precio) VALUES (%s, %s)", ("Monit
 conexion.commit()
 conexion.close()
 ```
+En este caso, se inserta un nuevo producto en la tabla productos con nombre "Monitor" y precio 299.99.
 
 **Ejemplo 4**: Consultar datos
 
@@ -128,6 +132,7 @@ for fila in cursor.fetchall():
     print(fila)
 conexion.close()
 ```
+La consulta SELECT * FROM productos recupera todos los registros de la tabla productos y los imprime en pantalla.
 
 ## Ejemplo Práctico
 

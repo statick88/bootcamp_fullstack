@@ -67,6 +67,7 @@ if conexion.is_connected():
     print("Conexión exitosa a MySQL")
 conexion.close()
 ```
+En el ejemplo anterior, se establece una conexión a la base de datos MySQL llamada tienda con el usuario root y la contraseña root.
 
 **Ejemplo 2**: Crear una tabla
 
@@ -91,6 +92,8 @@ CREATE TABLE IF NOT EXISTS productos (
 conexion.commit()
 conexion.close()
 ```
+En este caso, se crea una tabla productos con columnas para id, nombre y precio.
+
 **Ejemplo 3**: Insertar datos
 
 :::{.center}
@@ -108,6 +111,8 @@ cursor.execute("INSERT INTO productos (nombre, precio) VALUES (%s, %s)", ("Lapto
 conexion.commit()
 conexion.close()
 ```
+En este caso, se inserta un nuevo producto en la tabla productos con nombre "Laptop" y precio 1299.99.
+
 **Ejemplo 4**: Consultar datos
 
 :::{.center}
@@ -127,6 +132,8 @@ for fila in cursor.fetchall():
     print(fila)
 conexion.close()
 ```
+La consulta SELECT * FROM productos recupera todos los registros de la tabla productos y los imprime en pantalla.
+
 ## Ejemplo Práctico
 
 **Objetivo**: Crear, administrar y consultar productos en una base de datos MySQL usando Python.

@@ -61,6 +61,8 @@ db = cliente["tienda"]
 print("Conexión exitosa a MongoDB")
 ```
 
+En el ejemplo anterior, se establece una conexión a la base de datos MongoDB llamada tienda.
+
 **Ejemplo 2**: Crear una colección e insertar documentos
 
 :::{.center}
@@ -72,6 +74,8 @@ producto = {"nombre": "Teclado", "precio": 49.99}
 coleccion.insert_one(producto)
 print("Documento insertado:", producto)
 ```
+En este caso, se crea una colección llamada productos y se inserta un documento con nombre "Teclado" y precio 49.99.
+
 **Ejemplo 3**: Consultar documentos
 
 :::{.center}
@@ -82,6 +86,7 @@ print("Documento insertado:", producto)
 for producto in coleccion.find():
     print(producto)
 ```
+En este ejemplo, se recuperan todos los documentos de la colección productos y se imprimen en pantalla
 
 **Ejemplo 4**: Actualizar documentos
 
@@ -96,6 +101,7 @@ coleccion.update_one(
 )
 print("Precio actualizado")
 ```
+En este caso, se actualiza el precio del producto "Teclado" a 39.99.
 
 ## Ejemplo Práctico
 
