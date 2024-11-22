@@ -81,6 +81,10 @@ book:
         - unidades/unidad6/4_db_postgresql.qmd
         - unidades/unidad6/5_db_mongo.qmd
 
+    - part: "Unidad 7: Frameworks en Python"
+      chapters:
+        - unidades/unidad7/1_intro.qmd
+
     - part: "Proyectos"
       chapters:
         - unidades/Proyectos/3_funciones.qmd
