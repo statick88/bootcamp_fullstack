@@ -1,0 +1,172 @@
+# Fase 3: Implementación del Cliente CLI
+
+## Objetivo
+
+Crear la lógica básica del cliente para conectarse al servidor de chat, enviar mensajes y recibir transmisiones, inicialmente usando la línea de comandos (CLI).
+
+## Conceptos Clave
+
+**Sockets TCP Cliente**: Uso de sockets para conectar con el servidor.
+**Hilos en el Cliente**: Permitir el envío y recepción simultánea de mensajes.
+**Comunicación entre Cliente y Servidor**: Manejo de datos y estructuras de mensajes.
+
+## Instrucciones
+
+### 1. Crear la estructura inicial del cliente
+
+Edita **src/client.py** y completa la clase con las funciones esenciales:
+
+```python
+"""
+Módulo: client.py
+Descripción: Define el cliente del sistema de chat local.
+"""
+
+import socket
+import threading
+
+
+class ChatClient:
+    def __init__(self, host, port):
+        """
+        Inicializa el cliente con la dirección y puerto del servidor.
+
+        :param host: Dirección IP del servidor.
+        :param port: Puerto del servidor.
+        """
+        self.host = host
+        self.port = port
+        self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.running = True
+
+    def connect_to_server(self):
+        """
+        Conecta el cliente al servidor especificado.
+        """
+        try:
+            self.client_socket.connect((self.host, self.port))
+            print("Conectado al servidor")
+            nickname = input("Ingresa tu nickname: ")
+            self.client_socket.sendall(nickname.encode("utf-8"))
+        except Exception as e:
+            print(f"No se pudo conectar al servidor: {e}")
+            self.running = False
+
+    def send_message(self):
+        """
+        Envía mensajes al servidor de manera continua.
+        """
+        while self.running:
+            try:
+                message = input()
+                self.client_socket.sendall(message.encode("utf-8"))
+            except Exception as e:
+                print(f"Error al enviar mensaje: {e}")
+                self.running = False
+                break
+
+    def receive_messages(self):
+        """
+        Recibe mensajes del servidor de manera continua.
+        """
+        while self.running:
+            try:
+                message = self.client_socket.recv(1024).decode("utf-8")
+                if message:
+                    print(message)
+                else:
+                    break
+            except Exception as e:
+                print(f"Error al recibir mensaje: {e}")
+                self.running = False
+                break
+
+    def start_client(self):
+        """
+        Inicia el cliente, manejando la conexión y las operaciones.
+        """
+        self.connect_to_server()
+
+        if self.running:
+            threading.Thread(target=self.receive_messages, daemon=True).start()
+            self.send_message()
+
+
+if __name__ == "__main__":
+    SERVER_HOST = "127.0.0.1"
+    SERVER_PORT = 12345
+    client = ChatClient(SERVER_HOST, SERVER_PORT)
+    client.start_client()
+```
+
+### 2. Probar el cliente
+
+Asegúrate de que el servidor está corriendo:
+
+```bash
+python src/server.py
+```
+En una nueva terminal, ejecuta el cliente:
+
+```bash
+python src/client.py
+```
+Ingresa un nickname y verifica que el cliente se conecte al servidor.
+
+
+Abre múltiples terminales y ejecuta el cliente en cada una para probar el sistema.
+
+Envía mensajes entre clientes y confirma que el servidor los retransmite correctamente.
+
+### 3. Agregar pruebas unitarias para el cliente
+
+Edita **tests/test_client.py** para verificar casos básicos:
+
+```python
+import unittest
+from src.client import ChatClient
+
+
+class TestChatClient(unittest.TestCase):
+    def setUp(self):
+        self.client = ChatClient("127.0.0.1", 12345)
+
+    def test_client_initialization(self):
+        self.assertEqual(self.client.host, "127.0.0.1")
+        self.assertEqual(self.client.port, 12345)
+
+    def test_client_socket_creation(self):
+        self.assertIsNotNone(self.client.client_socket)
+
+
+if __name__ == "__main__":
+    unittest.main()
+```
+Ejecuta las pruebas:
+
+```bash
+python -m unittest discover -s tests
+```
+### 4. Versionar los cambios
+
+Agrega y confirma los archivos modificados:
+
+```bash
+git add .
+git commit -m "Fase 3: Implementación del cliente CLI"
+```
+Sube los cambios al repositorio remoto:
+
+```bash
+git push origin main
+```
+## Pruebas
+
+- Conecta múltiples clientes al servidor y verifica que los mensajes se retransmitan correctamente.
+- Realiza pruebas unitarias para garantizar la creación adecuada del cliente.
+
+# Conclusiones
+
+En esta fase, se desarrolló un cliente funcional basado en CLI que puede conectarse al servidor y participar en un chat en tiempo real. Los estudiantes pudieron observar cómo manejar la comunicación bidireccional utilizando sockets y threading.
+
+
