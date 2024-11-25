@@ -2354,5 +2354,27 @@
     "title": "Licencia",
     "section": "Cambios en la Licencia",
     "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
+  },
+  {
+    "objectID": "unidades/unidad7/2_intro_to_django.html",
+    "href": "unidades/unidad7/2_intro_to_django.html",
+    "title": "Introducción a Django",
+    "section": "",
+    "text": "Ejemplo\nDjango es un framework web de alto nivel para Python que facilita el desarrollo de aplicaciones web complejas. A continuación, se muestra un ejemplo de una aplicación web simple que muestra un mensaje de bienvenida.\nEn la captura de pantalla anterior, se muestra el código de la aplicación Django que se ejecuta en el servidor de desarrollo.\nEn la captura de pantalla anterior, se muestra el mensaje de bienvenida en el navegador web al acceder a la dirección http://localhost:8000.",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Introducción a Django</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad7/2_intro_to_django.html#ejemplo",
+    "href": "unidades/unidad7/2_intro_to_django.html#ejemplo",
+    "title": "Introducción a Django",
+    "section": "Ejemplo",
+    "text": "Ejemplo\n\nCrear un entorno virtual e instalar Django:\n\npython -m venv env\nsource env/bin/activate # Windows: env\\Scripts\\activate\npip install Django\n\n\n\n\n\n\nPara instalar una versión específica de Django, puedes ejecutar el siguiente comando:\npip install Django==5.0\n\n\n\n\n\n\n\n\n\nToma en cuenta el calendario de lanzamientos de Django para elegir la versión adecuada para tu proyecto. Puedes consultar la documentación oficial de Django para obtener más información.\n\n\n\n\nCalendario de Lanzamientos de Django\n\n\n\n\n\n\n\nCrear un archivo requirements.txt con las dependencias del proyecto:\n\nDjango==5.1.3\n\nCrear un archivo .gitignore para ignorar los archivos y directorios innecesarios:\n\nenv/\n__pycache__/\n*.pyc\ndb.sqlite3\n\nCrear un proyecto Django:\n\ndjango-admin startproject myproject\n\n\n\n\n\n\nPuedes agregar el . al final del comando para crear el proyecto en el directorio actual:\ndjango-admin startproject myproject .\n\n\n\n\nCrear una aplicación dentro del proyecto:\n\npython manage.py startapp myapp\n\n\n\n\n\n\nPuedes crear n aplicaciones dentro del proyecto, donde n es el número de aplicaciones que deseas crear.\n\n\n\n\n\n\n\n\n\nAgregar el nombre de la aplicación al archivo INSTALLED_APPS en el archivo settings.py del proyecto:\nINSTALLED_APPS = [\n    ...\n    'myapp',\n]\n\n\n\n\nDefinir una vista en el archivo views.py de la aplicación:\n\nfrom django.http import HttpResponse\n\ndef index(request):\n    return HttpResponse('¡Hola, Mundo!')\n\nConfigurar la URL en el archivo urls.py del proyecto:\n\nfrom django.urls import path\n\nfrom myapp import views\n\nurlpatterns = [\n    path('', views.index),\n]\n\nEjecutar el servidor de desarrollo:\n\npython manage.py runserver\n\nAbrir un navegador web y acceder a la dirección http://localhost:8000 para ver el mensaje de bienvenida.\n\n\n\n\n\nDjango\n\n\n\nEn la captura de pantalla anterior, se muestra el código de la aplicación Django que se ejecuta en el servidor de desarrollo.\n\n\n\n\nDjango\n\n\n\nEn la captura de pantalla anterior, se muestra el mensaje de bienvenida en el navegador web al acceder a la dirección http://localhost:8000.",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Introducción a Django</span>"
+    ]
   }
 ]

@@ -84,6 +84,7 @@ book:
     - part: "Unidad 7: Frameworks en Python"
       chapters:
         - unidades/unidad7/1_intro.qmd
+        - unidades/unidad7/2_intro_to_django.qmd
 
     - part: "Proyectos"
       chapters:

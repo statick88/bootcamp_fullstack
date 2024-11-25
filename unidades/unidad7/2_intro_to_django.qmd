@@ -1,0 +1,170 @@
+:::{.justify}
+# Introducción a Django
+
+:::{.center}
+![Django Framework](./images/django_logo.png){fig-align="center" width="200"}
+:::
+
+Django es un framework web de alto nivel para Python que facilita el desarrollo de aplicaciones web complejas. A continuación, se muestra un ejemplo de una aplicación web simple que muestra un mensaje de bienvenida.
+
+# Historia de Django
+
+Django fue creado por Adrian Holovaty y Simon Willison mientras trabajaban en Lawrence Journal-World, un periódico en Lawrence, Kansas. Django fue lanzado como software de código abierto en julio de 2005 y ha sido mantenido por la Django Software Foundation desde entonces.
+
+# Características de Django
+
+Django tiene las siguientes características:
+
+- **Diseñado para la perfección**: Django sigue el principio de "baterías incluidas", lo que significa que proporciona una amplia gama de funcionalidades listas para usar.
+
+- **Escalabilidad**: Django es altamente escalable y se puede utilizar para desarrollar aplicaciones web de cualquier tamaño.
+
+- **Seguridad**: Django proporciona protección contra vulnerabilidades comunes, como la inyección de SQL, la falsificación de solicitudes entre sitios (CSRF) y la inyección de scripts entre sitios (XSS).
+
+- **Documentación detallada**: Django tiene una documentación detallada y una comunidad activa que proporciona soporte y recursos adicionales.
+
+- **Versatilidad**: Django se puede utilizar para desarrollar una amplia variedad de aplicaciones web, desde sitios web simples hasta aplicaciones empresariales complejas.
+
+
+## Ejemplo
+
+1. Crear un entorno virtual e instalar Django:
+
+```bash
+python -m venv env
+source env/bin/activate # Windows: env\Scripts\activate
+pip install Django
+```
+
+::: {.callout-tip appearance="simple"} 
+Para instalar una versión específica de Django, puedes ejecutar el siguiente comando:
+
+```bash
+pip install Django==5.0
+```
+:::
+
+::: {.callout-tip appearance="simple"} 
+Toma en cuenta el calendario de lanzamientos de Django para elegir la versión adecuada para tu proyecto. Puedes consultar la [documentación oficial de Django](https://docs.djangoproject.com/en/stable/releases/) para obtener más información.
+
+:::{.center}
+![Calendario de Lanzamientos de Django](./images/calendar_django_lanzamientos.png){fig-align="center"}
+:::
+:::
+
+2. Crear un archivo requirements.txt con las dependencias del proyecto:
+
+```bash
+Django==5.1.3
+```
+
+3. Crear un archivo .gitignore para ignorar los archivos y directorios innecesarios:
+
+```bash
+env/
+__pycache__/
+*.pyc
+db.sqlite3
+```
+
+4. Crear un proyecto Django:
+
+```bash
+django-admin startproject myproject
+```
+
+:::{.callout-tip appearance="simple"}
+Puedes agregar el **.** al final del comando para crear el proyecto en el directorio actual:
+
+```bash
+django-admin startproject myproject .
+```
+:::
+
+5. Crear una aplicación dentro del proyecto:
+
+```bash
+python manage.py startapp myapp
+```
+
+:::{.callout-important appearance="simple"}
+Puedes crear **n** aplicaciones dentro del proyecto, donde **n** es el número de aplicaciones que deseas crear.
+:::
+
+:::{.callout-tip appearance="simple"}
+Agregar el nombre de la aplicación al archivo **INSTALLED_APPS** en el archivo **settings.py** del proyecto:
+
+```python
+INSTALLED_APPS = [
+    ...
+    'myapp',
+]
+```
+:::
+
+6. Definir una vista en el archivo **views.py** de la aplicación:
+
+```python
+from django.http import HttpResponse
+
+def index(request):
+    return HttpResponse('¡Hola, Mundo!')
+```
+
+7. Configurar la URL en el archivo **urls.py** del proyecto:
+
+```python
+from django.urls import path
+
+from myapp import views
+
+urlpatterns = [
+    path('', views.index),
+]
+```
+
+8. Ejecutar el servidor de desarrollo:
+
+```bash
+python manage.py runserver
+```
+
+9. Abrir un navegador web y acceder a la dirección <http://localhost:8000> para ver el mensaje de bienvenida.
+
+:::{.center}
+![Django](./images/django_code001.png){fig-align="center" width="800"}
+:::
+
+En la captura de pantalla anterior, se muestra el código de la aplicación Django que se ejecuta en el servidor de desarrollo.
+
+:::{.center}
+![Django](./images/django_code002.png){fig-align="center" width="800"}
+:::
+
+En la captura de pantalla anterior, se muestra el mensaje de bienvenida en el navegador web al acceder a la dirección <http://localhost:8000>.
+
+# Buenas Prácticas
+
+- Utiliza un entorno virtual para instalar las dependencias del proyecto.
+- Crea un archivo **requirements.txt** con las dependencias del proyecto.
+- Crea un archivo **.gitignore** para ignorar los archivos y directorios innecesarios.
+
+# Actividad
+
+1. Crea un proyecto Django llamado **myproject**.
+2. Crea una aplicación llamada **myapp** dentro del proyecto.
+3. Define una vista en el archivo **views.py** de la aplicación.
+4. Configura la URL en el archivo **urls.py** del proyecto.
+5. Ejecuta el servidor de desarrollo y accede a la dirección <http://localhost:8000> para ver el mensaje de bienvenida.
+
+# Recursos Adicionales
+
+- [Documentación oficial de Django](https://docs.djangoproject.com/en/stable/)
+- [Calendario de lanzamientos de Django](https://docs.djangoproject.com/en/stable/releases)
+
+# Conclusiones
+
+En este tutorial, aprendiste a crear un proyecto Django y una aplicación web simple que muestra un mensaje de bienvenida. También aprendiste a definir una vista y configurar la URL en el proyecto Django. Por último, aprendiste a ejecutar el servidor de desarrollo y acceder a la dirección <http://localhost:8000> para ver el mensaje de bienvenida en un navegador web.
+
+:::
+

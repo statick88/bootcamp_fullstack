@@ -10,7 +10,7 @@ Los frameworks son herramientas que facilitan el desarrollo de aplicaciones web 
 ## Creación de Entornos Virtuales
 
 :::{.center}
-![Entornos Virtuales](./images/venv.png){fig-align="center" width="400}
+![Entornos Virtuales](./images/venv.png){fig-align="center" width="400"}
 :::
 
 Antes de comenzar a trabajar con los frameworks, es recomendable crear un entorno virtual para cada proyecto. Los entornos virtuales permiten aislar las dependencias de cada proyecto y evitar conflictos entre versiones de paquetes. A continución, se muestran los comandos para crear un entorno virtual con **venv**:
