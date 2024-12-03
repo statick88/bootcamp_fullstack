@@ -151,6 +151,14 @@ python manage.py shell
 ```
 
 Este comando abrirá una consola interactiva de Python con acceso a los modelos de Django.
+
+Es neceario hacer algunas importaciones para poder interactuar con los modelos:
+
+```python
+from farmacia.models import Medicamento, Venta
+```
+
+En este ejemplo se importan los modelos **Medicamento** y **Venta** de la aplicación **farmacia**.
 :::
 
 A continuación se muestran algunos ejemplos de cómo interactuar con la base de datos utilizando los modelos **Medicamento** y **Venta**:

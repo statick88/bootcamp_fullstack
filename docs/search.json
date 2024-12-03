@@ -1478,7 +1478,7 @@
     "href": "unidades/unidad7/4_modelos_django.html#interactuar-con-la-base-de-datos",
     "title": "Modelos en Django",
     "section": "Interactuar con la base de datos",
-    "text": "Interactuar con la base de datos\nUna de las formas de interactuar con la base de datos es a traves del administrador de Django. Para acceder al administrador se debe crear un superusuario con el siguiente comando:\npython manage.py createsuperuser\nEste comando solicitará un nombre de usuario, una dirección de correo electrónico y una contraseña para el superusuario. Una vez que se ha creado el superusuario, se puede acceder al administrador de Django en la siguiente URL: http://127.0.0.1:8000/admin/.\nEn el administrador se pueden gestionar los medicamentos y las ventas de la farmacia. Se pueden crear, leer, actualizar y eliminar registros en la base de datos utilizando una interfaz gráfica.\nSin embargo para que los modelos sean accesibles desde el administrador se debe registrar los modelos en el archivo admin.py de la aplicación. A continuación se muestra un ejemplo de cómo registrar los modelos Medicamento y Venta en el archivo admin.py:\nfrom django.contrib import admin\nfrom .models import Medicamento, Venta\n\nadmin.site.register(Medicamento)\nadmin.site.register(Venta)\nUna vez que se han registrado los modelos en el administrador, se pueden gestionar los medicamentos y las ventas desde la interfaz gráfica.\nUna vez que se han creado las tablas en la base de datos, se pueden realizar operaciones de lectura, escritura, actualización y eliminación utilizando los modelos de Django. A continuación se muestran algunos ejemplos de cómo interactuar con la base de datos:\n\nPara interactuar con la base de datos se debe utilizar la consola interactiva de Django. Para acceder a la consola se debe ejecutar el siguiente comando:\npython manage.py shell\nEste comando abrirá una consola interactiva de Python con acceso a los modelos de Django.\n\nA continuación se muestran algunos ejemplos de cómo interactuar con la base de datos utilizando los modelos Medicamento y Venta:\n# Crear un medicamento\n\nmedicamento = Medicamento(nombre='Paracetamol', precio=10.50, existencias=100)\nmedicamento.save()\n\n# Crear una venta\n\nventa = Venta(medicamento=medicamento, cantidad=10)\nventa.save()\n\n# Consultar los medicamentos\n\nmedicamentos = Medicamento.objects.all()\n\n# Consultar las ventas\n\nventas = Venta.objects.all()\n\n# Actualizar un medicamento\n\nmedicamento.existencias = 90\nmedicamento.save()\n\n# Eliminar un medicamento\n\nmedicamento.delete()\nEstos son algunos ejemplos de cómo interactuar con la base de datos utilizando los modelos de Django. Los modelos proporcionan una interfaz de alto nivel para realizar operaciones CRUD (Create, Read, Update, Delete) en la base de datos sin necesidad de escribir consultas SQL.",
+    "text": "Interactuar con la base de datos\nUna de las formas de interactuar con la base de datos es a traves del administrador de Django. Para acceder al administrador se debe crear un superusuario con el siguiente comando:\npython manage.py createsuperuser\nEste comando solicitará un nombre de usuario, una dirección de correo electrónico y una contraseña para el superusuario. Una vez que se ha creado el superusuario, se puede acceder al administrador de Django en la siguiente URL: http://127.0.0.1:8000/admin/.\nEn el administrador se pueden gestionar los medicamentos y las ventas de la farmacia. Se pueden crear, leer, actualizar y eliminar registros en la base de datos utilizando una interfaz gráfica.\nSin embargo para que los modelos sean accesibles desde el administrador se debe registrar los modelos en el archivo admin.py de la aplicación. A continuación se muestra un ejemplo de cómo registrar los modelos Medicamento y Venta en el archivo admin.py:\nfrom django.contrib import admin\nfrom .models import Medicamento, Venta\n\nadmin.site.register(Medicamento)\nadmin.site.register(Venta)\nUna vez que se han registrado los modelos en el administrador, se pueden gestionar los medicamentos y las ventas desde la interfaz gráfica.\nUna vez que se han creado las tablas en la base de datos, se pueden realizar operaciones de lectura, escritura, actualización y eliminación utilizando los modelos de Django. A continuación se muestran algunos ejemplos de cómo interactuar con la base de datos:\n\nPara interactuar con la base de datos se debe utilizar la consola interactiva de Django. Para acceder a la consola se debe ejecutar el siguiente comando:\npython manage.py shell\nEste comando abrirá una consola interactiva de Python con acceso a los modelos de Django.\nEs neceario hacer algunas importaciones para poder interactuar con los modelos:\nfrom farmacia.models import Medicamento, Venta\nEn este ejemplo se importan los modelos Medicamento y Venta de la aplicación farmacia.\n\nA continuación se muestran algunos ejemplos de cómo interactuar con la base de datos utilizando los modelos Medicamento y Venta:\n# Crear un medicamento\n\nmedicamento = Medicamento(nombre='Paracetamol', precio=10.50, existencias=100)\nmedicamento.save()\n\n# Crear una venta\n\nventa = Venta(medicamento=medicamento, cantidad=10)\nventa.save()\n\n# Consultar los medicamentos\n\nmedicamentos = Medicamento.objects.all()\n\n# Consultar las ventas\n\nventas = Venta.objects.all()\n\n# Actualizar un medicamento\n\nmedicamento.existencias = 90\nmedicamento.save()\n\n# Eliminar un medicamento\n\nmedicamento.delete()\nEstos son algunos ejemplos de cómo interactuar con la base de datos utilizando los modelos de Django. Los modelos proporcionan una interfaz de alto nivel para realizar operaciones CRUD (Create, Read, Update, Delete) en la base de datos sin necesidad de escribir consultas SQL.",
     "crumbs": [
       "Unidad 7: Frameworks en Python",
       "<span class='chapter-number'>33</span>  <span class='chapter-title'>Modelos en Django</span>"
@@ -2123,602 +2123,6 @@
     ]
   },
   {
-    "objectID": "unidades/Extras/0_parte.html#introducción",
-    "href": "unidades/Extras/0_parte.html#introducción",
-    "title": "Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor",
-    "section": "Introducción",
-    "text": "Introducción\nEn este laboratorio práctico, los estudiantes aprenderán a desarrollar un sistema de chat cliente-servidor utilizando Python. Este laboratorio está diseñado para simular un flujo de trabajo profesional, combinando técnicas modernas de desarrollo como pruebas automatizadas, integración continua y control de versiones con Git y GitHub.\nEl laboratorio está dividido en varias fases que permiten a los estudiantes comprender y aplicar los fundamentos del desarrollo de aplicaciones de red, utilizando un enfoque incremental para construir funcionalidad de manera ordenada.",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/0_parte.html#lo-que-vamos-a-desarrollar",
-    "href": "unidades/Extras/0_parte.html#lo-que-vamos-a-desarrollar",
-    "title": "Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor",
-    "section": "Lo que Vamos a Desarrollar",
-    "text": "Lo que Vamos a Desarrollar\n\nAnálisis de Requisitos:\n\nIdentificar las funcionalidades clave del sistema, como enviar y recibir mensajes en tiempo real.\n\n\n\nHistorias de Usuario:\n\nDesarrollar casos prácticos para simular cómo interactuarán los usuarios con el sistema.\n\n\n\nDiseño y Arquitectura:\n\nCrear la estructura del proyecto con carpetas organizadas y archivos bien definidos.\nImplementar un diseño modular que facilite la colaboración y el mantenimiento.\n\n\n\nCodificación:\n\nConstruir el servidor y cliente del sistema en Python utilizando socket.\nDesarrollar pruebas unitarias e integración con pytest.\n\n\n\nIntegración Continua:\n\nConfigurar GitHub Actions para ejecutar pruebas automáticamente con cada cambio en el código.\n\n\n\nExtensión con GUI:\n\nImplementar una interfaz gráfica para el cliente utilizando Tkinter.",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/0_parte.html#objetivos-específicos",
-    "href": "unidades/Extras/0_parte.html#objetivos-específicos",
-    "title": "Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor",
-    "section": "Objetivos Específicos",
-    "text": "Objetivos Específicos\n\nEntender el Proceso de Desarrollo: Aplicar principios de diseño modular y buenas prácticas de programación.\nDesarrollar Habilidades en Python: Usar bibliotecas estándar como socket y tkinter.\nAprender Herramientas Profesionales: Configurar entornos virtuales, pruebas automatizadas e integración continua.\nSimular el Trabajo en Equipo: Utilizar Git y GitHub para la gestión de código y colaboración.",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/0_parte.html#materiales-y-herramientas-necesarias",
-    "href": "unidades/Extras/0_parte.html#materiales-y-herramientas-necesarias",
-    "title": "Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor",
-    "section": "Materiales y Herramientas Necesarias",
-    "text": "Materiales y Herramientas Necesarias\n\nSoftware:\n\nPython 3.10 o superior.\nGit y una cuenta de GitHub.\nEditor de código (Visual Studio Code, PyCharm, o similar).\nLibrerías y Dependencias:\npytest para pruebas.\ntkinter para la interfaz gráfica.\n\n\n\nConocimientos Previos Requeridos:\n\nConceptos básicos de Python.\nFamiliaridad con Git y GitHub.\nConocimientos básicos de programación orientada a objetos (POO).\n\n\n\nEstructura del Laboratorio\n\nFase 1: Preparación del Entorno y Repositorio.\n\nConfiguración inicial del proyecto con Git y creación del entorno virtual.\n\n\n\nFase 2: Creación de Clases Base.\n\nImplementar las clases del cliente y servidor con métodos vacíos.\n\n\n\nFase 3: Comunicación Cliente-Servidor.\n\nDesarrollar y probar la funcionalidad de envío y recepción de mensajes.\n\n\n\nFase 4: Pruebas Automatizadas.\n\nCrear pruebas unitarias e integración para garantizar la funcionalidad.\n\n\n\nFase 5: Configuración de CI/CD.\n\nConfigurar GitHub Actions para pruebas automatizadas.\n\n\n\nFase 6: Implementación de Interfaz Gráfica.\n\nExtender el cliente para incluir una GUI con Tkinter.\n\n\n\nFase 7: Documentación y Reflexión.\n\nElaborar conclusiones y responder preguntas de reflexión.",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/0_parte.html#resultados-esperados",
-    "href": "unidades/Extras/0_parte.html#resultados-esperados",
-    "title": "Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor",
-    "section": "Resultados Esperados",
-    "text": "Resultados Esperados\nAl finalizar este laboratorio, los estudiantes tendrán:\n\nUn sistema de chat cliente-servidor funcional.\nUn repositorio GitHub estructurado con código bien documentado.\nPruebas automatizadas y un pipeline de CI funcionando correctamente.\nExperiencia en herramientas y técnicas utilizadas en entornos profesionales.\n\n\n¡Comencemos con el desarrollo! 🎉",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/1_parte.html#objetivo",
-    "href": "unidades/Extras/1_parte.html#objetivo",
-    "title": "Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto",
-    "section": "Objetivo",
-    "text": "Objetivo\nQue los estudiantes comprendan el flujo de desarrollo de una aplicación profesional, desde la planificación hasta la implementación, utilizando herramientas de control de versiones, entornos virtuales y mejores prácticas en Python.",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/1_parte.html#conceptos-clave",
-    "href": "unidades/Extras/1_parte.html#conceptos-clave",
-    "title": "Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto",
-    "section": "Conceptos Clave",
-    "text": "Conceptos Clave\n\nProgramación en red: Uso de sockets para la comunicación cliente-servidor.\nDiseño modular: Organización del código en clases y métodos.\nEntornos virtuales: Aislamiento de dependencias con venv.\nControl de versiones: Uso de Git y GitHub.\nInterfaces gráficas: Uso de tkinter para desarrollar la GUI del cliente.\nHistorias de usuario: Identificación de requerimientos clave mediante ejemplos prácticos.",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/1_parte.html#historias-de-usuario",
-    "href": "unidades/Extras/1_parte.html#historias-de-usuario",
-    "title": "Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto",
-    "section": "Historias de Usuario",
-    "text": "Historias de Usuario\n\nHU1: Como usuario, quiero conectarme al servidor con un apodo único, para identificarme en el chat.\nHU2: Como usuario, quiero enviar mensajes al chat y que otros los reciban, para comunicarme con los demás.\nHU3: Como usuario, quiero recibir mensajes enviados por otros usuarios en tiempo real, para estar informado de las conversaciones.\nHU4: Como administrador, quiero registrar y gestionar conexiones de clientes, para mantener el control del servidor.\n\n\nInstrucciones: Fase 1\n\nCrear un directorio de proyecto\n\nmkdir chat_app\ncd chat_app\n\n\nInicializar un repositorio Git\ngit init\ngit branch -M main\n\nConfigurar un entorno virtual\n\npython3 -m venv env\nsource env/bin/activate  # En Windows: env\\Scripts\\activate\n\nCrear el archivo .gitignore Contenido sugerido para ignorar archivos innecesarios:\n\nenv/\n__pycache__/\n*.pyc\n*.pyo\nCrear un archivo requirements.txt Inicialmente vacío. Agregaremos dependencias más adelante.\nEstructurar el proyecto\nmkdir src\ntouch src/server.py src/client.py\nmkdir tests\ntouch tests/test_server.py tests/test_client.py",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/1_parte.html#planificar-la-arquitectura-inicial",
-    "href": "unidades/Extras/1_parte.html#planificar-la-arquitectura-inicial",
-    "title": "Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto",
-    "section": "Planificar la arquitectura inicial",
-    "text": "Planificar la arquitectura inicial\n\nEl servidor manejará conexiones y permitirá la comunicación entre clientes.\nEl cliente tendrá una interfaz de línea de comandos (CLI) en esta fase inicial.",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/1_parte.html#codificar-clases-base-en-server.py",
-    "href": "unidades/Extras/1_parte.html#codificar-clases-base-en-server.py",
-    "title": "Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto",
-    "section": "Codificar clases base En server.py:",
-    "text": "Codificar clases base En server.py:\n\"\"\"\nMódulo: server.py\nDescripción: Define el servidor del sistema de chat local.\n\"\"\"\nimport socket\nimport threading\n\nclass ChatServer:\n    def __init__(self, host, port):\n        \"\"\"Inicializa el servidor con la dirección y puerto especificados.\"\"\"\n        pass\n\n    def start_server(self):\n        \"\"\"Inicia el servidor y espera conexiones entrantes.\"\"\"\n        pass\n\n    def handle_client(self, client_socket, client_address):\n        \"\"\"Maneja la comunicación con un cliente específico.\"\"\"\n        pass\n\n    def broadcast(self, message, sender_socket):\n        \"\"\"Envía un mensaje a todos los clientes excepto al remitente.\"\"\"\n        pass",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/1_parte.html#en-client.py",
-    "href": "unidades/Extras/1_parte.html#en-client.py",
-    "title": "Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto",
-    "section": "En client.py:",
-    "text": "En client.py:\n\"\"\"\nMódulo: client.py\nDescripción: Define el cliente del sistema de chat local.\n\"\"\"\nimport socket\n\nclass ChatClient:\n    def __init__(self, host, port):\n        \"\"\"Inicializa el cliente con la dirección del servidor y el puerto.\"\"\"\n        pass\n\n    def connect_to_server(self):\n        \"\"\"Establece conexión con el servidor.\"\"\"\n        pass\n\n    def send_message(self, message):\n        \"\"\"Envía un mensaje al servidor.\"\"\"\n        pass\n\n    def receive_messages(self):\n        \"\"\"Recibe mensajes del servidor.\"\"\"\n        pass",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/1_parte.html#agregar-y-confirmar-cambios-en-git",
-    "href": "unidades/Extras/1_parte.html#agregar-y-confirmar-cambios-en-git",
-    "title": "Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto",
-    "section": "Agregar y confirmar cambios en Git",
-    "text": "Agregar y confirmar cambios en Git\ngit add .\ngit commit -m \"Fase 1: Configuración inicial y clases base con métodos vacíos\"",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/1_parte.html#pruebas",
-    "href": "unidades/Extras/1_parte.html#pruebas",
-    "title": "Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto",
-    "section": "Pruebas",
-    "text": "Pruebas\n\nEn esta fase, no se ejecuta ningún código, pero verifica que los archivos y directorios existen.\nAsegúrate de que el entorno virtual esté activo antes de cualquier ejecución futura.",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/2_parte.html",
-    "href": "unidades/Extras/2_parte.html",
-    "title": "Fase 2: Implementación del Servidor CLI",
-    "section": "",
-    "text": "Objetivo\nImplementar la lógica básica del servidor para gestionar conexiones y comunicaciones entre clientes. Este servidor será accesible a través de la línea de comandos.",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/2_parte.html#conceptos-clave",
-    "href": "unidades/Extras/2_parte.html#conceptos-clave",
-    "title": "Fase 2: Implementación del Servidor CLI",
-    "section": "Conceptos Clave",
-    "text": "Conceptos Clave\n\nSockets TCP: Configuración de sockets para aceptar conexiones y transmitir datos.\nHilos (Threads): Manejo concurrente de clientes usando la biblioteca threading.\nEstrategias de Broadcasting: Comunicación eficiente con múltiples clientes.",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/2_parte.html#instrucciones",
-    "href": "unidades/Extras/2_parte.html#instrucciones",
-    "title": "Fase 2: Implementación del Servidor CLI",
-    "section": "Instrucciones",
-    "text": "Instrucciones\n\n1. Actualizar el código del servidor\nAbrir src/server.py y completar las clases con la lógica básica:\n\"\"\"\nMódulo: server.py\nDescripción: Define el servidor del sistema de chat local.\n\"\"\"\n\nimport socket\nimport threading\n\nclass ChatServer:\n    def __init__(self, host, port):\n        \"\"\"\n        Inicializa el servidor con la dirección y puerto especificados.\n\n        :param host: Dirección IP del servidor.\n        :param port: Puerto del servidor.\n        \"\"\"\n        self.host = host\n        self.port = port\n        self.server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n        self.clients = {}\n\n    def start_server(self):\n        \"\"\"\n        Inicia el servidor, permitiendo conexiones entrantes de clientes.\n        \"\"\"\n        self.server_socket.bind((self.host, self.port))\n        self.server_socket.listen()\n        print(f\"Servidor escuchando en {self.host}:{self.port}\")\n\n        while True:\n            client_socket, client_address = self.server_socket.accept()\n            print(f\"Conexión aceptada de {client_address}\")\n            threading.Thread(\n                target=self.handle_client, args=(client_socket, client_address)\n            ).start()\n\n    def handle_client(self, client_socket, client_address):\n        \"\"\"\n        Maneja la interacción con un cliente específico.\n\n        :param client_socket: Socket del cliente.\n        :param client_address: Dirección del cliente.\n        \"\"\"\n        nickname = client_socket.recv(1024).decode(\"utf-8\")\n        self.clients[client_socket] = nickname\n        print(f\"{nickname} ({client_address}) se ha conectado\")\n\n        self.broadcast(f\"{nickname} se ha unido al chat\", client_socket)\n\n        while True:\n            try:\n                message = client_socket.recv(1024).decode(\"utf-8\")\n                if not message:\n                    break\n                print(f\"Mensaje de {nickname}: {message}\")\n                self.broadcast(f\"{nickname}: {message}\", client_socket)\n            except Exception as e:\n                print(f\"Error en cliente {nickname}: {e}\")\n                break\n\n        print(f\"{nickname} ({client_address}) se ha desconectado\")\n        self.broadcast(f\"{nickname} se ha desconectado\", client_socket)\n        client_socket.close()\n        del self.clients[client_socket]\n\n    def broadcast(self, message, sender_socket):\n        \"\"\"\n        Envia un mensaje a todos los clientes conectados excepto al remitente.\n\n        :param message: Mensaje a transmitir.\n        :param sender_socket: Socket del remitente.\n        \"\"\"\n        for client_socket in self.clients.keys():\n            if client_socket != sender_socket:\n                try:\n                    client_socket.sendall(message.encode(\"utf-8\"))\n                except Exception as e:\n                    print(f\"Error al enviar mensaje: {e}\")\n\n\nif __name__ == \"__main__\":\n    SERVER_HOST = \"127.0.0.1\"\n    SERVER_PORT = 12345\n    server = ChatServer(SERVER_HOST, SERVER_PORT)\n    server.start_server()",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/2_parte.html#probar-el-servidor",
-    "href": "unidades/Extras/2_parte.html#probar-el-servidor",
-    "title": "Fase 2: Implementación del Servidor CLI",
-    "section": "2. Probar el servidor",
-    "text": "2. Probar el servidor\nAsegúrate de que el entorno virtual esté activo:\nsource venv/bin/activate  # En Windows: venv\\Scripts\\activate\n\nEjecuta el servidor:\npython src/server.py\nVerifica que el servidor comienza a escuchar en la dirección configurada.",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/2_parte.html#agregar-pruebas-unitarias-básicas",
-    "href": "unidades/Extras/2_parte.html#agregar-pruebas-unitarias-básicas",
-    "title": "Fase 2: Implementación del Servidor CLI",
-    "section": "3. Agregar pruebas unitarias básicas",
-    "text": "3. Agregar pruebas unitarias básicas\nEdita tests/test_server.py para agregar un caso inicial (simulación simple de conexión):\nimport unittest\nfrom src.server import ChatServer\n\nclass TestChatServer(unittest.TestCase):\n    def setUp(self):\n        self.server = ChatServer(\"127.0.0.1\", 12345)\n\n    def test_server_initialization(self):\n        self.assertEqual(self.server.host, \"127.0.0.1\")\n        self.assertEqual(self.server.port, 12345)\n        self.assertIsInstance(self.server.clients, dict)\n\nif __name__ == \"__main__\":\n    unittest.main()\nEjecuta las pruebas:\npython -m unittest discover -s tests",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/2_parte.html#versionar-los-cambios",
-    "href": "unidades/Extras/2_parte.html#versionar-los-cambios",
-    "title": "Fase 2: Implementación del Servidor CLI",
-    "section": "4. Versionar los cambios",
-    "text": "4. Versionar los cambios\nAgrega y confirma los archivos modificados:\ngit add .\ngit commit -m \"Fase 2: Implementación del servidor básico\"\n(Opcional) Crea un repositorio remoto en GitHub:\ngit remote add origin &lt;URL_DEL_REPOSITORIO&gt;\ngit push -u origin main",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/2_parte.html#pruebas",
-    "href": "unidades/Extras/2_parte.html#pruebas",
-    "title": "Fase 2: Implementación del Servidor CLI",
-    "section": "Pruebas",
-    "text": "Pruebas\n\nEjecuta el servidor y asegúrate de que no haya errores.\nEjecuta las pruebas unitarias.",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/2_parte.html#conclusiones",
-    "href": "unidades/Extras/2_parte.html#conclusiones",
-    "title": "Fase 2: Implementación del Servidor CLI",
-    "section": "Conclusiones",
-    "text": "Conclusiones\nEn esta fase, se implementó un servidor funcional que puede aceptar múltiples conexiones de clientes y gestionar sus mensajes de forma concurrente. Los estudiantes ahora comprenden la importancia de los sockets y los hilos para crear aplicaciones escalables.",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/3_parte.html",
-    "href": "unidades/Extras/3_parte.html",
-    "title": "Fase 3: Implementación del Cliente CLI",
-    "section": "",
-    "text": "Objetivo\nCrear la lógica básica del cliente para conectarse al servidor de chat, enviar mensajes y recibir transmisiones, inicialmente usando la línea de comandos (CLI).",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 3: Implementación del Cliente CLI</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/3_parte.html#conceptos-clave",
-    "href": "unidades/Extras/3_parte.html#conceptos-clave",
-    "title": "Fase 3: Implementación del Cliente CLI",
-    "section": "Conceptos Clave",
-    "text": "Conceptos Clave\nSockets TCP Cliente: Uso de sockets para conectar con el servidor. Hilos en el Cliente: Permitir el envío y recepción simultánea de mensajes. Comunicación entre Cliente y Servidor: Manejo de datos y estructuras de mensajes.",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 3: Implementación del Cliente CLI</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/3_parte.html#instrucciones",
-    "href": "unidades/Extras/3_parte.html#instrucciones",
-    "title": "Fase 3: Implementación del Cliente CLI",
-    "section": "Instrucciones",
-    "text": "Instrucciones\n\n1. Crear la estructura inicial del cliente\nEdita src/client.py y completa la clase con las funciones esenciales:\n\"\"\"\nMódulo: client.py\nDescripción: Define el cliente del sistema de chat local.\n\"\"\"\n\nimport socket\nimport threading\n\n\nclass ChatClient:\n    def __init__(self, host, port):\n        \"\"\"\n        Inicializa el cliente con la dirección y puerto del servidor.\n\n        :param host: Dirección IP del servidor.\n        :param port: Puerto del servidor.\n        \"\"\"\n        self.host = host\n        self.port = port\n        self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n        self.running = True\n\n    def connect_to_server(self):\n        \"\"\"\n        Conecta el cliente al servidor especificado.\n        \"\"\"\n        try:\n            self.client_socket.connect((self.host, self.port))\n            print(\"Conectado al servidor\")\n            nickname = input(\"Ingresa tu nickname: \")\n            self.client_socket.sendall(nickname.encode(\"utf-8\"))\n        except Exception as e:\n            print(f\"No se pudo conectar al servidor: {e}\")\n            self.running = False\n\n    def send_message(self):\n        \"\"\"\n        Envía mensajes al servidor de manera continua.\n        \"\"\"\n        while self.running:\n            try:\n                message = input()\n                self.client_socket.sendall(message.encode(\"utf-8\"))\n            except Exception as e:\n                print(f\"Error al enviar mensaje: {e}\")\n                self.running = False\n                break\n\n    def receive_messages(self):\n        \"\"\"\n        Recibe mensajes del servidor de manera continua.\n        \"\"\"\n        while self.running:\n            try:\n                message = self.client_socket.recv(1024).decode(\"utf-8\")\n                if message:\n                    print(message)\n                else:\n                    break\n            except Exception as e:\n                print(f\"Error al recibir mensaje: {e}\")\n                self.running = False\n                break\n\n    def start_client(self):\n        \"\"\"\n        Inicia el cliente, manejando la conexión y las operaciones.\n        \"\"\"\n        self.connect_to_server()\n\n        if self.running:\n            threading.Thread(target=self.receive_messages, daemon=True).start()\n            self.send_message()\n\n\nif __name__ == \"__main__\":\n    SERVER_HOST = \"127.0.0.1\"\n    SERVER_PORT = 12345\n    client = ChatClient(SERVER_HOST, SERVER_PORT)\n    client.start_client()\n\n\n2. Probar el cliente\nAsegúrate de que el servidor está corriendo:\npython src/server.py\nEn una nueva terminal, ejecuta el cliente:\npython src/client.py\nIngresa un nickname y verifica que el cliente se conecte al servidor.\nAbre múltiples terminales y ejecuta el cliente en cada una para probar el sistema.\nEnvía mensajes entre clientes y confirma que el servidor los retransmite correctamente.\n\n\n3. Agregar pruebas unitarias para el cliente\nEdita tests/test_client.py para verificar casos básicos:\nimport unittest\nfrom src.client import ChatClient\n\n\nclass TestChatClient(unittest.TestCase):\n    def setUp(self):\n        self.client = ChatClient(\"127.0.0.1\", 12345)\n\n    def test_client_initialization(self):\n        self.assertEqual(self.client.host, \"127.0.0.1\")\n        self.assertEqual(self.client.port, 12345)\n\n    def test_client_socket_creation(self):\n        self.assertIsNotNone(self.client.client_socket)\n\n\nif __name__ == \"__main__\":\n    unittest.main()\nEjecuta las pruebas:\npython -m unittest discover -s tests\n\n\n4. Versionar los cambios\nAgrega y confirma los archivos modificados:\ngit add .\ngit commit -m \"Fase 3: Implementación del cliente CLI\"\nSube los cambios al repositorio remoto:\ngit push origin main",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 3: Implementación del Cliente CLI</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/3_parte.html#pruebas",
-    "href": "unidades/Extras/3_parte.html#pruebas",
-    "title": "Fase 3: Implementación del Cliente CLI",
-    "section": "Pruebas",
-    "text": "Pruebas\n\nConecta múltiples clientes al servidor y verifica que los mensajes se retransmitan correctamente.\nRealiza pruebas unitarias para garantizar la creación adecuada del cliente.",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 3: Implementación del Cliente CLI</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/4_parte.html#objetivo",
-    "href": "unidades/Extras/4_parte.html#objetivo",
-    "title": "Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter",
-    "section": "Objetivo",
-    "text": "Objetivo\nDesarrollar una interfaz gráfica para el cliente del chat usando la biblioteca Tkinter. La interfaz permitirá una experiencia más amigable para enviar y recibir mensajes en tiempo real.",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/4_parte.html#conceptos-clave",
-    "href": "unidades/Extras/4_parte.html#conceptos-clave",
-    "title": "Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter",
-    "section": "Conceptos Clave",
-    "text": "Conceptos Clave\n\nInterfaz Gráfica (GUI): Uso de Tkinter para construir interfaces gráficas básicas en Python.\nInteractividad**: Implementar botones, entradas de texto y listas para mostrar mensajes.\nHilos en la GUI: Asegurar que la aplicación gráfica sea responsiva mientras maneja múltiples tareas como enviar y recibir mensajes.",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/4_parte.html#instrucciones",
-    "href": "unidades/Extras/4_parte.html#instrucciones",
-    "title": "Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter",
-    "section": "Instrucciones",
-    "text": "Instrucciones\n\n1. Crear la estructura inicial para la GUI\nEdita el archivo src/client.py para añadir funcionalidades gráficas. Comienza reemplazando la clase ChatClient por una versión ampliada con Tkinter:\n\"\"\"\nMódulo: client.py\nDescripción: Cliente de chat con interfaz gráfica (Tkinter).\n\"\"\"\n\nimport socket\nimport tkinter as tk\nimport threading\n\n\nclass ChatClientGUI:\n    def __init__(self, host, port):\n        \"\"\"\n        Inicializa el cliente con la dirección y puerto del servidor, y configura la GUI.\n\n        :param host: Dirección IP del servidor.\n        :param port: Puerto del servidor.\n        \"\"\"\n        self.host = host\n        self.port = port\n        self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n        self.nickname = \"\"\n        self.running = True\n        self.chat_window = None\n        self.message_box = None\n        self.entry_box = None\n\n    def connect_to_server(self):\n        \"\"\"\n        Conecta el cliente al servidor y envía el nickname.\n        \"\"\"\n        try:\n            self.client_socket.connect((self.host, self.port))\n            print(\"Conectado al servidor\")\n        except Exception as e:\n            print(f\"No se pudo conectar al servidor: {e}\")\n\n    def send_message(self, message):\n        \"\"\"\n        Envía un mensaje al servidor.\n        :param message: Mensaje a enviar.\n        \"\"\"\n        try:\n            self.client_socket.sendall(message.encode(\"utf-8\"))\n        except Exception as e:\n            print(f\"Error al enviar mensaje: {e}\")\n\n    def receive_messages(self):\n        \"\"\"\n        Recibe mensajes del servidor y los muestra en la GUI.\n        \"\"\"\n        while self.running:\n            try:\n                message = self.client_socket.recv(1024).decode(\"utf-8\")\n                if message:\n                    self.chat_window.after(0, self.display_message, message)\n                else:\n                    break\n            except Exception as e:\n                print(f\"Error al recibir mensaje: {e}\")\n                break\n\n    def display_message(self, message):\n        \"\"\"\n        Muestra un mensaje en la ventana de chat.\n        :param message: Mensaje recibido.\n        \"\"\"\n        self.message_box.insert(tk.END, message)\n        self.message_box.yview(tk.END)\n\n    def setup_gui(self):\n        \"\"\"\n        Configura la ventana principal de la interfaz gráfica.\n        \"\"\"\n        self.window = tk.Tk()\n        self.window.title(\"Chat Cliente\")\n\n        # Ventana de ingreso de nickname\n        self.nickname_window = tk.Frame(self.window)\n        self.nickname_window.pack(padx=10, pady=10)\n\n        self.nickname_label = tk.Label(self.nickname_window, text=\"Nick:\")\n        self.nickname_label.pack(padx=10, pady=10)\n\n        self.nickname_entry = tk.Entry(self.nickname_window)\n        self.nickname_entry.pack(padx=10, pady=10)\n\n        self.nickname_button = tk.Button(\n            self.nickname_window, text=\"OK\", command=self.set_nickname\n        )\n        self.nickname_button.pack(padx=10, pady=10)\n\n        self.window.mainloop()\n\n    def set_nickname(self):\n        \"\"\"\n        Configura el nickname del usuario y prepara la ventana de chat.\n        \"\"\"\n        self.nickname = self.nickname_entry.get()\n        if self.nickname:\n            self.client_socket.sendall(self.nickname.encode(\"utf-8\"))\n            self.nickname_window.pack_forget()  # Oculta la ventana de nickname\n            self.create_chat_window()  # Muestra la ventana de chat\n\n    def create_chat_window(self):\n        \"\"\"\n        Crea la ventana de chat principal con opciones para enviar y recibir mensajes.\n        \"\"\"\n        self.chat_window = tk.Frame(self.window)\n        self.chat_window.pack(padx=10, pady=10)\n\n        self.message_box = tk.Listbox(self.chat_window, height=15, width=50)\n        self.message_box.pack(padx=10, pady=10)\n\n        self.entry_box = tk.Entry(self.chat_window, width=40)\n        self.entry_box.pack(padx=10, pady=10)\n\n        self.send_button = tk.Button(\n            self.chat_window, text=\"Enviar\", command=self.on_send_message\n        )\n        self.send_button.pack(padx=10, pady=10)\n\n        # Hilo para recibir mensajes\n        threading.Thread(target=self.receive_messages, daemon=True).start()\n\n    def on_send_message(self):\n        \"\"\"\n        Envía un mensaje al servidor y lo muestra en el cliente.\n        \"\"\"\n        message = self.entry_box.get()\n        if message:\n            self.send_message(message)\n            self.display_message(f\"{self.nickname}: {message}\")\n            self.entry_box.delete(0, tk.END)\n\n\nif __name__ == \"__main__\":\n    SERVER_HOST = \"127.0.0.1\"\n    SERVER_PORT = 12345\n    client = ChatClientGUI(SERVER_HOST, SERVER_PORT)\n    client.connect_to_server()\n    client.setup_gui()\n\n\n2. Probar la interfaz gráfica\nAsegúrate de que el servidor está ejecutándose:\npython src/server.py\nInicia el cliente con la nueva interfaz gráfica:\npython src/client.py\nConecta múltiples clientes y verifica que puedan enviar y recibir mensajes. Asegúrate de que la interfaz es funcional.",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/4_parte.html#versionar-los-cambios",
-    "href": "unidades/Extras/4_parte.html#versionar-los-cambios",
-    "title": "Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter",
-    "section": "3. Versionar los cambios",
-    "text": "3. Versionar los cambios\nAgrega y confirma los archivos modificados:\ngit add .\ngit commit -m \"Fase 4: Implementación de la interfaz gráfica del cliente con Tkinter\"\nSube los cambios al repositorio remoto:\ngit push origin main",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/4_parte.html#pruebas",
-    "href": "unidades/Extras/4_parte.html#pruebas",
-    "title": "Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter",
-    "section": "Pruebas",
-    "text": "Pruebas\n\nVerifica que el cliente gráfico se conecta correctamente al servidor.\nConfirma que los mensajes enviados y recibidos se muestran correctamente en la interfaz.\nRealiza pruebas con múltiples clientes para asegurar la funcionalidad del sistema completo.",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/4_parte.html#conclusiones",
-    "href": "unidades/Extras/4_parte.html#conclusiones",
-    "title": "Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter",
-    "section": "Conclusiones",
-    "text": "Conclusiones\nEn esta fase, se extendió el cliente del chat incorporando una interfaz gráfica interactiva. Esto proporciona una experiencia de usuario más amigable y permite manejar tareas de comunicación en segundo plano sin afectar la responsividad de la interfaz.",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/5_parte.html#objetivo",
-    "href": "unidades/Extras/5_parte.html#objetivo",
-    "title": "Fase 5: Implementación de Pruebas e Integración Continua",
-    "section": "Objetivo",
-    "text": "Objetivo\nAgregar pruebas unitarias y de integración para asegurar la funcionalidad del sistema. Configurar un flujo de integración continua (CI) usando GitHub Actions para garantizar que los cambios en el código no rompan la aplicación.",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Fase 5: Implementación de Pruebas e Integración Continua</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/5_parte.html#conceptos-clave",
-    "href": "unidades/Extras/5_parte.html#conceptos-clave",
-    "title": "Fase 5: Implementación de Pruebas e Integración Continua",
-    "section": "Conceptos Clave",
-    "text": "Conceptos Clave\n\nPruebas Unitarias: Validan funcionalidades específicas de componentes individuales del sistema.\nPruebas de Integración: Aseguran que los componentes interactúen correctamente entre sí.\nIntegración Continua (CI): Automatiza la ejecución de pruebas en cada cambio del código mediante herramientas como GitHub Actions.",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Fase 5: Implementación de Pruebas e Integración Continua</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/5_parte.html#instrucciones",
-    "href": "unidades/Extras/5_parte.html#instrucciones",
-    "title": "Fase 5: Implementación de Pruebas e Integración Continua",
-    "section": "Instrucciones",
-    "text": "Instrucciones\n\n1. Configurar un entorno de pruebas\nAsegúrate de que tienes las siguientes dependencias instaladas:\npip install pytest pytest-mock\nCrea un archivo requirements.txt para incluir las dependencias de desarrollo:\npytest\npytest-mock\nAgrega este archivo al control de versiones:\ngit add requirements-dev.txt\ngit commit -m \"Añadido archivo requirements-dev.txt para dependencias de desarrollo\"\n\n\n2. Escribir pruebas unitarias para el servidor\nCrea un directorio tests/ y un archivo tests/test_server.py para las pruebas del servidor:\n\"\"\"\nPruebas unitarias para server.py\n\"\"\"\n\nimport socket\nimport threading\nimport pytest\nfrom src.server import ChatServer\n\n\n@pytest.fixture\ndef server():\n    \"\"\"\n    Configura una instancia del servidor para pruebas.\n    \"\"\"\n    chat_server = ChatServer(\"127.0.0.1\", 12345)\n    threading.Thread(target=chat_server.start, daemon=True).start()\n    return chat_server\n\n\ndef test_server_initialization(server):\n    \"\"\"\n    Prueba que el servidor se inicializa correctamente.\n    \"\"\"\n    assert server.host == \"127.0.0.1\"\n    assert server.port == 12345\n    assert server.clients == []\n\n\ndef test_client_connection(server):\n    \"\"\"\n    Prueba que un cliente puede conectarse al servidor.\n    \"\"\"\n    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    client_socket.connect((server.host, server.port))\n    assert client_socket\n    client_socket.close()\n\n\n3. Escribir pruebas para el cliente\nCrea el archivo tests/test_client.py:\n\"\"\"\nPruebas unitarias para client.py\n\"\"\"\n\nimport pytest\nfrom src.client import ChatClientGUI\n\n\n@pytest.fixture\ndef client():\n    \"\"\"\n    Configura un cliente de chat para pruebas.\n    \"\"\"\n    return ChatClientGUI(\"127.0.0.1\", 12345)\n\n\ndef test_client_initialization(client):\n    \"\"\"\n    Prueba que el cliente se inicializa correctamente.\n    \"\"\"\n    assert client.host == \"127.0.0.1\"\n    assert client.port == 12345\n    assert client.nickname == \"\"\n\n\n4. Ejecutar las pruebas\nEjecuta las pruebas localmente para verificar que todo funcione correctamente:\npytest tests/\nSi todo está correcto, verás un resultado como este:\n========================= test session starts =========================\ncollected 3 items\n\ntests/test_client.py ..                                           [ 66%]\ntests/test_server.py ..                                           [100%]\n\n========================== 3 passed in 0.10s =========================\n\n\n5. Configurar integración continua con GitHub Actions\nCrea el archivo .github/workflows/ci.yml con la siguiente configuración:\nname: CI Pipeline\n\non:\n  push:\n    branches:\n      - main\n  pull_request:\n    branches:\n      - main\n\njobs:\n  test:\n    runs-on: ubuntu-latest\n\n    steps:\n    - name: Checkout code\n      uses: actions/checkout@v3\n\n    - name: Set up Python\n      uses: actions/setup-python@v4\n      with:\n        python-version: \"3.12\"\n\n    - name: Install dependencies\n      run: |\n        python -m venv venv\n        . venv/bin/activate\n        pip install -r requirements.txt\n        pip install -r requirements-dev.txt\n\n    - name: Run tests\n      run: |\n        . venv/bin/activate\n        pytest tests/\nSube los cambios al repositorio:\ngit add .github/workflows/ci.yml\ngit commit -m \"Añadido pipeline de CI con GitHub Actions\"\ngit push origin main\nVerifica en GitHub que las pruebas se ejecuten automáticamente al hacer un push o pull request.",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Fase 5: Implementación de Pruebas e Integración Continua</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/5_parte.html#pruebas-y-validación",
-    "href": "unidades/Extras/5_parte.html#pruebas-y-validación",
-    "title": "Fase 5: Implementación de Pruebas e Integración Continua",
-    "section": "Pruebas y Validación",
-    "text": "Pruebas y Validación\n\nRealiza cambios controlados en el código y verifica que GitHub Actions detecta errores.\nAsegúrate de que las pruebas pasen tanto localmente como en el flujo de CI.",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Fase 5: Implementación de Pruebas e Integración Continua</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/5_parte.html#conclusiones",
-    "href": "unidades/Extras/5_parte.html#conclusiones",
-    "title": "Fase 5: Implementación de Pruebas e Integración Continua",
-    "section": "Conclusiones",
-    "text": "Conclusiones\nLa incorporación de pruebas unitarias e integración continua asegura la calidad del software y evita errores al integrar cambios. Este flujo refleja prácticas profesionales utilizadas en la industria.",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Fase 5: Implementación de Pruebas e Integración Continua</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/6_parte.html#objetivo",
-    "href": "unidades/Extras/6_parte.html#objetivo",
-    "title": "Fase 6: Documentación del Laboratorio y Reflexión Final",
-    "section": "Objetivo",
-    "text": "Objetivo\nCrear una documentación completa para el laboratorio, detallando cada paso realizado en las fases anteriores, junto con preguntas de reflexión para evaluar el aprendizaje de los estudiantes.\n\nSección 1: Introducción al Laboratorio\n\nTítulo del Laboratorio\nDesarrollo de un Chat Local Cliente-Servidor con Pruebas e Integración Continua.\n\nDescripción\n\nEn este laboratorio, los estudiantes desarrollarán una aplicación de chat local utilizando Python. El proyecto sigue un flujo profesional, incluyendo análisis de requisitos, diseño, codificación, pruebas, y despliegue de un pipeline de integración continua con GitHub Actions.\n\nObjetivo General\n\nComprender y aplicar un flujo profesional de desarrollo de software para construir aplicaciones cliente-servidor con Python.\n\nSección 2: Instrucciones Prácticas\n\nParte 1: Configuración Inicial\n\nCrear el repositorio:\n\nUsa GitHub para crear un nuevo repositorio.\nClona el repositorio en tu máquina local:\n\n\ngit clone &lt;URL del repositorio&gt;\n\nEstructura del proyecto:\n\nCrea los siguientes directorios y archivos iniciales:\nchat-project/\n├── .github/\n│   └── workflows/\n│       └── ci.yml\n├── src/\n│   ├── client.py\n│   ├── server.py\n├── tests/\n│   ├── test_client.py\n│   ├── test_server.py\n├── requirements.txt\n├── requirements-dev.txt\n├── .gitignore\n└── README.md\n\nEntorno virtual:\n\nCrea un entorno virtual y activa:\n\n\npython -m venv venv\nsource venv/bin/activate  # Linux/Mac\nvenv\\Scripts\\activate  # Windows\n\nInstala dependencias:\n\nAñade las librerías necesarias a requirements.txt y requirements-dev.txt, e instálalas:\n\n\npip install -r requirements.txt\npip install -r requirements-dev.txt",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/6_parte.html#implementa-las-clases-base",
-    "href": "unidades/Extras/6_parte.html#implementa-las-clases-base",
-    "title": "Fase 6: Documentación del Laboratorio y Reflexión Final",
-    "section": "Implementa las clases base:",
-    "text": "Implementa las clases base:\n\nDefine las clases ChatServer y ChatClientGUI con métodos iniciales vacíos (pass).\nAñade funcionalidades gradualmente, como se explicó en fases anteriores.",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/6_parte.html#pruebas",
-    "href": "unidades/Extras/6_parte.html#pruebas",
-    "title": "Fase 6: Documentación del Laboratorio y Reflexión Final",
-    "section": "Pruebas:",
-    "text": "Pruebas:\n\nImplementa pruebas unitarias y de integración en la carpeta tests/.\n\n\nEjecuta las pruebas:\npytest tests/",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/6_parte.html#integración-continua",
-    "href": "unidades/Extras/6_parte.html#integración-continua",
-    "title": "Fase 6: Documentación del Laboratorio y Reflexión Final",
-    "section": "Integración continua:",
-    "text": "Integración continua:\n\nConfigura el pipeline de CI en GitHub Actions para validar las pruebas automáticamente.",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/6_parte.html#interfaz-gráfica-opcional",
-    "href": "unidades/Extras/6_parte.html#interfaz-gráfica-opcional",
-    "title": "Fase 6: Documentación del Laboratorio y Reflexión Final",
-    "section": "Interfaz gráfica (opcional):",
-    "text": "Interfaz gráfica (opcional):\n\nImplementa la GUI en client.py usando Tkinter.\n\nSección 3: Preguntas de Reflexión",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/6_parte.html#diseño-y-arquitectura",
-    "href": "unidades/Extras/6_parte.html#diseño-y-arquitectura",
-    "title": "Fase 6: Documentación del Laboratorio y Reflexión Final",
-    "section": "Diseño y Arquitectura:",
-    "text": "Diseño y Arquitectura:\n\n¿Qué ventajas tiene dividir el proyecto en módulos (src/ y tests/)?\n¿Cómo mejora el diseño la inclusión de docstrings en las clases y funciones?",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/6_parte.html#pruebas-1",
-    "href": "unidades/Extras/6_parte.html#pruebas-1",
-    "title": "Fase 6: Documentación del Laboratorio y Reflexión Final",
-    "section": "Pruebas:",
-    "text": "Pruebas:\n\n¿Por qué es importante incluir pruebas unitarias e integración en proyectos colaborativos?\n¿Qué aprendiste al ejecutar y depurar tus pruebas?",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/6_parte.html#integración-continua-1",
-    "href": "unidades/Extras/6_parte.html#integración-continua-1",
-    "title": "Fase 6: Documentación del Laboratorio y Reflexión Final",
-    "section": "Integración Continua:",
-    "text": "Integración Continua:\n\n¿Cómo asegura la CI la calidad del código en un proyecto con múltiples desarrolladores?\n¿Qué beneficios aporta GitHub Actions en comparación con ejecutar pruebas localmente?",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/6_parte.html#desafíos-técnicos",
-    "href": "unidades/Extras/6_parte.html#desafíos-técnicos",
-    "title": "Fase 6: Documentación del Laboratorio y Reflexión Final",
-    "section": "Desafíos Técnicos:",
-    "text": "Desafíos Técnicos:\n\n¿Qué desafíos enfrentaste al implementar la comunicación entre cliente y servidor?\n¿Cómo los resolviste?\n\nSección 4: Conclusión",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/6_parte.html#resultados-obtenidos",
-    "href": "unidades/Extras/6_parte.html#resultados-obtenidos",
-    "title": "Fase 6: Documentación del Laboratorio y Reflexión Final",
-    "section": "Resultados Obtenidos:",
-    "text": "Resultados Obtenidos:\n\nLos estudiantes construyeron un sistema cliente-servidor funcional con comunicación en tiempo real.\nImplementaron pruebas automatizadas y configuraron CI, simulando un flujo profesional de desarrollo.",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/6_parte.html#lecciones-clave",
-    "href": "unidades/Extras/6_parte.html#lecciones-clave",
-    "title": "Fase 6: Documentación del Laboratorio y Reflexión Final",
-    "section": "Lecciones Clave:",
-    "text": "Lecciones Clave:\n\nLa planificación y estructura del proyecto son esenciales para su éxito.\nLa automatización de pruebas y flujos de trabajo asegura la calidad del software.",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/6_parte.html#próximos-pasos",
-    "href": "unidades/Extras/6_parte.html#próximos-pasos",
-    "title": "Fase 6: Documentación del Laboratorio y Reflexión Final",
-    "section": "Próximos Pasos:",
-    "text": "Próximos Pasos:\n\nImplementar características avanzadas como manejo de usuarios, historial de chat, o cifrado de mensajes.\nExtender el proyecto para que funcione a través de redes externas.",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/6_parte.html#entrega-final",
-    "href": "unidades/Extras/6_parte.html#entrega-final",
-    "title": "Fase 6: Documentación del Laboratorio y Reflexión Final",
-    "section": "Entrega Final",
-    "text": "Entrega Final\n\nRepositorio GitHub:\n\nSube todo el proyecto a un repositorio en GitHub.\nAsegúrate de que el README.md incluya instrucciones claras para ejecutar la aplicación y el flujo de CI.",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Extras/6_parte.html#evidencias",
-    "href": "unidades/Extras/6_parte.html#evidencias",
-    "title": "Fase 6: Documentación del Laboratorio y Reflexión Final",
-    "section": "Evidencias:",
-    "text": "Evidencias:\n\nCapturas de pantalla de las pruebas exitosas.\nURL del repositorio de GitHub.\n\n\n¡Felicidades por completar el laboratorio! 🎉",
-    "crumbs": [
-      "Extras",
-      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
-    ]
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Acerca de mi",
-    "section": "",
-    "text": "¡Hola! Soy Diego Saavedra, un experto en desarrollo avanzado de software e investigación. Mi amplia experiencia abarca diversas tecnologías, incluyendo Python (Django, Flask, Fast API) y JavaScript (Express, Next, React, Nestjs), así como también tengo conocimientos sólidos en bases de datos, arquitecturas de software y liderazgo ágil.\nMi pasión por la innovación, el desarrollo y la educación me ha llevado a destacarme como un profesional versátil e invaluable. Estoy constantemente listo para enfrentar desafíos técnicos y liderar proyectos de vanguardia.\nMi formación académica incluye el ser estudiante de Doctorado centrado en la inteligencia artificial, estoy enfocando mi investigación en la detección de TDA+H y Asperger mediante Visión Artificial a traves de algoritmos de Inteligencia Artificial. Además, poseo una Maestría en Ciencias de la Computación, con un enfoque en el Deep Learning (Convolutional Neural Network) y la Atención.\nCon esta sólida base académica y experiencia profesional, estoy preparado para aportar soluciones innovadoras y liderar equipos hacia el éxito en cualquier proyecto tecnológico que se me presente.\nAdemás, tengo experiencia en el desarrollo móvil utilizando Flutter y en la implementación de soluciones backend utilizando servicios Backend as a Service (BaaS) como Firebase y Supabase.\nEn el ámbito de la educación, he sido docente de programación en institutos y universidades, actualmente soy parte del Departamento de Ciencias de la Computación en la Universidad de las Fuerzas Armadas ESPE, donde he impartido asignaturas de desarrollo de Software Web con tecnologías como JavaScript, Java y C# asi como sus respectivos frameworks.\nMi experiencia en el desarrollo de software y la investigación me ha permitido adquirir habilidades de liderazgo, trabajo en equipo y comunicación efectiva. Estoy seguro de que mi experiencia y habilidades serán de gran valor para cualquier proyecto tecnológico que se me presente.\nEn este curso aprenderás a desarrollar aplicaciones web con Python y Django, una de las tecnologías más populares y poderosas para el desarrollo de aplicaciones web. A lo largo del curso, aprenderás a crear aplicaciones web desde cero, utilizando Django y Python, y a implementar funcionalidades avanzadas como integración con APIs externas y mucho más.\nTambien veremos tecnologías como Git, Github, Docker, Python, Django, Django Rest Framework, Html5, Css3, JavaScript, Nodejs, Npm y React.\n\n\n¡Estoy emocionado de compartir contigo mi conocimiento y experiencia en el desarrollo de aplicaciones web con Python y Django!"
-  },
-  {
-    "objectID": "license.html",
-    "href": "license.html",
-    "title": "Licencia",
-    "section": "",
-    "text": "Uso Permitido\nEste curso y su contenido están protegidos por derechos de autor y son propiedad de [Nombre de la Compañía]. El contenido de este curso se proporciona con el propósito de educación y aprendizaje.\nPuedes utilizar el contenido de este curso con fines educativos y personales. Puedes modificar los ejemplos y el código proporcionado para tus propias necesidades de aprendizaje."
-  },
-  {
-    "objectID": "license.html#restricciones",
-    "href": "license.html#restricciones",
-    "title": "Licencia",
-    "section": "Restricciones",
-    "text": "Restricciones\nNo tienes permitido redistribuir, vender o utilizar el contenido de este curso para fines comerciales sin el permiso explícito de [Nombre de la Compañía]. Además, no tienes permitido copiar o duplicar el contenido del curso y presentarlo como propio."
-  },
-  {
-    "objectID": "license.html#atribución",
-    "href": "license.html#atribución",
-    "title": "Licencia",
-    "section": "Atribución",
-    "text": "Atribución\nSi compartes los ejemplos, los fragmentos de código o el contenido de este curso en línea, te pedimos que proporciones la atribución adecuada a [Nombre de la Compañía]."
-  },
-  {
-    "objectID": "license.html#cambios-en-la-licencia",
-    "href": "license.html#cambios-en-la-licencia",
-    "title": "Licencia",
-    "section": "Cambios en la Licencia",
-    "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
-  },
-  {
-    "objectID": "unidades/Proyectos/2_tienda_virtual.html",
-    "href": "unidades/Proyectos/2_tienda_virtual.html",
-    "title": "Fase 2: Configuración de Red y Contenedor para la Base de Datos",
-    "section": "",
-    "text": "Paso 1: Crear la Red Manualmente\nEn esta fase, configuraremos lo siguiente:\nDocker necesita una red para permitir la comunicación entre el backend y la base de datos. Esta red será creada de forma manual antes de levantar los contenedores.\nBusca backend_network en la lista de redes.",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Fase 2: Configuración de Red y Contenedor para la Base de Datos</span>"
-    ]
-  },
-  {
     "objectID": "unidades/Proyectos/2_tienda_virtual.html#paso-1-crear-la-red-manualmente",
     "href": "unidades/Proyectos/2_tienda_virtual.html#paso-1-crear-la-red-manualmente",
     "title": "Fase 2: Configuración de Red y Contenedor para la Base de Datos",
@@ -2782,17 +2186,6 @@
     "crumbs": [
       "Proyectos",
       "<span class='chapter-number'>46</span>  <span class='chapter-title'>Fase 2: Configuración de Red y Contenedor para la Base de Datos</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Proyectos/3_tienda_virtual.html",
-    "href": "unidades/Proyectos/3_tienda_virtual.html",
-    "title": "Fase 3: Configuración del Contenedor para el Backend",
-    "section": "",
-    "text": "Paso 1: Estructura de Archivos\nEn esta fase, configuraremos el backend utilizando Django. Lo ejecutaremos dentro de un contenedor Docker y lo conectaremos con la base de datos PostgreSQL creada en la fase anterior. Aseguraremos que ambos contenedores puedan comunicarse mediante la red backend_network.\nCrea la siguiente estructura en tu proyecto:",
-    "crumbs": [
-      "Proyectos",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 3: Configuración del Contenedor para el Backend</span>"
     ]
   },
   {
@@ -2893,5 +2286,590 @@
       "Proyectos",
       "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 3: Configuración del Contenedor para el Backend</span>"
     ]
+  },
+  {
+    "objectID": "unidades/Extras/0_parte.html#introducción",
+    "href": "unidades/Extras/0_parte.html#introducción",
+    "title": "Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor",
+    "section": "Introducción",
+    "text": "Introducción\nEn este laboratorio práctico, los estudiantes aprenderán a desarrollar un sistema de chat cliente-servidor utilizando Python. Este laboratorio está diseñado para simular un flujo de trabajo profesional, combinando técnicas modernas de desarrollo como pruebas automatizadas, integración continua y control de versiones con Git y GitHub.\nEl laboratorio está dividido en varias fases que permiten a los estudiantes comprender y aplicar los fundamentos del desarrollo de aplicaciones de red, utilizando un enfoque incremental para construir funcionalidad de manera ordenada.",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/0_parte.html#lo-que-vamos-a-desarrollar",
+    "href": "unidades/Extras/0_parte.html#lo-que-vamos-a-desarrollar",
+    "title": "Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor",
+    "section": "Lo que Vamos a Desarrollar",
+    "text": "Lo que Vamos a Desarrollar\n\nAnálisis de Requisitos:\n\nIdentificar las funcionalidades clave del sistema, como enviar y recibir mensajes en tiempo real.\n\n\n\nHistorias de Usuario:\n\nDesarrollar casos prácticos para simular cómo interactuarán los usuarios con el sistema.\n\n\n\nDiseño y Arquitectura:\n\nCrear la estructura del proyecto con carpetas organizadas y archivos bien definidos.\nImplementar un diseño modular que facilite la colaboración y el mantenimiento.\n\n\n\nCodificación:\n\nConstruir el servidor y cliente del sistema en Python utilizando socket.\nDesarrollar pruebas unitarias e integración con pytest.\n\n\n\nIntegración Continua:\n\nConfigurar GitHub Actions para ejecutar pruebas automáticamente con cada cambio en el código.\n\n\n\nExtensión con GUI:\n\nImplementar una interfaz gráfica para el cliente utilizando Tkinter.",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/0_parte.html#objetivos-específicos",
+    "href": "unidades/Extras/0_parte.html#objetivos-específicos",
+    "title": "Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor",
+    "section": "Objetivos Específicos",
+    "text": "Objetivos Específicos\n\nEntender el Proceso de Desarrollo: Aplicar principios de diseño modular y buenas prácticas de programación.\nDesarrollar Habilidades en Python: Usar bibliotecas estándar como socket y tkinter.\nAprender Herramientas Profesionales: Configurar entornos virtuales, pruebas automatizadas e integración continua.\nSimular el Trabajo en Equipo: Utilizar Git y GitHub para la gestión de código y colaboración.",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/0_parte.html#materiales-y-herramientas-necesarias",
+    "href": "unidades/Extras/0_parte.html#materiales-y-herramientas-necesarias",
+    "title": "Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor",
+    "section": "Materiales y Herramientas Necesarias",
+    "text": "Materiales y Herramientas Necesarias\n\nSoftware:\n\nPython 3.10 o superior.\nGit y una cuenta de GitHub.\nEditor de código (Visual Studio Code, PyCharm, o similar).\nLibrerías y Dependencias:\npytest para pruebas.\ntkinter para la interfaz gráfica.\n\n\n\nConocimientos Previos Requeridos:\n\nConceptos básicos de Python.\nFamiliaridad con Git y GitHub.\nConocimientos básicos de programación orientada a objetos (POO).\n\n\n\nEstructura del Laboratorio\n\nFase 1: Preparación del Entorno y Repositorio.\n\nConfiguración inicial del proyecto con Git y creación del entorno virtual.\n\n\n\nFase 2: Creación de Clases Base.\n\nImplementar las clases del cliente y servidor con métodos vacíos.\n\n\n\nFase 3: Comunicación Cliente-Servidor.\n\nDesarrollar y probar la funcionalidad de envío y recepción de mensajes.\n\n\n\nFase 4: Pruebas Automatizadas.\n\nCrear pruebas unitarias e integración para garantizar la funcionalidad.\n\n\n\nFase 5: Configuración de CI/CD.\n\nConfigurar GitHub Actions para pruebas automatizadas.\n\n\n\nFase 6: Implementación de Interfaz Gráfica.\n\nExtender el cliente para incluir una GUI con Tkinter.\n\n\n\nFase 7: Documentación y Reflexión.\n\nElaborar conclusiones y responder preguntas de reflexión.",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/0_parte.html#resultados-esperados",
+    "href": "unidades/Extras/0_parte.html#resultados-esperados",
+    "title": "Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor",
+    "section": "Resultados Esperados",
+    "text": "Resultados Esperados\nAl finalizar este laboratorio, los estudiantes tendrán:\n\nUn sistema de chat cliente-servidor funcional.\nUn repositorio GitHub estructurado con código bien documentado.\nPruebas automatizadas y un pipeline de CI funcionando correctamente.\nExperiencia en herramientas y técnicas utilizadas en entornos profesionales.\n\n\n¡Comencemos con el desarrollo! 🎉",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/1_parte.html#objetivo",
+    "href": "unidades/Extras/1_parte.html#objetivo",
+    "title": "Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto",
+    "section": "Objetivo",
+    "text": "Objetivo\nQue los estudiantes comprendan el flujo de desarrollo de una aplicación profesional, desde la planificación hasta la implementación, utilizando herramientas de control de versiones, entornos virtuales y mejores prácticas en Python.",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/1_parte.html#conceptos-clave",
+    "href": "unidades/Extras/1_parte.html#conceptos-clave",
+    "title": "Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto",
+    "section": "Conceptos Clave",
+    "text": "Conceptos Clave\n\nProgramación en red: Uso de sockets para la comunicación cliente-servidor.\nDiseño modular: Organización del código en clases y métodos.\nEntornos virtuales: Aislamiento de dependencias con venv.\nControl de versiones: Uso de Git y GitHub.\nInterfaces gráficas: Uso de tkinter para desarrollar la GUI del cliente.\nHistorias de usuario: Identificación de requerimientos clave mediante ejemplos prácticos.",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/1_parte.html#historias-de-usuario",
+    "href": "unidades/Extras/1_parte.html#historias-de-usuario",
+    "title": "Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto",
+    "section": "Historias de Usuario",
+    "text": "Historias de Usuario\n\nHU1: Como usuario, quiero conectarme al servidor con un apodo único, para identificarme en el chat.\nHU2: Como usuario, quiero enviar mensajes al chat y que otros los reciban, para comunicarme con los demás.\nHU3: Como usuario, quiero recibir mensajes enviados por otros usuarios en tiempo real, para estar informado de las conversaciones.\nHU4: Como administrador, quiero registrar y gestionar conexiones de clientes, para mantener el control del servidor.\n\n\nInstrucciones: Fase 1\n\nCrear un directorio de proyecto\n\nmkdir chat_app\ncd chat_app\n\n\nInicializar un repositorio Git\ngit init\ngit branch -M main\n\nConfigurar un entorno virtual\n\npython3 -m venv env\nsource env/bin/activate  # En Windows: env\\Scripts\\activate\n\nCrear el archivo .gitignore Contenido sugerido para ignorar archivos innecesarios:\n\nenv/\n__pycache__/\n*.pyc\n*.pyo\nCrear un archivo requirements.txt Inicialmente vacío. Agregaremos dependencias más adelante.\nEstructurar el proyecto\nmkdir src\ntouch src/server.py src/client.py\nmkdir tests\ntouch tests/test_server.py tests/test_client.py",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/1_parte.html#planificar-la-arquitectura-inicial",
+    "href": "unidades/Extras/1_parte.html#planificar-la-arquitectura-inicial",
+    "title": "Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto",
+    "section": "Planificar la arquitectura inicial",
+    "text": "Planificar la arquitectura inicial\n\nEl servidor manejará conexiones y permitirá la comunicación entre clientes.\nEl cliente tendrá una interfaz de línea de comandos (CLI) en esta fase inicial.",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/1_parte.html#codificar-clases-base-en-server.py",
+    "href": "unidades/Extras/1_parte.html#codificar-clases-base-en-server.py",
+    "title": "Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto",
+    "section": "Codificar clases base En server.py:",
+    "text": "Codificar clases base En server.py:\n\"\"\"\nMódulo: server.py\nDescripción: Define el servidor del sistema de chat local.\n\"\"\"\nimport socket\nimport threading\n\nclass ChatServer:\n    def __init__(self, host, port):\n        \"\"\"Inicializa el servidor con la dirección y puerto especificados.\"\"\"\n        pass\n\n    def start_server(self):\n        \"\"\"Inicia el servidor y espera conexiones entrantes.\"\"\"\n        pass\n\n    def handle_client(self, client_socket, client_address):\n        \"\"\"Maneja la comunicación con un cliente específico.\"\"\"\n        pass\n\n    def broadcast(self, message, sender_socket):\n        \"\"\"Envía un mensaje a todos los clientes excepto al remitente.\"\"\"\n        pass",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/1_parte.html#en-client.py",
+    "href": "unidades/Extras/1_parte.html#en-client.py",
+    "title": "Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto",
+    "section": "En client.py:",
+    "text": "En client.py:\n\"\"\"\nMódulo: client.py\nDescripción: Define el cliente del sistema de chat local.\n\"\"\"\nimport socket\n\nclass ChatClient:\n    def __init__(self, host, port):\n        \"\"\"Inicializa el cliente con la dirección del servidor y el puerto.\"\"\"\n        pass\n\n    def connect_to_server(self):\n        \"\"\"Establece conexión con el servidor.\"\"\"\n        pass\n\n    def send_message(self, message):\n        \"\"\"Envía un mensaje al servidor.\"\"\"\n        pass\n\n    def receive_messages(self):\n        \"\"\"Recibe mensajes del servidor.\"\"\"\n        pass",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/1_parte.html#agregar-y-confirmar-cambios-en-git",
+    "href": "unidades/Extras/1_parte.html#agregar-y-confirmar-cambios-en-git",
+    "title": "Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto",
+    "section": "Agregar y confirmar cambios en Git",
+    "text": "Agregar y confirmar cambios en Git\ngit add .\ngit commit -m \"Fase 1: Configuración inicial y clases base con métodos vacíos\"",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/1_parte.html#pruebas",
+    "href": "unidades/Extras/1_parte.html#pruebas",
+    "title": "Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto",
+    "section": "Pruebas",
+    "text": "Pruebas\n\nEn esta fase, no se ejecuta ningún código, pero verifica que los archivos y directorios existen.\nAsegúrate de que el entorno virtual esté activo antes de cualquier ejecución futura.",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/2_parte.html",
+    "href": "unidades/Extras/2_parte.html",
+    "title": "Fase 2: Implementación del Servidor CLI",
+    "section": "",
+    "text": "Objetivo\nImplementar la lógica básica del servidor para gestionar conexiones y comunicaciones entre clientes. Este servidor será accesible a través de la línea de comandos.",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/2_parte.html#conceptos-clave",
+    "href": "unidades/Extras/2_parte.html#conceptos-clave",
+    "title": "Fase 2: Implementación del Servidor CLI",
+    "section": "Conceptos Clave",
+    "text": "Conceptos Clave\n\nSockets TCP: Configuración de sockets para aceptar conexiones y transmitir datos.\nHilos (Threads): Manejo concurrente de clientes usando la biblioteca threading.\nEstrategias de Broadcasting: Comunicación eficiente con múltiples clientes.",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/2_parte.html#instrucciones",
+    "href": "unidades/Extras/2_parte.html#instrucciones",
+    "title": "Fase 2: Implementación del Servidor CLI",
+    "section": "Instrucciones",
+    "text": "Instrucciones\n\n1. Actualizar el código del servidor\nAbrir src/server.py y completar las clases con la lógica básica:\n\"\"\"\nMódulo: server.py\nDescripción: Define el servidor del sistema de chat local.\n\"\"\"\n\nimport socket\nimport threading\n\nclass ChatServer:\n    def __init__(self, host, port):\n        \"\"\"\n        Inicializa el servidor con la dirección y puerto especificados.\n\n        :param host: Dirección IP del servidor.\n        :param port: Puerto del servidor.\n        \"\"\"\n        self.host = host\n        self.port = port\n        self.server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n        self.clients = {}\n\n    def start_server(self):\n        \"\"\"\n        Inicia el servidor, permitiendo conexiones entrantes de clientes.\n        \"\"\"\n        self.server_socket.bind((self.host, self.port))\n        self.server_socket.listen()\n        print(f\"Servidor escuchando en {self.host}:{self.port}\")\n\n        while True:\n            client_socket, client_address = self.server_socket.accept()\n            print(f\"Conexión aceptada de {client_address}\")\n            threading.Thread(\n                target=self.handle_client, args=(client_socket, client_address)\n            ).start()\n\n    def handle_client(self, client_socket, client_address):\n        \"\"\"\n        Maneja la interacción con un cliente específico.\n\n        :param client_socket: Socket del cliente.\n        :param client_address: Dirección del cliente.\n        \"\"\"\n        nickname = client_socket.recv(1024).decode(\"utf-8\")\n        self.clients[client_socket] = nickname\n        print(f\"{nickname} ({client_address}) se ha conectado\")\n\n        self.broadcast(f\"{nickname} se ha unido al chat\", client_socket)\n\n        while True:\n            try:\n                message = client_socket.recv(1024).decode(\"utf-8\")\n                if not message:\n                    break\n                print(f\"Mensaje de {nickname}: {message}\")\n                self.broadcast(f\"{nickname}: {message}\", client_socket)\n            except Exception as e:\n                print(f\"Error en cliente {nickname}: {e}\")\n                break\n\n        print(f\"{nickname} ({client_address}) se ha desconectado\")\n        self.broadcast(f\"{nickname} se ha desconectado\", client_socket)\n        client_socket.close()\n        del self.clients[client_socket]\n\n    def broadcast(self, message, sender_socket):\n        \"\"\"\n        Envia un mensaje a todos los clientes conectados excepto al remitente.\n\n        :param message: Mensaje a transmitir.\n        :param sender_socket: Socket del remitente.\n        \"\"\"\n        for client_socket in self.clients.keys():\n            if client_socket != sender_socket:\n                try:\n                    client_socket.sendall(message.encode(\"utf-8\"))\n                except Exception as e:\n                    print(f\"Error al enviar mensaje: {e}\")\n\n\nif __name__ == \"__main__\":\n    SERVER_HOST = \"127.0.0.1\"\n    SERVER_PORT = 12345\n    server = ChatServer(SERVER_HOST, SERVER_PORT)\n    server.start_server()",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/2_parte.html#probar-el-servidor",
+    "href": "unidades/Extras/2_parte.html#probar-el-servidor",
+    "title": "Fase 2: Implementación del Servidor CLI",
+    "section": "2. Probar el servidor",
+    "text": "2. Probar el servidor\nAsegúrate de que el entorno virtual esté activo:\nsource venv/bin/activate  # En Windows: venv\\Scripts\\activate\n\nEjecuta el servidor:\npython src/server.py\nVerifica que el servidor comienza a escuchar en la dirección configurada.",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/2_parte.html#agregar-pruebas-unitarias-básicas",
+    "href": "unidades/Extras/2_parte.html#agregar-pruebas-unitarias-básicas",
+    "title": "Fase 2: Implementación del Servidor CLI",
+    "section": "3. Agregar pruebas unitarias básicas",
+    "text": "3. Agregar pruebas unitarias básicas\nEdita tests/test_server.py para agregar un caso inicial (simulación simple de conexión):\nimport unittest\nfrom src.server import ChatServer\n\nclass TestChatServer(unittest.TestCase):\n    def setUp(self):\n        self.server = ChatServer(\"127.0.0.1\", 12345)\n\n    def test_server_initialization(self):\n        self.assertEqual(self.server.host, \"127.0.0.1\")\n        self.assertEqual(self.server.port, 12345)\n        self.assertIsInstance(self.server.clients, dict)\n\nif __name__ == \"__main__\":\n    unittest.main()\nEjecuta las pruebas:\npython -m unittest discover -s tests",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/2_parte.html#versionar-los-cambios",
+    "href": "unidades/Extras/2_parte.html#versionar-los-cambios",
+    "title": "Fase 2: Implementación del Servidor CLI",
+    "section": "4. Versionar los cambios",
+    "text": "4. Versionar los cambios\nAgrega y confirma los archivos modificados:\ngit add .\ngit commit -m \"Fase 2: Implementación del servidor básico\"\n(Opcional) Crea un repositorio remoto en GitHub:\ngit remote add origin &lt;URL_DEL_REPOSITORIO&gt;\ngit push -u origin main",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/2_parte.html#pruebas",
+    "href": "unidades/Extras/2_parte.html#pruebas",
+    "title": "Fase 2: Implementación del Servidor CLI",
+    "section": "Pruebas",
+    "text": "Pruebas\n\nEjecuta el servidor y asegúrate de que no haya errores.\nEjecuta las pruebas unitarias.",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/2_parte.html#conclusiones",
+    "href": "unidades/Extras/2_parte.html#conclusiones",
+    "title": "Fase 2: Implementación del Servidor CLI",
+    "section": "Conclusiones",
+    "text": "Conclusiones\nEn esta fase, se implementó un servidor funcional que puede aceptar múltiples conexiones de clientes y gestionar sus mensajes de forma concurrente. Los estudiantes ahora comprenden la importancia de los sockets y los hilos para crear aplicaciones escalables.",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/3_parte.html",
+    "href": "unidades/Extras/3_parte.html",
+    "title": "Fase 3: Implementación del Cliente CLI",
+    "section": "",
+    "text": "Objetivo\nCrear la lógica básica del cliente para conectarse al servidor de chat, enviar mensajes y recibir transmisiones, inicialmente usando la línea de comandos (CLI).",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Fase 3: Implementación del Cliente CLI</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/3_parte.html#conceptos-clave",
+    "href": "unidades/Extras/3_parte.html#conceptos-clave",
+    "title": "Fase 3: Implementación del Cliente CLI",
+    "section": "Conceptos Clave",
+    "text": "Conceptos Clave\nSockets TCP Cliente: Uso de sockets para conectar con el servidor. Hilos en el Cliente: Permitir el envío y recepción simultánea de mensajes. Comunicación entre Cliente y Servidor: Manejo de datos y estructuras de mensajes.",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Fase 3: Implementación del Cliente CLI</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/3_parte.html#instrucciones",
+    "href": "unidades/Extras/3_parte.html#instrucciones",
+    "title": "Fase 3: Implementación del Cliente CLI",
+    "section": "Instrucciones",
+    "text": "Instrucciones\n\n1. Crear la estructura inicial del cliente\nEdita src/client.py y completa la clase con las funciones esenciales:\n\"\"\"\nMódulo: client.py\nDescripción: Define el cliente del sistema de chat local.\n\"\"\"\n\nimport socket\nimport threading\n\n\nclass ChatClient:\n    def __init__(self, host, port):\n        \"\"\"\n        Inicializa el cliente con la dirección y puerto del servidor.\n\n        :param host: Dirección IP del servidor.\n        :param port: Puerto del servidor.\n        \"\"\"\n        self.host = host\n        self.port = port\n        self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n        self.running = True\n\n    def connect_to_server(self):\n        \"\"\"\n        Conecta el cliente al servidor especificado.\n        \"\"\"\n        try:\n            self.client_socket.connect((self.host, self.port))\n            print(\"Conectado al servidor\")\n            nickname = input(\"Ingresa tu nickname: \")\n            self.client_socket.sendall(nickname.encode(\"utf-8\"))\n        except Exception as e:\n            print(f\"No se pudo conectar al servidor: {e}\")\n            self.running = False\n\n    def send_message(self):\n        \"\"\"\n        Envía mensajes al servidor de manera continua.\n        \"\"\"\n        while self.running:\n            try:\n                message = input()\n                self.client_socket.sendall(message.encode(\"utf-8\"))\n            except Exception as e:\n                print(f\"Error al enviar mensaje: {e}\")\n                self.running = False\n                break\n\n    def receive_messages(self):\n        \"\"\"\n        Recibe mensajes del servidor de manera continua.\n        \"\"\"\n        while self.running:\n            try:\n                message = self.client_socket.recv(1024).decode(\"utf-8\")\n                if message:\n                    print(message)\n                else:\n                    break\n            except Exception as e:\n                print(f\"Error al recibir mensaje: {e}\")\n                self.running = False\n                break\n\n    def start_client(self):\n        \"\"\"\n        Inicia el cliente, manejando la conexión y las operaciones.\n        \"\"\"\n        self.connect_to_server()\n\n        if self.running:\n            threading.Thread(target=self.receive_messages, daemon=True).start()\n            self.send_message()\n\n\nif __name__ == \"__main__\":\n    SERVER_HOST = \"127.0.0.1\"\n    SERVER_PORT = 12345\n    client = ChatClient(SERVER_HOST, SERVER_PORT)\n    client.start_client()\n\n\n2. Probar el cliente\nAsegúrate de que el servidor está corriendo:\npython src/server.py\nEn una nueva terminal, ejecuta el cliente:\npython src/client.py\nIngresa un nickname y verifica que el cliente se conecte al servidor.\nAbre múltiples terminales y ejecuta el cliente en cada una para probar el sistema.\nEnvía mensajes entre clientes y confirma que el servidor los retransmite correctamente.\n\n\n3. Agregar pruebas unitarias para el cliente\nEdita tests/test_client.py para verificar casos básicos:\nimport unittest\nfrom src.client import ChatClient\n\n\nclass TestChatClient(unittest.TestCase):\n    def setUp(self):\n        self.client = ChatClient(\"127.0.0.1\", 12345)\n\n    def test_client_initialization(self):\n        self.assertEqual(self.client.host, \"127.0.0.1\")\n        self.assertEqual(self.client.port, 12345)\n\n    def test_client_socket_creation(self):\n        self.assertIsNotNone(self.client.client_socket)\n\n\nif __name__ == \"__main__\":\n    unittest.main()\nEjecuta las pruebas:\npython -m unittest discover -s tests\n\n\n4. Versionar los cambios\nAgrega y confirma los archivos modificados:\ngit add .\ngit commit -m \"Fase 3: Implementación del cliente CLI\"\nSube los cambios al repositorio remoto:\ngit push origin main",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Fase 3: Implementación del Cliente CLI</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/3_parte.html#pruebas",
+    "href": "unidades/Extras/3_parte.html#pruebas",
+    "title": "Fase 3: Implementación del Cliente CLI",
+    "section": "Pruebas",
+    "text": "Pruebas\n\nConecta múltiples clientes al servidor y verifica que los mensajes se retransmitan correctamente.\nRealiza pruebas unitarias para garantizar la creación adecuada del cliente.",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Fase 3: Implementación del Cliente CLI</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/4_parte.html#objetivo",
+    "href": "unidades/Extras/4_parte.html#objetivo",
+    "title": "Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter",
+    "section": "Objetivo",
+    "text": "Objetivo\nDesarrollar una interfaz gráfica para el cliente del chat usando la biblioteca Tkinter. La interfaz permitirá una experiencia más amigable para enviar y recibir mensajes en tiempo real.",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/4_parte.html#conceptos-clave",
+    "href": "unidades/Extras/4_parte.html#conceptos-clave",
+    "title": "Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter",
+    "section": "Conceptos Clave",
+    "text": "Conceptos Clave\n\nInterfaz Gráfica (GUI): Uso de Tkinter para construir interfaces gráficas básicas en Python.\nInteractividad**: Implementar botones, entradas de texto y listas para mostrar mensajes.\nHilos en la GUI: Asegurar que la aplicación gráfica sea responsiva mientras maneja múltiples tareas como enviar y recibir mensajes.",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/4_parte.html#instrucciones",
+    "href": "unidades/Extras/4_parte.html#instrucciones",
+    "title": "Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter",
+    "section": "Instrucciones",
+    "text": "Instrucciones\n\n1. Crear la estructura inicial para la GUI\nEdita el archivo src/client.py para añadir funcionalidades gráficas. Comienza reemplazando la clase ChatClient por una versión ampliada con Tkinter:\n\"\"\"\nMódulo: client.py\nDescripción: Cliente de chat con interfaz gráfica (Tkinter).\n\"\"\"\n\nimport socket\nimport tkinter as tk\nimport threading\n\n\nclass ChatClientGUI:\n    def __init__(self, host, port):\n        \"\"\"\n        Inicializa el cliente con la dirección y puerto del servidor, y configura la GUI.\n\n        :param host: Dirección IP del servidor.\n        :param port: Puerto del servidor.\n        \"\"\"\n        self.host = host\n        self.port = port\n        self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n        self.nickname = \"\"\n        self.running = True\n        self.chat_window = None\n        self.message_box = None\n        self.entry_box = None\n\n    def connect_to_server(self):\n        \"\"\"\n        Conecta el cliente al servidor y envía el nickname.\n        \"\"\"\n        try:\n            self.client_socket.connect((self.host, self.port))\n            print(\"Conectado al servidor\")\n        except Exception as e:\n            print(f\"No se pudo conectar al servidor: {e}\")\n\n    def send_message(self, message):\n        \"\"\"\n        Envía un mensaje al servidor.\n        :param message: Mensaje a enviar.\n        \"\"\"\n        try:\n            self.client_socket.sendall(message.encode(\"utf-8\"))\n        except Exception as e:\n            print(f\"Error al enviar mensaje: {e}\")\n\n    def receive_messages(self):\n        \"\"\"\n        Recibe mensajes del servidor y los muestra en la GUI.\n        \"\"\"\n        while self.running:\n            try:\n                message = self.client_socket.recv(1024).decode(\"utf-8\")\n                if message:\n                    self.chat_window.after(0, self.display_message, message)\n                else:\n                    break\n            except Exception as e:\n                print(f\"Error al recibir mensaje: {e}\")\n                break\n\n    def display_message(self, message):\n        \"\"\"\n        Muestra un mensaje en la ventana de chat.\n        :param message: Mensaje recibido.\n        \"\"\"\n        self.message_box.insert(tk.END, message)\n        self.message_box.yview(tk.END)\n\n    def setup_gui(self):\n        \"\"\"\n        Configura la ventana principal de la interfaz gráfica.\n        \"\"\"\n        self.window = tk.Tk()\n        self.window.title(\"Chat Cliente\")\n\n        # Ventana de ingreso de nickname\n        self.nickname_window = tk.Frame(self.window)\n        self.nickname_window.pack(padx=10, pady=10)\n\n        self.nickname_label = tk.Label(self.nickname_window, text=\"Nick:\")\n        self.nickname_label.pack(padx=10, pady=10)\n\n        self.nickname_entry = tk.Entry(self.nickname_window)\n        self.nickname_entry.pack(padx=10, pady=10)\n\n        self.nickname_button = tk.Button(\n            self.nickname_window, text=\"OK\", command=self.set_nickname\n        )\n        self.nickname_button.pack(padx=10, pady=10)\n\n        self.window.mainloop()\n\n    def set_nickname(self):\n        \"\"\"\n        Configura el nickname del usuario y prepara la ventana de chat.\n        \"\"\"\n        self.nickname = self.nickname_entry.get()\n        if self.nickname:\n            self.client_socket.sendall(self.nickname.encode(\"utf-8\"))\n            self.nickname_window.pack_forget()  # Oculta la ventana de nickname\n            self.create_chat_window()  # Muestra la ventana de chat\n\n    def create_chat_window(self):\n        \"\"\"\n        Crea la ventana de chat principal con opciones para enviar y recibir mensajes.\n        \"\"\"\n        self.chat_window = tk.Frame(self.window)\n        self.chat_window.pack(padx=10, pady=10)\n\n        self.message_box = tk.Listbox(self.chat_window, height=15, width=50)\n        self.message_box.pack(padx=10, pady=10)\n\n        self.entry_box = tk.Entry(self.chat_window, width=40)\n        self.entry_box.pack(padx=10, pady=10)\n\n        self.send_button = tk.Button(\n            self.chat_window, text=\"Enviar\", command=self.on_send_message\n        )\n        self.send_button.pack(padx=10, pady=10)\n\n        # Hilo para recibir mensajes\n        threading.Thread(target=self.receive_messages, daemon=True).start()\n\n    def on_send_message(self):\n        \"\"\"\n        Envía un mensaje al servidor y lo muestra en el cliente.\n        \"\"\"\n        message = self.entry_box.get()\n        if message:\n            self.send_message(message)\n            self.display_message(f\"{self.nickname}: {message}\")\n            self.entry_box.delete(0, tk.END)\n\n\nif __name__ == \"__main__\":\n    SERVER_HOST = \"127.0.0.1\"\n    SERVER_PORT = 12345\n    client = ChatClientGUI(SERVER_HOST, SERVER_PORT)\n    client.connect_to_server()\n    client.setup_gui()\n\n\n2. Probar la interfaz gráfica\nAsegúrate de que el servidor está ejecutándose:\npython src/server.py\nInicia el cliente con la nueva interfaz gráfica:\npython src/client.py\nConecta múltiples clientes y verifica que puedan enviar y recibir mensajes. Asegúrate de que la interfaz es funcional.",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/4_parte.html#versionar-los-cambios",
+    "href": "unidades/Extras/4_parte.html#versionar-los-cambios",
+    "title": "Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter",
+    "section": "3. Versionar los cambios",
+    "text": "3. Versionar los cambios\nAgrega y confirma los archivos modificados:\ngit add .\ngit commit -m \"Fase 4: Implementación de la interfaz gráfica del cliente con Tkinter\"\nSube los cambios al repositorio remoto:\ngit push origin main",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/4_parte.html#pruebas",
+    "href": "unidades/Extras/4_parte.html#pruebas",
+    "title": "Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter",
+    "section": "Pruebas",
+    "text": "Pruebas\n\nVerifica que el cliente gráfico se conecta correctamente al servidor.\nConfirma que los mensajes enviados y recibidos se muestran correctamente en la interfaz.\nRealiza pruebas con múltiples clientes para asegurar la funcionalidad del sistema completo.",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/4_parte.html#conclusiones",
+    "href": "unidades/Extras/4_parte.html#conclusiones",
+    "title": "Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter",
+    "section": "Conclusiones",
+    "text": "Conclusiones\nEn esta fase, se extendió el cliente del chat incorporando una interfaz gráfica interactiva. Esto proporciona una experiencia de usuario más amigable y permite manejar tareas de comunicación en segundo plano sin afectar la responsividad de la interfaz.",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/5_parte.html#objetivo",
+    "href": "unidades/Extras/5_parte.html#objetivo",
+    "title": "Fase 5: Implementación de Pruebas e Integración Continua",
+    "section": "Objetivo",
+    "text": "Objetivo\nAgregar pruebas unitarias y de integración para asegurar la funcionalidad del sistema. Configurar un flujo de integración continua (CI) usando GitHub Actions para garantizar que los cambios en el código no rompan la aplicación.",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>53</span>  <span class='chapter-title'>Fase 5: Implementación de Pruebas e Integración Continua</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/5_parte.html#conceptos-clave",
+    "href": "unidades/Extras/5_parte.html#conceptos-clave",
+    "title": "Fase 5: Implementación de Pruebas e Integración Continua",
+    "section": "Conceptos Clave",
+    "text": "Conceptos Clave\n\nPruebas Unitarias: Validan funcionalidades específicas de componentes individuales del sistema.\nPruebas de Integración: Aseguran que los componentes interactúen correctamente entre sí.\nIntegración Continua (CI): Automatiza la ejecución de pruebas en cada cambio del código mediante herramientas como GitHub Actions.",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>53</span>  <span class='chapter-title'>Fase 5: Implementación de Pruebas e Integración Continua</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/5_parte.html#instrucciones",
+    "href": "unidades/Extras/5_parte.html#instrucciones",
+    "title": "Fase 5: Implementación de Pruebas e Integración Continua",
+    "section": "Instrucciones",
+    "text": "Instrucciones\n\n1. Configurar un entorno de pruebas\nAsegúrate de que tienes las siguientes dependencias instaladas:\npip install pytest pytest-mock\nCrea un archivo requirements.txt para incluir las dependencias de desarrollo:\npytest\npytest-mock\nAgrega este archivo al control de versiones:\ngit add requirements-dev.txt\ngit commit -m \"Añadido archivo requirements-dev.txt para dependencias de desarrollo\"\n\n\n2. Escribir pruebas unitarias para el servidor\nCrea un directorio tests/ y un archivo tests/test_server.py para las pruebas del servidor:\n\"\"\"\nPruebas unitarias para server.py\n\"\"\"\n\nimport socket\nimport threading\nimport pytest\nfrom src.server import ChatServer\n\n\n@pytest.fixture\ndef server():\n    \"\"\"\n    Configura una instancia del servidor para pruebas.\n    \"\"\"\n    chat_server = ChatServer(\"127.0.0.1\", 12345)\n    threading.Thread(target=chat_server.start, daemon=True).start()\n    return chat_server\n\n\ndef test_server_initialization(server):\n    \"\"\"\n    Prueba que el servidor se inicializa correctamente.\n    \"\"\"\n    assert server.host == \"127.0.0.1\"\n    assert server.port == 12345\n    assert server.clients == []\n\n\ndef test_client_connection(server):\n    \"\"\"\n    Prueba que un cliente puede conectarse al servidor.\n    \"\"\"\n    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    client_socket.connect((server.host, server.port))\n    assert client_socket\n    client_socket.close()\n\n\n3. Escribir pruebas para el cliente\nCrea el archivo tests/test_client.py:\n\"\"\"\nPruebas unitarias para client.py\n\"\"\"\n\nimport pytest\nfrom src.client import ChatClientGUI\n\n\n@pytest.fixture\ndef client():\n    \"\"\"\n    Configura un cliente de chat para pruebas.\n    \"\"\"\n    return ChatClientGUI(\"127.0.0.1\", 12345)\n\n\ndef test_client_initialization(client):\n    \"\"\"\n    Prueba que el cliente se inicializa correctamente.\n    \"\"\"\n    assert client.host == \"127.0.0.1\"\n    assert client.port == 12345\n    assert client.nickname == \"\"\n\n\n4. Ejecutar las pruebas\nEjecuta las pruebas localmente para verificar que todo funcione correctamente:\npytest tests/\nSi todo está correcto, verás un resultado como este:\n========================= test session starts =========================\ncollected 3 items\n\ntests/test_client.py ..                                           [ 66%]\ntests/test_server.py ..                                           [100%]\n\n========================== 3 passed in 0.10s =========================\n\n\n5. Configurar integración continua con GitHub Actions\nCrea el archivo .github/workflows/ci.yml con la siguiente configuración:\nname: CI Pipeline\n\non:\n  push:\n    branches:\n      - main\n  pull_request:\n    branches:\n      - main\n\njobs:\n  test:\n    runs-on: ubuntu-latest\n\n    steps:\n    - name: Checkout code\n      uses: actions/checkout@v3\n\n    - name: Set up Python\n      uses: actions/setup-python@v4\n      with:\n        python-version: \"3.12\"\n\n    - name: Install dependencies\n      run: |\n        python -m venv venv\n        . venv/bin/activate\n        pip install -r requirements.txt\n        pip install -r requirements-dev.txt\n\n    - name: Run tests\n      run: |\n        . venv/bin/activate\n        pytest tests/\nSube los cambios al repositorio:\ngit add .github/workflows/ci.yml\ngit commit -m \"Añadido pipeline de CI con GitHub Actions\"\ngit push origin main\nVerifica en GitHub que las pruebas se ejecuten automáticamente al hacer un push o pull request.",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>53</span>  <span class='chapter-title'>Fase 5: Implementación de Pruebas e Integración Continua</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/5_parte.html#pruebas-y-validación",
+    "href": "unidades/Extras/5_parte.html#pruebas-y-validación",
+    "title": "Fase 5: Implementación de Pruebas e Integración Continua",
+    "section": "Pruebas y Validación",
+    "text": "Pruebas y Validación\n\nRealiza cambios controlados en el código y verifica que GitHub Actions detecta errores.\nAsegúrate de que las pruebas pasen tanto localmente como en el flujo de CI.",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>53</span>  <span class='chapter-title'>Fase 5: Implementación de Pruebas e Integración Continua</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/5_parte.html#conclusiones",
+    "href": "unidades/Extras/5_parte.html#conclusiones",
+    "title": "Fase 5: Implementación de Pruebas e Integración Continua",
+    "section": "Conclusiones",
+    "text": "Conclusiones\nLa incorporación de pruebas unitarias e integración continua asegura la calidad del software y evita errores al integrar cambios. Este flujo refleja prácticas profesionales utilizadas en la industria.",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>53</span>  <span class='chapter-title'>Fase 5: Implementación de Pruebas e Integración Continua</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/6_parte.html#objetivo",
+    "href": "unidades/Extras/6_parte.html#objetivo",
+    "title": "Fase 6: Documentación del Laboratorio y Reflexión Final",
+    "section": "Objetivo",
+    "text": "Objetivo\nCrear una documentación completa para el laboratorio, detallando cada paso realizado en las fases anteriores, junto con preguntas de reflexión para evaluar el aprendizaje de los estudiantes.\n\nSección 1: Introducción al Laboratorio\n\nTítulo del Laboratorio\nDesarrollo de un Chat Local Cliente-Servidor con Pruebas e Integración Continua.\n\nDescripción\n\nEn este laboratorio, los estudiantes desarrollarán una aplicación de chat local utilizando Python. El proyecto sigue un flujo profesional, incluyendo análisis de requisitos, diseño, codificación, pruebas, y despliegue de un pipeline de integración continua con GitHub Actions.\n\nObjetivo General\n\nComprender y aplicar un flujo profesional de desarrollo de software para construir aplicaciones cliente-servidor con Python.\n\nSección 2: Instrucciones Prácticas\n\nParte 1: Configuración Inicial\n\nCrear el repositorio:\n\nUsa GitHub para crear un nuevo repositorio.\nClona el repositorio en tu máquina local:\n\n\ngit clone &lt;URL del repositorio&gt;\n\nEstructura del proyecto:\n\nCrea los siguientes directorios y archivos iniciales:\nchat-project/\n├── .github/\n│   └── workflows/\n│       └── ci.yml\n├── src/\n│   ├── client.py\n│   ├── server.py\n├── tests/\n│   ├── test_client.py\n│   ├── test_server.py\n├── requirements.txt\n├── requirements-dev.txt\n├── .gitignore\n└── README.md\n\nEntorno virtual:\n\nCrea un entorno virtual y activa:\n\n\npython -m venv venv\nsource venv/bin/activate  # Linux/Mac\nvenv\\Scripts\\activate  # Windows\n\nInstala dependencias:\n\nAñade las librerías necesarias a requirements.txt y requirements-dev.txt, e instálalas:\n\n\npip install -r requirements.txt\npip install -r requirements-dev.txt",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/6_parte.html#implementa-las-clases-base",
+    "href": "unidades/Extras/6_parte.html#implementa-las-clases-base",
+    "title": "Fase 6: Documentación del Laboratorio y Reflexión Final",
+    "section": "Implementa las clases base:",
+    "text": "Implementa las clases base:\n\nDefine las clases ChatServer y ChatClientGUI con métodos iniciales vacíos (pass).\nAñade funcionalidades gradualmente, como se explicó en fases anteriores.",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/6_parte.html#pruebas",
+    "href": "unidades/Extras/6_parte.html#pruebas",
+    "title": "Fase 6: Documentación del Laboratorio y Reflexión Final",
+    "section": "Pruebas:",
+    "text": "Pruebas:\n\nImplementa pruebas unitarias y de integración en la carpeta tests/.\n\n\nEjecuta las pruebas:\npytest tests/",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/6_parte.html#integración-continua",
+    "href": "unidades/Extras/6_parte.html#integración-continua",
+    "title": "Fase 6: Documentación del Laboratorio y Reflexión Final",
+    "section": "Integración continua:",
+    "text": "Integración continua:\n\nConfigura el pipeline de CI en GitHub Actions para validar las pruebas automáticamente.",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/6_parte.html#interfaz-gráfica-opcional",
+    "href": "unidades/Extras/6_parte.html#interfaz-gráfica-opcional",
+    "title": "Fase 6: Documentación del Laboratorio y Reflexión Final",
+    "section": "Interfaz gráfica (opcional):",
+    "text": "Interfaz gráfica (opcional):\n\nImplementa la GUI en client.py usando Tkinter.\n\nSección 3: Preguntas de Reflexión",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/6_parte.html#diseño-y-arquitectura",
+    "href": "unidades/Extras/6_parte.html#diseño-y-arquitectura",
+    "title": "Fase 6: Documentación del Laboratorio y Reflexión Final",
+    "section": "Diseño y Arquitectura:",
+    "text": "Diseño y Arquitectura:\n\n¿Qué ventajas tiene dividir el proyecto en módulos (src/ y tests/)?\n¿Cómo mejora el diseño la inclusión de docstrings en las clases y funciones?",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/6_parte.html#pruebas-1",
+    "href": "unidades/Extras/6_parte.html#pruebas-1",
+    "title": "Fase 6: Documentación del Laboratorio y Reflexión Final",
+    "section": "Pruebas:",
+    "text": "Pruebas:\n\n¿Por qué es importante incluir pruebas unitarias e integración en proyectos colaborativos?\n¿Qué aprendiste al ejecutar y depurar tus pruebas?",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/6_parte.html#integración-continua-1",
+    "href": "unidades/Extras/6_parte.html#integración-continua-1",
+    "title": "Fase 6: Documentación del Laboratorio y Reflexión Final",
+    "section": "Integración Continua:",
+    "text": "Integración Continua:\n\n¿Cómo asegura la CI la calidad del código en un proyecto con múltiples desarrolladores?\n¿Qué beneficios aporta GitHub Actions en comparación con ejecutar pruebas localmente?",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/6_parte.html#desafíos-técnicos",
+    "href": "unidades/Extras/6_parte.html#desafíos-técnicos",
+    "title": "Fase 6: Documentación del Laboratorio y Reflexión Final",
+    "section": "Desafíos Técnicos:",
+    "text": "Desafíos Técnicos:\n\n¿Qué desafíos enfrentaste al implementar la comunicación entre cliente y servidor?\n¿Cómo los resolviste?\n\nSección 4: Conclusión",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/6_parte.html#resultados-obtenidos",
+    "href": "unidades/Extras/6_parte.html#resultados-obtenidos",
+    "title": "Fase 6: Documentación del Laboratorio y Reflexión Final",
+    "section": "Resultados Obtenidos:",
+    "text": "Resultados Obtenidos:\n\nLos estudiantes construyeron un sistema cliente-servidor funcional con comunicación en tiempo real.\nImplementaron pruebas automatizadas y configuraron CI, simulando un flujo profesional de desarrollo.",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/6_parte.html#lecciones-clave",
+    "href": "unidades/Extras/6_parte.html#lecciones-clave",
+    "title": "Fase 6: Documentación del Laboratorio y Reflexión Final",
+    "section": "Lecciones Clave:",
+    "text": "Lecciones Clave:\n\nLa planificación y estructura del proyecto son esenciales para su éxito.\nLa automatización de pruebas y flujos de trabajo asegura la calidad del software.",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/6_parte.html#próximos-pasos",
+    "href": "unidades/Extras/6_parte.html#próximos-pasos",
+    "title": "Fase 6: Documentación del Laboratorio y Reflexión Final",
+    "section": "Próximos Pasos:",
+    "text": "Próximos Pasos:\n\nImplementar características avanzadas como manejo de usuarios, historial de chat, o cifrado de mensajes.\nExtender el proyecto para que funcione a través de redes externas.",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/6_parte.html#entrega-final",
+    "href": "unidades/Extras/6_parte.html#entrega-final",
+    "title": "Fase 6: Documentación del Laboratorio y Reflexión Final",
+    "section": "Entrega Final",
+    "text": "Entrega Final\n\nRepositorio GitHub:\n\nSube todo el proyecto a un repositorio en GitHub.\nAsegúrate de que el README.md incluya instrucciones claras para ejecutar la aplicación y el flujo de CI.",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Extras/6_parte.html#evidencias",
+    "href": "unidades/Extras/6_parte.html#evidencias",
+    "title": "Fase 6: Documentación del Laboratorio y Reflexión Final",
+    "section": "Evidencias:",
+    "text": "Evidencias:\n\nCapturas de pantalla de las pruebas exitosas.\nURL del repositorio de GitHub.\n\n\n¡Felicidades por completar el laboratorio! 🎉",
+    "crumbs": [
+      "Extras",
+      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Acerca de mi",
+    "section": "",
+    "text": "¡Hola! Soy Diego Saavedra, un experto en desarrollo avanzado de software e investigación. Mi amplia experiencia abarca diversas tecnologías, incluyendo Python (Django, Flask, Fast API) y JavaScript (Express, Next, React, Nestjs), así como también tengo conocimientos sólidos en bases de datos, arquitecturas de software y liderazgo ágil.\nMi pasión por la innovación, el desarrollo y la educación me ha llevado a destacarme como un profesional versátil e invaluable. Estoy constantemente listo para enfrentar desafíos técnicos y liderar proyectos de vanguardia.\nMi formación académica incluye el ser estudiante de Doctorado centrado en la inteligencia artificial, estoy enfocando mi investigación en la detección de TDA+H y Asperger mediante Visión Artificial a traves de algoritmos de Inteligencia Artificial. Además, poseo una Maestría en Ciencias de la Computación, con un enfoque en el Deep Learning (Convolutional Neural Network) y la Atención.\nCon esta sólida base académica y experiencia profesional, estoy preparado para aportar soluciones innovadoras y liderar equipos hacia el éxito en cualquier proyecto tecnológico que se me presente.\nAdemás, tengo experiencia en el desarrollo móvil utilizando Flutter y en la implementación de soluciones backend utilizando servicios Backend as a Service (BaaS) como Firebase y Supabase.\nEn el ámbito de la educación, he sido docente de programación en institutos y universidades, actualmente soy parte del Departamento de Ciencias de la Computación en la Universidad de las Fuerzas Armadas ESPE, donde he impartido asignaturas de desarrollo de Software Web con tecnologías como JavaScript, Java y C# asi como sus respectivos frameworks.\nMi experiencia en el desarrollo de software y la investigación me ha permitido adquirir habilidades de liderazgo, trabajo en equipo y comunicación efectiva. Estoy seguro de que mi experiencia y habilidades serán de gran valor para cualquier proyecto tecnológico que se me presente.\nEn este curso aprenderás a desarrollar aplicaciones web con Python y Django, una de las tecnologías más populares y poderosas para el desarrollo de aplicaciones web. A lo largo del curso, aprenderás a crear aplicaciones web desde cero, utilizando Django y Python, y a implementar funcionalidades avanzadas como integración con APIs externas y mucho más.\nTambien veremos tecnologías como Git, Github, Docker, Python, Django, Django Rest Framework, Html5, Css3, JavaScript, Nodejs, Npm y React.\n\n\n¡Estoy emocionado de compartir contigo mi conocimiento y experiencia en el desarrollo de aplicaciones web con Python y Django!"
+  },
+  {
+    "objectID": "license.html",
+    "href": "license.html",
+    "title": "Licencia",
+    "section": "",
+    "text": "Uso Permitido\nEste curso y su contenido están protegidos por derechos de autor y son propiedad de [Nombre de la Compañía]. El contenido de este curso se proporciona con el propósito de educación y aprendizaje.\nPuedes utilizar el contenido de este curso con fines educativos y personales. Puedes modificar los ejemplos y el código proporcionado para tus propias necesidades de aprendizaje."
+  },
+  {
+    "objectID": "license.html#restricciones",
+    "href": "license.html#restricciones",
+    "title": "Licencia",
+    "section": "Restricciones",
+    "text": "Restricciones\nNo tienes permitido redistribuir, vender o utilizar el contenido de este curso para fines comerciales sin el permiso explícito de [Nombre de la Compañía]. Además, no tienes permitido copiar o duplicar el contenido del curso y presentarlo como propio."
+  },
+  {
+    "objectID": "license.html#atribución",
+    "href": "license.html#atribución",
+    "title": "Licencia",
+    "section": "Atribución",
+    "text": "Atribución\nSi compartes los ejemplos, los fragmentos de código o el contenido de este curso en línea, te pedimos que proporciones la atribución adecuada a [Nombre de la Compañía]."
+  },
+  {
+    "objectID": "license.html#cambios-en-la-licencia",
+    "href": "license.html#cambios-en-la-licencia",
+    "title": "Licencia",
+    "section": "Cambios en la Licencia",
+    "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
   }
 ]
