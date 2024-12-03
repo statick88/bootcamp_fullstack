@@ -1,0 +1,289 @@
+:::{.justify}
+# Modelos en Django
+
+:::{.center}
+![Django Models](./images/django_logo.png){width=200px}
+:::
+
+Los modelos en Django son clases de Python que representan tablas en la base de datos. Cada atributo de la clase representa una columna en la tabla. Django proporciona un ORM (Object-Relational Mapping) que permite interactuar con la base de datos sin escribir SQL.
+
+## ¿Qué es ORM?
+
+ORM (Object-Relational Mapping) es una técnica de programación que permite mapear objetos de una aplicación a tablas de una base de datos relacional. En lugar de escribir consultas SQL directamente, se utilizan clases de Python para interactuar con la base de datos.
+
+Por ejemplo, en lugar de escribir una consulta SQL para insertar un registro en una tabla, se crea un objeto de una clase de Python y se guarda en la base de datos. El ORM se encarga de traducir las operaciones de la aplicación a consultas SQL.
+
+## Ventajas de ORM
+
+Algunas de las ventajas de utilizar un ORM en Django son las siguientes:
+
+- Abstracción de la base de datos: Permite interactuar con la base de datos a través de clases de Python en lugar de escribir consultas SQL.
+
+- Portabilidad: Permite cambiar de un motor de base de datos a otro sin modificar el código de la aplicación.
+
+- Seguridad: Evita la inyección de SQL al utilizar consultas parametrizadas.
+
+- Productividad: Simplifica el desarrollo de aplicaciones al proporcionar una interfaz de programación de alto nivel.
+
+- Mantenimiento: Facilita la actualización y mantenimiento de la base de datos al utilizar modelos en lugar de consultas SQL.
+
+## Crear un modelo
+
+En este ejemplo crearemos modelos que nos permitan gestionar una farmacia. Para ello, crearemos un modelo para representar los medicamentos y otro modelo para representar las ventas.
+
+Para crear un modelo en Django se debe definir una clase que herede de **models.Model** y que contenga los atributos que representan las columnas de la tabla. A continuación se muestra un ejemplo de un modelo para representar un medicamento:
+
+```python
+from django.db import models #<1>
+
+class Medicamento(models.Model): #<2>
+    nombre = models.CharField(max_length=100) #<3>
+    precio = models.DecimalField(max_digits=10, decimal_places=2) #<4>
+    existencias = models.IntegerField() #<5>
+
+    def __str__(self): #<6>
+        return self.nombre
+
+class Venta(models.Model): #<7>
+    medicamento = models.ForeignKey(Medicamento, on_delete=models.CASCADE) #<8>
+    cantidad = models.IntegerField() #<9>
+    fecha = models.DateTimeField(auto_now_add=True) #<10>
+
+    def __str__(self): #<11>
+        return f'{self.medicamento} - {self.cantidad}'
+
+```
+
+1. Se importa el módulo **models** de Django.
+2. Se define una clase **Medicamento** que hereda de **models.Model**.
+3. Se define un atributo **nombre** de tipo **CharField** que representa el nombre del medicamento.
+4. Se define un atributo **precio** de tipo **DecimalField** que representa el precio del medicamento.
+5. Se define un atributo **existencias** de tipo **IntegerField** que representa las existencias del medicamento.
+6. Se define un método **\_\_str\_\_** que devuelve el nombre del medicamento.
+7. Se define una clase **Venta** que hereda de **models.Model**.
+8. Se define un atributo **medicamento** de tipo **ForeignKey** que establece una relación con el modelo **Medicamento**.
+9. Se define un atributo **cantidad** de tipo **IntegerField** que representa la cantidad vendida.
+10. Se define un atributo **fecha** de tipo **DateTimeField** que representa la fecha de la venta.
+11. Se define un método **\_\_str\_\_** que devuelve una representación legible de la venta.
+
+## Migraciones
+
+Una vez que se han definido los modelos, es necesario crear las tablas en la base de datos. Para ello, se utilizan las migraciones de Django. Las migraciones son archivos de Python que contienen las instrucciones necesarias para crear, modificar o eliminar tablas en la base de datos.
+
+Para crear las migraciones se debe ejecutar el siguiente comando:
+
+```bash
+python manage.py makemigrations
+```
+
+Este comando generará un archivo de migración en el directorio **migrations** de cada aplicación. A continuación se muestra un ejemplo de un archivo de migración:
+
+```python
+from django.db import migrations, models
+
+class Migration(migrations.Migration):
+
+    initial = True
+
+    dependencies = [
+    ]
+
+    operations = [
+        migrations.CreateModel(
+            name='Medicamento',
+            fields=[
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('nombre', models.CharField(max_length=100)),
+                ('precio', models.DecimalField(decimal_places=2, max_digits=10)),
+                ('existencias', models.IntegerField()),
+            ],
+        ),
+        migrations.CreateModel(
+            name='Venta',
+            fields=[
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('cantidad', models.IntegerField()),
+                ('fecha', models.DateTimeField(auto_now_add=True)),
+                ('medicamento', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='farmacia.medicamento')),
+            ],
+        ),
+    ]
+```
+
+Este archivo contiene las instrucciones necesarias para crear las tablas **Medicamento** y **Venta** en la base de datos. Para aplicar las migraciones se debe ejecutar el siguiente comando:
+
+```bash
+python manage.py migrate
+```
+
+Este comando creará las tablas en la base de datos y aplicará las migraciones pendientes.
+
+## Interactuar con la base de datos
+
+Una de las formas de interactuar con la base de datos es a traves del administrador de Django. Para acceder al administrador se debe crear un superusuario con el siguiente comando:
+
+```bash
+python manage.py createsuperuser
+```
+
+Este comando solicitará un nombre de usuario, una dirección de correo electrónico y una contraseña para el superusuario. Una vez que se ha creado el superusuario, se puede acceder al administrador de Django en la siguiente URL: **http://127.0.0.1:8000/admin/**.
+
+En el administrador se pueden gestionar los medicamentos y las ventas de la farmacia. Se pueden crear, leer, actualizar y eliminar registros en la base de datos utilizando una interfaz gráfica.
+
+Sin embargo para que los modelos sean accesibles desde el administrador se debe registrar los modelos en el archivo **admin.py** de la aplicación. A continuación se muestra un ejemplo de cómo registrar los modelos **Medicamento** y **Venta** en el archivo **admin.py**:
+
+```python
+from django.contrib import admin
+from .models import Medicamento, Venta
+
+admin.site.register(Medicamento)
+admin.site.register(Venta)
+```
+
+Una vez que se han registrado los modelos en el administrador, se pueden gestionar los medicamentos y las ventas desde la interfaz gráfica.
+
+Una vez que se han creado las tablas en la base de datos, se pueden realizar operaciones de lectura, escritura, actualización y eliminación utilizando los modelos de Django. A continuación se muestran algunos ejemplos de cómo interactuar con la base de datos:
+
+:::{.callout-info}
+Para interactuar con la base de datos se debe utilizar la consola interactiva de Django. Para acceder a la consola se debe ejecutar el siguiente comando:
+
+```bash
+python manage.py shell
+```
+
+Este comando abrirá una consola interactiva de Python con acceso a los modelos de Django.
+:::
+
+A continuación se muestran algunos ejemplos de cómo interactuar con la base de datos utilizando los modelos **Medicamento** y **Venta**:
+
+```python
+# Crear un medicamento
+
+medicamento = Medicamento(nombre='Paracetamol', precio=10.50, existencias=100)
+medicamento.save()
+
+# Crear una venta
+
+venta = Venta(medicamento=medicamento, cantidad=10)
+venta.save()
+
+# Consultar los medicamentos
+
+medicamentos = Medicamento.objects.all()
+
+# Consultar las ventas
+
+ventas = Venta.objects.all()
+
+# Actualizar un medicamento
+
+medicamento.existencias = 90
+medicamento.save()
+
+# Eliminar un medicamento
+
+medicamento.delete()
+```
+
+Estos son algunos ejemplos de cómo interactuar con la base de datos utilizando los modelos de Django. Los modelos proporcionan una interfaz de alto nivel para realizar operaciones CRUD (Create, Read, Update, Delete) en la base de datos sin necesidad de escribir consultas SQL.
+
+# Actividades
+
+1. Define un modelo en Django para representar una categoría de productos. La categoría debe tener un nombre y una descripción.
+
+2. Define un modelo en Django para representar un producto. El producto debe tener un nombre, una descripción, un precio y una categoría a la que pertenece.
+
+3. Crea las migraciones y aplica las migraciones a la base de datos.
+
+4. Crea algunos productos y categorías en la base de datos utilizando la consola interactiva de Django.
+
+5. Consulta los productos y categorías en la base de datos utilizando los modelos de Django.
+
+6. Actualiza y elimina algunos productos y categorías en la base de datos utilizando los modelos de Django.
+
+<details>
+  <summary> Ver Solución </summary>
+
+```bash
+python manage.py startapp farmacia
+```
+
+Ahora que hemos creado la aplicación **farmacia**, podemos definir los modelos que representarán los medicamentos y las ventas en nuestra farmacia. Los modelos en Django son clases de Python que representan tablas en la base de datos. Cada atributo de la clase representa una columna en la tabla.
+
+En el archivo **models.py** de la aplicación **farmacia**, definiremos los modelos **Medicamento** y **Venta** que representarán los medicamentos y las ventas en nuestra farmacia, respectivamente.
+
+```python
+from django.db import models
+
+class Medicamento(models.Model):
+    nombre = models.CharField(max_length=100)
+    precio = models.DecimalField(max_digits=10, decimal_places=2)
+    existencias = models.IntegerField()
+
+    def __str__(self):
+        return self.nombre
+
+class Venta(models.Model):
+    medicamento = models.ForeignKey(Medicamento, on_delete=models.CASCADE)
+    cantidad = models.IntegerField()
+    fecha = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.medicamento} - {self.cantidad}'
+```
+
+En este ejemplo, hemos definido dos modelos: **Medicamento** y **Venta**. El modelo **Medicamento** tiene tres atributos: **nombre**, **precio** y **existencias**. El modelo **Venta** tiene tres atributos: **medicamento**, **cantidad** y **fecha**.
+
+El atributo **medicamento** del modelo **Venta** es una clave foránea que establece una relación con el modelo **Medicamento**. La opción **on_delete=models.CASCADE** indica que si se elimina un medicamento, también se eliminarán todas las ventas asociadas a ese medicamento.
+
+Una vez que hemos definido los modelos, es necesario crear las migraciones y aplicarlas a la base de datos. Para crear las migraciones, ejecutamos el siguiente comando:
+
+```bash
+python manage.py makemigrations
+```
+
+Este comando generará un archivo de migración en el directorio **migrations** de la aplicación **farmacia**. A continuación, aplicamos las migraciones a la base de datos con el siguiente comando:
+
+```bash
+python manage.py migrate
+```
+
+Este comando creará las tablas **Medicamento** y **Venta** en la base de datos y aplicará las migraciones pendientes.
+
+Una vez que hemos creado las tablas en la base de datos, podemos interactuar con ellas utilizando los modelos de Django. Podemos crear, leer, actualizar y eliminar registros en la base de datos utilizando los modelos **Medicamento** y **Venta**.
+
+Para interactuar con la base de datos, podemos utilizar la consola interactiva de Django. Para acceder a la consola interactiva, ejecutamos el siguiente comando:
+
+```bash
+python manage.py shell
+```
+
+En la consola interactiva, podemos crear medicamentos, ventas y consultar los registros en la base de datos utilizando los modelos **Medicamento** y **Venta**.
+
+```python
+# Crear un medicamento
+
+medicamento = Medicamento(nombre='Paracetamol', precio=10.50, existencias=100)
+medicamento.save()
+
+# Crear una venta
+
+venta = Venta(medicamento=medicamento, cantidad=10)
+venta.save()
+
+# Consultar los medicamentos
+
+medicamentos = Medicamento.objects.all()
+
+# Consultar las ventas
+
+ventas = Venta.objects.all()
+```
+
+Estos son algunos ejemplos de cómo interactuar con la base de datos utilizando los modelos de Django. Los modelos proporcionan una interfaz de alto nivel para realizar operaciones CRUD (Create, Read, Update, Delete) en la base de datos sin necesidad de escribir consultas SQL.
+
+</details>
+
+# Conclusión
+
+En este tutorial hemos aprendido cómo definir modelos en Django para representar tablas en la base de datos. Los modelos en Django son clases de Python que representan tablas en la base de datos y proporcionan una interfaz de alto nivel para interactuar con la base de datos sin necesidad de escribir consultas SQL.

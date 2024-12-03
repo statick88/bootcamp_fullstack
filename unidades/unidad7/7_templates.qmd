@@ -1,0 +1,326 @@
+:::{.justify}
+# Vistas, Urls y Plantillas en Django
+
+## Vistas
+
+Las vistas en Django son funciones o clases que reciben una petición HTTP y devuelven una respuesta HTTP. Las vistas se definen en el archivo **views.py** de cada aplicación y se asocian a una URL mediante el archivo **urls.py**.
+
+:::{.callout-info}
+Recordemos los modelos aprendidos en el capítulo anterior
+
+```python
+from django.db import models
+
+class Farmacia(models.Model):
+    nombre = models.CharField(max_length=100)
+    direccion = models.CharField(max_length=200)
+    telefono = models.CharField(max_length=20)
+    email = models.EmailField()
+    activa = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.nombre
+
+class Medicamento(models.Model):
+    nombre = models.CharField(max_length=100)
+    descripcion = models.TextField()
+    precio = models.DecimalField(max_digits=8, decimal_places=2)
+    stock = models.IntegerField()
+    farmacia = models.ForeignKey(Farmacia, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.nombre
+```
+:::
+
+Ahora vamos a crear las plantillas para mostrar los datos de las farmacias y los medicamentos.
+
+## Jinga2
+
+Django utiliza el motor de plantillas Jinja2 para renderizar las plantillas. Jinja2 es un motor de plantillas muy potente que permite la creación de plantillas dinámicas y reutilizables.
+
+:::{.callout-info}
+Recordemos las vistas creadas en el capítulo anterior
+
+```python
+from django.db import models
+
+class Medicamento(models.Model):
+    nombre = models.CharField(max_length=100)
+    precio = models.DecimalField(max_digits=10, decimal_places=2)
+    existencias = models.IntegerField()
+
+    def __str__(self):
+        return self.nombre
+
+class Venta(models.Model):
+    medicamento = models.ForeignKey(Medicamento, on_delete=models.CASCADE)
+    cantidad = models.IntegerField()
+    fecha = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.medicamento} - {self.cantidad}'
+```
+:::
+
+Ahora vamos a crear las plantillas para mostrar los datos de los medicamentos y las ventas.
+
+## Plantillas
+
+Las plantillas en Django son archivos HTML que contienen el código necesario para mostrar la información de la aplicación. Las plantillas pueden contener etiquetas y filtros de Django que permiten acceder a los datos de la base de datos y mostrarlos en la página web.
+
+Para crear una plantilla en Django, primero debemos definir un directorio llamado **templates** en la raíz del proyecto. Dentro de este directorio, creamos un subdirectorio con el nombre de la aplicación y dentro de este subdirectorio, creamos un archivo HTML con el nombre de la plantilla.
+
+:::{.callout-info}
+Recordemos las vistas creadas en el capítulo anterior
+
+```python
+from django.shortcuts import render
+from .models import Medicamento, Venta
+
+# Vista para mostrar la lista de medicamentos
+def lista_medicamentos(request):
+    medicamentos = Medicamento.objects.all()
+    return render(request, 'farmacia/lista_medicamentos.html', {'medicamentos': medicamentos})
+
+# Vista para mostrar el detalle de un medicamento
+def detalle_medicamento(request, id):
+    medicamento = Medicamento.objects.get(id=id)
+    return render(request, 'farmacia/detalle_medicamento.html', {'medicamento': medicamento})
+
+# Vista para realizar una venta
+def realizar_venta(request):
+    if request.method == 'POST':
+        form = VentaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('lista_medicamentos')
+    else:
+        form = VentaForm()
+        return render(request, 'farmacia/realizar_venta.html', {'form': form})
+
+# Vista para mostrar el historial de ventas
+def historial_ventas(request):
+    ventas = Venta.objects.all()
+    return render(request, 'farmacia/historial_ventas.html', {'ventas': ventas})
+```
+:::
+
+Ahora vamos a crear las plantillas para mostrar los datos de los medicamentos y las ventas.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Medicamentos</title>
+</head>
+<body>
+    <h1>Lista de Medicamentos</h1>
+    <ul>
+        {% for medicamento in medicamentos %}
+            <li>{{ medicamento.nombre }} - {{ medicamento.precio }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+```
+En la plantilla anterior, utilizamos la etiqueta **{% for %}** para recorrer la lista de medicamentos y mostrar el nombre y el precio de cada uno. También utilizamos las variables **medicamento.nombre** y **medicamento.precio** para acceder a los datos de cada medicamento.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Medicamento</title>
+</head>
+<body>
+    <h1>Detalle de Medicamento</h1>
+    <p><strong>Nombre:</strong> {{ medicamento.nombre }}</p>
+    <p><strong>Precio:</strong> {{ medicamento.precio }}</p>
+    <p><strong>Existencias:</strong> {{ medicamento.existencias }}</p>
+</body>
+</html>
+```
+
+En la plantilla anterior, utilizamos las variables **medicamento.nombre**, **medicamento.precio** y **medicamento.existencias** para mostrar los datos del medicamento seleccionado.
+
+Otras plantillas que se pueden crear son:
+
+- **realizar_venta.html**: Plantilla para el formulario de venta.
+- **historial_ventas.html**: Plantilla para mostrar el historial de ventas.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realizar Venta</title>
+</head>
+<body>
+    <h1>Realizar Venta</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Realizar Venta</button>
+    </form>
+</body>
+</html>
+```
+
+En la plantilla anterior, utilizamos la etiqueta **{% csrf_token %}** para proteger el formulario contra ataques de falsificación de solicitudes entre sitios (CSRF). También utilizamos la variable **form.as_p** para renderizar el formulario de venta en la página web.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de Ventas</title>
+</head>
+<body>
+    <h1>Historial de Ventas</h1>
+    <ul>
+        {% for venta in ventas %}
+            <li>{{ venta.medicamento }} - {{ venta.cantidad }} - {{ venta.fecha }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+```
+
+En la plantilla anterior, utilizamos la etiqueta **{% for %}** para recorrer la lista de ventas y mostrar el medicamento, la cantidad y la fecha de cada venta.
+
+# Actividades
+
+1. Crear una plantilla para mostrar la lista de farmacias.
+2. Crear una plantilla para mostrar el detalle de una farmacia.
+3. Crear una plantilla para el formulario de creación de una nueva farmacia.
+4. Crear una plantilla para el formulario de edición de una farmacia.
+5. Crear una plantilla para mostrar el historial de ventas de una farmacia.
+
+<details>
+  <summary>Posible solución</summary>
+
+1. Crear una plantilla para mostrar la lista de farmacias.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Farmacias</title>
+</head>
+<body>
+    <h1>Lista de Farmacias</h1>
+    <ul>
+        {% for farmacia in farmacias %}
+            <li>{{ farmacia.nombre }} - {{ farmacia.direccion }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+```
+
+2. Crear una plantilla para mostrar el detalle de una farmacia.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Farmacia</title>
+</head>
+<body>
+    <h1>Detalle de Farmacia</h1>
+    <p><strong>Nombre:</strong> {{ farmacia.nombre }}</p>
+    <p><strong>Dirección:</strong> {{ farmacia.direccion }}</p>
+    <p><strong>Teléfono:</strong> {{ farmacia.telefono }}</p>
+    <p><strong>Email:</strong> {{ farmacia.email }}</p>
+</body>
+</html>
+```
+
+3. Crear una plantilla para el formulario de creación de una nueva farmacia.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Farmacia</title>
+</head>
+<body>
+    <h1>Crear Farmacia</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Crear Farmacia</button>
+    </form>
+</body>
+</html>
+```
+
+4. Crear una plantilla para el formulario de edición de una farmacia.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Farmacia</title>
+</head>
+<body>
+    <h1>Editar Farmacia</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar Cambios</button>
+    </form>
+</body>
+</html>
+```
+
+5. Crear una plantilla para mostrar el historial de ventas de una farmacia.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de Ventas</title>
+</head>
+<body>
+    <h1>Historial de Ventas</h1>
+    <ul>
+        {% for venta in ventas %}
+            <li>{{ venta.medicamento }} - {{ venta.cantidad }} - {{ venta.fecha }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+```
+
+</details>
+
+# Conclusiones
+
+En este capítulo aprendimos a crear plantillas en Django para mostrar la información de las aplicaciones. Utilizamos el motor de plantillas Jinja2 para renderizar las plantillas y acceder a los datos de la base de datos. También aprendimos a crear vistas en Django para asociar las plantillas a las URL de la aplicación.
+:::

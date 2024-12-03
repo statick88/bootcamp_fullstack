@@ -1,0 +1,209 @@
+:::{.justify}
+# Estructura de un proyecto en Django
+
+:::{.center}
+![Django Project Structure](./images/django_logo.png){width="200"}
+:::
+
+La estructura de un proyecto en Django es muy sencilla y se basa en un conjunto de directorios y archivos que se crean automáticamente al crear un nuevo proyecto. A continuación se muestra la estructura de un proyecto en Django:
+
+:::{.callout-info}
+Es necesario tomar en cuenta que para cada proyecto se creará un directorio raíz con el nombre del proyecto, en este caso se llamará **gestion de farmacias**. Sin embargo antes de crear cualquier proecto se debera crear:
+
+1. Entorno Virtual
+
+2. Instalar Django
+
+3. Crear el archivo requirements.txt
+
+4. Crear el archivo .gitignore
+
+5. Crear el archivo README.md
+
+6. Crear el archivo LICENSE
+
+7. Crear el archivo .env
+:::
+
+Para crear un proyecto en Django se debe ejecutar el siguiente comando:
+
+```bash
+django-admin startproject gestion_de_farmacias .
+```
+
+Este comando creará un nuevo proyecto llamado **gestion_de_farmacias** en el directorio actual. A continuación se muestra la estructura de un proyecto en Django:
+
+```plaintext
+gestion_de_farmacias/
+    ├── gestion_de_farmacias/
+    │   ├── __init__.py
+    │   ├── asgi.py
+    │   ├── settings.py
+    │   ├── urls.py
+    │   └── wsgi.py
+    ├── manage.py
+    └── requirements.txt
+```
+
+A continuación se describen los directorios y archivos que se crean al crear un nuevo proyecto en Django:
+
+- **gestion_de_farmacias/**: Directorio raíz del proyecto.
+    - **gestion_de_farmacias/**: Directorio que contiene el código fuente del proyecto.
+        - **\_\_init\_\_.py**: Archivo que indica que el directorio es un paquete de Python.
+        - **asgi.py**: Archivo que contiene la configuración de ASGI (Asynchronous Server Gateway Interface).
+        - **settings.py**: Archivo que contiene la configuración del proyecto.
+        - **urls.py**: Archivo que contiene las rutas del proyecto.
+        - **wsgi.py**: Archivo que contiene la configuración de WSGI (Web Server Gateway Interface).
+    - **manage.py**: Archivo que se utiliza para administrar el proyecto.
+    - **requirements.txt**: Archivo que contiene las dependencias del proyecto.
+
+El archivo **manage.py** es un script que se utiliza para administrar el proyecto. Se puede utilizar para realizar tareas como crear aplicaciones, ejecutar el servidor de desarrollo, ejecutar pruebas, etc.
+
+El archivo **requirements.txt** es un archivo de texto que contiene las dependencias del proyecto. Se puede utilizar para instalar todas las dependencias del proyecto con el comando **pip install -r requirements.txt**.
+
+En resumen, la estructura de un proyecto en Django es muy sencilla y se basa en un conjunto de directorios y archivos que se crean automáticamente al crear un nuevo proyecto.
+
+# Estructura de una aplicación en Django
+
+La estructura de una aplicación en Django es muy sencilla y se basa en un conjunto de directorios y archivos que se crean automáticamente al crear una nueva aplicación. A continuación se muestra la estructura de una aplicación en Django:
+
+Para crear una aplicación en Django se debe ejecutar el siguiente comando:
+
+```bash
+python manage.py startapp farmacia
+```
+
+Este comando creará una nueva aplicación llamada **farmacia** en el directorio actual. A continuación se muestra la estructura de una aplicación
+
+```plaintext
+farmacia/
+    ├── migrations/
+    │   └── __init__.py
+    ├── __init__.py
+    ├── admin.py
+    ├── apps.py
+    ├── models.py
+    ├── tests.py
+    └── views.py
+```
+
+A continuación se describen los directorios y archivos que se crean al crear una nueva aplicación en Django:
+
+- **farmacia/**: Directorio raíz de la aplicación.
+    - **migrations/**: Directorio que contiene las migraciones de la aplicación.
+        - **\_\_init\_\_.py**: Archivo que indica que el directorio es un paquete de Python.
+    - **\_\_init\_\_.py**: Archivo que indica que el directorio es un paquete de Python.
+    - **admin.py**: Archivo que contiene la configuración del panel de administración.
+    - **apps.py**: Archivo que contiene la configuración de la aplicación.
+    - **models.py**: Archivo que contiene los modelos de la aplicación.
+    - **tests.py**: Archivo que contiene las pruebas de la aplicación.
+    - **views.py**: Archivo que contiene las vistas de la aplicación.
+
+En resumen, la estructura de una aplicación en Django es muy sencilla y se basa en un conjunto de directorios y archivos que se crean automáticamente al crear una nueva aplicación.
+
+## Activiades:
+
+1. Crear un proyecto en Django llamado **gestion_de_farmacias**.
+2. Crear una aplicación en Django llamada **farmacia**.
+3. Crear un archivo **requirements.txt** con las dependencias del proyecto.
+4. Crear un archivo **.gitignore** para ignorar los archivos y directorios innecesarios.
+5. Crear un archivo **README.md** con la descripción del proyecto.
+6. Crear un archivo **LICENSE** con la licencia del proyecto.
+7. Crear un archivo **.env** con las variables de entorno del proyecto.
+
+<details>
+  <summary>Posible solución</summary>
+
+1. Crear un proyecto en Django llamado **gestion_de_farmacias**.
+
+```bash
+django-admin startproject gestion_de_farmacias .
+```
+
+2. Crear una aplicación en Django llamada **farmacia**.
+
+```bash
+python manage.py startapp farmacia
+```
+
+3. Crear un archivo **requirements.txt** con las dependencias del proyecto.
+
+```bash
+Django==4.2.1
+```
+
+4. Crear un archivo **.gitignore** para ignorar los archivos y directorios innecesarios.
+
+```bash
+__pycache__/
+*.pyc
+*.sqlite3
+*.env
+```
+
+5. Crear un archivo **README.md** con la descripción del proyecto.
+
+```markdown
+# Gestion de Farmacias
+
+Proyecto de gestión de farmacias desarrollado con Django.
+
+## Instalación
+
+1. Clonar el repositorio.
+2. Crear un entorno virtual.
+3. Instalar las dependencias.
+4. Configurar las variables de entorno.
+
+## Uso
+
+Para ejecutar el proyecto, utilizar el comando **python manage.py runserver**.
+
+## Licencia
+
+Este proyecto está bajo la licencia MIT.
+```
+
+6. Crear un archivo **LICENSE** con la licencia del proyecto.
+
+```plaintext
+MIT License
+
+Derechos de autor (c) 2024 Autor
+
+Se concede permiso, de forma gratuita, a cualquier persona que obtenga una copia
+de este software y de los archivos de documentación asociados (el "Software"), para tratar
+el Software sin restricciones, incluidos, entre otros, los derechos
+para usar, copiar, modificar, fusionar, publicar, distribuir, sublicenciar y / o vender
+copias del Software, y para permitir a las personas a quienes pertenece el Software
+amueblado para hacerlo, sujeto a las siguientes condiciones:
+
+El aviso de copyright anterior y este aviso de permiso se incluirán
+en todas las copias o partes sustanciales del Software.
+
+EL SOFTWARE SE PROPORCIONA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO, EXPRESA O IMPLÍCITA,
+
+INCLUYENDO PERO NO LIMITADO A LAS GARANTÍAS DE COMERCIABILIDAD,
+
+APTITUD PARA UN PROPÓSITO PARTICULAR Y NO INFRACCIÓN. EN NINGÚN CASO EL AUTOR O
+
+LOS TITULARES DE DERECHOS DE AUTOR SERÁN RESPONSABLES DE CUALQUIER RECLAMO, DAÑO U OTRO
+
+RESPONSABILIDAD, YA SEA EN UNA ACCIÓN DE CONTRATO, AGRAVIO O DE OTRO MODO, DERIVADO DE,
+
+FUERA DE O EN RELACIÓN CON EL SOFTWARE O EL USO U OTROS TRATOS EN EL SOFTWARE.
+```
+
+7. Crear un archivo **.env** con las variables de entorno del proyecto.
+
+```plaintext
+DEBUG=True
+SECRET_KEY
+```
+
+</details>
+
+# Conclusiones
+
+En este tutorial se ha mostrado la estructura de un proyecto en Django y la estructura de una aplicación en Django. Se ha creado un proyecto llamado **gestion_de_farmacias** y una aplicación llamada **farmacia**. Además, se han creado los archivos **requirements.txt**, **.gitignore**, **README.md**, **LICENSE** y **.env**.
+:::

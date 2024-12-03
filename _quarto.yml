@@ -85,6 +85,12 @@ book:
       chapters:
         - unidades/unidad7/1_intro.qmd
         - unidades/unidad7/2_intro_to_django.qmd
+        - unidades/unidad7/3_estructura_proyecto.qmd
+        - unidades/unidad7/4_modelos_django.qmd
+        - unidades/unidad7/5_forms.qmd
+        - unidades/unidad7/6_vistas.qmd
+        - unidades/unidad7/7_templates.qmd
+        - unidades/unidad7/8_urls.qmd
 
     - part: "Proyectos"
       chapters:
@@ -140,6 +146,3 @@ format:
     rights: "© Statick | 2024"
     fig-responsive: true
     number-sections: true
-
-filters:
-  - naquiz

@@ -1,0 +1,108 @@
+:::{.justify}
+# Forms en Django
+
+Los formularios en Django son una parte fundamental de cualquier aplicación web. Permiten a los usuarios enviar datos al servidor y procesarlos de manera eficiente. En este tutorial, aprenderemos cómo crear formularios en Django y cómo procesarlos en las vistas.
+
+## Creación de un formulario
+
+Para crear un formulario en Django, primero debemos definir una clase que herede de **forms.Form** o **forms.ModelForm**. A continuación, definimos los campos del formulario como atributos de la clase. Por ejemplo, el siguiente formulario permite a los usuarios enviar un mensaje de contacto:
+
+:::{.callout-info}
+Recordemos los modelos creados en la sección anterior:
+
+```python
+from django.db import models
+
+class Medicamento(models.Model):
+    nombre = models.CharField(max_length=100)
+    precio = models.DecimalField(max_digits=10, decimal_places=2)
+    existencias = models.IntegerField()
+
+    def __str__(self):
+        return self.nombre
+
+class Venta(models.Model):
+    medicamento = models.ForeignKey(Medicamento, on_delete=models.CASCADE)
+    cantidad = models.IntegerField()
+    fecha = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.medicamento} - {self.cantidad}'
+```
+:::
+
+Para crear un formulario de contacto, podemos hacer lo siguiente:
+```python
+from django import forms #<1>
+from .models import Medicamento, Venta #<2>
+
+class ContactForm(forms.Form): #<3>
+    nombre = forms.CharField(label='Nombre', max_length=100) #<4>
+    email = forms.EmailField(label='Email', max_length=100) #<5>
+    mensaje = forms.CharField(label='Mensaje', widget=forms.Textarea) #<6>
+
+class MedicamentoForm(forms.ModelForm): #<7>
+    class Meta: #<8>
+        model = Medicamento #<9>
+        fields = ['nombre', 'precio', 'existencias'] #<10>
+
+class VentaForm(forms.ModelForm): #<11>
+    class Meta: #<12>
+        model = Venta #<13>
+        fields = ['medicamento', 'cantidad'] #<14>
+```
+
+1. Importamos el módulo **forms** de Django.
+2. Importamos los modelos **Medicamento** y **Venta**.
+3. Definimos una clase **ContactForm** que hereda de **forms.Form**.
+4. Definimos un campo de texto para el nombre del usuario.
+5. Definimos un campo de correo electrónico para el email del usuario.
+6. Definimos un campo de texto multilínea para el mensaje del usuario.
+7. Definimos una clase **MedicamentoForm** que hereda de **forms.ModelForm**.
+8. Definimos la clase **Meta** para especificar el modelo y los campos del formulario.
+9. Especificamos el modelo **Medicamento** como base del formulario.
+10. Especificamos los campos del formulario: **nombre**, **precio** y **existencias**.
+11. Definimos una clase **VentaForm** que hereda de **forms.ModelForm**.
+12. Definimos la clase **Meta** para especificar el modelo y los campos del formulario.
+13. Especificamos el modelo **Venta** como base del formulario.
+14. Especificamos los campos del formulario: **medicamento** y **cantidad**.
+
+## Procesamiento de formularios en las vistas
+
+# Actividades:
+
+1. Crear un formulario para la creación de un nuevo medicamento.
+2. Crear un formulario para la venta de un medicamento.
+
+<details>
+  <summary>Posible solución</summary>
+
+1. Crear un formulario para la creación de un nuevo medicamento.
+
+```python
+from django import forms
+from .models import Medicamento
+
+class MedicamentoForm(forms.ModelForm):
+    class Meta:
+        model = Medicamento
+        fields = ['nombre', 'precio', 'existencias']
+```
+
+2. Crear un formulario para la venta de un medicamento.
+
+```python
+from django import forms
+from .models import Venta
+
+class VentaForm(forms.ModelForm):
+    class Meta:
+        model = Venta
+        fields = ['medicamento', 'cantidad']
+```
+</details>
+
+# Conclusiones
+
+En este tutorial, hemos aprendido cómo crear formularios en Django y cómo procesarlos en las vistas. Los formularios son una parte esencial de cualquier aplicación web y nos permiten interactuar con los usuarios de manera efectiva. En el próximo tutorial, veremos cómo validar los datos de un formulario y mostrar mensajes de error en caso de que haya algún problema.
+:::
