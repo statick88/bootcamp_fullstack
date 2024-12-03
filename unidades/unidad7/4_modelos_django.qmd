@@ -51,7 +51,6 @@ class Venta(models.Model): #<7>
 
     def __str__(self): #<11>
         return f'{self.medicamento} - {self.cantidad}'
-
 ```
 
 1. Se importa el módulo **models** de Django.
@@ -287,3 +286,4 @@ Estos son algunos ejemplos de cómo interactuar con la base de datos utilizando 
 # Conclusión
 
 En este tutorial hemos aprendido cómo definir modelos en Django para representar tablas en la base de datos. Los modelos en Django son clases de Python que representan tablas en la base de datos y proporcionan una interfaz de alto nivel para interactuar con la base de datos sin necesidad de escribir consultas SQL.
+:::

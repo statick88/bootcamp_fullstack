@@ -497,6 +497,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <a href="../../unidades/Proyectos/6_calculadora.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio: Calculadora en Python</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/Proyectos/0_tienda_virtual.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tienda Virtual.</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -550,8 +555,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#conceptos-clave" id="toc-conceptos-clave" class="nav-link active" data-scroll-target="#conceptos-clave">Conceptos clave</a></li>
+  <li><a href="#ejemplo-práctico" id="toc-ejemplo-práctico" class="nav-link" data-scroll-target="#ejemplo-práctico">Ejemplo Práctico</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -575,7 +587,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="justify">
 <div class="center">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -588,7 +599,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="conceptos-clave" class="level3">
 <h3 class="anchored" data-anchor-id="conceptos-clave">Conceptos clave</h3>
 <ul>
-<li><p><strong><span class="citation" data-cites="decorator">(<a href="#ref-decorator" role="doc-biblioref"><strong>decorator?</strong></a>)</span></strong>: Sintaxis para aplicar un decorador.</p></li>
+<li><p><strong>@decorator</strong>: Sintaxis para aplicar un decorador.</p></li>
 <li><p><strong>with y <strong>enter</strong>, <strong>exit</strong></strong>: Para crear context managers.</p></li>
 </ul>
 <p>Ejemplo</p>
@@ -660,10 +671,9 @@ Posibles soluciones
 <span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> LogManager() <span class="im">as</span> log:</span>
 <span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    log.write(<span class="ss">f"Acción registrada a las </span><span class="sc">{</span>time<span class="sc">.</span>strftime(<span class="st">'%H:%M:%S'</span>)<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+
+
 </section>
-</div>
-
-
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

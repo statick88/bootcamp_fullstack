@@ -8,127 +8,132 @@ book:
   output-file: "bootcamp_desarrollo_web_fullstack"
   date: today
   date-format: medium
-  favicon: logo.jpeg
-  description: Bootcamp de Desarrollo Web FullStack con Python, Django y React
-  keyword: Python, Django, React, FullStack, Bootcamp
-  url: https://github.com/statick88/bootcamp_desarrollo_web_fullstack
+  favicon: "logo.jpeg"
+  description: "Bootcamp de Desarrollo Web FullStack con Python, Django y React"
+  keyword: "Python, Django, React, FullStack, Bootcamp"
+  url: "https://github.com/statick88/bootcamp_fullstack"
   page-navigation: true
   sidebar:
-    logo: logo.jpeg
+    logo: "logo.jpeg"
     search: true
     collapse-level: 1
 
   repo-subdir: book
-  sharing: [twitter, linkedin]
-  downloads: [pdf, epub]
-  image: logo.jpeg
+  sharing:
+    - twitter
+    - linkedin
+  downloads:
+    - pdf
+    - epub
+  image: "logo.jpeg"
 
   page-footer:
     center:
       - text: "About"
-        href: about.qmd
+        href: "about.qmd"
       - text: "License"
-        href: license.qmd
+        href: "license.qmd"
 
   chapters:
     - part: "Unidad 0: Introducción a Git y GitHub"
       chapters:
-        - index.qmd
-        - unidades/unidad0/1_git_y_github.qmd
-        - unidades/unidad0/2_github_classroom.qmd
+        - "index.qmd"
+        - "unidades/unidad0/1_git_y_github.qmd"
+        - "unidades/unidad0/2_github_classroom.qmd"
 
     - part: "Unidad 1: Introducción e Instalaciones Necesarias"
       chapters:
-        - unidades/unidad1/1_introduccion.qmd
-        - unidades/unidad1/2_introduccion_a_la_programacion.qmd
-        - unidades/unidad1/3_tipos_de_datos.qmd
-        - unidades/unidad1/4_control_de_flujo.qmd
-        - unidades/unidad1/5_funciones_y_recursividad.qmd
+        - "unidades/unidad1/1_introduccion.qmd"
+        - "unidades/unidad1/2_introduccion_a_la_programacion.qmd"
+        - "unidades/unidad1/3_tipos_de_datos.qmd"
+        - "unidades/unidad1/4_control_de_flujo.qmd"
+        - "unidades/unidad1/5_funciones_y_recursividad.qmd"
 
     - part: "Unidad 2: Programación Orientada a Objetos"
       chapters:
-        - unidades/unidad2/1_programacion_orientada_a_objetos.qmd
+        - "unidades/unidad2/1_programacion_orientada_a_objetos.qmd"
 
     - part: "Unidad 3: Módulos y Paquetes"
       chapters:
-        - unidades/unidad3/1_modulos_python.qmd
+        - "unidades/unidad3/1_modulos_python.qmd"
 
     - part: "Unidad 4: Docker"
       chapters:
-        - unidades/unidad4/1_docker.qmd
-        - unidades/unidad4/2_docker_compose.qmd
-        - unidades/unidad4/3_DevContainers.qmd
+        - "unidades/unidad4/1_docker.qmd"
+        - "unidades/unidad4/2_docker_compose.qmd"
+        - "unidades/unidad4/3_DevContainers.qmd"
 
     - part: "Unidad 5: Python Avanzado"
       chapters:
-        - unidades/unidad5/intro.qmd
-        - unidades/unidad5/1_exepciones_manejo_de_errores.qmd
-        - unidades/unidad5/2_lectura_y_escritura_de_archivos.qmd
-        - unidades/unidad5/3_programacion_funcional.qmd
-        - unidades/unidad5/4_comprension_y_generadores.qmd
-        - unidades/unidad5/5_modulos_y_paquetes_avanzados.qmd
-        - unidades/unidad5/6_decoradores_y_context_managers.qmd
-        - unidades/unidad5/7_colecciones_de_datos_y_estructuras_especializadas.qmd
-        - unidades/unidad5/8_manipulacion_de_fechas_y_tiempos.qmd
-        - unidades/unidad5/9_concurrencia_y_paralelismo.qmd
-        - unidades/unidad5/10_pruebas_y_debugging.qmd
+        - "unidades/unidad5/intro.qmd"
+        - "unidades/unidad5/1_exepciones_manejo_de_errores.qmd"
+        - "unidades/unidad5/2_lectura_y_escritura_de_archivos.qmd"
+        - "unidades/unidad5/3_programacion_funcional.qmd"
+        - "unidades/unidad5/4_comprension_y_generadores.qmd"
+        - "unidades/unidad5/5_modulos_y_paquetes_avanzados.qmd"
+        - "unidades/unidad5/6_decoradores_y_context_managers.qmd"
+        - "unidades/unidad5/7_colecciones_de_datos_y_estructuras_especializadas.qmd"
+        - "unidades/unidad5/8_manipulacion_de_fechas_y_tiempos.qmd"
+        - "unidades/unidad5/9_concurrencia_y_paralelismo.qmd"
+        - "unidades/unidad5/10_pruebas_y_debugging.qmd"
 
     - part: "Unidad 6: Bases de Datos"
       chapters:
-        - unidades/unidad6/1_intro.qmd
-        - unidades/unidad6/2_db_sqlite.qmd
-        - unidades/unidad6/3_db_mysql.qmd
-        - unidades/unidad6/4_db_postgresql.qmd
-        - unidades/unidad6/5_db_mongo.qmd
+        - "unidades/unidad6/1_intro.qmd"
+        - "unidades/unidad6/2_db_sqlite.qmd"
+        - "unidades/unidad6/3_db_mysql.qmd"
+        - "unidades/unidad6/4_db_postgresql.qmd"
+        - "unidades/unidad6/5_db_mongo.qmd"
 
     - part: "Unidad 7: Frameworks en Python"
       chapters:
-        - unidades/unidad7/1_intro.qmd
-        - unidades/unidad7/2_intro_to_django.qmd
-        - unidades/unidad7/3_estructura_proyecto.qmd
-        - unidades/unidad7/4_modelos_django.qmd
-        - unidades/unidad7/5_forms.qmd
-        - unidades/unidad7/6_vistas.qmd
-        - unidades/unidad7/7_templates.qmd
-        - unidades/unidad7/8_urls.qmd
+        - "unidades/unidad7/1_intro.qmd"
+        - "unidades/unidad7/2_intro_to_django.qmd"
+        - "unidades/unidad7/3_estructura_proyecto.qmd"
+        - "unidades/unidad7/4_modelos_django.qmd"
+        - "unidades/unidad7/5_forms.qmd"
+        - "unidades/unidad7/6_vistas.qmd"
+        - "unidades/unidad7/7_templates.qmd"
+        - "unidades/unidad7/8_urls.qmd"
 
     - part: "Proyectos"
       chapters:
-        - unidades/Proyectos/3_funciones.qmd
-        - unidades/Proyectos/1_proyecto_modulos.qmd
-        - unidades/Proyectos/2_proyecto_poo.qmd
-        - unidades/Proyectos/4_proyecto_poo_2.qmd
-        - unidades/Proyectos/5_DevContainers.qmd
-        - unidades/Proyectos/6_calculadora.qmd
-        - unidades/Proyectos/0_tienda_virtual.qmd
+        - "unidades/Proyectos/3_funciones.qmd"
+        - "unidades/Proyectos/1_proyecto_modulos.qmd"
+        - "unidades/Proyectos/2_proyecto_poo.qmd"
+        - "unidades/Proyectos/4_proyecto_poo_2.qmd"
+        - "unidades/Proyectos/5_DevContainers.qmd"
+        - "unidades/Proyectos/6_calculadora.qmd"
+        - "unidades/Proyectos/0_tienda_virtual.qmd"
 
     - part: "Extras"
       chapters:
-        - unidades/Extras/0_parte.qmd
-        - unidades/Extras/1_parte.qmd
-        - unidades/Extras/2_parte.qmd
-        - unidades/Extras/3_parte.qmd
-        - unidades/Extras/4_parte.qmd
-        - unidades/Extras/5_parte.qmd
-        - unidades/Extras/6_parte.qmd
+        - "unidades/Extras/0_parte.qmd"
+        - "unidades/Extras/1_parte.qmd"
+        - "unidades/Extras/2_parte.qmd"
+        - "unidades/Extras/3_parte.qmd"
+        - "unidades/Extras/4_parte.qmd"
+        - "unidades/Extras/5_parte.qmd"
+        - "unidades/Extras/6_parte.qmd"
 
-bibliography: references.bib
+bibliography: "references.bib"
 biblio-style: "apalike"
 
 format:
   html:
     number-sections: false
     theme:
-      dark: solar #slate, darkly, solar, superhero, vapor
-      # light: cosmo
+      dark: solar
     number-depth: 4
     link-external-icon: true
     link-external-newwindow: true
-    css: css/styles.css
+    css: "css/styles.css"
 
   pdf:
     documentclass: scrreprt
-    classoption: ["onepage", "openany"]
+    classoption:
+      - "onepage"
+      - "openany"
     papersize: a4
     toc: true
     margin-top: 35mm
@@ -140,6 +145,7 @@ format:
       - bottom=30mm
       - right=30mm
       - left=30mm
+
   epub:
     belongs-to-collection: "Bootcamp Desarrollo Web FullStack"
     group-position: 0

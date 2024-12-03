@@ -497,6 +497,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <a href="../../unidades/Proyectos/6_calculadora.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio: Calculadora en Python</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/Proyectos/0_tienda_virtual.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tienda Virtual.</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -606,11 +611,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>); </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>En el ejemplo anterior, se crea una tabla llamada usuarios con tres columnas: id, nombre y email.</p>
 <p><strong>Ejemplo 2</strong>: Consulta básica</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> usuarios <span class="kw">WHERE</span> email <span class="kw">LIKE</span> <span class="st">'%@gmail.com'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En el ejemplo anterior, se seleccionan todos los usuarios cuyo email contiene “<span class="citation" data-cites="gmail.com">(<a href="#ref-gmail.com" role="doc-biblioref"><strong>gmail.com?</strong></a>)</span>”.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> usuarios <span class="kw">WHERE</span> email <span class="kw">LIKE</span> <span class="st">'%\@gmail.com'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En el ejemplo anterior, se seleccionan todos los usuarios cuyo email contiene “@gmail.com”.</p>
 <p><strong>Ejemplo 3</strong>: Transacción básica</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">BEGIN</span> <span class="kw">TRANSACTION</span>;</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> usuarios (<span class="kw">id</span>, nombre, email) <span class="kw">VALUES</span> (<span class="dv">1</span>, <span class="st">'Ana'</span>, <span class="st">'ana@gmail.com'</span>);</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> usuarios (<span class="kw">id</span>, nombre, email) <span class="kw">VALUES</span> (<span class="dv">1</span>, <span class="st">'Ana'</span>, <span class="st">'ana\@gmail.com'</span>);</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> usuarios <span class="kw">WHERE</span> <span class="kw">id</span> <span class="op">=</span> <span class="dv">1</span>;</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">ROLLBACK</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>En el ejemplo anterior, se inicia una transacción, se inserta un usuario, se elimina y se revierte la operación.</p>

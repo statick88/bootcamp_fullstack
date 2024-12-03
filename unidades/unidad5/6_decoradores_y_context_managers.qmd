@@ -1,4 +1,3 @@
-:::{.justify}
 ## Decoradores y Context Managers
 
 :::{.center}
@@ -9,7 +8,7 @@ Los decoradores permiten modificar el comportamiento de una función, mientras q
 
 ### Conceptos clave
 
-- **@decorator**: Sintaxis para aplicar un decorador.
+- **\@decorator**: Sintaxis para aplicar un decorador.
 
 - **with y __enter__, __exit__**: Para crear context managers.
 
@@ -92,4 +91,3 @@ with LogManager() as log:
 ```
 </details>
 
-:::

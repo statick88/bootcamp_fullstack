@@ -1,4 +1,3 @@
-:::{.justify}
 ## Lectura y Escritura de Archivos
 
 ::: {.center}
@@ -72,7 +71,7 @@ def escribir_y_leer_archivo():
     with open('entrada.txt', 'w') as archivo:
         texto = input("Escribe algo: ")
         archivo.write(texto)
-    
+ 
     # Leer el archivo
     with open('entrada.txt', 'r') as archivo:
         contenido = archivo.read()
@@ -80,4 +79,3 @@ def escribir_y_leer_archivo():
 
 escribir_y_leer_archivo()
 ```
-:::
