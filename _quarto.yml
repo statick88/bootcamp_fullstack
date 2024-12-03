@@ -105,6 +105,7 @@ book:
         - "unidades/Proyectos/5_DevContainers.qmd"
         - "unidades/Proyectos/6_calculadora.qmd"
         - "unidades/Proyectos/0_tienda_virtual.qmd"
+        - "unidades/Proyectos/1_tienda_virtual.qmd"
 
     - part: "Extras"
       chapters:

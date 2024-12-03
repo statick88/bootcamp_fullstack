@@ -2,7 +2,7 @@
 # Tienda Virtual.
 
 :::{.center}
-![Tienda Virtual](./images/tienda-virtual-profesional.jpg){width=50%}
+![Tienda Virtual](./images/tienda-virtual-profesional.png){width=50%}
 :::
 
 Este proyecto tiene como objetivo construir una tienda virtual escalable y moderna utilizando Django para el backend, React con Vite, TailwindCSS y TypeScript para el frontend, y PostgreSQL como base de datos. Se utilizará Docker para crear un entorno de desarrollo consistente, con contenedores separados para el backend, frontend y base de datos. El sistema integrará PayPal Sandbox para pagos y será desplegado en Railway (backend) y Vercel (frontend).
@@ -20,8 +20,6 @@ Desarrollar una tienda virtual con una arquitectura modular, utilizando tecnolog
 3. Integrar pagos con PayPal Sandbox para procesar transacciones de forma segura.
 4. Configurar un entorno dockerizado con tres contenedores y una red interna para comunicación entre el backend y la base de datos.
 5. Desplegar el backend en Railway y el frontend en Vercel, asegurando que el sistema sea accesible públicamente.
-
----
 
 ## Fase 1: Recolección de Requisitos
 
@@ -67,8 +65,6 @@ Desarrollar una tienda virtual con una arquitectura modular, utilizando tecnolog
 - Railway para el backend.
 - Vercel para el frontend.
 
----
-
 ## Fase 2: Diseño del Sistema
 
 ### Arquitectura General:
@@ -98,8 +94,6 @@ Desarrollar una tienda virtual con una arquitectura modular, utilizando tecnolog
 - **Base de datos**: Contenedor de PostgreSQL.
 - **Backend**: Contenedor de Django conectado a la base de datos por una red interna.
 - **Frontend**: Contenedor de React que interactúa con el backend mediante APIs.
-
----
 
 ## Fase 3: Configuración Inicial
 
@@ -131,8 +125,6 @@ Desarrollar una tienda virtual con una arquitectura modular, utilizando tecnolog
 - Configuración de red interna en Docker.
 - Archivo **README.md** con instrucciones básicas para iniciar el proyecto.
 
----
-
 ## Fase 4: Desarrollo del Backend
 
 ### Actividades:
@@ -146,18 +138,12 @@ Desarrollar una tienda virtual con una arquitectura modular, utilizando tecnolog
 - Implementar autenticación basada en JWT.
 - Crear endpoints REST para users, products, orders y payments.
 
----
-
-## Fase 5: Desarrollo del Frontend
-
 ### Actividades:
 
 - Configurar React con Vite, TailwindCSS y TypeScript.
 - Crear componentes reutilizables y páginas principales.
 - Configurar React Router para navegación entre vistas.
 - Consumir APIs del backend con Axios, manejando autenticación con JWT.
-
----
 
 ## Fase 6: Integración de Pagos
 
@@ -175,8 +161,6 @@ Desarrollar una tienda virtual con una arquitectura modular, utilizando tecnolog
 - Pruebas de integración para el flujo completo (registro → compra → pago).
 - Validar la comunicación entre contenedores en el entorno dockerizado.
 
----
-
 ## Fase 8: Despliegue
 
 ### Actividades:
@@ -184,8 +168,6 @@ Desarrollar una tienda virtual con una arquitectura modular, utilizando tecnolog
 - Configurar el backend para producción en Railway.
 - Configurar el frontend para producción en Vercel.
 - Validar el sistema completo en entornos reales, incluyendo la integración con PayPal Sandbox.
-
----
 
 ## Fase 9: Optimización y Mantenimiento
 
