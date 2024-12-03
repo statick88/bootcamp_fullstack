@@ -100,6 +100,7 @@ book:
         - unidades/Proyectos/4_proyecto_poo_2.qmd
         - unidades/Proyectos/5_DevContainers.qmd
         - unidades/Proyectos/6_calculadora.qmd
+        - unidades/Proyectos/0_tienda_virtual.qmd
 
     - part: "Extras"
       chapters:

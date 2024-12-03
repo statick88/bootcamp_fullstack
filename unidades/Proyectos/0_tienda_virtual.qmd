@@ -1,0 +1,197 @@
+:::{.justify}
+# Tienda Virtual.
+
+:::{.center}
+![Tienda Virtual](./images/tienda-virtual-profesional.jpg){width=50%}
+:::
+
+Este proyecto tiene como objetivo construir una tienda virtual escalable y moderna utilizando Django para el backend, React con Vite, TailwindCSS y TypeScript para el frontend, y PostgreSQL como base de datos. Se utilizará Docker para crear un entorno de desarrollo consistente, con contenedores separados para el backend, frontend y base de datos. El sistema integrará PayPal Sandbox para pagos y será desplegado en Railway (backend) y Vercel (frontend).
+
+## Descripción General
+
+### Objetivo General:
+
+Desarrollar una tienda virtual con una arquitectura modular, utilizando tecnologías modernas y buenas prácticas para garantizar la escalabilidad, seguridad y rendimiento.
+
+### Objetivos Específicos:
+
+1. Implementar un backend funcional con Django y Django REST Framework, utilizando autenticación basada en tokens (JWT) y una base de datos PostgreSQL.
+2. Diseñar un frontend interactivo y responsivo con React, utilizando Vite, TailwindCSS y TypeScript.
+3. Integrar pagos con PayPal Sandbox para procesar transacciones de forma segura.
+4. Configurar un entorno dockerizado con tres contenedores y una red interna para comunicación entre el backend y la base de datos.
+5. Desplegar el backend en Railway y el frontend en Vercel, asegurando que el sistema sea accesible públicamente.
+
+---
+
+## Fase 1: Recolección de Requisitos
+
+### Requisitos Funcionales:
+
+**Usuarios**:
+
+- Registro, inicio de sesión y gestión de perfiles (roles: cliente y administrador).
+
+**Productos**:
+
+- CRUD (crear, leer, actualizar, eliminar) para la gestión de productos.
+
+**Carrito y Pedidos**:
+
+- Gestión de carritos de compras y creación de pedidos.
+
+**Pagos**:
+
+- Integración con PayPal Sandbox para el procesamiento de pagos.
+
+**Requisitos Técnicos**:
+
+**Backend**:
+
+- Django con Django REST Framework.
+- PostgreSQL como base de datos relacional.
+- Autenticación JWT.
+
+**Frontend**:
+
+- React con Vite, TailwindCSS y TypeScript.
+- Consumo de APIs REST del backend.
+
+**Infraestructura**:
+
+- Docker para el desarrollo y despliegue local.
+- Docker Compose para orquestar los contenedores.
+- Una red interna para comunicación entre backend y base de datos.
+
+**Despliegue**:
+
+- Railway para el backend.
+- Vercel para el frontend.
+
+---
+
+## Fase 2: Diseño del Sistema
+
+### Arquitectura General:
+
+**Backend**:
+
+- Aplicaciones en Django para users, products, orders y payments.
+- Endpoints REST con DRF para gestionar usuarios, productos, pedidos y pagos.
+- Configuración de variables de entorno para manejo de secretos y credenciales (base de datos, PayPal, etc.).
+
+**Frontend**:
+
+- Componentes reutilizables (Navbar, ProductCard, Cart, etc.).
+
+### Rutas principales:
+
+- **Home**: Listar productos.
+- **Product Details**: Ver detalles de un producto.
+- **Cart**: Mostrar productos en el carrito.
+- **Checkout**: Procesar pedidos y pagos.
+- **Profile**: Gestión de usuario.
+
+### Infraestructura:
+
+**Docker Compose con tres servicios**:
+
+- **Base de datos**: Contenedor de PostgreSQL.
+- **Backend**: Contenedor de Django conectado a la base de datos por una red interna.
+- **Frontend**: Contenedor de React que interactúa con el backend mediante APIs.
+
+---
+
+## Fase 3: Configuración Inicial
+
+### Actividades:
+
+- Crear la estructura inicial del proyecto con directorios separados para el backend y el frontend.
+- Configurar un archivo docker-compose.yml para orquestar los contenedores.
+- Crear una red de Docker manualmente que conecte solo al backend y la base de datos.
+
+**Archivos Iniciales**:
+
+**Backend**:
+
+- **.env** para variables de entorno (e.g., DATABASE_URL, SECRET_KEY).
+- **requirements.txt** para gestionar dependencias de Python.
+- **.gitignore** para excluir archivos sensibles (env/, __pycache__/, etc.).
+- Configuración de **settings.py** separada para desarrollo y producción.
+
+**Frontend**:
+
+- Archivo **vite.config.js** para configurar Vite.
+- Configuración de TailwindCSS.
+- **.env** para variables de entorno (URL de la API del backend).
+- **.gitignore** para excluir archivos innecesarios (node_modules/, dist/).
+
+### General:
+
+- Archivo **docker-compose.yml** para la infraestructura.
+- Configuración de red interna en Docker.
+- Archivo **README.md** con instrucciones básicas para iniciar el proyecto.
+
+---
+
+## Fase 4: Desarrollo del Backend
+
+### Actividades:
+
+**Crear modelos y relaciones**:
+
+- User: Con roles (cliente y administrador).
+- Product: Con detalles como precio, inventario, etc.
+- Order: Asociado a usuarios y productos.
+- Configurar vistas y serializadores con Django REST Framework.
+- Implementar autenticación basada en JWT.
+- Crear endpoints REST para users, products, orders y payments.
+
+---
+
+## Fase 5: Desarrollo del Frontend
+
+### Actividades:
+
+- Configurar React con Vite, TailwindCSS y TypeScript.
+- Crear componentes reutilizables y páginas principales.
+- Configurar React Router para navegación entre vistas.
+- Consumir APIs del backend con Axios, manejando autenticación con JWT.
+
+---
+
+## Fase 6: Integración de Pagos
+
+### Actividades:
+
+- Configurar PayPal Sandbox en el backend para generar enlaces de pago.
+- Implementar la lógica en el frontend para manejar transacciones.
+- Validar los pagos y actualizar los pedidos según el estado de la transacción.
+
+## Fase 7: Pruebas
+
+### Actividades:
+
+- Pruebas unitarias para backend y frontend.
+- Pruebas de integración para el flujo completo (registro → compra → pago).
+- Validar la comunicación entre contenedores en el entorno dockerizado.
+
+---
+
+## Fase 8: Despliegue
+
+### Actividades:
+
+- Configurar el backend para producción en Railway.
+- Configurar el frontend para producción en Vercel.
+- Validar el sistema completo en entornos reales, incluyendo la integración con PayPal Sandbox.
+
+---
+
+## Fase 9: Optimización y Mantenimiento
+
+### Actividades:
+
+- Optimizar consultas de la base de datos y rendimiento del backend.
+- Implementar monitoreo y alertas para errores y rendimiento.
+- Actualizar dependencias y resolver vulnerabilidades de seguridad.
+:::
