@@ -1,0 +1,205 @@
+:::{.justify}
+# Fase 3: Configuración del Contenedor para el Backend
+
+En esta fase, configuraremos el backend utilizando Django. Lo ejecutaremos dentro de un contenedor Docker y lo conectaremos con la base de datos PostgreSQL creada en la fase anterior. Aseguraremos que ambos contenedores puedan comunicarse mediante la red **backend_network**.
+
+## Paso 1: Estructura de Archivos
+
+Crea la siguiente estructura en tu proyecto:
+
+```bash
+project/
+│
+├── backend/
+│   ├── Dockerfile
+│   ├── docker-compose.yml
+│   ├── .env
+│   ├── requirements.txt
+│   ├── manage.py  # Se generará automáticamente al crear el proyecto Django
+│   ├── backend/   # Carpeta principal del proyecto Django
+│   │   ├── settings.py
+│   │   ├── urls.py
+│   │   └── wsgi.py
+│
+└── db/
+    └── docker-compose.yml
+```
+
+## Paso 2: Configurar el Archivo .env
+
+En la carpeta **backend/**, crea un archivo **.env** con las siguientes variables de entorno:
+
+```plaintext
+DJANGO_SECRET_KEY=your_secret_key_here
+DJANGO_DEBUG=True
+POSTGRES_USER=admin
+POSTGRES_PASSWORD=securepassword
+POSTGRES_DB=ecommerce
+POSTGRES_HOST=db
+POSTGRES_PORT=5432
+```
+### Explicación:
+
+- **DJANGO_SECRET_KEY**: Llave secreta para el backend.
+- **DJANGO_DEBUG**: Configuración para habilitar el modo desarrollo.
+- **POSTGRES_\***: Variables necesarias para conectar Django con PostgreSQL.
+
+## Paso 3: Crear el Archivo requirements.txt
+
+Crea un archivo **requirements.txt** con las dependencias necesarias para el proyecto Django:
+
+```plaintext
+Django==4.2
+djangorestframework
+psycopg2-binary
+```
+
+### Explicación:
+
+- **Django**: Framework principal para el backend.
+- **djangorestframework**: Extensión de Django para crear APIs REST.
+- **psycopg2-binary**: Cliente para conectar Django con PostgreSQL.
+
+## Paso 4: Crear el Archivo Dockerfile
+
+En la carpeta **backend/**, crea el archivo Dockerfile para construir la imagen de Docker del backend.
+
+```dockerfile
+# Usamos la imagen base de Python 3.10
+FROM python:3.10-slim
+
+# Establecemos el directorio de trabajo en el contenedor
+WORKDIR /app
+
+# Copiamos los archivos necesarios al contenedor
+COPY requirements.txt requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copiamos el código fuente
+COPY . .
+
+# Exponemos el puerto 8000 para el servidor de desarrollo
+EXPOSE 8000
+
+# Comando por defecto para ejecutar el servidor
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+```
+### Explicación:
+
+- **FROM python:3.10-slim**: Utilizamos una imagen ligera de Python 3.10.
+- **WORKDIR /app**: Establece la carpeta de trabajo dentro del contenedor.
+- **COPY requirements.txt**: Copiamos las dependencias al contenedor para instalarlas.
+- **CMD**: Comando que ejecutará el servidor de desarrollo de Django.
+
+## Paso 5: Configurar **docker-compose.yml** para el Backend
+
+En la carpeta backend/, crea un archivo docker-compose.yml para definir el contenedor del backend.
+
+```yaml
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: django_backend
+    environment:
+      - DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY}
+      - DJANGO_DEBUG=${DJANGO_DEBUG}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_HOST=${POSTGRES_HOST}
+      - POSTGRES_PORT=${POSTGRES_PORT}
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    networks:
+      - backend_network
+
+networks:
+  backend_network:
+    external: true
+```
+
+### Explicación:
+
+- **build**: Indica cómo construir la imagen del contenedor.
+- **environment**: Pasa las variables de entorno al contenedor.
+- **volumes**: Monta el código local para facilitar el desarrollo.
+- **ports**: Expone el puerto 8000 para acceder al servidor de desarrollo.
+- **networks**: Conecta el contenedor a la red backend_network.
+
+## Paso 6: Crear y Configurar el Proyecto Django
+
+1. Inicia el contenedor del backend:
+
+```bash
+docker-compose up -d
+```
+2. Accede al contenedor:
+
+```bash
+docker exec -it django_backend bash
+```
+3. Dentro del contenedor, crea el proyecto Django:
+
+```bash
+django-admin startproject backend .
+```
+4. Modifica el archivo **settings.py** en **backend/settings.py**:
+
+- Reemplaza la configuración de la base de datos con lo siguiente:
+
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('POSTGRES_DB'),
+        'USER': os.getenv('POSTGRES_USER'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+        'HOST': os.getenv('POSTGRES_HOST'),
+        'PORT': os.getenv('POSTGRES_PORT'),
+    }
+}
+```
+- Agrega al final del archivo:
+
+```python
+import os
+
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
+DEBUG = os.getenv('DJANGO_DEBUG') == 'True'
+```
+## Paso 7: Migrar la Base de Datos
+
+Dentro del contenedor del backend, ejecuta:
+
+```bash
+python manage.py migrate
+```
+Esto conectará Django a PostgreSQL y aplicará las migraciones iniciales.
+
+## Paso 8: Probar el Backend
+
+1. Inicia el servidor de desarrollo dentro del contenedor:
+
+```bash
+python manage.py runserver 0.0.0.0:8000
+```
+2. Accede a <http://localhost:8000> en tu navegador. Deberías ver la página inicial de Django.
+
+## Pruebas Finales
+
+1. Asegúrate de que el backend puede comunicarse con la base de datos:
+
+  - Crea un modelo simple en **backend/models.py**.
+  - Aplica las migraciones.
+  - Valida que el modelo se refleje en la base de datos.
+
+2.  Revisa los logs del contenedor para identificar posibles errores:
+
+```bash
+docker logs django_backend
+```
+:::

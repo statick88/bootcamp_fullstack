@@ -1,0 +1,136 @@
+:::{.justify}
+# Fase 2: Configuración de Red y Contenedor para la Base de Datos
+
+En esta fase, configuraremos lo siguiente:
+
+1. Crear la red manualmente.
+2. Configurar y levantar el contenedor para la base de datos PostgreSQL.
+3. Configurar persistencia de datos con volúmenes.
+4. Probar que la base de datos funciona correctamente.
+
+## Paso 1: Crear la Red Manualmente
+
+Docker necesita una red para permitir la comunicación entre el backend y la base de datos. Esta red será creada de forma manual antes de levantar los contenedores.
+
+1. Abre una terminal y ejecuta el siguiente comando para crear la red:
+
+```bash
+docker network create backend_network
+```
+2. Verifica que la red fue creada:
+
+```bash
+docker network ls
+```
+Busca **backend_network** en la lista de redes.
+
+## Paso 2: Configurar el Contenedor para la Base de Datos
+
+Crearemos un contenedor para PostgreSQL utilizando **docker-compose.yml**.
+
+1. Estructura de archivos y carpetas:
+
+  - En el directorio **project/db/**, crea un archivo docker-compose.yml.
+
+2.  Contenido del archivo **docker-compose.yml** para la base de datos:
+
+```yaml
+services:
+  db:
+    image: postgres:14
+    container_name: postgres_container
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: securepassword
+      POSTGRES_DB: ecommerce
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - backend_network
+    ports:
+      - "5432:5432" # Exponer puerto solo para pruebas iniciales
+
+volumes:
+  db_data:
+
+networks:
+  backend_network:
+    external: true
+```
+3. Explicación del código:
+
+- **image**: Usamos la imagen oficial de PostgreSQL versión 14.
+- **container_name**: El nombre del contenedor para identificarlo fácilmente.
+- **restart**: Permite que el contenedor se reinicie automáticamente en caso de fallo.
+- **environment**: Variables de entorno necesarias para configurar PostgreSQL:
+  - **POSTGRES_USER**: Usuario de la base de datos.
+  - **POSTGRES_PASSWORD**: Contraseña de acceso.
+  - **POSTGRES_DB**: Nombre de la base de datos inicial.
+- **volumes**: Se utiliza para persistir los datos fuera del contenedor, evitando pérdidas al reiniciar.
+- **networks**: Conectamos el contenedor a la red **backend_network**.
+- **ports**: Exponemos el puerto 5432 para conectarnos desde herramientas externas durante el desarrollo.
+
+## Paso 3: Levantar el Contenedor de la Base de Datos
+
+1. Ve al directorio **db** y ejecuta:
+
+```bash
+docker-compose up -d
+```
+2. Verifica que el contenedor está corriendo:
+
+```bash
+docker ps
+```
+Deberías ver algo similar:
+
+```bash
+CONTAINER ID   IMAGE        COMMAND                  ...     PORTS
+abc123xyz      postgres:14  "docker-entrypoint.s…"  ...     0.0.0.0:5432->5432/tcp
+```
+
+## Paso 4: Probar la Base de Datos
+
+Para asegurarte de que la base de datos está funcionando correctamente:
+
+1. Instala una herramienta de administración de bases de datos como la extension PostgreSQL en Visual Studio code SQLTools PostgreSQL/Cockroach Driver o utilizar la línea de comandos **psql**.
+
+:::{.center}
+![PostgreSQL en Visual Studio Code](./images/postgresql_vscode.png){width=800}
+:::
+
+Conéctate a la base de datos usando:
+
+- **Host**: localhost
+- **Puerto**: 5432
+- **Usuario**: admin
+- **Contraseña**: securepassword
+- **Base de datos**: ecommerce
+
+Ejecuta el siguiente comando para verificar que puedes acceder:
+
+```sql
+SELECT version();
+```
+Esto debería mostrar la versión de PostgreSQL instalada.
+
+## Paso 5: Configuración Adicional
+
+Antes de continuar con el contenedor del backend:
+
+- Asegúrate de que la red **backend_network** conecta correctamente el contenedor **db**.
+- Valida que el volumen **db_data** está funcionando:
+  - Detén el contenedor: **docker-compose down**.
+  - Reinícialo: **docker-compose up -d**.
+  - Confirma que los datos persisten.
+
+## Pruebas Finales
+
+- Si puedes acceder a la base de datos desde herramientas externas o desde la línea de comandos, entonces el contenedor está configurado correctamente.
+
+- Si encuentras algún error, verifica:
+  
+  - Que las variables de entorno en docker-compose.yml están correctas.
+  - Que el puerto 5432 no está siendo utilizado por otro servicio.
+:::
