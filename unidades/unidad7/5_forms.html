@@ -443,17 +443,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad7/6_vistas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Vistas en Django</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad7/7_templates.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Vistas, Urls y Plantillas en Django</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad7/8_urls.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Urls en Django</span></a>
+  <a href="../../unidades/unidad7/6_vistas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Vistas, Templates y Rutas en Django</span></a>
   </div>
 </li>
       </ul>
@@ -600,7 +590,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="creación-de-un-formulario" class="level2">
 <h2 class="anchored" data-anchor-id="creación-de-un-formulario">Creación de un formulario</h2>
 <p>Para crear un formulario en Django, primero debemos definir una clase que herede de <strong>forms.Form</strong> o <strong>forms.ModelForm</strong>. A continuación, definimos los campos del formulario como atributos de la clase. Por ejemplo, el siguiente formulario permite a los usuarios enviar un mensaje de contacto:</p>
-<div class="callout-info">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Recordemos los modelos creados en la sección anterior:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.db <span class="im">import</span> models</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -619,6 +618,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f'</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>medicamento<span class="sc">}</span><span class="ss"> - </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>cantidad<span class="sc">}</span><span class="ss">'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>Para crear un formulario de contacto, podemos hacer lo siguiente:</p>
 <div class="sourceCode" id="annotated-cell-1"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-1-1" class="code-annotation-target"><a href="#annotated-cell-1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django <span class="im">import</span> forms</span>
@@ -1316,8 +1316,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../unidades/unidad7/6_vistas.html" class="pagination-link" aria-label="Vistas en Django">
-        <span class="nav-page-text"><span class="chapter-title">Vistas en Django</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../unidades/unidad7/6_vistas.html" class="pagination-link" aria-label="Vistas, Templates y Rutas en Django">
+        <span class="nav-page-text"><span class="chapter-title">Vistas, Templates y Rutas en Django</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

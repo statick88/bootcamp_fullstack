@@ -8,7 +8,7 @@
 
 <meta name="description" content="Bootcamp de Desarrollo Web FullStack con Python, Django y React">
 
-<title>Vistas en Django – Bootcamp Desarrollo Web FullStack</title>
+<title>Vistas, Templates y Rutas en Django – Bootcamp Desarrollo Web FullStack</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../unidades/unidad7/7_templates.html" rel="next">
+<link href="../../unidades/Proyectos/3_funciones.html" rel="next">
 <link href="../../unidades/unidad7/5_forms.html" rel="prev">
 <link href="../../logo.jpeg" rel="icon" type="image/jpeg">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
@@ -120,7 +120,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad7/1_intro.html">Unidad 7: Frameworks en Python</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad7/6_vistas.html"><span class="chapter-title">Vistas en Django</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad7/1_intro.html">Unidad 7: Frameworks en Python</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad7/6_vistas.html"><span class="chapter-title">Vistas, Templates y Rutas en Django</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -443,17 +443,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad7/6_vistas.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Vistas en Django</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad7/7_templates.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Vistas, Urls y Plantillas en Django</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../unidades/unidad7/8_urls.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Urls en Django</span></a>
+  <a href="../../unidades/unidad7/6_vistas.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Vistas, Templates y Rutas en Django</span></a>
   </div>
 </li>
       </ul>
@@ -570,15 +560,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#paso-2-mostrar-el-detalle-de-un-medicamento" id="toc-paso-2-mostrar-el-detalle-de-un-medicamento" class="nav-link active" data-scroll-target="#paso-2-mostrar-el-detalle-de-un-medicamento">Paso 2: Mostrar el Detalle de un Medicamento</a>
+  <ul class="collapse">
+  <li><a href="#vista-1" id="toc-vista-1" class="nav-link" data-scroll-target="#vista-1">Vista</a></li>
+  <li><a href="#template-1" id="toc-template-1" class="nav-link" data-scroll-target="#template-1">Template</a></li>
+  <li><a href="#ruta-1" id="toc-ruta-1" class="nav-link" data-scroll-target="#ruta-1">Ruta</a></li>
+  </ul></li>
+  <li><a href="#paso-3-crear-un-nuevo-medicamento" id="toc-paso-3-crear-un-nuevo-medicamento" class="nav-link" data-scroll-target="#paso-3-crear-un-nuevo-medicamento">Paso 3: Crear un Nuevo Medicamento</a>
+  <ul class="collapse">
+  <li><a href="#vista-2" id="toc-vista-2" class="nav-link" data-scroll-target="#vista-2">Vista</a></li>
+  <li><a href="#template-2" id="toc-template-2" class="nav-link" data-scroll-target="#template-2">Template</a></li>
+  <li><a href="#ruta-2" id="toc-ruta-2" class="nav-link" data-scroll-target="#ruta-2">Ruta</a></li>
+  <li><a href="#probar-las-vistas" id="toc-probar-las-vistas" class="nav-link" data-scroll-target="#probar-las-vistas">Probar las Vistas</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad7/1_intro.html">Unidad 7: Frameworks en Python</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad7/6_vistas.html"><span class="chapter-title">Vistas en Django</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad7/1_intro.html">Unidad 7: Frameworks en Python</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad7/6_vistas.html"><span class="chapter-title">Vistas, Templates y Rutas en Django</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Vistas en Django</span></h1>
+<h1 class="title"><span class="chapter-title">Vistas, Templates y Rutas en Django</span></h1>
 </div>
 
 
@@ -596,259 +604,222 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <div class="justify">
-<p>En el captitulo anterior se crearon los modelos <strong>Medicamento</strong> y <strong>Venta</strong> para la aplicación <strong>farmacia</strong>. En este capítulo se crearán las vistas necesarias para la aplicación.</p>
-<section id="creación-de-vistas" class="level2">
-<h2 class="anchored" data-anchor-id="creación-de-vistas">Creación de vistas</h2>
-<p>Las vistas en Django son funciones o clases que reciben una petición HTTP y devuelven una respuesta HTTP. Las vistas se definen en el archivo <strong>views.py</strong> de cada aplicación.</p>
-<p>Para crear una vista en Django, debemos seguir los siguientes pasos:</p>
-<ol type="1">
-<li>Importar los modelos y módulos necesarios.</li>
-<li>Definir la lógica de la vista.</li>
-<li>Devolver una respuesta HTTP.</li>
-</ol>
-<div class="callout-info">
-<p>Recordemos los modelos creados en la sección anterior:</p>
+<p>En este capítulo, aprenderemos cómo crear vistas, templates y rutas en Django. Las vistas procesan las solicitudes HTTP y devuelven respuestas. Los templates generan la interfaz de usuario, y las rutas definen las URLs para acceder a las vistas.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Modelos y Formularios Reutilizados
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Usaremos los modelos y formularios creados previamente:</li>
+</ul>
+<section id="modelos-models.py" class="level3">
+<h3 class="anchored" data-anchor-id="modelos-models.py">Modelos (models.py):</h3>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.db <span class="im">import</span> models</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Medicamento(models.Model):</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    nombre <span class="op">=</span> models.CharField(max_length<span class="op">=</span><span class="dv">100</span>)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    precio <span class="op">=</span> models.DecimalField(max_digits<span class="op">=</span><span class="dv">10</span>, decimal_places<span class="op">=</span><span class="dv">2</span>)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    existencias <span class="op">=</span> models.IntegerField()</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.nombre</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Venta(models.Model):</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    medicamento <span class="op">=</span> models.ForeignKey(Medicamento, on_delete<span class="op">=</span>models.CASCADE)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    cantidad <span class="op">=</span> models.IntegerField()</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    fecha <span class="op">=</span> models.DateTimeField(auto_now_add<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f'</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>medicamento<span class="sc">}</span><span class="ss"> - </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>cantidad<span class="sc">}</span><span class="ss">'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>En el archivo <strong>views.py</strong> de la aplicación <strong>farmacia</strong>, podemos definir las siguientes vistas:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.shortcuts <span class="im">import</span> render</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    lugar <span class="op">=</span> models.CharField(max_length<span class="op">=</span><span class="dv">100</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    fecha <span class="op">=</span> models.DateTimeField(auto_now<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.nombre  <span class="co"># Devuelve el nombre del medicamento</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Venta(models.Model):</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    medicamento <span class="op">=</span> models.ForeignKey(Medicamento, on_delete<span class="op">=</span>models.CASCADE)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    cantidad <span class="op">=</span> models.IntegerField()</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    fecha <span class="op">=</span> models.DateTimeField(auto_now<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>medicamento<span class="sc">.</span>nombre<span class="sc">}</span><span class="ss"> - </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>cantidad<span class="sc">}</span><span class="ss"> unidades"</span>  <span class="co"># Muestra el nombre del medicamento y la cantidad vendida</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="formularios-forms.py" class="level3">
+<h3 class="anchored" data-anchor-id="formularios-forms.py">Formularios (forms.py):</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django <span class="im">import</span> forms</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .models <span class="im">import</span> Medicamento, Venta</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Vista para mostrar la lista de medicamentos</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lista_medicamentos(request):</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    medicamentos <span class="op">=</span> Medicamento.objects.<span class="bu">all</span>()</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render(request, <span class="st">'farmacia/lista_medicamentos.html'</span>, {<span class="st">'medicamentos'</span>: medicamentos})</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Vista para mostrar el detalle de un medicamento</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> detalle_medicamento(request, <span class="bu">id</span>):</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    medicamento <span class="op">=</span> Medicamento.objects.get(<span class="bu">id</span><span class="op">=</span><span class="bu">id</span>)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render(request, <span class="st">'farmacia/detalle_medicamento.html'</span>, {<span class="st">'medicamento'</span>: medicamento})</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Vista para realizar una venta</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> realizar_venta(request):</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">'POST'</span>:</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        form <span class="op">=</span> VentaForm(request.POST)</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> form.is_valid():</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>            form.save()</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> redirect(<span class="st">'lista_medicamentos'</span>)</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>        form <span class="op">=</span> VentaForm()</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> render(request, <span class="st">'farmacia/realizar_venta.html'</span>, {<span class="st">'form'</span>: form})</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Vista para mostrar el historial de ventas</span></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> historial_ventas(request):</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    ventas <span class="op">=</span> Venta.objects.<span class="bu">all</span>()</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render(request, <span class="st">'farmacia/historial_ventas.html'</span>, {<span class="st">'ventas'</span>: ventas})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En este ejemplo, se han definido cuatro vistas:</p>
-<ol type="1">
-<li><strong>lista_medicamentos</strong>: Muestra la lista de medicamentos disponibles.</li>
-<li><strong>detalle_medicamento</strong>: Muestra el detalle de un medicamento en particular.</li>
-<li><strong>realizar_venta</strong>: Permite realizar una venta de un medicamento.</li>
-<li><strong>historial_ventas</strong>: Muestra el historial de ventas realizadas.</li>
-</ol>
-<p>Estas vistas utilizan los modelos <strong>Medicamento</strong> y <strong>Venta</strong> para interactuar con la base de datos y renderizar las plantillas correspondientes.</p>
-<p>Tambien podemos crear vistas para procesar formularios, como se muestra en el siguiente ejemplo:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.shortcuts <span class="im">import</span> render, redirect</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .forms <span class="im">import</span> MedicamentoForm, VentaForm</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Vista para crear un nuevo medicamento</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> crear_medicamento(request):</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">'POST'</span>:</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        form <span class="op">=</span> MedicamentoForm(request.POST)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> form.is_valid():</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>            form.save()</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> redirect(<span class="st">'lista_medicamentos'</span>)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        form <span class="op">=</span> MedicamentoForm()</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> render(request, <span class="st">'farmacia/crear_medicamento.html'</span>, {<span class="st">'form'</span>: form})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En este caso, se ha definido una vista para crear un nuevo medicamento. La vista procesa el formulario enviado por el usuario y guarda el nuevo medicamento en la base de datos.</p>
-<p>Otras vistas comunes en Django son las siguientes:</p>
-<ul>
-<li><strong>Vista de detalle</strong>: Muestra los detalles de un objeto en particular.</li>
-<li><strong>Vista de edición</strong>: Permite editar un objeto existente.</li>
-<li><strong>Vista de eliminación</strong>: Permite eliminar un objeto existente.</li>
-<li><strong>Vista de búsqueda</strong>: Permite buscar objetos en la base de datos.</li>
-</ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vista de detalle de un medicamento</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> detalle_medicamento(request, <span class="bu">id</span>):</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    medicamento <span class="op">=</span> Medicamento.objects.get(<span class="bu">id</span><span class="op">=</span><span class="bu">id</span>)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render(request, <span class="st">'farmacia/detalle_medicamento.html'</span>, {<span class="st">'medicamento'</span>: medicamento})</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Vista de edición de un medicamento</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> editar_medicamento(request, <span class="bu">id</span>):</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    medicamento <span class="op">=</span> Medicamento.objects.get(<span class="bu">id</span><span class="op">=</span><span class="bu">id</span>)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">'POST'</span>:</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>        form <span class="op">=</span> MedicamentoForm(request.POST, instance<span class="op">=</span>medicamento)</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> form.is_valid():</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>            form.save()</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> redirect(<span class="st">'lista_medicamentos'</span>)</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>        form <span class="op">=</span> MedicamentoForm(instance<span class="op">=</span>medicamento)</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> render(request, <span class="st">'farmacia/editar_medicamento.html'</span>, {<span class="st">'form'</span>: form})</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Vista de eliminación de un medicamento</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> eliminar_medicamento(request, <span class="bu">id</span>):</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    medicamento <span class="op">=</span> Medicamento.objects.get(<span class="bu">id</span><span class="op">=</span><span class="bu">id</span>)</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    medicamento.delete()</span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> redirect(<span class="st">'lista_medicamentos'</span>)</span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Vista de búsqueda de medicamentos</span></span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> buscar_medicamentos(request):</span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    query <span class="op">=</span> request.GET.get(<span class="st">'q'</span>)</span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    medicamentos <span class="op">=</span> Medicamento.objects.<span class="bu">filter</span>(nombre__icontains<span class="op">=</span>query)</span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render(request, <span class="st">'farmacia/buscar_medicamentos.html'</span>, {<span class="st">'medicamentos'</span>: medicamentos, <span class="st">'query'</span>: query})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Con estas vistas, podemos realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre los objetos de la base de datos y proporcionar una interfaz de usuario interactiva para los usuarios de la aplicación.</p>
-<p>En el próximo capítulo, veremos cómo integrar las vistas con las plantillas para crear páginas web dinámicas.</p>
-</section>
-<section id="actividades" class="level2">
-<h2 class="anchored" data-anchor-id="actividades">Actividades</h2>
-<ol type="1">
-<li>Crear las vistas necesarias para la aplicación <strong>farmacia</strong>.</li>
-<li>Probar las vistas en un navegador web.</li>
-<li>Crear una vista para editar un medicamento existente.</li>
-<li>Crear una vista para eliminar un medicamento existente.</li>
-<li>Crear una vista para buscar medicamentos por nombre.</li>
-</ol>
-<details>
-<summary>
-Posible solución
-</summary>
-<ol type="1">
-<li>Crear las vistas necesarias para la aplicación <strong>farmacia</strong>.</li>
-</ol>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.shortcuts <span class="im">import</span> render, redirect</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .models <span class="im">import</span> Medicamento, Venta</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .forms <span class="im">import</span> MedicamentoForm, VentaForm</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Vista para mostrar la lista de medicamentos</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lista_medicamentos(request):</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    medicamentos <span class="op">=</span> Medicamento.objects.<span class="bu">all</span>()</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render(request, <span class="st">'farmacia/lista_medicamentos.html'</span>, {<span class="st">'medicamentos'</span>: medicamentos})</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Vista para mostrar el detalle de un medicamento</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> detalle_medicamento(request, <span class="bu">id</span>):</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    medicamento <span class="op">=</span> Medicamento.objects.get(<span class="bu">id</span><span class="op">=</span><span class="bu">id</span>)</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render(request, <span class="st">'farmacia/detalle_medicamento.html'</span>, {<span class="st">'medicamento'</span>: medicamento})</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Vista para realizar una venta</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> realizar_venta(request):</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">'POST'</span>:</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>        form <span class="op">=</span> VentaForm(request.POST)</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> form.is_valid():</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>            form.save()</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> redirect(<span class="st">'lista_medicamentos'</span>)</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>        form <span class="op">=</span> VentaForm()</span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> render(request, <span class="st">'farmacia/realizar_venta.html'</span>, {<span class="st">'form'</span>: form})</span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Vista para mostrar el historial de ventas</span></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> historial_ventas(request):</span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    ventas <span class="op">=</span> Venta.objects.<span class="bu">all</span>()</span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render(request, <span class="st">'farmacia/historial_ventas.html'</span>, {<span class="st">'ventas'</span>: ventas})</span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Vista para crear un nuevo medicamento</span></span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> crear_medicamento(request):</span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">'POST'</span>:</span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>        form <span class="op">=</span> MedicamentoForm(request.POST)</span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> form.is_valid():</span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>            form.save()</span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> redirect(<span class="st">'lista_medicamentos'</span>)</span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>        form <span class="op">=</span> MedicamentoForm()</span>
-<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> render(request, <span class="st">'farmacia/crear_medicamento.html'</span>, {<span class="st">'form'</span>: form})</span>
-<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Vista para editar un medicamento existente</span></span>
-<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> editar_medicamento(request, <span class="bu">id</span>):</span>
-<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>    medicamento <span class="op">=</span> Medicamento.objects.get(<span class="bu">id</span><span class="op">=</span><span class="bu">id</span>)</span>
-<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">'POST'</span>:</span>
-<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>        form <span class="op">=</span> MedicamentoForm(request.POST, instance<span class="op">=</span>medicamento)</span>
-<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> form.is_valid():</span>
-<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>            form.save()</span>
-<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> redirect(<span class="st">'lista_medicamentos'</span>)</span>
-<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>        form <span class="op">=</span> MedicamentoForm(instance<span class="op">=</span>medicamento)</span>
-<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> render(request, <span class="st">'farmacia/editar_medicamento.html'</span>, {<span class="st">'form'</span>: form})</span>
-<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a><span class="co"># Vista para eliminar un medicamento existente</span></span>
-<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> eliminar_medicamento(request, <span class="bu">id</span>):</span>
-<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>    medicamento <span class="op">=</span> Medicamento.objects.get(<span class="bu">id</span><span class="op">=</span><span class="bu">id</span>)</span>
-<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>    medicamento.delete()</span>
-<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> redirect(<span class="st">'lista_medicamentos'</span>)</span>
-<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a><span class="co"># Vista para buscar medicamentos por nombre</span></span>
-<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> buscar_medicamentos(request):</span>
-<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>    query <span class="op">=</span> request.GET.get(<span class="st">'q'</span>)</span>
-<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>    medicamentos <span class="op">=</span> Medicamento.objects.<span class="bu">filter</span>(nombre__icontains<span class="op">=</span>query)</span>
-<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render(request, <span class="st">'farmacia/buscar_medicamentos.html'</span>, {<span class="st">'medicamentos'</span>: medicamentos, <span class="st">'query'</span>: query})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="2" type="1">
-<li>Probar las vistas en un navegador web.</li>
-</ol>
-<p>Para probar las vistas en un navegador web, podemos acceder a las siguientes URLs:</p>
-<ul>
-<li><p>Lista de medicamentos: <strong>http://localhost:8000/medicamentos/</strong></p></li>
-<li><p>Detalle de un medicamento: <strong>http://localhost:8000/medicamentos/1/</strong></p></li>
-<li><p>Realizar una venta: <strong>http://localhost:8000/ventas/nueva/</strong></p></li>
-<li><p>Historial de ventas: <strong>http://localhost:8000/ventas/</strong></p></li>
-</ul>
-<ol start="3" type="1">
-<li>Crear una vista para editar un medicamento existente.</li>
-</ol>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vista para editar un medicamento existente</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> editar_medicamento(request, <span class="bu">id</span>):</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    medicamento <span class="op">=</span> Medicamento.objects.get(<span class="bu">id</span><span class="op">=</span><span class="bu">id</span>)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">'POST'</span>:</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        form <span class="op">=</span> MedicamentoForm(request.POST, instance<span class="op">=</span>medicamento)</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> form.is_valid():</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>            form.save()</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> redirect(<span class="st">'lista_medicamentos'</span>)</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>        form <span class="op">=</span> MedicamentoForm(instance<span class="op">=</span>medicamento)</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> render(request, <span class="st">'farmacia/editar_medicamento.html'</span>, {<span class="st">'form'</span>: form})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="4" type="1">
-<li>Crear una vista para eliminar un medicamento existente.</li>
-</ol>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vista para eliminar un medicamento existente</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> eliminar_medicamento(request, <span class="bu">id</span>):</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    medicamento <span class="op">=</span> Medicamento.objects.get(<span class="bu">id</span><span class="op">=</span><span class="bu">id</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    medicamento.delete()</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> redirect(<span class="st">'lista_medicamentos'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="5" type="1">
-<li>Crear una vista para buscar medicamentos por nombre.</li>
-</ol>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vista para buscar medicamentos por nombre</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> buscar_medicamentos(request):</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    query <span class="op">=</span> request.GET.get(<span class="st">'q'</span>)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    medicamentos <span class="op">=</span> Medicamento.objects.<span class="bu">filter</span>(nombre__icontains<span class="op">=</span>query)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render(request, <span class="st">'farmacia/buscar_medicamentos.html'</span>, {<span class="st">'medicamentos'</span>: medicamentos, <span class="st">'query'</span>: query})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</section>
-<section id="conclusiones" class="level1">
-<h1>Conclusiones</h1>
-<p>En este capítulo se han creado las vistas necesarias para la aplicación <strong>farmacia</strong>. Las vistas permiten interactuar con los modelos de la base de datos y renderizar las plantillas correspondientes. En el próximo capítulo, se verá cómo integrar las vistas con las plantillas para crear páginas web dinámicas.</p>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MedicamentoForm(forms.ModelForm):</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">class</span> Meta:</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        model <span class="op">=</span> Medicamento</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        fields <span class="op">=</span> [<span class="st">'nombre'</span>, <span class="st">'precio'</span>, <span class="st">'existencias'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </div>
+</div>
+<section id="paso-1-mostrar-la-lista-de-medicamentos" class="level1">
+<h1>Paso 1: Mostrar la Lista de Medicamentos</h1>
+<section id="vista" class="level2">
+<h2 class="anchored" data-anchor-id="vista">Vista</h2>
+<ul>
+<li>En <strong>views.py</strong>:</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.shortcuts <span class="im">import</span> render</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .models <span class="im">import</span> Medicamento</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lista_medicamentos(request):</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    medicamentos <span class="op">=</span> Medicamento.objects.<span class="bu">all</span>()</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render(request, <span class="st">'farmacia/lista_medicamentos.html'</span>, {<span class="st">'medicamentos'</span>: medicamentos})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="template" class="level2">
+<h2 class="anchored" data-anchor-id="template">Template</h2>
+<ul>
+<li>Crea el archivo templates/farmacia/lista_medicamentos.html:</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>Lista de Medicamentos<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>Lista de Medicamentos<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"{% url 'crear_medicamento' %}"</span><span class="dt">&gt;</span>Añadir Medicamento<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">ul</span><span class="dt">&gt;</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>        {% for medicamento in medicamentos %}</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>                {{ medicamento.nombre }} - ${{ medicamento.precio|floatformat:2 }}</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>                ({{ medicamento.existencias }} disponibles)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"{% url 'detalle_medicamento' medicamento.id %}"</span><span class="dt">&gt;</span>Detalles<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>        {% endfor %}</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">ul</span><span class="dt">&gt;</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="ruta" class="level2">
+<h2 class="anchored" data-anchor-id="ruta">Ruta</h2>
+<ul>
+<li>En <strong>urls.py</strong> de la aplicación <strong>farmacia</strong>:</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.urls <span class="im">import</span> path</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> . <span class="im">import</span> views</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>urlpatterns <span class="op">=</span> [</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">'medicamentos/'</span>, views.lista_medicamentos, name<span class="op">=</span><span class="st">'lista_medicamentos'</span>),</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>:::{.callout<span class="op">-</span>tip}</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>Es necesario conectar las URLs de la aplicación <span class="op">**</span>farmacia<span class="op">**</span> con las URLs <span class="kw">del</span> proyecto en <span class="op">**</span>urls.py<span class="op">**</span> <span class="kw">del</span> proyecto.</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>```python</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.contrib <span class="im">import</span> admin</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.urls <span class="im">import</span> path, include</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> farmacia <span class="im">import</span> urls</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>urlpatterns <span class="op">=</span> [</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">'admin/'</span>, admin.site.urls),</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">''</span>, include(<span class="st">'farmacia.urls'</span>)),</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+</div>
+<section id="paso-2-mostrar-el-detalle-de-un-medicamento" class="level1">
+<h1>Paso 2: Mostrar el Detalle de un Medicamento</h1>
+<section id="vista-1" class="level2">
+<h2 class="anchored" data-anchor-id="vista-1">Vista</h2>
+<ul>
+<li>En <strong>views.py</strong>:</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.shortcuts <span class="im">import</span> get_object_or_404</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> detalle_medicamento(request, <span class="bu">id</span>):</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    medicamento <span class="op">=</span> get_object_or_404(Medicamento, <span class="bu">id</span><span class="op">=</span><span class="bu">id</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render(request, <span class="st">'farmacia/detalle_medicamento.html'</span>, {<span class="st">'medicamento'</span>: medicamento})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="template-1" class="level2">
+<h2 class="anchored" data-anchor-id="template-1">Template</h2>
+<ul>
+<li>Crea el archivo <strong>templates/farmacia/detalle_medicamento.html</strong>:</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>Detalle del Medicamento<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>{{ medicamento.nombre }}<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;&lt;</span><span class="kw">strong</span><span class="dt">&gt;</span>Precio:<span class="dt">&lt;/</span><span class="kw">strong</span><span class="dt">&gt;</span> ${{ medicamento.precio }}<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;&lt;</span><span class="kw">strong</span><span class="dt">&gt;</span>Existencias:<span class="dt">&lt;/</span><span class="kw">strong</span><span class="dt">&gt;</span> {{ medicamento.existencias }}<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"{% url 'lista_medicamentos' %}"</span><span class="dt">&gt;</span>Volver a la lista<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="ruta-1" class="level2">
+<h2 class="anchored" data-anchor-id="ruta-1">Ruta</h2>
+<ul>
+<li>Agrega la ruta en <strong>urls.py</strong>:</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>path(<span class="st">'medicamentos/&lt;int:id&gt;/'</span>, views.detalle_medicamento, name<span class="op">=</span><span class="st">'detalle_medicamento'</span>),</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="paso-3-crear-un-nuevo-medicamento" class="level1">
+<h1>Paso 3: Crear un Nuevo Medicamento</h1>
+<section id="vista-2" class="level2">
+<h2 class="anchored" data-anchor-id="vista-2">Vista</h2>
+<ul>
+<li>En <strong>views.py</strong>:</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.shortcuts <span class="im">import</span> redirect</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .forms <span class="im">import</span> MedicamentoForm</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> crear_medicamento(request):</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">'POST'</span>:</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>        form <span class="op">=</span> MedicamentoForm(request.POST)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> form.is_valid():</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>            form.save()</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> redirect(<span class="st">'lista_medicamentos'</span>)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>        form <span class="op">=</span> MedicamentoForm()</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render(request, <span class="st">'farmacia/crear_medicamento.html'</span>, {<span class="st">'form'</span>: form})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="template-2" class="level2">
+<h2 class="anchored" data-anchor-id="template-2">Template</h2>
+<ul>
+<li>Crea <strong>templates/farmacia/crear_medicamento.html</strong>:</li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>Crear Medicamento<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>Crear Medicamento<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">form</span><span class="ot"> method</span><span class="op">=</span><span class="st">"post"</span><span class="dt">&gt;</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>        {% csrf_token %}</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>        {{ form.as_p }}</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> type</span><span class="op">=</span><span class="st">"submit"</span><span class="dt">&gt;</span>Guardar<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">form</span><span class="dt">&gt;</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"{% url 'lista_medicamentos' %}"</span><span class="dt">&gt;</span>Volver a la lista<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="ruta-2" class="level2">
+<h2 class="anchored" data-anchor-id="ruta-2">Ruta</h2>
+<ul>
+<li>Agrega la ruta en <strong>urls.py</strong>:</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>path(<span class="st">'medicamentos/nuevo/'</span>, views.crear_medicamento, name<span class="op">=</span><span class="st">'crear_medicamento'</span>),</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="probar-las-vistas" class="level2">
+<h2 class="anchored" data-anchor-id="probar-las-vistas">Probar las Vistas</h2>
+<ul>
+<li>Inicia el <strong>servidor</strong>:</li>
+</ul>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> manage.py runserver</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Navega a:</p>
+<ul>
+<li><strong>Lista de Medicamentos</strong>: <a href="http://localhost:8000/medicamentos/" class="uri">http://localhost:8000/medicamentos/</a></li>
+<li><strong>Detalle de Medicamento</strong>: <a href="http://localhost:8000/medicamentos/1/" class="uri">http://localhost:8000/medicamentos/1/</a> (reemplaza 1 por un ID válido).</li>
+<li><strong>Crear Medicamento</strong>: <a href="http://localhost:8000/medicamentos/nuevo/" class="uri">http://localhost:8000/medicamentos/nuevo/</a>.</li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1426,8 +1397,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../unidades/unidad7/7_templates.html" class="pagination-link" aria-label="Vistas, Urls y Plantillas en Django">
-        <span class="nav-page-text"><span class="chapter-title">Vistas, Urls y Plantillas en Django</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../unidades/Proyectos/3_funciones.html" class="pagination-link" aria-label="🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python">
+        <span class="nav-page-text"><span class="chapter-title">🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

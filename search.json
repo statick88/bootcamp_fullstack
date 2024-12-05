@@ -1489,7 +1489,7 @@
     "href": "unidades/unidad7/5_forms.html#creación-de-un-formulario",
     "title": "Forms en Django",
     "section": "Creación de un formulario",
-    "text": "Creación de un formulario\nPara crear un formulario en Django, primero debemos definir una clase que herede de forms.Form o forms.ModelForm. A continuación, definimos los campos del formulario como atributos de la clase. Por ejemplo, el siguiente formulario permite a los usuarios enviar un mensaje de contacto:\n\nRecordemos los modelos creados en la sección anterior:\nfrom django.db import models\n\nclass Medicamento(models.Model):\n    nombre = models.CharField(max_length=100)\n    precio = models.DecimalField(max_digits=10, decimal_places=2)\n    existencias = models.IntegerField()\n\n    def __str__(self):\n        return self.nombre\n\nclass Venta(models.Model):\n    medicamento = models.ForeignKey(Medicamento, on_delete=models.CASCADE)\n    cantidad = models.IntegerField()\n    fecha = models.DateTimeField(auto_now_add=True)\n\n    def __str__(self):\n        return f'{self.medicamento} - {self.cantidad}'\n\nPara crear un formulario de contacto, podemos hacer lo siguiente:\n1from django import forms\n2from .models import Medicamento, Venta\n\n3class ContactForm(forms.Form):\n4    nombre = forms.CharField(label='Nombre', max_length=100)\n5    email = forms.EmailField(label='Email', max_length=100)\n6    mensaje = forms.CharField(label='Mensaje', widget=forms.Textarea)\n\n7class MedicamentoForm(forms.ModelForm):\n8    class Meta:\n9        model = Medicamento\n10        fields = ['nombre', 'precio', 'existencias']\n\n11class VentaForm(forms.ModelForm):\n12    class Meta:\n13        model = Venta\n14        fields = ['medicamento', 'cantidad']\n\n1\n\nImportamos el módulo forms de Django.\n\n2\n\nImportamos los modelos Medicamento y Venta.\n\n3\n\nDefinimos una clase ContactForm que hereda de forms.Form.\n\n4\n\nDefinimos un campo de texto para el nombre del usuario.\n\n5\n\nDefinimos un campo de correo electrónico para el email del usuario.\n\n6\n\nDefinimos un campo de texto multilínea para el mensaje del usuario.\n\n7\n\nDefinimos una clase MedicamentoForm que hereda de forms.ModelForm.\n\n8\n\nDefinimos la clase Meta para especificar el modelo y los campos del formulario.\n\n9\n\nEspecificamos el modelo Medicamento como base del formulario.\n\n10\n\nEspecificamos los campos del formulario: nombre, precio y existencias.\n\n11\n\nDefinimos una clase VentaForm que hereda de forms.ModelForm.\n\n12\n\nDefinimos la clase Meta para especificar el modelo y los campos del formulario.\n\n13\n\nEspecificamos el modelo Venta como base del formulario.\n\n14\n\nEspecificamos los campos del formulario: medicamento y cantidad.",
+    "text": "Creación de un formulario\nPara crear un formulario en Django, primero debemos definir una clase que herede de forms.Form o forms.ModelForm. A continuación, definimos los campos del formulario como atributos de la clase. Por ejemplo, el siguiente formulario permite a los usuarios enviar un mensaje de contacto:\n\n\n\n\n\n\nTip\n\n\n\nRecordemos los modelos creados en la sección anterior:\nfrom django.db import models\n\nclass Medicamento(models.Model):\n    nombre = models.CharField(max_length=100)\n    precio = models.DecimalField(max_digits=10, decimal_places=2)\n    existencias = models.IntegerField()\n\n    def __str__(self):\n        return self.nombre\n\nclass Venta(models.Model):\n    medicamento = models.ForeignKey(Medicamento, on_delete=models.CASCADE)\n    cantidad = models.IntegerField()\n    fecha = models.DateTimeField(auto_now_add=True)\n\n    def __str__(self):\n        return f'{self.medicamento} - {self.cantidad}'\n\n\nPara crear un formulario de contacto, podemos hacer lo siguiente:\n1from django import forms\n2from .models import Medicamento, Venta\n\n3class ContactForm(forms.Form):\n4    nombre = forms.CharField(label='Nombre', max_length=100)\n5    email = forms.EmailField(label='Email', max_length=100)\n6    mensaje = forms.CharField(label='Mensaje', widget=forms.Textarea)\n\n7class MedicamentoForm(forms.ModelForm):\n8    class Meta:\n9        model = Medicamento\n10        fields = ['nombre', 'precio', 'existencias']\n\n11class VentaForm(forms.ModelForm):\n12    class Meta:\n13        model = Venta\n14        fields = ['medicamento', 'cantidad']\n\n1\n\nImportamos el módulo forms de Django.\n\n2\n\nImportamos los modelos Medicamento y Venta.\n\n3\n\nDefinimos una clase ContactForm que hereda de forms.Form.\n\n4\n\nDefinimos un campo de texto para el nombre del usuario.\n\n5\n\nDefinimos un campo de correo electrónico para el email del usuario.\n\n6\n\nDefinimos un campo de texto multilínea para el mensaje del usuario.\n\n7\n\nDefinimos una clase MedicamentoForm que hereda de forms.ModelForm.\n\n8\n\nDefinimos la clase Meta para especificar el modelo y los campos del formulario.\n\n9\n\nEspecificamos el modelo Medicamento como base del formulario.\n\n10\n\nEspecificamos los campos del formulario: nombre, precio y existencias.\n\n11\n\nDefinimos una clase VentaForm que hereda de forms.ModelForm.\n\n12\n\nDefinimos la clase Meta para especificar el modelo y los campos del formulario.\n\n13\n\nEspecificamos el modelo Venta como base del formulario.\n\n14\n\nEspecificamos los campos del formulario: medicamento y cantidad.",
     "crumbs": [
       "Unidad 7: Frameworks en Python",
       "<span class='chapter-number'>34</span>  <span class='chapter-title'>Forms en Django</span>"
@@ -1507,69 +1507,124 @@
     ]
   },
   {
-    "objectID": "unidades/unidad7/6_vistas.html#creación-de-vistas",
-    "href": "unidades/unidad7/6_vistas.html#creación-de-vistas",
-    "title": "Vistas en Django",
-    "section": "Creación de vistas",
-    "text": "Creación de vistas\nLas vistas en Django son funciones o clases que reciben una petición HTTP y devuelven una respuesta HTTP. Las vistas se definen en el archivo views.py de cada aplicación.\nPara crear una vista en Django, debemos seguir los siguientes pasos:\n\nImportar los modelos y módulos necesarios.\nDefinir la lógica de la vista.\nDevolver una respuesta HTTP.\n\n\nRecordemos los modelos creados en la sección anterior:\nfrom django.db import models\n\nclass Medicamento(models.Model):\n    nombre = models.CharField(max_length=100)\n    precio = models.DecimalField(max_digits=10, decimal_places=2)\n    existencias = models.IntegerField()\n\n    def __str__(self):\n        return self.nombre\n\nclass Venta(models.Model):\n    medicamento = models.ForeignKey(Medicamento, on_delete=models.CASCADE)\n    cantidad = models.IntegerField()\n    fecha = models.DateTimeField(auto_now_add=True)\n\n    def __str__(self):\n        return f'{self.medicamento} - {self.cantidad}'\n\nEn el archivo views.py de la aplicación farmacia, podemos definir las siguientes vistas:\nfrom django.shortcuts import render\nfrom .models import Medicamento, Venta\n\n# Vista para mostrar la lista de medicamentos\ndef lista_medicamentos(request):\n    medicamentos = Medicamento.objects.all()\n    return render(request, 'farmacia/lista_medicamentos.html', {'medicamentos': medicamentos})\n\n# Vista para mostrar el detalle de un medicamento\ndef detalle_medicamento(request, id):\n    medicamento = Medicamento.objects.get(id=id)\n    return render(request, 'farmacia/detalle_medicamento.html', {'medicamento': medicamento})\n\n# Vista para realizar una venta\ndef realizar_venta(request):\n    if request.method == 'POST':\n        form = VentaForm(request.POST)\n        if form.is_valid():\n            form.save()\n            return redirect('lista_medicamentos')\n    else:\n        form = VentaForm()\n        return render(request, 'farmacia/realizar_venta.html', {'form': form})\n\n# Vista para mostrar el historial de ventas\ndef historial_ventas(request):\n    ventas = Venta.objects.all()\n    return render(request, 'farmacia/historial_ventas.html', {'ventas': ventas})\nEn este ejemplo, se han definido cuatro vistas:\n\nlista_medicamentos: Muestra la lista de medicamentos disponibles.\ndetalle_medicamento: Muestra el detalle de un medicamento en particular.\nrealizar_venta: Permite realizar una venta de un medicamento.\nhistorial_ventas: Muestra el historial de ventas realizadas.\n\nEstas vistas utilizan los modelos Medicamento y Venta para interactuar con la base de datos y renderizar las plantillas correspondientes.\nTambien podemos crear vistas para procesar formularios, como se muestra en el siguiente ejemplo:\nfrom django.shortcuts import render, redirect\nfrom .forms import MedicamentoForm, VentaForm\n\n# Vista para crear un nuevo medicamento\ndef crear_medicamento(request):\n    if request.method == 'POST':\n        form = MedicamentoForm(request.POST)\n        if form.is_valid():\n            form.save()\n            return redirect('lista_medicamentos')\n    else:\n        form = MedicamentoForm()\n        return render(request, 'farmacia/crear_medicamento.html', {'form': form})\nEn este caso, se ha definido una vista para crear un nuevo medicamento. La vista procesa el formulario enviado por el usuario y guarda el nuevo medicamento en la base de datos.\nOtras vistas comunes en Django son las siguientes:\n\nVista de detalle: Muestra los detalles de un objeto en particular.\nVista de edición: Permite editar un objeto existente.\nVista de eliminación: Permite eliminar un objeto existente.\nVista de búsqueda: Permite buscar objetos en la base de datos.\n\n# Vista de detalle de un medicamento\n\ndef detalle_medicamento(request, id):\n    medicamento = Medicamento.objects.get(id=id)\n    return render(request, 'farmacia/detalle_medicamento.html', {'medicamento': medicamento})\n\n# Vista de edición de un medicamento\ndef editar_medicamento(request, id):\n    medicamento = Medicamento.objects.get(id=id)\n    if request.method == 'POST':\n        form = MedicamentoForm(request.POST, instance=medicamento)\n        if form.is_valid():\n            form.save()\n            return redirect('lista_medicamentos')\n    else:\n        form = MedicamentoForm(instance=medicamento)\n        return render(request, 'farmacia/editar_medicamento.html', {'form': form})\n\n# Vista de eliminación de un medicamento\ndef eliminar_medicamento(request, id):\n    medicamento = Medicamento.objects.get(id=id)\n    medicamento.delete()\n    return redirect('lista_medicamentos')\n\n# Vista de búsqueda de medicamentos\ndef buscar_medicamentos(request):\n    query = request.GET.get('q')\n    medicamentos = Medicamento.objects.filter(nombre__icontains=query)\n    return render(request, 'farmacia/buscar_medicamentos.html', {'medicamentos': medicamentos, 'query': query})\nCon estas vistas, podemos realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre los objetos de la base de datos y proporcionar una interfaz de usuario interactiva para los usuarios de la aplicación.\nEn el próximo capítulo, veremos cómo integrar las vistas con las plantillas para crear páginas web dinámicas.",
-    "crumbs": [
-      "Unidad 7: Frameworks en Python",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Vistas en Django</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad7/6_vistas.html#actividades",
-    "href": "unidades/unidad7/6_vistas.html#actividades",
-    "title": "Vistas en Django",
-    "section": "Actividades",
-    "text": "Actividades\n\nCrear las vistas necesarias para la aplicación farmacia.\nProbar las vistas en un navegador web.\nCrear una vista para editar un medicamento existente.\nCrear una vista para eliminar un medicamento existente.\nCrear una vista para buscar medicamentos por nombre.\n\n\n\nPosible solución\n\n\nCrear las vistas necesarias para la aplicación farmacia.\n\nfrom django.shortcuts import render, redirect\nfrom .models import Medicamento, Venta\nfrom .forms import MedicamentoForm, VentaForm\n\n# Vista para mostrar la lista de medicamentos\ndef lista_medicamentos(request):\n    medicamentos = Medicamento.objects.all()\n    return render(request, 'farmacia/lista_medicamentos.html', {'medicamentos': medicamentos})\n\n# Vista para mostrar el detalle de un medicamento\ndef detalle_medicamento(request, id):\n    medicamento = Medicamento.objects.get(id=id)\n    return render(request, 'farmacia/detalle_medicamento.html', {'medicamento': medicamento})\n\n# Vista para realizar una venta\ndef realizar_venta(request):\n    if request.method == 'POST':\n        form = VentaForm(request.POST)\n        if form.is_valid():\n            form.save()\n            return redirect('lista_medicamentos')\n    else:\n        form = VentaForm()\n        return render(request, 'farmacia/realizar_venta.html', {'form': form})\n\n# Vista para mostrar el historial de ventas\ndef historial_ventas(request):\n    ventas = Venta.objects.all()\n    return render(request, 'farmacia/historial_ventas.html', {'ventas': ventas})\n\n# Vista para crear un nuevo medicamento\ndef crear_medicamento(request):\n    if request.method == 'POST':\n        form = MedicamentoForm(request.POST)\n        if form.is_valid():\n            form.save()\n            return redirect('lista_medicamentos')\n    else:\n        form = MedicamentoForm()\n        return render(request, 'farmacia/crear_medicamento.html', {'form': form})\n\n# Vista para editar un medicamento existente\ndef editar_medicamento(request, id):\n    medicamento = Medicamento.objects.get(id=id)\n    if request.method == 'POST':\n        form = MedicamentoForm(request.POST, instance=medicamento)\n        if form.is_valid():\n            form.save()\n            return redirect('lista_medicamentos')\n    else:\n        form = MedicamentoForm(instance=medicamento)\n        return render(request, 'farmacia/editar_medicamento.html', {'form': form})\n\n# Vista para eliminar un medicamento existente\ndef eliminar_medicamento(request, id):\n    medicamento = Medicamento.objects.get(id=id)\n    medicamento.delete()\n    return redirect('lista_medicamentos')\n\n# Vista para buscar medicamentos por nombre\ndef buscar_medicamentos(request):\n    query = request.GET.get('q')\n    medicamentos = Medicamento.objects.filter(nombre__icontains=query)\n    return render(request, 'farmacia/buscar_medicamentos.html', {'medicamentos': medicamentos, 'query': query})\n\nProbar las vistas en un navegador web.\n\nPara probar las vistas en un navegador web, podemos acceder a las siguientes URLs:\n\nLista de medicamentos: http://localhost:8000/medicamentos/\nDetalle de un medicamento: http://localhost:8000/medicamentos/1/\nRealizar una venta: http://localhost:8000/ventas/nueva/\nHistorial de ventas: http://localhost:8000/ventas/\n\n\nCrear una vista para editar un medicamento existente.\n\n# Vista para editar un medicamento existente\n\ndef editar_medicamento(request, id):\n    medicamento = Medicamento.objects.get(id=id)\n    if request.method == 'POST':\n        form = MedicamentoForm(request.POST, instance=medicamento)\n        if form.is_valid():\n            form.save()\n            return redirect('lista_medicamentos')\n    else:\n        form = MedicamentoForm(instance=medicamento)\n        return render(request, 'farmacia/editar_medicamento.html', {'form': form})\n\nCrear una vista para eliminar un medicamento existente.\n\n# Vista para eliminar un medicamento existente\n\ndef eliminar_medicamento(request, id):\n    medicamento = Medicamento.objects.get(id=id)\n    medicamento.delete()\n    return redirect('lista_medicamentos')\n\nCrear una vista para buscar medicamentos por nombre.\n\n# Vista para buscar medicamentos por nombre\n\ndef buscar_medicamentos(request):\n    query = request.GET.get('q')\n    medicamentos = Medicamento.objects.filter(nombre__icontains=query)\n    return render(request, 'farmacia/buscar_medicamentos.html', {'medicamentos': medicamentos, 'query': query})",
-    "crumbs": [
-      "Unidad 7: Frameworks en Python",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Vistas en Django</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad7/7_templates.html#vistas",
-    "href": "unidades/unidad7/7_templates.html#vistas",
-    "title": "Vistas, Urls y Plantillas en Django",
-    "section": "Vistas",
-    "text": "Vistas\nLas vistas en Django son funciones o clases que reciben una petición HTTP y devuelven una respuesta HTTP. Las vistas se definen en el archivo views.py de cada aplicación y se asocian a una URL mediante el archivo urls.py.\n\nRecordemos los modelos aprendidos en el capítulo anterior\nfrom django.db import models\n\nclass Farmacia(models.Model):\n    nombre = models.CharField(max_length=100)\n    direccion = models.CharField(max_length=200)\n    telefono = models.CharField(max_length=20)\n    email = models.EmailField()\n    activa = models.BooleanField(default=True)\n\n    def __str__(self):\n        return self.nombre\n\nclass Medicamento(models.Model):\n    nombre = models.CharField(max_length=100)\n    descripcion = models.TextField()\n    precio = models.DecimalField(max_digits=8, decimal_places=2)\n    stock = models.IntegerField()\n    farmacia = models.ForeignKey(Farmacia, on_delete=models.CASCADE)\n\n    def __str__(self):\n        return self.nombre\n\nAhora vamos a crear las plantillas para mostrar los datos de las farmacias y los medicamentos.",
-    "crumbs": [
-      "Unidad 7: Frameworks en Python",
-      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Vistas, Urls y Plantillas en Django</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad7/7_templates.html#jinga2",
-    "href": "unidades/unidad7/7_templates.html#jinga2",
-    "title": "Vistas, Urls y Plantillas en Django",
-    "section": "Jinga2",
-    "text": "Jinga2\nDjango utiliza el motor de plantillas Jinja2 para renderizar las plantillas. Jinja2 es un motor de plantillas muy potente que permite la creación de plantillas dinámicas y reutilizables.\n\nRecordemos las vistas creadas en el capítulo anterior\nfrom django.db import models\n\nclass Medicamento(models.Model):\n    nombre = models.CharField(max_length=100)\n    precio = models.DecimalField(max_digits=10, decimal_places=2)\n    existencias = models.IntegerField()\n\n    def __str__(self):\n        return self.nombre\n\nclass Venta(models.Model):\n    medicamento = models.ForeignKey(Medicamento, on_delete=models.CASCADE)\n    cantidad = models.IntegerField()\n    fecha = models.DateTimeField(auto_now_add=True)\n\n    def __str__(self):\n        return f'{self.medicamento} - {self.cantidad}'\n\nAhora vamos a crear las plantillas para mostrar los datos de los medicamentos y las ventas.",
-    "crumbs": [
-      "Unidad 7: Frameworks en Python",
-      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Vistas, Urls y Plantillas en Django</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad7/7_templates.html#plantillas",
-    "href": "unidades/unidad7/7_templates.html#plantillas",
-    "title": "Vistas, Urls y Plantillas en Django",
-    "section": "Plantillas",
-    "text": "Plantillas\nLas plantillas en Django son archivos HTML que contienen el código necesario para mostrar la información de la aplicación. Las plantillas pueden contener etiquetas y filtros de Django que permiten acceder a los datos de la base de datos y mostrarlos en la página web.\nPara crear una plantilla en Django, primero debemos definir un directorio llamado templates en la raíz del proyecto. Dentro de este directorio, creamos un subdirectorio con el nombre de la aplicación y dentro de este subdirectorio, creamos un archivo HTML con el nombre de la plantilla.\n\nRecordemos las vistas creadas en el capítulo anterior\nfrom django.shortcuts import render\nfrom .models import Medicamento, Venta\n\n# Vista para mostrar la lista de medicamentos\ndef lista_medicamentos(request):\n    medicamentos = Medicamento.objects.all()\n    return render(request, 'farmacia/lista_medicamentos.html', {'medicamentos': medicamentos})\n\n# Vista para mostrar el detalle de un medicamento\ndef detalle_medicamento(request, id):\n    medicamento = Medicamento.objects.get(id=id)\n    return render(request, 'farmacia/detalle_medicamento.html', {'medicamento': medicamento})\n\n# Vista para realizar una venta\ndef realizar_venta(request):\n    if request.method == 'POST':\n        form = VentaForm(request.POST)\n        if form.is_valid():\n            form.save()\n            return redirect('lista_medicamentos')\n    else:\n        form = VentaForm()\n        return render(request, 'farmacia/realizar_venta.html', {'form': form})\n\n# Vista para mostrar el historial de ventas\ndef historial_ventas(request):\n    ventas = Venta.objects.all()\n    return render(request, 'farmacia/historial_ventas.html', {'ventas': ventas})\n\nAhora vamos a crear las plantillas para mostrar los datos de los medicamentos y las ventas.\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;Lista de Medicamentos&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Lista de Medicamentos&lt;/h1&gt;\n    &lt;ul&gt;\n        {% for medicamento in medicamentos %}\n            &lt;li&gt;{{ medicamento.nombre }} - {{ medicamento.precio }}&lt;/li&gt;\n        {% endfor %}\n    &lt;/ul&gt;\n&lt;/body&gt;\n&lt;/html&gt;\nEn la plantilla anterior, utilizamos la etiqueta {% for %} para recorrer la lista de medicamentos y mostrar el nombre y el precio de cada uno. También utilizamos las variables medicamento.nombre y medicamento.precio para acceder a los datos de cada medicamento.\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;Detalle de Medicamento&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Detalle de Medicamento&lt;/h1&gt;\n    &lt;p&gt;&lt;strong&gt;Nombre:&lt;/strong&gt; {{ medicamento.nombre }}&lt;/p&gt;\n    &lt;p&gt;&lt;strong&gt;Precio:&lt;/strong&gt; {{ medicamento.precio }}&lt;/p&gt;\n    &lt;p&gt;&lt;strong&gt;Existencias:&lt;/strong&gt; {{ medicamento.existencias }}&lt;/p&gt;\n&lt;/body&gt;\n&lt;/html&gt;\nEn la plantilla anterior, utilizamos las variables medicamento.nombre, medicamento.precio y medicamento.existencias para mostrar los datos del medicamento seleccionado.\nOtras plantillas que se pueden crear son:\n\nrealizar_venta.html: Plantilla para el formulario de venta.\nhistorial_ventas.html: Plantilla para mostrar el historial de ventas.\n\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;Realizar Venta&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Realizar Venta&lt;/h1&gt;\n    &lt;form method=\"post\"&gt;\n        {% csrf_token %}\n        {{ form.as_p }}\n        &lt;button type=\"submit\"&gt;Realizar Venta&lt;/button&gt;\n    &lt;/form&gt;\n&lt;/body&gt;\n&lt;/html&gt;\nEn la plantilla anterior, utilizamos la etiqueta {% csrf_token %} para proteger el formulario contra ataques de falsificación de solicitudes entre sitios (CSRF). También utilizamos la variable form.as_p para renderizar el formulario de venta en la página web.\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;Historial de Ventas&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Historial de Ventas&lt;/h1&gt;\n    &lt;ul&gt;\n        {% for venta in ventas %}\n            &lt;li&gt;{{ venta.medicamento }} - {{ venta.cantidad }} - {{ venta.fecha }}&lt;/li&gt;\n        {% endfor %}\n    &lt;/ul&gt;\n&lt;/body&gt;\n&lt;/html&gt;\nEn la plantilla anterior, utilizamos la etiqueta {% for %} para recorrer la lista de ventas y mostrar el medicamento, la cantidad y la fecha de cada venta.",
-    "crumbs": [
-      "Unidad 7: Frameworks en Python",
-      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Vistas, Urls y Plantillas en Django</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad7/8_urls.html",
-    "href": "unidades/unidad7/8_urls.html",
-    "title": "Urls en Django",
+    "objectID": "unidades/unidad7/6_vistas.html",
+    "href": "unidades/unidad7/6_vistas.html",
+    "title": "Vistas, Templates y Rutas en Django",
     "section": "",
-    "text": "la secuencia que debe tener el desarrollo en django es:\nModelo -&gt; Vista -&gt; Urls -&gt; Template\nPara que las urls funcionen se debe tener en cuenta que se debe crear un archivo urls.py en la app que se esta trabajando, y se debe importar la vista que se va a utilizar.\n\nEl archivo urls.py en la app no se crea por defecto, se debe crear manualmente.\n\nfrom django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('', views.index, name='index'),\n]\nEn el archivo urls.py del proyecto se debe importar la función include y se debe agregar la url de la app.\n\nRecordemos los modelos, vistas y templates creados en los capitulos anteriores.\nfrom django.db import models\n\nclass Medicamento(models.Model):\n    nombre = models.CharField(max_length=100)\n    precio = models.DecimalField(max_digits=10, decimal_places=2)\n    existencias = models.IntegerField()\n\n    def __str__(self):\n        return self.nombre\n\nclass Venta(models.Model):\n    medicamento = models.ForeignKey(Medicamento, on_delete=models.CASCADE)\n    cantidad = models.IntegerField()\n    fecha = models.DateTimeField(auto_now_add=True)\n\n    def __str__(self):\n        return f'{self.medicamento} - {self.cantidad}'\nfrom django.shortcuts import render\nfrom .models import Medicamento\n\ndef index(request):\n    medicamentos = Medicamento.objects.all()\n    return render(request, 'index.html', {'medicamentos': medicamentos})\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;Medicamentos&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Medicamentos&lt;/h1&gt;\n    &lt;ul&gt;\n        {% for medicamento in medicamentos %}\n            &lt;li&gt;{{ medicamento.nombre }} - {{ medicamento.precio }}&lt;/li&gt;\n        {% endfor %}\n    &lt;/ul&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n\nAhora vamos a crear una url para la vista de detalle de un medicamento.\nfrom django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('', views.index, name='index'),\n    path('medicamento/&lt;int:id&gt;/', views.detalle, name='detalle'),\n]\nfrom django.shortcuts import render\nfrom .models import Medicamento\n\ndef index(request):\n    medicamentos = Medicamento.objects.all()\n    return render(request, 'index.html', {'medicamentos': medicamentos})\n\ndef detalle(request, id):\n    medicamento = Medicamento.objects.get(id=id)\n    return render(request, 'detalle.html', {'medicamento': medicamento})\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;Detalle de Medicamento&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;{{ medicamento.nombre }}&lt;/h1&gt;\n    &lt;p&gt;Precio: {{ medicamento.precio }}&lt;/p&gt;\n    &lt;p&gt;Existencias: {{ medicamento.existencias }}&lt;/p&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n\nEn la url de detalle se esta pasando un parametro llamado id, este parametro se recibe en la vista y se utiliza para buscar el medicamento en la base de datos.\n\nAhora vamos a crear una url para la vista de ventas.\nfrom django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('', views.index, name='index'),\n    path('medicamento/&lt;int:id&gt;/', views.detalle, name='detalle'),\n    path('ventas/', views.ventas, name='ventas'),\n]\nfrom django.shortcuts import render\nfrom .models import Medicamento, Venta\n\ndef index(request):\n    medicamentos = Medicamento.objects.all()\n    return render(request, 'index.html', {'medicamentos': medicamentos})\n\ndef detalle(request, id):\n    medicamento = Medicamento.objects.get(id=id)\n    return render(request, 'detalle.html', {'medicamento': medicamento})\n\ndef ventas(request):\n    ventas = Venta.objects.all()\n    return render(request, 'ventas.html', {'ventas': ventas})\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;Ventas&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Ventas&lt;/h1&gt;\n    &lt;ul&gt;\n        {% for venta in ventas %}\n            &lt;li&gt;{{ venta.medicamento }} - {{ venta.cantidad }} - {{ venta.fecha }}&lt;/li&gt;\n        {% endfor %}\n    &lt;/ul&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n\nEn la url de ventas se esta consultando todas las ventas que se han realizado, y se esta pasando a la plantilla ventas.html.\n\nAhora vamos a crear una url para la vista de agregar venta.\nfrom django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('', views.index, name='index'),\n    path('medicamento/&lt;int:id&gt;/', views.detalle, name='detalle'),\n    path('ventas/', views.ventas, name='ventas'),\n    path('ventas/agregar/', views.agregar_venta, name='agregar_venta'),\n]\nfrom django.shortcuts import render, redirect\nfrom .models import Medicamento, Venta\nfrom .forms import VentaForm\n\ndef index(request):\n    medicamentos = Medicamento.objects.all()\n    return render(request, 'index.html', {'medicamentos': medicamentos})\n\ndef detalle(request, id):\n    medicamento = Medicamento.objects.get(id=id)\n    return render(request, 'detalle.html', {'medicamento': medicamento})\n\ndef ventas(request):\n    ventas = Venta.objects.all()\n    return render(request, 'ventas.html', {'ventas': ventas})\n\ndef agregar_venta(request):\n    if request.method == 'POST':\n        form = VentaForm(request.POST)\n        if form.is_valid():\n            form.save()\n            return redirect('ventas')\n    else:\n        form = VentaForm()\n    return render(request, 'agregar_venta.html', {'form': form})\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;Agregar Venta&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Agregar Venta&lt;/h1&gt;\n    &lt;form method=\"POST\"&gt;\n        {% csrf_token %}\n        {{ form.as_p }}\n        &lt;button type=\"submit\"&gt;Agregar&lt;/button&gt;\n    &lt;/form&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n\nEn la url de agregar venta se esta utilizando un formulario, este formulario se crea en un archivo forms.py en la app.\nfrom django import forms\nfrom .models import Venta\n\nclass VentaForm(forms.ModelForm):\n    class Meta:\n        model = Venta\n        fields = '__all__'\n\nAhora vamos a crear una url para la vista de editar venta.\nfrom django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('', views.index, name='index'),\n    path('medicamento/&lt;int:id&gt;/', views.detalle, name='detalle'),\n    path('ventas/', views.ventas, name='ventas'),\n    path('ventas/agregar/', views.agregar_venta, name='agregar_venta'),\n    path('ventas/editar/&lt;int:id&gt;/', views.editar_venta, name='editar_venta'),\n]\nfrom django.shortcuts import render, redirect\nfrom .models import Medicamento, Venta\nfrom .forms import VentaForm\n\ndef index(request):\n    medicamentos = Medicamento.objects.all()\n    return render(request, 'index.html', {'medicamentos': medicamentos})\n\ndef detalle(request, id):\n    medicamento = Medicamento.objects.get(id=id)\n    return render(request, 'detalle.html', {'medicamento': medicamento})\n\ndef ventas(request):\n    ventas = Venta.objects.all()\n    return render(request, 'ventas.html', {'ventas': ventas})\n\ndef agregar_venta(request):\n    if request.method == 'POST':\n        form = VentaForm(request.POST)\n        if form.is_valid():\n            form.save()\n            return redirect('ventas')\n    else:\n        form = VentaForm()\n    return render(request, 'agregar_venta.html', {'form': form})\n\ndef editar_venta(request, id):\n    venta = Venta.objects.get(id=id)\n    if request.method == 'POST':\n        form = VentaForm(request.POST, instance=venta)\n        if form.is_valid():\n            form.save()\n            return redirect('ventas')\n    else:\n        form = VentaForm(instance=venta)\n    return render(request, 'editar_venta.html', {'form': form})\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;Editar Venta&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Editar Venta&lt;/h1&gt;\n    &lt;form method=\"POST\"&gt;\n        {% csrf_token %}\n        {{ form.as_p }}\n        &lt;button type=\"submit\"&gt;Editar&lt;/button&gt;\n    &lt;/form&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n\nEn la url de editar venta se esta pasando un parametro llamado id, este parametro se recibe en la vista y se utiliza para buscar la venta en la base de datos.\n\nAhora vamos a crear una url para la vista de eliminar venta.\nfrom django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('', views.index, name='index'),\n    path('medicamento/&lt;int:id&gt;/', views.detalle, name='detalle'),\n    path('ventas/', views.ventas, name='ventas'),\n    path('ventas/agregar/', views.agregar_venta, name='agregar_venta'),\n    path('ventas/editar/&lt;int:id&gt;/', views.editar_venta, name='editar_venta'),\n    path('ventas/eliminar/&lt;int:id&gt;/', views.eliminar_venta, name='eliminar_venta'),\n]\nfrom django.shortcuts import render, redirect\nfrom .models import Medicamento, Venta\nfrom .forms import VentaForm\n\ndef index(request):\n    medicamentos = Medicamento.objects.all()\n    return render(request, 'index.html', {'medicamentos': medicamentos})\n\ndef detalle(request, id):\n    medicamento = Medicamento.objects.get(id=id)\n    return render(request, 'detalle.html', {'medicamento': medicamento})\n\ndef ventas(request):\n    ventas = Venta.objects.all()\n    return render(request, 'ventas.html', {'ventas': ventas})\n\ndef agregar_venta(request):\n    if request.method == 'POST':\n        form = VentaForm(request.POST)\n        if form.is_valid():\n            form.save()\n            return redirect('ventas')\n    else:\n        form = VentaForm()\n    return render(request, 'agregar_venta.html', {'form': form})\n\ndef editar_venta(request, id):\n    venta = Venta.objects.get(id=id)\n    if request.method == 'POST':\n        form = VentaForm(request.POST, instance=venta)\n        if form.is_valid():\n            form.save()\n            return redirect('ventas')\n    else:\n        form = VentaForm(instance=venta)\n    return render(request, 'editar_venta.html', {'form': form})\n\ndef eliminar_venta(request, id):\n    venta = Venta.objects.get(id=id)\n    venta.delete()\n    return redirect('ventas')\n\nEn la url de eliminar venta se esta pasando un parametro llamado id, este parametro se recibe en la vista y se utiliza para buscar la venta en la base de datos y eliminarla.\n\n\nActividades\n\nCrear una url para la vista de detalle de un medicamento.\nCrear una url para la vista de ventas.\nCrear una url para la vista de agregar venta.\nCrear una url para la vista de editar venta.\nCrear una url para la vista de eliminar venta.\nCrear un formulario para agregar una venta.\nCrear un formulario para editar una venta.\nCrear un boton para eliminar una venta.\nCrear un boton para editar una venta.\nCrear un boton para agregar una venta.\nCrear un boton para ver el detalle de un medicamento.\nCrear un boton para ver las ventas.\nCrear un boton para volver a la lista de ventas.\nCrear un boton para volver a la lista de medicamentos.\n\n\n\nVer respuesta\n\n\nCrear una url para la vista de detalle de un medicamento.\n\nfrom django.urls import path\nfrom . import views\n\n# Urls de la app\nurlpatterns = [\n    path('', views.index, name='index'),\n    path('medicamento/&lt;int:id&gt;/', views.detalle, name='detalle'),\n]\n\nCrear una url para la vista de ventas.\n\nfrom django.urls import path\nfrom . import views\n\n# Urls de la app\nurlpatterns = [\n    path('', views.index, name='index'),\n    path('medicamento/&lt;int:id&gt;/', views.detalle, name='detalle'),\n    path('ventas/', views.ventas, name='ventas'),\n]\n\nCrear una url para la vista de agregar venta.\n\nfrom django.urls import path\nfrom . import views\n\n# Urls de la app\nurlpatterns = [\n    path('', views.index, name='index'),\n    path('medicamento/&lt;int:id&gt;/', views.detalle, name='detalle'),\n    path('ventas/', views.ventas, name='ventas'),\n    path('ventas/agregar/', views.agregar_venta, name='agregar_venta'),\n]\n\nCrear una url para la vista de editar venta.\n\nfrom django.urls import path\nfrom . import views\n\n# Urls de la app\nurlpatterns = [\n    path('', views.index, name='index'),\n    path('medicamento/&lt;int:id&gt;/', views.detalle, name='detalle'),\n    path('ventas/', views.ventas, name='ventas'),\n    path('ventas/agregar/', views.agregar_venta, name='agregar_venta'),\n    path('ventas/editar/&lt;int:id&gt;/', views.editar_venta, name='editar_venta'),\n]\n\nCrear una url para la vista de eliminar venta.\n\nfrom django.urls import path\nfrom . import views\n\n# Urls de la app\nurlpatterns = [\n    path('', views.index, name='index'),\n    path('medicamento/&lt;int:id&gt;/', views.detalle, name='detalle'),\n    path('ventas/', views.ventas, name='ventas'),\n    path('ventas/agregar/', views.agregar_venta, name='agregar_venta'),\n    path('ventas/editar/&lt;int:id&gt;/', views.editar_venta, name='editar_venta'),\n    path('ventas/eliminar/&lt;int:id&gt;/', views.eliminar_venta, name='eliminar_venta'),\n]\n\nCrear un formulario para agregar una venta.\n\nfrom django import forms\nfrom .models import Venta\n\nclass VentaForm(forms.ModelForm):\n    class Meta:\n        model = Venta\n        fields = '__all__'\n\nCrear un formulario para editar una venta.\n\nfrom django import forms\nfrom .models import Venta\n\nclass VentaForm(forms.ModelForm):\n    class Meta:\n        model = Venta\n        fields = '__all__'\n\nCrear un boton para eliminar una venta.\n\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;Eliminar Venta&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Eliminar Venta&lt;/h1&gt;\n    &lt;form method=\"POST\"&gt;\n        {% csrf_token %}\n        &lt;button type=\"submit\"&gt;Eliminar&lt;/button&gt;\n    &lt;/form&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n\nCrear un boton para editar una venta.\n\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;Editar Venta&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Editar Venta&lt;/h1&gt;\n    &lt;form method=\"POST\"&gt;\n        {% csrf_token %}\n        {{ form.as_p }}\n        &lt;button type=\"submit\"&gt;Editar&lt;/button&gt;\n    &lt;/form&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n\nCrear un boton para agregar una venta.\n\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;Agregar Venta&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Agregar Venta&lt;/h1&gt;\n    &lt;form method=\"POST\"&gt;\n        {% csrf_token %}\n        {{ form.as_p }}\n        &lt;button type=\"submit\"&gt;Agregar&lt;/button&gt;\n    &lt;/form&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n\nCrear un boton para ver el detalle de un medicamento.\n\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;Detalle de Medicamento&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;{{ medicamento.nombre }}&lt;/h1&gt;\n    &lt;p&gt;Precio: {{ medicamento.precio }}&lt;/p&gt;\n    &lt;p&gt;Existencias: {{ medicamento.existencias }}&lt;/p&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n\nCrear un boton para ver las ventas.\n\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;Ventas&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Ventas&lt;/h1&gt;\n    &lt;ul&gt;\n        {% for venta in ventas %}\n            &lt;li&gt;{{ venta.medicamento }} - {{ venta.cantidad }} - {{ venta.fecha }}&lt;/li&gt;\n        {% endfor %}\n    &lt;/ul&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n\nCrear un boton para volver a la lista de ventas.\n\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;Ventas&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Ventas&lt;/h1&gt;\n    &lt;ul&gt;\n        {% for venta in ventas %}\n            &lt;li&gt;{{ venta.medicamento }} - {{ venta.cantidad }} - {{ venta.fecha }}&lt;/li&gt;\n        {% endfor %}\n    &lt;/ul&gt;\n    &lt;a href=\"{% url 'ventas' %}\"&gt;Volver&lt;/a&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n\nCrear un boton para volver a la lista de medicamentos.\n\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;Medicamentos&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Medicamentos&lt;/h1&gt;\n    &lt;ul&gt;\n        {% for medicamento in medicamentos %}\n            &lt;li&gt;{{ medicamento.nombre }} - {{ medicamento.precio }}&lt;/li&gt;\n        {% endfor %}\n    &lt;/ul&gt;\n    &lt;a href=\"{% url 'index' %}\"&gt;Volver&lt;/a&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n\n\n\nConclusiones\nLas urls en Django son muy importantes para poder acceder a las vistas de la aplicación, se deben tener en cuenta las rutas que se van a utilizar y se deben crear las urls en el archivo urls.py de la app y del proyecto.",
+    "text": "Paso 2: Mostrar el Detalle de un Medicamento",
     "crumbs": [
       "Unidad 7: Frameworks en Python",
-      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Urls en Django</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Vistas, Templates y Rutas en Django</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad7/6_vistas.html#vista",
+    "href": "unidades/unidad7/6_vistas.html#vista",
+    "title": "Vistas, Templates y Rutas en Django",
+    "section": "Vista",
+    "text": "Vista\n\nEn views.py:\n\nfrom django.shortcuts import render\nfrom .models import Medicamento\n\ndef lista_medicamentos(request):\n    medicamentos = Medicamento.objects.all()\n    return render(request, 'farmacia/lista_medicamentos.html', {'medicamentos': medicamentos})",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Vistas, Templates y Rutas en Django</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad7/6_vistas.html#template",
+    "href": "unidades/unidad7/6_vistas.html#template",
+    "title": "Vistas, Templates y Rutas en Django",
+    "section": "Template",
+    "text": "Template\n\nCrea el archivo templates/farmacia/lista_medicamentos.html:\n\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n    &lt;title&gt;Lista de Medicamentos&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Lista de Medicamentos&lt;/h1&gt;\n    &lt;a href=\"{% url 'crear_medicamento' %}\"&gt;Añadir Medicamento&lt;/a&gt;\n    &lt;ul&gt;\n        {% for medicamento in medicamentos %}\n            &lt;li&gt;\n                {{ medicamento.nombre }} - ${{ medicamento.precio|floatformat:2 }}\n                ({{ medicamento.existencias }} disponibles)\n                &lt;a href=\"{% url 'detalle_medicamento' medicamento.id %}\"&gt;Detalles&lt;/a&gt;\n            &lt;/li&gt;\n        {% endfor %}\n    &lt;/ul&gt;\n&lt;/body&gt;\n&lt;/html&gt;",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Vistas, Templates y Rutas en Django</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad7/6_vistas.html#ruta",
+    "href": "unidades/unidad7/6_vistas.html#ruta",
+    "title": "Vistas, Templates y Rutas en Django",
+    "section": "Ruta",
+    "text": "Ruta\n\nEn urls.py de la aplicación farmacia:\n\nfrom django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('medicamentos/', views.lista_medicamentos, name='lista_medicamentos'),\n]\n\n:::{.callout-tip}\nEs necesario conectar las URLs de la aplicación **farmacia** con las URLs del proyecto en **urls.py** del proyecto.\n\n```python\nfrom django.contrib import admin\nfrom django.urls import path, include\nfrom farmacia import urls\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('farmacia.urls')),\n]",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Vistas, Templates y Rutas en Django</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad7/6_vistas.html#vista-1",
+    "href": "unidades/unidad7/6_vistas.html#vista-1",
+    "title": "Vistas, Templates y Rutas en Django",
+    "section": "Vista",
+    "text": "Vista\n\nEn views.py:\n\nfrom django.shortcuts import get_object_or_404\n\ndef detalle_medicamento(request, id):\n    medicamento = get_object_or_404(Medicamento, id=id)\n    return render(request, 'farmacia/detalle_medicamento.html', {'medicamento': medicamento})",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Vistas, Templates y Rutas en Django</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad7/6_vistas.html#template-1",
+    "href": "unidades/unidad7/6_vistas.html#template-1",
+    "title": "Vistas, Templates y Rutas en Django",
+    "section": "Template",
+    "text": "Template\n\nCrea el archivo templates/farmacia/detalle_medicamento.html:\n\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n    &lt;title&gt;Detalle del Medicamento&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;{{ medicamento.nombre }}&lt;/h1&gt;\n    &lt;p&gt;&lt;strong&gt;Precio:&lt;/strong&gt; ${{ medicamento.precio }}&lt;/p&gt;\n    &lt;p&gt;&lt;strong&gt;Existencias:&lt;/strong&gt; {{ medicamento.existencias }}&lt;/p&gt;\n    &lt;a href=\"{% url 'lista_medicamentos' %}\"&gt;Volver a la lista&lt;/a&gt;\n&lt;/body&gt;\n&lt;/html&gt;",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Vistas, Templates y Rutas en Django</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad7/6_vistas.html#ruta-1",
+    "href": "unidades/unidad7/6_vistas.html#ruta-1",
+    "title": "Vistas, Templates y Rutas en Django",
+    "section": "Ruta",
+    "text": "Ruta\n\nAgrega la ruta en urls.py:\n\npath('medicamentos/&lt;int:id&gt;/', views.detalle_medicamento, name='detalle_medicamento'),",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Vistas, Templates y Rutas en Django</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad7/6_vistas.html#vista-2",
+    "href": "unidades/unidad7/6_vistas.html#vista-2",
+    "title": "Vistas, Templates y Rutas en Django",
+    "section": "Vista",
+    "text": "Vista\n\nEn views.py:\n\nfrom django.shortcuts import redirect\nfrom .forms import MedicamentoForm\n\ndef crear_medicamento(request):\n    if request.method == 'POST':\n        form = MedicamentoForm(request.POST)\n        if form.is_valid():\n            form.save()\n            return redirect('lista_medicamentos')\n    else:\n        form = MedicamentoForm()\n    return render(request, 'farmacia/crear_medicamento.html', {'form': form})",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Vistas, Templates y Rutas en Django</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad7/6_vistas.html#template-2",
+    "href": "unidades/unidad7/6_vistas.html#template-2",
+    "title": "Vistas, Templates y Rutas en Django",
+    "section": "Template",
+    "text": "Template\n\nCrea templates/farmacia/crear_medicamento.html:\n\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n    &lt;title&gt;Crear Medicamento&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Crear Medicamento&lt;/h1&gt;\n    &lt;form method=\"post\"&gt;\n        {% csrf_token %}\n        {{ form.as_p }}\n        &lt;button type=\"submit\"&gt;Guardar&lt;/button&gt;\n    &lt;/form&gt;\n    &lt;a href=\"{% url 'lista_medicamentos' %}\"&gt;Volver a la lista&lt;/a&gt;\n&lt;/body&gt;\n&lt;/html&gt;",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Vistas, Templates y Rutas en Django</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad7/6_vistas.html#ruta-2",
+    "href": "unidades/unidad7/6_vistas.html#ruta-2",
+    "title": "Vistas, Templates y Rutas en Django",
+    "section": "Ruta",
+    "text": "Ruta\n\nAgrega la ruta en urls.py:\n\npath('medicamentos/nuevo/', views.crear_medicamento, name='crear_medicamento'),",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Vistas, Templates y Rutas en Django</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad7/6_vistas.html#probar-las-vistas",
+    "href": "unidades/unidad7/6_vistas.html#probar-las-vistas",
+    "title": "Vistas, Templates y Rutas en Django",
+    "section": "Probar las Vistas",
+    "text": "Probar las Vistas\n\nInicia el servidor:\n\npython manage.py runserver\nNavega a:\n\nLista de Medicamentos: http://localhost:8000/medicamentos/\nDetalle de Medicamento: http://localhost:8000/medicamentos/1/ (reemplaza 1 por un ID válido).\nCrear Medicamento: http://localhost:8000/medicamentos/nuevo/.",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Vistas, Templates y Rutas en Django</span>"
     ]
   },
   {
@@ -1580,7 +1635,7 @@
     "text": "Objetivos del Laboratorio\n\nDesarrollar un juego de Ahorcado usando funciones en Python.\nUsar estructuras de datos como listas y cadenas de texto.\nImplementar lógica condicional y bucles para manejar el flujo del juego.\nMostrar mensajes finales (con emojis) según el resultado del juego.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>38</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
     ]
   },
   {
@@ -1591,7 +1646,7 @@
     "text": "Prerrequisitos\n\nConocimiento básico de Python: funciones, listas, cadenas, condicionales y bucles.\nInstalación de Python 3 en tu equipo.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>38</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
     ]
   },
   {
@@ -1602,7 +1657,7 @@
     "text": "Paso 1: Crear la Estructura Inicial del Proyecto\n\nCrear un archivo de Python:\nAbre tu editor de texto o IDE favorito (se recomienda utilizar Vscode) y crea un nuevo archivo llamado ahorcado.py.\nDefinir el objetivo del proyecto en el archivo:\nAñade un comentario en la primera línea que describa el propósito del proyecto:\n# Juego de Ahorcado en Python",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>38</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
     ]
   },
   {
@@ -1613,7 +1668,7 @@
     "text": "Paso 2: Definir las Etapas del Ahorcado en ASCII\n\nCrear la lista AHORCADO_DIBUJO:\nDefine las etapas progresivas del dibujo del ahorcado usando una lista de cadenas en ASCII.\nCada elemento de la lista representa una etapa del juego.\nAHORCADO_DIBUJO = [\n    \"\"\"\n       |\n       |\n       |\n       |\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n       |\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n      /|\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n      /|\\\\\n       |\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n      /|\\\\\n       |\n      /\n    \"\"\",\n    \"\"\"\n       |\n       |\n       O\n      /|\\\\\n       |\n      / \\\\\n    \"\"\"\n]\n\n\nPrueba del dibujo:\nPrueba imprimiendo cada elemento de la lista para asegurarte de que el dibujo es correcto.\nprint(len(AHORCADO_DIBUJO))\nfor etapa in AHORCADO_DIBUJO:\n    print(etapa)\n\n\n\n\n\n\nTip\n\n\n\nNota: Puedes ejecutar el código en tu terminal o en un entorno de Python para verificar que el dibujo se imprime correctamente.\n\n\n\n\n\n\n\n\nTip\n\n\n\nNo olvides utilizar la función print() para mostrar los elementos de la lista en la consola. Y los comentarios para poder identificar cada etapa del dibujo.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>38</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
     ]
   },
   {
@@ -1624,7 +1679,7 @@
     "text": "Paso 3: Crear la Función para Mostrar el Dibujo del Ahorcado\n\nDefinir la función mostrar_ahorcado:\nEsta función tomará el número de intentos fallidos como argumento e imprimirá la etapa correspondiente del ahorcado.\ndef mostrar_ahorcado(intentos_fallidos):\n    print(AHORCADO_DIBUJO[intentos_fallidos])\n\n\nPrueba de la función:\nLlama a mostrar_ahorcado varias veces con diferentes valores para verificar que cada etapa se muestra correctamente.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>38</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
     ]
   },
   {
@@ -1635,7 +1690,7 @@
     "text": "Paso 4: Crear Funciones para el Flujo del Juego\n\nFunción para Seleccionar Palabra Aleatoria:\nDefine una lista de palabras para que el juego seleccione aleatoriamente una de ellas.\nUsa la biblioteca random para elegir una palabra al azar.\nimport random\n\ndef seleccionar_palabra():\n    palabras = [\"python\", \"programacion\", \"juego\", \"ahorcado\", \"computadora\"]\n    return random.choice(palabras)\nEn el código anterior, la función seleccionar_palabra devuelve una palabra aleatoria de la lista de palabras. Tambien aparece el método choice de random que selecciona una palabra aleatoria de la lista.\n\n\nFunción para Mostrar el Estado Actual:\nEsta función mostrará el progreso actual del jugador, mostrando las letras adivinadas y guiones bajos _ para letras no adivinadas.\ndef mostrar_progreso(palabra, letras_adivinadas):\n    progreso = [letra if letra in letras_adivinadas else '_' for letra in palabra]\n    print(\" \".join(progreso))\nEl código anterior crea una lista de letras adivinadas y guiones bajos para las letras no adivinadas. Luego, une los elementos de la lista en una cadena con un espacio entre cada letra.\nEste proceso se conoce como list comprehension y es una forma concisa de crear listas en Python.\nPara ampliar la información sobre list comprehension, puedes consultar la documentación oficial de Python en el siguiente enlace: List Comprehensions\n\n\nFunción para Manejar el Intento del Jugador:\nDefine una función que reciba una letra y verifique si está en la palabra.\ndef intentar_letra(palabra, letra, letras_adivinadas):\n    if letra in palabra:\n        letras_adivinadas.add(letra)\n        return True\n    return False\nEn el código anterior, la función intentar_letra verifica si la letra está en la palabra y la agrega a la colección de letras adivinadas. Devuelve True si la letra está en la palabra y False si no lo está.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>38</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
     ]
   },
   {
@@ -1646,7 +1701,7 @@
     "text": "Paso 5: Crear la Función Principal del Juego\n\nConfigurar el Juego:\nDefine la función jugar_ahorcado() que controlará el flujo completo del juego.\nEstablece la palabra a adivinar, el número de intentos, y una colección para almacenar las letras adivinadas.\ndef jugar_ahorcado():\n    palabra = seleccionar_palabra()\n    letras_adivinadas = set()\n    intentos_fallidos = 0\n    max_intentos = len(AHORCADO_DIBUJO) - 1\nEn el código anterior, la función jugar_ahorcado selecciona una palabra aleatoria, inicializa una colección de letras adivinadas, y establece el número máximo de intentos.\n\n\nCiclo del Juego:\nCrea un bucle while que continúe mientras el jugador tenga intentos restantes y no haya adivinado la palabra completa.\n    while intentos_fallidos &lt; max_intentos:\n        mostrar_ahorcado(intentos_fallidos)\n        mostrar_progreso(palabra, letras_adivinadas)\n        \n        letra = input(\"Introduce una letra: \").lower()\n        \n        if letra in letras_adivinadas:\n            print(\"Ya intentaste esa letra.\")\n            continue\n        \n        if intentar_letra(palabra, letra, letras_adivinadas):\n            print(\"¡Correcto!\")\n            if all(l in letras_adivinadas for l in palabra):\n                mostrar_resultado(True)\n                break\n        else:\n            print(\"Incorrecto.\")\n            intentos_fallidos += 1\n    else:\n        mostrar_ahorcado(intentos_fallidos)\n        mostrar_resultado(False)\nEn el código anterior, el bucle while muestra el dibujo actual del ahorcado, el progreso del jugador y solicita una letra al jugador.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>38</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
     ]
   },
   {
@@ -1657,7 +1712,7 @@
     "text": "Paso 6: Crear Función de Resultado Final con Emojis\n\nDefinir mostrar_resultado:\nEsta función mostrará un mensaje final con un emoji dependiendo de si el jugador gana o pierde.\ndef mostrar_resultado(ganador):\n    if ganador:\n        print(\"¡Felicidades, ganaste! 😄\")\n    else:\n        print(\"Lo siento, perdiste. 😞\")\nEn el código anterior, la función mostrar_resultado imprime un mensaje de felicitación si el jugador gana y un mensaje de consuelo si pierde.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>38</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
     ]
   },
   {
@@ -1668,7 +1723,7 @@
     "text": "Paso 7: Ejecutar el Juego\n\nEjecutar el Juego:\nAgrega una condición para ejecutar el juego cuando el archivo sea ejecutado directamente.\nif __name__ == \"__main__\":\n    jugar_ahorcado()\nEn el código anterior, la condición if name == “main”: verifica si el archivo se ejecuta directamente y llama a la función jugar_ahorcado en ese caso.\n\n\n\n\n\n\nTip\n\n\n\nNota: Puedes ejecutar el juego en tu terminal o en un entorno de Python para jugar al Ahorcado.\n\n\n\n\nPrueba Final:\nEjecuta ahorcado.py y juega una partida completa. Verifica que los mensajes y el flujo del juego sean los correctos.\npython ahorcado.py",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>38</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
     ]
   },
   {
@@ -1679,7 +1734,7 @@
     "text": "Paso 8: Mejoras Opcionales\n\nAñadir Validación de Entradas: Controla que el jugador solo introduzca letras válidas.\n\nAgregar Dificultad: Permite al jugador elegir entre palabras cortas, medias y largas.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>38</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span>"
     ]
   },
   {
@@ -1690,7 +1745,7 @@
     "text": "Módulos del Proyecto\n\n📋 Módulo de tareas\n\nCrear una nueva tarea con título, descripción, fecha límite y prioridad.\nMarcar tareas como completadas ✅ o en progreso 🔄.\nOrganizar las tareas en orden de prioridad 🔥 o por fecha límite 📅.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>39</span>  <span class='chapter-title'>📝 Gestor de Tareas con Prioridades</span>"
+      "<span class='chapter-number'>37</span>  <span class='chapter-title'>📝 Gestor de Tareas con Prioridades</span>"
     ]
   },
   {
@@ -1701,7 +1756,7 @@
     "text": "Funciones Clave\n\nPrioriza tus tareas con un sistema de prioridades: baja, media y alta 🔥.\n\n\nDesarrollo\nCreamos la siguiente estructura de carpetas para organizar nuestro proyecto:\nproyecto_modulos/\n│\n├── tareas/\n│   ├── __init__.py\n│   ├── tareas.py\n│\nEn el archivo tareas.py definimos las clases y funciones necesarias para gestionar las tareas.\n# tareas.py\n\nclass Tarea:\n    def __init__(self, titulo, descripcion, fecha_limite, prioridad):\n        self.titulo = titulo\n        self.descripcion = descripcion\n        self.fecha_limite = fecha_limite\n        self.prioridad = prioridad\n        self.completada = False\n\n    def marcar_completada(self):\n        self.completada = True\n\n    def marcar_en_progreso(self):\n        self.completada = False\n\n    def __str__(self):\n        return f\"{self.titulo} - {self.prioridad} - {self.fecha_limite}\"\nEn el archivo init.py definimos las funciones principales para interactuar con las tareas.\n# __init__.py\n\nfrom tareas import Tarea\n\ndef crear_tarea(titulo, descripcion, fecha_limite, prioridad):\n    return Tarea(titulo, descripcion, fecha_limite, prioridad)\n\ndef marcar_completada(tarea):\n    tarea.marcar_completada()\n\ndef marcar_en_progreso(tarea):\n    tarea.marcar_en_progreso()\nCon esta estructura básica, podemos empezar a desarrollar la funcionalidad de nuestro gestor de tareas. En los siguientes módulos, ampliaremos las capacidades de nuestra aplicación y añadiremos nuevas funcionalidades.\nPara poder probar nuestro código, podemos crear un script de prueba en la misma carpeta:\n# test.py\n\nfrom tareas import Tarea\n\ntarea1 = Tarea(\"Hacer la compra\", \"Comprar leche, pan y fruta\", \"2022-12-31\", \"alta\")\n\nprint(tarea1)\nAl ejecutar el script de prueba, deberíamos ver la información de la tarea creada.\n$ python test.py\nHacer la compra - alta - 2022-12-31",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>39</span>  <span class='chapter-title'>📝 Gestor de Tareas con Prioridades</span>"
+      "<span class='chapter-number'>37</span>  <span class='chapter-title'>📝 Gestor de Tareas con Prioridades</span>"
     ]
   },
   {
@@ -1712,7 +1767,7 @@
     "text": "Módulos del Proyecto\nUn proyecto interactivo que simula una tienda en línea donde los clientes pueden agregar productos al carrito, realizar pedidos, gestionar inventarios y procesar pagos.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>40</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
+      "<span class='chapter-number'>38</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
     ]
   },
   {
@@ -1723,7 +1778,7 @@
     "text": "🛍️ Módulo de Productos\n\nDefinir productos con nombre, precio y cantidad en inventario.\nActualizar el inventario después de cada compra o cuando se agregan nuevos productos.\n\n\n\n🛒 Módulo de Carrito\n\nPermite a los clientes agregar o quitar productos de su carrito.\nCalcular el costo total de los productos en el carrito.\n\n\n\n👤 Módulo de Cliente\n\nGestionar la creación de nuevos clientes.\nMantener el historial de compras del cliente.\n\n\n\n📦 Módulo de Pedido\n\nProcesar un pedido, verificar disponibilidad en inventario, y generar la factura.\nActualizar el inventario después de la compra.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>40</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
+      "<span class='chapter-number'>38</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
     ]
   },
   {
@@ -1734,7 +1789,7 @@
     "text": "🛍️ Productos\nEn el archivo producto.py, definimos la clase Producto:\n# productos/producto.py\n\nclass Producto:\n    def __init__(self, nombre, precio, inventario):\n        self.nombre = nombre\n        self.precio = precio\n        self.inventario = inventario\n\n    def actualizar_inventario(self, cantidad):\n        self.inventario -= cantidad\n\n    def __str__(self):\n        return f\"{self.nombre} - ${self.precio} (Inventario: {self.inventario})\"",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>40</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
+      "<span class='chapter-number'>38</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
     ]
   },
   {
@@ -1745,7 +1800,7 @@
     "text": "🛒 Carrito\nEn el archivo carrito.py, definimos la clase Carrito:\n# carrito/carrito.py\n\nclass Carrito:\n    def __init__(self):\n        self.productos = {}\n\n    def agregar_producto(self, producto, cantidad):\n        if producto.nombre in self.productos:\n            self.productos[producto.nombre] += cantidad\n        else:\n            self.productos[producto.nombre] = cantidad\n\n    def eliminar_producto(self, producto):\n        if producto.nombre in self.productos:\n            del self.productos[producto.nombre]\n\n    def total(self):\n        return sum(producto.precio * cantidad for producto, cantidad in self.productos.items())\n\n    def __str__(self):\n        carrito_str = \"Carrito:\\n\"\n        for producto, cantidad in self.productos.items():\n            carrito_str += f\"{producto}: {cantidad}\\n\"\n        return carrito_str",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>40</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
+      "<span class='chapter-number'>38</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
     ]
   },
   {
@@ -1756,7 +1811,7 @@
     "text": "👤 Clientes\nEn el archivo cliente.py, definimos la clase Cliente:\n# clientes/cliente.py\n\nclass Cliente:\n    def __init__(self, nombre, email):\n        self.nombre = nombre\n        self.email = email\n        self.historial_compras = []\n\n    def agregar_historial(self, pedido):\n        self.historial_compras.append(pedido)\n\n    def ver_historial(self):\n        if not self.historial_compras:\n            return \"No tienes compras aún.\"\n        return \"\\n\".join(str(pedido) for pedido in self.historial_compras)\n\n    def __str__(self):\n        return f\"Cliente: {self.nombre} ({self.email})\"",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>40</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
+      "<span class='chapter-number'>38</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
     ]
   },
   {
@@ -1767,7 +1822,7 @@
     "text": "📦 Pedidos\nEn el archivo pedido.py, definimos la clase Pedido:\n# pedidos/pedido.py\n\nclass Pedido:\n    def __init__(self, cliente, carrito):\n        self.cliente = cliente\n        self.carrito = carrito\n        self.total = carrito.total()\n\n    def procesar_pedido(self):\n        for producto, cantidad in self.carrito.productos.items():\n            producto.actualizar_inventario(cantidad)\n        self.cliente.agregar_historial(self)\n\n    def __str__(self):\n        return f\"Pedido de {self.cliente.nombre} - Total: ${self.total}\"",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>40</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
+      "<span class='chapter-number'>38</span>  <span class='chapter-title'>🛒 Simulador de Tienda Online</span>"
     ]
   },
   {
@@ -1778,7 +1833,7 @@
     "text": "Objetivos\n\nDefinir clases en Python.\nCrear objetos de clases.\nUtilizar herencia en clases.\nMostrar información de objetos. ## Requerimientos\nConocimientos básicos de programación en Python.\nConocimientos básicos de programación orientada a objetos.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>41</span>  <span class='chapter-title'>🏫 Sistema Universitario</span>"
+      "<span class='chapter-number'>39</span>  <span class='chapter-title'>🏫 Sistema Universitario</span>"
     ]
   },
   {
@@ -1789,7 +1844,7 @@
     "text": "Instrucciones.\n\nClase Persona: Define los atributos comunes nombre, edad y sexo.\nClase Estudiante: Hereda de Persona y agrega los atributos carnet y carrera.\nClase Profesor: Hereda de Persona y agrega los atributos codigo y especialidad.\nClase Curso: Contiene los atributos nombre, codigo y una instancia de Profesor.\nClase Universidad: Contiene el atributo nombre y una lista de cursos. Incluye un método para agregar cursos.\nCreación de objetos:\n\n\nSe crea un objeto universidad de la clase Universidad.\nSe crean los objetos profesor, curso y estudiante con los datos indicados.\nSe agrega cada curso a la universidad y luego se imprime la universidad con los cursos.\n\n\nImpresión:\n\n\nSe imprime la información de la universidad, el estudiante, el profesor y el curso de Matemáticas, según los requerimientos.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>41</span>  <span class='chapter-title'>🏫 Sistema Universitario</span>"
+      "<span class='chapter-number'>39</span>  <span class='chapter-title'>🏫 Sistema Universitario</span>"
     ]
   },
   {
@@ -1800,7 +1855,7 @@
     "text": "Desarrollo\n\nCrear la clase Persona.\n\nclass Persona:\n    def __init__(self, nombre, edad, sexo):\n        self.nombre = nombre\n        self.edad = edad\n        self.sexo = sexo\n\n    def __str__(self):\n        return f\"Nombre: {self.nombre}, Edad: {self.edad}, Sexo: {self.sexo}\"\nEn el codigo anterior se crea la clase Persona con los atributos nombre, edad y sexo. Además, se crea el método str para mostrar la información de la persona.\n\nCrear la clase Estudiante que hereda de Persona.\n\nclass Estudiante(Persona):\n    def __init__(self, nombre, edad, sexo, carnet, carrera):\n        super().__init__(nombre, edad, sexo)\n        self.carnet = carnet\n        self.carrera = carrera\n\n    def __str__(self):\n        return f\"{super().__str__()}, Carnet: {self.carnet}, Carrera: {self.carrera}\"\nEn el codigo anterior se crea la clase Estudiante que hereda de Persona. Se añaden los atributos carnet y carrera. Además, se sobreescribe el método str para mostrar la información del estudiante.\n\nCrear la clase Profesor que hereda de Persona.\n\nclass Profesor(Persona):\n    def __init__(self, nombre, edad, sexo, codigo, especialidad):\n        super().__init__(nombre, edad, sexo)\n        self.codigo = codigo\n        self.especialidad = especialidad\n\n    def __str__(self):\n        return f\"{super().__str__()}, Código: {self.codigo}, Especialidad: {self.especialidad}\"\nEn el codigo anterior se crea la clase Profesor que hereda de Persona. Se añaden los atributos codigo y especialidad. Además, se sobreescribe el método str para mostrar la información del profesor.\n\nCrear la clase Curso.\n\nclass Curso:\n    def __init__(self, nombre, codigo, profesor):\n        self.nombre = nombre\n        self.codigo = codigo\n        self.profesor = profesor\n\n    def __str__(self):\n        return f\"Curso: {self.nombre}, Código: {self.codigo}, Profesor: {self.profesor.nombre}\"\nEn el codigo anterior se crea la clase Curso con los atributos nombre, codigo y profesor. Además, se crea el método str para mostrar la información del curso.\n\nCrear la clase Universidad.\n\nclass Universidad:\n    def __init__(self, nombre):\n        self.nombre = nombre\n        self.cursos = []\n\n    def agregar_curso(self, curso):\n        self.cursos.append(curso)\n\n    def __str__(self):\n        cursos_str = \"\\n\".join([str(curso) for curso in self.cursos])\n        return f\"Universidad: {self.nombre}\\nCursos:\\n{cursos_str}\"\nEn el codigo anterior se crea la clase Universidad con los atributos nombre y cursos. Se añade el método agregar_curso para agregar un curso a la lista de cursos. Además, se sobreescribe el método str para mostrar la información de la universidad y los cursos.\n\nCar los objetos\n\n# Crear la universidad\nuniversidad = Universidad(\"Universidad de El Salvador\")\n\n# Crear los profesores\nprofesor_juan = Profesor(\"Juan Perez\", 30, \"Masculino\", \"202020202\", \"Matematicas\")\nprofesor_maria = Profesor(\"Maria Lopez\", 35, \"Femenino\", \"202020203\", \"Fisica\")\nprofesor_pedro = Profesor(\"Pedro Ramirez\", 40, \"Masculino\", \"202020204\", \"Quimica\")\n\n# Crear los cursos\ncurso_matematicas = Curso(\"Matematicas\", \"MAT101\", profesor_juan)\ncurso_fisica = Curso(\"Fisica\", \"FIS101\", profesor_maria)\ncurso_quimica = Curso(\"Quimica\", \"QUI101\", profesor_pedro)\n\n# Agregar los cursos a la universidad\nuniversidad.agregar_curso(curso_matematicas)\nuniversidad.agregar_curso(curso_fisica)\nuniversidad.agregar_curso(curso_quimica)\n\n# Crear el objeto estudiante\nestudiante_carlos = Estudiante(\"Carlos Perez\", 20, \"Masculino\", \"202010101\", \"Ingenieria en Sistemas Informaticos\")\nEn el codigo anterior se crean los objetos de la universidad, profesores, cursos y estudiante.\n\nImprimir la información\n\nprint(universidad)\nprint()\nprint(estudiante_carlos)\nprint()\nprint(profesor_juan)\nprint()\nprint(curso_matematicas)\n\n# Crear un nuevo curso de Fisica y agregarlo a la universidad\ncurso_nuevo_fisica = Curso(\"Fisica\", \"FIS101\", profesor_maria)\nuniversidad.agregar_curso(curso_nuevo_fisica)\n\n# Imprimir nuevamente la universidad con el nuevo curso agregado\nprint()\nprint(universidad)\nEn el codigo anterior se imprime la información de la universidad, estudiante, profesor y curso. Luego se crea un nuevo curso de Fisica y se agrega a la universidad, para finalmente imprimir nuevamente la información de la universidad.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>41</span>  <span class='chapter-title'>🏫 Sistema Universitario</span>"
+      "<span class='chapter-number'>39</span>  <span class='chapter-title'>🏫 Sistema Universitario</span>"
     ]
   },
   {
@@ -1811,7 +1866,7 @@
     "text": "Objetivo:\nCrear un entorno de desarrollo dentro de un contenedor Docker que ejecute NGINX para servir una página estática simple.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Laboratorio: DevContainer con NGINX</span>"
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Laboratorio: DevContainer con NGINX</span>"
     ]
   },
   {
@@ -1822,7 +1877,7 @@
     "text": "1. Estructura del Proyecto\nEl proyecto tendrá la siguiente estructura de directorios y archivos:\nDevContainers/\n│\n├── .devcontainer/\n│   ├── Dockerfile\n│   └── devcontainer.json\n│\n├── html/\n    └── index.html\nAhora vamos a crear el archivo index.html/\nhtml/index.html\nEl archivo HTML que NGINX servirá cuando accedas a http://localhost:80.\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;Document&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Hello World!&lt;/h1&gt;\n&lt;/body&gt;\n&lt;/html&gt;\nEste es un archivo HTML simple que contiene un título y un encabezado.\nAhora vamos a crar el archivo Dockerfile.\n.devcontainer/Dockerfile\nEste archivo Dockerfile se utiliza para construir la imagen del contenedor que ejecutará NGINX.\n# Usa una imagen base de Ubuntu\nFROM mcr.microsoft.com/devcontainers/base:jammy\n\n# Instala NGINX\nRUN apt-get update && apt-get install -y nginx && apt-get clean\n\n# Expone el puerto 80 para NGINX\nEXPOSE 80\n\n# Comando para iniciar NGINX en primer plano\nCMD [\"nginx\", \"-g\", \"daemon off;\"]\nEl Dockerfile está basado en Ubuntu (jammy) e instala NGINX. Luego, expone el puerto 80 y configura NGINX para que se ejecute en primer plano (esto es necesario para que el contenedor no termine inmediatamente después de iniciarse).\nAhora crearermos el archivo devcontainer.json.\n.devcontainer/devcontainer.json\nEl archivo de configuración del DevContainer, que especifica cómo se debe construir y configurar el contenedor.\n{\n  \"name\": \"DevContainer with NGINX\",\n  \"build\": {\n    \"dockerfile\": \"Dockerfile\"\n  },\n  \"forwardPorts\": [80],\n  \"postCreateCommand\": \"echo 'DevContainer with NGINX is ready!'\",\n  \"remoteUser\": \"root\",\n  \"mounts\": [\n    \"source=${localWorkspaceFolder}/html,target=/usr/share/nginx/html,type=bind\"\n  ]\n}\n\nbuild: Este campo indica que se debe usar el Dockerfile para construir la imagen del contenedor.\nforwardPorts: Mapea el puerto 80 del contenedor al puerto 80 de la máquina local para que NGINX sea accesible desde el navegador.\nmounts: Se vincula el directorio local html al directorio /usr/share/nginx/html del contenedor, para que el archivo index.html sea servido por NGINX.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Laboratorio: DevContainer con NGINX</span>"
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Laboratorio: DevContainer con NGINX</span>"
     ]
   },
   {
@@ -1833,7 +1888,7 @@
     "text": "3. Instrucciones de Creación y Ejecución\nCrea el proyecto: Crea un directorio de trabajo, por ejemplo DevContainers, y dentro de él agrega los archivos de configuración mencionados anteriormente.\nAbre el proyecto en Visual Studio Code: Abre la carpeta DevContainers en Visual Studio Code.\nConstruye el contenedor: Al abrir el proyecto en VS Code, si tienes configurado DevContainers, automáticamente debería preguntar si deseas abrirlo en un contenedor. Selecciona “Reopen in Container”.\nVerifica la creación del contenedor: El contenedor se construirá utilizando el Dockerfile y configurará NGINX automáticamente. El puerto 80 será accesible en tu máquina local.\nAccede a tu página web: Una vez que el contenedor se haya iniciado, abre tu navegador y ve a http://localhost:80. Deberías ver la página con el mensaje “Hello World!”.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Laboratorio: DevContainer con NGINX</span>"
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Laboratorio: DevContainer con NGINX</span>"
     ]
   },
   {
@@ -1844,7 +1899,7 @@
     "text": "2. Archivos de Configuración\nEs posible que tengamos que configurar el archivo /etc/nginx/sites-available/default\nEste archivo de configuración de NGINX para servir los archivos desde la carpeta /usr/share/nginx/html.\nserver {\n    listen 80;\n    server_name localhost;\n\n    root /usr/share/nginx/html;  # Asegúrate de que esté apuntando a esta carpeta\n    index index.html index.htm;\n\n    location / {\n        try_files $uri $uri/ =404;  # Verifica que esta línea esté configurada para servir archivos correctamente\n    }\n}\nEste archivo configura el servidor para escuchar en el puerto 80 y servir archivos desde la carpeta /usr/share/nginx/html.\nSi el archivo solicitado no se encuentra, se mostrará un error 404.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Laboratorio: DevContainer con NGINX</span>"
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Laboratorio: DevContainer con NGINX</span>"
     ]
   },
   {
@@ -1855,7 +1910,7 @@
     "text": "Problemas Comunes\nNGINX no se inicia: Si después de construir el contenedor NGINX no está corriendo, puedes iniciarlo manualmente con el siguiente comando:\nservice nginx start\nCambios no reflejados: Si haces cambios en el archivo index.html, es posible que necesites reiniciar NGINX para que se apliquen:\nservice nginx restart\nNo se mapea el puerto correctamente: Si no puedes acceder a la página en el navegador, verifica que el puerto esté correctamente mapeado en la configuración del contenedor. Revisa el archivo devcontainer.json y asegúrate de que forwardPorts esté configurado correctamente como [80].",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Laboratorio: DevContainer con NGINX</span>"
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Laboratorio: DevContainer con NGINX</span>"
     ]
   },
   {
@@ -1866,7 +1921,7 @@
     "text": "Paso 1: Configuración inicial del proyecto\n\nCrear el directorio del proyecto\nComienza creando un nuevo directorio para el proyecto:\nmkdir calculadora\ncd calculadora\nInicializar un repositorio Git Inicializa un repositorio Git en la carpeta del proyecto:\ngit init\nCrear el archivo main.py\nCrea un archivo main.py que será el punto de entrada del programa:\ntouch main.py\nPrimer commit\nAñadimos el archivo inicial al control de versiones:\ngit add main.py\ngit commit -m \"Inicio del proyecto: archivo main.py creado\"",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>43</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
+      "<span class='chapter-number'>41</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
     ]
   },
   {
@@ -1877,7 +1932,7 @@
     "text": "Paso 2: Agregar las operaciones básicas (suma, resta, multiplicación, división)\n\nCódigo inicial\nAbre el archivo main.py y añade el siguiente código para implementar las operaciones básicas:\ndef suma(a, b):\n    \"\"\"Devuelve la suma de dos números.\"\"\"\n    return a + b\n\n\ndef resta(a, b):\n    \"\"\"Devuelve la resta de dos números.\"\"\"\n    return a - b\n\n\ndef multiplicacion(a, b):\n    \"\"\"Devuelve la multiplicación de dos números.\"\"\"\n    return a * b\n\n\ndef division(a, b):\n    \"\"\"Devuelve la división de dos números. Maneja división entre cero.\"\"\"\n    try:\n        return a / b\n    except ZeroDivisionError:\n        return \"Error: No se puede dividir entre cero.\"\n\n\n# Punto de entrada\nif __name__ == \"__main__\":\n    print(\"Bienvenido a la calculadora básica\")\n    num1 = float(input(\"Ingrese el primer número: \"))\n    num2 = float(input(\"Ingrese el segundo número: \"))\n\n    print(f\"Suma: {suma(num1, num2)}\")\n    print(f\"Resta: {resta(num1, num2)}\")\n    print(f\"Multiplicación: {multiplicacion(num1, num2)}\")\n    print(f\"División: {division(num1, num2)}\")\n\n\nCrear un commit\nGuarda los cambios y realiza un commit con la descripción del avance:\ngit add main.py\ngit commit -m \"Implementadas las operaciones básicas\"",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>43</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
+      "<span class='chapter-number'>41</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
     ]
   },
   {
@@ -1888,7 +1943,7 @@
     "text": "Paso 3: Agregar funcionalidad de radicación y potenciación\n\nActualizar main.py\nAñadimos funciones para radicación y potenciación, y las integramos al flujo del programa:\ndef radicacion(base, indice):\n    \"\"\"Devuelve la raíz de un número dado el índice.\"\"\"\n    try:\n        return base ** (1 / indice)\n    except ZeroDivisionError:\n        return \"Error: El índice de la raíz no puede ser cero.\"\n\n\ndef potenciacion(base, exponente):\n    \"\"\"Devuelve la potencia de un número dado un exponente.\"\"\"\n    return base ** exponente\n\n\n# Punto de entrada actualizado\nif __name__ == \"__main__\":\n    print(\"Bienvenido a la calculadora extendida\")\n    num1 = float(input(\"Ingrese el primer número: \"))\n    num2 = float(input(\"Ingrese el segundo número: \"))\n\n    print(f\"Suma: {suma(num1, num2)}\")\n    print(f\"Resta: {resta(num1, num2)}\")\n    print(f\"Multiplicación: {multiplicacion(num1, num2)}\")\n    print(f\"División: {division(num1, num2)}\")\n    print(f\"Radicación: {radicacion(num1, num2)}\")\n    print(f\"Potenciación: {potenciacion(num1, num2)}\")\n\n\nCrear un commit\nGuarda los cambios y realiza un commit:\ngit add main.py\ngit commit -m \"Añadidas las operaciones de radicación y potenciación\"",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>43</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
+      "<span class='chapter-number'>41</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
     ]
   },
   {
@@ -1899,7 +1954,7 @@
     "text": "Paso 4: Refactorización del código en múltiples archivos\n\nCrear estructura modular\nOrganizamos las operaciones en un archivo separado llamado operaciones.py.\ntouch operaciones.py\nEn el archivo operaciones.py, coloca las funciones:\n# operaciones.py\n\ndef suma(a, b):\n    \"\"\"Devuelve la suma de dos números.\"\"\"\n    return a + b\n\n\ndef resta(a, b):\n    \"\"\"Devuelve la resta de dos números.\"\"\"\n    return a - b\n\n\ndef multiplicacion(a, b):\n    \"\"\"Devuelve la multiplicación de dos números.\"\"\"\n    return a * b\n\n\ndef division(a, b):\n    \"\"\"Devuelve la división de dos números. Maneja división entre cero.\"\"\"\n    try:\n        resultado = a / b\n    except ZeroDivisionError:\n        return \"Error: No se puede dividir entre cero.\"\n    else:\n        return resultado\n    finally:\n        pass\n\n\ndef radicacion(base, indice):\n    \"\"\"Devuelve la raíz de un número dado el índice.\"\"\"\n    try:\n        return base ** (1 / indice)\n    except ZeroDivisionError:\n        return \"Error: El índice de la raíz no puede ser cero.\"\n\n\ndef potenciacion(base, exponente):\n    \"\"\"Devuelve la potencia de un número dado un exponente.\"\"\"\n    return base ** exponente\n\n\nActualizar main.py\nActualiza main.py para importar las funciones desde operaciones.py:\n# main.py\nfrom operaciones import suma, resta, multiplicacion, division, radicacion, potenciacion\n\nif __name__ == \"__main__\":\n    print(\"Bienvenido a la calculadora modular\")\n    num1 = float(input(\"Ingrese el primer número: \"))\n    num2 = float(input(\"Ingrese el segundo número: \"))\n\n    print(f\"Suma: {suma(num1, num2)}\")\n    print(f\"Resta: {resta(num1, num2)}\")\n    print(f\"Multiplicación: {multiplicacion(num1, num2)}\")\n    print(f\"División: {division(num1, num2)}\")\n    print(f\"Radicación: {radicacion(num1, num2)}\")\n    print(f\"Potenciación: {potenciacion(num1, num2)}\")\n\n\nCrear un commit\nGuarda los cambios y realiza un commit:\ngit add main.py operaciones.py\ngit commit -m \"Refactorización: código modularizado en main.py y operaciones.py\"",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>43</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
+      "<span class='chapter-number'>41</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
     ]
   },
   {
@@ -1910,7 +1965,7 @@
     "text": "Paso 5: Manejo de errores más detallado\n\nMejorar el manejo de errores en division\nModifica la función division para agregar un bloque else para manejar operaciones exitosas y un finally para mostrar un mensaje final:\ndef division(a, b):\n    \"\"\"Devuelve la división de dos números.\"\"\"\n    try:\n        resultado = a / b\n    except ZeroDivisionError:\n        print(\"Operación de división intentada.\")  # Mostrar mensaje solo si ocurre un error\n        return \"Error: No se puede dividir entre cero.\"\n    else:\n        return resultado\n    finally:\n        pass  # El bloque finally se puede dejar vacío o eliminarlo si no es necesario\n\n\nCrear un commit\nRealiza un nuevo commit con los cambios:\ngit add operaciones.py\ngit commit -m \"Mejorado el manejo de errores con else y finally en división\"",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>43</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
+      "<span class='chapter-number'>41</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
     ]
   },
   {
@@ -1921,7 +1976,7 @@
     "text": "Paso 6: Testeo automatizado\n\nCrear pruebas unitarias\nAhora implementamos pruebas unitarias para validar cada operación usando el módulo unittest. Crea un archivo test_calculadora.py con el siguiente contenido:\n# test_calculadora.py\nimport unittest\nfrom operaciones import suma, resta, multiplicacion, division, radicacion, potenciacion\n\nclass TestCalculadora(unittest.TestCase):\n\n    def test_suma(self):\n        self.assertEqual(suma(2, 3), 5)\n\n    def test_resta(self):\n        self.assertEqual(resta(5, 3), 2)\n\n    def test_multiplicacion(self):\n        self.assertEqual(multiplicacion(2, 3), 6)\n\n    def test_division(self):\n        self.assertEqual(division(6, 3), 2)\n\n    def test_division_por_cero(self):\n        self.assertEqual(division(6, 0), \"Error: No se puede dividir entre cero\")\n\n    def test_radicacion(self):\n        self.assertEqual(radicacion(16, 4), 2)\n\n    def test_potenciacion(self):\n        self.assertEqual(potenciacion(2, 3), 8)\n\nif __name__ == \"__main__\":\n    unittest.main()\n\n\nEjecutar las pruebas\nPara ejecutar las pruebas, usa el siguiente comando:\npython -m unittest test_calculadora.py",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>43</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
+      "<span class='chapter-number'>41</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
     ]
   },
   {
@@ -1932,7 +1987,7 @@
     "text": "Siguientes pasos\n\nInterfaz de usuario: Agregar un menú para que el usuario elija las operaciones. Esto mejorará la interacción con la calculadora.\nMejoras adicionales: Explorar la posibilidad de agregar operaciones avanzadas como trigonometría o logaritmos.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>43</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
+      "<span class='chapter-number'>41</span>  <span class='chapter-title'>Laboratorio: Calculadora en Python</span>"
     ]
   },
   {
@@ -1943,7 +1998,7 @@
     "text": "Descripción General\n\nObjetivo General:\nDesarrollar una tienda virtual con una arquitectura modular, utilizando tecnologías modernas y buenas prácticas para garantizar la escalabilidad, seguridad y rendimiento.\n\n\nObjetivos Específicos:\n\nImplementar un backend funcional con Django y Django REST Framework, utilizando autenticación basada en tokens (JWT) y una base de datos PostgreSQL.\nDiseñar un frontend interactivo y responsivo con React, utilizando Vite, TailwindCSS y TypeScript.\nIntegrar pagos con PayPal Sandbox para procesar transacciones de forma segura.\nConfigurar un entorno dockerizado con tres contenedores y una red interna para comunicación entre el backend y la base de datos.\nDesplegar el backend en Railway y el frontend en Vercel, asegurando que el sistema sea accesible públicamente.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Tienda Virtual.</span>"
+      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Tienda Virtual.</span>"
     ]
   },
   {
@@ -1954,7 +2009,7 @@
     "text": "Fase 1: Recolección de Requisitos\n\nRequisitos Funcionales:\nUsuarios:\n\nRegistro, inicio de sesión y gestión de perfiles (roles: cliente y administrador).\n\nProductos:\n\nCRUD (crear, leer, actualizar, eliminar) para la gestión de productos.\n\nCarrito y Pedidos:\n\nGestión de carritos de compras y creación de pedidos.\n\nPagos:\n\nIntegración con PayPal Sandbox para el procesamiento de pagos.\n\nRequisitos Técnicos:\nBackend:\n\nDjango con Django REST Framework.\nPostgreSQL como base de datos relacional.\nAutenticación JWT.\n\nFrontend:\n\nReact con Vite, TailwindCSS y TypeScript.\nConsumo de APIs REST del backend.\n\nInfraestructura:\n\nDocker para el desarrollo y despliegue local.\nDocker Compose para orquestar los contenedores.\nUna red interna para comunicación entre backend y base de datos.\n\nDespliegue:\n\nRailway para el backend.\nVercel para el frontend.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Tienda Virtual.</span>"
+      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Tienda Virtual.</span>"
     ]
   },
   {
@@ -1965,7 +2020,7 @@
     "text": "Fase 2: Diseño del Sistema\n\nArquitectura General:\nBackend:\n\nAplicaciones en Django para users, products, orders y payments.\nEndpoints REST con DRF para gestionar usuarios, productos, pedidos y pagos.\nConfiguración de variables de entorno para manejo de secretos y credenciales (base de datos, PayPal, etc.).\n\nFrontend:\n\nComponentes reutilizables (Navbar, ProductCard, Cart, etc.).\n\n\n\nRutas principales:\n\nHome: Listar productos.\nProduct Details: Ver detalles de un producto.\nCart: Mostrar productos en el carrito.\nCheckout: Procesar pedidos y pagos.\nProfile: Gestión de usuario.\n\n\n\nInfraestructura:\nDocker Compose con tres servicios:\n\nBase de datos: Contenedor de PostgreSQL.\nBackend: Contenedor de Django conectado a la base de datos por una red interna.\nFrontend: Contenedor de React que interactúa con el backend mediante APIs.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Tienda Virtual.</span>"
+      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Tienda Virtual.</span>"
     ]
   },
   {
@@ -1976,7 +2031,7 @@
     "text": "Fase 3: Configuración Inicial\n\nActividades:\n\nCrear la estructura inicial del proyecto con directorios separados para el backend y el frontend.\nConfigurar un archivo docker-compose.yml para orquestar los contenedores.\nCrear una red de Docker manualmente que conecte solo al backend y la base de datos.\n\nArchivos Iniciales:\nBackend:\n\n.env para variables de entorno (e.g., DATABASE_URL, SECRET_KEY).\nrequirements.txt para gestionar dependencias de Python.\n.gitignore para excluir archivos sensibles (env/, pycache/, etc.).\nConfiguración de settings.py separada para desarrollo y producción.\n\nFrontend:\n\nArchivo vite.config.js para configurar Vite.\nConfiguración de TailwindCSS.\n.env para variables de entorno (URL de la API del backend).\n.gitignore para excluir archivos innecesarios (node_modules/, dist/).\n\n\n\nGeneral:\n\nArchivo docker-compose.yml para la infraestructura.\nConfiguración de red interna en Docker.\nArchivo README.md con instrucciones básicas para iniciar el proyecto.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Tienda Virtual.</span>"
+      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Tienda Virtual.</span>"
     ]
   },
   {
@@ -1987,7 +2042,7 @@
     "text": "Fase 4: Desarrollo del Backend\n\nActividades:\nCrear modelos y relaciones:\n\nUser: Con roles (cliente y administrador).\nProduct: Con detalles como precio, inventario, etc.\nOrder: Asociado a usuarios y productos.\nConfigurar vistas y serializadores con Django REST Framework.\nImplementar autenticación basada en JWT.\nCrear endpoints REST para users, products, orders y payments.\n\n\n\nActividades:\n\nConfigurar React con Vite, TailwindCSS y TypeScript.\nCrear componentes reutilizables y páginas principales.\nConfigurar React Router para navegación entre vistas.\nConsumir APIs del backend con Axios, manejando autenticación con JWT.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Tienda Virtual.</span>"
+      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Tienda Virtual.</span>"
     ]
   },
   {
@@ -1998,7 +2053,7 @@
     "text": "Fase 6: Integración de Pagos\n\nActividades:\n\nConfigurar PayPal Sandbox en el backend para generar enlaces de pago.\nImplementar la lógica en el frontend para manejar transacciones.\nValidar los pagos y actualizar los pedidos según el estado de la transacción.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Tienda Virtual.</span>"
+      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Tienda Virtual.</span>"
     ]
   },
   {
@@ -2009,7 +2064,7 @@
     "text": "Fase 7: Pruebas\n\nActividades:\n\nPruebas unitarias para backend y frontend.\nPruebas de integración para el flujo completo (registro → compra → pago).\nValidar la comunicación entre contenedores en el entorno dockerizado.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Tienda Virtual.</span>"
+      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Tienda Virtual.</span>"
     ]
   },
   {
@@ -2020,7 +2075,7 @@
     "text": "Fase 8: Despliegue\n\nActividades:\n\nConfigurar el backend para producción en Railway.\nConfigurar el frontend para producción en Vercel.\nValidar el sistema completo en entornos reales, incluyendo la integración con PayPal Sandbox.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Tienda Virtual.</span>"
+      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Tienda Virtual.</span>"
     ]
   },
   {
@@ -2031,7 +2086,7 @@
     "text": "Fase 9: Optimización y Mantenimiento\n\nActividades:\n\nOptimizar consultas de la base de datos y rendimiento del backend.\nImplementar monitoreo y alertas para errores y rendimiento.\nActualizar dependencias y resolver vulnerabilidades de seguridad.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Tienda Virtual.</span>"
+      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Tienda Virtual.</span>"
     ]
   },
   {
@@ -2042,7 +2097,7 @@
     "text": "Introducción\nAntes de comenzar a desarrollar una tienda virtual, debemos entender qué vamos a construir y cómo lo haremos. Esta fase nos ayuda a identificar las funcionalidades clave, las herramientas necesarias y las metas que queremos alcanzar.\nNuestro objetivo principal es construir una tienda virtual funcional y moderna. Este será nuestro punto de partida para establecer las bases del desarrollo.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Fase 1: Recolección de Requisitos</span>"
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>Fase 1: Recolección de Requisitos</span>"
     ]
   },
   {
@@ -2053,7 +2108,7 @@
     "text": "¿Qué es un Requisito?\nUn requisito es una característica o función que el sistema debe cumplir. Pueden ser:\n\nFuncionales: Qué debe hacer el sistema.\n\n\nEjemplo: Un usuario debe poder registrarse e iniciar sesión.\n\n\nNo funcionales: Cómo debe comportarse el sistema.\n\n\nEjemplo: El sistema debe responder en menos de 2 segundos.\n\n\nTécnicos: Qué herramientas o tecnologías utilizaremos.\n\n\nEjemplo: Django para el backend y React para el frontend.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Fase 1: Recolección de Requisitos</span>"
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>Fase 1: Recolección de Requisitos</span>"
     ]
   },
   {
@@ -2064,7 +2119,7 @@
     "text": "Objetivos de la Fase 1\n\nIdentificar las funcionalidades que necesita nuestra tienda virtual.\nEstablecer estándares de calidad y desempeño.\nSeleccionar las tecnologías que usaremos en el desarrollo.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Fase 1: Recolección de Requisitos</span>"
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>Fase 1: Recolección de Requisitos</span>"
     ]
   },
   {
@@ -2075,7 +2130,7 @@
     "text": "Actividades\n\nDefinir Requisitos Funcionales\n\nNuestra tienda virtual tendrá las siguientes funcionalidades:\n\nUsuarios:\n\nRegistro e inicio de sesión.\nGestión de perfiles (nombre, correo, contraseña).\nDiferentes roles: Cliente y Administrador.\n\nProductos:\n\nLos usuarios deben ver una lista de productos.\nLos administradores deben poder agregar, editar y eliminar productos.\n\nCarrito de Compras:\n\nLos usuarios deben poder agregar y eliminar productos del carrito.\nEl sistema debe calcular el precio total automáticamente.\n\nPedidos:\n\nLos usuarios deben poder realizar pedidos desde el carrito.\nLos pedidos deben tener un estado: Pendiente, Pagado, Enviado.\n\nPagos:\n\nIntegración con PayPal para procesar pagos.\n\nFrontend:\n\nDebe ser intuitivo, responsivo y atractivo visualmente.\nCompatible con dispositivos móviles y computadoras.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Fase 1: Recolección de Requisitos</span>"
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>Fase 1: Recolección de Requisitos</span>"
     ]
   },
   {
@@ -2086,7 +2141,7 @@
     "text": "2. Definir Requisitos No Funcionales\n\nSeguridad:\n\nLa comunicación entre frontend y backend debe usar HTTPS en producción.\nAutenticación de usuarios mediante JWT (JSON Web Tokens).\n\nRendimiento:\n\nEl sistema debe responder en menos de 2 segundos para la mayoría de las operaciones.\n\nEscalabilidad:\n\nDebe soportar al menos 100 usuarios concurrentes en la fase inicial.\n\nAccesibilidad:\n\nInterfaz accesible para diferentes dispositivos y navegadores modernos.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Fase 1: Recolección de Requisitos</span>"
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>Fase 1: Recolección de Requisitos</span>"
     ]
   },
   {
@@ -2097,7 +2152,7 @@
     "text": "3. Definir Requisitos Técnicos\n\nBackend:\n\nFramework: Django con Django REST Framework (DRF).\nBase de Datos: PostgreSQL.\nAutenticación: JWT.\nContenedorización: Docker.\n\nFrontend:\n\nFramework: React con Vite.\nEstilización: TailwindCSS.\nLenguaje: TypeScript.\n\nInfraestructura:\n\nContenedores Docker:\n\nBase de datos.\nBackend.\nFrontend.\n\nRed interna en Docker para comunicar backend y base de datos.\n\nDespliegue:\n\nBackend: Railway.\nFrontend: Vercel.\nPayPal Sandbox para pruebas de pagos.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Fase 1: Recolección de Requisitos</span>"
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>Fase 1: Recolección de Requisitos</span>"
     ]
   },
   {
@@ -2108,7 +2163,7 @@
     "text": "Ejercicio Práctico: Documentar Requisitos\n\nAbre tu editor de texto favorito (VSCode, Sublime Text o el que prefieras).\nCrea un archivo llamado requisitos.md.\nEscribe los siguientes contenidos:\n\n\n\n📝 Requisitos de la Tienda Virtual\n\n# Requisitos de la Tienda Virtual\n\n## Requisitos Funcionales\n1. Registro e inicio de sesión para usuarios.\n2. Gestión de perfiles de usuario (Cliente y Administrador).\n3. Listado de productos.\n4. CRUD de productos (solo para Administradores).\n5. Carrito de compras con cálculo automático del total.\n6. Gestión de pedidos con estados (Pendiente, Pagado, Enviado).\n7. Integración de pagos con PayPal.\n8. Interfaz responsiva compatible con móviles y computadoras.\n\n## Requisitos No Funcionales\n1. Uso de HTTPS en producción.\n2. Autenticación segura con JWT.\n3. Respuesta rápida del sistema (&lt;2 segundos).\n4. Soporte inicial para 100 usuarios concurrentes.\n5. Interfaz accesible para navegadores modernos.\n\n## Requisitos Técnicos\n### Backend\n- Framework: Django con Django REST Framework.\n- Base de Datos: PostgreSQL.\n- Autenticación: JWT.\n- Despliegue: Railway.\n\n### Frontend\n- Framework: React con Vite.\n- Estilización: TailwindCSS.\n- Lenguaje: TypeScript.\n- Despliegue: Vercel.\n\n### Infraestructura\n- Contenedores Docker:\n  - Base de datos (PostgreSQL).\n  - Backend (Django).\n  - Frontend (React).\n- Red interna para comunicación entre backend y base de datos.\n- Uso de Docker Compose para orquestar los contenedores.\n\n### Otros\n- Sandbox de PayPal para pruebas de pagos.\n\nExplicación\n\n\n¿Por qué documentamos requisitos?\n\nNos ayuda a tener claro qué vamos a construir.\nEs una referencia para todo el equipo durante el desarrollo.\nFacilita la detección de errores o problemas desde el inicio.\n\n\n\n¿Por qué dividir en funcionales, no funcionales y técnicos?\n\nCada tipo de requisito aborda un aspecto específico del sistema:\n\nFuncionales: Lo que el sistema hace.\nNo funcionales: Cómo lo hace.\nTécnicos: Con qué herramientas lo hacemos.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Fase 1: Recolección de Requisitos</span>"
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>Fase 1: Recolección de Requisitos</span>"
     ]
   },
   {
@@ -2119,7 +2174,7 @@
     "text": "Pruebas de la Fase 1\nEsta fase no involucra código, pero puedes verificar:\n\nComplejidad: ¿Están todos los requisitos necesarios para la tienda virtual?\nClaridad: ¿Son los requisitos entendibles para todos los estudiantes?\nFactibilidad: ¿Son realistas los requisitos con las herramientas y el tiempo disponibles?",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Fase 1: Recolección de Requisitos</span>"
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>Fase 1: Recolección de Requisitos</span>"
     ]
   },
   {
@@ -2130,7 +2185,7 @@
     "text": "Paso 1: Crear la Red Manualmente\nDocker necesita una red para permitir la comunicación entre el backend y la base de datos. Esta red será creada de forma manual antes de levantar los contenedores.\n\nAbre una terminal y ejecuta el siguiente comando para crear la red:\n\ndocker network create backend_network\n\nVerifica que la red fue creada:\n\ndocker network ls\nBusca backend_network en la lista de redes.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Fase 2: Configuración de Red y Contenedor para la Base de Datos</span>"
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Fase 2: Configuración de Red y Contenedor para la Base de Datos</span>"
     ]
   },
   {
@@ -2141,7 +2196,7 @@
     "text": "Paso 2: Configurar el Contenedor para la Base de Datos\nCrearemos un contenedor para PostgreSQL utilizando docker-compose.yml.\n\nEstructura de archivos y carpetas:\n\n\nEn el directorio project/db/, crea un archivo docker-compose.yml.\n\n\nContenido del archivo docker-compose.yml para la base de datos:\n\nservices:\n  db:\n    image: postgres:14\n    container_name: postgres_container\n    restart: always\n    environment:\n      POSTGRES_USER: admin\n      POSTGRES_PASSWORD: securepassword\n      POSTGRES_DB: ecommerce\n    volumes:\n      - db_data:/var/lib/postgresql/data\n    networks:\n      - backend_network\n    ports:\n      - \"5432:5432\" # Exponer puerto solo para pruebas iniciales\n\nvolumes:\n  db_data:\n\nnetworks:\n  backend_network:\n    external: true\n\nExplicación del código:\n\n\nimage: Usamos la imagen oficial de PostgreSQL versión 14.\ncontainer_name: El nombre del contenedor para identificarlo fácilmente.\nrestart: Permite que el contenedor se reinicie automáticamente en caso de fallo.\nenvironment: Variables de entorno necesarias para configurar PostgreSQL:\n\nPOSTGRES_USER: Usuario de la base de datos.\nPOSTGRES_PASSWORD: Contraseña de acceso.\nPOSTGRES_DB: Nombre de la base de datos inicial.\n\nvolumes: Se utiliza para persistir los datos fuera del contenedor, evitando pérdidas al reiniciar.\nnetworks: Conectamos el contenedor a la red backend_network.\nports: Exponemos el puerto 5432 para conectarnos desde herramientas externas durante el desarrollo.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Fase 2: Configuración de Red y Contenedor para la Base de Datos</span>"
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Fase 2: Configuración de Red y Contenedor para la Base de Datos</span>"
     ]
   },
   {
@@ -2152,7 +2207,7 @@
     "text": "Paso 3: Levantar el Contenedor de la Base de Datos\n\nVe al directorio db y ejecuta:\n\ndocker-compose up -d\n\nVerifica que el contenedor está corriendo:\n\ndocker ps\nDeberías ver algo similar:\nCONTAINER ID   IMAGE        COMMAND                  ...     PORTS\nabc123xyz      postgres:14  \"docker-entrypoint.s…\"  ...     0.0.0.0:5432-&gt;5432/tcp",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Fase 2: Configuración de Red y Contenedor para la Base de Datos</span>"
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Fase 2: Configuración de Red y Contenedor para la Base de Datos</span>"
     ]
   },
   {
@@ -2163,7 +2218,7 @@
     "text": "Paso 4: Probar la Base de Datos\nPara asegurarte de que la base de datos está funcionando correctamente:\n\nInstala una herramienta de administración de bases de datos como la extension PostgreSQL en Visual Studio code SQLTools PostgreSQL/Cockroach Driver o utilizar la línea de comandos psql.\n\n\n\n\n\nPostgreSQL en Visual Studio Code\n\n\n\nConéctate a la base de datos usando:\n\nHost: localhost\nPuerto: 5432\nUsuario: admin\nContraseña: securepassword\nBase de datos: ecommerce\n\nEjecuta el siguiente comando para verificar que puedes acceder:\nSELECT version();\nEsto debería mostrar la versión de PostgreSQL instalada.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Fase 2: Configuración de Red y Contenedor para la Base de Datos</span>"
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Fase 2: Configuración de Red y Contenedor para la Base de Datos</span>"
     ]
   },
   {
@@ -2174,7 +2229,7 @@
     "text": "Paso 5: Configuración Adicional\nAntes de continuar con el contenedor del backend:\n\nAsegúrate de que la red backend_network conecta correctamente el contenedor db.\nValida que el volumen db_data está funcionando:\n\nDetén el contenedor: docker-compose down.\nReinícialo: docker-compose up -d.\nConfirma que los datos persisten.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Fase 2: Configuración de Red y Contenedor para la Base de Datos</span>"
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Fase 2: Configuración de Red y Contenedor para la Base de Datos</span>"
     ]
   },
   {
@@ -2185,7 +2240,7 @@
     "text": "Pruebas Finales\n\nSi puedes acceder a la base de datos desde herramientas externas o desde la línea de comandos, entonces el contenedor está configurado correctamente.\nSi encuentras algún error, verifica:\n\nQue las variables de entorno en docker-compose.yml están correctas.\nQue el puerto 5432 no está siendo utilizado por otro servicio.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Fase 2: Configuración de Red y Contenedor para la Base de Datos</span>"
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Fase 2: Configuración de Red y Contenedor para la Base de Datos</span>"
     ]
   },
   {
@@ -2196,7 +2251,7 @@
     "text": "Paso 1: Estructura de Archivos\nCrea la siguiente estructura en tu proyecto:\nproject/\n│\n├── backend/\n│   ├── Dockerfile\n│   ├── docker-compose.yml\n│   ├── .env\n│   ├── requirements.txt\n│   ├── manage.py  # Se generará automáticamente al crear el proyecto Django\n│   ├── backend/   # Carpeta principal del proyecto Django\n│   │   ├── settings.py\n│   │   ├── urls.py\n│   │   └── wsgi.py\n│\n└── db/\n    └── docker-compose.yml",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 3: Configuración del Contenedor para el Backend</span>"
+      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Fase 3: Configuración del Contenedor para el Backend</span>"
     ]
   },
   {
@@ -2207,7 +2262,7 @@
     "text": "Paso 2: Configurar el Archivo .env\nEn la carpeta backend/, crea un archivo .env con las siguientes variables de entorno:\nDJANGO_SECRET_KEY=your_secret_key_here\nDJANGO_DEBUG=True\nPOSTGRES_USER=admin\nPOSTGRES_PASSWORD=securepassword\nPOSTGRES_DB=ecommerce\nPOSTGRES_HOST=db\nPOSTGRES_PORT=5432\n\nExplicación:\n\nDJANGO_SECRET_KEY: Llave secreta para el backend.\nDJANGO_DEBUG: Configuración para habilitar el modo desarrollo.\nPOSTGRES_*: Variables necesarias para conectar Django con PostgreSQL.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 3: Configuración del Contenedor para el Backend</span>"
+      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Fase 3: Configuración del Contenedor para el Backend</span>"
     ]
   },
   {
@@ -2218,7 +2273,7 @@
     "text": "Paso 3: Crear el Archivo requirements.txt\nCrea un archivo requirements.txt con las dependencias necesarias para el proyecto Django:\nDjango==4.2\ndjangorestframework\npsycopg2-binary\n\nExplicación:\n\nDjango: Framework principal para el backend.\ndjangorestframework: Extensión de Django para crear APIs REST.\npsycopg2-binary: Cliente para conectar Django con PostgreSQL.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 3: Configuración del Contenedor para el Backend</span>"
+      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Fase 3: Configuración del Contenedor para el Backend</span>"
     ]
   },
   {
@@ -2229,7 +2284,7 @@
     "text": "Paso 4: Crear el Archivo Dockerfile\nEn la carpeta backend/, crea el archivo Dockerfile para construir la imagen de Docker del backend.\n# Usamos la imagen base de Python 3.10\nFROM python:3.10-slim\n\n# Establecemos el directorio de trabajo en el contenedor\nWORKDIR /app\n\n# Copiamos los archivos necesarios al contenedor\nCOPY requirements.txt requirements.txt\nRUN pip install --no-cache-dir -r requirements.txt\n\n# Copiamos el código fuente\nCOPY . .\n\n# Exponemos el puerto 8000 para el servidor de desarrollo\nEXPOSE 8000\n\n# Comando por defecto para ejecutar el servidor\nCMD [\"python\", \"manage.py\", \"runserver\", \"0.0.0.0:8000\"]\n\nExplicación:\n\nFROM python:3.10-slim: Utilizamos una imagen ligera de Python 3.10.\nWORKDIR /app: Establece la carpeta de trabajo dentro del contenedor.\nCOPY requirements.txt: Copiamos las dependencias al contenedor para instalarlas.\nCMD: Comando que ejecutará el servidor de desarrollo de Django.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 3: Configuración del Contenedor para el Backend</span>"
+      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Fase 3: Configuración del Contenedor para el Backend</span>"
     ]
   },
   {
@@ -2240,7 +2295,7 @@
     "text": "Paso 5: Configurar docker-compose.yml para el Backend\nEn la carpeta backend/, crea un archivo docker-compose.yml para definir el contenedor del backend.\nservices:\n  backend:\n    build:\n      context: .\n      dockerfile: Dockerfile\n    container_name: django_backend\n    environment:\n      - DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY}\n      - DJANGO_DEBUG=${DJANGO_DEBUG}\n      - POSTGRES_USER=${POSTGRES_USER}\n      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}\n      - POSTGRES_DB=${POSTGRES_DB}\n      - POSTGRES_HOST=${POSTGRES_HOST}\n      - POSTGRES_PORT=${POSTGRES_PORT}\n    volumes:\n      - .:/app\n    ports:\n      - \"8000:8000\"\n    networks:\n      - backend_network\n\nnetworks:\n  backend_network:\n    external: true\n\nExplicación:\n\nbuild: Indica cómo construir la imagen del contenedor.\nenvironment: Pasa las variables de entorno al contenedor.\nvolumes: Monta el código local para facilitar el desarrollo.\nports: Expone el puerto 8000 para acceder al servidor de desarrollo.\nnetworks: Conecta el contenedor a la red backend_network.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 3: Configuración del Contenedor para el Backend</span>"
+      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Fase 3: Configuración del Contenedor para el Backend</span>"
     ]
   },
   {
@@ -2251,7 +2306,7 @@
     "text": "Paso 6: Crear y Configurar el Proyecto Django\n\nInicia el contenedor del backend:\n\ndocker-compose up -d\n\nAccede al contenedor:\n\ndocker exec -it django_backend bash\n\nDentro del contenedor, crea el proyecto Django:\n\ndjango-admin startproject backend .\n\nModifica el archivo settings.py en backend/settings.py:\n\n\nReemplaza la configuración de la base de datos con lo siguiente:\n\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.postgresql',\n        'NAME': os.getenv('POSTGRES_DB'),\n        'USER': os.getenv('POSTGRES_USER'),\n        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),\n        'HOST': os.getenv('POSTGRES_HOST'),\n        'PORT': os.getenv('POSTGRES_PORT'),\n    }\n}\n\nAgrega al final del archivo:\n\nimport os\n\nSECRET_KEY = os.getenv('DJANGO_SECRET_KEY')\nDEBUG = os.getenv('DJANGO_DEBUG') == 'True'",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 3: Configuración del Contenedor para el Backend</span>"
+      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Fase 3: Configuración del Contenedor para el Backend</span>"
     ]
   },
   {
@@ -2262,7 +2317,7 @@
     "text": "Paso 7: Migrar la Base de Datos\nDentro del contenedor del backend, ejecuta:\npython manage.py migrate\nEsto conectará Django a PostgreSQL y aplicará las migraciones iniciales.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 3: Configuración del Contenedor para el Backend</span>"
+      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Fase 3: Configuración del Contenedor para el Backend</span>"
     ]
   },
   {
@@ -2273,7 +2328,7 @@
     "text": "Paso 8: Probar el Backend\n\nInicia el servidor de desarrollo dentro del contenedor:\n\npython manage.py runserver 0.0.0.0:8000\n\nAccede a http://localhost:8000 en tu navegador. Deberías ver la página inicial de Django.",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 3: Configuración del Contenedor para el Backend</span>"
+      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Fase 3: Configuración del Contenedor para el Backend</span>"
     ]
   },
   {
@@ -2284,7 +2339,7 @@
     "text": "Pruebas Finales\n\nAsegúrate de que el backend puede comunicarse con la base de datos:\n\n\nCrea un modelo simple en backend/models.py.\nAplica las migraciones.\nValida que el modelo se refleje en la base de datos.\n\n\nRevisa los logs del contenedor para identificar posibles errores:\n\ndocker logs django_backend",
     "crumbs": [
       "Proyectos",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 3: Configuración del Contenedor para el Backend</span>"
+      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Fase 3: Configuración del Contenedor para el Backend</span>"
     ]
   },
   {
@@ -2295,7 +2350,7 @@
     "text": "Introducción\nEn este laboratorio práctico, los estudiantes aprenderán a desarrollar un sistema de chat cliente-servidor utilizando Python. Este laboratorio está diseñado para simular un flujo de trabajo profesional, combinando técnicas modernas de desarrollo como pruebas automatizadas, integración continua y control de versiones con Git y GitHub.\nEl laboratorio está dividido en varias fases que permiten a los estudiantes comprender y aplicar los fundamentos del desarrollo de aplicaciones de red, utilizando un enfoque incremental para construir funcionalidad de manera ordenada.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span>"
+      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span>"
     ]
   },
   {
@@ -2306,7 +2361,7 @@
     "text": "Lo que Vamos a Desarrollar\n\nAnálisis de Requisitos:\n\nIdentificar las funcionalidades clave del sistema, como enviar y recibir mensajes en tiempo real.\n\n\n\nHistorias de Usuario:\n\nDesarrollar casos prácticos para simular cómo interactuarán los usuarios con el sistema.\n\n\n\nDiseño y Arquitectura:\n\nCrear la estructura del proyecto con carpetas organizadas y archivos bien definidos.\nImplementar un diseño modular que facilite la colaboración y el mantenimiento.\n\n\n\nCodificación:\n\nConstruir el servidor y cliente del sistema en Python utilizando socket.\nDesarrollar pruebas unitarias e integración con pytest.\n\n\n\nIntegración Continua:\n\nConfigurar GitHub Actions para ejecutar pruebas automáticamente con cada cambio en el código.\n\n\n\nExtensión con GUI:\n\nImplementar una interfaz gráfica para el cliente utilizando Tkinter.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span>"
+      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span>"
     ]
   },
   {
@@ -2317,7 +2372,7 @@
     "text": "Objetivos Específicos\n\nEntender el Proceso de Desarrollo: Aplicar principios de diseño modular y buenas prácticas de programación.\nDesarrollar Habilidades en Python: Usar bibliotecas estándar como socket y tkinter.\nAprender Herramientas Profesionales: Configurar entornos virtuales, pruebas automatizadas e integración continua.\nSimular el Trabajo en Equipo: Utilizar Git y GitHub para la gestión de código y colaboración.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span>"
+      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span>"
     ]
   },
   {
@@ -2328,7 +2383,7 @@
     "text": "Materiales y Herramientas Necesarias\n\nSoftware:\n\nPython 3.10 o superior.\nGit y una cuenta de GitHub.\nEditor de código (Visual Studio Code, PyCharm, o similar).\nLibrerías y Dependencias:\npytest para pruebas.\ntkinter para la interfaz gráfica.\n\n\n\nConocimientos Previos Requeridos:\n\nConceptos básicos de Python.\nFamiliaridad con Git y GitHub.\nConocimientos básicos de programación orientada a objetos (POO).\n\n\n\nEstructura del Laboratorio\n\nFase 1: Preparación del Entorno y Repositorio.\n\nConfiguración inicial del proyecto con Git y creación del entorno virtual.\n\n\n\nFase 2: Creación de Clases Base.\n\nImplementar las clases del cliente y servidor con métodos vacíos.\n\n\n\nFase 3: Comunicación Cliente-Servidor.\n\nDesarrollar y probar la funcionalidad de envío y recepción de mensajes.\n\n\n\nFase 4: Pruebas Automatizadas.\n\nCrear pruebas unitarias e integración para garantizar la funcionalidad.\n\n\n\nFase 5: Configuración de CI/CD.\n\nConfigurar GitHub Actions para pruebas automatizadas.\n\n\n\nFase 6: Implementación de Interfaz Gráfica.\n\nExtender el cliente para incluir una GUI con Tkinter.\n\n\n\nFase 7: Documentación y Reflexión.\n\nElaborar conclusiones y responder preguntas de reflexión.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span>"
+      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span>"
     ]
   },
   {
@@ -2339,7 +2394,7 @@
     "text": "Resultados Esperados\nAl finalizar este laboratorio, los estudiantes tendrán:\n\nUn sistema de chat cliente-servidor funcional.\nUn repositorio GitHub estructurado con código bien documentado.\nPruebas automatizadas y un pipeline de CI funcionando correctamente.\nExperiencia en herramientas y técnicas utilizadas en entornos profesionales.\n\n\n¡Comencemos con el desarrollo! 🎉",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span>"
+      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span>"
     ]
   },
   {
@@ -2350,7 +2405,7 @@
     "text": "Objetivo\nQue los estudiantes comprendan el flujo de desarrollo de una aplicación profesional, desde la planificación hasta la implementación, utilizando herramientas de control de versiones, entornos virtuales y mejores prácticas en Python.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
+      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
     ]
   },
   {
@@ -2361,7 +2416,7 @@
     "text": "Conceptos Clave\n\nProgramación en red: Uso de sockets para la comunicación cliente-servidor.\nDiseño modular: Organización del código en clases y métodos.\nEntornos virtuales: Aislamiento de dependencias con venv.\nControl de versiones: Uso de Git y GitHub.\nInterfaces gráficas: Uso de tkinter para desarrollar la GUI del cliente.\nHistorias de usuario: Identificación de requerimientos clave mediante ejemplos prácticos.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
+      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
     ]
   },
   {
@@ -2372,7 +2427,7 @@
     "text": "Historias de Usuario\n\nHU1: Como usuario, quiero conectarme al servidor con un apodo único, para identificarme en el chat.\nHU2: Como usuario, quiero enviar mensajes al chat y que otros los reciban, para comunicarme con los demás.\nHU3: Como usuario, quiero recibir mensajes enviados por otros usuarios en tiempo real, para estar informado de las conversaciones.\nHU4: Como administrador, quiero registrar y gestionar conexiones de clientes, para mantener el control del servidor.\n\n\nInstrucciones: Fase 1\n\nCrear un directorio de proyecto\n\nmkdir chat_app\ncd chat_app\n\n\nInicializar un repositorio Git\ngit init\ngit branch -M main\n\nConfigurar un entorno virtual\n\npython3 -m venv env\nsource env/bin/activate  # En Windows: env\\Scripts\\activate\n\nCrear el archivo .gitignore Contenido sugerido para ignorar archivos innecesarios:\n\nenv/\n__pycache__/\n*.pyc\n*.pyo\nCrear un archivo requirements.txt Inicialmente vacío. Agregaremos dependencias más adelante.\nEstructurar el proyecto\nmkdir src\ntouch src/server.py src/client.py\nmkdir tests\ntouch tests/test_server.py tests/test_client.py",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
+      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
     ]
   },
   {
@@ -2383,7 +2438,7 @@
     "text": "Planificar la arquitectura inicial\n\nEl servidor manejará conexiones y permitirá la comunicación entre clientes.\nEl cliente tendrá una interfaz de línea de comandos (CLI) en esta fase inicial.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
+      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
     ]
   },
   {
@@ -2394,7 +2449,7 @@
     "text": "Codificar clases base En server.py:\n\"\"\"\nMódulo: server.py\nDescripción: Define el servidor del sistema de chat local.\n\"\"\"\nimport socket\nimport threading\n\nclass ChatServer:\n    def __init__(self, host, port):\n        \"\"\"Inicializa el servidor con la dirección y puerto especificados.\"\"\"\n        pass\n\n    def start_server(self):\n        \"\"\"Inicia el servidor y espera conexiones entrantes.\"\"\"\n        pass\n\n    def handle_client(self, client_socket, client_address):\n        \"\"\"Maneja la comunicación con un cliente específico.\"\"\"\n        pass\n\n    def broadcast(self, message, sender_socket):\n        \"\"\"Envía un mensaje a todos los clientes excepto al remitente.\"\"\"\n        pass",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
+      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
     ]
   },
   {
@@ -2405,7 +2460,7 @@
     "text": "En client.py:\n\"\"\"\nMódulo: client.py\nDescripción: Define el cliente del sistema de chat local.\n\"\"\"\nimport socket\n\nclass ChatClient:\n    def __init__(self, host, port):\n        \"\"\"Inicializa el cliente con la dirección del servidor y el puerto.\"\"\"\n        pass\n\n    def connect_to_server(self):\n        \"\"\"Establece conexión con el servidor.\"\"\"\n        pass\n\n    def send_message(self, message):\n        \"\"\"Envía un mensaje al servidor.\"\"\"\n        pass\n\n    def receive_messages(self):\n        \"\"\"Recibe mensajes del servidor.\"\"\"\n        pass",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
+      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
     ]
   },
   {
@@ -2416,7 +2471,7 @@
     "text": "Agregar y confirmar cambios en Git\ngit add .\ngit commit -m \"Fase 1: Configuración inicial y clases base con métodos vacíos\"",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
+      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
     ]
   },
   {
@@ -2427,7 +2482,7 @@
     "text": "Pruebas\n\nEn esta fase, no se ejecuta ningún código, pero verifica que los archivos y directorios existen.\nAsegúrate de que el entorno virtual esté activo antes de cualquier ejecución futura.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
+      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
     ]
   },
   {
@@ -2438,7 +2493,7 @@
     "text": "Objetivo\nImplementar la lógica básica del servidor para gestionar conexiones y comunicaciones entre clientes. Este servidor será accesible a través de la línea de comandos.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
+      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
     ]
   },
   {
@@ -2449,7 +2504,7 @@
     "text": "Conceptos Clave\n\nSockets TCP: Configuración de sockets para aceptar conexiones y transmitir datos.\nHilos (Threads): Manejo concurrente de clientes usando la biblioteca threading.\nEstrategias de Broadcasting: Comunicación eficiente con múltiples clientes.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
+      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
     ]
   },
   {
@@ -2460,7 +2515,7 @@
     "text": "Instrucciones\n\n1. Actualizar el código del servidor\nAbrir src/server.py y completar las clases con la lógica básica:\n\"\"\"\nMódulo: server.py\nDescripción: Define el servidor del sistema de chat local.\n\"\"\"\n\nimport socket\nimport threading\n\nclass ChatServer:\n    def __init__(self, host, port):\n        \"\"\"\n        Inicializa el servidor con la dirección y puerto especificados.\n\n        :param host: Dirección IP del servidor.\n        :param port: Puerto del servidor.\n        \"\"\"\n        self.host = host\n        self.port = port\n        self.server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n        self.clients = {}\n\n    def start_server(self):\n        \"\"\"\n        Inicia el servidor, permitiendo conexiones entrantes de clientes.\n        \"\"\"\n        self.server_socket.bind((self.host, self.port))\n        self.server_socket.listen()\n        print(f\"Servidor escuchando en {self.host}:{self.port}\")\n\n        while True:\n            client_socket, client_address = self.server_socket.accept()\n            print(f\"Conexión aceptada de {client_address}\")\n            threading.Thread(\n                target=self.handle_client, args=(client_socket, client_address)\n            ).start()\n\n    def handle_client(self, client_socket, client_address):\n        \"\"\"\n        Maneja la interacción con un cliente específico.\n\n        :param client_socket: Socket del cliente.\n        :param client_address: Dirección del cliente.\n        \"\"\"\n        nickname = client_socket.recv(1024).decode(\"utf-8\")\n        self.clients[client_socket] = nickname\n        print(f\"{nickname} ({client_address}) se ha conectado\")\n\n        self.broadcast(f\"{nickname} se ha unido al chat\", client_socket)\n\n        while True:\n            try:\n                message = client_socket.recv(1024).decode(\"utf-8\")\n                if not message:\n                    break\n                print(f\"Mensaje de {nickname}: {message}\")\n                self.broadcast(f\"{nickname}: {message}\", client_socket)\n            except Exception as e:\n                print(f\"Error en cliente {nickname}: {e}\")\n                break\n\n        print(f\"{nickname} ({client_address}) se ha desconectado\")\n        self.broadcast(f\"{nickname} se ha desconectado\", client_socket)\n        client_socket.close()\n        del self.clients[client_socket]\n\n    def broadcast(self, message, sender_socket):\n        \"\"\"\n        Envia un mensaje a todos los clientes conectados excepto al remitente.\n\n        :param message: Mensaje a transmitir.\n        :param sender_socket: Socket del remitente.\n        \"\"\"\n        for client_socket in self.clients.keys():\n            if client_socket != sender_socket:\n                try:\n                    client_socket.sendall(message.encode(\"utf-8\"))\n                except Exception as e:\n                    print(f\"Error al enviar mensaje: {e}\")\n\n\nif __name__ == \"__main__\":\n    SERVER_HOST = \"127.0.0.1\"\n    SERVER_PORT = 12345\n    server = ChatServer(SERVER_HOST, SERVER_PORT)\n    server.start_server()",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
+      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
     ]
   },
   {
@@ -2471,7 +2526,7 @@
     "text": "2. Probar el servidor\nAsegúrate de que el entorno virtual esté activo:\nsource venv/bin/activate  # En Windows: venv\\Scripts\\activate\n\nEjecuta el servidor:\npython src/server.py\nVerifica que el servidor comienza a escuchar en la dirección configurada.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
+      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
     ]
   },
   {
@@ -2482,7 +2537,7 @@
     "text": "3. Agregar pruebas unitarias básicas\nEdita tests/test_server.py para agregar un caso inicial (simulación simple de conexión):\nimport unittest\nfrom src.server import ChatServer\n\nclass TestChatServer(unittest.TestCase):\n    def setUp(self):\n        self.server = ChatServer(\"127.0.0.1\", 12345)\n\n    def test_server_initialization(self):\n        self.assertEqual(self.server.host, \"127.0.0.1\")\n        self.assertEqual(self.server.port, 12345)\n        self.assertIsInstance(self.server.clients, dict)\n\nif __name__ == \"__main__\":\n    unittest.main()\nEjecuta las pruebas:\npython -m unittest discover -s tests",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
+      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
     ]
   },
   {
@@ -2493,7 +2548,7 @@
     "text": "4. Versionar los cambios\nAgrega y confirma los archivos modificados:\ngit add .\ngit commit -m \"Fase 2: Implementación del servidor básico\"\n(Opcional) Crea un repositorio remoto en GitHub:\ngit remote add origin &lt;URL_DEL_REPOSITORIO&gt;\ngit push -u origin main",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
+      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
     ]
   },
   {
@@ -2504,7 +2559,7 @@
     "text": "Pruebas\n\nEjecuta el servidor y asegúrate de que no haya errores.\nEjecuta las pruebas unitarias.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
+      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
     ]
   },
   {
@@ -2515,7 +2570,7 @@
     "text": "Conclusiones\nEn esta fase, se implementó un servidor funcional que puede aceptar múltiples conexiones de clientes y gestionar sus mensajes de forma concurrente. Los estudiantes ahora comprenden la importancia de los sockets y los hilos para crear aplicaciones escalables.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
+      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
     ]
   },
   {
@@ -2526,7 +2581,7 @@
     "text": "Objetivo\nCrear la lógica básica del cliente para conectarse al servidor de chat, enviar mensajes y recibir transmisiones, inicialmente usando la línea de comandos (CLI).",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Fase 3: Implementación del Cliente CLI</span>"
+      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 3: Implementación del Cliente CLI</span>"
     ]
   },
   {
@@ -2537,7 +2592,7 @@
     "text": "Conceptos Clave\nSockets TCP Cliente: Uso de sockets para conectar con el servidor. Hilos en el Cliente: Permitir el envío y recepción simultánea de mensajes. Comunicación entre Cliente y Servidor: Manejo de datos y estructuras de mensajes.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Fase 3: Implementación del Cliente CLI</span>"
+      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 3: Implementación del Cliente CLI</span>"
     ]
   },
   {
@@ -2548,7 +2603,7 @@
     "text": "Instrucciones\n\n1. Crear la estructura inicial del cliente\nEdita src/client.py y completa la clase con las funciones esenciales:\n\"\"\"\nMódulo: client.py\nDescripción: Define el cliente del sistema de chat local.\n\"\"\"\n\nimport socket\nimport threading\n\n\nclass ChatClient:\n    def __init__(self, host, port):\n        \"\"\"\n        Inicializa el cliente con la dirección y puerto del servidor.\n\n        :param host: Dirección IP del servidor.\n        :param port: Puerto del servidor.\n        \"\"\"\n        self.host = host\n        self.port = port\n        self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n        self.running = True\n\n    def connect_to_server(self):\n        \"\"\"\n        Conecta el cliente al servidor especificado.\n        \"\"\"\n        try:\n            self.client_socket.connect((self.host, self.port))\n            print(\"Conectado al servidor\")\n            nickname = input(\"Ingresa tu nickname: \")\n            self.client_socket.sendall(nickname.encode(\"utf-8\"))\n        except Exception as e:\n            print(f\"No se pudo conectar al servidor: {e}\")\n            self.running = False\n\n    def send_message(self):\n        \"\"\"\n        Envía mensajes al servidor de manera continua.\n        \"\"\"\n        while self.running:\n            try:\n                message = input()\n                self.client_socket.sendall(message.encode(\"utf-8\"))\n            except Exception as e:\n                print(f\"Error al enviar mensaje: {e}\")\n                self.running = False\n                break\n\n    def receive_messages(self):\n        \"\"\"\n        Recibe mensajes del servidor de manera continua.\n        \"\"\"\n        while self.running:\n            try:\n                message = self.client_socket.recv(1024).decode(\"utf-8\")\n                if message:\n                    print(message)\n                else:\n                    break\n            except Exception as e:\n                print(f\"Error al recibir mensaje: {e}\")\n                self.running = False\n                break\n\n    def start_client(self):\n        \"\"\"\n        Inicia el cliente, manejando la conexión y las operaciones.\n        \"\"\"\n        self.connect_to_server()\n\n        if self.running:\n            threading.Thread(target=self.receive_messages, daemon=True).start()\n            self.send_message()\n\n\nif __name__ == \"__main__\":\n    SERVER_HOST = \"127.0.0.1\"\n    SERVER_PORT = 12345\n    client = ChatClient(SERVER_HOST, SERVER_PORT)\n    client.start_client()\n\n\n2. Probar el cliente\nAsegúrate de que el servidor está corriendo:\npython src/server.py\nEn una nueva terminal, ejecuta el cliente:\npython src/client.py\nIngresa un nickname y verifica que el cliente se conecte al servidor.\nAbre múltiples terminales y ejecuta el cliente en cada una para probar el sistema.\nEnvía mensajes entre clientes y confirma que el servidor los retransmite correctamente.\n\n\n3. Agregar pruebas unitarias para el cliente\nEdita tests/test_client.py para verificar casos básicos:\nimport unittest\nfrom src.client import ChatClient\n\n\nclass TestChatClient(unittest.TestCase):\n    def setUp(self):\n        self.client = ChatClient(\"127.0.0.1\", 12345)\n\n    def test_client_initialization(self):\n        self.assertEqual(self.client.host, \"127.0.0.1\")\n        self.assertEqual(self.client.port, 12345)\n\n    def test_client_socket_creation(self):\n        self.assertIsNotNone(self.client.client_socket)\n\n\nif __name__ == \"__main__\":\n    unittest.main()\nEjecuta las pruebas:\npython -m unittest discover -s tests\n\n\n4. Versionar los cambios\nAgrega y confirma los archivos modificados:\ngit add .\ngit commit -m \"Fase 3: Implementación del cliente CLI\"\nSube los cambios al repositorio remoto:\ngit push origin main",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Fase 3: Implementación del Cliente CLI</span>"
+      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 3: Implementación del Cliente CLI</span>"
     ]
   },
   {
@@ -2559,7 +2614,7 @@
     "text": "Pruebas\n\nConecta múltiples clientes al servidor y verifica que los mensajes se retransmitan correctamente.\nRealiza pruebas unitarias para garantizar la creación adecuada del cliente.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Fase 3: Implementación del Cliente CLI</span>"
+      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 3: Implementación del Cliente CLI</span>"
     ]
   },
   {
@@ -2570,7 +2625,7 @@
     "text": "Objetivo\nDesarrollar una interfaz gráfica para el cliente del chat usando la biblioteca Tkinter. La interfaz permitirá una experiencia más amigable para enviar y recibir mensajes en tiempo real.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
+      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
     ]
   },
   {
@@ -2581,7 +2636,7 @@
     "text": "Conceptos Clave\n\nInterfaz Gráfica (GUI): Uso de Tkinter para construir interfaces gráficas básicas en Python.\nInteractividad**: Implementar botones, entradas de texto y listas para mostrar mensajes.\nHilos en la GUI: Asegurar que la aplicación gráfica sea responsiva mientras maneja múltiples tareas como enviar y recibir mensajes.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
+      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
     ]
   },
   {
@@ -2592,7 +2647,7 @@
     "text": "Instrucciones\n\n1. Crear la estructura inicial para la GUI\nEdita el archivo src/client.py para añadir funcionalidades gráficas. Comienza reemplazando la clase ChatClient por una versión ampliada con Tkinter:\n\"\"\"\nMódulo: client.py\nDescripción: Cliente de chat con interfaz gráfica (Tkinter).\n\"\"\"\n\nimport socket\nimport tkinter as tk\nimport threading\n\n\nclass ChatClientGUI:\n    def __init__(self, host, port):\n        \"\"\"\n        Inicializa el cliente con la dirección y puerto del servidor, y configura la GUI.\n\n        :param host: Dirección IP del servidor.\n        :param port: Puerto del servidor.\n        \"\"\"\n        self.host = host\n        self.port = port\n        self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n        self.nickname = \"\"\n        self.running = True\n        self.chat_window = None\n        self.message_box = None\n        self.entry_box = None\n\n    def connect_to_server(self):\n        \"\"\"\n        Conecta el cliente al servidor y envía el nickname.\n        \"\"\"\n        try:\n            self.client_socket.connect((self.host, self.port))\n            print(\"Conectado al servidor\")\n        except Exception as e:\n            print(f\"No se pudo conectar al servidor: {e}\")\n\n    def send_message(self, message):\n        \"\"\"\n        Envía un mensaje al servidor.\n        :param message: Mensaje a enviar.\n        \"\"\"\n        try:\n            self.client_socket.sendall(message.encode(\"utf-8\"))\n        except Exception as e:\n            print(f\"Error al enviar mensaje: {e}\")\n\n    def receive_messages(self):\n        \"\"\"\n        Recibe mensajes del servidor y los muestra en la GUI.\n        \"\"\"\n        while self.running:\n            try:\n                message = self.client_socket.recv(1024).decode(\"utf-8\")\n                if message:\n                    self.chat_window.after(0, self.display_message, message)\n                else:\n                    break\n            except Exception as e:\n                print(f\"Error al recibir mensaje: {e}\")\n                break\n\n    def display_message(self, message):\n        \"\"\"\n        Muestra un mensaje en la ventana de chat.\n        :param message: Mensaje recibido.\n        \"\"\"\n        self.message_box.insert(tk.END, message)\n        self.message_box.yview(tk.END)\n\n    def setup_gui(self):\n        \"\"\"\n        Configura la ventana principal de la interfaz gráfica.\n        \"\"\"\n        self.window = tk.Tk()\n        self.window.title(\"Chat Cliente\")\n\n        # Ventana de ingreso de nickname\n        self.nickname_window = tk.Frame(self.window)\n        self.nickname_window.pack(padx=10, pady=10)\n\n        self.nickname_label = tk.Label(self.nickname_window, text=\"Nick:\")\n        self.nickname_label.pack(padx=10, pady=10)\n\n        self.nickname_entry = tk.Entry(self.nickname_window)\n        self.nickname_entry.pack(padx=10, pady=10)\n\n        self.nickname_button = tk.Button(\n            self.nickname_window, text=\"OK\", command=self.set_nickname\n        )\n        self.nickname_button.pack(padx=10, pady=10)\n\n        self.window.mainloop()\n\n    def set_nickname(self):\n        \"\"\"\n        Configura el nickname del usuario y prepara la ventana de chat.\n        \"\"\"\n        self.nickname = self.nickname_entry.get()\n        if self.nickname:\n            self.client_socket.sendall(self.nickname.encode(\"utf-8\"))\n            self.nickname_window.pack_forget()  # Oculta la ventana de nickname\n            self.create_chat_window()  # Muestra la ventana de chat\n\n    def create_chat_window(self):\n        \"\"\"\n        Crea la ventana de chat principal con opciones para enviar y recibir mensajes.\n        \"\"\"\n        self.chat_window = tk.Frame(self.window)\n        self.chat_window.pack(padx=10, pady=10)\n\n        self.message_box = tk.Listbox(self.chat_window, height=15, width=50)\n        self.message_box.pack(padx=10, pady=10)\n\n        self.entry_box = tk.Entry(self.chat_window, width=40)\n        self.entry_box.pack(padx=10, pady=10)\n\n        self.send_button = tk.Button(\n            self.chat_window, text=\"Enviar\", command=self.on_send_message\n        )\n        self.send_button.pack(padx=10, pady=10)\n\n        # Hilo para recibir mensajes\n        threading.Thread(target=self.receive_messages, daemon=True).start()\n\n    def on_send_message(self):\n        \"\"\"\n        Envía un mensaje al servidor y lo muestra en el cliente.\n        \"\"\"\n        message = self.entry_box.get()\n        if message:\n            self.send_message(message)\n            self.display_message(f\"{self.nickname}: {message}\")\n            self.entry_box.delete(0, tk.END)\n\n\nif __name__ == \"__main__\":\n    SERVER_HOST = \"127.0.0.1\"\n    SERVER_PORT = 12345\n    client = ChatClientGUI(SERVER_HOST, SERVER_PORT)\n    client.connect_to_server()\n    client.setup_gui()\n\n\n2. Probar la interfaz gráfica\nAsegúrate de que el servidor está ejecutándose:\npython src/server.py\nInicia el cliente con la nueva interfaz gráfica:\npython src/client.py\nConecta múltiples clientes y verifica que puedan enviar y recibir mensajes. Asegúrate de que la interfaz es funcional.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
+      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
     ]
   },
   {
@@ -2603,7 +2658,7 @@
     "text": "3. Versionar los cambios\nAgrega y confirma los archivos modificados:\ngit add .\ngit commit -m \"Fase 4: Implementación de la interfaz gráfica del cliente con Tkinter\"\nSube los cambios al repositorio remoto:\ngit push origin main",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
+      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
     ]
   },
   {
@@ -2614,7 +2669,7 @@
     "text": "Pruebas\n\nVerifica que el cliente gráfico se conecta correctamente al servidor.\nConfirma que los mensajes enviados y recibidos se muestran correctamente en la interfaz.\nRealiza pruebas con múltiples clientes para asegurar la funcionalidad del sistema completo.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
+      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
     ]
   },
   {
@@ -2625,7 +2680,7 @@
     "text": "Conclusiones\nEn esta fase, se extendió el cliente del chat incorporando una interfaz gráfica interactiva. Esto proporciona una experiencia de usuario más amigable y permite manejar tareas de comunicación en segundo plano sin afectar la responsividad de la interfaz.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
+      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
     ]
   },
   {
@@ -2636,7 +2691,7 @@
     "text": "Objetivo\nAgregar pruebas unitarias y de integración para asegurar la funcionalidad del sistema. Configurar un flujo de integración continua (CI) usando GitHub Actions para garantizar que los cambios en el código no rompan la aplicación.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>53</span>  <span class='chapter-title'>Fase 5: Implementación de Pruebas e Integración Continua</span>"
+      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Fase 5: Implementación de Pruebas e Integración Continua</span>"
     ]
   },
   {
@@ -2647,7 +2702,7 @@
     "text": "Conceptos Clave\n\nPruebas Unitarias: Validan funcionalidades específicas de componentes individuales del sistema.\nPruebas de Integración: Aseguran que los componentes interactúen correctamente entre sí.\nIntegración Continua (CI): Automatiza la ejecución de pruebas en cada cambio del código mediante herramientas como GitHub Actions.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>53</span>  <span class='chapter-title'>Fase 5: Implementación de Pruebas e Integración Continua</span>"
+      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Fase 5: Implementación de Pruebas e Integración Continua</span>"
     ]
   },
   {
@@ -2658,7 +2713,7 @@
     "text": "Instrucciones\n\n1. Configurar un entorno de pruebas\nAsegúrate de que tienes las siguientes dependencias instaladas:\npip install pytest pytest-mock\nCrea un archivo requirements.txt para incluir las dependencias de desarrollo:\npytest\npytest-mock\nAgrega este archivo al control de versiones:\ngit add requirements-dev.txt\ngit commit -m \"Añadido archivo requirements-dev.txt para dependencias de desarrollo\"\n\n\n2. Escribir pruebas unitarias para el servidor\nCrea un directorio tests/ y un archivo tests/test_server.py para las pruebas del servidor:\n\"\"\"\nPruebas unitarias para server.py\n\"\"\"\n\nimport socket\nimport threading\nimport pytest\nfrom src.server import ChatServer\n\n\n@pytest.fixture\ndef server():\n    \"\"\"\n    Configura una instancia del servidor para pruebas.\n    \"\"\"\n    chat_server = ChatServer(\"127.0.0.1\", 12345)\n    threading.Thread(target=chat_server.start, daemon=True).start()\n    return chat_server\n\n\ndef test_server_initialization(server):\n    \"\"\"\n    Prueba que el servidor se inicializa correctamente.\n    \"\"\"\n    assert server.host == \"127.0.0.1\"\n    assert server.port == 12345\n    assert server.clients == []\n\n\ndef test_client_connection(server):\n    \"\"\"\n    Prueba que un cliente puede conectarse al servidor.\n    \"\"\"\n    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    client_socket.connect((server.host, server.port))\n    assert client_socket\n    client_socket.close()\n\n\n3. Escribir pruebas para el cliente\nCrea el archivo tests/test_client.py:\n\"\"\"\nPruebas unitarias para client.py\n\"\"\"\n\nimport pytest\nfrom src.client import ChatClientGUI\n\n\n@pytest.fixture\ndef client():\n    \"\"\"\n    Configura un cliente de chat para pruebas.\n    \"\"\"\n    return ChatClientGUI(\"127.0.0.1\", 12345)\n\n\ndef test_client_initialization(client):\n    \"\"\"\n    Prueba que el cliente se inicializa correctamente.\n    \"\"\"\n    assert client.host == \"127.0.0.1\"\n    assert client.port == 12345\n    assert client.nickname == \"\"\n\n\n4. Ejecutar las pruebas\nEjecuta las pruebas localmente para verificar que todo funcione correctamente:\npytest tests/\nSi todo está correcto, verás un resultado como este:\n========================= test session starts =========================\ncollected 3 items\n\ntests/test_client.py ..                                           [ 66%]\ntests/test_server.py ..                                           [100%]\n\n========================== 3 passed in 0.10s =========================\n\n\n5. Configurar integración continua con GitHub Actions\nCrea el archivo .github/workflows/ci.yml con la siguiente configuración:\nname: CI Pipeline\n\non:\n  push:\n    branches:\n      - main\n  pull_request:\n    branches:\n      - main\n\njobs:\n  test:\n    runs-on: ubuntu-latest\n\n    steps:\n    - name: Checkout code\n      uses: actions/checkout@v3\n\n    - name: Set up Python\n      uses: actions/setup-python@v4\n      with:\n        python-version: \"3.12\"\n\n    - name: Install dependencies\n      run: |\n        python -m venv venv\n        . venv/bin/activate\n        pip install -r requirements.txt\n        pip install -r requirements-dev.txt\n\n    - name: Run tests\n      run: |\n        . venv/bin/activate\n        pytest tests/\nSube los cambios al repositorio:\ngit add .github/workflows/ci.yml\ngit commit -m \"Añadido pipeline de CI con GitHub Actions\"\ngit push origin main\nVerifica en GitHub que las pruebas se ejecuten automáticamente al hacer un push o pull request.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>53</span>  <span class='chapter-title'>Fase 5: Implementación de Pruebas e Integración Continua</span>"
+      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Fase 5: Implementación de Pruebas e Integración Continua</span>"
     ]
   },
   {
@@ -2669,7 +2724,7 @@
     "text": "Pruebas y Validación\n\nRealiza cambios controlados en el código y verifica que GitHub Actions detecta errores.\nAsegúrate de que las pruebas pasen tanto localmente como en el flujo de CI.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>53</span>  <span class='chapter-title'>Fase 5: Implementación de Pruebas e Integración Continua</span>"
+      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Fase 5: Implementación de Pruebas e Integración Continua</span>"
     ]
   },
   {
@@ -2680,7 +2735,7 @@
     "text": "Conclusiones\nLa incorporación de pruebas unitarias e integración continua asegura la calidad del software y evita errores al integrar cambios. Este flujo refleja prácticas profesionales utilizadas en la industria.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>53</span>  <span class='chapter-title'>Fase 5: Implementación de Pruebas e Integración Continua</span>"
+      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Fase 5: Implementación de Pruebas e Integración Continua</span>"
     ]
   },
   {
@@ -2691,7 +2746,7 @@
     "text": "Objetivo\nCrear una documentación completa para el laboratorio, detallando cada paso realizado en las fases anteriores, junto con preguntas de reflexión para evaluar el aprendizaje de los estudiantes.\n\nSección 1: Introducción al Laboratorio\n\nTítulo del Laboratorio\nDesarrollo de un Chat Local Cliente-Servidor con Pruebas e Integración Continua.\n\nDescripción\n\nEn este laboratorio, los estudiantes desarrollarán una aplicación de chat local utilizando Python. El proyecto sigue un flujo profesional, incluyendo análisis de requisitos, diseño, codificación, pruebas, y despliegue de un pipeline de integración continua con GitHub Actions.\n\nObjetivo General\n\nComprender y aplicar un flujo profesional de desarrollo de software para construir aplicaciones cliente-servidor con Python.\n\nSección 2: Instrucciones Prácticas\n\nParte 1: Configuración Inicial\n\nCrear el repositorio:\n\nUsa GitHub para crear un nuevo repositorio.\nClona el repositorio en tu máquina local:\n\n\ngit clone &lt;URL del repositorio&gt;\n\nEstructura del proyecto:\n\nCrea los siguientes directorios y archivos iniciales:\nchat-project/\n├── .github/\n│   └── workflows/\n│       └── ci.yml\n├── src/\n│   ├── client.py\n│   ├── server.py\n├── tests/\n│   ├── test_client.py\n│   ├── test_server.py\n├── requirements.txt\n├── requirements-dev.txt\n├── .gitignore\n└── README.md\n\nEntorno virtual:\n\nCrea un entorno virtual y activa:\n\n\npython -m venv venv\nsource venv/bin/activate  # Linux/Mac\nvenv\\Scripts\\activate  # Windows\n\nInstala dependencias:\n\nAñade las librerías necesarias a requirements.txt y requirements-dev.txt, e instálalas:\n\n\npip install -r requirements.txt\npip install -r requirements-dev.txt",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
     ]
   },
   {
@@ -2702,7 +2757,7 @@
     "text": "Implementa las clases base:\n\nDefine las clases ChatServer y ChatClientGUI con métodos iniciales vacíos (pass).\nAñade funcionalidades gradualmente, como se explicó en fases anteriores.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
     ]
   },
   {
@@ -2713,7 +2768,7 @@
     "text": "Pruebas:\n\nImplementa pruebas unitarias y de integración en la carpeta tests/.\n\n\nEjecuta las pruebas:\npytest tests/",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
     ]
   },
   {
@@ -2724,7 +2779,7 @@
     "text": "Integración continua:\n\nConfigura el pipeline de CI en GitHub Actions para validar las pruebas automáticamente.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
     ]
   },
   {
@@ -2735,7 +2790,7 @@
     "text": "Interfaz gráfica (opcional):\n\nImplementa la GUI en client.py usando Tkinter.\n\nSección 3: Preguntas de Reflexión",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
     ]
   },
   {
@@ -2746,7 +2801,7 @@
     "text": "Diseño y Arquitectura:\n\n¿Qué ventajas tiene dividir el proyecto en módulos (src/ y tests/)?\n¿Cómo mejora el diseño la inclusión de docstrings en las clases y funciones?",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
     ]
   },
   {
@@ -2757,7 +2812,7 @@
     "text": "Pruebas:\n\n¿Por qué es importante incluir pruebas unitarias e integración en proyectos colaborativos?\n¿Qué aprendiste al ejecutar y depurar tus pruebas?",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
     ]
   },
   {
@@ -2768,7 +2823,7 @@
     "text": "Integración Continua:\n\n¿Cómo asegura la CI la calidad del código en un proyecto con múltiples desarrolladores?\n¿Qué beneficios aporta GitHub Actions en comparación con ejecutar pruebas localmente?",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
     ]
   },
   {
@@ -2779,7 +2834,7 @@
     "text": "Desafíos Técnicos:\n\n¿Qué desafíos enfrentaste al implementar la comunicación entre cliente y servidor?\n¿Cómo los resolviste?\n\nSección 4: Conclusión",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
     ]
   },
   {
@@ -2790,7 +2845,7 @@
     "text": "Resultados Obtenidos:\n\nLos estudiantes construyeron un sistema cliente-servidor funcional con comunicación en tiempo real.\nImplementaron pruebas automatizadas y configuraron CI, simulando un flujo profesional de desarrollo.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
     ]
   },
   {
@@ -2801,7 +2856,7 @@
     "text": "Lecciones Clave:\n\nLa planificación y estructura del proyecto son esenciales para su éxito.\nLa automatización de pruebas y flujos de trabajo asegura la calidad del software.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
     ]
   },
   {
@@ -2812,7 +2867,7 @@
     "text": "Próximos Pasos:\n\nImplementar características avanzadas como manejo de usuarios, historial de chat, o cifrado de mensajes.\nExtender el proyecto para que funcione a través de redes externas.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
     ]
   },
   {
@@ -2823,7 +2878,7 @@
     "text": "Entrega Final\n\nRepositorio GitHub:\n\nSube todo el proyecto a un repositorio en GitHub.\nAsegúrate de que el README.md incluya instrucciones claras para ejecutar la aplicación y el flujo de CI.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
     ]
   },
   {
@@ -2834,7 +2889,7 @@
     "text": "Evidencias:\n\nCapturas de pantalla de las pruebas exitosas.\nURL del repositorio de GitHub.\n\n\n¡Felicidades por completar el laboratorio! 🎉",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
     ]
   },
   {
