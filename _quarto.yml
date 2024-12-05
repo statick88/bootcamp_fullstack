@@ -93,7 +93,7 @@ book:
         - "unidades/unidad7/4_modelos_django.qmd"
         - "unidades/unidad7/5_forms.qmd"
         - "unidades/unidad7/6_vistas.qmd"
-        # - "unidades/unidad7/7_templates.qmd"
+        - "unidades/unidad7/7_templates.qmd"
         # - "unidades/unidad7/8_urls.qmd"
 
     - part: "Proyectos"

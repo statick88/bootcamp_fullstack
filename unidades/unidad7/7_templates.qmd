@@ -1,326 +1,342 @@
 :::{.justify}
-# Vistas, Urls y Plantillas en Django
+# Sistema de Herencia de PlantiLLas, Tailwindcss y Archivos Estáticos.
 
-## Vistas
-
-Las vistas en Django son funciones o clases que reciben una petición HTTP y devuelven una respuesta HTTP. Las vistas se definen en el archivo **views.py** de cada aplicación y se asocian a una URL mediante el archivo **urls.py**.
-
-:::{.callout-info}
-Recordemos los modelos aprendidos en el capítulo anterior
-
-```python
-from django.db import models
-
-class Farmacia(models.Model):
-    nombre = models.CharField(max_length=100)
-    direccion = models.CharField(max_length=200)
-    telefono = models.CharField(max_length=20)
-    email = models.EmailField()
-    activa = models.BooleanField(default=True)
-
-    def __str__(self):
-        return self.nombre
-
-class Medicamento(models.Model):
-    nombre = models.CharField(max_length=100)
-    descripcion = models.TextField()
-    precio = models.DecimalField(max_digits=8, decimal_places=2)
-    stock = models.IntegerField()
-    farmacia = models.ForeignKey(Farmacia, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.nombre
-```
+:::{.center}
+![Django](./images/farmacia_001.png){width=800px}
 :::
 
-Ahora vamos a crear las plantillas para mostrar los datos de las farmacias y los medicamentos.
+En este capítulo, vamos a mejorar la estructura de plantillas de nuestra aplicación de Farmacia, aprovechando el sistema de herencia de plantillas de Django, la integración de Tailwind CSS, la generación del directorio static/ y su configuración en settings.py.
 
-## Jinga2
+El objetivo es mejorar el diseño de nuestras plantillas HTML mediante el uso de Tailwind CSS y organizar mejor el código, aprovechando la herencia de plantillas. También aseguraremos que todos los archivos estáticos se generen correctamente.
 
-Django utiliza el motor de plantillas Jinja2 para renderizar las plantillas. Jinja2 es un motor de plantillas muy potente que permite la creación de plantillas dinámicas y reutilizables.
+# 1. Herencia de Plantillas
 
-:::{.callout-info}
-Recordemos las vistas creadas en el capítulo anterior
+En Django, podemos usar un sistema de herencia de plantillas para evitar repetir el mismo código en varias vistas. En este caso, crearemos un archivo base, base.html, que servirá como plantilla común para todas nuestras páginas. Las otras plantillas heredarán de este archivo.
 
-```python
-from django.db import models
-
-class Medicamento(models.Model):
-    nombre = models.CharField(max_length=100)
-    precio = models.DecimalField(max_digits=10, decimal_places=2)
-    existencias = models.IntegerField()
-
-    def __str__(self):
-        return self.nombre
-
-class Venta(models.Model):
-    medicamento = models.ForeignKey(Medicamento, on_delete=models.CASCADE)
-    cantidad = models.IntegerField()
-    fecha = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return f'{self.medicamento} - {self.cantidad}'
+```base.html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Farmacia{% endblock %}</title>
+    {% load static %}
+    <link href="{% static 'css/output.css' %}" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col">
+    <header class="bg-blue-500 text-white p-4">
+      <h1 class="text-lg font-bold">Farmacia</h1>
+    </header>
+    <main class="flex-grow p-6">{% block content %}{% endblock %}</main>
+    <footer class="bg-gray-700 text-white text-center p-4 mt-auto">
+      <p>&copy; 2024 Farmacia</p>
+    </footer>
+  </body>
+</html>
 ```
+
+Este archivo contiene las partes comunes de la página, como el encabezado, el pie de página y el bloque de contenido principal, que puede ser reemplazado por cada plantilla específica.
+
+## Otras Plantillas
+
+Ahora vamos a modificar cada una de las plantillas para que hereden de **base.html** y reemplacen el bloque de contenido principal con su propio contenido.
+
+### 1. **crear_medicamento.html**:
+
+```html
+{% extends 'base.html' %} {% block title %}Nuevo Medicamento{% endblock %} 
+{% block content %}
+<h2 class="text-xl font-semibold mb-4">Nuevo Medicamento</h2>
+
+{% if messages %}
+<div class="mb-4">
+  {% for message in messages %} {% if message.tags == 'error' %}
+  <div class="bg-red-500 text-white p-3 rounded mb-2">{{ message }}</div>
+  {% else %}
+  <div class="bg-green-500 text-white p-3 rounded mb-2">{{ message }}</div>
+  {% endif %} {% endfor %}
+</div>
+{% endif %}
+
+<form method="POST">
+  {% csrf_token %} {{ form.as_p }}
+
+  <button
+    type="submit"
+    class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600"
+  >
+    Guardar
+  </button>
+</form>
+
+<a
+  href="{% url 'lista_medicamentos' %}"
+  class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+>
+  Volver
+</a>
+{% endblock %}
+```
+En este archivo, hemos reemplazado el bloque de contenido principal con el formulario para crear un nuevo medicamento. También hemos agregado un bloque para mostrar mensajes de error o éxito.
+
+## 2. **detalle_medicamento.html**:
+
+```html
+{% extends 'base.html' %} {% block title %}Detalle del Medicamento{% endblock %}
+{% block content %}
+<h2 class="text-xl font-semibold mb-4">Detalle del Medicamento</h2>
+<p><strong>Nombre:</strong> {{ medicamento.nombre }}</p>
+<p><strong>Precio:</strong> ${{ medicamento.precio }}</p>
+<p><strong>Existencias:</strong> {{ medicamento.existencias }}</p>
+<p><strong>Lugar:</strong> {{ medicamento.lugar }}</p>
+<a
+  href="{% url 'lista_medicamentos' %}"
+  class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+  >Volver</a
+>
+{% endblock %}
+```
+
+En este archivo, hemos reemplazado el bloque de contenido principal con los detalles del medicamento y un enlace para volver a la lista de medicamentos.
+
+## 3. **lista_medicamentos.html**:
+
+```html
+{% extends 'base.html' %} {% block title %}Lista de Medicamentos{% endblock %}
+{% block content %}
+<h2 class="text-xl font-semibold mb-4">Lista de Medicamentos</h2>
+<table class="table-auto w-full border-collapse border border-gray-300">
+  <thead>
+    <tr class="bg-gray-200">
+      <th class="border border-gray-300 px-4 py-2">Nombre</th>
+      <th class="border border-gray-300 px-4 py-2">Precio</th>
+      <th class="border border-gray-300 px-4 py-2">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for medicamento in medicamentos %}
+    <tr>
+      <td class="border border-gray-300 px-4 py-2">{{ medicamento.nombre }}</td>
+      <td class="border border-gray-300 px-4 py-2">
+        ${{ medicamento.precio }}
+      </td>
+      <td class="border border-gray-300 px-4 py-2">
+        <a
+          href="{% url 'detalle_medicamento' medicamento.id %}"
+          class="text-blue-500 hover:underline"
+          >Ver</a
+        >
+        <a
+          href="{% url 'editar_medicamento' medicamento.id %}"
+          class="text-yellow-500 hover:underline"
+          >Editar</a
+        >
+        <a
+          href="{% url 'eliminar_medicamento' medicamento.id %}"
+          class="text-red-500 hover:underline"
+          >Eliminar</a
+        >
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<a
+  href="{% url 'crear_medicamento' %}"
+  class="mt-4 inline-block bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600"
+  >Crear Medicamento</a
+>
+{% endblock %}
+```
+
+En este archivo, hemos reemplazado el bloque de contenido principal con una tabla que muestra la lista de medicamentos y enlaces para ver, editar o eliminar cada medicamento.
+
+## 4. **editar_medicamento.html**:
+
+```html
+{% extends 'base.html' %} {% block title %}Editar Medicamento{% endblock %} 
+{% block content %}
+<h2 class="text-2xl font-semibold mb-4">Editar Medicamento</h2>
+<form method="post" class="bg-white p-6 rounded shadow-md">
+  {% csrf_token %} {{ form.as_p }}
+  <button
+    type="submit"
+    class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+  >
+    Guardar
+  </button>
+</form>
+<a
+  href="{% url 'lista_medicamentos' %}"
+  class="text-blue-500 hover:underline mt-4 inline-block"
+  >Volver a la lista</a
+>
+{% endblock %}
+```
+
+## 4. **eliminar_medicamento.html**:
+
+```html
+{% extends 'base.html' %} {% block title %}Confirmar Eliminación{% endblock %}
+{% block content %}
+<h2 class="text-xl font-semibold text-red-600 mb-4">
+  ¿Estás seguro de que deseas eliminar este medicamento?
+</h2>
+<p class="mb-4"><strong>{{ medicamento.nombre }}</strong></p>
+<form method="post">
+  {% csrf_token %}
+  <button
+    type="submit"
+    class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600"
+  >
+    Eliminar
+  </button>
+  <a
+    href="{% url 'lista_medicamentos' %}"
+    class="ml-4 bg-gray-500 text-white py-2 px-4 rounded hover:bg-gray-600"
+    >Cancelar</a
+  >
+</form>
+{% endblock %}
+```
+
+En este archivo, hemos reemplazado el bloque de contenido principal con un mensaje de confirmación para eliminar un medicamento y botones para confirmar o cancelar la acción.
+
+# 2. Integración de Tailwind CSS
+
+Tailwind CSS es un framework de diseño de bajo nivel que facilita la creación de interfaces elegantes sin necesidad de escribir CSS desde cero. Vamos a configurarlo y utilizarlo en nuestras plantillas.
+
+:::{.callout-tip}
+Es necesario tener nodejs instalado en tu sistema para poder instalar Tailwind CSS.
+
+Para instalar nodejs, puedes seguir las instrucciones en la [página oficial de nodejs](https://nodejs.org/).
 :::
 
-Ahora vamos a crear las plantillas para mostrar los datos de los medicamentos y las ventas.
+## 2.1 Instalación de Tailwind CSS
 
-## Plantillas
+Lo primero que necesitamos es instalar Tailwind CSS globalmente en nuestro sistema. Para ello, utilizaremos npm, el gestor de paquetes de Node.js.
 
-Las plantillas en Django son archivos HTML que contienen el código necesario para mostrar la información de la aplicación. Las plantillas pueden contener etiquetas y filtros de Django que permiten acceder a los datos de la base de datos y mostrarlos en la página web.
+- Instala Tailwind CSS globalmente utilizando npm:
+```bash
+npm install -g tailwindcss
+```
+Ahora es necesario generar un archivo de configuración de Tailwind CSS. Para ello, ejecutamos el siguiente comando en la raíz de nuestro proyecto:
 
-Para crear una plantilla en Django, primero debemos definir un directorio llamado **templates** en la raíz del proyecto. Dentro de este directorio, creamos un subdirectorio con el nombre de la aplicación y dentro de este subdirectorio, creamos un archivo HTML con el nombre de la plantilla.
+```bash
+npx tailwindcss init
+```
+Con el comando anterior se generará un archivo **tailwind.config.js** en la raíz de nuestro proyecto. Este archivo es necesario para configurar Tailwind CSS y definir las rutas de los archivos HTML y CSS en los que se utilizarán las clases de Tailwind.
 
-:::{.callout-info}
-Recordemos las vistas creadas en el capítulo anterior
+## 2.2 Configuración de Tailwind en Django
+
+Ahora, configuramos Tailwind CSS en nuestra aplicación Django. Los archivos generados estarán dentro de la carpeta static, por lo que debemos asegurarnos de que Django sirva estos archivos correctamente.
+
+**static/css/style.css**
+
+- Aquí configuramos Tailwind para que lo utilice en nuestras plantillas:
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+## 2.3 Configuración del archivo tailwind.config.js
+
+Este archivo es necesario para configurar las rutas de las plantillas HTML y los archivos CSS en los que Tailwind debe buscar clases CSS dinámicas.
+
+```javascript
+module.exports = {
+  content: [
+    "./farmacia/templates/**/*.html", // Ruta a tus plantillas HTML
+    "./static/js/**/*.js", // Si usas JS que contiene clases dinámicas
+    "./static/css/**/*.css", // Si tienes más archivos CSS
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+```
+# 3. Generación del archivo static
+
+Debemos asegurarnos de que el archivo **output.css** se genere correctamente. Para ello, primero necesitamos configurar y ejecutar Tailwind para generar el archivo CSS final.
+
+## 3.1 Configuración en settings.py
+
+En **settings.py**, aseguramos que Django pueda servir archivos estáticos correctamente. Aquí está una parte de la configuración relevante:
 
 ```python
-from django.shortcuts import render
-from .models import Medicamento, Venta
+# settings.py
+import os
+from pathlib import Path
 
-# Vista para mostrar la lista de medicamentos
-def lista_medicamentos(request):
-    medicamentos = Medicamento.objects.all()
-    return render(request, 'farmacia/lista_medicamentos.html', {'medicamentos': medicamentos})
+BASE_DIR = Path(__file__).resolve().parent.parent
+'''
+Configuración de templates
+'''
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'farmacia/templates/farmacia')],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
 
-# Vista para mostrar el detalle de un medicamento
-def detalle_medicamento(request, id):
-    medicamento = Medicamento.objects.get(id=id)
-    return render(request, 'farmacia/detalle_medicamento.html', {'medicamento': medicamento})
+'''
+Configuración de archivos estáticos
+'''
 
-# Vista para realizar una venta
-def realizar_venta(request):
-    if request.method == 'POST':
-        form = VentaForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('lista_medicamentos')
-    else:
-        form = VentaForm()
-        return render(request, 'farmacia/realizar_venta.html', {'form': form})
-
-# Vista para mostrar el historial de ventas
-def historial_ventas(request):
-    ventas = Venta.objects.all()
-    return render(request, 'farmacia/historial_ventas.html', {'ventas': ventas})
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR / 'static']
 ```
-:::
+## 3.2 Generación de output.css
 
-Ahora vamos a crear las plantillas para mostrar los datos de los medicamentos y las ventas.
+Ahora, ejecutamos Tailwind para compilar nuestro archivo CSS:
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Medicamentos</title>
-</head>
-<body>
-    <h1>Lista de Medicamentos</h1>
-    <ul>
-        {% for medicamento in medicamentos %}
-            <li>{{ medicamento.nombre }} - {{ medicamento.precio }}</li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
-```
-En la plantilla anterior, utilizamos la etiqueta **{% for %}** para recorrer la lista de medicamentos y mostrar el nombre y el precio de cada uno. También utilizamos las variables **medicamento.nombre** y **medicamento.precio** para acceder a los datos de cada medicamento.
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle de Medicamento</title>
-</head>
-<body>
-    <h1>Detalle de Medicamento</h1>
-    <p><strong>Nombre:</strong> {{ medicamento.nombre }}</p>
-    <p><strong>Precio:</strong> {{ medicamento.precio }}</p>
-    <p><strong>Existencias:</strong> {{ medicamento.existencias }}</p>
-</body>
-</html>
+```bash
+tailwindcss -i ./static/css/style.css -o ./static/css/output.css --watch
 ```
 
-En la plantilla anterior, utilizamos las variables **medicamento.nombre**, **medicamento.precio** y **medicamento.existencias** para mostrar los datos del medicamento seleccionado.
+Este comando toma el archivo **style.css**, lo procesa con Tailwind y genera el archivo output.css que se incluirá en nuestras plantillas HTML.
 
-Otras plantillas que se pueden crear son:
+# 4. Estructura de Archivos Final
 
-- **realizar_venta.html**: Plantilla para el formulario de venta.
-- **historial_ventas.html**: Plantilla para mostrar el historial de ventas.
+Tu estructura de archivos debe verse así:
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Realizar Venta</title>
-</head>
-<body>
-    <h1>Realizar Venta</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Realizar Venta</button>
-    </form>
-</body>
-</html>
+```plaintext
+farmacia
+├── templates
+│   └── farmacia
+│       ├── base.html
+│       ├── crear_medicamento.html
+│       ├── detalle_medicamento.html
+│       ├── editar_medicamento.html
+│       ├── eliminar_medicamento.html
+│       └── lista_medicamentos.html
+├── static
+│   └── css
+│       ├── output.css
+│       └── style.css
+├── tailwind.config.js
+├── manage.py
+├── requirements.txt
+└── settings.py
 ```
+# Conclusión
 
-En la plantilla anterior, utilizamos la etiqueta **{% csrf_token %}** para proteger el formulario contra ataques de falsificación de solicitudes entre sitios (CSRF). También utilizamos la variable **form.as_p** para renderizar el formulario de venta en la página web.
+Con esta configuración hemos logrado:
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historial de Ventas</title>
-</head>
-<body>
-    <h1>Historial de Ventas</h1>
-    <ul>
-        {% for venta in ventas %}
-            <li>{{ venta.medicamento }} - {{ venta.cantidad }} - {{ venta.fecha }}</li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
-```
+- Usar herencia de plantillas para evitar la repetición de código en las páginas de la aplicación.
+- Integrar Tailwind CSS para mejorar el diseño de las páginas.
+- Configurar archivos estáticos en Django y generar el archivo CSS utilizando Tailwind.
 
-En la plantilla anterior, utilizamos la etiqueta **{% for %}** para recorrer la lista de ventas y mostrar el medicamento, la cantidad y la fecha de cada venta.
-
-# Actividades
-
-1. Crear una plantilla para mostrar la lista de farmacias.
-2. Crear una plantilla para mostrar el detalle de una farmacia.
-3. Crear una plantilla para el formulario de creación de una nueva farmacia.
-4. Crear una plantilla para el formulario de edición de una farmacia.
-5. Crear una plantilla para mostrar el historial de ventas de una farmacia.
-
-<details>
-  <summary>Posible solución</summary>
-
-1. Crear una plantilla para mostrar la lista de farmacias.
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Farmacias</title>
-</head>
-<body>
-    <h1>Lista de Farmacias</h1>
-    <ul>
-        {% for farmacia in farmacias %}
-            <li>{{ farmacia.nombre }} - {{ farmacia.direccion }}</li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
-```
-
-2. Crear una plantilla para mostrar el detalle de una farmacia.
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle de Farmacia</title>
-</head>
-<body>
-    <h1>Detalle de Farmacia</h1>
-    <p><strong>Nombre:</strong> {{ farmacia.nombre }}</p>
-    <p><strong>Dirección:</strong> {{ farmacia.direccion }}</p>
-    <p><strong>Teléfono:</strong> {{ farmacia.telefono }}</p>
-    <p><strong>Email:</strong> {{ farmacia.email }}</p>
-</body>
-</html>
-```
-
-3. Crear una plantilla para el formulario de creación de una nueva farmacia.
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear Farmacia</title>
-</head>
-<body>
-    <h1>Crear Farmacia</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Crear Farmacia</button>
-    </form>
-</body>
-</html>
-```
-
-4. Crear una plantilla para el formulario de edición de una farmacia.
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Farmacia</title>
-</head>
-<body>
-    <h1>Editar Farmacia</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Guardar Cambios</button>
-    </form>
-</body>
-</html>
-```
-
-5. Crear una plantilla para mostrar el historial de ventas de una farmacia.
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historial de Ventas</title>
-</head>
-<body>
-    <h1>Historial de Ventas</h1>
-    <ul>
-        {% for venta in ventas %}
-            <li>{{ venta.medicamento }} - {{ venta.cantidad }} - {{ venta.fecha }}</li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
-```
-
-</details>
-
-# Conclusiones
-
-En este capítulo aprendimos a crear plantillas en Django para mostrar la información de las aplicaciones. Utilizamos el motor de plantillas Jinja2 para renderizar las plantillas y acceder a los datos de la base de datos. También aprendimos a crear vistas en Django para asociar las plantillas a las URL de la aplicación.
+Esta configuración asegura una aplicación con un diseño moderno y bien estructurado, facilitando la reutilización de código y mejorando la experiencia del desarrollo en Django.
 :::

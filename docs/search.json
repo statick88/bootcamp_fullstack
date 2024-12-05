@@ -1507,6 +1507,17 @@
     ]
   },
   {
+    "objectID": "unidades/unidad7/6_vistas.html#modelos-y-formularios",
+    "href": "unidades/unidad7/6_vistas.html#modelos-y-formularios",
+    "title": "Vistas, Templates y Rutas en Django",
+    "section": "Modelos y Formularios",
+    "text": "Modelos y Formularios\nPara este tutorial, se reutilizan los siguientes modelos y formularios:\n\n\n\n\n\n\nTip\n\n\n\n\nModelos (models.py)\n\nfrom django.db import models\n\nclass Medicamento(models.Model):\n    nombre = models.CharField(max_length=100)\n    precio = models.DecimalField(max_digits=10, decimal_places=2)\n    existencias = models.IntegerField()\n    lugar = models.CharField(max_length=100)\n    fecha = models.DateTimeField(auto_now=True)\n\n    def __str__(self):\n        return self.nombre\n\nclass Venta(models.Model):\n    medicamento = models.ForeignKey(Medicamento, on_delete=models.CASCADE)\n    cantidad = models.IntegerField()\n    fecha = models.DateTimeField(auto_now=True)\n\n    def __str__(self):\n        return f\"{self.medicamento.nombre} - {self.cantidad} unidades\"\n\n\n\n\n\n\n\n\nTip\n\n\n\n\nFormularios (forms.py)\n\nfrom django import forms\nfrom .models import Medicamento, Venta\n\nclass ContactForm(forms.Form):\n    nombre = forms.CharField(label='Nombre', max_length=100)\n    email = forms.EmailField(label='Email', max_length=100)\n    mensaje = forms.EmailField(label='Mensaje', widget=forms.Textarea)\n\nclass MedicamentoForm(forms.ModelForm):\n    class Meta:\n        model = Medicamento\n        fields = ['nombre', 'precio', 'existencias', 'lugar']\n\nclass VentaForm(forms.ModelForm):\n    class Meta:\n        model = Venta\n        fields = ['medicamento','cantidad']\nfrom django import forms\nfrom .models import Medicamento",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Vistas, Templates y Rutas en Django</span>"
+    ]
+  },
+  {
     "objectID": "unidades/unidad7/6_vistas.html#vista",
     "href": "unidades/unidad7/6_vistas.html#vista",
     "title": "Vistas, Templates y Rutas en Django",
@@ -1650,33 +1661,11 @@
     ]
   },
   {
-    "objectID": "unidades/unidad7/6_vistas.html#template-4",
-    "href": "unidades/unidad7/6_vistas.html#template-4",
-    "title": "Vistas, Templates y Rutas en Django",
-    "section": "Template",
-    "text": "Template\n\nNo se necesita un template para esta vista.",
-    "crumbs": [
-      "Unidad 7: Frameworks en Python",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Vistas, Templates y Rutas en Django</span>"
-    ]
-  },
-  {
     "objectID": "unidades/unidad7/6_vistas.html#ruta-4",
     "href": "unidades/unidad7/6_vistas.html#ruta-4",
     "title": "Vistas, Templates y Rutas en Django",
     "section": "Ruta",
     "text": "Ruta\n1path('medicamentos/eliminar/&lt;int:id&gt;/', views.eliminar_medicamento, name='eliminar_medicamento'),\n\n1\n\nDefine la ruta para eliminar un medicamento existente.\n\n\nEn esta ruta, se llama a la función eliminar_medicamento para eliminar un medicamento en la URL /medicamentos/eliminar/id/.",
-    "crumbs": [
-      "Unidad 7: Frameworks en Python",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Vistas, Templates y Rutas en Django</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/unidad7/6_vistas.html#probar-las-vistas",
-    "href": "unidades/unidad7/6_vistas.html#probar-las-vistas",
-    "title": "Vistas, Templates y Rutas en Django",
-    "section": "Probar las Vistas",
-    "text": "Probar las Vistas\n\nInicia el servidor:\n\npython manage.py runserver\nNavega a:\n\nLista de Medicamentos: http://localhost:8000/medicamentos/\nDetalle de Medicamento: http://localhost:8000/medicamentos/1/ (reemplaza 1 por un ID válido).\nCrear Medicamento: http://localhost:8000/medicamentos/nuevo/.\nEditar Medicamento: http://localhost:8000/medicamentos/editar/1/ (reemplaza 1 por un ID válido).\nEliminar Medicamento: http://localhost:8000/medicamentos/eliminar/1/ (reemplaza 1 por un ID válido).",
     "crumbs": [
       "Unidad 7: Frameworks en Python",
       "<span class='chapter-number'>35</span>  <span class='chapter-title'>Vistas, Templates y Rutas en Django</span>"
@@ -2983,25 +2972,124 @@
     "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
   },
   {
-    "objectID": "unidades/unidad7/6_vistas.html",
-    "href": "unidades/unidad7/6_vistas.html",
-    "title": ":::{.justify}",
+    "objectID": "unidades/unidad7/7_templates.html",
+    "href": "unidades/unidad7/7_templates.html",
+    "title": "Sistema de Herencia de PlantiLLas, Tailwindcss y Archivos Estáticos.",
     "section": "",
-    "text": "Vistas, Templates y Rutas en Django\nEn este capítulo aprenderás a implementar las vistas, templates y rutas principales de una aplicación de farmacia en Django. Estos pasos son esenciales para que la aplicación sea funcional y permita operaciones CRUD básicas sobre los medicamentos.",
+    "text": "1. Herencia de Plantillas\nEn este capítulo, vamos a mejorar la estructura de plantillas de nuestra aplicación de Farmacia, aprovechando el sistema de herencia de plantillas de Django, la integración de Tailwind CSS, la generación del directorio static/ y su configuración en settings.py.\nEl objetivo es mejorar el diseño de nuestras plantillas HTML mediante el uso de Tailwind CSS y organizar mejor el código, aprovechando la herencia de plantillas. También aseguraremos que todos los archivos estáticos se generen correctamente.\nEn Django, podemos usar un sistema de herencia de plantillas para evitar repetir el mismo código en varias vistas. En este caso, crearemos un archivo base, base.html, que servirá como plantilla común para todas nuestras páginas. Las otras plantillas heredarán de este archivo.\nEste archivo contiene las partes comunes de la página, como el encabezado, el pie de página y el bloque de contenido principal, que puede ser reemplazado por cada plantilla específica.",
     "crumbs": [
       "Unidad 7: Frameworks en Python",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>:::{.justify}</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Sistema de Herencia de PlantiLLas, Tailwindcss y Archivos Estáticos.</span>"
     ]
   },
   {
-    "objectID": "unidades/unidad7/6_vistas.html#modelos-y-formularios",
-    "href": "unidades/unidad7/6_vistas.html#modelos-y-formularios",
-    "title": "Vistas, Templates y Rutas en Django",
-    "section": "Modelos y Formularios",
-    "text": "Modelos y Formularios\nPara este tutorial, se reutilizan los siguientes modelos y formularios:\n\n\n\n\n\n\nTip\n\n\n\n\nModelos (models.py)\n\nfrom django.db import models\n\nclass Medicamento(models.Model):\n    nombre = models.CharField(max_length=100)\n    precio = models.DecimalField(max_digits=10, decimal_places=2)\n    existencias = models.IntegerField()\n    lugar = models.CharField(max_length=100)\n    fecha = models.DateTimeField(auto_now=True)\n\n    def __str__(self):\n        return self.nombre\n\nclass Venta(models.Model):\n    medicamento = models.ForeignKey(Medicamento, on_delete=models.CASCADE)\n    cantidad = models.IntegerField()\n    fecha = models.DateTimeField(auto_now=True)\n\n    def __str__(self):\n        return f\"{self.medicamento.nombre} - {self.cantidad} unidades\"\n\n\n\n\n\n\n\n\nTip\n\n\n\n\nFormularios (forms.py)\n\nfrom django import forms\nfrom .models import Medicamento, Venta\n\nclass ContactForm(forms.Form):\n    nombre = forms.CharField(label='Nombre', max_length=100)\n    email = forms.EmailField(label='Email', max_length=100)\n    mensaje = forms.EmailField(label='Mensaje', widget=forms.Textarea)\n\nclass MedicamentoForm(forms.ModelForm):\n    class Meta:\n        model = Medicamento\n        fields = ['nombre', 'precio', 'existencias', 'lugar']\n\nclass VentaForm(forms.ModelForm):\n    class Meta:\n        model = Venta\n        fields = ['medicamento','cantidad']\nfrom django import forms\nfrom .models import Medicamento",
+    "objectID": "unidades/unidad7/7_templates.html#otras-plantillas",
+    "href": "unidades/unidad7/7_templates.html#otras-plantillas",
+    "title": "Sistema de Herencia de PlantiLLas, Tailwindcss y Archivos Estáticos.",
+    "section": "Otras Plantillas",
+    "text": "Otras Plantillas\nAhora vamos a modificar cada una de las plantillas para que hereden de base.html y reemplacen el bloque de contenido principal con su propio contenido.\n\n1. crear_medicamento.html:\n{% extends 'base.html' %} {% block title %}Nuevo Medicamento{% endblock %} \n{% block content %}\n&lt;h2 class=\"text-xl font-semibold mb-4\"&gt;Nuevo Medicamento&lt;/h2&gt;\n\n{% if messages %}\n&lt;div class=\"mb-4\"&gt;\n  {% for message in messages %} {% if message.tags == 'error' %}\n  &lt;div class=\"bg-red-500 text-white p-3 rounded mb-2\"&gt;{{ message }}&lt;/div&gt;\n  {% else %}\n  &lt;div class=\"bg-green-500 text-white p-3 rounded mb-2\"&gt;{{ message }}&lt;/div&gt;\n  {% endif %} {% endfor %}\n&lt;/div&gt;\n{% endif %}\n\n&lt;form method=\"POST\"&gt;\n  {% csrf_token %} {{ form.as_p }}\n\n  &lt;button\n    type=\"submit\"\n    class=\"bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600\"\n  &gt;\n    Guardar\n  &lt;/button&gt;\n&lt;/form&gt;\n\n&lt;a\n  href=\"{% url 'lista_medicamentos' %}\"\n  class=\"mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600\"\n&gt;\n  Volver\n&lt;/a&gt;\n{% endblock %}\nEn este archivo, hemos reemplazado el bloque de contenido principal con el formulario para crear un nuevo medicamento. También hemos agregado un bloque para mostrar mensajes de error o éxito.",
     "crumbs": [
       "Unidad 7: Frameworks en Python",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Vistas, Templates y Rutas en Django</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Sistema de Herencia de PlantiLLas, Tailwindcss y Archivos Estáticos.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad7/7_templates.html#instalación-de-tailwind-css",
+    "href": "unidades/unidad7/7_templates.html#instalación-de-tailwind-css",
+    "title": "Sistema de Herencia de PlantiLLas, Tailwindcss y Archivos Estáticos.",
+    "section": "2.1 Instalación de Tailwind CSS",
+    "text": "2.1 Instalación de Tailwind CSS\nLo primero que necesitamos es instalar Tailwind CSS globalmente en nuestro sistema. Para ello, utilizaremos npm, el gestor de paquetes de Node.js.\n\nInstala Tailwind CSS globalmente utilizando npm:\n\nnpm install -g tailwindcss\nAhora es necesario generar un archivo de configuración de Tailwind CSS. Para ello, ejecutamos el siguiente comando en la raíz de nuestro proyecto:\nnpx tailwindcss init\nCon el comando anterior se generará un archivo tailwind.config.js en la raíz de nuestro proyecto. Este archivo es necesario para configurar Tailwind CSS y definir las rutas de los archivos HTML y CSS en los que se utilizarán las clases de Tailwind.",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Sistema de Herencia de PlantiLLas, Tailwindcss y Archivos Estáticos.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad7/7_templates.html#configuración-de-tailwind-en-django",
+    "href": "unidades/unidad7/7_templates.html#configuración-de-tailwind-en-django",
+    "title": "Sistema de Herencia de PlantiLLas, Tailwindcss y Archivos Estáticos.",
+    "section": "2.2 Configuración de Tailwind en Django",
+    "text": "2.2 Configuración de Tailwind en Django\nAhora, configuramos Tailwind CSS en nuestra aplicación Django. Los archivos generados estarán dentro de la carpeta static, por lo que debemos asegurarnos de que Django sirva estos archivos correctamente.\nstatic/css/style.css\n\nAquí configuramos Tailwind para que lo utilice en nuestras plantillas:\n\n@tailwind base;\n@tailwind components;\n@tailwind utilities;",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Sistema de Herencia de PlantiLLas, Tailwindcss y Archivos Estáticos.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad7/7_templates.html#configuración-del-archivo-tailwind.config.js",
+    "href": "unidades/unidad7/7_templates.html#configuración-del-archivo-tailwind.config.js",
+    "title": "Sistema de Herencia de PlantiLLas, Tailwindcss y Archivos Estáticos.",
+    "section": "2.3 Configuración del archivo tailwind.config.js",
+    "text": "2.3 Configuración del archivo tailwind.config.js\nEste archivo es necesario para configurar las rutas de las plantillas HTML y los archivos CSS en los que Tailwind debe buscar clases CSS dinámicas.\nmodule.exports = {\n  content: [\n    \"./farmacia/templates/**/*.html\", // Ruta a tus plantillas HTML\n    \"./static/js/**/*.js\", // Si usas JS que contiene clases dinámicas\n    \"./static/css/**/*.css\", // Si tienes más archivos CSS\n  ],\n  theme: {\n    extend: {},\n  },\n  plugins: [],\n};",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Sistema de Herencia de PlantiLLas, Tailwindcss y Archivos Estáticos.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad7/7_templates.html#configuración-en-settings.py",
+    "href": "unidades/unidad7/7_templates.html#configuración-en-settings.py",
+    "title": "Sistema de Herencia de PlantiLLas, Tailwindcss y Archivos Estáticos.",
+    "section": "3.1 Configuración en settings.py",
+    "text": "3.1 Configuración en settings.py\nEn settings.py, aseguramos que Django pueda servir archivos estáticos correctamente. Aquí está una parte de la configuración relevante:\n# settings.py\nimport os\nfrom pathlib import Path\n\nBASE_DIR = Path(__file__).resolve().parent.parent\n'''\nConfiguración de templates\n'''\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [os.path.join(BASE_DIR, 'farmacia/templates/farmacia')],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',\n                'django.contrib.messages.context_processors.messages',\n            ],\n        },\n    },\n]\n\n'''\nConfiguración de archivos estáticos\n'''\n\nSTATIC_URL = 'static/'\nSTATICFILES_DIRS = [BASE_DIR / 'static']",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Sistema de Herencia de PlantiLLas, Tailwindcss y Archivos Estáticos.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad7/7_templates.html#generación-de-output.css",
+    "href": "unidades/unidad7/7_templates.html#generación-de-output.css",
+    "title": "Sistema de Herencia de PlantiLLas, Tailwindcss y Archivos Estáticos.",
+    "section": "3.2 Generación de output.css",
+    "text": "3.2 Generación de output.css\nAhora, ejecutamos Tailwind para compilar nuestro archivo CSS:\ntailwindcss -i ./static/css/style.css -o ./static/css/output.css --watch\nEste comando toma el archivo style.css, lo procesa con Tailwind y genera el archivo output.css que se incluirá en nuestras plantillas HTML.",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Sistema de Herencia de PlantiLLas, Tailwindcss y Archivos Estáticos.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad7/7_templates.html#detalle_medicamento.html",
+    "href": "unidades/unidad7/7_templates.html#detalle_medicamento.html",
+    "title": "Sistema de Herencia de PlantiLLas, Tailwindcss y Archivos Estáticos.",
+    "section": "2. detalle_medicamento.html:",
+    "text": "2. detalle_medicamento.html:\n{% extends 'base.html' %} {% block title %}Detalle del Medicamento{% endblock %}\n{% block content %}\n&lt;h2 class=\"text-xl font-semibold mb-4\"&gt;Detalle del Medicamento&lt;/h2&gt;\n&lt;p&gt;&lt;strong&gt;Nombre:&lt;/strong&gt; {{ medicamento.nombre }}&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Precio:&lt;/strong&gt; ${{ medicamento.precio }}&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Existencias:&lt;/strong&gt; {{ medicamento.existencias }}&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Lugar:&lt;/strong&gt; {{ medicamento.lugar }}&lt;/p&gt;\n&lt;a\n  href=\"{% url 'lista_medicamentos' %}\"\n  class=\"mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600\"\n  &gt;Volver&lt;/a\n&gt;\n{% endblock %}\nEn este archivo, hemos reemplazado el bloque de contenido principal con los detalles del medicamento y un enlace para volver a la lista de medicamentos.",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Sistema de Herencia de PlantiLLas, Tailwindcss y Archivos Estáticos.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad7/7_templates.html#lista_medicamentos.html",
+    "href": "unidades/unidad7/7_templates.html#lista_medicamentos.html",
+    "title": "Sistema de Herencia de PlantiLLas, Tailwindcss y Archivos Estáticos.",
+    "section": "3. lista_medicamentos.html:",
+    "text": "3. lista_medicamentos.html:\n{% extends 'base.html' %} {% block title %}Lista de Medicamentos{% endblock %}\n{% block content %}\n&lt;h2 class=\"text-xl font-semibold mb-4\"&gt;Lista de Medicamentos&lt;/h2&gt;\n&lt;table class=\"table-auto w-full border-collapse border border-gray-300\"&gt;\n  &lt;thead&gt;\n    &lt;tr class=\"bg-gray-200\"&gt;\n      &lt;th class=\"border border-gray-300 px-4 py-2\"&gt;Nombre&lt;/th&gt;\n      &lt;th class=\"border border-gray-300 px-4 py-2\"&gt;Precio&lt;/th&gt;\n      &lt;th class=\"border border-gray-300 px-4 py-2\"&gt;Acciones&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;\n    {% for medicamento in medicamentos %}\n    &lt;tr&gt;\n      &lt;td class=\"border border-gray-300 px-4 py-2\"&gt;{{ medicamento.nombre }}&lt;/td&gt;\n      &lt;td class=\"border border-gray-300 px-4 py-2\"&gt;\n        ${{ medicamento.precio }}\n      &lt;/td&gt;\n      &lt;td class=\"border border-gray-300 px-4 py-2\"&gt;\n        &lt;a\n          href=\"{% url 'detalle_medicamento' medicamento.id %}\"\n          class=\"text-blue-500 hover:underline\"\n          &gt;Ver&lt;/a\n        &gt;\n        &lt;a\n          href=\"{% url 'editar_medicamento' medicamento.id %}\"\n          class=\"text-yellow-500 hover:underline\"\n          &gt;Editar&lt;/a\n        &gt;\n        &lt;a\n          href=\"{% url 'eliminar_medicamento' medicamento.id %}\"\n          class=\"text-red-500 hover:underline\"\n          &gt;Eliminar&lt;/a\n        &gt;\n      &lt;/td&gt;\n    &lt;/tr&gt;\n    {% endfor %}\n  &lt;/tbody&gt;\n&lt;/table&gt;\n&lt;a\n  href=\"{% url 'crear_medicamento' %}\"\n  class=\"mt-4 inline-block bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600\"\n  &gt;Crear Medicamento&lt;/a\n&gt;\n{% endblock %}\nEn este archivo, hemos reemplazado el bloque de contenido principal con una tabla que muestra la lista de medicamentos y enlaces para ver, editar o eliminar cada medicamento.",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Sistema de Herencia de PlantiLLas, Tailwindcss y Archivos Estáticos.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad7/7_templates.html#eliminar_medicamento.html",
+    "href": "unidades/unidad7/7_templates.html#eliminar_medicamento.html",
+    "title": "Sistema de Herencia de PlantiLLas, Tailwindcss y Archivos Estáticos.",
+    "section": "4. eliminar_medicamento.html:",
+    "text": "4. eliminar_medicamento.html:\n{% extends 'base.html' %} {% block title %}Confirmar Eliminación{% endblock %}\n{% block content %}\n&lt;h2 class=\"text-xl font-semibold text-red-600 mb-4\"&gt;\n  ¿Estás seguro de que deseas eliminar este medicamento?\n&lt;/h2&gt;\n&lt;p class=\"mb-4\"&gt;&lt;strong&gt;{{ medicamento.nombre }}&lt;/strong&gt;&lt;/p&gt;\n&lt;form method=\"post\"&gt;\n  {% csrf_token %}\n  &lt;button\n    type=\"submit\"\n    class=\"bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600\"\n  &gt;\n    Eliminar\n  &lt;/button&gt;\n  &lt;a\n    href=\"{% url 'lista_medicamentos' %}\"\n    class=\"ml-4 bg-gray-500 text-white py-2 px-4 rounded hover:bg-gray-600\"\n    &gt;Cancelar&lt;/a\n  &gt;\n&lt;/form&gt;\n{% endblock %}\nEn este archivo, hemos reemplazado el bloque de contenido principal con un mensaje de confirmación para eliminar un medicamento y botones para confirmar o cancelar la acción.",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Sistema de Herencia de PlantiLLas, Tailwindcss y Archivos Estáticos.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad7/7_templates.html#editar_medicamento.html",
+    "href": "unidades/unidad7/7_templates.html#editar_medicamento.html",
+    "title": "Sistema de Herencia de PlantiLLas, Tailwindcss y Archivos Estáticos.",
+    "section": "4. editar_medicamento.html:",
+    "text": "4. editar_medicamento.html:\n{% extends 'base.html' %} {% block title %}Editar Medicamento{% endblock %} \n{% block content %}\n&lt;h2 class=\"text-2xl font-semibold mb-4\"&gt;Editar Medicamento&lt;/h2&gt;\n&lt;form method=\"post\" class=\"bg-white p-6 rounded shadow-md\"&gt;\n  {% csrf_token %} {{ form.as_p }}\n  &lt;button\n    type=\"submit\"\n    class=\"bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600\"\n  &gt;\n    Guardar\n  &lt;/button&gt;\n&lt;/form&gt;\n&lt;a\n  href=\"{% url 'lista_medicamentos' %}\"\n  class=\"text-blue-500 hover:underline mt-4 inline-block\"\n  &gt;Volver a la lista&lt;/a\n&gt;\n{% endblock %}",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Sistema de Herencia de PlantiLLas, Tailwindcss y Archivos Estáticos.</span>"
     ]
   }
 ]
