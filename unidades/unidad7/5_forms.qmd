@@ -1,4 +1,5 @@
 :::{.justify}
+
 # Forms en Django
 
 Los formularios en Django son una parte fundamental de cualquier aplicación web. Permiten a los usuarios enviar datos al servidor y procesarlos de manera eficiente. En este tutorial, aprenderemos cómo crear formularios en Django y cómo procesarlos en las vistas.
@@ -7,7 +8,7 @@ Los formularios en Django son una parte fundamental de cualquier aplicación web
 
 Para crear un formulario en Django, primero debemos definir una clase que herede de **forms.Form** o **forms.ModelForm**. A continuación, definimos los campos del formulario como atributos de la clase. Por ejemplo, el siguiente formulario permite a los usuarios enviar un mensaje de contacto:
 
-:::{.callout-info}
+:::{.callout-tip}
 Recordemos los modelos creados en la sección anterior:
 
 ```python
@@ -32,6 +33,7 @@ class Venta(models.Model):
 :::
 
 Para crear un formulario de contacto, podemos hacer lo siguiente:
+
 ```python
 from django import forms #<1>
 from .models import Medicamento, Venta #<2>
