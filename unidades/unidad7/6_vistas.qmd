@@ -93,6 +93,7 @@ from . import views
 urlpatterns = [
     path('medicamentos/', views.lista_medicamentos, name='lista_medicamentos'),
 ]
+```
 
 :::{.callout-tip}
 Es necesario conectar las URLs de la aplicación **farmacia** con las URLs del proyecto en **urls.py** del proyecto.
@@ -194,6 +195,80 @@ def crear_medicamento(request):
 
 ```python
 path('medicamentos/nuevo/', views.crear_medicamento, name='crear_medicamento'),
+```
+
+# Paso 4. Editar un Medicamento
+
+## Vista
+
+- En **views.py**:
+
+```python
+def editar_medicamento(request, id):
+    medicamento = get_object_or_404(Medicamento, id=id)
+    if request.method == 'POST':
+        form = MedicamentoForm(request.POST, instance=medicamento)
+        if form.is_valid():
+            form.save()
+            return redirect('lista_medicamentos')
+    else:
+        form = MedicamentoForm(instance=medicamento)
+    return render(request, 'farmacia/editar_medicamento.html', {'form': form})
+```
+
+## Template
+
+- Crea **templates/farmacia/editar_medicamento.html**:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Medicamento</title>
+</head>
+<body>
+    <h1>Editar Medicamento</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+    <a href="{% url 'lista_medicamentos' %}">Volver a la lista</a>
+</body>
+</html>
+```
+
+## Ruta
+
+- Agrega la ruta en **urls.py**:
+
+```python
+path('medicamentos/editar/<int:id>/', views.editar_medicamento, name='editar_medicamento'),
+```
+
+# Paso 5. Eliminar un Medicamento
+
+## Vista
+
+- En **views.py**:
+
+```python
+def eliminar_medicamento(request, id):
+    medicamento = get_object_or_404(Medicamento, id=id)
+    medicamento.delete()
+    return redirect('lista_medicamentos')
+```
+
+## Template
+
+- No se necesita un template para esta vista.
+
+## Ruta
+
+- Agrega la ruta en **urls.py**:
+
+```python
+path('medicamentos/eliminar/<int:id>/', views.eliminar_medicamento, name='eliminar_medicamento'),
 ```
 
 ## Probar las Vistas
