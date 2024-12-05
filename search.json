@@ -1522,7 +1522,7 @@
     "href": "unidades/unidad7/6_vistas.html#template",
     "title": "Vistas, Templates y Rutas en Django",
     "section": "Template",
-    "text": "Template\n\nCrea el archivo templates/farmacia/lista_medicamentos.html:\n\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n    &lt;title&gt;Lista de Medicamentos&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Lista de Medicamentos&lt;/h1&gt;\n    &lt;a href=\"{% url 'crear_medicamento' %}\"&gt;Añadir Medicamento&lt;/a&gt;\n    &lt;ul&gt;\n        {% for medicamento in medicamentos %}\n            &lt;li&gt;\n                {{ medicamento.nombre }} - ${{ medicamento.precio|floatformat:2 }}\n                ({{ medicamento.existencias }} disponibles)\n                &lt;a href=\"{% url 'detalle_medicamento' medicamento.id %}\"&gt;Detalles&lt;/a&gt;\n            &lt;/li&gt;\n        {% endfor %}\n    &lt;/ul&gt;\n&lt;/body&gt;\n&lt;/html&gt;",
+    "text": "Template\n\nCrea el archivo templates/farmacia/lista_medicamentos.html:\n\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n    &lt;title&gt;Lista de Medicamentos&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Lista de Medicamentos&lt;/h1&gt;\n    &lt;a href=\"{% url 'crear_medicamento' %}\"&gt;Añadir Medicamento&lt;/a&gt;\n    &lt;ul&gt;\n        {% for medicamento in medicamentos %}\n            &lt;li&gt;\n                {{ medicamento.nombre }} - ${{ medicamento.precio|floatformat:2 }}\n                ({{ medicamento.existencias }} disponibles)\n                &lt;a href=\"{% url 'detalle_medicamento' medicamento.id %}\"&gt;Detalles&lt;/a&gt;\n                &lt;a href=\"{% url 'editar_medicamento' medicamento.id %}\"&gt;Editar&lt;/a&gt;\n                &lt;a href=\"{% url 'eliminar_medicamento' medicamento.id %}\"&gt;Eliminar&lt;/a&gt;\n            &lt;/li&gt;\n        {% endfor %}\n    &lt;/ul&gt;\n&lt;/body&gt;\n&lt;/html&gt;",
     "crumbs": [
       "Unidad 7: Frameworks en Python",
       "<span class='chapter-number'>35</span>  <span class='chapter-title'>Vistas, Templates y Rutas en Django</span>"
@@ -1606,11 +1606,77 @@
     ]
   },
   {
+    "objectID": "unidades/unidad7/6_vistas.html#vista-3",
+    "href": "unidades/unidad7/6_vistas.html#vista-3",
+    "title": "Vistas, Templates y Rutas en Django",
+    "section": "Vista",
+    "text": "Vista\n\nEn views.py:\n\ndef editar_medicamento(request, id):\n    medicamento = get_object_or_404(Medicamento, id=id)\n    if request.method == 'POST':\n        form = MedicamentoForm(request.POST, instance=medicamento)\n        if form.is_valid():\n            form.save()\n            return redirect('lista_medicamentos')\n    else:\n        form = MedicamentoForm(instance=medicamento)\n    return render(request, 'farmacia/editar_medicamento.html', {'form': form})",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Vistas, Templates y Rutas en Django</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad7/6_vistas.html#template-3",
+    "href": "unidades/unidad7/6_vistas.html#template-3",
+    "title": "Vistas, Templates y Rutas en Django",
+    "section": "Template",
+    "text": "Template\n\nCrea templates/farmacia/editar_medicamento.html:\n\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n    &lt;title&gt;Editar Medicamento&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Editar Medicamento&lt;/h1&gt;\n    &lt;form method=\"post\"&gt;\n        {% csrf_token %}\n        {{ form.as_p }}\n        &lt;button type=\"submit\"&gt;Guardar&lt;/button&gt;\n    &lt;/form&gt;\n    &lt;a href=\"{% url 'lista_medicamentos' %}\"&gt;Volver a la lista&lt;/a&gt;\n&lt;/body&gt;\n&lt;/html&gt;",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Vistas, Templates y Rutas en Django</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad7/6_vistas.html#ruta-3",
+    "href": "unidades/unidad7/6_vistas.html#ruta-3",
+    "title": "Vistas, Templates y Rutas en Django",
+    "section": "Ruta",
+    "text": "Ruta\n\nAgrega la ruta en urls.py:\n\npath('medicamentos/editar/&lt;int:id&gt;/', views.editar_medicamento, name='editar_medicamento'),",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Vistas, Templates y Rutas en Django</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad7/6_vistas.html#vista-4",
+    "href": "unidades/unidad7/6_vistas.html#vista-4",
+    "title": "Vistas, Templates y Rutas en Django",
+    "section": "Vista",
+    "text": "Vista\n\nEn views.py:\n\ndef eliminar_medicamento(request, id):\n    medicamento = get_object_or_404(Medicamento, id=id)\n    medicamento.delete()\n    return redirect('lista_medicamentos')",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Vistas, Templates y Rutas en Django</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad7/6_vistas.html#template-4",
+    "href": "unidades/unidad7/6_vistas.html#template-4",
+    "title": "Vistas, Templates y Rutas en Django",
+    "section": "Template",
+    "text": "Template\n\nNo se necesita un template para esta vista.",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Vistas, Templates y Rutas en Django</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/unidad7/6_vistas.html#ruta-4",
+    "href": "unidades/unidad7/6_vistas.html#ruta-4",
+    "title": "Vistas, Templates y Rutas en Django",
+    "section": "Ruta",
+    "text": "Ruta\n\nAgrega la ruta en urls.py:\n\npath('medicamentos/eliminar/&lt;int:id&gt;/', views.eliminar_medicamento, name='eliminar_medicamento'),",
+    "crumbs": [
+      "Unidad 7: Frameworks en Python",
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Vistas, Templates y Rutas en Django</span>"
+    ]
+  },
+  {
     "objectID": "unidades/unidad7/6_vistas.html#probar-las-vistas",
     "href": "unidades/unidad7/6_vistas.html#probar-las-vistas",
     "title": "Vistas, Templates y Rutas en Django",
     "section": "Probar las Vistas",
-    "text": "Probar las Vistas\n\nInicia el servidor:\n\npython manage.py runserver\nNavega a:\n\nLista de Medicamentos: http://localhost:8000/medicamentos/\nDetalle de Medicamento: http://localhost:8000/medicamentos/1/ (reemplaza 1 por un ID válido).\nCrear Medicamento: http://localhost:8000/medicamentos/nuevo/.",
+    "text": "Probar las Vistas\n\nInicia el servidor:\n\npython manage.py runserver\nNavega a:\n\nLista de Medicamentos: http://localhost:8000/medicamentos/\nDetalle de Medicamento: http://localhost:8000/medicamentos/1/ (reemplaza 1 por un ID válido).\nCrear Medicamento: http://localhost:8000/medicamentos/nuevo/.\nEditar Medicamento: http://localhost:8000/medicamentos/editar/1/ (reemplaza 1 por un ID válido).\nEliminar Medicamento: http://localhost:8000/medicamentos/eliminar/1/ (reemplaza 1 por un ID válido).",
     "crumbs": [
       "Unidad 7: Frameworks en Python",
       "<span class='chapter-number'>35</span>  <span class='chapter-title'>Vistas, Templates y Rutas en Django</span>"
