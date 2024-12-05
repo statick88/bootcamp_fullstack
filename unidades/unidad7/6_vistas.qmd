@@ -22,7 +22,7 @@ class Medicamento(models.Model):
 
     def __str__(self):
         return self.nombre  # Devuelve el nombre del medicamento
-    
+
 class Venta(models.Model):
     medicamento = models.ForeignKey(Medicamento, on_delete=models.CASCADE)
     cantidad = models.IntegerField()
@@ -76,6 +76,8 @@ def lista_medicamentos(request):
                 {{ medicamento.nombre }} - ${{ medicamento.precio|floatformat:2 }}
                 ({{ medicamento.existencias }} disponibles)
                 <a href="{% url 'detalle_medicamento' medicamento.id %}">Detalles</a>
+                <a href="{% url 'editar_medicamento' medicamento.id %}">Editar</a>
+                <a href="{% url 'eliminar_medicamento' medicamento.id %}">Eliminar</a>
             </li>
         {% endfor %}
     </ul>
@@ -283,3 +285,6 @@ Navega a:
 - **Lista de Medicamentos**: <http://localhost:8000/medicamentos/>
 - **Detalle de Medicamento**: <http://localhost:8000/medicamentos/1/> (reemplaza 1 por un ID válido).
 - **Crear Medicamento**: <http://localhost:8000/medicamentos/nuevo/>.
+- **Editar Medicamento**: <http://localhost:8000/medicamentos/editar/1/> (reemplaza 1 por un ID válido).
+- **Eliminar Medicamento**: <http://localhost:8000/medicamentos/eliminar/1/> (reemplaza 1 por un ID válido).
+:::

@@ -613,7 +613,7 @@ Modelos y Formularios Reutilizados
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.nombre  <span class="co"># Devuelve el nombre del medicamento</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Venta(models.Model):</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    medicamento <span class="op">=</span> models.ForeignKey(Medicamento, on_delete<span class="op">=</span>models.CASCADE)</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    cantidad <span class="op">=</span> models.IntegerField()</span>
@@ -667,11 +667,13 @@ Modelos y Formularios Reutilizados
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>                {{ medicamento.nombre }} - ${{ medicamento.precio|floatformat:2 }}</span>
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>                ({{ medicamento.existencias }} disponibles)</span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"{% url 'detalle_medicamento' medicamento.id %}"</span><span class="dt">&gt;</span>Detalles<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>        {% endfor %}</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">ul</span><span class="dt">&gt;</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"{% url 'editar_medicamento' medicamento.id %}"</span><span class="dt">&gt;</span>Editar<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"{% url 'eliminar_medicamento' medicamento.id %}"</span><span class="dt">&gt;</span>Eliminar<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>        {% endfor %}</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">ul</span><span class="dt">&gt;</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="ruta" class="level2">
 <h2 class="anchored" data-anchor-id="ruta">Ruta</h2>
@@ -877,12 +879,14 @@ Tip
 <li><strong>Lista de Medicamentos</strong>: <a href="http://localhost:8000/medicamentos/" class="uri">http://localhost:8000/medicamentos/</a></li>
 <li><strong>Detalle de Medicamento</strong>: <a href="http://localhost:8000/medicamentos/1/" class="uri">http://localhost:8000/medicamentos/1/</a> (reemplaza 1 por un ID válido).</li>
 <li><strong>Crear Medicamento</strong>: <a href="http://localhost:8000/medicamentos/nuevo/" class="uri">http://localhost:8000/medicamentos/nuevo/</a>.</li>
+<li><strong>Editar Medicamento</strong>: <a href="http://localhost:8000/medicamentos/editar/1/" class="uri">http://localhost:8000/medicamentos/editar/1/</a> (reemplaza 1 por un ID válido).</li>
+<li><strong>Eliminar Medicamento</strong>: <a href="http://localhost:8000/medicamentos/eliminar/1/" class="uri">http://localhost:8000/medicamentos/eliminar/1/</a> (reemplaza 1 por un ID válido).</li>
 </ul>
-
-
 </section>
 </section>
 </div>
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
