@@ -1,14 +1,15 @@
 :::{.justify}
 # Vistas, Templates y Rutas en Django
 
-En este capítulo, aprenderemos cómo crear vistas, templates y rutas en Django. Las vistas procesan las solicitudes HTTP y devuelven respuestas. Los templates generan la interfaz de usuario, y las rutas definen las URLs para acceder a las vistas.
+En este capítulo aprenderás a implementar las **vistas**, **templates** y **rutas** principales de una aplicación de farmacia en Django. Estos pasos son esenciales para que la aplicación sea funcional y permita operaciones **CRUD** básicas sobre los medicamentos.
+
+## Modelos y Formularios
+
+Para este tutorial, se reutilizan los siguientes modelos y formularios:
 
 :::{.callout-tip}
-## Modelos y Formularios Reutilizados
 
-- Usaremos los modelos y formularios creados previamente:
-
-### Modelos (models.py):
+- Modelos (**models.py**)
 
 ```python
 from django.db import models
@@ -21,7 +22,7 @@ class Medicamento(models.Model):
     fecha = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.nombre  # Devuelve el nombre del medicamento
+        return self.nombre
 
 class Venta(models.Model):
     medicamento = models.ForeignKey(Medicamento, on_delete=models.CASCADE)
@@ -29,37 +30,62 @@ class Venta(models.Model):
     fecha = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"{self.medicamento.nombre} - {self.cantidad} unidades"  # Muestra el nombre del medicamento y la cantidad vendida
+        return f"{self.medicamento.nombre} - {self.cantidad} unidades"
 ```
-### Formularios (forms.py):
+:::
 
+:::{.callout-tip}
+
+- Formularios (**forms.py**)
 ```python
 from django import forms
 from .models import Medicamento, Venta
 
+class ContactForm(forms.Form):
+    nombre = forms.CharField(label='Nombre', max_length=100)
+    email = forms.EmailField(label='Email', max_length=100)
+    mensaje = forms.EmailField(label='Mensaje', widget=forms.Textarea)
+
 class MedicamentoForm(forms.ModelForm):
     class Meta:
         model = Medicamento
-        fields = ['nombre', 'precio', 'existencias']
+        fields = ['nombre', 'precio', 'existencias', 'lugar']
+
+class VentaForm(forms.ModelForm):
+    class Meta:
+        model = Venta
+        fields = ['medicamento','cantidad']
+from django import forms
+from .models import Medicamento
 ```
 :::
+
 # Paso 1: Mostrar la Lista de Medicamentos
 
 ## Vista
 
-- En **views.py**:
+- Agrega la siguiente función en **views.py**:
 
 ```python
-from django.shortcuts import render
-from .models import Medicamento
+from django.shortcuts import render #<1>
+from .models import Medicamento #<2>
 
-def lista_medicamentos(request):
-    medicamentos = Medicamento.objects.all()
-    return render(request, 'farmacia/lista_medicamentos.html', {'medicamentos': medicamentos})
+def lista_medicamentos(request): #<3>
+    medicamentos = Medicamento.objects.all() #<4>
+    return render(request, 'farmacia/lista_medicamentos.html', {'medicamentos': medicamentos}) #<5>
 ```
+
+1. Importa la función **render**.
+2. Importa el modelo **Medicamento**.
+3. Define la función **lista_medicamentos**.
+4. Obtiene todos los medicamentos.
+5. Renderiza el template **lista_medicamentos.html** con la lista de medicamentos.
+
+En esta función, se obtienen todos los medicamentos de la base de datos y se pasan al template para mostrarlos en una lista.
+
 ## Template
 
-- Crea el archivo templates/farmacia/lista_medicamentos.html:
+- Crea el archivo **templates/farmacia/lista_medicamentos.html**:
 
 ```html
 <!DOCTYPE html>
@@ -69,61 +95,68 @@ def lista_medicamentos(request):
 </head>
 <body>
     <h1>Lista de Medicamentos</h1>
-    <a href="{% url 'crear_medicamento' %}">Añadir Medicamento</a>
+    <a href="{% url 'crear_medicamento' %}">Añadir Medicamento</a> <!-- <1> -->
     <ul>
-        {% for medicamento in medicamentos %}
-            <li>
-                {{ medicamento.nombre }} - ${{ medicamento.precio|floatformat:2 }}
-                ({{ medicamento.existencias }} disponibles)
-                <a href="{% url 'detalle_medicamento' medicamento.id %}">Detalles</a>
-                <a href="{% url 'editar_medicamento' medicamento.id %}">Editar</a>
-                <a href="{% url 'eliminar_medicamento' medicamento.id %}">Eliminar</a>
-            </li>
-        {% endfor %}
+        {% for medicamento in medicamentos %} <!-- <2> -->
+        <li>
+            {{ medicamento.nombre }} - ${{ medicamento.precio }} <!-- <3> -->
+            ({{ medicamento.existencias }} disponibles) <!-- <4> -->
+            <a href="{% url 'detalle_medicamento' medicamento.id %}">Detalles</a> <!-- <5> -->
+            <a href="{% url 'editar_medicamento' medicamento.id %}">Editar</a> <!-- <6> -->
+            <a href="{% url 'eliminar_medicamento' medicamento.id %}">Eliminar</a> <!-- <7> -->
+        </li>
+        {% endfor %} <!-- <8> -->
     </ul>
 </body>
 </html>
 ```
+1. Enlace para crear un nuevo medicamento.
+2. Itera sobre la lista de medicamentos.
+3. Muestra el nombre y precio del medicamento.
+4. Muestra las existencias disponibles.
+5. Enlace para ver los detalles del medicamento.
+6. Enlace para editar el medicamento.
+7. Enlace para eliminar el medicamento.
+
+En este template, se muestra una lista de medicamentos con enlaces para ver los detalles, editar y eliminar
+
 ## Ruta
 
-- En **urls.py** de la aplicación **farmacia**:
+- En el archivo **urls.py** de la aplicación:
 
 ```python
 from django.urls import path
-from . import views
+from . import views #<1>
 
 urlpatterns = [
-    path('medicamentos/', views.lista_medicamentos, name='lista_medicamentos'),
+    path('medicamentos/', views.lista_medicamentos, name='lista_medicamentos'), #<2>
 ]
 ```
+1. Importa las vistas.
+2. Define la ruta para mostrar la lista de medicamentos.
 
-:::{.callout-tip}
-Es necesario conectar las URLs de la aplicación **farmacia** con las URLs del proyecto en **urls.py** del proyecto.
-
-```python
-from django.contrib import admin
-from django.urls import path, include
-from farmacia import urls
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('farmacia.urls')),
-]
-```
-:::
+En esta ruta, se llama a la función **lista_medicamentos** para mostrar la lista de medicamentos en la URL **/medicamentos/**.
 
 # Paso 2: Mostrar el Detalle de un Medicamento
 
 ## Vista
 
-- En **views.py**:
+- Agrega esta función a **views.py**:
 
 ```python
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404 #<1>
 
-def detalle_medicamento(request, id):
-    medicamento = get_object_or_404(Medicamento, id=id)
-    return render(request, 'farmacia/detalle_medicamento.html', {'medicamento': medicamento})
+def detalle_medicamento(request, id): #<2>
+    medicamento = get_object_or_404(Medicamento, id=id) #<3>
+    return render(request, 'farmacia/detalle_medicamento.html', {'medicamento': medicamento}) #<4>
 ```
+
+1. Importa la función **get_object_or_404**.
+2. Define la función **detalle_medicamento**.
+3. Obtiene el medicamento con el ID especificado.
+
+En esta función, se obtiene un medicamento específico por su ID y se pasa al template para mostrar sus detalles.
+
 ## Template
 
 - Crea el archivo **templates/farmacia/detalle_medicamento.html**:
@@ -135,41 +168,66 @@ def detalle_medicamento(request, id):
     <title>Detalle del Medicamento</title>
 </head>
 <body>
-    <h1>{{ medicamento.nombre }}</h1>
-    <p><strong>Precio:</strong> ${{ medicamento.precio }}</p>
-    <p><strong>Existencias:</strong> {{ medicamento.existencias }}</p>
-    <a href="{% url 'lista_medicamentos' %}">Volver a la lista</a>
+    <h1>{{ medicamento.nombre }}</h1> <!-- <1> -->
+    <p><strong>Precio:</strong> ${{ medicamento.precio }}</p> <!-- <2> -->
+    <p><strong>Existencias:</strong> {{ medicamento.existencias }}</p> <!-- <3> -->
+    <p><strong>Lugar:</strong> {{ medicamento.lugar }}</p> <!-- <4> -->
+    <a href="{% url 'lista_medicamentos' %}">Volver a la lista</a> <!-- <5> -->
 </body>
 </html>
 ```
+1. Muestra el nombre del medicamento.
+2. Muestra el precio del medicamento.
+3. Muestra las existencias disponibles.
+4. Muestra el lugar del medicamento.
+5. Enlace para volver a la lista de medicamentos.
+
+En este template, se muestran los detalles de un medicamento específico.
+
 ## Ruta
 
-- Agrega la ruta en **urls.py**:
+- En **urls.py**:
 
 ```python
-path('medicamentos/<int:id>/', views.detalle_medicamento, name='detalle_medicamento'),
+path('medicamentos/<int:id>/', views.detalle_medicamento, name='detalle_medicamento'), #<1>
 ```
 
-# Paso 3: Crear un Nuevo Medicamento
+1. Define la ruta para mostrar el detalle de un medicamento específico.
+
+En esta ruta, se llama a la función **detalle_medicamento** para mostrar los detalles de un medicamento en la URL **/medicamentos/id/**.
+
+# Paso 3: Crear un Medicamento
 
 ## Vista
 
-- En **views.py**:
-
 ```python
-from django.shortcuts import redirect
-from .forms import MedicamentoForm
+from django.shortcuts import redirect #<1>
+from .forms import MedicamentoForm #<2>
 
-def crear_medicamento(request):
-    if request.method == 'POST':
-        form = MedicamentoForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('lista_medicamentos')
+def crear_medicamento(request): #<3>
+    if request.method == 'POST': #<4>
+        form = MedicamentoForm(request.POST) #<5>
+        if form.is_valid(): #<6>
+            form.save() #<7>
+            return redirect('lista_medicamentos') #<8>
     else:
-        form = MedicamentoForm()
-    return render(request, 'farmacia/crear_medicamento.html', {'form': form})
+        form = MedicamentoForm() #<9>
+    return render(request, 'farmacia/crear_medicamento.html', {'form': form}) #<10>
 ```
+
+1. Importa la función **redirect**.
+2. Importa el formulario **MedicamentoForm**.
+3. Define la función **crear_medicamento**.
+4. Verifica si la petición es de tipo POST.
+5. Crea un formulario con los datos de la petición.
+6. Verifica si el formulario es válido.
+7. Guarda el medicamento en la base de datos.
+8. Redirige a la lista de medicamentos.
+9. Crea un formulario vacío.
+10. Renderiza el template **crear_medicamento.html** con el formulario.
+
+En esta función, se crea un nuevo medicamento a partir de los datos enviados por el usuario y se guarda en la base de datos.
+
 ## Template
 
 - Crea **templates/farmacia/crear_medicamento.html**:
@@ -182,109 +240,111 @@ def crear_medicamento(request):
 </head>
 <body>
     <h1>Crear Medicamento</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Guardar</button>
+    <form method="post"> <!-- <1> -->
+        {% csrf_token %} <!-- <2> -->
+        {{ form.as_p }} <!-- <3> -->
+        <button type="submit">Guardar</button> <!-- <4> -->
     </form>
-    <a href="{% url 'lista_medicamentos' %}">Volver a la lista</a>
+    <a href="{% url 'lista_medicamentos' %}">Volver a la lista</a> <!-- <5> -->
 </body>
 </html>
 ```
+1. Formulario para crear un nuevo medicamento.
+2. Token de seguridad.
+3. Campos del formulario.
+4. Botón para guardar el medicamento.
+5. Enlace para volver a la lista de medicamentos.
+
+En este template, se muestra un formulario para crear un nuevo medicamento.
+
 ## Ruta
 
-- Agrega la ruta en **urls.py**:
-
 ```python
-path('medicamentos/nuevo/', views.crear_medicamento, name='crear_medicamento'),
+path('medicamentos/nuevo/', views.crear_medicamento, name='crear_medicamento'), #<1>
 ```
 
-# Paso 4. Editar un Medicamento
+1. Define la ruta para crear un nuevo medicamento.
+
+En esta ruta, se llama a la función **crear_medicamento** para mostrar el formulario de creación de medicamentos en la URL **/medicamentos/nuevo/**.
+
+# Paso 4: Editar un Medicamento
 
 ## Vista
 
-- En **views.py**:
-
 ```python
-def editar_medicamento(request, id):
-    medicamento = get_object_or_404(Medicamento, id=id)
-    if request.method == 'POST':
-        form = MedicamentoForm(request.POST, instance=medicamento)
-        if form.is_valid():
-            form.save()
-            return redirect('lista_medicamentos')
+def editar_medicamento(request, id): #<1>
+    medicamento = get_object_or_404(Medicamento, id=id) #<2>
+    if request.method == 'POST': #<3>
+        form = MedicamentoForm(request.POST, instance=medicamento) #<4>
+        if form.is_valid(): #<5>
+            form.save() #<6>
+            return redirect('lista_medicamentos') #<7>
     else:
-        form = MedicamentoForm(instance=medicamento)
-    return render(request, 'farmacia/editar_medicamento.html', {'form': form})
+        form = MedicamentoForm(instance=medicamento) #<8>
+    return render(request, 'farmacia/editar_medicamento.html', {'form': form}) #<9>
 ```
+
+1. Define la función **editar_medicamento**.
+2. Obtiene el medicamento con el ID especificado.
+3. Verifica si la petición es de tipo POST.
+4. Crea un formulario con los datos del medicamento.
+5. Verifica si el formulario es válido.
+6. Guarda los cambios en el medicamento.
+7. Redirige a la lista de medicamentos.
+8. Crea un formulario con los datos del medicamento.
+9. Renderiza el template **editar_medicamento.html** con el formulario.
+
+En esta función, se edita un medicamento existente a partir de los datos enviados por el usuario y se guardan los cambios en la base de datos.
 
 ## Template
 
-- Crea **templates/farmacia/editar_medicamento.html**:
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Editar Medicamento</title>
-</head>
-<body>
-    <h1>Editar Medicamento</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Guardar</button>
-    </form>
-    <a href="{% url 'lista_medicamentos' %}">Volver a la lista</a>
-</body>
-</html>
-```
+- Crea **templates/farmacia/editar_medicamento.html** con el mismo diseño que el formulario de creación.
 
 ## Ruta
 
-- Agrega la ruta en **urls.py**:
-
 ```python
-path('medicamentos/editar/<int:id>/', views.editar_medicamento, name='editar_medicamento'),
+path('medicamentos/editar/<int:id>/', views.editar_medicamento, name='editar_medicamento'), #<1>
 ```
 
-# Paso 5. Eliminar un Medicamento
+1. Define la ruta para editar un medicamento existente.
+
+# Paso 5: Eliminar un Medicamento
 
 ## Vista
 
-- En **views.py**:
-
 ```python
-def eliminar_medicamento(request, id):
-    medicamento = get_object_or_404(Medicamento, id=id)
-    medicamento.delete()
-    return redirect('lista_medicamentos')
+def eliminar_medicamento(request, id): #<1>
+    medicamento = get_object_or_404(Medicamento, id=id) #<2>
+    medicamento.delete() #<3>
+    return redirect('lista_medicamentos') #<4>
 ```
 
-## Template
+1. Define la función **eliminar_medicamento**.
+2. Obtiene el medicamento con el ID especificado.
+3. Elimina el medicamento de la base de datos.
+4. Redirige a la lista de medicamentos.
 
-- No se necesita un template para esta vista.
+En esta función, se elimina un medicamento existente de la base de datos.
 
 ## Ruta
 
-- Agrega la ruta en **urls.py**:
-
 ```python
-path('medicamentos/eliminar/<int:id>/', views.eliminar_medicamento, name='eliminar_medicamento'),
+path('medicamentos/eliminar/<int:id>/', views.eliminar_medicamento, name='eliminar_medicamento'), #<1>
 ```
 
-## Probar las Vistas
+1. Define la ruta para eliminar un medicamento existente.
 
-- Inicia el **servidor**:
+En esta ruta, se llama a la función **eliminar_medicamento** para eliminar un medicamento en la URL **/medicamentos/eliminar/id/**.
+
+# Ejecutar el Proyecto
+
+- Inicia el servidor:
 
 ```bash
 python manage.py runserver
 ```
-Navega a:
+- Visita las rutas mencionadas para probar cada funcionalidad. Con estos pasos, tendrás un CRUD básico funcionando en tu aplicación Django.
 
-- **Lista de Medicamentos**: <http://localhost:8000/medicamentos/>
-- **Detalle de Medicamento**: <http://localhost:8000/medicamentos/1/> (reemplaza 1 por un ID válido).
-- **Crear Medicamento**: <http://localhost:8000/medicamentos/nuevo/>.
-- **Editar Medicamento**: <http://localhost:8000/medicamentos/editar/1/> (reemplaza 1 por un ID válido).
-- **Eliminar Medicamento**: <http://localhost:8000/medicamentos/eliminar/1/> (reemplaza 1 por un ID válido).
+:::{.callout-info}
+Podemos agregar vistas, templates y rutas adicionales para implementar más funcionalidades en la aplicación de farmacia, como la creación de ventas, la generación de reportes, etc.
 :::
