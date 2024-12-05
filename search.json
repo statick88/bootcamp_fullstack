@@ -1507,17 +1507,6 @@
     ]
   },
   {
-    "objectID": "unidades/unidad7/6_vistas.html",
-    "href": "unidades/unidad7/6_vistas.html",
-    "title": "Vistas, Templates y Rutas en Django",
-    "section": "",
-    "text": "Paso 2: Mostrar el Detalle de un Medicamento",
-    "crumbs": [
-      "Unidad 7: Frameworks en Python",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Vistas, Templates y Rutas en Django</span>"
-    ]
-  },
-  {
     "objectID": "unidades/unidad7/6_vistas.html#vista",
     "href": "unidades/unidad7/6_vistas.html#vista",
     "title": "Vistas, Templates y Rutas en Django",
@@ -1544,7 +1533,7 @@
     "href": "unidades/unidad7/6_vistas.html#ruta",
     "title": "Vistas, Templates y Rutas en Django",
     "section": "Ruta",
-    "text": "Ruta\n\nEn urls.py de la aplicación farmacia:\n\nfrom django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('medicamentos/', views.lista_medicamentos, name='lista_medicamentos'),\n]\n\n:::{.callout-tip}\nEs necesario conectar las URLs de la aplicación **farmacia** con las URLs del proyecto en **urls.py** del proyecto.\n\n```python\nfrom django.contrib import admin\nfrom django.urls import path, include\nfrom farmacia import urls\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('farmacia.urls')),\n]",
+    "text": "Ruta\n\nEn urls.py de la aplicación farmacia:\n\nfrom django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('medicamentos/', views.lista_medicamentos, name='lista_medicamentos'),\n]\n\n\n\n\n\n\nTip\n\n\n\nEs necesario conectar las URLs de la aplicación farmacia con las URLs del proyecto en urls.py del proyecto.\nfrom django.contrib import admin\nfrom django.urls import path, include\nfrom farmacia import urls\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('farmacia.urls')),\n]",
     "crumbs": [
       "Unidad 7: Frameworks en Python",
       "<span class='chapter-number'>35</span>  <span class='chapter-title'>Vistas, Templates y Rutas en Django</span>"
