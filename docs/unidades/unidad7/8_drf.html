@@ -1,0 +1,1778 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.2">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Bootcamp de Desarrollo Web FullStack con Python, Django y React">
+
+<title>Introducción a Django REST Framework – Bootcamp Desarrollo Web FullStack</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../unidades/Proyectos/3_funciones.html" rel="next">
+<link href="../../unidades/unidad7/7_templates.html" rel="prev">
+<link href="../../logo.jpeg" rel="icon" type="image/jpeg">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-07c16812f08c4a1591d6ec4fc46327fa.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-da8a509530300cc5ac35526d39afbac2.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-7071100446ef3122003df70a658e1fb4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-46f389c8df888532cbd1bee5f85f9066.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../css/styles.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad7/1_intro.html">Unidad 7: Frameworks en Python</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad7/8_drf.html"><span class="chapter-title">Introducción a Django REST Framework</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../logo.jpeg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">Bootcamp Desarrollo Web FullStack</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="../../bootcamp_desarrollo_web_fullstack.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="../../bootcamp_desarrollo_web_fullstack.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Unidad 0: Introducción a Git y GitHub</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Bienvenido</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad0/1_git_y_github.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Git y GitHub 🕹️</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad0/2_github_classroom.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">GitHub Classroom 📒</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Unidad 1: Introducción e Instalaciones Necesarias</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad1/1_introduccion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción e Instalaciones Necesarias.</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad1/2_introduccion_a_la_programacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a la Programación con Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad1/3_tipos_de_datos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tipos de Datos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad1/4_control_de_flujo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Control de Flujo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad1/5_funciones_y_recursividad.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Funciones y recursividad.</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Unidad 2: Programación Orientada a Objetos</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad2/1_programacion_orientada_a_objetos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Programacion Orientada a Objetos.</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Unidad 3: Módulos y Paquetes</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad3/1_modulos_python.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulos</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Unidad 4: Docker</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad4/1_docker.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Docker</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad4/2_docker_compose.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Dockerfile y Docker Compose</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad4/3_DevContainers.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">DevContainers</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Unidad 5: Python Avanzado</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad5/intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Conceptos Avanzados en Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad5/1_exepciones_manejo_de_errores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Excepciones y Manejo de Errores</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad5/2_lectura_y_escritura_de_archivos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lectura y Escritura de Archivos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad5/3_programacion_funcional.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Programación Funcional</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad5/4_comprension_y_generadores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Comprensiones y Generadores</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad5/5_modulos_y_paquetes_avanzados.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulos y Paquetes Avanzados</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad5/6_decoradores_y_context_managers.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Decoradores y Context Managers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad5/7_colecciones_de_datos_y_estructuras_especializadas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Colecciones de Datos y Estructuras Especializadas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad5/8_manipulacion_de_fechas_y_tiempos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Manipulación de Fechas y Tiempos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad5/9_concurrencia_y_paralelismo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Concurrencia y Paralelismo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad5/10_pruebas_y_debugging.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Pruebas y Debugging</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Unidad 6: Bases de Datos</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad6/1_intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Bases de Datos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad6/2_db_sqlite.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Bases de Datos con SQLite3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad6/3_db_mysql.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Bases de Datos en MySQL</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad6/4_db_postgresql.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Bases de Datos en PostgreSQL</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad6/5_db_mongo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Bases de Datos MongoDB</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Unidad 7: Frameworks en Python</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad7/1_intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a los Frameworks en Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad7/2_intro_to_django.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción a Django</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad7/3_estructura_proyecto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Estructura de un proyecto en Django</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad7/4_modelos_django.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Modelos en Django</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad7/5_forms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Forms en Django</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad7/6_vistas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Vistas, Templates y Rutas en Django</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad7/7_templates.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sistema de Herencia de PlantiLLas, Tailwindcss y Archivos Estáticos.</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/unidad7/8_drf.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Introducción a Django REST Framework</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">Proyectos</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/Proyectos/3_funciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/Proyectos/1_proyecto_modulos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">📝 Gestor de Tareas con Prioridades</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/Proyectos/2_proyecto_poo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🛒 Simulador de Tienda Online</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/Proyectos/4_proyecto_poo_2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🏫 Sistema Universitario</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/Proyectos/5_DevContainers.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio: DevContainer con NGINX</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/Proyectos/6_calculadora.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio: Calculadora en Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/Proyectos/0_tienda_virtual.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tienda Virtual.</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/Proyectos/1_tienda_virtual.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 1: Recolección de Requisitos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/Proyectos/2_tienda_virtual.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 2: Configuración de Red y Contenedor para la Base de Datos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/Proyectos/3_tienda_virtual.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 3: Configuración del Contenedor para el Backend</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Extras</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/Extras/0_parte.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/Extras/1_parte.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/Extras/2_parte.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 2: Implementación del Servidor CLI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/Extras/3_parte.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 3: Implementación del Cliente CLI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/Extras/4_parte.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/Extras/5_parte.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 5: Implementación de Pruebas e Integración Continua</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/Extras/6_parte.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 6: Documentación del Laboratorio y Reflexión Final</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/unidad7/1_intro.html">Unidad 7: Frameworks en Python</a></li><li class="breadcrumb-item"><a href="../../unidades/unidad7/8_drf.html"><span class="chapter-title">Introducción a Django REST Framework</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Introducción a Django REST Framework</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="justify">
+<div class="center">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/drf.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Django REST Framework</figcaption>
+</figure>
+</div>
+</div>
+<p>Django REST Framework es una biblioteca poderosa y flexible para construir APIs web en Django. DRF incluye funcionalidades como:</p>
+<section id="serialización-de-modelos" class="level2">
+<h2 class="anchored" data-anchor-id="serialización-de-modelos">Serialización de modelos</h2>
+<ul>
+<li>Vistas basadas en clases para manejar endpoints</li>
+<li>Autenticación y permisos</li>
+<li>Documentación interactiva</li>
+</ul>
+<section id="configuración-inicial" class="level3">
+<h3 class="anchored" data-anchor-id="configuración-inicial">2. Configuración Inicial</h3>
+<ul>
+<li>Instalar Django REST Framework:</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install djangorestframework</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Agregar DRF a <strong>INSTALLED_APPS</strong> en <strong>settings.py</strong>:</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>INSTALLED_APPS <span class="op">=</span> [</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Otros apps...</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'rest_framework'</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Configurar DRF (opcional): En settings.py, puedes definir configuraciones personalizadas:</li>
+</ul>
+<div class="sourceCode" id="annotated-cell-3"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-3-1" class="code-annotation-target"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a>REST_FRAMEWORK <span class="op">=</span> {</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-3-2" class="code-annotation-target"><a href="#annotated-cell-3-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'DEFAULT_AUTHENTICATION_CLASSES'</span>: [</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-3-3" class="code-annotation-target"><a href="#annotated-cell-3-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">'rest_framework.authentication.SessionAuthentication'</span>,</span>
+<span id="annotated-cell-3-4"><a href="#annotated-cell-3-4" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-3-5" class="code-annotation-target"><a href="#annotated-cell-3-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'DEFAULT_PERMISSION_CLASSES'</span>: [</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-3-6" class="code-annotation-target"><a href="#annotated-cell-3-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">'rest_framework.permissions.IsAuthenticatedOrReadOnly'</span>,</span>
+<span id="annotated-cell-3-7"><a href="#annotated-cell-3-7" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="annotated-cell-3-8"><a href="#annotated-cell-3-8" aria-hidden="true" tabindex="-1"></a>}</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="1" data-code-annotation="1"><strong>REST_FRAMEWORK</strong>: Configuración principal de DRF.</span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="2" data-code-annotation="2"><strong>DEFAULT_AUTHENTICATION_CLASSES</strong>: Clases de autenticación predeterminadas.</span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="3" data-code-annotation="3"><strong>SessionAuthentication</strong>: Autenticación basada en sesiones.</span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="5" data-code-annotation="4"><strong>DEFAULT_PERMISSION_CLASSES</strong>: Clases de permisos predeterminadas.</span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="6" data-code-annotation="5"><strong>IsAuthenticatedOrReadOnly</strong>: Permite a los usuarios autenticados realizar operaciones de escritura.</span>
+</dd>
+</dl>
+</section>
+<section id="crear-la-api" class="level3">
+<h3 class="anchored" data-anchor-id="crear-la-api">3. Crear la API</h3>
+<ul>
+<li>Crear un serializador para el modelo Medicamento:</li>
+</ul>
+<div class="sourceCode" id="annotated-cell-4"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-4-1" class="code-annotation-target"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rest_framework <span class="im">import</span> serializers</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-4-2" class="code-annotation-target"><a href="#annotated-cell-4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .models <span class="im">import</span> Medicamento</span>
+<span id="annotated-cell-4-3"><a href="#annotated-cell-4-3" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-4-4" class="code-annotation-target"><a href="#annotated-cell-4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MedicamentoSerializer(serializers.ModelSerializer):</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-4-5" class="code-annotation-target"><a href="#annotated-cell-4-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">class</span> Meta:</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-4-6" class="code-annotation-target"><a href="#annotated-cell-4-6" aria-hidden="true" tabindex="-1"></a>        model <span class="op">=</span> Medicamento</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-4-7" class="code-annotation-target"><a href="#annotated-cell-4-7" aria-hidden="true" tabindex="-1"></a>        fields <span class="op">=</span> <span class="st">'__all__'</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="1" data-code-annotation="1"><strong>serializers</strong>: Módulo de DRF para serializar y deserializar datos.</span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="2" data-code-annotation="2"><strong>Medicamento</strong>: Modelo de Django.</span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="4" data-code-annotation="3"><strong>MedicamentoSerializer</strong>: Clase para serializar el modelo Medicamento.</span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="5" data-code-annotation="4"><strong>Meta</strong>: Clase interna para configurar el serializador.</span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="6" data-code-annotation="5"><strong>model</strong>: Modelo que se serializará.</span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="6">6</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="7" data-code-annotation="6"><strong>fields</strong>: Campos del modelo que se incluirán en la serialización.</span>
+</dd>
+</dl>
+<ul>
+<li>Crear vistas para las APIs:</li>
+</ul>
+<div class="sourceCode" id="annotated-cell-5"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-5-1" class="code-annotation-target"><a href="#annotated-cell-5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rest_framework.views <span class="im">import</span> APIView</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-5-2" class="code-annotation-target"><a href="#annotated-cell-5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rest_framework.response <span class="im">import</span> Response</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-5-3" class="code-annotation-target"><a href="#annotated-cell-5-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rest_framework <span class="im">import</span> status</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-5-4" class="code-annotation-target"><a href="#annotated-cell-5-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .models <span class="im">import</span> Medicamento</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-5-5" class="code-annotation-target"><a href="#annotated-cell-5-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .serializers <span class="im">import</span> MedicamentoSerializer</span>
+<span id="annotated-cell-5-6"><a href="#annotated-cell-5-6" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-5-7" class="code-annotation-target"><a href="#annotated-cell-5-7" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MedicamentoList(APIView):</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-5-8" class="code-annotation-target"><a href="#annotated-cell-5-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get(<span class="va">self</span>, request):</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="8" onclick="event.preventDefault();">8</a><span id="annotated-cell-5-9" class="code-annotation-target"><a href="#annotated-cell-5-9" aria-hidden="true" tabindex="-1"></a>        medicamentos <span class="op">=</span> Medicamento.objects.<span class="bu">all</span>()</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="9" onclick="event.preventDefault();">9</a><span id="annotated-cell-5-10" class="code-annotation-target"><a href="#annotated-cell-5-10" aria-hidden="true" tabindex="-1"></a>        serializer <span class="op">=</span> MedicamentoSerializer(medicamentos, many<span class="op">=</span><span class="va">True</span>)</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="10" onclick="event.preventDefault();">10</a><span id="annotated-cell-5-11" class="code-annotation-target"><a href="#annotated-cell-5-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> Response(serializer.data)</span>
+<span id="annotated-cell-5-12"><a href="#annotated-cell-5-12" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="11" onclick="event.preventDefault();">11</a><span id="annotated-cell-5-13" class="code-annotation-target"><a href="#annotated-cell-5-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> post(<span class="va">self</span>, request):</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="12" onclick="event.preventDefault();">12</a><span id="annotated-cell-5-14" class="code-annotation-target"><a href="#annotated-cell-5-14" aria-hidden="true" tabindex="-1"></a>        serializer <span class="op">=</span> MedicamentoSerializer(data<span class="op">=</span>request.data)</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="13" onclick="event.preventDefault();">13</a><span id="annotated-cell-5-15" class="code-annotation-target"><a href="#annotated-cell-5-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> serializer.is_valid():</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="14" onclick="event.preventDefault();">14</a><span id="annotated-cell-5-16" class="code-annotation-target"><a href="#annotated-cell-5-16" aria-hidden="true" tabindex="-1"></a>            serializer.save()</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="15" onclick="event.preventDefault();">15</a><span id="annotated-cell-5-17" class="code-annotation-target"><a href="#annotated-cell-5-17" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> Response(serializer.data, status<span class="op">=</span>status.HTTP_201_CREATED)</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="16" onclick="event.preventDefault();">16</a><span id="annotated-cell-5-18" class="code-annotation-target"><a href="#annotated-cell-5-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> Response(serializer.errors, status<span class="op">=</span>status.HTTP_400_BAD_REQUEST)</span>
+<span id="annotated-cell-5-19"><a href="#annotated-cell-5-19" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="17" onclick="event.preventDefault();">17</a><span id="annotated-cell-5-20" class="code-annotation-target"><a href="#annotated-cell-5-20" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MedicamentoDetail(APIView):</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="18" onclick="event.preventDefault();">18</a><span id="annotated-cell-5-21" class="code-annotation-target"><a href="#annotated-cell-5-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get(<span class="va">self</span>, request, <span class="bu">id</span>):</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="19" onclick="event.preventDefault();">19</a><span id="annotated-cell-5-22" class="code-annotation-target"><a href="#annotated-cell-5-22" aria-hidden="true" tabindex="-1"></a>        medicamento <span class="op">=</span> Medicamento.objects.get(pk<span class="op">=</span><span class="bu">id</span>)</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="20" onclick="event.preventDefault();">20</a><span id="annotated-cell-5-23" class="code-annotation-target"><a href="#annotated-cell-5-23" aria-hidden="true" tabindex="-1"></a>        serializer <span class="op">=</span> MedicamentoSerializer(medicamento)</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="21" onclick="event.preventDefault();">21</a><span id="annotated-cell-5-24" class="code-annotation-target"><a href="#annotated-cell-5-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> Response(serializer.data)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-5" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="1" data-code-annotation="1"><strong>APIView</strong>: Clase base para las vistas de DRF.</span>
+</dd>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="2" data-code-annotation="2"><strong>Response</strong>: Clase para devolver respuestas HTTP.</span>
+</dd>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="3" data-code-annotation="3"><strong>status</strong>: Módulo de DRF para códigos de estado HTTP.</span>
+</dd>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="4" data-code-annotation="4"><strong>Medicamento</strong>: Modelo de Django.</span>
+</dd>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="5" data-code-annotation="5"><strong>MedicamentoSerializer</strong>: Serializador para el modelo Medicamento.</span>
+</dd>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="6">6</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="7" data-code-annotation="6"><strong>MedicamentoList</strong>: Vista para listar medicamentos.</span>
+</dd>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="7">7</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="8" data-code-annotation="7"><strong>get</strong>: Método para manejar solicitudes GET.</span>
+</dd>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="8">8</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="9" data-code-annotation="8"><strong>Medicamento.objects.all()</strong>: Consulta para obtener todos los medicamentos.</span>
+</dd>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="9">9</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="10" data-code-annotation="9"><strong>MedicamentoSerializer(medicamentos, many=True)</strong>: Serializa una lista de medicamentos.</span>
+</dd>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="10">10</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="11" data-code-annotation="10"><strong>Response(serializer.data)</strong>: Devuelve los datos serializados.</span>
+</dd>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="11">11</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="13" data-code-annotation="11"><strong>MedicamentoDetail</strong>: Vista para obtener detalles de un medicamento.</span>
+</dd>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="12">12</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="14" data-code-annotation="12"><strong>Medicamento.objects.get(pk=id)</strong>: Consulta para obtener un medicamento por ID.</span>
+</dd>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="13">13</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="15" data-code-annotation="13"><strong>MedicamentoSerializer(medicamento)</strong>: Serializa un medicamento.</span>
+</dd>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="14">14</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="16" data-code-annotation="14"><strong>Response(serializer.data)</strong>: Devuelve los datos serializados.</span>
+</dd>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="15">15</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="17" data-code-annotation="15"><strong>Response(serializer.errors)</strong>: Devuelve errores de validación.</span>
+</dd>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="16">16</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="18" data-code-annotation="16"><strong>status.HTTP_201_CREATED</strong>: Código de estado para la creación exitosa.</span>
+</dd>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="17">17</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="20" data-code-annotation="17"><strong>MedicamentoDetail</strong>: Vista para obtener detalles de un medicamento.</span>
+</dd>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="18">18</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="21" data-code-annotation="18"><strong>get</strong>: Método para manejar solicitudes GET.</span>
+</dd>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="19">19</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="22" data-code-annotation="19"><strong>Medicamento.objects.get(pk=id)</strong>: Consulta para obtener un medicamento por ID.</span>
+</dd>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="20">20</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="23" data-code-annotation="20"><strong>MedicamentoSerializer(medicamento)</strong>: Serializa un medicamento.</span>
+</dd>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="21">21</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="24" data-code-annotation="21"><strong>Response(serializer.data)</strong>: Devuelve los datos serializados.</span>
+</dd>
+</dl>
+<ul>
+<li>Configurar las rutas de la API: En urls.py:</li>
+</ul>
+<div class="sourceCode" id="annotated-cell-6"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-6-1"><a href="#annotated-cell-6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.urls <span class="im">import</span> path</span>
+<span id="annotated-cell-6-2"><a href="#annotated-cell-6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .views <span class="im">import</span> MedicamentoList, MedicamentoDetail</span>
+<span id="annotated-cell-6-3"><a href="#annotated-cell-6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-6-4"><a href="#annotated-cell-6-4" aria-hidden="true" tabindex="-1"></a>urlpatterns <span class="op">=</span> [</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-6-5" class="code-annotation-target"><a href="#annotated-cell-6-5" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">'api/medicamentos/'</span>, MedicamentoList.as_view(), name<span class="op">=</span><span class="st">'medicamento-list'</span>),</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-6-6" class="code-annotation-target"><a href="#annotated-cell-6-6" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">'api/medicamentos/&lt;int:id&gt;/'</span>, MedicamentoDetail.as_view(), name<span class="op">=</span><span class="st">'medicamento-detail'</span>),</span>
+<span id="annotated-cell-6-7"><a href="#annotated-cell-6-7" aria-hidden="true" tabindex="-1"></a>]</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-6" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-6" data-code-lines="5" data-code-annotation="1"><strong>MedicamentoList.as_view()</strong>: Vista para listar medicamentos.</span>
+</dd>
+<dt data-target-cell="annotated-cell-6" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-6" data-code-lines="6" data-code-annotation="2"><strong>MedicamentoDetail.as_view()</strong>: Vista para obtener detalles de un medicamento.</span>
+</dd>
+</dl>
+</section>
+<section id="documentación-con-swagger" class="level3">
+<h3 class="anchored" data-anchor-id="documentación-con-swagger">4. Documentación con Swagger</h3>
+<div class="center">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/swagger.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Swagger</figcaption>
+</figure>
+</div>
+</div>
+<p>Swagger es una herramienta para documentar APIs de forma interactiva. Puedes integrar Swagger en tu proyecto de Django REST Framework para proporcionar una documentación clara y detallada de tus APIs.</p>
+<ul>
+<li>Instalar dependencias para Swagger:</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install drf-yasg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Configurar Swagger en <strong>urls.py</strong>:</li>
+</ul>
+<div class="sourceCode" id="annotated-cell-8"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-8-1" class="code-annotation-target"><a href="#annotated-cell-8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rest_framework <span class="im">import</span> permissions</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-8-2" class="code-annotation-target"><a href="#annotated-cell-8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> drf_yasg.views <span class="im">import</span> get_schema_view</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-8-3" class="code-annotation-target"><a href="#annotated-cell-8-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> drf_yasg <span class="im">import</span> openapi</span>
+<span id="annotated-cell-8-4"><a href="#annotated-cell-8-4" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-8-5" class="code-annotation-target"><a href="#annotated-cell-8-5" aria-hidden="true" tabindex="-1"></a>schema_view <span class="op">=</span> get_schema_view(</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-8-6" class="code-annotation-target"><a href="#annotated-cell-8-6" aria-hidden="true" tabindex="-1"></a>    openapi.Info(</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-8-7" class="code-annotation-target"><a href="#annotated-cell-8-7" aria-hidden="true" tabindex="-1"></a>        title<span class="op">=</span><span class="st">"API de Medicamentos"</span>,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-8-8" class="code-annotation-target"><a href="#annotated-cell-8-8" aria-hidden="true" tabindex="-1"></a>        default_version<span class="op">=</span><span class="st">'v1'</span>,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="8" onclick="event.preventDefault();">8</a><span id="annotated-cell-8-9" class="code-annotation-target"><a href="#annotated-cell-8-9" aria-hidden="true" tabindex="-1"></a>        description<span class="op">=</span><span class="st">"Documentación interactiva de la API"</span>,</span>
+<span id="annotated-cell-8-10"><a href="#annotated-cell-8-10" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="9" onclick="event.preventDefault();">9</a><span id="annotated-cell-8-11" class="code-annotation-target"><a href="#annotated-cell-8-11" aria-hidden="true" tabindex="-1"></a>    public<span class="op">=</span><span class="va">True</span>,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="10" onclick="event.preventDefault();">10</a><span id="annotated-cell-8-12" class="code-annotation-target"><a href="#annotated-cell-8-12" aria-hidden="true" tabindex="-1"></a>    permission_classes<span class="op">=</span>(permissions.AllowAny,),</span>
+<span id="annotated-cell-8-13"><a href="#annotated-cell-8-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="annotated-cell-8-14"><a href="#annotated-cell-8-14" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="11" onclick="event.preventDefault();">11</a><span id="annotated-cell-8-15" class="code-annotation-target"><a href="#annotated-cell-8-15" aria-hidden="true" tabindex="-1"></a>urlpatterns <span class="op">+=</span> [</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="12" onclick="event.preventDefault();">12</a><span id="annotated-cell-8-16" class="code-annotation-target"><a href="#annotated-cell-8-16" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">'swagger/'</span>, schema_view.with_ui(<span class="st">'swagger'</span>, cache_timeout<span class="op">=</span><span class="dv">0</span>), name<span class="op">=</span><span class="st">'schema-swagger-ui'</span>),</span>
+<span id="annotated-cell-8-17"><a href="#annotated-cell-8-17" aria-hidden="true" tabindex="-1"></a>]</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-8" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-8" data-code-lines="1" data-code-annotation="1"><strong>permissions</strong>: Módulo de DRF para permisos.</span>
+</dd>
+<dt data-target-cell="annotated-cell-8" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-8" data-code-lines="2" data-code-annotation="2"><strong>get_schema_view</strong>: Función para obtener la vista de Swagger.</span>
+</dd>
+<dt data-target-cell="annotated-cell-8" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-8" data-code-lines="3" data-code-annotation="3"><strong>openapi</strong>: Módulo de drf-yasg para definir esquemas OpenAPI.</span>
+</dd>
+<dt data-target-cell="annotated-cell-8" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-8" data-code-lines="5" data-code-annotation="4"><strong>schema_view</strong>: Vista de Swagger para tu API.</span>
+</dd>
+<dt data-target-cell="annotated-cell-8" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-8" data-code-lines="6" data-code-annotation="5"><strong>Info</strong>: Clase para definir información de la API.</span>
+</dd>
+<dt data-target-cell="annotated-cell-8" data-target-annotation="6">6</dt>
+<dd>
+<span data-code-cell="annotated-cell-8" data-code-lines="7" data-code-annotation="6"><strong>title</strong>: Título de la API.</span>
+</dd>
+<dt data-target-cell="annotated-cell-8" data-target-annotation="7">7</dt>
+<dd>
+<span data-code-cell="annotated-cell-8" data-code-lines="8" data-code-annotation="7"><strong>default_version</strong>: Versión predeterminada de la API.</span>
+</dd>
+<dt data-target-cell="annotated-cell-8" data-target-annotation="8">8</dt>
+<dd>
+<span data-code-cell="annotated-cell-8" data-code-lines="9" data-code-annotation="8"><strong>description</strong>: Descripción de la API.</span>
+</dd>
+<dt data-target-cell="annotated-cell-8" data-target-annotation="9">9</dt>
+<dd>
+<span data-code-cell="annotated-cell-8" data-code-lines="11" data-code-annotation="9"><strong>public</strong>: Indica si la documentación es pública.</span>
+</dd>
+<dt data-target-cell="annotated-cell-8" data-target-annotation="10">10</dt>
+<dd>
+<span data-code-cell="annotated-cell-8" data-code-lines="12" data-code-annotation="10"><strong>permission_classes</strong>: Clases de permisos para acceder a la documentación.</span>
+</dd>
+<dt data-target-cell="annotated-cell-8" data-target-annotation="11">11</dt>
+<dd>
+<span data-code-cell="annotated-cell-8" data-code-lines="15" data-code-annotation="11"><strong>urlpatterns</strong>: Lista de rutas de Django.</span>
+</dd>
+<dt data-target-cell="annotated-cell-8" data-target-annotation="12">12</dt>
+<dd>
+<span data-code-cell="annotated-cell-8" data-code-lines="16" data-code-annotation="12"><strong>schema_view.with_ui(‘swagger’, cache_timeout=0)</strong>: Vista de Swagger con interfaz interactiva.</span>
+</dd>
+</dl>
+<p>En el archivo <strong>settings.py</strong>, agrega <strong>‘drf_yasg’</strong> a <strong>INSTALLED_APPS</strong>:</p>
+<div class="sourceCode" id="annotated-cell-9"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-9-1"><a href="#annotated-cell-9-1" aria-hidden="true" tabindex="-1"></a>INSTALLED_APPS <span class="op">=</span> [</span>
+<span id="annotated-cell-9-2"><a href="#annotated-cell-9-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Otros apps...</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-9-3" class="code-annotation-target"><a href="#annotated-cell-9-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'drf_yasg'</span>,</span>
+<span id="annotated-cell-9-4"><a href="#annotated-cell-9-4" aria-hidden="true" tabindex="-1"></a>]</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-9" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-9" data-code-lines="3" data-code-annotation="1"><strong>drf_yasg</strong>: App de Django para integrar Swagger.</span>
+</dd>
+</dl>
+<p>Ver la documentación interactiva: Inicia el servidor y ve a <a href="http://localhost:8000/swagger/" class="uri">http://localhost:8000/swagger/</a>. Aquí podrás explorar y probar los endpoints de tu API directamente desde el navegador.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="center">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/redoc.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Redoc</figcaption>
+</figure>
+</div>
+</div>
+<p>Otra documentación popular para APIs es <strong>Redoc</strong>, que puedes integrar en tu proyecto de DRF siguiendo los pasos en la documentación oficial de <a href="https://drf-yasg.readthedocs.io/en/stable/">drf-yasg</a>.</p>
+<p>Para que funcione en nuestro proyecto en el archivo urls.py solo hace falta agregar la siguiente línea:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>path(<span class="st">'redoc/'</span>, schema_view.with_ui(<span class="st">'redoc'</span>, cache_timeout<span class="op">=</span><span class="dv">0</span>), name<span class="op">=</span><span class="st">'schema-redoc'</span>),</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="pruebas-con-thunder-client" class="level3">
+<h3 class="anchored" data-anchor-id="pruebas-con-thunder-client">5. Pruebas con Thunder Client</h3>
+<p>Thunder Client es una extensión de VS Code para probar APIs similar a Postman, pero integrada en el editor.</p>
+<ol type="1">
+<li>Instalar Thunder Client:</li>
+</ol>
+<ul>
+<li>Abre VS Code.</li>
+<li>Ve a la pestaña de extensiones (Ctrl+Shift+X).</li>
+<li>Busca Thunder Client e instálalo.</li>
+</ul>
+<ol start="2" type="1">
+<li>Crear una colección de pruebas:</li>
+</ol>
+<ul>
+<li>Abre Thunder Client desde la barra lateral.</li>
+<li>Haz clic en New Request y selecciona el método (GET, POST, etc.).</li>
+<li>Ingresa la URL del endpoint, por ejemplo: http://localhost:8000/api/medicamentos/.</li>
+</ul>
+<ol start="3" type="1">
+<li>Enviar una solicitud GET:</li>
+</ol>
+<ul>
+<li>Configura la URL y haz clic en Send.</li>
+<li>Verifica la respuesta en el panel de resultados.</li>
+</ul>
+<ol start="4" type="1">
+<li>Prueba de solicitudes POST:</li>
+</ol>
+<ul>
+<li>Cambia el método a POST y selecciona el cuerpo (Body).</li>
+<li>Ingresa un JSON como este:</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"nombre"</span><span class="fu">:</span> <span class="st">"Amoxicilina"</span><span class="fu">,</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"precio"</span><span class="fu">:</span> <span class="fl">20.5</span><span class="fu">,</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"existencias"</span><span class="fu">:</span> <span class="dv">30</span><span class="fu">,</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"lugar"</span><span class="fu">:</span> <span class="st">"Almacén C"</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Haz clic en Send para verificar si el servidor crea correctamente un nuevo medicamento.</li>
+</ul>
+</section>
+<section id="pruebas-automatizadas-de-las-apis" class="level3">
+<h3 class="anchored" data-anchor-id="pruebas-automatizadas-de-las-apis">6. Pruebas Automatizadas de las APIs</h3>
+<ul>
+<li>Agrega pruebas unitarias para validar los endpoints.</li>
+</ul>
+<div class="sourceCode" id="annotated-cell-11"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><a class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-11-1" class="code-annotation-target"><a href="#annotated-cell-11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rest_framework.test <span class="im">import</span> APITestCase</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-11-2" class="code-annotation-target"><a href="#annotated-cell-11-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rest_framework <span class="im">import</span> status</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-11-3" class="code-annotation-target"><a href="#annotated-cell-11-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .models <span class="im">import</span> Medicamento</span>
+<span id="annotated-cell-11-4"><a href="#annotated-cell-11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-11-5"><a href="#annotated-cell-11-5" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-11-6" class="code-annotation-target"><a href="#annotated-cell-11-6" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MedicamentoAPITests(APITestCase):</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-11-7" class="code-annotation-target"><a href="#annotated-cell-11-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> setUp(<span class="va">self</span>):</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-11-8" class="code-annotation-target"><a href="#annotated-cell-11-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.medicamento <span class="op">=</span> Medicamento.objects.create(</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-11-9" class="code-annotation-target"><a href="#annotated-cell-11-9" aria-hidden="true" tabindex="-1"></a>            nombre<span class="op">=</span><span class="st">"Paracetamol"</span>,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="8" onclick="event.preventDefault();">8</a><span id="annotated-cell-11-10" class="code-annotation-target"><a href="#annotated-cell-11-10" aria-hidden="true" tabindex="-1"></a>            precio<span class="op">=</span><span class="dv">10</span>,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="9" onclick="event.preventDefault();">9</a><span id="annotated-cell-11-11" class="code-annotation-target"><a href="#annotated-cell-11-11" aria-hidden="true" tabindex="-1"></a>            existencias<span class="op">=</span><span class="dv">50</span>,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="10" onclick="event.preventDefault();">10</a><span id="annotated-cell-11-12" class="code-annotation-target"><a href="#annotated-cell-11-12" aria-hidden="true" tabindex="-1"></a>            lugar<span class="op">=</span><span class="st">"Almacén A"</span></span>
+<span id="annotated-cell-11-13"><a href="#annotated-cell-11-13" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="annotated-cell-11-14"><a href="#annotated-cell-11-14" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="11" onclick="event.preventDefault();">11</a><span id="annotated-cell-11-15" class="code-annotation-target"><a href="#annotated-cell-11-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> test_lista_medicamentos(<span class="va">self</span>):</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="12" onclick="event.preventDefault();">12</a><span id="annotated-cell-11-16" class="code-annotation-target"><a href="#annotated-cell-11-16" aria-hidden="true" tabindex="-1"></a>        response <span class="op">=</span> <span class="va">self</span>.client.get(<span class="st">'/api/medicamentos/'</span>)</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="13" onclick="event.preventDefault();">13</a><span id="annotated-cell-11-17" class="code-annotation-target"><a href="#annotated-cell-11-17" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.assertEqual(response.status_code, status.HTTP_200_OK)</span>
+<span id="annotated-cell-11-18"><a href="#annotated-cell-11-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-11-19"><a href="#annotated-cell-11-19" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="14" onclick="event.preventDefault();">14</a><span id="annotated-cell-11-20" class="code-annotation-target"><a href="#annotated-cell-11-20" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_crear_medicamento(<span class="va">self</span>):</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="15" onclick="event.preventDefault();">15</a><span id="annotated-cell-11-21" class="code-annotation-target"><a href="#annotated-cell-11-21" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> {</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="16" onclick="event.preventDefault();">16</a><span id="annotated-cell-11-22" class="code-annotation-target"><a href="#annotated-cell-11-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">"nombre"</span>: <span class="st">"Ibuprofeno"</span>,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="17" onclick="event.preventDefault();">17</a><span id="annotated-cell-11-23" class="code-annotation-target"><a href="#annotated-cell-11-23" aria-hidden="true" tabindex="-1"></a>        <span class="st">"precio"</span>: <span class="dv">15</span>,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="18" onclick="event.preventDefault();">18</a><span id="annotated-cell-11-24" class="code-annotation-target"><a href="#annotated-cell-11-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">"existencias"</span>: <span class="dv">30</span>,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="19" onclick="event.preventDefault();">19</a><span id="annotated-cell-11-25" class="code-annotation-target"><a href="#annotated-cell-11-25" aria-hidden="true" tabindex="-1"></a>        <span class="st">"lugar"</span>: <span class="st">"Almacén B"</span></span>
+<span id="annotated-cell-11-26"><a href="#annotated-cell-11-26" aria-hidden="true" tabindex="-1"></a>    }</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="20" onclick="event.preventDefault();">20</a><span id="annotated-cell-11-27" class="code-annotation-target"><a href="#annotated-cell-11-27" aria-hidden="true" tabindex="-1"></a>    response <span class="op">=</span> <span class="va">self</span>.client.post(<span class="st">'/api/medicamentos/'</span>, data)</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="21" onclick="event.preventDefault();">21</a><span id="annotated-cell-11-28" class="code-annotation-target"><a href="#annotated-cell-11-28" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.assertEqual(response.status_code, status.HTTP_201_CREATED)</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="22" onclick="event.preventDefault();">22</a><span id="annotated-cell-11-29" class="code-annotation-target"><a href="#annotated-cell-11-29" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.assertEqual(response.data[<span class="st">'nombre'</span>], data[<span class="st">'nombre'</span>])</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="23" onclick="event.preventDefault();">23</a><span id="annotated-cell-11-30" class="code-annotation-target"><a href="#annotated-cell-11-30" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.assertEqual(response.data[<span class="st">'precio'</span>], data[<span class="st">'precio'</span>])</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="24" onclick="event.preventDefault();">24</a><span id="annotated-cell-11-31" class="code-annotation-target"><a href="#annotated-cell-11-31" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.assertEqual(response.data[<span class="st">'existencias'</span>], data[<span class="st">'existencias'</span>])</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="25" onclick="event.preventDefault();">25</a><span id="annotated-cell-11-32" class="code-annotation-target"><a href="#annotated-cell-11-32" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.assertEqual(response.data[<span class="st">'lugar'</span>], data[<span class="st">'lugar'</span>])</span>
+<span id="annotated-cell-11-33"><a href="#annotated-cell-11-33" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="26" onclick="event.preventDefault();">26</a><span id="annotated-cell-11-34" class="code-annotation-target"><a href="#annotated-cell-11-34" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> test_detalle_medicamento(<span class="va">self</span>):</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="27" onclick="event.preventDefault();">27</a><span id="annotated-cell-11-35" class="code-annotation-target"><a href="#annotated-cell-11-35" aria-hidden="true" tabindex="-1"></a>        response <span class="op">=</span> <span class="va">self</span>.client.get(<span class="ss">f'/api/medicamentos/</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>medicamento<span class="sc">.</span><span class="bu">id</span><span class="sc">}</span><span class="ss">/'</span>)</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="28" onclick="event.preventDefault();">28</a><span id="annotated-cell-11-36" class="code-annotation-target"><a href="#annotated-cell-11-36" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.assertEqual(response.status_code, status.HTTP_200_OK)</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="29" onclick="event.preventDefault();">29</a><span id="annotated-cell-11-37" class="code-annotation-target"><a href="#annotated-cell-11-37" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.assertEqual(response.data[<span class="st">'nombre'</span>], <span class="st">"Paracetamol"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-11" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="1" data-code-annotation="1"><strong>APITestCase</strong>: Clase base para pruebas de API.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="2" data-code-annotation="2"><strong>status</strong>: Módulo de DRF para códigos de estado HTTP.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="3" data-code-annotation="3"><strong>Medicamento</strong>: Modelo de Django.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="6" data-code-annotation="4"><strong>MedicamentoAPITests</strong>: Clase de pruebas para la API de Medicamentos.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="7" data-code-annotation="5"><strong>setUp</strong>: Método para configurar datos de prueba.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="6">6</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="8" data-code-annotation="6"><strong>Medicamento.objects.create</strong>: Crea un medicamento en la base de datos.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="7">7</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="9" data-code-annotation="7"><strong>test_lista_medicamentos</strong>: Prueba para listar medicamentos.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="8">8</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="10" data-code-annotation="8"><strong>self.client.get</strong>: Realiza una solicitud GET a la API.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="9">9</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="11" data-code-annotation="9"><strong>test_crear_medicamento</strong>: Prueba para crear un medicamento.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="10">10</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="12" data-code-annotation="10"><strong>data</strong>: Datos del medicamento a crear.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="11">11</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="15" data-code-annotation="11"><strong>self.client.post</strong>: Realiza una solicitud POST a la API.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="12">12</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="16" data-code-annotation="12"><strong>test_detalle_medicamento</strong>: Prueba para obtener detalles de un medicamento.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="13">13</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="17" data-code-annotation="13"><strong>self.client.get</strong>: Realiza una solicitud GET a la API.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="14">14</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="20" data-code-annotation="14"><strong>response.data</strong>: Datos de la respuesta de la API.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="15">15</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="21" data-code-annotation="15"><strong>response.status_code</strong>: Código de estado de la respuesta.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="16">16</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="22" data-code-annotation="16"><strong>response.data[‘nombre’]</strong>: Nombre del medicamento en la respuesta.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="17">17</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="23" data-code-annotation="17"><strong>response.data[‘precio’]</strong>: Precio del medicamento en la respuesta.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="18">18</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="24" data-code-annotation="18"><strong>response.data[‘existencias’]</strong>: Existencias del medicamento en la respuesta.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="19">19</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="25" data-code-annotation="19"><strong>response.data[‘lugar’]</strong>: Lugar del medicamento en la respuesta.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="20">20</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="27" data-code-annotation="20"><strong>self.assertEqual</strong>: Compara dos valores en la prueba.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="21">21</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="28" data-code-annotation="21"><strong>self.medicamento.id</strong>: ID del medicamento creado en la base de datos.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="22">22</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="29" data-code-annotation="22"><strong>response.data[‘nombre’]</strong>: Nombre del medicamento en la respuesta.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="23">23</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="30" data-code-annotation="23"><strong>response.data[‘precio’]</strong>: Precio del medicamento en la respuesta.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="24">24</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="31" data-code-annotation="24"><strong>response.data[‘existencias’]</strong>: Existencias del medicamento en la respuesta.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="25">25</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="32" data-code-annotation="25"><strong>response.data[‘lugar’]</strong>: Lugar del medicamento en la respuesta.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="26">26</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="34" data-code-annotation="26"><strong>self.client.get</strong>: Realiza una solicitud GET a la API.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="27">27</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="35" data-code-annotation="27"><strong>response.status_code</strong>: Código de estado de la respuesta.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="28">28</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="36" data-code-annotation="28"><strong>response.data[‘nombre’]</strong>: Nombre del medicamento en la respuesta.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="29">29</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="37" data-code-annotation="29"><strong>status.HTTP_200_OK</strong>: Código de estado para una respuesta exitosa.</span>
+</dd>
+</dl>
+</section>
+<section id="conclusión" class="level3">
+<h3 class="anchored" data-anchor-id="conclusión">7. Conclusión</h3>
+<p>Con Django REST Framework, Swagger y Thunder Client, puedes desarrollar, documentar y probar APIs de manera eficiente. Este flujo de trabajo asegura que tus APIs sean robustas, fáciles de usar y bien documentadas para cualquier desarrollador o cliente que las consuma.</p>
+</section>
+</section>
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = true;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+          // default icon
+          link.classList.add("external");
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../unidades/unidad7/7_templates.html" class="pagination-link" aria-label="Sistema de Herencia de PlantiLLas, Tailwindcss y Archivos Estáticos.">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Sistema de Herencia de PlantiLLas, Tailwindcss y Archivos Estáticos.</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../unidades/Proyectos/3_funciones.html" class="pagination-link" aria-label="🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python">
+        <span class="nav-page-text"><span class="chapter-title">🪤✏️ Laboratorio: Construcción de un Juego de Ahorcado en Python</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+<p>About</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../../license.html">
+<p>License</p>
+</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

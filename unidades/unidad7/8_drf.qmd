@@ -1,0 +1,321 @@
+:::{.justify}
+# Introducción a Django REST Framework
+
+:::{.center}
+![Django REST Framework](./images/drf.png){width=100%}
+:::
+
+Django REST Framework es una biblioteca poderosa y flexible para construir APIs web en Django. DRF incluye funcionalidades como:
+
+## Serialización de modelos
+
+- Vistas basadas en clases para manejar endpoints
+- Autenticación y permisos
+- Documentación interactiva
+
+### 2. Configuración Inicial
+
+- Instalar Django REST Framework:
+
+```bash
+pip install djangorestframework
+```
+- Agregar DRF a **INSTALLED_APPS** en **settings.py**:
+
+```python
+INSTALLED_APPS = [
+    # Otros apps...
+    'rest_framework',
+]
+```
+
+- Configurar DRF (opcional): En settings.py, puedes definir configuraciones personalizadas:
+
+```python
+REST_FRAMEWORK = { # <1>
+    'DEFAULT_AUTHENTICATION_CLASSES': [ # <2>
+        'rest_framework.authentication.SessionAuthentication', # <3>
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [ # <4>
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly', # <5>
+    ],
+}
+```
+1. **REST_FRAMEWORK**: Configuración principal de DRF.
+2. **DEFAULT_AUTHENTICATION_CLASSES**: Clases de autenticación predeterminadas.
+3. **SessionAuthentication**: Autenticación basada en sesiones.
+4. **DEFAULT_PERMISSION_CLASSES**: Clases de permisos predeterminadas.
+5. **IsAuthenticatedOrReadOnly**: Permite a los usuarios autenticados realizar operaciones de escritura.
+
+### 3. Crear la API
+
+- Crear un serializador para el modelo Medicamento:
+
+```python
+from rest_framework import serializers # <1>
+from .models import Medicamento # <2>
+
+class MedicamentoSerializer(serializers.ModelSerializer): # <3>
+    class Meta: # <4>
+        model = Medicamento # <5>
+        fields = '__all__' # <6>
+```
+1. **serializers**: Módulo de DRF para serializar y deserializar datos.
+2. **Medicamento**: Modelo de Django.
+3. **MedicamentoSerializer**: Clase para serializar el modelo Medicamento.
+4. **Meta**: Clase interna para configurar el serializador.
+5. **model**: Modelo que se serializará.
+6. **fields**: Campos del modelo que se incluirán en la serialización.
+
+- Crear vistas para las APIs:
+
+```python
+from rest_framework.views import APIView # <1>
+from rest_framework.response import Response # <2>
+from rest_framework import status # <3>
+from .models import Medicamento # <4>
+from .serializers import MedicamentoSerializer # <5>
+
+class MedicamentoList(APIView): # <6>
+    def get(self, request): # <7>
+        medicamentos = Medicamento.objects.all() # <8>
+        serializer = MedicamentoSerializer(medicamentos, many=True) # <9>
+        return Response(serializer.data) # <10>
+
+    def post(self, request): # <11>
+        serializer = MedicamentoSerializer(data=request.data) # <12>
+        if serializer.is_valid(): # <13>
+            serializer.save() # <14>
+            return Response(serializer.data, status=status.HTTP_201_CREATED) # <15>
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST) # <16>
+
+class MedicamentoDetail(APIView): # <17>
+    def get(self, request, id): # <18>
+        medicamento = Medicamento.objects.get(pk=id) # <19>
+        serializer = MedicamentoSerializer(medicamento) # <20>
+        return Response(serializer.data) # <21>
+```
+1. **APIView**: Clase base para las vistas de DRF.
+2. **Response**: Clase para devolver respuestas HTTP.
+3. **status**: Módulo de DRF para códigos de estado HTTP.
+4. **Medicamento**: Modelo de Django.
+5. **MedicamentoSerializer**: Serializador para el modelo Medicamento.
+6. **MedicamentoList**: Vista para listar medicamentos.
+7. **get**: Método para manejar solicitudes GET.
+8. **Medicamento.objects.all()**: Consulta para obtener todos los medicamentos.
+9. **MedicamentoSerializer(medicamentos, many=True)**: Serializa una lista de medicamentos.
+10. **Response(serializer.data)**: Devuelve los datos serializados.
+11. **MedicamentoDetail**: Vista para obtener detalles de un medicamento.
+12. **Medicamento.objects.get(pk=id)**: Consulta para obtener un medicamento por ID.
+13. **MedicamentoSerializer(medicamento)**: Serializa un medicamento.
+14. **Response(serializer.data)**: Devuelve los datos serializados.
+15. **Response(serializer.errors)**: Devuelve errores de validación.
+16. **status.HTTP_201_CREATED**: Código de estado para la creación exitosa.
+17. **MedicamentoDetail**: Vista para obtener detalles de un medicamento.
+18. **get**: Método para manejar solicitudes GET.
+19. **Medicamento.objects.get(pk=id)**: Consulta para obtener un medicamento por ID.
+20. **MedicamentoSerializer(medicamento)**: Serializa un medicamento.
+21. **Response(serializer.data)**: Devuelve los datos serializados.
+
+- Configurar las rutas de la API: En urls.py:
+
+```python
+from django.urls import path
+from .views import MedicamentoList, MedicamentoDetail
+
+urlpatterns = [
+    path('api/medicamentos/', MedicamentoList.as_view(), name='medicamento-list'), # <1>
+    path('api/medicamentos/<int:id>/', MedicamentoDetail.as_view(), name='medicamento-detail'), # <2>
+]
+```
+1. **MedicamentoList.as_view()**: Vista para listar medicamentos.
+2. **MedicamentoDetail.as_view()**: Vista para obtener detalles de un medicamento.
+
+### 4. Documentación con Swagger
+
+:::{.center}
+![Swagger](./images/swagger.png){width=100%}
+:::
+
+Swagger es una herramienta para documentar APIs de forma interactiva. Puedes integrar Swagger en tu proyecto de Django REST Framework para proporcionar una documentación clara y detallada de tus APIs.
+
+- Instalar dependencias para Swagger:
+
+```bash
+pip install drf-yasg
+```
+- Configurar Swagger en **urls.py**:
+
+```python
+from rest_framework import permissions # <1>
+from drf_yasg.views import get_schema_view # <2>
+from drf_yasg import openapi # <3>
+
+schema_view = get_schema_view( # <4>
+    openapi.Info( # <5>
+        title="API de Medicamentos", # <6>
+        default_version='v1', # <7>
+        description="Documentación interactiva de la API", # <8>
+    ),
+    public=True, # <9>
+    permission_classes=(permissions.AllowAny,), # <10>
+)
+
+urlpatterns += [ # <11>
+    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'), # <12>
+]
+```
+1. **permissions**: Módulo de DRF para permisos.
+2. **get_schema_view**: Función para obtener la vista de Swagger.
+3. **openapi**: Módulo de drf-yasg para definir esquemas OpenAPI.
+4. **schema_view**: Vista de Swagger para tu API.
+5. **Info**: Clase para definir información de la API.
+6. **title**: Título de la API.
+7. **default_version**: Versión predeterminada de la API.
+8. **description**: Descripción de la API.
+9. **public**: Indica si la documentación es pública.
+10. **permission_classes**: Clases de permisos para acceder a la documentación.
+11. **urlpatterns**: Lista de rutas de Django.
+12. **schema_view.with_ui('swagger', cache_timeout=0)**: Vista de Swagger con interfaz interactiva.
+
+En el archivo **settings.py**, agrega **'drf_yasg'** a **INSTALLED_APPS**:
+
+```python
+INSTALLED_APPS = [
+    # Otros apps...
+    'drf_yasg', # <1>
+]
+```
+1. **drf_yasg**: App de Django para integrar Swagger.
+
+Ver la documentación interactiva: Inicia el servidor y ve a <http://localhost:8000/swagger/>. Aquí podrás explorar y probar los endpoints de tu API directamente desde el navegador.
+
+:::{.callout-tip}
+
+:::{.center}
+![Redoc](./images/redoc.png){width=100%}
+:::
+
+Otra documentación popular para APIs es **Redoc**, que puedes integrar en tu proyecto de DRF siguiendo los pasos en la documentación oficial de [drf-yasg](https://drf-yasg.readthedocs.io/en/stable/).
+
+Para que funcione en nuestro proyecto en el archivo urls.py solo hace falta agregar la siguiente línea:
+
+```python
+path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+```
+:::
+
+### 5. Pruebas con Thunder Client
+
+Thunder Client es una extensión de VS Code para probar APIs similar a Postman, pero integrada en el editor.
+
+1. Instalar Thunder Client:
+
+- Abre VS Code.
+- Ve a la pestaña de extensiones (Ctrl+Shift+X).
+- Busca Thunder Client e instálalo.
+
+2. Crear una colección de pruebas:
+
+- Abre Thunder Client desde la barra lateral.
+- Haz clic en New Request y selecciona el método (GET, POST, etc.).
+- Ingresa la URL del endpoint, por ejemplo: http://localhost:8000/api/medicamentos/.
+
+3. Enviar una solicitud GET:
+
+- Configura la URL y haz clic en Send.
+- Verifica la respuesta en el panel de resultados.
+
+4. Prueba de solicitudes POST:
+
+- Cambia el método a POST y selecciona el cuerpo (Body).
+- Ingresa un JSON como este:
+
+```json
+{
+    "nombre": "Amoxicilina",
+    "precio": 20.5,
+    "existencias": 30,
+    "lugar": "Almacén C"
+}
+```
+- Haz clic en Send para verificar si el servidor crea correctamente un nuevo medicamento.
+
+### 6. Pruebas Automatizadas de las APIs
+
+- Agrega pruebas unitarias para validar los endpoints.
+
+```python
+from rest_framework.test import APITestCase # <1>
+from rest_framework import status # <2>
+from .models import Medicamento # <3>
+
+
+class MedicamentoAPITests(APITestCase): # <4>
+    def setUp(self): # <5>
+        self.medicamento = Medicamento.objects.create( # <6>
+            nombre="Paracetamol", # <7>
+            precio=10, # <8>
+            existencias=50, # <9>
+            lugar="Almacén A" # <10>
+        )
+
+    def test_lista_medicamentos(self): # <11>
+        response = self.client.get('/api/medicamentos/') # <12>
+        self.assertEqual(response.status_code, status.HTTP_200_OK) # <13>
+
+
+def test_crear_medicamento(self): # <14>
+    data = { # <15>
+        "nombre": "Ibuprofeno", # <16>
+        "precio": 15, # <17>
+        "existencias": 30, # <18>
+        "lugar": "Almacén B" # <19>
+    }
+    response = self.client.post('/api/medicamentos/', data) # <20>
+    self.assertEqual(response.status_code, status.HTTP_201_CREATED) # <21>
+    self.assertEqual(response.data['nombre'], data['nombre']) # <22>
+    self.assertEqual(response.data['precio'], data['precio']) # <23>
+    self.assertEqual(response.data['existencias'], data['existencias']) # <24>
+    self.assertEqual(response.data['lugar'], data['lugar']) # <25>
+
+    def test_detalle_medicamento(self): # <26>
+        response = self.client.get(f'/api/medicamentos/{self.medicamento.id}/') # <27>
+        self.assertEqual(response.status_code, status.HTTP_200_OK) # <28>
+        self.assertEqual(response.data['nombre'], "Paracetamol") # <29>
+```
+1. **APITestCase**: Clase base para pruebas de API.
+2. **status**: Módulo de DRF para códigos de estado HTTP.
+3. **Medicamento**: Modelo de Django.
+4. **MedicamentoAPITests**: Clase de pruebas para la API de Medicamentos.
+5. **setUp**: Método para configurar datos de prueba.
+6. **Medicamento.objects.create**: Crea un medicamento en la base de datos.
+7. **test_lista_medicamentos**: Prueba para listar medicamentos.
+8. **self.client.get**: Realiza una solicitud GET a la API.
+9. **test_crear_medicamento**: Prueba para crear un medicamento.
+10. **data**: Datos del medicamento a crear.
+11. **self.client.post**: Realiza una solicitud POST a la API.
+12. **test_detalle_medicamento**: Prueba para obtener detalles de un medicamento.
+13. **self.client.get**: Realiza una solicitud GET a la API.
+14. **response.data**: Datos de la respuesta de la API.
+15. **response.status_code**: Código de estado de la respuesta.
+16. **response.data\['nombre'\]**: Nombre del medicamento en la respuesta.
+17. **response.data\['precio'\]**: Precio del medicamento en la respuesta.
+18. **response.data\['existencias'\]**: Existencias del medicamento en la respuesta.
+19. **response.data\['lugar'\]**: Lugar del medicamento en la respuesta.
+20. **self.assertEqual**: Compara dos valores en la prueba.
+21. **self.medicamento.id**: ID del medicamento creado en la base de datos.
+22. **response.data\['nombre'\]**: Nombre del medicamento en la respuesta.
+23. **response.data\['precio'\]**: Precio del medicamento en la respuesta.
+24. **response.data\['existencias'\]**: Existencias del medicamento en la respuesta.
+25. **response.data\['lugar'\]**: Lugar del medicamento en la respuesta.
+26. **self.client.get**: Realiza una solicitud GET a la API.
+27. **response.status_code**: Código de estado de la respuesta.
+28. **response.data\['nombre'\]**: Nombre del medicamento en la respuesta.
+29. **status.HTTP_200_OK**: Código de estado para una respuesta exitosa.
+
+
+### 7. Conclusión
+
+Con Django REST Framework, Swagger y Thunder Client, puedes desarrollar, documentar y probar APIs de manera eficiente. Este flujo de trabajo asegura que tus APIs sean robustas, fáciles de usar y bien documentadas para cualquier desarrollador o cliente que las consuma.
+:::
