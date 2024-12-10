@@ -94,16 +94,24 @@ Con estas vistas basadas en conjuntos, DRF proporciona automáticamente las oper
 - Configurar las rutas de la API: En urls.py:
 
 ```python
-from django.urls import path
-from .views import MedicamentoList, MedicamentoDetail
+from django.urls import path, include # <1>
+from rest_framework.routers import DefaultRouter # <2>
+from .views import MedicamentoView # <3>
 
-urlpatterns = [
-    path('api/medicamentos/', MedicamentoList.as_view(), name='medicamento-list'), # <1>
-    path('api/medicamentos/<int:id>/', MedicamentoDetail.as_view(), name='medicamento-detail'), # <2>
+router = DefaultRouter() # <4>
+router.register('medicamentos', MedicamentoView) # <5>
+
+urlpatterns = [ # <6>
+    path('api/', include(router.urls)), # <7>
 ]
 ```
-1. **MedicamentoList.as_view()**: Vista para listar medicamentos.
-2. **MedicamentoDetail.as_view()**: Vista para obtener detalles de un medicamento.
+1. **include**: Función para incluir rutas de Django.
+2. **DefaultRouter**: Enrutador de DRF para vistas basadas en conjuntos.
+3. **MedicamentoView**: Vista para el modelo Medicamento.
+4. **router**: Enrutador predeterminado de DRF.
+5. **router.register**: Registra la vista MedicamentoView en el enrutador.
+6. **urlpatterns**: Lista de rutas de Django.
+7. **include(router.urls)**: Incluye las rutas del enrutador en la ruta **/api/**.
 
 ### 4. Documentación con Swagger
 
