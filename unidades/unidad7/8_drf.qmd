@@ -67,55 +67,29 @@ class MedicamentoSerializer(serializers.ModelSerializer): # <3>
 5. **model**: Modelo que se serializará.
 6. **fields**: Campos del modelo que se incluirán en la serialización.
 
+:::{.callout-tip}
+Al serializar los modelos de Django, puedes especificar los campos que deseas incluir en la respuesta JSON. En este caso, **fields = '\_\_all\_\_'** incluye todos los campos del modelo Medicamento. Este proceso de serizlización se conoce permite convertir los datos de un modelo en un formato que se puede enviar a través de la red, como JSON.
+:::
+
 - Crear vistas para las APIs:
 
 ```python
-from rest_framework.views import APIView # <1>
-from rest_framework.response import Response # <2>
-from rest_framework import status # <3>
-from .models import Medicamento # <4>
-from .serializers import MedicamentoSerializer # <5>
+from .models import Medicamento # <1>
+from .serializers import MedicamentoSerializer # <2>
+from rest_framework import viewsets # <3>
 
-class MedicamentoList(APIView): # <6>
-    def get(self, request): # <7>
-        medicamentos = Medicamento.objects.all() # <8>
-        serializer = MedicamentoSerializer(medicamentos, many=True) # <9>
-        return Response(serializer.data) # <10>
-
-    def post(self, request): # <11>
-        serializer = MedicamentoSerializer(data=request.data) # <12>
-        if serializer.is_valid(): # <13>
-            serializer.save() # <14>
-            return Response(serializer.data, status=status.HTTP_201_CREATED) # <15>
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST) # <16>
-
-class MedicamentoDetail(APIView): # <17>
-    def get(self, request, id): # <18>
-        medicamento = Medicamento.objects.get(pk=id) # <19>
-        serializer = MedicamentoSerializer(medicamento) # <20>
-        return Response(serializer.data) # <21>
+class MedicamentoView(viewsets.ModelViewSet): # <4>
+    serializer_class = MedicamentoSerializer # <5>
+    queryset = Medicamento.objects.all() # <6>
 ```
-1. **APIView**: Clase base para las vistas de DRF.
-2. **Response**: Clase para devolver respuestas HTTP.
-3. **status**: Módulo de DRF para códigos de estado HTTP.
-4. **Medicamento**: Modelo de Django.
-5. **MedicamentoSerializer**: Serializador para el modelo Medicamento.
-6. **MedicamentoList**: Vista para listar medicamentos.
-7. **get**: Método para manejar solicitudes GET.
-8. **Medicamento.objects.all()**: Consulta para obtener todos los medicamentos.
-9. **MedicamentoSerializer(medicamentos, many=True)**: Serializa una lista de medicamentos.
-10. **Response(serializer.data)**: Devuelve los datos serializados.
-11. **MedicamentoDetail**: Vista para obtener detalles de un medicamento.
-12. **Medicamento.objects.get(pk=id)**: Consulta para obtener un medicamento por ID.
-13. **MedicamentoSerializer(medicamento)**: Serializa un medicamento.
-14. **Response(serializer.data)**: Devuelve los datos serializados.
-15. **Response(serializer.errors)**: Devuelve errores de validación.
-16. **status.HTTP_201_CREATED**: Código de estado para la creación exitosa.
-17. **MedicamentoDetail**: Vista para obtener detalles de un medicamento.
-18. **get**: Método para manejar solicitudes GET.
-19. **Medicamento.objects.get(pk=id)**: Consulta para obtener un medicamento por ID.
-20. **MedicamentoSerializer(medicamento)**: Serializa un medicamento.
-21. **Response(serializer.data)**: Devuelve los datos serializados.
+1. **Medicamento**: Modelo de Django.
+2. **MedicamentoSerializer**: Serializador para el modelo Medicamento.
+3. **viewsets**: Módulo de DRF para vistas basadas en conjuntos.
+4. **MedicamentoView**: Vista para el modelo Medicamento.
+5. **serializer_class**: Clase de serializador para la vista.
+6. **queryset**: Conjunto de datos de medicamentos.
+
+Con estas vistas basadas en conjuntos, DRF proporciona automáticamente las operaciones CRUD (Crear, Leer, Actualizar, Eliminar) para el modelo Medicamento.
 
 - Configurar las rutas de la API: En urls.py:
 
