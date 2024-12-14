@@ -570,205 +570,222 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </div>
-<p>Este proyecto tiene como objetivo construir una tienda virtual escalable y moderna utilizando Django para el backend, React con Vite, TailwindCSS y TypeScript para el frontend, y PostgreSQL como base de datos. Se utilizará Docker para crear un entorno de desarrollo consistente, con contenedores separados para el backend, frontend y base de datos. El sistema integrará PayPal Sandbox para pagos y será desplegado en Railway (backend) y Vercel (frontend).</p>
-<section id="descripción-general" class="level2">
-<h2 class="anchored" data-anchor-id="descripción-general">Descripción General</h2>
+<section id="descripción-del-proyecto" class="level2">
+<h2 class="anchored" data-anchor-id="descripción-del-proyecto">Descripción del Proyecto</h2>
+<p>Este proyecto tiene como objetivo construir una tienda virtual escalable y moderna utilizando <strong>Django</strong> para el backend, <strong>React</strong> con Vite, <strong>TailwindCSS</strong> y <strong>TypeScript</strong> para el frontend, y <strong>PostgreSQL</strong> como base de datos. Se utilizará <strong>Docker</strong> para crear un entorno de desarrollo consistente, con contenedores separados para el backend, frontend y base de datos. El sistema integrará <strong>PayPal Sandbox</strong> para pagos y será desplegado en Railway (backend) y Vercel (frontend).</p>
+<p>Se priorizarán buenas prácticas, seguridad, accesibilidad y cumplimiento legal para garantizar un sistema robusto y listo para producción.</p>
+</section>
+<section id="objetivos" class="level2">
+<h2 class="anchored" data-anchor-id="objetivos">Objetivos</h2>
 <section id="objetivo-general" class="level3">
-<h3 class="anchored" data-anchor-id="objetivo-general">Objetivo General:</h3>
-<p>Desarrollar una tienda virtual con una arquitectura modular, utilizando tecnologías modernas y buenas prácticas para garantizar la escalabilidad, seguridad y rendimiento.</p>
+<h3 class="anchored" data-anchor-id="objetivo-general">Objetivo General</h3>
+<p>Desarrollar una tienda virtual con arquitectura modular y tecnologías modernas, optimizada para escalabilidad, seguridad, accesibilidad y rendimiento.</p>
 </section>
 <section id="objetivos-específicos" class="level3">
-<h3 class="anchored" data-anchor-id="objetivos-específicos">Objetivos Específicos:</h3>
+<h3 class="anchored" data-anchor-id="objetivos-específicos">Objetivos Específicos</h3>
 <ol type="1">
-<li>Implementar un backend funcional con Django y Django REST Framework, utilizando autenticación basada en tokens (JWT) y una base de datos PostgreSQL.</li>
-<li>Diseñar un frontend interactivo y responsivo con React, utilizando Vite, TailwindCSS y TypeScript.</li>
-<li>Integrar pagos con PayPal Sandbox para procesar transacciones de forma segura.</li>
-<li>Configurar un entorno dockerizado con tres contenedores y una red interna para comunicación entre el backend y la base de datos.</li>
-<li>Desplegar el backend en Railway y el frontend en Vercel, asegurando que el sistema sea accesible públicamente.</li>
+<li><p>Implementar un backend funcional con <strong>Django</strong> y <strong>Django REST Framework</strong>, con autenticación basada en <strong>JWT</strong> y gestión segura de datos con <strong>PostgreSQL</strong>.</p></li>
+<li><p>Diseñar un frontend interactivo, accesible y responsivo con <strong>React</strong>, utilizando Vite, <strong>TailwindCSS</strong> y <strong>TypeScript</strong>.</p></li>
+<li><p>Integrar pagos con <strong>PayPal Sandbox</strong> y explorar opciones para múltiples métodos de pago.</p></li>
+<li><p>Configurar un entorno dockerizado con tres contenedores, garantizando comunicación eficiente entre backend y base de datos.</p></li>
+<li><p>Implementar un flujo de CI/CD con despliegue automatizado en <strong>Railway</strong> y <strong>Vercel</strong>.</p></li>
+<li><p>Asegurar cumplimiento legal y normativo (e.g., GDPR), accesibilidad (a11y) y monitoreo continuo del sistema.</p></li>
 </ol>
 </section>
 </section>
-<section id="fase-1-recolección-de-requisitos" class="level2">
-<h2 class="anchored" data-anchor-id="fase-1-recolección-de-requisitos">Fase 1: Recolección de Requisitos</h2>
-<section id="requisitos-funcionales" class="level3">
-<h3 class="anchored" data-anchor-id="requisitos-funcionales">Requisitos Funcionales:</h3>
+<section id="fases-del-proyecto" class="level2">
+<h2 class="anchored" data-anchor-id="fases-del-proyecto">Fases del Proyecto</h2>
+<section id="fase-1-recolección-de-requisitos" class="level3">
+<h3 class="anchored" data-anchor-id="fase-1-recolección-de-requisitos">Fase 1: Recolección de Requisitos</h3>
+<section id="requisitos-funcionales" class="level4">
+<h4 class="anchored" data-anchor-id="requisitos-funcionales">Requisitos Funcionales</h4>
 <p><strong>Usuarios</strong>:</p>
 <ul>
-<li>Registro, inicio de sesión y gestión de perfiles (roles: cliente y administrador).</li>
+<li><p>Registro, inicio de sesión y gestión de perfiles (roles: cliente y administrador).</p></li>
+<li><p>Recuperación de contraseña y manejo de autenticación de dos factores (2FA).</p></li>
 </ul>
 <p><strong>Productos</strong>:</p>
 <ul>
-<li>CRUD (crear, leer, actualizar, eliminar) para la gestión de productos.</li>
+<li>CRUD para gestión de productos.</li>
+<li>Gestión de imágenes con integración a servicios externos (e.g., AWS S3, Google Cloud Storage).</li>
 </ul>
 <p><strong>Carrito y Pedidos</strong>:</p>
 <ul>
-<li>Gestión de carritos de compras y creación de pedidos.</li>
+<li>Gestión de carritos de compra y creación de pedidos.</li>
+<li>Estados de pedidos (e.g., pendiente, procesado, enviado, cancelado).</li>
 </ul>
 <p><strong>Pagos</strong>:</p>
 <ul>
-<li>Integración con PayPal Sandbox para el procesamiento de pagos.</li>
+<li>Integración con PayPal Sandbox y soporte para otros métodos (e.g., Stripe).</li>
+<li>Validación de pagos y actualizaciones automáticas de pedidos.</li>
 </ul>
-<p><strong>Requisitos Técnicos</strong>:</p>
+<p><strong>Accesibilidad y SEO</strong>:</p>
+<ul>
+<li>Frontend accesible para personas con discapacidades.</li>
+<li>Optimización para motores de búsqueda (SEO).</li>
+</ul>
+<p><strong>Requisitos Técnicos</strong></p>
 <p><strong>Backend</strong>:</p>
 <ul>
-<li>Django con Django REST Framework.</li>
-<li>PostgreSQL como base de datos relacional.</li>
-<li>Autenticación JWT.</li>
+<li><strong>Django</strong> y <strong>Django REST Framework</strong> para la API.</li>
+<li>Autenticación JWT con roles de usuario.</li>
+<li>Configuración de caché con <strong>Redis</strong>.</li>
 </ul>
 <p><strong>Frontend</strong>:</p>
 <ul>
-<li>React con Vite, TailwindCSS y TypeScript.</li>
-<li>Consumo de APIs REST del backend.</li>
+<li><strong>React</strong> con <strong>Vite</strong>, <strong>TailwindCSS</strong> y <strong>TypeScript</strong>.</li>
+<li>Lazy loading y code splitting para optimizar rendimiento.</li>
+<li>Uso de Axios para consumir APIs.</li>
 </ul>
 <p><strong>Infraestructura</strong>:</p>
 <ul>
-<li>Docker para el desarrollo y despliegue local.</li>
-<li>Docker Compose para orquestar los contenedores.</li>
-<li>Una red interna para comunicación entre backend y base de datos.</li>
+<li>Contenedores Docker orquestados con Docker Compose.</li>
+<li>Red interna para comunicación entre contenedores (backend y base de datos).</li>
+<li>Configuración para manejo seguro de variables de entorno.</li>
 </ul>
 <p><strong>Despliegue</strong>:</p>
 <ul>
-<li>Railway para el backend.</li>
-<li>Vercel para el frontend.</li>
+<li>Backend desplegado en <strong>Railway</strong>.</li>
+<li>Frontend desplegado en <strong>Vercel</strong>.</li>
+<li>Flujo CI/CD para despliegue automatizado.</li>
 </ul>
+</section>
 </section>
 </section>
 <section id="fase-2-diseño-del-sistema" class="level2">
 <h2 class="anchored" data-anchor-id="fase-2-diseño-del-sistema">Fase 2: Diseño del Sistema</h2>
 <section id="arquitectura-general" class="level3">
-<h3 class="anchored" data-anchor-id="arquitectura-general">Arquitectura General:</h3>
+<h3 class="anchored" data-anchor-id="arquitectura-general">Arquitectura General</h3>
 <p><strong>Backend</strong>:</p>
 <ul>
-<li>Aplicaciones en Django para users, products, orders y payments.</li>
-<li>Endpoints REST con DRF para gestionar usuarios, productos, pedidos y pagos.</li>
-<li>Configuración de variables de entorno para manejo de secretos y credenciales (base de datos, PayPal, etc.).</li>
+<li>Módulos de Django para usuarios, productos, pedidos y pagos.</li>
+<li>Endpoints REST con DRF para CRUD y gestión de transacciones.</li>
+<li>Configuración de variables de entorno para manejar credenciales y secretos.</li>
 </ul>
 <p><strong>Frontend</strong>:</p>
 <ul>
-<li>Componentes reutilizables (Navbar, ProductCard, Cart, etc.).</li>
-</ul>
-</section>
-<section id="rutas-principales" class="level3">
-<h3 class="anchored" data-anchor-id="rutas-principales">Rutas principales:</h3>
+<li>Componentes reutilizables (Navbar, ProductCard, Cart, CheckoutForm).</li>
+<li>Rutas principales:
 <ul>
-<li><strong>Home</strong>: Listar productos.</li>
-<li><strong>Product Details</strong>: Ver detalles de un producto.</li>
-<li><strong>Cart</strong>: Mostrar productos en el carrito.</li>
+<li><strong>Home</strong>: Lista de productos.</li>
+<li><strong>Product Details</strong>: Detalles de un producto.</li>
+<li><strong>Cart</strong>: Resumen del carrito.</li>
 <li><strong>Checkout</strong>: Procesar pedidos y pagos.</li>
-<li><strong>Profile</strong>: Gestión de usuario.</li>
+<li><strong>Profile</strong>: Gestión de perfil.</li>
+</ul></li>
 </ul>
-</section>
-<section id="infraestructura" class="level3">
-<h3 class="anchored" data-anchor-id="infraestructura">Infraestructura:</h3>
-<p><strong>Docker Compose con tres servicios</strong>:</p>
+<p><strong>Infraestructura</strong>:</p>
 <ul>
-<li><strong>Base de datos</strong>: Contenedor de PostgreSQL.</li>
-<li><strong>Backend</strong>: Contenedor de Django conectado a la base de datos por una red interna.</li>
-<li><strong>Frontend</strong>: Contenedor de React que interactúa con el backend mediante APIs.</li>
+<li>Configuración de Docker Compose:
+<ul>
+<li><strong>Base de datos</strong>: Contenedor PostgreSQL con persistencia de datos.</li>
+<li><strong>Backend</strong>: Contenedor Django con conexión a la base de datos.</li>
+<li><strong>Frontend</strong>: Contenedor React conectado al backend.</li>
+</ul></li>
 </ul>
 </section>
 </section>
 <section id="fase-3-configuración-inicial" class="level2">
 <h2 class="anchored" data-anchor-id="fase-3-configuración-inicial">Fase 3: Configuración Inicial</h2>
-<section id="actividades" class="level3">
-<h3 class="anchored" data-anchor-id="actividades">Actividades:</h3>
+<ol type="1">
+<li>Crear la estructura inicial del proyecto con directorios separados para backend y frontend.</li>
+<li>Configurar un archivo <strong>docker-compose.yml</strong> para orquestar contenedores.</li>
+<li>Crear <strong>.env</strong> para variables de entorno:</li>
+</ol>
 <ul>
-<li>Crear la estructura inicial del proyecto con directorios separados para el backend y el frontend.</li>
-<li>Configurar un archivo docker-compose.yml para orquestar los contenedores.</li>
-<li>Crear una red de Docker manualmente que conecte solo al backend y la base de datos.</li>
+<li><strong>Backend</strong>: <strong>DATABASE_URL</strong>, <strong>SECRET_KEY</strong>, <strong>PAYPAL_CLIENT_ID</strong>.</li>
+<li><strong>Frontend</strong>: URL del backend, claves de API.</li>
 </ul>
-<p><strong>Archivos Iniciales</strong>:</p>
-<p><strong>Backend</strong>:</p>
-<ul>
-<li><strong>.env</strong> para variables de entorno (e.g., DATABASE_URL, SECRET_KEY).</li>
-<li><strong>requirements.txt</strong> para gestionar dependencias de Python.</li>
-<li><strong>.gitignore</strong> para excluir archivos sensibles (env/, <strong>pycache</strong>/, etc.).</li>
-<li>Configuración de <strong>settings.py</strong> separada para desarrollo y producción.</li>
-</ul>
-<p><strong>Frontend</strong>:</p>
-<ul>
-<li>Archivo <strong>vite.config.js</strong> para configurar Vite.</li>
-<li>Configuración de TailwindCSS.</li>
-<li><strong>.env</strong> para variables de entorno (URL de la API del backend).</li>
-<li><strong>.gitignore</strong> para excluir archivos innecesarios (node_modules/, dist/).</li>
-</ul>
-</section>
-<section id="general" class="level3">
-<h3 class="anchored" data-anchor-id="general">General:</h3>
-<ul>
-<li>Archivo <strong>docker-compose.yml</strong> para la infraestructura.</li>
-<li>Configuración de red interna en Docker.</li>
-<li>Archivo <strong>README.md</strong> con instrucciones básicas para iniciar el proyecto.</li>
-</ul>
-</section>
+<ol start="4" type="1">
+<li>Configurar TailwindCSS en el frontend.</li>
+<li>Inicializar el repositorio Git con un .gitignore adecuado.</li>
+</ol>
 </section>
 <section id="fase-4-desarrollo-del-backend" class="level2">
 <h2 class="anchored" data-anchor-id="fase-4-desarrollo-del-backend">Fase 4: Desarrollo del Backend</h2>
-<section id="actividades-1" class="level3">
-<h3 class="anchored" data-anchor-id="actividades-1">Actividades:</h3>
-<p><strong>Crear modelos y relaciones</strong>:</p>
+<ol type="1">
+<li>Crear modelos y relaciones:</li>
+</ol>
 <ul>
-<li>User: Con roles (cliente y administrador).</li>
-<li>Product: Con detalles como precio, inventario, etc.</li>
-<li>Order: Asociado a usuarios y productos.</li>
-<li>Configurar vistas y serializadores con Django REST Framework.</li>
-<li>Implementar autenticación basada en JWT.</li>
-<li>Crear endpoints REST para users, products, orders y payments.</li>
+<li><strong>User</strong>: Roles (cliente y administrador).</li>
+<li><strong>Product</strong>: Detalles (nombre, precio, inventario, imágenes).</li>
+<li><strong>Order</strong>: Asociado a usuarios y productos.</li>
+</ul>
+<ol start="2" type="1">
+<li>Configurar vistas y serializadores con <strong>Django REST Framework</strong>.</li>
+<li>Implementar autenticación basada en <strong>JWT</strong>.</li>
+<li>Configurar endpoints seguros para:</li>
+</ol>
+<ul>
+<li>Usuarios (registro, login, perfil).</li>
+<li>Productos (CRUD).</li>
+<li>Pedidos.</li>
+<li>Pagos.</li>
 </ul>
 </section>
-<section id="actividades-2" class="level3">
-<h3 class="anchored" data-anchor-id="actividades-2">Actividades:</h3>
-<ul>
-<li>Configurar React con Vite, TailwindCSS y TypeScript.</li>
-<li>Crear componentes reutilizables y páginas principales.</li>
-<li>Configurar React Router para navegación entre vistas.</li>
-<li>Consumir APIs del backend con Axios, manejando autenticación con JWT.</li>
-</ul>
-</section>
+<section id="fase-5-desarrollo-del-frontend" class="level2">
+<h2 class="anchored" data-anchor-id="fase-5-desarrollo-del-frontend">Fase 5: Desarrollo del Frontend</h2>
+<ol type="1">
+<li>Configurar React con <strong>Vite</strong>, <strong>TailwindCSS</strong> y <strong>TypeScript</strong>.</li>
+<li>Crear componentes reutilizables y rutas principales.</li>
+<li>Integrar <strong>React Router</strong> para navegación.</li>
+<li>Consumir APIs del backend con Axios, manejando autenticación y errores.</li>
+</ol>
 </section>
 <section id="fase-6-integración-de-pagos" class="level2">
 <h2 class="anchored" data-anchor-id="fase-6-integración-de-pagos">Fase 6: Integración de Pagos</h2>
-<section id="actividades-3" class="level3">
-<h3 class="anchored" data-anchor-id="actividades-3">Actividades:</h3>
-<ul>
-<li>Configurar PayPal Sandbox en el backend para generar enlaces de pago.</li>
-<li>Implementar la lógica en el frontend para manejar transacciones.</li>
-<li>Validar los pagos y actualizar los pedidos según el estado de la transacción.</li>
-</ul>
-</section>
+<ol type="1">
+<li>Configurar PayPal Sandbox en el backend.</li>
+<li>Implementar lógica en el frontend para manejar transacciones.</li>
+<li>Validar pagos y actualizar pedidos según estado de transacción.</li>
+</ol>
 </section>
 <section id="fase-7-pruebas" class="level2">
 <h2 class="anchored" data-anchor-id="fase-7-pruebas">Fase 7: Pruebas</h2>
-<section id="actividades-4" class="level3">
-<h3 class="anchored" data-anchor-id="actividades-4">Actividades:</h3>
+<ol type="1">
+<li><strong>Pruebas Unitarias</strong>:</li>
+</ol>
 <ul>
-<li>Pruebas unitarias para backend y frontend.</li>
-<li>Pruebas de integración para el flujo completo (registro → compra → pago).</li>
-<li>Validar la comunicación entre contenedores en el entorno dockerizado.</li>
+<li><strong>Backend</strong>: Modelos, serializadores, vistas.</li>
+<li><strong>Frontend</strong>: Componentes, funciones.</li>
 </ul>
-</section>
+<ol start="2" type="1">
+<li><strong>Pruebas de Integración</strong>:</li>
+</ol>
+<ul>
+<li>Flujo completo (registro → carrito → pago).</li>
+</ul>
+<ol start="3" type="1">
+<li><strong>Pruebas de Carga</strong>:</li>
+</ol>
+<ul>
+<li>Simular tráfico alto con herramientas como <strong>Locust</strong> o <strong>JMeter</strong>.</li>
+</ul>
 </section>
 <section id="fase-8-despliegue" class="level2">
 <h2 class="anchored" data-anchor-id="fase-8-despliegue">Fase 8: Despliegue</h2>
-<section id="actividades-5" class="level3">
-<h3 class="anchored" data-anchor-id="actividades-5">Actividades:</h3>
-<ul>
-<li>Configurar el backend para producción en Railway.</li>
-<li>Configurar el frontend para producción en Vercel.</li>
-<li>Validar el sistema completo en entornos reales, incluyendo la integración con PayPal Sandbox.</li>
-</ul>
-</section>
+<ol type="1">
+<li>Configurar CI/CD para despliegue automatizado.</li>
+<li>Desplegar backend en Railway y frontend en Vercel.</li>
+<li>Validar el sistema completo en producción.</li>
+</ol>
 </section>
 <section id="fase-9-optimización-y-mantenimiento" class="level2">
 <h2 class="anchored" data-anchor-id="fase-9-optimización-y-mantenimiento">Fase 9: Optimización y Mantenimiento</h2>
-<section id="actividades-6" class="level3">
-<h3 class="anchored" data-anchor-id="actividades-6">Actividades:</h3>
-<ul>
-<li>Optimizar consultas de la base de datos y rendimiento del backend.</li>
-<li>Implementar monitoreo y alertas para errores y rendimiento.</li>
-<li>Actualizar dependencias y resolver vulnerabilidades de seguridad.</li>
-</ul>
+<ol type="1">
+<li>Optimizar consultas a la base de datos.</li>
+<li>Implementar monitoreo con herramientas como Grafana y Prometheus.</li>
+<li>Automatizar backups para la base de datos.</li>
+<li>Actualizar dependencias y resolver vulnerabilidades.</li>
+</ol>
 </section>
+<section id="fase-10-documentación" class="level2">
+<h2 class="anchored" data-anchor-id="fase-10-documentación">Fase 10: Documentación</h2>
+<ol type="1">
+<li>Crear documentación detallada para desarrolladores y usuarios finales.</li>
+<li>Generar un manual de uso de la API con Swagger.</li>
+<li>Incluir instrucciones para desarrollo local y despliegue.</li>
+</ol>
 </section>
 </div>
 
