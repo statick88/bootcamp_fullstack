@@ -21,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -598,219 +564,183 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="justify">
 <section id="introducción" class="level2">
 <h2 class="anchored" data-anchor-id="introducción">Introducción</h2>
-<p>Antes de comenzar a desarrollar una tienda virtual, debemos entender qué vamos a construir y cómo lo haremos. Esta fase nos ayuda a identificar las funcionalidades clave, las herramientas necesarias y las metas que queremos alcanzar.</p>
-<p>Nuestro objetivo principal es construir una tienda virtual funcional y moderna. Este será nuestro punto de partida para establecer las bases del desarrollo.</p>
-</section>
-<section id="qué-es-un-requisito" class="level2">
-<h2 class="anchored" data-anchor-id="qué-es-un-requisito">¿Qué es un Requisito?</h2>
-<p>Un requisito es una característica o función que el sistema debe cumplir. Pueden ser:</p>
+<p>Esta fase inicial tiene como objetivo comprender y documentar todos los aspectos necesarios para construir una tienda virtual funcional y moderna. Definir los requisitos de manera clara y detallada asegura una base sólida para las fases posteriores y reduce el riesgo de errores y retrabajo.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>¿Qué es un Requisito?</strong></p>
+<ul>
+<li>Un requisito es una característica que el sistema debe cumplir. Se clasifica en:</li>
+</ul>
+</div>
+</div>
 <ol type="1">
-<li><strong>Funcionales</strong>: Qué debe hacer el sistema.</li>
-</ol>
+<li><p><strong>Requisitos Funcionales</strong>: Qué debe hacer el sistema.</p>
 <ul>
-<li>Ejemplo: Un usuario debe poder registrarse e iniciar sesión.</li>
-</ul>
-<ol start="2" type="1">
-<li><strong>No funcionales</strong>: Cómo debe comportarse el sistema.</li>
-</ol>
+<li><strong>Ejemplo</strong>: Un usuario debe poder registrarse e iniciar sesión.</li>
+</ul></li>
+<li><p><strong>Requisitos No Funcionales</strong>: Cómo debe comportarse el sistema.</p>
 <ul>
-<li>Ejemplo: El sistema debe responder en menos de 2 segundos.</li>
-</ul>
-<ol start="3" type="1">
-<li><strong>Técnicos</strong>: Qué herramientas o tecnologías utilizaremos.</li>
-</ol>
+<li><strong>Ejemplo</strong>: El sistema debe responder en menos de 2 segundos.</li>
+</ul></li>
+<li><p><strong>Requisitos Técnicos</strong>: Qué herramientas o tecnologías utilizaremos.</p>
 <ul>
-<li>Ejemplo: Django para el backend y React para el frontend.</li>
-</ul>
+<li><strong>Ejemplo</strong>: Usar React para el frontend.</li>
+</ul></li>
+</ol>
 </section>
-<section id="objetivos-de-la-fase-1" class="level2">
-<h2 class="anchored" data-anchor-id="objetivos-de-la-fase-1">Objetivos de la Fase 1</h2>
+<section id="objetivos" class="level2">
+<h2 class="anchored" data-anchor-id="objetivos">Objetivos</h2>
 <ol type="1">
-<li>Identificar las funcionalidades que necesita nuestra tienda virtual.</li>
-<li>Establecer estándares de calidad y desempeño.</li>
-<li>Seleccionar las tecnologías que usaremos en el desarrollo.</li>
+<li>Identificar todas las funcionalidades clave de la tienda virtual.</li>
+<li>Establecer estándares claros de calidad y desempeño.</li>
+<li>Seleccionar las tecnologías adecuadas para el desarrollo.</li>
 </ol>
 </section>
 <section id="actividades" class="level2">
 <h2 class="anchored" data-anchor-id="actividades">Actividades</h2>
-<ol type="1">
-<li>Definir Requisitos Funcionales</li>
-</ol>
-<p>Nuestra tienda virtual tendrá las siguientes funcionalidades:</p>
+<section id="definir-requisitos-funcionales" class="level3">
+<h3 class="anchored" data-anchor-id="definir-requisitos-funcionales">1. Definir Requisitos Funcionales</h3>
+<p><strong>Usuarios</strong>:</p>
 <ul>
-<li><p><strong>Usuarios</strong>:</p>
-<ul>
-<li>Registro e inicio de sesión.</li>
+<li>Registro e inicio de sesión con validación.</li>
 <li>Gestión de perfiles (nombre, correo, contraseña).</li>
-<li>Diferentes roles: Cliente y Administrador.</li>
-</ul></li>
-<li><p><strong>Productos</strong>:</p>
+</ul>
+<p><strong>Roles</strong>:</p>
 <ul>
-<li>Los usuarios deben ver una lista de productos.</li>
-<li>Los administradores deben poder agregar, editar y eliminar productos.</li>
-</ul></li>
-<li><p><strong>Carrito de Compras</strong>:</p>
+<li><strong>Cliente</strong>: Realizar compras y gestionar su carrito.</li>
+<li><strong>Administrador</strong>: Gestión total de productos y pedidos.</li>
+</ul>
+<p><strong>Productos</strong>:</p>
 <ul>
-<li>Los usuarios deben poder agregar y eliminar productos del carrito.</li>
-<li>El sistema debe calcular el precio total automáticamente.</li>
-</ul></li>
-<li><p><strong>Pedidos</strong>:</p>
+<li>Visualización de lista de productos con detalles.</li>
+<li>CRUD (crear, leer, actualizar, eliminar) para administradores.</li>
+</ul>
+<p><strong>Carrito de Compras</strong>:</p>
 <ul>
-<li>Los usuarios deben poder realizar pedidos desde el carrito.</li>
-<li>Los pedidos deben tener un estado: Pendiente, Pagado, Enviado.</li>
-</ul></li>
-<li><p><strong>Pagos</strong>:</p>
+<li>Agregar y eliminar productos del carrito.</li>
+<li>Calcular automáticamente el precio total.</li>
+</ul>
+<p><strong>Pedidos</strong>:</p>
 <ul>
-<li>Integración con PayPal para procesar pagos.</li>
-</ul></li>
-<li><p><strong>Frontend</strong>:</p>
+<li>Crear pedidos a partir del carrito.</li>
+<li>Gestión de estados del pedido: Pendiente, Pagado, Enviado.</li>
+</ul>
+<p><strong>Pagos</strong>:</p>
 <ul>
-<li>Debe ser intuitivo, responsivo y atractivo visualmente.</li>
-<li>Compatible con dispositivos móviles y computadoras.</li>
-</ul></li>
+<li>Integración con PayPal Sandbox para procesar pagos.</li>
+</ul>
+<p><strong>Frontend</strong>:</p>
+<ul>
+<li>Diseño atractivo, intuitivo y responsivo.</li>
+<li>Compatibilidad con dispositivos móviles y computadoras.</li>
 </ul>
 </section>
-<section id="definir-requisitos-no-funcionales" class="level2">
-<h2 class="anchored" data-anchor-id="definir-requisitos-no-funcionales">2. Definir Requisitos No Funcionales</h2>
+<section id="definir-requisitos-no-funcionales" class="level3">
+<h3 class="anchored" data-anchor-id="definir-requisitos-no-funcionales">2. Definir Requisitos No Funcionales</h3>
+<p><strong>Seguridad</strong>:</p>
 <ul>
-<li><p><strong>Seguridad</strong>:</p>
+<li>Uso de HTTPS en producción.</li>
+<li>Autenticación y autorización con JWT.</li>
+</ul>
+<p><strong>Rendimiento</strong>:</p>
 <ul>
-<li>La comunicación entre frontend y backend debe usar HTTPS en producción.</li>
-<li>Autenticación de usuarios mediante JWT (JSON Web Tokens).</li>
-</ul></li>
-<li><p><strong>Rendimiento</strong>:</p>
+<li>Respuesta en menos de 2 segundos para la mayoría de las operaciones.</li>
+</ul>
+<p><strong>Escalabilidad</strong>:</p>
 <ul>
-<li>El sistema debe responder en menos de 2 segundos para la mayoría de las operaciones.</li>
-</ul></li>
-<li><p><strong>Escalabilidad</strong>:</p>
+<li>Soporte inicial para 100 usuarios concurrentes.</li>
+</ul>
+<p><strong>Accesibilidad</strong>:</p>
 <ul>
-<li>Debe soportar al menos 100 usuarios concurrentes en la fase inicial.</li>
-</ul></li>
-<li><p><strong>Accesibilidad</strong>:</p>
-<ul>
-<li>Interfaz accesible para diferentes dispositivos y navegadores modernos.</li>
-</ul></li>
+<li>Interfaz funcional y compatible con navegadores modernos.</li>
 </ul>
 </section>
-<section id="definir-requisitos-técnicos" class="level2">
-<h2 class="anchored" data-anchor-id="definir-requisitos-técnicos">3. Definir Requisitos Técnicos</h2>
+<section id="definir-requisitos-técnicos" class="level3">
+<h3 class="anchored" data-anchor-id="definir-requisitos-técnicos">3. Definir Requisitos Técnicos</h3>
+<p><strong>Backend</strong>:</p>
 <ul>
-<li><p><strong>Backend</strong>:</p>
-<ul>
-<li><strong>Framework</strong>: Django con Django REST Framework (DRF).</li>
-<li><strong>Base de Datos</strong>: PostgreSQL.</li>
+<li><strong>Framework</strong>: Django 4.2 + Django REST Framework 3.15.</li>
+<li><strong>Base de Datos</strong>: PostgreSQL 15.</li>
 <li><strong>Autenticación</strong>: JWT.</li>
-<li><strong>Contenedorización</strong>: Docker.</li>
-</ul></li>
-<li><p><strong>Frontend</strong>:</p>
+<li><strong>Despliegue</strong>: Railway.</li>
+</ul>
+<p><strong>Frontend</strong></p>
 <ul>
-<li><strong>Framework</strong>: React con Vite.</li>
+<li><strong>Framework</strong>: React 18 con Vite.</li>
 <li><strong>Estilización</strong>: TailwindCSS.</li>
 <li><strong>Lenguaje</strong>: TypeScript.</li>
-</ul></li>
-<li><p><strong>Infraestructura</strong>:</p>
+<li><strong>Despliegue</strong>: Vercel.</li>
+</ul>
+<p><strong>Infraestructura</strong></p>
 <ul>
-<li>Contenedores Docker:
+<li><p><strong>Contenedores Docker para</strong>:</p>
 <ul>
-<li>Base de datos.</li>
-<li>Backend.</li>
-<li>Frontend.</li>
+<li>Base de datos (PostgreSQL).</li>
+<li>Backend (Django).</li>
+<li>Frontend (React).</li>
 </ul></li>
-<li>Red interna en Docker para comunicar backend y base de datos.</li>
-</ul></li>
-<li><p><strong>Despliegue</strong>:</p>
+<li><p><strong>Orquestación</strong>: Docker Compose v3.8.</p></li>
+</ul>
+<p><strong>Otros</strong></p>
 <ul>
-<li><strong>Backend</strong>: Railway.</li>
-<li><strong>Frontend</strong>: Vercel.</li>
-<li>PayPal Sandbox para pruebas de pagos.</li>
-</ul></li>
+<li>Uso del entorno de pruebas de PayPal (<strong>Sandbox</strong>).</li>
 </ul>
 </section>
-<section id="ejercicio-práctico-documentar-requisitos" class="level2">
-<h2 class="anchored" data-anchor-id="ejercicio-práctico-documentar-requisitos">Ejercicio Práctico: Documentar Requisitos</h2>
+<section id="representación-visual" class="level3">
+<h3 class="anchored" data-anchor-id="representación-visual">4. Representación Visual</h3>
+<p>A continuación, se muestra un diagrama conceptual de la arquitectura:</p>
+<pre class="plaintext"><code>Usuario -----&gt; Frontend (React + Vite) -----&gt; Backend (Django REST API)
+                |                              |
+                V                              V
+            TailwindCSS                  Base de Datos (PostgreSQL)</code></pre>
+</section>
+</section>
+<section id="entregables" class="level1">
+<h1>Entregables</h1>
 <ol type="1">
-<li>Abre tu editor de texto favorito (VSCode, Sublime Text o el que prefieras).</li>
-<li>Crea un archivo llamado <strong>requisitos.md</strong>.</li>
-<li>Escribe los siguientes contenidos:</li>
+<li>Documento de Requisitos Funcionales.</li>
+<li>Documento de Requisitos No Funcionales.</li>
+<li>Documento de Requisitos Técnicos.</li>
+<li>Diagrama de arquitectura inicial.</li>
 </ol>
-<details>
-<summary>
-📝 <strong>Requisitos de la Tienda Virtual</strong>
-</summary>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Requisitos de la Tienda Virtual</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Requisitos Funcionales</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Registro e inicio de sesión para usuarios.</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Gestión de perfiles de usuario (Cliente y Administrador).</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Listado de productos.</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>CRUD de productos (solo para Administradores).</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Carrito de compras con cálculo automático del total.</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>Gestión de pedidos con estados (Pendiente, Pagado, Enviado).</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>Integración de pagos con PayPal.</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">8. </span>Interfaz responsiva compatible con móviles y computadoras.</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## Requisitos No Funcionales</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Uso de HTTPS en producción.</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Autenticación segura con JWT.</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Respuesta rápida del sistema (&lt;2 segundos).</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Soporte inicial para 100 usuarios concurrentes.</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Interfaz accesible para navegadores modernos.</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">## Requisitos Técnicos</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">### Backend</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Framework: Django con Django REST Framework.</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Base de Datos: PostgreSQL.</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Autenticación: JWT.</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Despliegue: Railway.</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">### Frontend</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Framework: React con Vite.</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Estilización: TailwindCSS.</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Lenguaje: TypeScript.</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Despliegue: Vercel.</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="fu">### Infraestructura</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Contenedores Docker:</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Base de datos (PostgreSQL).</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Backend (Django).</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Frontend (React).</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Red interna para comunicación entre backend y base de datos.</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Uso de Docker Compose para orquestar los contenedores.</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="fu">### Otros</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Sandbox de PayPal para pruebas de pagos.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="explicación" class="level3">
-<h3 class="anchored" data-anchor-id="explicación">Explicación</h3>
 </section>
-<section id="por-qué-documentamos-requisitos" class="level3">
-<h3 class="anchored" data-anchor-id="por-qué-documentamos-requisitos">¿Por qué documentamos requisitos?</h3>
+<section id="pruebas-de-la-fase-1" class="level1">
+<h1>Pruebas de la Fase 1</h1>
+<ol type="1">
+<li>Revisión de los documentos de requisitos por parte del equipo.</li>
+<li>Validación de los requisitos con el cliente:</li>
+</ol>
 <ul>
-<li>Nos ayuda a tener claro qué vamos a construir.</li>
-<li>Es una referencia para todo el equipo durante el desarrollo.</li>
-<li>Facilita la detección de errores o problemas desde el inicio.</li>
-</ul>
-</section>
-<section id="por-qué-dividir-en-funcionales-no-funcionales-y-técnicos" class="level3">
-<h3 class="anchored" data-anchor-id="por-qué-dividir-en-funcionales-no-funcionales-y-técnicos">¿Por qué dividir en funcionales, no funcionales y técnicos?</h3>
-<ul>
-<li>Cada tipo de requisito aborda un aspecto específico del sistema:
-<ul>
-<li>Funcionales: Lo que el sistema hace.</li>
-<li>No funcionales: Cómo lo hace.</li>
-<li>Técnicos: Con qué herramientas lo hacemos.</li>
+<li>Checklist de Validación:
+<ul class="task-list">
+<li><label><input type="checkbox">¿Todos los roles están cubiertos?</label></li>
+<li><label><input type="checkbox">¿Se describen claramente las interacciones clave del sistema?</label></li>
+<li><label><input type="checkbox">¿Se definen métricas claras de desempeño?</label></li>
 </ul></li>
 </ul>
-</section></details>
+<ol start="3" type="1">
+<li>Aprobación final de los requisitos para avanzar a la fase de diseño.</li>
+</ol>
 </section>
-
-<section id="pruebas-de-la-fase-1" class="level2">
-<h2 class="anchored" data-anchor-id="pruebas-de-la-fase-1">Pruebas de la Fase 1</h2>
-<p>Esta fase no involucra código, pero puedes verificar:</p>
-<ul>
-<li><strong>Complejidad</strong>: ¿Están todos los requisitos necesarios para la tienda virtual?</li>
-<li><strong>Claridad</strong>: ¿Son los requisitos entendibles para todos los estudiantes?</li>
-<li><strong>Factibilidad</strong>: ¿Son realistas los requisitos con las herramientas y el tiempo disponibles?</li>
-</ul>
+<section id="métricas-de-éxito" class="level1">
+<h1>Métricas de Éxito</h1>
+<ol type="1">
+<li><strong>Completitud</strong>: Documentación del 100% de los requisitos funcionales y técnicos.</li>
+<li><strong>Aprobación del cliente</strong>: Validación sin objeciones críticas.</li>
+<li><strong>Claridad</strong>: Comprensión total del equipo sobre los documentos entregados.</li>
+</ol>
+</section>
+<section id="conclusiones" class="level1">
+<h1>Conclusiones</h1>
+<p>La Fase 1 sienta las bases para un desarrollo exitoso al documentar detalladamente lo que se necesita construir. La inclusión de requisitos funcionales, no funcionales y técnicos, junto con representaciones visuales, asegura una alineación clara entre los miembros del equipo y el cliente. Este enfoque reduce riesgos y prepara el terreno para las siguientes fases del proyecto, como el diseño del sistema.</p>
 </section>
 </div>
 

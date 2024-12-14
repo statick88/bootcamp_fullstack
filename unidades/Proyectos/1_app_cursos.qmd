@@ -1,0 +1,169 @@
+# Sistema de Gestión de Cursos con Django y DRF
+
+:::{.center}
+![Django](./images/app_cursos.png)
+:::
+
+## 1. Configuración del Proyecto
+
+### Paso 1: Crear el proyecto y entorno virtual
+
+```bash
+mkdir course_management
+cd course_management
+python -m venv env
+source venv/bin/activate
+pip install django djangorestframework
+```
+### Paso 2: Crear el proyecto y la aplicación
+
+```bash
+django-admin startproject config .
+python manage.py startapp courses
+```
+
+### Paso 3: Configurar INSTALLED_APPS
+
+Editar config/settings.py:
+
+```python
+INSTALLED_APPS = [
+    ...
+    'rest_framework',
+    'courses',
+]
+```
+
+### Paso 4: Migrar la base de datos
+
+```bash
+python manage.py migrate
+```
+
+# 2. Modelos
+
+### Paso 1: Definir los modelos
+
+Editar courses/models.py:
+
+```python
+from django.db import models
+
+class Course(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.title
+
+class Student(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField(unique=True)
+    courses = models.ManyToManyField(Course, related_name='students')
+
+    def __str__(self):
+        return self.name
+```
+
+### Paso 2: Migrar los modelos
+
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+# 3. Serializers
+
+### Paso 1: Crear el archivo serializers.py
+
+Crear y editar courses/serializers.py:
+
+```python
+from rest_framework import serializers
+from .models import Course, Student
+
+class CourseSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Course
+        fields = '__all__'
+
+class StudentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Student
+        fields = '__all__'
+```
+# 4. Vistas
+
+### Paso 1: Crear las vistas
+
+Editar courses/views.py:
+
+```python
+from rest_framework.viewsets import ModelViewSet
+from .models import Course, Student
+from .serializers import CourseSerializer, StudentSerializer
+
+class CourseViewSet(ModelViewSet):
+    queryset = Course.objects.all()
+    serializer_class = CourseSerializer
+
+class StudentViewSet(ModelViewSet):
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer
+```
+
+# 5. Rutas
+
+### Paso 1: Configurar las rutas de la aplicación
+
+Crear y editar courses/urls.py:
+
+```python
+from rest_framework.routers import DefaultRouter
+from .views import CourseViewSet, StudentViewSet
+
+router = DefaultRouter()
+router.register('courses', CourseViewSet)
+router.register('students', StudentViewSet)
+
+urlpatterns = router.urls
+```
+
+### Paso 2: Incluir las rutas en el proyecto
+
+Editar config/urls.py:
+
+```python
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('api/', include('courses.urls')),
+]
+```
+
+# 6. Pruebas de la API
+
+### Paso 1: Levantar el servidor
+
+```bash
+python manage.py runserver
+```
+
+### Paso 2: Endpoints disponibles
+
+- Listar Cursos: GET http://127.0.0.1:8000/api/courses/
+
+- Crear Curso: POST http://127.0.0.1:8000/api/courses/
+
+```json
+{
+    "title": "Curso Django",
+    "description": "Aprende Django desde cero."
+}
+```
+
+- Listar Estudiantes: GET http://127.0.0.1:8000/api/students/
+
+- Crear Estudiante: POST http://127.0.0.1:8000/api/students/

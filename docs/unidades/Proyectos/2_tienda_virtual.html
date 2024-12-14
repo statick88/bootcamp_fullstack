@@ -596,107 +596,115 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <div class="justify">
-<p>En esta fase, configuraremos lo siguiente:</p>
+<p>En esta fase, configuraremos la red de Docker, levantaremos el contenedor para PostgreSQL, y gestionaremos las variables de entorno de forma adecuada. También automatizaremos la creación de la red para la comunicación entre el backend y la base de datos, simplificando el proceso de configuración.</p>
+<section id="objetivos-de-la-fase" class="level2">
+<h2 class="anchored" data-anchor-id="objetivos-de-la-fase">Objetivos de la Fase</h2>
 <ol type="1">
-<li>Crear la red manualmente.</li>
-<li>Configurar y levantar el contenedor para la base de datos PostgreSQL.</li>
-<li>Configurar persistencia de datos con volúmenes.</li>
-<li>Probar que la base de datos funciona correctamente.</li>
+<li>Crear un archivo <strong>.gitignore</strong> y un archivo <strong>.dockerignore</strong> para evitar incluir archivos no necesarios.</li>
+<li>Configurar un archivo <strong>.env</strong> para gestionar las variables de entorno.</li>
+<li>Automatizar la creación de la red para la comunicación entre el backend y la base de datos.</li>
+<li>Configurar y levantar el contenedor de <strong>PostgreSQL</strong> utilizando Docker Compose.</li>
+<li>Verificar que la base de datos funciona correctamente y puede conectarse sin problemas.</li>
 </ol>
-<section id="paso-1-crear-la-red-manualmente" class="level2">
-<h2 class="anchored" data-anchor-id="paso-1-crear-la-red-manualmente">Paso 1: Crear la Red Manualmente</h2>
-<p>Docker necesita una red para permitir la comunicación entre el backend y la base de datos. Esta red será creada de forma manual antes de levantar los contenedores.</p>
-<ol type="1">
-<li>Abre una terminal y ejecuta el siguiente comando para crear la red:</li>
-</ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> network create backend_network</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="2" type="1">
-<li>Verifica que la red fue creada:</li>
-</ol>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> network ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Busca <strong>backend_network</strong> en la lista de redes.</p>
 </section>
-<section id="paso-2-configurar-el-contenedor-para-la-base-de-datos" class="level2">
-<h2 class="anchored" data-anchor-id="paso-2-configurar-el-contenedor-para-la-base-de-datos">Paso 2: Configurar el Contenedor para la Base de Datos</h2>
-<p>Crearemos un contenedor para PostgreSQL utilizando <strong>docker-compose.yml</strong>.</p>
+<section id="paso-1-crear-los-archivos-.gitignore-y-.dockerignore" class="level2">
+<h2 class="anchored" data-anchor-id="paso-1-crear-los-archivos-.gitignore-y-.dockerignore">Paso 1: Crear los Archivos .gitignore y .dockerignore</h2>
+<p>Los archivos <strong>.gitignore</strong> y <strong>.dockerignore</strong> nos ayudarán a evitar que archivos innecesarios sean incluidos en el repositorio o en la imagen Docker.</p>
 <ol type="1">
-<li>Estructura de archivos y carpetas:</li>
+<li><strong>gitignore</strong>: Crea un archivo <strong>.gitignore</strong> en el directorio raíz del proyecto y añade las siguientes líneas:</li>
 </ol>
+<pre class=".gitignore"><code># Archivos de configuración de Docker
+.dockerignore
+
+# Archivos de entorno
+.env
+
+# Archivos generados por Docker
+docker-compose.override.yml
+
+# Directorios y archivos temporales de la aplicación
+node_modules/
+*.log
+*.pid
+
+# Archivos de Python (si es necesario)
+__pycache__/
+*.pyc</code></pre>
+<ol start="2" type="1">
+<li><strong>dockerignore</strong>: Crea un archivo <strong>.dockerignore</strong> en el directorio raíz y añade lo siguiente:</li>
+</ol>
+<pre class=".dockerignore"><code># Archivos y carpetas que no deben ser copiados a la imagen de Docker
+node_modules/
+*.log
+*.env
+.git
+.gitignore
+.dockerignore</code></pre>
+</section>
+<section id="paso-2-configurar-el-archivo-.env-para-variables-de-entorno" class="level2">
+<h2 class="anchored" data-anchor-id="paso-2-configurar-el-archivo-.env-para-variables-de-entorno">Paso 2: Configurar el Archivo .env para Variables de Entorno</h2>
+<p>Las variables de entorno como las credenciales de la base de datos deben mantenerse fuera del código fuente, por lo que se recomienda usar un archivo <strong>.env</strong> para gestionar esta información. Crea un archivo llamado <strong>.env</strong> en el directorio raíz y añade las siguientes líneas:</p>
+<pre class="env"><code>POSTGRES_USER=admin
+POSTGRES_PASSWORD=securepassword
+POSTGRES_DB=ecommerce
+DB_HOST=localhost
+DB_PORT=5432</code></pre>
+</section>
+<section id="paso-3-automatizar-la-creación-de-la-red-de-docker" class="level2">
+<h2 class="anchored" data-anchor-id="paso-3-automatizar-la-creación-de-la-red-de-docker">Paso 3: Automatizar la Creación de la Red de Docker</h2>
+<p>En lugar de crear la red manualmente, podemos automatizar la creación de la red en el archivo docker-compose.yml para simplificar la configuración.</p>
+<section id="estructura-del-archivo-docker-compose.yml-para-postgresql" class="level3">
+<h3 class="anchored" data-anchor-id="estructura-del-archivo-docker-compose.yml-para-postgresql">Estructura del archivo docker-compose.yml para PostgreSQL:</h3>
+<p>En el directorio project/db/, crea el archivo docker-compose.yml con el siguiente contenido. Ahora, no es necesario crear la red manualmente, ya que Docker Compose se encarga de esto automáticamente:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">db</span><span class="kw">:</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> postgres:14</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> postgres_container</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">restart</span><span class="kw">:</span><span class="at"> always</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">environment</span><span class="kw">:</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">POSTGRES_USER</span><span class="kw">:</span><span class="at"> ${POSTGRES_USER}</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">POSTGRES_PASSWORD</span><span class="kw">:</span><span class="at"> ${POSTGRES_PASSWORD}</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">POSTGRES_DB</span><span class="kw">:</span><span class="at"> ${POSTGRES_DB}</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> db_data:/var/lib/postgresql/data</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">networks</span><span class="kw">:</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> backend_network</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"5432:5432"</span><span class="co">  # Exponer puerto solo para pruebas iniciales</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">db_data</span><span class="kw">:</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="fu">networks</span><span class="kw">:</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">backend_network</span><span class="kw">:</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">driver</span><span class="kw">:</span><span class="at"> bridge</span><span class="co">  # Se crea automáticamente si no existe</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="explicación" class="level3">
+<h3 class="anchored" data-anchor-id="explicación">Explicación:</h3>
 <ul>
-<li>En el directorio <strong>project/db/</strong>, crea un archivo docker-compose.yml.</li>
+<li><strong>environment</strong>: Las variables de entorno ahora se toman del archivo .env mediante la sintaxis <strong>${VARIABLE_NAME}</strong>.</li>
+<li><strong>networks</strong>: La red backend_network se configura automáticamente cuando se ejecuta <strong>docker-compose up</strong>, no es necesario crearla manualmente.</li>
+<li><strong>driver</strong>: Usamos el driver bridge para la red, lo cual es suficiente para la mayoría de los casos.</li>
 </ul>
-<ol start="2" type="1">
-<li>Contenido del archivo <strong>docker-compose.yml</strong> para la base de datos:</li>
-</ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">db</span><span class="kw">:</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> postgres:14</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> postgres_container</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">restart</span><span class="kw">:</span><span class="at"> always</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">environment</span><span class="kw">:</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">POSTGRES_USER</span><span class="kw">:</span><span class="at"> admin</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">POSTGRES_PASSWORD</span><span class="kw">:</span><span class="at"> securepassword</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">POSTGRES_DB</span><span class="kw">:</span><span class="at"> ecommerce</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> db_data:/var/lib/postgresql/data</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">networks</span><span class="kw">:</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> backend_network</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"5432:5432"</span><span class="co"> # Exponer puerto solo para pruebas iniciales</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="fu">volumes</span><span class="kw">:</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">db_data</span><span class="kw">:</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="fu">networks</span><span class="kw">:</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">backend_network</span><span class="kw">:</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">external</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="3" type="1">
-<li>Explicación del código:</li>
-</ol>
-<ul>
-<li><strong>image</strong>: Usamos la imagen oficial de PostgreSQL versión 14.</li>
-<li><strong>container_name</strong>: El nombre del contenedor para identificarlo fácilmente.</li>
-<li><strong>restart</strong>: Permite que el contenedor se reinicie automáticamente en caso de fallo.</li>
-<li><strong>environment</strong>: Variables de entorno necesarias para configurar PostgreSQL:
-<ul>
-<li><strong>POSTGRES_USER</strong>: Usuario de la base de datos.</li>
-<li><strong>POSTGRES_PASSWORD</strong>: Contraseña de acceso.</li>
-<li><strong>POSTGRES_DB</strong>: Nombre de la base de datos inicial.</li>
-</ul></li>
-<li><strong>volumes</strong>: Se utiliza para persistir los datos fuera del contenedor, evitando pérdidas al reiniciar.</li>
-<li><strong>networks</strong>: Conectamos el contenedor a la red <strong>backend_network</strong>.</li>
-<li><strong>ports</strong>: Exponemos el puerto 5432 para conectarnos desde herramientas externas durante el desarrollo.</li>
-</ul>
 </section>
-<section id="paso-3-levantar-el-contenedor-de-la-base-de-datos" class="level2">
-<h2 class="anchored" data-anchor-id="paso-3-levantar-el-contenedor-de-la-base-de-datos">Paso 3: Levantar el Contenedor de la Base de Datos</h2>
-<ol type="1">
-<li>Ve al directorio <strong>db</strong> y ejecuta:</li>
-</ol>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker-compose</span> up <span class="at">-d</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="2" type="1">
-<li>Verifica que el contenedor está corriendo:</li>
-</ol>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> ps</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Deberías ver algo similar:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">CONTAINER</span> ID   IMAGE        COMMAND                  ...     PORTS</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">abc123xyz</span>      postgres:14  <span class="st">"docker-entrypoint.s…"</span>  ...     0.0.0.0:5432-<span class="op">&gt;</span>5432/tcp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="paso-4-probar-la-base-de-datos" class="level2">
-<h2 class="anchored" data-anchor-id="paso-4-probar-la-base-de-datos">Paso 4: Probar la Base de Datos</h2>
-<p>Para asegurarte de que la base de datos está funcionando correctamente:</p>
-<ol type="1">
-<li>Instala una herramienta de administración de bases de datos como la extension PostgreSQL en Visual Studio code SQLTools PostgreSQL/Cockroach Driver o utilizar la línea de comandos <strong>psql</strong>.</li>
-</ol>
-<div class="center">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./images/postgresql_vscode.png" class="img-fluid figure-img" width="800"></p>
-<figcaption>PostgreSQL en Visual Studio Code</figcaption>
-</figure>
-</div>
-</div>
-<p>Conéctate a la base de datos usando:</p>
+<section id="paso-4-levantar-el-contenedor-de-la-base-de-datos" class="level2">
+<h2 class="anchored" data-anchor-id="paso-4-levantar-el-contenedor-de-la-base-de-datos">Paso 4: Levantar el Contenedor de la Base de Datos</h2>
+<p>Con todo configurado, ahora podemos levantar el contenedor de PostgreSQL.</p>
+<p>Entra en el directorio db y ejecuta el siguiente comando:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker-compose</span> up <span class="at">-d</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Verifica que el contenedor está corriendo correctamente:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> ps</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Deberías ver algo como esto:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">CONTAINER</span> ID   IMAGE        COMMAND                  ...     PORTS</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">abc123xyz</span>      postgres:14  <span class="st">"docker-entrypoint.s…"</span>  ...     0.0.0.0:5432-<span class="op">&gt;</span>5432/tcp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="paso-5-probar-la-base-de-datos" class="level2">
+<h2 class="anchored" data-anchor-id="paso-5-probar-la-base-de-datos">Paso 5: Probar la Base de Datos</h2>
+<p>Para verificar que la base de datos está funcionando correctamente, conéctate usando una herramienta como Visual Studio Code con la extensión de PostgreSQL o utilizando la línea de comandos.</p>
+<section id="conexión-usando-una-herramienta-de-administración" class="level3">
+<h3 class="anchored" data-anchor-id="conexión-usando-una-herramienta-de-administración">Conexión usando una Herramienta de Administración:</h3>
+<p>Conéctate a la base de datos utilizando las siguientes credenciales del archivo <strong>.env</strong>:</p>
 <ul>
 <li><strong>Host</strong>: localhost</li>
 <li><strong>Puerto</strong>: 5432</li>
@@ -704,33 +712,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Contraseña</strong>: securepassword</li>
 <li><strong>Base de datos</strong>: ecommerce</li>
 </ul>
-<p>Ejecuta el siguiente comando para verificar que puedes acceder:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> version();</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Esto debería mostrar la versión de PostgreSQL instalada.</p>
+<p>Ejecuta el siguiente comando para verificar que la base de datos está funcionando correctamente:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> version();</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="paso-5-configuración-adicional" class="level2">
-<h2 class="anchored" data-anchor-id="paso-5-configuración-adicional">Paso 5: Configuración Adicional</h2>
-<p>Antes de continuar con el contenedor del backend:</p>
-<ul>
-<li>Asegúrate de que la red <strong>backend_network</strong> conecta correctamente el contenedor <strong>db</strong>.</li>
-<li>Valida que el volumen <strong>db_data</strong> está funcionando:
-<ul>
-<li>Detén el contenedor: <strong>docker-compose down</strong>.</li>
-<li>Reinícialo: <strong>docker-compose up -d</strong>.</li>
-<li>Confirma que los datos persisten.</li>
-</ul></li>
-</ul>
+<section id="alternativa-línea-de-comandos" class="level3">
+<h3 class="anchored" data-anchor-id="alternativa-línea-de-comandos">Alternativa: Línea de Comandos</h3>
+<p>Puedes acceder directamente al contenedor y conectarte a la base de datos con:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> exec <span class="at">-it</span> postgres_container psql <span class="at">-U</span> admin <span class="at">-d</span> ecommerce</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="pruebas-finales" class="level2">
-<h2 class="anchored" data-anchor-id="pruebas-finales">Pruebas Finales</h2>
+<section id="paso-6-validar-la-persistencia-de-datos" class="level3">
+<h3 class="anchored" data-anchor-id="paso-6-validar-la-persistencia-de-datos">Paso 6: Validar la Persistencia de Datos</h3>
+<p>Una vez levantado el contenedor, valida que los datos persisten cuando reinicias el contenedor.</p>
+<ol type="1">
+<li>Detén el contenedor con:</li>
+</ol>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker-compose</span> down</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>Reinicia el contenedor con:</li>
+</ol>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker-compose</span> up <span class="at">-d</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li>Verifica que los datos de la base de datos siguen siendo los mismos después de reiniciar.</li>
+</ol>
+</section>
+</section>
+<section id="pruebas-finales" class="level1">
+<h1>Pruebas Finales</h1>
+<ol type="1">
+<li><p><strong>Conexión Externa</strong>: Si puedes conectarte a la base de datos usando herramientas externas o la línea de comandos, la configuración está correcta.</p></li>
+<li><p><strong>Posibles Errores y Soluciones</strong>:</p>
 <ul>
-<li><p>Si puedes acceder a la base de datos desde herramientas externas o desde la línea de comandos, entonces el contenedor está configurado correctamente.</p></li>
-<li><p>Si encuentras algún error, verifica:</p>
-<ul>
-<li>Que las variables de entorno en docker-compose.yml están correctas.</li>
-<li>Que el puerto 5432 no está siendo utilizado por otro servicio.</li>
+<li><strong>Puerto en uso</strong>: Si el puerto 5432 ya está siendo utilizado por otro servicio, cambia el puerto en el archivo <strong>docker-compose.yml</strong>.</li>
+<li><strong>Variables incorrectas</strong>: Asegúrate de que las variables de entorno en el archivo .env estén configuradas correctamente.</li>
+<li><strong>Red no conectada</strong>: Si la red no está conectada, asegúrate de que Docker Compose la cree automáticamente.</li>
 </ul></li>
-</ul>
+</ol>
 </section>
 </div>
 

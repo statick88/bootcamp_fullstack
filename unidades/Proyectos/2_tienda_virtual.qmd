@@ -1,38 +1,71 @@
 :::{.justify}
 # Fase 2: Configuración de Red y Contenedor para la Base de Datos
 
-En esta fase, configuraremos lo siguiente:
+En esta fase, configuraremos la red de Docker, levantaremos el contenedor para PostgreSQL, y gestionaremos las variables de entorno de forma adecuada. También automatizaremos la creación de la red para la comunicación entre el backend y la base de datos, simplificando el proceso de configuración.
 
-1. Crear la red manualmente.
-2. Configurar y levantar el contenedor para la base de datos PostgreSQL.
-3. Configurar persistencia de datos con volúmenes.
-4. Probar que la base de datos funciona correctamente.
+## Objetivos de la Fase
 
-## Paso 1: Crear la Red Manualmente
+1. Crear un archivo **.gitignore** y un archivo **.dockerignore** para evitar incluir archivos no necesarios.
+2. Configurar un archivo **.env** para gestionar las variables de entorno.
+3. Automatizar la creación de la red para la comunicación entre el backend y la base de datos.
+4. Configurar y levantar el contenedor de **PostgreSQL** utilizando Docker Compose.
+5. Verificar que la base de datos funciona correctamente y puede conectarse sin problemas.
 
-Docker necesita una red para permitir la comunicación entre el backend y la base de datos. Esta red será creada de forma manual antes de levantar los contenedores.
+## Paso 1: Crear los Archivos .gitignore y .dockerignore
 
-1. Abre una terminal y ejecuta el siguiente comando para crear la red:
+Los archivos **.gitignore** y **.dockerignore** nos ayudarán a evitar que archivos innecesarios sean incluidos en el repositorio o en la imagen Docker.
 
-```bash
-docker network create backend_network
+1. **gitignore**: Crea un archivo **.gitignore** en el directorio raíz del proyecto y añade las siguientes líneas:
+
+```.gitignore
+# Archivos de configuración de Docker
+.dockerignore
+
+# Archivos de entorno
+.env
+
+# Archivos generados por Docker
+docker-compose.override.yml
+
+# Directorios y archivos temporales de la aplicación
+node_modules/
+*.log
+*.pid
+
+# Archivos de Python (si es necesario)
+__pycache__/
+*.pyc
 ```
-2. Verifica que la red fue creada:
+2. **dockerignore**: Crea un archivo **.dockerignore** en el directorio raíz y añade lo siguiente:
 
-```bash
-docker network ls
+```.dockerignore
+# Archivos y carpetas que no deben ser copiados a la imagen de Docker
+node_modules/
+*.log
+*.env
+.git
+.gitignore
+.dockerignore
 ```
-Busca **backend_network** en la lista de redes.
+## Paso 2: Configurar el Archivo .env para Variables de Entorno
 
-## Paso 2: Configurar el Contenedor para la Base de Datos
+Las variables de entorno como las credenciales de la base de datos deben mantenerse fuera del código fuente, por lo que se recomienda usar un archivo **.env** para gestionar esta información. Crea un archivo llamado **.env** en el directorio raíz y añade las siguientes líneas:
 
-Crearemos un contenedor para PostgreSQL utilizando **docker-compose.yml**.
+```env
+POSTGRES_USER=admin
+POSTGRES_PASSWORD=securepassword
+POSTGRES_DB=ecommerce
+DB_HOST=localhost
+DB_PORT=5432
+```
 
-1. Estructura de archivos y carpetas:
+## Paso 3: Automatizar la Creación de la Red de Docker
 
-  - En el directorio **project/db/**, crea un archivo docker-compose.yml.
+En lugar de crear la red manualmente, podemos automatizar la creación de la red en el archivo docker-compose.yml para simplificar la configuración.
 
-2.  Contenido del archivo **docker-compose.yml** para la base de datos:
+### Estructura del archivo docker-compose.yml para PostgreSQL:
+
+En el directorio project/db/, crea el archivo docker-compose.yml con el siguiente contenido. Ahora, no es necesario crear la red manualmente, ya que Docker Compose se encarga de esto automáticamente:
 
 ```yaml
 services:
@@ -41,66 +74,57 @@ services:
     container_name: postgres_container
     restart: always
     environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: securepassword
-      POSTGRES_DB: ecommerce
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     volumes:
       - db_data:/var/lib/postgresql/data
     networks:
       - backend_network
     ports:
-      - "5432:5432" # Exponer puerto solo para pruebas iniciales
+      - "5432:5432"  # Exponer puerto solo para pruebas iniciales
 
 volumes:
   db_data:
 
 networks:
   backend_network:
-    external: true
+    driver: bridge  # Se crea automáticamente si no existe
 ```
-3. Explicación del código:
 
-- **image**: Usamos la imagen oficial de PostgreSQL versión 14.
-- **container_name**: El nombre del contenedor para identificarlo fácilmente.
-- **restart**: Permite que el contenedor se reinicie automáticamente en caso de fallo.
-- **environment**: Variables de entorno necesarias para configurar PostgreSQL:
-  - **POSTGRES_USER**: Usuario de la base de datos.
-  - **POSTGRES_PASSWORD**: Contraseña de acceso.
-  - **POSTGRES_DB**: Nombre de la base de datos inicial.
-- **volumes**: Se utiliza para persistir los datos fuera del contenedor, evitando pérdidas al reiniciar.
-- **networks**: Conectamos el contenedor a la red **backend_network**.
-- **ports**: Exponemos el puerto 5432 para conectarnos desde herramientas externas durante el desarrollo.
+### Explicación:
 
-## Paso 3: Levantar el Contenedor de la Base de Datos
+- **environment**: Las variables de entorno ahora se toman del archivo .env mediante la sintaxis **${VARIABLE_NAME}**.
+- **networks**: La red backend_network se configura automáticamente cuando se ejecuta **docker-compose up**, no es necesario crearla manualmente.
+- **driver**: Usamos el driver bridge para la red, lo cual es suficiente para la mayoría de los casos.
 
-1. Ve al directorio **db** y ejecuta:
+## Paso 4: Levantar el Contenedor de la Base de Datos
+
+Con todo configurado, ahora podemos levantar el contenedor de PostgreSQL.
+
+Entra en el directorio db y ejecuta el siguiente comando:
 
 ```bash
 docker-compose up -d
 ```
-2. Verifica que el contenedor está corriendo:
+Verifica que el contenedor está corriendo correctamente:
 
 ```bash
 docker ps
 ```
-Deberías ver algo similar:
+Deberías ver algo como esto:
 
 ```bash
 CONTAINER ID   IMAGE        COMMAND                  ...     PORTS
 abc123xyz      postgres:14  "docker-entrypoint.s…"  ...     0.0.0.0:5432->5432/tcp
 ```
+## Paso 5: Probar la Base de Datos
 
-## Paso 4: Probar la Base de Datos
+Para verificar que la base de datos está funcionando correctamente, conéctate usando una herramienta como Visual Studio Code con la extensión de PostgreSQL o utilizando la línea de comandos.
 
-Para asegurarte de que la base de datos está funcionando correctamente:
+###  Conexión usando una Herramienta de Administración:
 
-1. Instala una herramienta de administración de bases de datos como la extension PostgreSQL en Visual Studio code SQLTools PostgreSQL/Cockroach Driver o utilizar la línea de comandos **psql**.
-
-:::{.center}
-![PostgreSQL en Visual Studio Code](./images/postgresql_vscode.png){width=800}
-:::
-
-Conéctate a la base de datos usando:
+Conéctate a la base de datos utilizando las siguientes credenciales del archivo **.env**:
 
 - **Host**: localhost
 - **Puerto**: 5432
@@ -108,29 +132,40 @@ Conéctate a la base de datos usando:
 - **Contraseña**: securepassword
 - **Base de datos**: ecommerce
 
-Ejecuta el siguiente comando para verificar que puedes acceder:
+Ejecuta el siguiente comando para verificar que la base de datos está funcionando correctamente:
 
 ```sql
 SELECT version();
 ```
-Esto debería mostrar la versión de PostgreSQL instalada.
+### Alternativa: Línea de Comandos
 
-## Paso 5: Configuración Adicional
+Puedes acceder directamente al contenedor y conectarte a la base de datos con:
 
-Antes de continuar con el contenedor del backend:
+```bash
+docker exec -it postgres_container psql -U admin -d ecommerce
+```
 
-- Asegúrate de que la red **backend_network** conecta correctamente el contenedor **db**.
-- Valida que el volumen **db_data** está funcionando:
-  - Detén el contenedor: **docker-compose down**.
-  - Reinícialo: **docker-compose up -d**.
-  - Confirma que los datos persisten.
+### Paso 6: Validar la Persistencia de Datos
 
-## Pruebas Finales
+Una vez levantado el contenedor, valida que los datos persisten cuando reinicias el contenedor.
 
-- Si puedes acceder a la base de datos desde herramientas externas o desde la línea de comandos, entonces el contenedor está configurado correctamente.
+1. Detén el contenedor con:
+```bash
+docker-compose down
+```
+2. Reinicia el contenedor con:
+```bash
+docker-compose up -d
+```
+3. Verifica que los datos de la base de datos siguen siendo los mismos después de reiniciar.
 
-- Si encuentras algún error, verifica:
-  
-  - Que las variables de entorno en docker-compose.yml están correctas.
-  - Que el puerto 5432 no está siendo utilizado por otro servicio.
+# Pruebas Finales
+
+1. **Conexión Externa**: Si puedes conectarte a la base de datos usando herramientas externas o la línea de comandos, la configuración está correcta.
+
+2. **Posibles Errores y Soluciones**:
+
+   - **Puerto en uso**: Si el puerto 5432 ya está siendo utilizado por otro servicio, cambia el puerto en el archivo **docker-compose.yml**.
+    - **Variables incorrectas**: Asegúrate de que las variables de entorno en el archivo .env estén configuradas correctamente.
+    - **Red no conectada**: Si la red no está conectada, asegúrate de que Docker Compose la cree automáticamente.
 :::

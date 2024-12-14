@@ -1786,7 +1786,7 @@
     "href": "unidades/unidad7/8_drf.html#serialización-de-modelos",
     "title": "Introducción a Django REST Framework",
     "section": "Serialización de modelos",
-    "text": "Serialización de modelos\n\nVistas basadas en clases para manejar endpoints\nAutenticación y permisos\nDocumentación interactiva\n\n\n2. Configuración Inicial\n\nInstalar Django REST Framework:\n\npip install djangorestframework\n\nAgregar DRF a INSTALLED_APPS en settings.py:\n\nINSTALLED_APPS = [\n    # Otros apps...\n    'rest_framework',\n]\n\nConfigurar DRF (opcional): En settings.py, puedes definir configuraciones personalizadas:\n\n1REST_FRAMEWORK = {\n2    'DEFAULT_AUTHENTICATION_CLASSES': [\n3        'rest_framework.authentication.SessionAuthentication',\n    ],\n4    'DEFAULT_PERMISSION_CLASSES': [\n5        'rest_framework.permissions.IsAuthenticatedOrReadOnly',\n    ],\n}\n\n1\n\nREST_FRAMEWORK: Configuración principal de DRF.\n\n2\n\nDEFAULT_AUTHENTICATION_CLASSES: Clases de autenticación predeterminadas.\n\n3\n\nSessionAuthentication: Autenticación basada en sesiones.\n\n4\n\nDEFAULT_PERMISSION_CLASSES: Clases de permisos predeterminadas.\n\n5\n\nIsAuthenticatedOrReadOnly: Permite a los usuarios autenticados realizar operaciones de escritura.\n\n\n\n\n3. Crear la API\n\nCrear un serializador para el modelo Medicamento:\n\n1from rest_framework import serializers\n2from .models import Medicamento\n\n3class MedicamentoSerializer(serializers.ModelSerializer):\n4    class Meta:\n5        model = Medicamento\n6        fields = '__all__'\n\n1\n\nserializers: Módulo de DRF para serializar y deserializar datos.\n\n2\n\nMedicamento: Modelo de Django.\n\n3\n\nMedicamentoSerializer: Clase para serializar el modelo Medicamento.\n\n4\n\nMeta: Clase interna para configurar el serializador.\n\n5\n\nmodel: Modelo que se serializará.\n\n6\n\nfields: Campos del modelo que se incluirán en la serialización.\n\n\n\n\n\n\n\n\nTip\n\n\n\nAl serializar los modelos de Django, puedes especificar los campos que deseas incluir en la respuesta JSON. En este caso, fields = ‘__all__’ incluye todos los campos del modelo Medicamento. Este proceso de serizlización se conoce permite convertir los datos de un modelo en un formato que se puede enviar a través de la red, como JSON.\n\n\n\nCrear vistas para las APIs:\n\n1from .models import Medicamento\n2from .serializers import MedicamentoSerializer\n3from rest_framework import viewsets\n\n4class MedicamentoView(viewsets.ModelViewSet):\n5    serializer_class = MedicamentoSerializer\n6    queryset = Medicamento.objects.all()\n\n1\n\nMedicamento: Modelo de Django.\n\n2\n\nMedicamentoSerializer: Serializador para el modelo Medicamento.\n\n3\n\nviewsets: Módulo de DRF para vistas basadas en conjuntos.\n\n4\n\nMedicamentoView: Vista para el modelo Medicamento.\n\n5\n\nserializer_class: Clase de serializador para la vista.\n\n6\n\nqueryset: Conjunto de datos de medicamentos.\n\n\nCon estas vistas basadas en conjuntos, DRF proporciona automáticamente las operaciones CRUD (Crear, Leer, Actualizar, Eliminar) para el modelo Medicamento.\n\nConfigurar las rutas de la API: En urls.py:\n\nfrom django.urls import path\nfrom .views import MedicamentoList, MedicamentoDetail\n\nurlpatterns = [\n1    path('api/medicamentos/', MedicamentoList.as_view(), name='medicamento-list'),\n2    path('api/medicamentos/&lt;int:id&gt;/', MedicamentoDetail.as_view(), name='medicamento-detail'),\n]\n\n1\n\nMedicamentoList.as_view(): Vista para listar medicamentos.\n\n2\n\nMedicamentoDetail.as_view(): Vista para obtener detalles de un medicamento.\n\n\n\n\n4. Documentación con Swagger\n\n\n\n\nSwagger\n\n\n\nSwagger es una herramienta para documentar APIs de forma interactiva. Puedes integrar Swagger en tu proyecto de Django REST Framework para proporcionar una documentación clara y detallada de tus APIs.\n\nInstalar dependencias para Swagger:\n\npip install drf-yasg\n\nConfigurar Swagger en urls.py:\n\n1from rest_framework import permissions\n2from drf_yasg.views import get_schema_view\n3from drf_yasg import openapi\n\n4schema_view = get_schema_view(\n5    openapi.Info(\n6        title=\"API de Medicamentos\",\n7        default_version='v1',\n8        description=\"Documentación interactiva de la API\",\n    ),\n9    public=True,\n10    permission_classes=(permissions.AllowAny,),\n)\n\n11urlpatterns += [\n12    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),\n]\n\n1\n\npermissions: Módulo de DRF para permisos.\n\n2\n\nget_schema_view: Función para obtener la vista de Swagger.\n\n3\n\nopenapi: Módulo de drf-yasg para definir esquemas OpenAPI.\n\n4\n\nschema_view: Vista de Swagger para tu API.\n\n5\n\nInfo: Clase para definir información de la API.\n\n6\n\ntitle: Título de la API.\n\n7\n\ndefault_version: Versión predeterminada de la API.\n\n8\n\ndescription: Descripción de la API.\n\n9\n\npublic: Indica si la documentación es pública.\n\n10\n\npermission_classes: Clases de permisos para acceder a la documentación.\n\n11\n\nurlpatterns: Lista de rutas de Django.\n\n12\n\nschema_view.with_ui(‘swagger’, cache_timeout=0): Vista de Swagger con interfaz interactiva.\n\n\nEn el archivo settings.py, agrega ‘drf_yasg’ a INSTALLED_APPS:\nINSTALLED_APPS = [\n    # Otros apps...\n1    'drf_yasg',\n]\n\n1\n\ndrf_yasg: App de Django para integrar Swagger.\n\n\nVer la documentación interactiva: Inicia el servidor y ve a http://localhost:8000/swagger/. Aquí podrás explorar y probar los endpoints de tu API directamente desde el navegador.\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\nRedoc\n\n\n\nOtra documentación popular para APIs es Redoc, que puedes integrar en tu proyecto de DRF siguiendo los pasos en la documentación oficial de drf-yasg.\nPara que funcione en nuestro proyecto en el archivo urls.py solo hace falta agregar la siguiente línea:\npath('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),\n\n\n\n\n5. Pruebas con Thunder Client\nThunder Client es una extensión de VS Code para probar APIs similar a Postman, pero integrada en el editor.\n\nInstalar Thunder Client:\n\n\nAbre VS Code.\nVe a la pestaña de extensiones (Ctrl+Shift+X).\nBusca Thunder Client e instálalo.\n\n\nCrear una colección de pruebas:\n\n\nAbre Thunder Client desde la barra lateral.\nHaz clic en New Request y selecciona el método (GET, POST, etc.).\nIngresa la URL del endpoint, por ejemplo: http://localhost:8000/api/medicamentos/.\n\n\nEnviar una solicitud GET:\n\n\nConfigura la URL y haz clic en Send.\nVerifica la respuesta en el panel de resultados.\n\n\nPrueba de solicitudes POST:\n\n\nCambia el método a POST y selecciona el cuerpo (Body).\nIngresa un JSON como este:\n\n{\n    \"nombre\": \"Amoxicilina\",\n    \"precio\": 20.5,\n    \"existencias\": 30,\n    \"lugar\": \"Almacén C\"\n}\n\nHaz clic en Send para verificar si el servidor crea correctamente un nuevo medicamento.\n\n\n\n6. Pruebas Automatizadas de las APIs\n\nAgrega pruebas unitarias para validar los endpoints.\n\n1from rest_framework.test import APITestCase\n2from rest_framework import status\n3from .models import Medicamento\n\n\n4class MedicamentoAPITests(APITestCase):\n5    def setUp(self):\n6        self.medicamento = Medicamento.objects.create(\n7            nombre=\"Paracetamol\",\n8            precio=10,\n9            existencias=50,\n10            lugar=\"Almacén A\"\n        )\n\n11    def test_lista_medicamentos(self):\n12        response = self.client.get('/api/medicamentos/')\n13        self.assertEqual(response.status_code, status.HTTP_200_OK)\n\n\n14def test_crear_medicamento(self):\n15    data = {\n16        \"nombre\": \"Ibuprofeno\",\n17        \"precio\": 15,\n18        \"existencias\": 30,\n19        \"lugar\": \"Almacén B\"\n    }\n20    response = self.client.post('/api/medicamentos/', data)\n21    self.assertEqual(response.status_code, status.HTTP_201_CREATED)\n22    self.assertEqual(response.data['nombre'], data['nombre'])\n23    self.assertEqual(response.data['precio'], data['precio'])\n24    self.assertEqual(response.data['existencias'], data['existencias'])\n25    self.assertEqual(response.data['lugar'], data['lugar'])\n\n26    def test_detalle_medicamento(self):\n27        response = self.client.get(f'/api/medicamentos/{self.medicamento.id}/')\n28        self.assertEqual(response.status_code, status.HTTP_200_OK)\n29        self.assertEqual(response.data['nombre'], \"Paracetamol\")\n\n1\n\nAPITestCase: Clase base para pruebas de API.\n\n2\n\nstatus: Módulo de DRF para códigos de estado HTTP.\n\n3\n\nMedicamento: Modelo de Django.\n\n4\n\nMedicamentoAPITests: Clase de pruebas para la API de Medicamentos.\n\n5\n\nsetUp: Método para configurar datos de prueba.\n\n6\n\nMedicamento.objects.create: Crea un medicamento en la base de datos.\n\n7\n\ntest_lista_medicamentos: Prueba para listar medicamentos.\n\n8\n\nself.client.get: Realiza una solicitud GET a la API.\n\n9\n\ntest_crear_medicamento: Prueba para crear un medicamento.\n\n10\n\ndata: Datos del medicamento a crear.\n\n11\n\nself.client.post: Realiza una solicitud POST a la API.\n\n12\n\ntest_detalle_medicamento: Prueba para obtener detalles de un medicamento.\n\n13\n\nself.client.get: Realiza una solicitud GET a la API.\n\n14\n\nresponse.data: Datos de la respuesta de la API.\n\n15\n\nresponse.status_code: Código de estado de la respuesta.\n\n16\n\nresponse.data[‘nombre’]: Nombre del medicamento en la respuesta.\n\n17\n\nresponse.data[‘precio’]: Precio del medicamento en la respuesta.\n\n18\n\nresponse.data[‘existencias’]: Existencias del medicamento en la respuesta.\n\n19\n\nresponse.data[‘lugar’]: Lugar del medicamento en la respuesta.\n\n20\n\nself.assertEqual: Compara dos valores en la prueba.\n\n21\n\nself.medicamento.id: ID del medicamento creado en la base de datos.\n\n22\n\nresponse.data[‘nombre’]: Nombre del medicamento en la respuesta.\n\n23\n\nresponse.data[‘precio’]: Precio del medicamento en la respuesta.\n\n24\n\nresponse.data[‘existencias’]: Existencias del medicamento en la respuesta.\n\n25\n\nresponse.data[‘lugar’]: Lugar del medicamento en la respuesta.\n\n26\n\nself.client.get: Realiza una solicitud GET a la API.\n\n27\n\nresponse.status_code: Código de estado de la respuesta.\n\n28\n\nresponse.data[‘nombre’]: Nombre del medicamento en la respuesta.\n\n29\n\nstatus.HTTP_200_OK: Código de estado para una respuesta exitosa.\n\n\n\n\n7. Conclusión\nCon Django REST Framework, Swagger y Thunder Client, puedes desarrollar, documentar y probar APIs de manera eficiente. Este flujo de trabajo asegura que tus APIs sean robustas, fáciles de usar y bien documentadas para cualquier desarrollador o cliente que las consuma.",
+    "text": "Serialización de modelos\n\nVistas basadas en clases para manejar endpoints\nAutenticación y permisos\nDocumentación interactiva\n\n\n2. Configuración Inicial\n\nInstalar Django REST Framework:\n\npip install djangorestframework\n\nAgregar DRF a INSTALLED_APPS en settings.py:\n\nINSTALLED_APPS = [\n    # Otros apps...\n    'rest_framework',\n]\n\nConfigurar DRF (opcional): En settings.py, puedes definir configuraciones personalizadas:\n\n1REST_FRAMEWORK = {\n2    'DEFAULT_AUTHENTICATION_CLASSES': [\n3        'rest_framework.authentication.SessionAuthentication',\n    ],\n4    'DEFAULT_PERMISSION_CLASSES': [\n5        'rest_framework.permissions.IsAuthenticatedOrReadOnly',\n    ],\n}\n\n1\n\nREST_FRAMEWORK: Configuración principal de DRF.\n\n2\n\nDEFAULT_AUTHENTICATION_CLASSES: Clases de autenticación predeterminadas.\n\n3\n\nSessionAuthentication: Autenticación basada en sesiones.\n\n4\n\nDEFAULT_PERMISSION_CLASSES: Clases de permisos predeterminadas.\n\n5\n\nIsAuthenticatedOrReadOnly: Permite a los usuarios autenticados realizar operaciones de escritura.\n\n\n\n\n3. Crear la API\n\nCrear un serializador para el modelo Medicamento:\n\n1from rest_framework import serializers\n2from .models import Medicamento\n\n3class MedicamentoSerializer(serializers.ModelSerializer):\n4    class Meta:\n5        model = Medicamento\n6        fields = '__all__'\n\n1\n\nserializers: Módulo de DRF para serializar y deserializar datos.\n\n2\n\nMedicamento: Modelo de Django.\n\n3\n\nMedicamentoSerializer: Clase para serializar el modelo Medicamento.\n\n4\n\nMeta: Clase interna para configurar el serializador.\n\n5\n\nmodel: Modelo que se serializará.\n\n6\n\nfields: Campos del modelo que se incluirán en la serialización.\n\n\n\n\n\n\n\n\nTip\n\n\n\nAl serializar los modelos de Django, puedes especificar los campos que deseas incluir en la respuesta JSON. En este caso, fields = ‘__all__’ incluye todos los campos del modelo Medicamento. Este proceso de serizlización se conoce permite convertir los datos de un modelo en un formato que se puede enviar a través de la red, como JSON.\n\n\n\nCrear vistas para las APIs:\n\n1from .models import Medicamento\n2from .serializers import MedicamentoSerializer\n3from rest_framework import viewsets\n\n4class MedicamentoView(viewsets.ModelViewSet):\n5    serializer_class = MedicamentoSerializer\n6    queryset = Medicamento.objects.all()\n\n1\n\nMedicamento: Modelo de Django.\n\n2\n\nMedicamentoSerializer: Serializador para el modelo Medicamento.\n\n3\n\nviewsets: Módulo de DRF para vistas basadas en conjuntos.\n\n4\n\nMedicamentoView: Vista para el modelo Medicamento.\n\n5\n\nserializer_class: Clase de serializador para la vista.\n\n6\n\nqueryset: Conjunto de datos de medicamentos.\n\n\nCon estas vistas basadas en conjuntos, DRF proporciona automáticamente las operaciones CRUD (Crear, Leer, Actualizar, Eliminar) para el modelo Medicamento.\n\nConfigurar las rutas de la API: En urls.py:\n\n1from django.urls import path, include\n2from rest_framework.routers import DefaultRouter\n3from .views import MedicamentoView\n\n4router = DefaultRouter()\n5router.register('medicamentos', MedicamentoView)\n\n6urlpatterns = [\n7    path('api/', include(router.urls)),\n]\n\n1\n\ninclude: Función para incluir rutas de Django.\n\n2\n\nDefaultRouter: Enrutador de DRF para vistas basadas en conjuntos.\n\n3\n\nMedicamentoView: Vista para el modelo Medicamento.\n\n4\n\nrouter: Enrutador predeterminado de DRF.\n\n5\n\nrouter.register: Registra la vista MedicamentoView en el enrutador.\n\n6\n\nurlpatterns: Lista de rutas de Django.\n\n7\n\ninclude(router.urls): Incluye las rutas del enrutador en la ruta /api/.\n\n\n\n\n4. Documentación con Swagger\n\n\n\n\nSwagger\n\n\n\nSwagger es una herramienta para documentar APIs de forma interactiva. Puedes integrar Swagger en tu proyecto de Django REST Framework para proporcionar una documentación clara y detallada de tus APIs.\n\nInstalar dependencias para Swagger:\n\npip install drf-yasg\n\nConfigurar Swagger en urls.py:\n\n1from rest_framework import permissions\n2from drf_yasg.views import get_schema_view\n3from drf_yasg import openapi\n\n4schema_view = get_schema_view(\n5    openapi.Info(\n6        title=\"API de Medicamentos\",\n7        default_version='v1',\n8        description=\"Documentación interactiva de la API\",\n    ),\n9    public=True,\n10    permission_classes=(permissions.AllowAny,),\n)\n\n11urlpatterns += [\n12    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),\n]\n\n1\n\npermissions: Módulo de DRF para permisos.\n\n2\n\nget_schema_view: Función para obtener la vista de Swagger.\n\n3\n\nopenapi: Módulo de drf-yasg para definir esquemas OpenAPI.\n\n4\n\nschema_view: Vista de Swagger para tu API.\n\n5\n\nInfo: Clase para definir información de la API.\n\n6\n\ntitle: Título de la API.\n\n7\n\ndefault_version: Versión predeterminada de la API.\n\n8\n\ndescription: Descripción de la API.\n\n9\n\npublic: Indica si la documentación es pública.\n\n10\n\npermission_classes: Clases de permisos para acceder a la documentación.\n\n11\n\nurlpatterns: Lista de rutas de Django.\n\n12\n\nschema_view.with_ui(‘swagger’, cache_timeout=0): Vista de Swagger con interfaz interactiva.\n\n\nEn el archivo settings.py, agrega ‘drf_yasg’ a INSTALLED_APPS:\nINSTALLED_APPS = [\n    # Otros apps...\n1    'drf_yasg',\n]\n\n1\n\ndrf_yasg: App de Django para integrar Swagger.\n\n\nVer la documentación interactiva: Inicia el servidor y ve a http://localhost:8000/swagger/. Aquí podrás explorar y probar los endpoints de tu API directamente desde el navegador.\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\nRedoc\n\n\n\nOtra documentación popular para APIs es Redoc, que puedes integrar en tu proyecto de DRF siguiendo los pasos en la documentación oficial de drf-yasg.\nPara que funcione en nuestro proyecto en el archivo urls.py solo hace falta agregar la siguiente línea:\npath('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),\n\n\n\n\n5. Pruebas con Thunder Client\nThunder Client es una extensión de VS Code para probar APIs similar a Postman, pero integrada en el editor.\n\nInstalar Thunder Client:\n\n\nAbre VS Code.\nVe a la pestaña de extensiones (Ctrl+Shift+X).\nBusca Thunder Client e instálalo.\n\n\nCrear una colección de pruebas:\n\n\nAbre Thunder Client desde la barra lateral.\nHaz clic en New Request y selecciona el método (GET, POST, etc.).\nIngresa la URL del endpoint, por ejemplo: http://localhost:8000/api/medicamentos/.\n\n\nEnviar una solicitud GET:\n\n\nConfigura la URL y haz clic en Send.\nVerifica la respuesta en el panel de resultados.\n\n\nPrueba de solicitudes POST:\n\n\nCambia el método a POST y selecciona el cuerpo (Body).\nIngresa un JSON como este:\n\n{\n    \"nombre\": \"Amoxicilina\",\n    \"precio\": 20.5,\n    \"existencias\": 30,\n    \"lugar\": \"Almacén C\"\n}\n\nHaz clic en Send para verificar si el servidor crea correctamente un nuevo medicamento.\n\n\n\n6. Pruebas Automatizadas de las APIs\n\nAgrega pruebas unitarias para validar los endpoints.\n\n1from rest_framework.test import APITestCase\n2from rest_framework import status\n3from .models import Medicamento\n\n\n4class MedicamentoAPITests(APITestCase):\n5    def setUp(self):\n6        self.medicamento = Medicamento.objects.create(\n7            nombre=\"Paracetamol\",\n8            precio=10,\n9            existencias=50,\n10            lugar=\"Almacén A\"\n        )\n\n11    def test_lista_medicamentos(self):\n12        response = self.client.get('/api/medicamentos/')\n13        self.assertEqual(response.status_code, status.HTTP_200_OK)\n\n\n14def test_crear_medicamento(self):\n15    data = {\n16        \"nombre\": \"Ibuprofeno\",\n17        \"precio\": 15,\n18        \"existencias\": 30,\n19        \"lugar\": \"Almacén B\"\n    }\n20    response = self.client.post('/api/medicamentos/', data)\n21    self.assertEqual(response.status_code, status.HTTP_201_CREATED)\n22    self.assertEqual(response.data['nombre'], data['nombre'])\n23    self.assertEqual(response.data['precio'], data['precio'])\n24    self.assertEqual(response.data['existencias'], data['existencias'])\n25    self.assertEqual(response.data['lugar'], data['lugar'])\n\n26    def test_detalle_medicamento(self):\n27        response = self.client.get(f'/api/medicamentos/{self.medicamento.id}/')\n28        self.assertEqual(response.status_code, status.HTTP_200_OK)\n29        self.assertEqual(response.data['nombre'], \"Paracetamol\")\n\n1\n\nAPITestCase: Clase base para pruebas de API.\n\n2\n\nstatus: Módulo de DRF para códigos de estado HTTP.\n\n3\n\nMedicamento: Modelo de Django.\n\n4\n\nMedicamentoAPITests: Clase de pruebas para la API de Medicamentos.\n\n5\n\nsetUp: Método para configurar datos de prueba.\n\n6\n\nMedicamento.objects.create: Crea un medicamento en la base de datos.\n\n7\n\ntest_lista_medicamentos: Prueba para listar medicamentos.\n\n8\n\nself.client.get: Realiza una solicitud GET a la API.\n\n9\n\ntest_crear_medicamento: Prueba para crear un medicamento.\n\n10\n\ndata: Datos del medicamento a crear.\n\n11\n\nself.client.post: Realiza una solicitud POST a la API.\n\n12\n\ntest_detalle_medicamento: Prueba para obtener detalles de un medicamento.\n\n13\n\nself.client.get: Realiza una solicitud GET a la API.\n\n14\n\nresponse.data: Datos de la respuesta de la API.\n\n15\n\nresponse.status_code: Código de estado de la respuesta.\n\n16\n\nresponse.data[‘nombre’]: Nombre del medicamento en la respuesta.\n\n17\n\nresponse.data[‘precio’]: Precio del medicamento en la respuesta.\n\n18\n\nresponse.data[‘existencias’]: Existencias del medicamento en la respuesta.\n\n19\n\nresponse.data[‘lugar’]: Lugar del medicamento en la respuesta.\n\n20\n\nself.assertEqual: Compara dos valores en la prueba.\n\n21\n\nself.medicamento.id: ID del medicamento creado en la base de datos.\n\n22\n\nresponse.data[‘nombre’]: Nombre del medicamento en la respuesta.\n\n23\n\nresponse.data[‘precio’]: Precio del medicamento en la respuesta.\n\n24\n\nresponse.data[‘existencias’]: Existencias del medicamento en la respuesta.\n\n25\n\nresponse.data[‘lugar’]: Lugar del medicamento en la respuesta.\n\n26\n\nself.client.get: Realiza una solicitud GET a la API.\n\n27\n\nresponse.status_code: Código de estado de la respuesta.\n\n28\n\nresponse.data[‘nombre’]: Nombre del medicamento en la respuesta.\n\n29\n\nstatus.HTTP_200_OK: Código de estado para una respuesta exitosa.\n\n\n\n\n7. Conclusión\nCon Django REST Framework, Swagger y Thunder Client, puedes desarrollar, documentar y probar APIs de manera eficiente. Este flujo de trabajo asegura que tus APIs sean robustas, fáciles de usar y bien documentadas para cualquier desarrollador o cliente que las consuma.",
     "crumbs": [
       "Unidad 7: Frameworks en Python",
       "<span class='chapter-number'>37</span>  <span class='chapter-title'>Introducción a Django REST Framework</span>"
@@ -2182,7 +2182,7 @@
     "href": "unidades/Proyectos/0_tienda_virtual.html#fase-2-diseño-del-sistema",
     "title": "Tienda Virtual.",
     "section": "Fase 2: Diseño del Sistema",
-    "text": "Fase 2: Diseño del Sistema\n\nArquitectura General:\nBackend:\n\nAplicaciones en Django para users, products, orders y payments.\nEndpoints REST con DRF para gestionar usuarios, productos, pedidos y pagos.\nConfiguración de variables de entorno para manejo de secretos y credenciales (base de datos, PayPal, etc.).\n\nFrontend:\n\nComponentes reutilizables (Navbar, ProductCard, Cart, etc.).\n\n\n\nRutas principales:\n\nHome: Listar productos.\nProduct Details: Ver detalles de un producto.\nCart: Mostrar productos en el carrito.\nCheckout: Procesar pedidos y pagos.\nProfile: Gestión de usuario.\n\n\n\nInfraestructura:\nDocker Compose con tres servicios:\n\nBase de datos: Contenedor de PostgreSQL.\nBackend: Contenedor de Django conectado a la base de datos por una red interna.\nFrontend: Contenedor de React que interactúa con el backend mediante APIs.",
+    "text": "Fase 2: Diseño del Sistema\n\nArquitectura General\nBackend:\n\nMódulos de Django para usuarios, productos, pedidos y pagos.\nEndpoints REST con DRF para CRUD y gestión de transacciones.\nConfiguración de variables de entorno para manejar credenciales y secretos.\n\nFrontend:\n\nComponentes reutilizables (Navbar, ProductCard, Cart, CheckoutForm).\nRutas principales:\n\nHome: Lista de productos.\nProduct Details: Detalles de un producto.\nCart: Resumen del carrito.\nCheckout: Procesar pedidos y pagos.\nProfile: Gestión de perfil.\n\n\nInfraestructura:\n\nConfiguración de Docker Compose:\n\nBase de datos: Contenedor PostgreSQL con persistencia de datos.\nBackend: Contenedor Django con conexión a la base de datos.\nFrontend: Contenedor React conectado al backend.",
     "crumbs": [
       "Proyectos",
       "<span class='chapter-number'>44</span>  <span class='chapter-title'>Tienda Virtual.</span>"
@@ -2193,7 +2193,7 @@
     "href": "unidades/Proyectos/0_tienda_virtual.html#fase-3-configuración-inicial",
     "title": "Tienda Virtual.",
     "section": "Fase 3: Configuración Inicial",
-    "text": "Fase 3: Configuración Inicial\n\nActividades:\n\nCrear la estructura inicial del proyecto con directorios separados para el backend y el frontend.\nConfigurar un archivo docker-compose.yml para orquestar los contenedores.\nCrear una red de Docker manualmente que conecte solo al backend y la base de datos.\n\nArchivos Iniciales:\nBackend:\n\n.env para variables de entorno (e.g., DATABASE_URL, SECRET_KEY).\nrequirements.txt para gestionar dependencias de Python.\n.gitignore para excluir archivos sensibles (env/, pycache/, etc.).\nConfiguración de settings.py separada para desarrollo y producción.\n\nFrontend:\n\nArchivo vite.config.js para configurar Vite.\nConfiguración de TailwindCSS.\n.env para variables de entorno (URL de la API del backend).\n.gitignore para excluir archivos innecesarios (node_modules/, dist/).\n\n\n\nGeneral:\n\nArchivo docker-compose.yml para la infraestructura.\nConfiguración de red interna en Docker.\nArchivo README.md con instrucciones básicas para iniciar el proyecto.",
+    "text": "Fase 3: Configuración Inicial\n\nCrear la estructura inicial del proyecto con directorios separados para backend y frontend.\nConfigurar un archivo docker-compose.yml para orquestar contenedores.\nCrear .env para variables de entorno:\n\n\nBackend: DATABASE_URL, SECRET_KEY, PAYPAL_CLIENT_ID.\nFrontend: URL del backend, claves de API.\n\n\nConfigurar TailwindCSS en el frontend.\nInicializar el repositorio Git con un .gitignore adecuado.",
     "crumbs": [
       "Proyectos",
       "<span class='chapter-number'>44</span>  <span class='chapter-title'>Tienda Virtual.</span>"
@@ -2204,7 +2204,7 @@
     "href": "unidades/Proyectos/0_tienda_virtual.html#fase-4-desarrollo-del-backend",
     "title": "Tienda Virtual.",
     "section": "Fase 4: Desarrollo del Backend",
-    "text": "Fase 4: Desarrollo del Backend\n\nActividades:\nCrear modelos y relaciones:\n\nUser: Con roles (cliente y administrador).\nProduct: Con detalles como precio, inventario, etc.\nOrder: Asociado a usuarios y productos.\nConfigurar vistas y serializadores con Django REST Framework.\nImplementar autenticación basada en JWT.\nCrear endpoints REST para users, products, orders y payments.\n\n\n\nActividades:\n\nConfigurar React con Vite, TailwindCSS y TypeScript.\nCrear componentes reutilizables y páginas principales.\nConfigurar React Router para navegación entre vistas.\nConsumir APIs del backend con Axios, manejando autenticación con JWT.",
+    "text": "Fase 4: Desarrollo del Backend\n\nCrear modelos y relaciones:\n\n\nUser: Roles (cliente y administrador).\nProduct: Detalles (nombre, precio, inventario, imágenes).\nOrder: Asociado a usuarios y productos.\n\n\nConfigurar vistas y serializadores con Django REST Framework.\nImplementar autenticación basada en JWT.\nConfigurar endpoints seguros para:\n\n\nUsuarios (registro, login, perfil).\nProductos (CRUD).\nPedidos.\nPagos.",
     "crumbs": [
       "Proyectos",
       "<span class='chapter-number'>44</span>  <span class='chapter-title'>Tienda Virtual.</span>"
@@ -2215,7 +2215,7 @@
     "href": "unidades/Proyectos/0_tienda_virtual.html#fase-6-integración-de-pagos",
     "title": "Tienda Virtual.",
     "section": "Fase 6: Integración de Pagos",
-    "text": "Fase 6: Integración de Pagos\n\nActividades:\n\nConfigurar PayPal Sandbox en el backend para generar enlaces de pago.\nImplementar la lógica en el frontend para manejar transacciones.\nValidar los pagos y actualizar los pedidos según el estado de la transacción.",
+    "text": "Fase 6: Integración de Pagos\n\nConfigurar PayPal Sandbox en el backend.\nImplementar lógica en el frontend para manejar transacciones.\nValidar pagos y actualizar pedidos según estado de transacción.",
     "crumbs": [
       "Proyectos",
       "<span class='chapter-number'>44</span>  <span class='chapter-title'>Tienda Virtual.</span>"
@@ -2226,7 +2226,7 @@
     "href": "unidades/Proyectos/0_tienda_virtual.html#fase-7-pruebas",
     "title": "Tienda Virtual.",
     "section": "Fase 7: Pruebas",
-    "text": "Fase 7: Pruebas\n\nActividades:\n\nPruebas unitarias para backend y frontend.\nPruebas de integración para el flujo completo (registro → compra → pago).\nValidar la comunicación entre contenedores en el entorno dockerizado.",
+    "text": "Fase 7: Pruebas\n\nPruebas Unitarias:\n\n\nBackend: Modelos, serializadores, vistas.\nFrontend: Componentes, funciones.\n\n\nPruebas de Integración:\n\n\nFlujo completo (registro → carrito → pago).\n\n\nPruebas de Carga:\n\n\nSimular tráfico alto con herramientas como Locust o JMeter.",
     "crumbs": [
       "Proyectos",
       "<span class='chapter-number'>44</span>  <span class='chapter-title'>Tienda Virtual.</span>"
@@ -2237,7 +2237,7 @@
     "href": "unidades/Proyectos/0_tienda_virtual.html#fase-8-despliegue",
     "title": "Tienda Virtual.",
     "section": "Fase 8: Despliegue",
-    "text": "Fase 8: Despliegue\n\nActividades:\n\nConfigurar el backend para producción en Railway.\nConfigurar el frontend para producción en Vercel.\nValidar el sistema completo en entornos reales, incluyendo la integración con PayPal Sandbox.",
+    "text": "Fase 8: Despliegue\n\nConfigurar CI/CD para despliegue automatizado.\nDesplegar backend en Railway y frontend en Vercel.\nValidar el sistema completo en producción.",
     "crumbs": [
       "Proyectos",
       "<span class='chapter-number'>44</span>  <span class='chapter-title'>Tienda Virtual.</span>"
@@ -2248,7 +2248,7 @@
     "href": "unidades/Proyectos/0_tienda_virtual.html#fase-9-optimización-y-mantenimiento",
     "title": "Tienda Virtual.",
     "section": "Fase 9: Optimización y Mantenimiento",
-    "text": "Fase 9: Optimización y Mantenimiento\n\nActividades:\n\nOptimizar consultas de la base de datos y rendimiento del backend.\nImplementar monitoreo y alertas para errores y rendimiento.\nActualizar dependencias y resolver vulnerabilidades de seguridad.",
+    "text": "Fase 9: Optimización y Mantenimiento\n\nOptimizar consultas a la base de datos.\nImplementar monitoreo con herramientas como Grafana y Prometheus.\nAutomatizar backups para la base de datos.\nActualizar dependencias y resolver vulnerabilidades.",
     "crumbs": [
       "Proyectos",
       "<span class='chapter-number'>44</span>  <span class='chapter-title'>Tienda Virtual.</span>"
@@ -2259,7 +2259,7 @@
     "href": "unidades/Proyectos/1_tienda_virtual.html#introducción",
     "title": "Fase 1: Recolección de Requisitos",
     "section": "Introducción",
-    "text": "Introducción\nAntes de comenzar a desarrollar una tienda virtual, debemos entender qué vamos a construir y cómo lo haremos. Esta fase nos ayuda a identificar las funcionalidades clave, las herramientas necesarias y las metas que queremos alcanzar.\nNuestro objetivo principal es construir una tienda virtual funcional y moderna. Este será nuestro punto de partida para establecer las bases del desarrollo.",
+    "text": "Introducción\nEsta fase inicial tiene como objetivo comprender y documentar todos los aspectos necesarios para construir una tienda virtual funcional y moderna. Definir los requisitos de manera clara y detallada asegura una base sólida para las fases posteriores y reduce el riesgo de errores y retrabajo.\n\n\n\n\n\n\nTip\n\n\n\n¿Qué es un Requisito?\n\nUn requisito es una característica que el sistema debe cumplir. Se clasifica en:\n\n\n\n\nRequisitos Funcionales: Qué debe hacer el sistema.\n\nEjemplo: Un usuario debe poder registrarse e iniciar sesión.\n\nRequisitos No Funcionales: Cómo debe comportarse el sistema.\n\nEjemplo: El sistema debe responder en menos de 2 segundos.\n\nRequisitos Técnicos: Qué herramientas o tecnologías utilizaremos.\n\nEjemplo: Usar React para el frontend.",
     "crumbs": [
       "Proyectos",
       "<span class='chapter-number'>45</span>  <span class='chapter-title'>Fase 1: Recolección de Requisitos</span>"
@@ -2270,7 +2270,7 @@
     "href": "unidades/Proyectos/1_tienda_virtual.html#qué-es-un-requisito",
     "title": "Fase 1: Recolección de Requisitos",
     "section": "¿Qué es un Requisito?",
-    "text": "¿Qué es un Requisito?\nUn requisito es una característica o función que el sistema debe cumplir. Pueden ser:\n\nFuncionales: Qué debe hacer el sistema.\n\n\nEjemplo: Un usuario debe poder registrarse e iniciar sesión.\n\n\nNo funcionales: Cómo debe comportarse el sistema.\n\n\nEjemplo: El sistema debe responder en menos de 2 segundos.\n\n\nTécnicos: Qué herramientas o tecnologías utilizaremos.\n\n\nEjemplo: Django para el backend y React para el frontend.",
+    "text": "¿Qué es un Requisito?\nUn requisito es una característica que el sistema debe cumplir.\nSe dividen en:\n\nRquisitos Funcionales: Qué debe hacer el sistema.\n\nEjemplo: Un usuario debe poder registrarse e iniciar sesión.\n\nRquisitos No funcionales: Cómo debe comportarse el sistema.\n\nEjemplo: El sistema debe responder en menos de 2 segundos.\n\n\n\nRequisitos Técnicos: Qué herramientas o tecnologías utilizaremos.\n\n\nEjemplo: Usar React para el frontend.",
     "crumbs": [
       "Proyectos",
       "<span class='chapter-number'>45</span>  <span class='chapter-title'>Fase 1: Recolección de Requisitos</span>"
@@ -2292,7 +2292,7 @@
     "href": "unidades/Proyectos/1_tienda_virtual.html#actividades",
     "title": "Fase 1: Recolección de Requisitos",
     "section": "Actividades",
-    "text": "Actividades\n\nDefinir Requisitos Funcionales\n\nNuestra tienda virtual tendrá las siguientes funcionalidades:\n\nUsuarios:\n\nRegistro e inicio de sesión.\nGestión de perfiles (nombre, correo, contraseña).\nDiferentes roles: Cliente y Administrador.\n\nProductos:\n\nLos usuarios deben ver una lista de productos.\nLos administradores deben poder agregar, editar y eliminar productos.\n\nCarrito de Compras:\n\nLos usuarios deben poder agregar y eliminar productos del carrito.\nEl sistema debe calcular el precio total automáticamente.\n\nPedidos:\n\nLos usuarios deben poder realizar pedidos desde el carrito.\nLos pedidos deben tener un estado: Pendiente, Pagado, Enviado.\n\nPagos:\n\nIntegración con PayPal para procesar pagos.\n\nFrontend:\n\nDebe ser intuitivo, responsivo y atractivo visualmente.\nCompatible con dispositivos móviles y computadoras.",
+    "text": "Actividades\n\n1. Definir Requisitos Funcionales\nUsuarios:\n\nRegistro e inicio de sesión con validación.\nGestión de perfiles (nombre, correo, contraseña).\n\nRoles:\n\nCliente: Realizar compras y gestionar su carrito.\nAdministrador: Gestión total de productos y pedidos.\n\nProductos:\n\nVisualización de lista de productos con detalles.\nCRUD (crear, leer, actualizar, eliminar) para administradores.\n\nCarrito de Compras:\n\nAgregar y eliminar productos del carrito.\nCalcular automáticamente el precio total.\n\nPedidos:\n\nCrear pedidos a partir del carrito.\nGestión de estados del pedido: Pendiente, Pagado, Enviado.\n\nPagos:\n\nIntegración con PayPal Sandbox para procesar pagos.\n\nFrontend:\n\nDiseño atractivo, intuitivo y responsivo.\nCompatibilidad con dispositivos móviles y computadoras.\n\n\n\n2. Definir Requisitos No Funcionales\nSeguridad:\n\nUso de HTTPS en producción.\nAutenticación y autorización con JWT.\n\nRendimiento:\n\nRespuesta en menos de 2 segundos para la mayoría de las operaciones.\n\nEscalabilidad:\n\nSoporte inicial para 100 usuarios concurrentes.\n\nAccesibilidad:\n\nInterfaz funcional y compatible con navegadores modernos.\n\n\n\n3. Definir Requisitos Técnicos\nBackend:\n\nFramework: Django 4.2 + Django REST Framework 3.15.\nBase de Datos: PostgreSQL 15.\nAutenticación: JWT.\nDespliegue: Railway.\n\nFrontend\n\nFramework: React 18 con Vite.\nEstilización: TailwindCSS.\nLenguaje: TypeScript.\nDespliegue: Vercel.\n\nInfraestructura\n\nContenedores Docker para:\n\nBase de datos (PostgreSQL).\nBackend (Django).\nFrontend (React).\n\nOrquestación: Docker Compose v3.8.\n\nOtros\n\nUso del entorno de pruebas de PayPal (Sandbox).\n\n\n\n4. Representación Visual\nA continuación, se muestra un diagrama conceptual de la arquitectura:\nUsuario -----&gt; Frontend (React + Vite) -----&gt; Backend (Django REST API)\n                |                              |\n                V                              V\n            TailwindCSS                  Base de Datos (PostgreSQL)",
     "crumbs": [
       "Proyectos",
       "<span class='chapter-number'>45</span>  <span class='chapter-title'>Fase 1: Recolección de Requisitos</span>"
@@ -2325,7 +2325,7 @@
     "href": "unidades/Proyectos/1_tienda_virtual.html#ejercicio-práctico-documentar-requisitos",
     "title": "Fase 1: Recolección de Requisitos",
     "section": "Ejercicio Práctico: Documentar Requisitos",
-    "text": "Ejercicio Práctico: Documentar Requisitos\n\nAbre tu editor de texto favorito (VSCode, Sublime Text o el que prefieras).\nCrea un archivo llamado requisitos.md.\nEscribe los siguientes contenidos:\n\n\n\n📝 Requisitos de la Tienda Virtual\n\n# Requisitos de la Tienda Virtual\n\n## Requisitos Funcionales\n1. Registro e inicio de sesión para usuarios.\n2. Gestión de perfiles de usuario (Cliente y Administrador).\n3. Listado de productos.\n4. CRUD de productos (solo para Administradores).\n5. Carrito de compras con cálculo automático del total.\n6. Gestión de pedidos con estados (Pendiente, Pagado, Enviado).\n7. Integración de pagos con PayPal.\n8. Interfaz responsiva compatible con móviles y computadoras.\n\n## Requisitos No Funcionales\n1. Uso de HTTPS en producción.\n2. Autenticación segura con JWT.\n3. Respuesta rápida del sistema (&lt;2 segundos).\n4. Soporte inicial para 100 usuarios concurrentes.\n5. Interfaz accesible para navegadores modernos.\n\n## Requisitos Técnicos\n### Backend\n- Framework: Django con Django REST Framework.\n- Base de Datos: PostgreSQL.\n- Autenticación: JWT.\n- Despliegue: Railway.\n\n### Frontend\n- Framework: React con Vite.\n- Estilización: TailwindCSS.\n- Lenguaje: TypeScript.\n- Despliegue: Vercel.\n\n### Infraestructura\n- Contenedores Docker:\n  - Base de datos (PostgreSQL).\n  - Backend (Django).\n  - Frontend (React).\n- Red interna para comunicación entre backend y base de datos.\n- Uso de Docker Compose para orquestar los contenedores.\n\n### Otros\n- Sandbox de PayPal para pruebas de pagos.\n\nExplicación\n\n\n¿Por qué documentamos requisitos?\n\nNos ayuda a tener claro qué vamos a construir.\nEs una referencia para todo el equipo durante el desarrollo.\nFacilita la detección de errores o problemas desde el inicio.\n\n\n\n¿Por qué dividir en funcionales, no funcionales y técnicos?\n\nCada tipo de requisito aborda un aspecto específico del sistema:\n\nFuncionales: Lo que el sistema hace.\nNo funcionales: Cómo lo hace.\nTécnicos: Con qué herramientas lo hacemos.",
+    "text": "Ejercicio Práctico: Documentar Requisitos\n\nAbre tu editor de texto favorito (VSCode, Sublime Text o similar).\nCrea un archivo llamado requisitos.md.\nDocumenta lo siguiente:\n\n# Requisitos de la Tienda Virtual\n\n## Requisitos Funcionales\n1. Registro e inicio de sesión.\n2. Gestión de perfiles (roles de Cliente y Administrador).\n3. Listado y CRUD de productos.\n4. Carrito de compras con cálculo automático.\n5. Gestión de pedidos con estados definidos.\n6. Procesamiento de pagos con PayPal.\n7. Diseño responsivo y compatible con múltiples dispositivos.\n\n## Requisitos No Funcionales\n1. Seguridad mediante HTTPS en producción.\n2. Autenticación robusta con JWT.\n3. Respuesta ágil (&lt;2 segundos).\n4. Soporte inicial para 100 usuarios concurrentes.\n5. Compatibilidad con navegadores modernos.\n\n## Requisitos Técnicos\n### Backend\n- Django y Django REST Framework.\n- Base de Datos: PostgreSQL.\n- Autenticación: JWT.\n\n### Frontend\n- React con Vite.\n- Estilización: TailwindCSS.\n- Lenguaje: TypeScript.\n\n### Infraestructura\n- Contenedores Docker para backend, frontend y base de datos.\n- Orquestación mediante Docker Compose.\n\n### Otros\n- PayPal Sandbox para pruebas de pagos.",
     "crumbs": [
       "Proyectos",
       "<span class='chapter-number'>45</span>  <span class='chapter-title'>Fase 1: Recolección de Requisitos</span>"
@@ -2336,7 +2336,7 @@
     "href": "unidades/Proyectos/1_tienda_virtual.html#pruebas-de-la-fase-1",
     "title": "Fase 1: Recolección de Requisitos",
     "section": "Pruebas de la Fase 1",
-    "text": "Pruebas de la Fase 1\nEsta fase no involucra código, pero puedes verificar:\n\nComplejidad: ¿Están todos los requisitos necesarios para la tienda virtual?\nClaridad: ¿Son los requisitos entendibles para todos los estudiantes?\nFactibilidad: ¿Son realistas los requisitos con las herramientas y el tiempo disponibles?",
+    "text": "Pruebas de la Fase 1\n\nRevisión de los documentos de requisitos por parte del equipo.\nValidación de los requisitos con el cliente.\nAprobación de los requisitos para avanzar a la fase de diseño.",
     "crumbs": [
       "Proyectos",
       "<span class='chapter-number'>45</span>  <span class='chapter-title'>Fase 1: Recolección de Requisitos</span>"
@@ -3091,5 +3091,258 @@
     "title": "Licencia",
     "section": "Cambios en la Licencia",
     "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
+  },
+  {
+    "objectID": "unidades/Proyectos/0_tienda_virtual.html#descripción-del-proyecto",
+    "href": "unidades/Proyectos/0_tienda_virtual.html#descripción-del-proyecto",
+    "title": "Tienda Virtual.",
+    "section": "Descripción del Proyecto",
+    "text": "Descripción del Proyecto\nEste proyecto tiene como objetivo construir una tienda virtual escalable y moderna utilizando Django para el backend, React con Vite, TailwindCSS y TypeScript para el frontend, y PostgreSQL como base de datos. Se utilizará Docker para crear un entorno de desarrollo consistente, con contenedores separados para el backend, frontend y base de datos. El sistema integrará PayPal Sandbox para pagos y será desplegado en Railway (backend) y Vercel (frontend).\nSe priorizarán buenas prácticas, seguridad, accesibilidad y cumplimiento legal para garantizar un sistema robusto y listo para producción.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Tienda Virtual.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/0_tienda_virtual.html#objetivos",
+    "href": "unidades/Proyectos/0_tienda_virtual.html#objetivos",
+    "title": "Tienda Virtual.",
+    "section": "Objetivos",
+    "text": "Objetivos\n\nObjetivo General\nDesarrollar una tienda virtual con arquitectura modular y tecnologías modernas, optimizada para escalabilidad, seguridad, accesibilidad y rendimiento.\n\n\nObjetivos Específicos\n\nImplementar un backend funcional con Django y Django REST Framework, con autenticación basada en JWT y gestión segura de datos con PostgreSQL.\nDiseñar un frontend interactivo, accesible y responsivo con React, utilizando Vite, TailwindCSS y TypeScript.\nIntegrar pagos con PayPal Sandbox y explorar opciones para múltiples métodos de pago.\nConfigurar un entorno dockerizado con tres contenedores, garantizando comunicación eficiente entre backend y base de datos.\nImplementar un flujo de CI/CD con despliegue automatizado en Railway y Vercel.\nAsegurar cumplimiento legal y normativo (e.g., GDPR), accesibilidad (a11y) y monitoreo continuo del sistema.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Tienda Virtual.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/0_tienda_virtual.html#fases-del-proyecto",
+    "href": "unidades/Proyectos/0_tienda_virtual.html#fases-del-proyecto",
+    "title": "Tienda Virtual.",
+    "section": "Fases del Proyecto",
+    "text": "Fases del Proyecto\n\nFase 1: Recolección de Requisitos\n\nRequisitos Funcionales\nUsuarios:\n\nRegistro, inicio de sesión y gestión de perfiles (roles: cliente y administrador).\nRecuperación de contraseña y manejo de autenticación de dos factores (2FA).\n\nProductos:\n\nCRUD para gestión de productos.\nGestión de imágenes con integración a servicios externos (e.g., AWS S3, Google Cloud Storage).\n\nCarrito y Pedidos:\n\nGestión de carritos de compra y creación de pedidos.\nEstados de pedidos (e.g., pendiente, procesado, enviado, cancelado).\n\nPagos:\n\nIntegración con PayPal Sandbox y soporte para otros métodos (e.g., Stripe).\nValidación de pagos y actualizaciones automáticas de pedidos.\n\nAccesibilidad y SEO:\n\nFrontend accesible para personas con discapacidades.\nOptimización para motores de búsqueda (SEO).\n\nRequisitos Técnicos\nBackend:\n\nDjango y Django REST Framework para la API.\nAutenticación JWT con roles de usuario.\nConfiguración de caché con Redis.\n\nFrontend:\n\nReact con Vite, TailwindCSS y TypeScript.\nLazy loading y code splitting para optimizar rendimiento.\nUso de Axios para consumir APIs.\n\nInfraestructura:\n\nContenedores Docker orquestados con Docker Compose.\nRed interna para comunicación entre contenedores (backend y base de datos).\nConfiguración para manejo seguro de variables de entorno.\n\nDespliegue:\n\nBackend desplegado en Railway.\nFrontend desplegado en Vercel.\nFlujo CI/CD para despliegue automatizado.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Tienda Virtual.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/0_tienda_virtual.html#fase-5-desarrollo-del-frontend",
+    "href": "unidades/Proyectos/0_tienda_virtual.html#fase-5-desarrollo-del-frontend",
+    "title": "Tienda Virtual.",
+    "section": "Fase 5: Desarrollo del Frontend",
+    "text": "Fase 5: Desarrollo del Frontend\n\nConfigurar React con Vite, TailwindCSS y TypeScript.\nCrear componentes reutilizables y rutas principales.\nIntegrar React Router para navegación.\nConsumir APIs del backend con Axios, manejando autenticación y errores.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Tienda Virtual.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/0_tienda_virtual.html#fase-10-documentación",
+    "href": "unidades/Proyectos/0_tienda_virtual.html#fase-10-documentación",
+    "title": "Tienda Virtual.",
+    "section": "Fase 10: Documentación",
+    "text": "Fase 10: Documentación\n\nCrear documentación detallada para desarrolladores y usuarios finales.\nGenerar un manual de uso de la API con Swagger.\nIncluir instrucciones para desarrollo local y despliegue.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Tienda Virtual.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/1_tienda_virtual.html#objetivos",
+    "href": "unidades/Proyectos/1_tienda_virtual.html#objetivos",
+    "title": "Fase 1: Recolección de Requisitos",
+    "section": "Objetivos",
+    "text": "Objetivos\n\nIdentificar todas las funcionalidades clave de la tienda virtual.\nEstablecer estándares claros de calidad y desempeño.\nSeleccionar las tecnologías adecuadas para el desarrollo.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Fase 1: Recolección de Requisitos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/1_tienda_virtual.html#entregables",
+    "href": "unidades/Proyectos/1_tienda_virtual.html#entregables",
+    "title": "Fase 1: Recolección de Requisitos",
+    "section": "Entregables",
+    "text": "Entregables\n\nDocumento de Requisitos Funcionales.\nDocumento de Requisitos No Funcionales.\nDocumento de Requisitos Técnicos.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Fase 1: Recolección de Requisitos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/1_tienda_virtual.html",
+    "href": "unidades/Proyectos/1_tienda_virtual.html",
+    "title": "Fase 1: Recolección de Requisitos",
+    "section": "",
+    "text": "Introducción\nEsta fase inicial tiene como objetivo comprender y documentar todos los aspectos necesarios para construir una tienda virtual funcional y moderna. Definir los requisitos de manera clara y detallada asegura una base sólida para las fases posteriores y reduce el riesgo de errores y retrabajo.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Fase 1: Recolección de Requisitos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_tienda_virtual.html",
+    "href": "unidades/Proyectos/2_tienda_virtual.html",
+    "title": "Fase 2: Configuración de Red y Contenedor para la Base de Datos",
+    "section": "",
+    "text": "En esta fase, configuraremos la red de Docker, levantaremos el contenedor para PostgreSQL, y gestionaremos las variables de entorno de forma adecuada. También automatizaremos la creación de la red para la comunicación entre el backend y la base de datos, simplificando el proceso de configuración.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Fase 2: Configuración de Red y Contenedor para la Base de Datos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_tienda_virtual.html#objetivos-de-la-fase",
+    "href": "unidades/Proyectos/2_tienda_virtual.html#objetivos-de-la-fase",
+    "title": "Fase 2: Configuración de Red y Contenedor para la Base de Datos",
+    "section": "Objetivos de la Fase",
+    "text": "Objetivos de la Fase\n\nCrear un archivo .gitignore y un archivo .dockerignore para evitar incluir archivos no necesarios.\nConfigurar un archivo .env para gestionar las variables de entorno.\nAutomatizar la creación de la red para la comunicación entre el backend y la base de datos.\nConfigurar y levantar el contenedor de PostgreSQL utilizando Docker Compose.\nVerificar que la base de datos funciona correctamente y puede conectarse sin problemas.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Fase 2: Configuración de Red y Contenedor para la Base de Datos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_tienda_virtual.html#paso-1-crear-los-archivos-.gitignore-y-.dockerignore",
+    "href": "unidades/Proyectos/2_tienda_virtual.html#paso-1-crear-los-archivos-.gitignore-y-.dockerignore",
+    "title": "Fase 2: Configuración de Red y Contenedor para la Base de Datos",
+    "section": "Paso 1: Crear los Archivos .gitignore y .dockerignore",
+    "text": "Paso 1: Crear los Archivos .gitignore y .dockerignore\nLos archivos .gitignore y .dockerignore nos ayudarán a evitar que archivos innecesarios sean incluidos en el repositorio o en la imagen Docker.\n\ngitignore: Crea un archivo .gitignore en el directorio raíz del proyecto y añade las siguientes líneas:\n\n# Archivos de configuración de Docker\n.dockerignore\n\n# Archivos de entorno\n.env\n\n# Archivos generados por Docker\ndocker-compose.override.yml\n\n# Directorios y archivos temporales de la aplicación\nnode_modules/\n*.log\n*.pid\n\n# Archivos de Python (si es necesario)\n__pycache__/\n*.pyc\n\ndockerignore: Crea un archivo .dockerignore en el directorio raíz y añade lo siguiente:\n\n# Archivos y carpetas que no deben ser copiados a la imagen de Docker\nnode_modules/\n*.log\n*.env\n.git\n.gitignore\n.dockerignore",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Fase 2: Configuración de Red y Contenedor para la Base de Datos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_tienda_virtual.html#paso-2-configurar-el-archivo-.env-para-variables-de-entorno",
+    "href": "unidades/Proyectos/2_tienda_virtual.html#paso-2-configurar-el-archivo-.env-para-variables-de-entorno",
+    "title": "Fase 2: Configuración de Red y Contenedor para la Base de Datos",
+    "section": "Paso 2: Configurar el Archivo .env para Variables de Entorno",
+    "text": "Paso 2: Configurar el Archivo .env para Variables de Entorno\nLas variables de entorno como las credenciales de la base de datos deben mantenerse fuera del código fuente, por lo que se recomienda usar un archivo .env para gestionar esta información. Crea un archivo llamado .env en el directorio raíz y añade las siguientes líneas:\nPOSTGRES_USER=admin\nPOSTGRES_PASSWORD=securepassword\nPOSTGRES_DB=ecommerce\nDB_HOST=localhost\nDB_PORT=5432",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Fase 2: Configuración de Red y Contenedor para la Base de Datos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_tienda_virtual.html#paso-3-automatizar-la-creación-de-la-red-de-docker",
+    "href": "unidades/Proyectos/2_tienda_virtual.html#paso-3-automatizar-la-creación-de-la-red-de-docker",
+    "title": "Fase 2: Configuración de Red y Contenedor para la Base de Datos",
+    "section": "Paso 3: Automatizar la Creación de la Red de Docker",
+    "text": "Paso 3: Automatizar la Creación de la Red de Docker\nEn lugar de crear la red manualmente, podemos automatizar la creación de la red en el archivo docker-compose.yml para simplificar la configuración.\n\nEstructura del archivo docker-compose.yml para PostgreSQL:\nEn el directorio project/db/, crea el archivo docker-compose.yml con el siguiente contenido. Ahora, no es necesario crear la red manualmente, ya que Docker Compose se encarga de esto automáticamente:\nservices:\n  db:\n    image: postgres:14\n    container_name: postgres_container\n    restart: always\n    environment:\n      POSTGRES_USER: ${POSTGRES_USER}\n      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}\n      POSTGRES_DB: ${POSTGRES_DB}\n    volumes:\n      - db_data:/var/lib/postgresql/data\n    networks:\n      - backend_network\n    ports:\n      - \"5432:5432\"  # Exponer puerto solo para pruebas iniciales\n\nvolumes:\n  db_data:\n\nnetworks:\n  backend_network:\n    driver: bridge  # Se crea automáticamente si no existe\n\n\nExplicación:\n\nenvironment: Las variables de entorno ahora se toman del archivo .env mediante la sintaxis ${VARIABLE_NAME}.\nnetworks: La red backend_network se configura automáticamente cuando se ejecuta docker-compose up, no es necesario crearla manualmente.\ndriver: Usamos el driver bridge para la red, lo cual es suficiente para la mayoría de los casos.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Fase 2: Configuración de Red y Contenedor para la Base de Datos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_tienda_virtual.html#paso-4-levantar-el-contenedor-de-la-base-de-datos",
+    "href": "unidades/Proyectos/2_tienda_virtual.html#paso-4-levantar-el-contenedor-de-la-base-de-datos",
+    "title": "Fase 2: Configuración de Red y Contenedor para la Base de Datos",
+    "section": "Paso 4: Levantar el Contenedor de la Base de Datos",
+    "text": "Paso 4: Levantar el Contenedor de la Base de Datos\nCon todo configurado, ahora podemos levantar el contenedor de PostgreSQL.\nEntra en el directorio db y ejecuta el siguiente comando:\ndocker-compose up -d\nVerifica que el contenedor está corriendo correctamente:\ndocker ps\nDeberías ver algo como esto:\nCONTAINER ID   IMAGE        COMMAND                  ...     PORTS\nabc123xyz      postgres:14  \"docker-entrypoint.s…\"  ...     0.0.0.0:5432-&gt;5432/tcp",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Fase 2: Configuración de Red y Contenedor para la Base de Datos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_tienda_virtual.html#paso-5-probar-la-base-de-datos",
+    "href": "unidades/Proyectos/2_tienda_virtual.html#paso-5-probar-la-base-de-datos",
+    "title": "Fase 2: Configuración de Red y Contenedor para la Base de Datos",
+    "section": "Paso 5: Probar la Base de Datos",
+    "text": "Paso 5: Probar la Base de Datos\nPara verificar que la base de datos está funcionando correctamente, conéctate usando una herramienta como Visual Studio Code con la extensión de PostgreSQL o utilizando la línea de comandos.\n\nConexión usando una Herramienta de Administración:\nConéctate a la base de datos utilizando las siguientes credenciales del archivo .env:\n\nHost: localhost\nPuerto: 5432\nUsuario: admin\nContraseña: securepassword\nBase de datos: ecommerce\n\nEjecuta el siguiente comando para verificar que la base de datos está funcionando correctamente:\nSELECT version();\n\n\nAlternativa: Línea de Comandos\nPuedes acceder directamente al contenedor y conectarte a la base de datos con:\ndocker exec -it postgres_container psql -U admin -d ecommerce\n\n\nPaso 6: Validar la Persistencia de Datos\nUna vez levantado el contenedor, valida que los datos persisten cuando reinicias el contenedor.\n\nDetén el contenedor con:\n\ndocker-compose down\n\nReinicia el contenedor con:\n\ndocker-compose up -d\n\nVerifica que los datos de la base de datos siguen siendo los mismos después de reiniciar.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Fase 2: Configuración de Red y Contenedor para la Base de Datos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/1_app_cursos.html",
+    "href": "unidades/Proyectos/1_app_cursos.html",
+    "title": "Sistema de Gestión de Cursos con Django y DRF",
+    "section": "",
+    "text": "1. Configuración del Proyecto",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Sistema de Gestión de Cursos con Django y DRF</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/1_app_cursos.html#estructura-del-proyecto",
+    "href": "unidades/Proyectos/1_app_cursos.html#estructura-del-proyecto",
+    "title": "App Cursos",
+    "section": "",
+    "text": "CRUD para cursos, estudiantes y profesores.\nRelación entre modelos:\n\n\nUn curso puede tener muchos estudiantes.\nUn curso tiene un profesor asignado. API REST para listar cursos y ver inscripciones. Generación de reportes de calificaciones en PDF o CSV. Extensión: Sistema de autenticación para profesores y estudiantes. Paso 1: Crear el proyecto y configurar Docker 1.1 Crear el directorio del proyecto bash Copiar código mkdir course_management cd course_management 1.2 Crear el docker-compose.yml yaml Copiar código version: “3.9”",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>App Cursos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/1_app_cursos.html#objetivo",
+    "href": "unidades/Proyectos/1_app_cursos.html#objetivo",
+    "title": "Sistema de Gestión de Cursos con Django y DRF",
+    "section": "",
+    "text": "Crear, listar, actualizar y eliminar cursos y estudiantes.\nEstablecer relaciones entre los modelos (un curso tiene varios estudiantes).\nExponer una API REST para realizar estas operaciones. Estructura de la Clase Duración Total: 2 horas. Requisitos Previos: Python instalado (versión 3.8+). Entorno virtual configurado. Conocimientos básicos de Python y Django. Parte 1: Introducción a Django y DRF (10 minutos) Explicación breve sobre qué es Django:\n\n\n\n\n\n\n\n\ndef __str__(self):\n    return self.title\n\ndef __str__(self):\n    return self.name",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Sistema de Gestión de Cursos con Django y DRF</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/1_app_cursos.html#paso-1-crear-el-proyecto-y-entorno-virtual",
+    "href": "unidades/Proyectos/1_app_cursos.html#paso-1-crear-el-proyecto-y-entorno-virtual",
+    "title": "Sistema de Gestión de Cursos con Django y DRF",
+    "section": "",
+    "text": "mkdir course_management\ncd course_management\npython -m venv venv\nsource venv/bin/activate\npip install django djangorestframework",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Sistema de Gestión de Cursos con Django y DRF</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/1_app_cursos.html#paso-2-crear-el-proyecto-y-la-aplicación",
+    "href": "unidades/Proyectos/1_app_cursos.html#paso-2-crear-el-proyecto-y-la-aplicación",
+    "title": "Sistema de Gestión de Cursos con Django y DRF",
+    "section": "Paso 2: Crear el proyecto y la aplicación",
+    "text": "Paso 2: Crear el proyecto y la aplicación\ndjango-admin startproject config .\npython manage.py startapp courses",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Sistema de Gestión de Cursos con Django y DRF</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/1_app_cursos.html#paso-3-configurar-installed_apps",
+    "href": "unidades/Proyectos/1_app_cursos.html#paso-3-configurar-installed_apps",
+    "title": "Sistema de Gestión de Cursos con Django y DRF",
+    "section": "Paso 3: Configurar INSTALLED_APPS",
+    "text": "Paso 3: Configurar INSTALLED_APPS\nEditar config/settings.py:\nINSTALLED_APPS = [\n    ...\n    'rest_framework',\n    'courses',\n]",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Sistema de Gestión de Cursos con Django y DRF</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/1_app_cursos.html#paso-4-migrar-la-base-de-datos",
+    "href": "unidades/Proyectos/1_app_cursos.html#paso-4-migrar-la-base-de-datos",
+    "title": "Sistema de Gestión de Cursos con Django y DRF",
+    "section": "Paso 4: Migrar la base de datos",
+    "text": "Paso 4: Migrar la base de datos\npython manage.py migrate\n\nModelos\n\nPaso 1: Definir los modelos Editar courses/models.py:\nfrom django.db import models\nclass Course(models.Model): title = models.CharField(max_length=100) description = models.TextField()\ndef __str__(self):\n    return self.title\nclass Student(models.Model): name = models.CharField(max_length=100) email = models.EmailField(unique=True) courses = models.ManyToManyField(Course, related_name=‘students’)\ndef __str__(self):\n    return self.name\nPaso 2: Migrar los modelos\npython manage.py makemigrations python manage.py migrate\n\nSerializers\n\nPaso 1: Crear el archivo serializers.py Crear y editar courses/serializers.py:\nfrom rest_framework import serializers from .models import Course, Student\nclass CourseSerializer(serializers.ModelSerializer): class Meta: model = Course fields = ‘all’\nclass StudentSerializer(serializers.ModelSerializer): class Meta: model = Student fields = ‘all’\n\nVistas\n\nPaso 1: Crear las vistas Editar courses/views.py:\nfrom rest_framework.viewsets import ModelViewSet from .models import Course, Student from .serializers import CourseSerializer, StudentSerializer\nclass CourseViewSet(ModelViewSet): queryset = Course.objects.all() serializer_class = CourseSerializer\nclass StudentViewSet(ModelViewSet): queryset = Student.objects.all() serializer_class = StudentSerializer\n\nRutas\n\nPaso 1: Configurar las rutas de la aplicación Crear y editar courses/urls.py:\nfrom rest_framework.routers import DefaultRouter from .views import CourseViewSet, StudentViewSet\nrouter = DefaultRouter() router.register(‘courses’, CourseViewSet) router.register(‘students’, StudentViewSet)\nurlpatterns = router.urls\nPaso 2: Incluir las rutas en el proyecto Editar config/urls.py:\nfrom django.contrib import admin from django.urls import path, include\nurlpatterns = [ path(‘admin/’, admin.site.urls), path(‘api/’, include(‘courses.urls’)),]\n\nPruebas de la API\n\nPaso 1: Levantar el servidor\npython manage.py runserver\nPaso 2: Endpoints disponibles\nListar Cursos: GET http://127.0.0.1:8000/api/courses/\nCrear Curso: POST http://127.0.0.1:8000/api/courses/\n{ “title”: “Curso Django”, “description”: “Aprende Django desde cero.” }\nListar Estudiantes: GET http://127.0.0.1:8000/api/students/\nCrear Estudiante: POST http://127.0.0.1:8000/api/students/",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Sistema de Gestión de Cursos con Django y DRF</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/1_app_cursos.html#configuración-del-proyecto",
+    "href": "unidades/Proyectos/1_app_cursos.html#configuración-del-proyecto",
+    "title": "Sistema de Gestión de Cursos con Django y DRF",
+    "section": "",
+    "text": "Paso 1: Crear el proyecto y entorno virtual\nmkdir course_management\ncd course_management\npython -m venv env\nsource venv/bin/activate\npip install django djangorestframework\n\n\nPaso 2: Crear el proyecto y la aplicación\ndjango-admin startproject config .\npython manage.py startapp courses\n\n\nPaso 3: Configurar INSTALLED_APPS\nEditar config/settings.py:\nINSTALLED_APPS = [\n    ...\n    'rest_framework',\n    'courses',\n]\n\n\nPaso 4: Migrar la base de datos\npython manage.py migrate",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Sistema de Gestión de Cursos con Django y DRF</span>"
+    ]
   }
 ]

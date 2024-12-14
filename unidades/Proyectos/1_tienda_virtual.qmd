@@ -3,190 +3,155 @@
 
 ## Introducción
 
-Antes de comenzar a desarrollar una tienda virtual, debemos entender qué vamos a construir y cómo lo haremos. Esta fase nos ayuda a identificar las funcionalidades clave, las herramientas necesarias y las metas que queremos alcanzar.
+Esta fase inicial tiene como objetivo comprender y documentar todos los aspectos necesarios para construir una tienda virtual funcional y moderna. Definir los requisitos de manera clara y detallada asegura una base sólida para las fases posteriores y reduce el riesgo de errores y retrabajo.
 
-Nuestro objetivo principal es construir una tienda virtual funcional y moderna. Este será nuestro punto de partida para establecer las bases del desarrollo.
+:::{.callout-tip}
+**¿Qué es un Requisito?**
 
-## ¿Qué es un Requisito?
+- Un requisito es una característica que el sistema debe cumplir. Se clasifica en:
+:::
 
-Un requisito es una característica o función que el sistema debe cumplir. Pueden ser:
+1. **Requisitos Funcionales**: Qué debe hacer el sistema.
 
-1. **Funcionales**: Qué debe hacer el sistema.
+    - **Ejemplo**: Un usuario debe poder registrarse e iniciar sesión.
 
-- Ejemplo: Un usuario debe poder registrarse e iniciar sesión.
+2. **Requisitos No Funcionales**: Cómo debe comportarse el sistema.
 
-2. **No funcionales**: Cómo debe comportarse el sistema.
+    - **Ejemplo**: El sistema debe responder en menos de 2 segundos.
 
-- Ejemplo: El sistema debe responder en menos de 2 segundos.
+3. **Requisitos Técnicos**: Qué herramientas o tecnologías utilizaremos.
 
-3. **Técnicos**: Qué herramientas o tecnologías utilizaremos.
+    - **Ejemplo**: Usar React para el frontend.
 
-- Ejemplo: Django para el backend y React para el frontend.
+## Objetivos
 
-## Objetivos de la Fase 1
-
-1. Identificar las funcionalidades que necesita nuestra tienda virtual.
-2. Establecer estándares de calidad y desempeño.
-3. Seleccionar las tecnologías que usaremos en el desarrollo.
+1. Identificar todas las funcionalidades clave de la tienda virtual.
+2. Establecer estándares claros de calidad y desempeño.
+3. Seleccionar las tecnologías adecuadas para el desarrollo.
 
 ## Actividades
 
-1. Definir Requisitos Funcionales
+### 1. Definir Requisitos Funcionales
 
-Nuestra tienda virtual tendrá las siguientes funcionalidades:
+**Usuarios**:
 
-- **Usuarios**:
+- Registro e inicio de sesión con validación.
+- Gestión de perfiles (nombre, correo, contraseña).
 
-  - Registro e inicio de sesión.
-  - Gestión de perfiles (nombre, correo, contraseña).
-  - Diferentes roles: Cliente y Administrador.
+**Roles**:
 
-- **Productos**:
+  - **Cliente**: Realizar compras y gestionar su carrito.
+  - **Administrador**: Gestión total de productos y pedidos.
 
-  - Los usuarios deben ver una lista de productos.
-  - Los administradores deben poder agregar, editar y eliminar productos.
+**Productos**:
 
-- **Carrito de Compras**:
+  - Visualización de lista de productos con detalles.
+  - CRUD (crear, leer, actualizar, eliminar) para administradores.
 
-  - Los usuarios deben poder agregar y eliminar productos del carrito.
-  - El sistema debe calcular el precio total automáticamente.
+**Carrito de Compras**:
 
-- **Pedidos**:
+  - Agregar y eliminar productos del carrito.
+  - Calcular automáticamente el precio total.
 
-  - Los usuarios deben poder realizar pedidos desde el carrito.
-  - Los pedidos deben tener un estado: Pendiente, Pagado, Enviado.
+**Pedidos**:
 
-- **Pagos**:
+  - Crear pedidos a partir del carrito.
+  - Gestión de estados del pedido: Pendiente, Pagado, Enviado.
 
-  - Integración con PayPal para procesar pagos.
+**Pagos**:
 
-- **Frontend**:
+- Integración con PayPal Sandbox para procesar pagos.
 
-  - Debe ser intuitivo, responsivo y atractivo visualmente.
-  - Compatible con dispositivos móviles y computadoras.
+**Frontend**:
 
-## 2. Definir Requisitos No Funcionales
+  - Diseño atractivo, intuitivo y responsivo.
+  - Compatibilidad con dispositivos móviles y computadoras.
 
-- **Seguridad**:
+### 2. Definir Requisitos No Funcionales
 
-  - La comunicación entre frontend y backend debe usar HTTPS en producción.
-  - Autenticación de usuarios mediante JWT (JSON Web Tokens).
+**Seguridad**:
 
-- **Rendimiento**:
+- Uso de HTTPS en producción.
+- Autenticación y autorización con JWT.
 
-  - El sistema debe responder en menos de 2 segundos para la mayoría de las operaciones.
+**Rendimiento**:
 
-- **Escalabilidad**:
+- Respuesta en menos de 2 segundos para la mayoría de las operaciones.
 
-  - Debe soportar al menos 100 usuarios concurrentes en la fase inicial.
+**Escalabilidad**:
 
-- **Accesibilidad**:
+- Soporte inicial para 100 usuarios concurrentes.
 
-  - Interfaz accesible para diferentes dispositivos y navegadores modernos.
+**Accesibilidad**:
 
-## 3. Definir Requisitos Técnicos
+- Interfaz funcional y compatible con navegadores modernos.
 
-- **Backend**:
+### 3. Definir Requisitos Técnicos
 
-  - **Framework**: Django con Django REST Framework (DRF).
-  - **Base de Datos**: PostgreSQL.
-  - **Autenticación**: JWT.
-  - **Contenedorización**: Docker.
+**Backend**:
 
-- **Frontend**:
+- **Framework**: Django 4.2 + Django REST Framework 3.15.
+- **Base de Datos**: PostgreSQL 15.
+- **Autenticación**: JWT.
+- **Despliegue**: Railway.
 
-  - **Framework**: React con Vite.
-  - **Estilización**: TailwindCSS.
-  - **Lenguaje**: TypeScript.
+**Frontend**
 
-- **Infraestructura**:
+- **Framework**: React 18 con Vite.
+- **Estilización**: TailwindCSS.
+- **Lenguaje**: TypeScript.
+- **Despliegue**: Vercel.
 
-  - Contenedores Docker:
-    - Base de datos.
-    - Backend.
-    - Frontend.
+**Infraestructura**
 
-  - Red interna en Docker para comunicar backend y base de datos.
+- **Contenedores Docker para**:
 
-- **Despliegue**:
+    - Base de datos (PostgreSQL).
+    - Backend (Django).
+    - Frontend (React).
 
-  - **Backend**: Railway.
-  - **Frontend**: Vercel.
-  - PayPal Sandbox para pruebas de pagos.
+- **Orquestación**: Docker Compose v3.8.
 
-## Ejercicio Práctico: Documentar Requisitos
+**Otros**
 
-1.  Abre tu editor de texto favorito (VSCode, Sublime Text o el que prefieras).
-2.  Crea un archivo llamado **requisitos.md**.
-3.  Escribe los siguientes contenidos:
+- Uso del entorno de pruebas de PayPal (**Sandbox**).
 
-<details>
-<summary>📝 **Requisitos de la Tienda Virtual**</summary>
+### 4. Representación Visual
 
-```markdown
-# Requisitos de la Tienda Virtual
+A continuación, se muestra un diagrama conceptual de la arquitectura: 
 
-## Requisitos Funcionales
-1. Registro e inicio de sesión para usuarios.
-2. Gestión de perfiles de usuario (Cliente y Administrador).
-3. Listado de productos.
-4. CRUD de productos (solo para Administradores).
-5. Carrito de compras con cálculo automático del total.
-6. Gestión de pedidos con estados (Pendiente, Pagado, Enviado).
-7. Integración de pagos con PayPal.
-8. Interfaz responsiva compatible con móviles y computadoras.
-
-## Requisitos No Funcionales
-1. Uso de HTTPS en producción.
-2. Autenticación segura con JWT.
-3. Respuesta rápida del sistema (<2 segundos).
-4. Soporte inicial para 100 usuarios concurrentes.
-5. Interfaz accesible para navegadores modernos.
-
-## Requisitos Técnicos
-### Backend
-- Framework: Django con Django REST Framework.
-- Base de Datos: PostgreSQL.
-- Autenticación: JWT.
-- Despliegue: Railway.
-
-### Frontend
-- Framework: React con Vite.
-- Estilización: TailwindCSS.
-- Lenguaje: TypeScript.
-- Despliegue: Vercel.
-
-### Infraestructura
-- Contenedores Docker:
-  - Base de datos (PostgreSQL).
-  - Backend (Django).
-  - Frontend (React).
-- Red interna para comunicación entre backend y base de datos.
-- Uso de Docker Compose para orquestar los contenedores.
-
-### Otros
-- Sandbox de PayPal para pruebas de pagos.
+```plaintext
+Usuario -----> Frontend (React + Vite) -----> Backend (Django REST API)
+                |                              |
+                V                              V
+            TailwindCSS                  Base de Datos (PostgreSQL)
 ```
-### Explicación
 
-### ¿Por qué documentamos requisitos?
+# Entregables
 
-- Nos ayuda a tener claro qué vamos a construir.
-- Es una referencia para todo el equipo durante el desarrollo.
-- Facilita la detección de errores o problemas desde el inicio.
+1. Documento de Requisitos Funcionales.
+2. Documento de Requisitos No Funcionales.
+3. Documento de Requisitos Técnicos.
+4. Diagrama de arquitectura inicial.
 
-### ¿Por qué dividir en funcionales, no funcionales y técnicos?
+# Pruebas de la Fase 1
 
-- Cada tipo de requisito aborda un aspecto específico del sistema:
-  - Funcionales: Lo que el sistema hace.
-  - No funcionales: Cómo lo hace.
-  - Técnicos: Con qué herramientas lo hacemos.
-</details>
-## Pruebas de la Fase 1
+1. Revisión de los documentos de requisitos por parte del equipo.
+2. Validación de los requisitos con el cliente:
+  - Checklist de Validación:
+    - [ ] ¿Todos los roles están cubiertos?
+    - [ ] ¿Se describen claramente las interacciones clave del sistema?
+    - [ ] ¿Se definen métricas claras de desempeño?
+3. Aprobación final de los requisitos para avanzar a la fase de diseño.
 
-Esta fase no involucra código, pero puedes verificar:
+# Métricas de Éxito
 
-- **Complejidad**: ¿Están todos los requisitos necesarios para la tienda virtual?
-- **Claridad**: ¿Son los requisitos entendibles para todos los estudiantes?
-- **Factibilidad**: ¿Son realistas los requisitos con las herramientas y el tiempo disponibles?
+1. **Completitud**: Documentación del 100% de los requisitos funcionales y técnicos.
+2. **Aprobación del cliente**: Validación sin objeciones críticas.
+4. **Claridad**: Comprensión total del equipo sobre los documentos entregados.
+
+# Conclusiones
+
+La Fase 1 sienta las bases para un desarrollo exitoso al documentar detalladamente lo que se necesita construir. La inclusión de requisitos funcionales, no funcionales y técnicos, junto con representaciones visuales, asegura una alineación clara entre los miembros del equipo y el cliente. Este enfoque reduce riesgos y prepara el terreno para las siguientes fases del proyecto, como el diseño del sistema.
 :::
+
