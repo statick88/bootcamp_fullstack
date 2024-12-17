@@ -32,7 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
 <link href="../../unidades/Proyectos/1_tienda_virtual.html" rel="next">
-<link href="../../unidades/Proyectos/6_calculadora.html" rel="prev">
+<link href="../../unidades/Proyectos/1_app_cursos.html" rel="prev">
 <link href="../../logo.jpeg" rel="icon" type="image/jpeg">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -465,6 +465,11 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../unidades/Proyectos/1_app_cursos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sistema de Gestión de Cursos con Django y DRF</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../unidades/Proyectos/0_tienda_virtual.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Tienda Virtual.</span></a>
   </div>
 </li>
@@ -475,12 +480,22 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/Proyectos/2_tienda_virtual.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 2: Configuración de Red y Contenedor para la Base de Datos</span></a>
+  <a href="../../unidades/Proyectos/2_tienda_virtual.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 2: Diseño de la Arquitectura</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/Proyectos/3_tienda_virtual.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 3: Configuración del Contenedor para el Backend</span></a>
+  <a href="../../unidades/Proyectos/3_tienda_virtual.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 3. Desarrollo de la Aplicación</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/Proyectos/4_tienda_virtual.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 4: Integración de Funcionalidades Avanzadas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/Proyectos/5_tienda_virtual.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 5: Configuración para Despliegue y Pruebas E2E</span></a>
   </div>
 </li>
       </ul>
@@ -488,12 +503,28 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
- <span class="menu-text">Extras</span></a>
+ <span class="menu-text">Ejercicios</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/ejercicios/ejercicios_python-001.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicios Python - Nivel Intermedio (POO)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+ <span class="menu-text">Extras</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../unidades/Extras/0_parte.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span></a>
@@ -572,220 +603,132 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="descripción-del-proyecto" class="level2">
 <h2 class="anchored" data-anchor-id="descripción-del-proyecto">Descripción del Proyecto</h2>
-<p>Este proyecto tiene como objetivo construir una tienda virtual escalable y moderna utilizando <strong>Django</strong> para el backend, <strong>React</strong> con Vite, <strong>TailwindCSS</strong> y <strong>TypeScript</strong> para el frontend, y <strong>PostgreSQL</strong> como base de datos. Se utilizará <strong>Docker</strong> para crear un entorno de desarrollo consistente, con contenedores separados para el backend, frontend y base de datos. El sistema integrará <strong>PayPal Sandbox</strong> para pagos y será desplegado en Railway (backend) y Vercel (frontend).</p>
-<p>Se priorizarán buenas prácticas, seguridad, accesibilidad y cumplimiento legal para garantizar un sistema robusto y listo para producción.</p>
+<p>El objetivo es construir una tienda virtual básica utilizando Django para el backend, React con Vite y TailwindCSS para el frontend, y PostgreSQL como base de datos. Se empleará Docker para un entorno de desarrollo consistente, con contenedores separados para el backend y base de datos. El sistema incluirá funcionalidades básicas para gestión de usuarios, productos y pedidos.</p>
 </section>
-<section id="objetivos" class="level2">
-<h2 class="anchored" data-anchor-id="objetivos">Objetivos</h2>
-<section id="objetivo-general" class="level3">
-<h3 class="anchored" data-anchor-id="objetivo-general">Objetivo General</h3>
-<p>Desarrollar una tienda virtual con arquitectura modular y tecnologías modernas, optimizada para escalabilidad, seguridad, accesibilidad y rendimiento.</p>
+<section id="objetivo-general" class="level2">
+<h2 class="anchored" data-anchor-id="objetivo-general">Objetivo General</h2>
+<p>Crear una tienda virtual funcional y accesible, enfocada en simplicidad y rendimiento, con un diseño modular y tecnología moderna.</p>
 </section>
-<section id="objetivos-específicos" class="level3">
-<h3 class="anchored" data-anchor-id="objetivos-específicos">Objetivos Específicos</h3>
+<section id="funcionalidades-principales" class="level2">
+<h2 class="anchored" data-anchor-id="funcionalidades-principales">Funcionalidades Principales</h2>
 <ol type="1">
-<li><p>Implementar un backend funcional con <strong>Django</strong> y <strong>Django REST Framework</strong>, con autenticación basada en <strong>JWT</strong> y gestión segura de datos con <strong>PostgreSQL</strong>.</p></li>
-<li><p>Diseñar un frontend interactivo, accesible y responsivo con <strong>React</strong>, utilizando Vite, <strong>TailwindCSS</strong> y <strong>TypeScript</strong>.</p></li>
-<li><p>Integrar pagos con <strong>PayPal Sandbox</strong> y explorar opciones para múltiples métodos de pago.</p></li>
-<li><p>Configurar un entorno dockerizado con tres contenedores, garantizando comunicación eficiente entre backend y base de datos.</p></li>
-<li><p>Implementar un flujo de CI/CD con despliegue automatizado en <strong>Railway</strong> y <strong>Vercel</strong>.</p></li>
-<li><p>Asegurar cumplimiento legal y normativo (e.g., GDPR), accesibilidad (a11y) y monitoreo continuo del sistema.</p></li>
-</ol>
-</section>
-</section>
-<section id="fases-del-proyecto" class="level2">
-<h2 class="anchored" data-anchor-id="fases-del-proyecto">Fases del Proyecto</h2>
-<section id="fase-1-recolección-de-requisitos" class="level3">
-<h3 class="anchored" data-anchor-id="fase-1-recolección-de-requisitos">Fase 1: Recolección de Requisitos</h3>
-<section id="requisitos-funcionales" class="level4">
-<h4 class="anchored" data-anchor-id="requisitos-funcionales">Requisitos Funcionales</h4>
-<p><strong>Usuarios</strong>:</p>
+<li><p>Usuarios:</p>
 <ul>
-<li><p>Registro, inicio de sesión y gestión de perfiles (roles: cliente y administrador).</p></li>
-<li><p>Recuperación de contraseña y manejo de autenticación de dos factores (2FA).</p></li>
-</ul>
-<p><strong>Productos</strong>:</p>
-<ul>
-<li>CRUD para gestión de productos.</li>
-<li>Gestión de imágenes con integración a servicios externos (e.g., AWS S3, Google Cloud Storage).</li>
-</ul>
-<p><strong>Carrito y Pedidos</strong>:</p>
-<ul>
-<li>Gestión de carritos de compra y creación de pedidos.</li>
-<li>Estados de pedidos (e.g., pendiente, procesado, enviado, cancelado).</li>
-</ul>
-<p><strong>Pagos</strong>:</p>
-<ul>
-<li>Integración con PayPal Sandbox y soporte para otros métodos (e.g., Stripe).</li>
-<li>Validación de pagos y actualizaciones automáticas de pedidos.</li>
-</ul>
-<p><strong>Accesibilidad y SEO</strong>:</p>
-<ul>
-<li>Frontend accesible para personas con discapacidades.</li>
-<li>Optimización para motores de búsqueda (SEO).</li>
-</ul>
-<p><strong>Requisitos Técnicos</strong></p>
-<p><strong>Backend</strong>:</p>
-<ul>
-<li><strong>Django</strong> y <strong>Django REST Framework</strong> para la API.</li>
-<li>Autenticación JWT con roles de usuario.</li>
-<li>Configuración de caché con <strong>Redis</strong>.</li>
-</ul>
-<p><strong>Frontend</strong>:</p>
-<ul>
-<li><strong>React</strong> con <strong>Vite</strong>, <strong>TailwindCSS</strong> y <strong>TypeScript</strong>.</li>
-<li>Lazy loading y code splitting para optimizar rendimiento.</li>
-<li>Uso de Axios para consumir APIs.</li>
-</ul>
-<p><strong>Infraestructura</strong>:</p>
-<ul>
-<li>Contenedores Docker orquestados con Docker Compose.</li>
-<li>Red interna para comunicación entre contenedores (backend y base de datos).</li>
-<li>Configuración para manejo seguro de variables de entorno.</li>
-</ul>
-<p><strong>Despliegue</strong>:</p>
-<ul>
-<li>Backend desplegado en <strong>Railway</strong>.</li>
-<li>Frontend desplegado en <strong>Vercel</strong>.</li>
-<li>Flujo CI/CD para despliegue automatizado.</li>
-</ul>
-</section>
-</section>
-</section>
-<section id="fase-2-diseño-del-sistema" class="level2">
-<h2 class="anchored" data-anchor-id="fase-2-diseño-del-sistema">Fase 2: Diseño del Sistema</h2>
-<section id="arquitectura-general" class="level3">
-<h3 class="anchored" data-anchor-id="arquitectura-general">Arquitectura General</h3>
-<p><strong>Backend</strong>:</p>
-<ul>
-<li>Módulos de Django para usuarios, productos, pedidos y pagos.</li>
-<li>Endpoints REST con DRF para CRUD y gestión de transacciones.</li>
-<li>Configuración de variables de entorno para manejar credenciales y secretos.</li>
-</ul>
-<p><strong>Frontend</strong>:</p>
-<ul>
-<li>Componentes reutilizables (Navbar, ProductCard, Cart, CheckoutForm).</li>
-<li>Rutas principales:
-<ul>
-<li><strong>Home</strong>: Lista de productos.</li>
-<li><strong>Product Details</strong>: Detalles de un producto.</li>
-<li><strong>Cart</strong>: Resumen del carrito.</li>
-<li><strong>Checkout</strong>: Procesar pedidos y pagos.</li>
-<li><strong>Profile</strong>: Gestión de perfil.</li>
+<li>Registro e inicio de sesión.</li>
+<li>Gestión de perfiles.</li>
 </ul></li>
-</ul>
-<p><strong>Infraestructura</strong>:</p>
+<li><p>Productos:</p>
 <ul>
-<li>Configuración de Docker Compose:
-<ul>
-<li><strong>Base de datos</strong>: Contenedor PostgreSQL con persistencia de datos.</li>
-<li><strong>Backend</strong>: Contenedor Django con conexión a la base de datos.</li>
-<li><strong>Frontend</strong>: Contenedor React conectado al backend.</li>
+<li>CRUD de productos con imágenes.</li>
 </ul></li>
-</ul>
-</section>
-</section>
-<section id="fase-3-configuración-inicial" class="level2">
-<h2 class="anchored" data-anchor-id="fase-3-configuración-inicial">Fase 3: Configuración Inicial</h2>
-<ol type="1">
-<li>Crear la estructura inicial del proyecto con directorios separados para backend y frontend.</li>
-<li>Configurar un archivo <strong>docker-compose.yml</strong> para orquestar contenedores.</li>
-<li>Crear <strong>.env</strong> para variables de entorno:</li>
-</ol>
+<li><p>Carrito y Pedidos:</p>
 <ul>
-<li><strong>Backend</strong>: <strong>DATABASE_URL</strong>, <strong>SECRET_KEY</strong>, <strong>PAYPAL_CLIENT_ID</strong>.</li>
-<li><strong>Frontend</strong>: URL del backend, claves de API.</li>
-</ul>
-<ol start="4" type="1">
-<li>Configurar TailwindCSS en el frontend.</li>
-<li>Inicializar el repositorio Git con un .gitignore adecuado.</li>
-</ol>
-</section>
-<section id="fase-4-desarrollo-del-backend" class="level2">
-<h2 class="anchored" data-anchor-id="fase-4-desarrollo-del-backend">Fase 4: Desarrollo del Backend</h2>
-<ol type="1">
-<li>Crear modelos y relaciones:</li>
-</ol>
+<li>Agregar productos al carrito.</li>
+<li>Crear y gestionar pedidos.</li>
+</ul></li>
+<li><p>Pagos:</p>
 <ul>
-<li><strong>User</strong>: Roles (cliente y administrador).</li>
-<li><strong>Product</strong>: Detalles (nombre, precio, inventario, imágenes).</li>
-<li><strong>Order</strong>: Asociado a usuarios y productos.</li>
-</ul>
-<ol start="2" type="1">
-<li>Configurar vistas y serializadores con <strong>Django REST Framework</strong>.</li>
-<li>Implementar autenticación basada en <strong>JWT</strong>.</li>
-<li>Configurar endpoints seguros para:</li>
-</ol>
+<li>Integración básica con PayPal Sandbox para validación de pagos.</li>
+</ul></li>
+<li><p>Frontend:</p>
 <ul>
-<li>Usuarios (registro, login, perfil).</li>
-<li>Productos (CRUD).</li>
-<li>Pedidos.</li>
-<li>Pagos.</li>
-</ul>
-</section>
-<section id="fase-5-desarrollo-del-frontend" class="level2">
-<h2 class="anchored" data-anchor-id="fase-5-desarrollo-del-frontend">Fase 5: Desarrollo del Frontend</h2>
-<ol type="1">
-<li>Configurar React con <strong>Vite</strong>, <strong>TailwindCSS</strong> y <strong>TypeScript</strong>.</li>
-<li>Crear componentes reutilizables y rutas principales.</li>
-<li>Integrar <strong>React Router</strong> para navegación.</li>
-<li>Consumir APIs del backend con Axios, manejando autenticación y errores.</li>
-</ol>
-</section>
-<section id="fase-6-integración-de-pagos" class="level2">
-<h2 class="anchored" data-anchor-id="fase-6-integración-de-pagos">Fase 6: Integración de Pagos</h2>
-<ol type="1">
-<li>Configurar PayPal Sandbox en el backend.</li>
-<li>Implementar lógica en el frontend para manejar transacciones.</li>
-<li>Validar pagos y actualizar pedidos según estado de transacción.</li>
-</ol>
-</section>
-<section id="fase-7-pruebas" class="level2">
-<h2 class="anchored" data-anchor-id="fase-7-pruebas">Fase 7: Pruebas</h2>
-<ol type="1">
-<li><strong>Pruebas Unitarias</strong>:</li>
-</ol>
+<li>Diseño responsivo y accesible con TailwindCSS.</li>
+</ul></li>
+<li><p>Infraestructura:</p>
 <ul>
-<li><strong>Backend</strong>: Modelos, serializadores, vistas.</li>
-<li><strong>Frontend</strong>: Componentes, funciones.</li>
-</ul>
-<ol start="2" type="1">
-<li><strong>Pruebas de Integración</strong>:</li>
+<li>Configuración con Docker Compose para desarrollo local.</li>
+</ul></li>
 </ol>
+</section>
+<section id="fases-del-proyecto" class="level1">
+<h1>Fases del Proyecto</h1>
+<section id="fase-1-configuración-inicial" class="level2">
+<h2 class="anchored" data-anchor-id="fase-1-configuración-inicial">Fase 1: Configuración Inicial</h2>
+<ol type="1">
+<li><p>Crear estructura del proyecto:</p>
 <ul>
-<li>Flujo completo (registro → carrito → pago).</li>
-</ul>
-<ol start="3" type="1">
-<li><strong>Pruebas de Carga</strong>:</li>
-</ol>
+<li>Backend: Django con Django REST Framework.</li>
+<li>Frontend: React con Vite y TailwindCSS.</li>
+</ul></li>
+<li><p>Configurar un archivo docker-compose.yml para el backend y base de datos.</p></li>
+<li><p>Crear archivo .env con variables esenciales:</p>
 <ul>
-<li>Simular tráfico alto con herramientas como <strong>Locust</strong> o <strong>JMeter</strong>.</li>
-</ul>
-</section>
-<section id="fase-8-despliegue" class="level2">
-<h2 class="anchored" data-anchor-id="fase-8-despliegue">Fase 8: Despliegue</h2>
-<ol type="1">
-<li>Configurar CI/CD para despliegue automatizado.</li>
-<li>Desplegar backend en Railway y frontend en Vercel.</li>
-<li>Validar el sistema completo en producción.</li>
+<li>Backend: DATABASE_URL, SECRET_KEY.</li>
+<li>Frontend: URL del backend.</li>
+</ul></li>
 </ol>
 </section>
-<section id="fase-9-optimización-y-mantenimiento" class="level2">
-<h2 class="anchored" data-anchor-id="fase-9-optimización-y-mantenimiento">Fase 9: Optimización y Mantenimiento</h2>
+<section id="fase-2-desarrollo-del-backend" class="level2">
+<h2 class="anchored" data-anchor-id="fase-2-desarrollo-del-backend">Fase 2: Desarrollo del Backend</h2>
 <ol type="1">
-<li>Optimizar consultas a la base de datos.</li>
-<li>Implementar monitoreo con herramientas como Grafana y Prometheus.</li>
-<li>Automatizar backups para la base de datos.</li>
-<li>Actualizar dependencias y resolver vulnerabilidades.</li>
+<li><p>Modelos:</p>
+<ul>
+<li>User: Roles (cliente y administrador).</li>
+<li>Product: Nombre, precio, inventario, imágenes.</li>
+<li>Order: Asociado a usuarios y productos.</li>
+</ul></li>
+<li><p>Endpoints:</p>
+<ul>
+<li>Usuarios: Registro, login, perfil.</li>
+<li>Productos: CRUD.</li>
+<li>Pedidos: Crear y listar.</li>
+</ul></li>
+<li><p>Autenticación:</p>
+<ul>
+<li>Implementar autenticación con JWT.</li>
+</ul></li>
 </ol>
 </section>
-<section id="fase-10-documentación" class="level2">
-<h2 class="anchored" data-anchor-id="fase-10-documentación">Fase 10: Documentación</h2>
+<section id="fase-3-desarrollo-del-frontend" class="level2">
+<h2 class="anchored" data-anchor-id="fase-3-desarrollo-del-frontend">Fase 3: Desarrollo del Frontend</h2>
 <ol type="1">
-<li>Crear documentación detallada para desarrolladores y usuarios finales.</li>
-<li>Generar un manual de uso de la API con Swagger.</li>
-<li>Incluir instrucciones para desarrollo local y despliegue.</li>
+<li><p>Configurar React con Vite y TailwindCSS.</p></li>
+<li><p>Crear componentes básicos:</p>
+<ul>
+<li>Navbar, ProductList, ProductDetails, Cart, CheckoutForm.</li>
+</ul></li>
+<li><p>Implementar rutas principales con React Router:</p>
+<ul>
+<li>Home: Lista de productos.</li>
+<li>Product Details: Detalles de un producto.</li>
+<li>Cart: Resumen del carrito.</li>
+<li>Checkout: Confirmación de pedido.</li>
+</ul></li>
+<li><p>Consumir APIs del backend con Axios.</p></li>
 </ol>
+</section>
+<section id="fase-4-integración-de-pagos" class="level2">
+<h2 class="anchored" data-anchor-id="fase-4-integración-de-pagos">Fase 4: Integración de Pagos</h2>
+<ol type="1">
+<li><p>Configurar PayPal Sandbox en el backend.</p></li>
+<li><p>Implementar lógica básica en el frontend para manejar pagos.</p></li>
+</ol>
+</section>
+<section id="fase-5-pruebas" class="level2">
+<h2 class="anchored" data-anchor-id="fase-5-pruebas">Fase 5: Pruebas</h2>
+<ol type="1">
+<li><p>Pruebas unitarias en backend (modelos y vistas).</p></li>
+<li><p>Pruebas de integración básica:</p>
+<ul>
+<li>Flujo completo (registro → carrito → pedido).</li>
+</ul></li>
+</ol>
+</section>
+<section id="fase-6-despliegue" class="level2">
+<h2 class="anchored" data-anchor-id="fase-6-despliegue">Fase 6: Despliegue</h2>
+<ol type="1">
+<li><p>Configurar despliegue en:</p>
+<ul>
+<li>Backend: Railway.</li>
+<li>Frontend: Vercel.</li>
+</ul></li>
+<li><p>Validar funcionalidad en producción.</p></li>
+</ol>
+</section>
+</section>
+<section id="resultado-esperado" class="level1">
+<h1>Resultado Esperado</h1>
+<p>Una tienda virtual básica funcional, lista para ser extendida en el futuro con más características como métodos de pago adicionales, monitoreo y accesibilidad avanzada.</p>
 </section>
 </div>
 
@@ -1362,8 +1305,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../unidades/Proyectos/6_calculadora.html" class="pagination-link" aria-label="Laboratorio: Calculadora en Python">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Laboratorio: Calculadora en Python</span></span>
+      <a href="../../unidades/Proyectos/1_app_cursos.html" class="pagination-link" aria-label="Sistema de Gestión de Cursos con Django y DRF">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Sistema de Gestión de Cursos con Django y DRF</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

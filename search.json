@@ -2178,6 +2178,347 @@
     ]
   },
   {
+    "objectID": "unidades/Proyectos/0_tienda_virtual.html#descripción-del-proyecto",
+    "href": "unidades/Proyectos/0_tienda_virtual.html#descripción-del-proyecto",
+    "title": "Tienda Virtual.",
+    "section": "Descripción del Proyecto",
+    "text": "Descripción del Proyecto\nEl objetivo es construir una tienda virtual básica utilizando Django para el backend, React con Vite y TailwindCSS para el frontend, y PostgreSQL como base de datos. Se empleará Docker para un entorno de desarrollo consistente, con contenedores separados para el backend y base de datos. El sistema incluirá funcionalidades básicas para gestión de usuarios, productos y pedidos.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Tienda Virtual.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/0_tienda_virtual.html#objetivo-general",
+    "href": "unidades/Proyectos/0_tienda_virtual.html#objetivo-general",
+    "title": "Tienda Virtual.",
+    "section": "Objetivo General",
+    "text": "Objetivo General\nCrear una tienda virtual funcional y accesible, enfocada en simplicidad y rendimiento, con un diseño modular y tecnología moderna.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Tienda Virtual.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/0_tienda_virtual.html#funcionalidades-principales",
+    "href": "unidades/Proyectos/0_tienda_virtual.html#funcionalidades-principales",
+    "title": "Tienda Virtual.",
+    "section": "Funcionalidades Principales",
+    "text": "Funcionalidades Principales\n\nUsuarios:\n\nRegistro e inicio de sesión.\nGestión de perfiles.\n\nProductos:\n\nCRUD de productos con imágenes.\n\nCarrito y Pedidos:\n\nAgregar productos al carrito.\nCrear y gestionar pedidos.\n\nPagos:\n\nIntegración básica con PayPal Sandbox para validación de pagos.\n\nFrontend:\n\nDiseño responsivo y accesible con TailwindCSS.\n\nInfraestructura:\n\nConfiguración con Docker Compose para desarrollo local.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Tienda Virtual.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/0_tienda_virtual.html#fase-1-configuración-inicial",
+    "href": "unidades/Proyectos/0_tienda_virtual.html#fase-1-configuración-inicial",
+    "title": "Tienda Virtual.",
+    "section": "Fase 1: Configuración Inicial",
+    "text": "Fase 1: Configuración Inicial\n\nCrear estructura del proyecto:\n\nBackend: Django con Django REST Framework.\nFrontend: React con Vite y TailwindCSS.\n\nConfigurar un archivo docker-compose.yml para el backend y base de datos.\nCrear archivo .env con variables esenciales:\n\nBackend: DATABASE_URL, SECRET_KEY.\nFrontend: URL del backend.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Tienda Virtual.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/0_tienda_virtual.html#fase-2-desarrollo-del-backend",
+    "href": "unidades/Proyectos/0_tienda_virtual.html#fase-2-desarrollo-del-backend",
+    "title": "Tienda Virtual.",
+    "section": "Fase 2: Desarrollo del Backend",
+    "text": "Fase 2: Desarrollo del Backend\n\nModelos:\n\nUser: Roles (cliente y administrador).\nProduct: Nombre, precio, inventario, imágenes.\nOrder: Asociado a usuarios y productos.\n\nEndpoints:\n\nUsuarios: Registro, login, perfil.\nProductos: CRUD.\nPedidos: Crear y listar.\n\nAutenticación:\n\nImplementar autenticación con JWT.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Tienda Virtual.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/0_tienda_virtual.html#fase-3-desarrollo-del-frontend",
+    "href": "unidades/Proyectos/0_tienda_virtual.html#fase-3-desarrollo-del-frontend",
+    "title": "Tienda Virtual.",
+    "section": "Fase 3: Desarrollo del Frontend",
+    "text": "Fase 3: Desarrollo del Frontend\n\nConfigurar React con Vite y TailwindCSS.\nCrear componentes básicos:\n\nNavbar, ProductList, ProductDetails, Cart, CheckoutForm.\n\nImplementar rutas principales con React Router:\n\nHome: Lista de productos.\nProduct Details: Detalles de un producto.\nCart: Resumen del carrito.\nCheckout: Confirmación de pedido.\n\nConsumir APIs del backend con Axios.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Tienda Virtual.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/0_tienda_virtual.html#fase-4-integración-de-pagos",
+    "href": "unidades/Proyectos/0_tienda_virtual.html#fase-4-integración-de-pagos",
+    "title": "Tienda Virtual.",
+    "section": "Fase 4: Integración de Pagos",
+    "text": "Fase 4: Integración de Pagos\n\nConfigurar PayPal Sandbox en el backend.\nImplementar lógica básica en el frontend para manejar pagos.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Tienda Virtual.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/0_tienda_virtual.html#fase-5-pruebas",
+    "href": "unidades/Proyectos/0_tienda_virtual.html#fase-5-pruebas",
+    "title": "Tienda Virtual.",
+    "section": "Fase 5: Pruebas",
+    "text": "Fase 5: Pruebas\n\nPruebas unitarias en backend (modelos y vistas).\nPruebas de integración básica:\n\nFlujo completo (registro → carrito → pedido).",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Tienda Virtual.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/0_tienda_virtual.html#fase-6-despliegue",
+    "href": "unidades/Proyectos/0_tienda_virtual.html#fase-6-despliegue",
+    "title": "Tienda Virtual.",
+    "section": "Fase 6: Despliegue",
+    "text": "Fase 6: Despliegue\n\nConfigurar despliegue en:\n\nBackend: Railway.\nFrontend: Vercel.\n\nValidar funcionalidad en producción.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Tienda Virtual.</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/1_tienda_virtual.html#requisitos-funcionales",
+    "href": "unidades/Proyectos/1_tienda_virtual.html#requisitos-funcionales",
+    "title": "Fase 1: Recolección de Requisitos",
+    "section": "Requisitos Funcionales",
+    "text": "Requisitos Funcionales\n\nUsuarios\n\nRegistro e inicio de sesión:\n\nLos usuarios deben poder registrarse, iniciar sesión y cerrar sesión.\nRoles: Cliente y Administrador.\n\nGestión de perfiles:\n\nLos usuarios pueden editar su información personal (nombre, correo, contraseña).\nEl administrador puede gestionar los usuarios (consultar, actualizar, deshabilitar cuentas).\n\nRecuperación de contraseña:\n\nLos usuarios deben poder recuperar su contraseña mediante un enlace enviado a su correo.\n\nAutenticación de dos factores (2FA):\n\nImplementación futura para mayor seguridad. Integración opcional según las necesidades del proyecto.\n\n\n\n\nProductos\n\nCRUD de productos:\n\nEl administrador puede crear, leer, actualizar y eliminar productos.\nAtributos: nombre, descripción, precio, inventario, imágenes.\n\nGestión de imágenes:\n\nEl sistema almacenará las imágenes en el directorio /static/images del backend utilizando el sistema de archivos de Railway.\n\n\n\n\nCarrito y Pedidos\n\nGestión del carrito de compras:\n\nLos clientes pueden agregar, editar o eliminar productos en su carrito.\n\nGestión de pedidos:\n\nLos clientes pueden realizar pedidos y consultar su estado (pendiente, procesado, enviado, cancelado).\nSeguimiento de pedidos: Los clientes podrán recibir notificaciones o actualizaciones del estado del pedido en tiempo real.\n\n\n\n\nPagos\n\nIntegración con PayPal Sandbox:\n\nLos usuarios podrán realizar pagos utilizando PayPal Sandbox.\nLos pagos serán validados a través de un servidor externo que confirmará la transacción.\n\nValidación y actualización de pagos:\n\nUna vez validado el pago, el sistema actualizará automáticamente el estado del pedido según el resultado de la transacción (pendiente, procesado, cancelado).\n\n\n\n\nAccesibilidad y SEO\n\nFrontend accesible:\n\nCumplir con los estándares de accesibilidad (WCAG 2.1).\nAplicar buenas prácticas de SEO, como el uso de etiquetas semánticas, metadatos, y optimización de la velocidad de carga.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Fase 1: Recolección de Requisitos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/1_tienda_virtual.html#requisitos-técnicos",
+    "href": "unidades/Proyectos/1_tienda_virtual.html#requisitos-técnicos",
+    "title": "Fase 1: Recolección de Requisitos",
+    "section": "Requisitos Técnicos",
+    "text": "Requisitos Técnicos\n\nBackend\n\nFrameworks y herramientas:\n\nDjango como framework principal.\nDjango REST Framework para API RESTful.\n\nAutenticación:\n\nBasada en JWT con roles de usuario.\n\nBase de datos:\n\nPostgreSQL para almacenamiento seguro y escalable.\n\nCaché:\n\nUso de Redis para mejorar el rendimiento.\n\n\n\n\nFrontend\n\nFrameworks y tecnologías:\n\nReact con Vite para una configuración rápida.\nTailwindCSS para diseño moderno y responsivo.\nJavaScript para tipado estático y código robusto.\n\nOptimización:\n\nLazy loading y code splitting para mejorar el rendimiento.\nAxios para el consumo de APIs.\n\n\n\n\nInfraestructura\n\nContenedores:\n\nDocker Compose para orquestación.\nBackend, frontend y base de datos en contenedores separados.\n\nVariables de entorno:\n\nManejo seguro con archivos .env.\n\n\n\n\nDespliegue\n\nHosting:\n\nRailway para backend.\nVercel para frontend.\n\nCI/CD:\n\nFlujo automatizado para pruebas y despliegue.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Fase 1: Recolección de Requisitos</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_tienda_virtual.html#arquitectura-general-del-sistema",
+    "href": "unidades/Proyectos/2_tienda_virtual.html#arquitectura-general-del-sistema",
+    "title": "Fase 2: Diseño de la Arquitectura",
+    "section": "1. Arquitectura General del Sistema",
+    "text": "1. Arquitectura General del Sistema\nLa arquitectura del sistema se basará en un enfoque cliente-servidor, donde el cliente (frontend) interactúa con el servidor (backend) a través de una API RESTful. El backend se encargará de gestionar la lógica de negocio, la autenticación, el almacenamiento de datos y la comunicación con servicios externos como PayPal.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 2: Diseño de la Arquitectura</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_tienda_virtual.html#detalles-importantes",
+    "href": "unidades/Proyectos/2_tienda_virtual.html#detalles-importantes",
+    "title": "Fase 2: Diseño de la Arquitectura",
+    "section": "Detalles importantes:",
+    "text": "Detalles importantes:\n\nAPI RESTful: El backend proporcionará endpoints RESTful para interactuar con recursos como usuarios, productos, pedidos y pagos. Se detallará la estructura de las rutas y la respuesta esperada de cada uno de los endpoints (por ejemplo, GET /api/products/ para obtener la lista de productos).\nServicios Externos (PayPal): La integración con PayPal será a través de su API RESTful. Las credenciales y detalles del procesamiento de pagos se manejarán con variables de entorno y secretos seguros.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 2: Diseño de la Arquitectura</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_tienda_virtual.html#backend-django-con-django-rest-framework",
+    "href": "unidades/Proyectos/2_tienda_virtual.html#backend-django-con-django-rest-framework",
+    "title": "Fase 2: Diseño de la Arquitectura",
+    "section": "2. Backend (Django con Django REST Framework)",
+    "text": "2. Backend (Django con Django REST Framework)\n\nA. Estructura del Proyecto:\nLa estructura del proyecto se organizará de la siguiente manera:\nbackend/\n├── auth/\n│   ├── migrations/\n│   ├── models.py\n│   ├── serializers.py\n│   ├── views.py\n│   ├── tests/\n├── products/\n│   ├── migrations/\n│   ├── models.py\n│   ├── serializers.py\n│   ├── views.py\n│   ├── tests/\n├── orders/\n│   ├── migrations/\n│   ├── models.py\n│   ├── serializers.py\n│   ├── views.py\n│   ├── tests/\n├── settings.py\n├── urls.py\n├── wsgi.py\n├── requirements.txt\n└── .env\n\n\nB. Tecnologías:\n\nDjango: Framework principal para la gestión del backend.\nDjango REST Framework (DRF): Para la creación de APIs RESTful que interactúan con el frontend.\nJWT (JSON Web Tokens): Para la autenticación de usuarios basada en tokens. Implementaremos una política de Refresh Tokens para permitir la renovación de tokens sin que el usuario tenga que iniciar sesión constantemente.\nPostgreSQL: Base de datos relacional para almacenar la información de los usuarios, productos y pedidos.\nRedis: Para la gestión de caché, sesiones y optimización de consultas.\nPayPal API: Para la integración de pagos. Los detalles de las credenciales de la API se almacenarán en archivos .env utilizando herramientas de seguridad como Vault para la gestión de secretos.\nValidaciones: Implementaremos validaciones tanto en el frontend como en el backend para asegurar la integridad de los datos. El backend usará serializers en Django para validar los datos recibidos.\nCifrado de Contraseñas: Usaremos bcrypt para el cifrado de contraseñas y asegurarnos de que la seguridad de los usuarios esté garantizada.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 2: Diseño de la Arquitectura</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_tienda_virtual.html#frontend-react-con-vite",
+    "href": "unidades/Proyectos/2_tienda_virtual.html#frontend-react-con-vite",
+    "title": "Fase 2: Diseño de la Arquitectura",
+    "section": "3. Frontend (React con Vite)",
+    "text": "3. Frontend (React con Vite)\n\nA. Estructura del Proyecto:\nLa estructura del frontend se organizará de la siguiente manera:\nfrontend/\n├── src/\n│   ├── components/\n│   ├── pages/\n│   ├── services/\n│   ├── App.js\n│   ├── index.js\n│   ├── store/\n├── public/\n├── tailwind.config.js\n├── vite.config.js\n└── .env\n\n\nB. Tecnologías:\n\nReact: Librería para la construcción de la interfaz de usuario.\nVite: Herramienta para la configuración rápida y eficiente de aplicaciones React.\nTailwindCSS: Framework CSS para un diseño limpio y moderno.\nAxios: Para hacer peticiones HTTP a la API del backend. Se incluirán mecanismos para manejar errores globalmente (por ejemplo, mostrando alertas de error si una petición falla).\nReact Router: Para la gestión de rutas en la aplicación de una sola página.\nReact Context / Redux: Usaremos React Context o Redux para la gestión de estado a nivel global, especialmente para manejar la autenticación de usuarios, productos y pedidos.\nOptimización de Carga: Implementaremos Lazy Loading para componentes pesados y Code Splitting para mejorar el rendimiento y tiempo de carga del frontend.\nManejo de Errores: Se implementará un sistema global de manejo de errores, tanto en las peticiones HTTP (con Axios) como en la interfaz de usuario (con Toast Notifications o alertas).",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 2: Diseño de la Arquitectura</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_tienda_virtual.html#integración-del-backend-y-frontend",
+    "href": "unidades/Proyectos/2_tienda_virtual.html#integración-del-backend-y-frontend",
+    "title": "Fase 2: Diseño de la Arquitectura",
+    "section": "4. Integración del Backend y Frontend",
+    "text": "4. Integración del Backend y Frontend\n\nComunicación:\n\nEl frontend se comunicará con el backend a través de peticiones HTTP utilizando Axios para obtener datos y realizar acciones (CRUD) sobre los productos, pedidos, etc. Se asegurará de que todas las peticiones que requieren autenticación incluyan el JWT en las cabeceras.\n\n\n\nAutenticación:\n\nLa autenticación de los usuarios se manejará mediante JWT. El token de acceso se incluirá en las cabeceras de las peticiones HTTP que requieran autenticación. También se implementará un sistema de Refresh Tokens para renovar el token de acceso sin necesidad de que el usuario vuelva a iniciar sesión.\n\n\n\nManejo de Errores:\n\nSe implementarán manejadores de errores tanto en el backend como en el frontend. En el backend, usaremos excepciones personalizadas para manejar errores en los endpoints de la API, mientras que en el frontend se mostrarán mensajes adecuados de error usando un sistema de notificaciones.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 2: Diseño de la Arquitectura</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_tienda_virtual.html#base-de-datos-postgresql",
+    "href": "unidades/Proyectos/2_tienda_virtual.html#base-de-datos-postgresql",
+    "title": "Fase 2: Diseño de la Arquitectura",
+    "section": "5. Base de Datos (PostgreSQL)",
+    "text": "5. Base de Datos (PostgreSQL)\n\nModelo de Datos: Los modelos de datos se organizarán en tablas de usuarios, productos y pedidos.\n\nUsuarios: Almacenará información sobre clientes y administradores. Incluye un campo de rol para diferenciarlos.\nProductos: Almacenará la información de los productos (nombre, precio, inventario, imágenes, descripción, etc.).\nPedidos: Almacenará los detalles de los pedidos realizados por los clientes (productos, cantidades, fecha de compra, total, estado de pago).\n\n\n\nRelacionando los Modelos:\n\nSe establecerán relaciones adecuadas entre los modelos, como Foreign Keys entre pedidos y productos, y Many-to-Many entre productos y categorías, si es necesario.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 2: Diseño de la Arquitectura</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_tienda_virtual.html#infraestructura-docker-y-contenedores",
+    "href": "unidades/Proyectos/2_tienda_virtual.html#infraestructura-docker-y-contenedores",
+    "title": "Fase 2: Diseño de la Arquitectura",
+    "section": "6. Infraestructura (Docker y Contenedores)",
+    "text": "6. Infraestructura (Docker y Contenedores)\n\nDocker Compose: Para orquestar los contenedores del backend, frontend y base de datos.\n\nContenedor Backend: Contendrá la aplicación Django, configurada para interactuar con PostgreSQL y Redis.\nContenedor Frontend: Contendrá la aplicación React, configurada para comunicarse con la API Django.\nContenedor Base de Datos: Contendrá PostgreSQL.\nContenedor de Cache: Contendrá Redis.\n\nVariables de Entorno: Los detalles de configuración (como credenciales de base de datos, claves de API) se almacenarán en archivos .env para mantener la seguridad y facilitar la configuración.\nImplementaremos un archivo .env.example para que los desarrolladores puedan copiarlo y configurar sus entornos locales.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 2: Diseño de la Arquitectura</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_tienda_virtual.html#despliegue-railway-para-backend-vercel-para-frontend",
+    "href": "unidades/Proyectos/2_tienda_virtual.html#despliegue-railway-para-backend-vercel-para-frontend",
+    "title": "Fase 2: Diseño de la Arquitectura",
+    "section": "7. Despliegue (Railway para Backend, Vercel para Frontend)",
+    "text": "7. Despliegue (Railway para Backend, Vercel para Frontend)\n\nBackend en Railway: El backend se desplegará en Railway, donde se gestionarán las bases de datos y la API.\nFrontend en Vercel: El frontend se desplegará en Vercel para un acceso rápido y escalabilidad automática.\n\n\nEscalabilidad:\n\nA medida que el proyecto crezca, podremos escalar el backend en Railway o cambiar a un servicio como AWS o Heroku si es necesario.\nVercel ofrece escalabilidad automática, pero también es importante evaluar el uso de un CDN para optimizar la entrega de contenido estático en el frontend.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 2: Diseño de la Arquitectura</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/2_tienda_virtual.html#seguridad-y-buenas-prácticas",
+    "href": "unidades/Proyectos/2_tienda_virtual.html#seguridad-y-buenas-prácticas",
+    "title": "Fase 2: Diseño de la Arquitectura",
+    "section": "8. Seguridad y Buenas Prácticas",
+    "text": "8. Seguridad y Buenas Prácticas\n\nAutenticación de Usuarios: Implementación de JWT para la autenticación de usuarios, con roles de cliente y administrador. La política de renovación de tokens mediante Refresh Tokens será implementada.\nSeguridad en los Pagos: Integración con PayPal para procesar pagos de manera segura. Las credenciales y claves de la API de PayPal se mantendrán seguras mediante variables de entorno.\nValidación de Datos: Uso de validaciones tanto en el frontend como en el backend para garantizar la integridad de los datos.\nCifrado: Cifrado de contraseñas en el backend utilizando bcrypt.\nManejo de Errores y Logs: Se configurarán registros (logs) detallados para facilitar la detección de errores y auditoría.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 2: Diseño de la Arquitectura</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/3_tienda_virtual.html#desarrollo-del-backend-django-con-django-rest-framework",
+    "href": "unidades/Proyectos/3_tienda_virtual.html#desarrollo-del-backend-django-con-django-rest-framework",
+    "title": "Fase 3. Desarrollo de la Aplicación",
+    "section": "1. Desarrollo del Backend (Django con Django REST Framework)",
+    "text": "1. Desarrollo del Backend (Django con Django REST Framework)\n\nA. Configuración Inicial del Proyecto\n1 Instalación de Dependencias: Instalaremos las dependencias necesarias en el entorno virtual de Python.\npip install django djangorestframework psycopg2-binary django-environ djangorestframework-jwt redis\n\nConfiguración del Proyecto Django:\n\nCrear el proyecto Django con el comando:\n\n\ndjango-admin startproject backend .\n\nCrear las aplicaciones para autenticación, productos y pedidos:\n\npython manage.py startapp auth\npython manage.py startapp products\npython manage.py startapp orders\n\nConfiguración de la Base de Datos:\n\n\nEn el archivo settings.py, configura la conexión a PostgreSQL utilizando el paquete django-environ para gestionar variables de entorno. Asegúrate de tener un archivo .env con las credenciales necesarias:\n\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.postgresql',\n        'NAME': os.environ.get('DB_NAME'),\n        'USER': os.environ.get('DB_USER'),\n        'PASSWORD': os.environ.get('DB_PASSWORD'),\n        'HOST': os.environ.get('DB_HOST'),\n        'PORT': os.environ.get('DB_PORT', 5432),\n    }\n}\nY en el archivo .env, agrega las variables de entorno:\nDB_NAME=mydatabase\nDB_USER=myuser\nDB_PASSWORD=mypassword\nDB_HOST=localhost\nDB_PORT=5432\n\n\nB. Implementación de Modelos\n\nModelo de Usuario:\n\nEn el archivo auth/models.py, crea un modelo de usuario si decides personalizarlo (si no, puedes usar el modelo User por defecto de Django).\n\nModelo de Producto:\n\nEn products/models.py, define el modelo para los productos con campos como nombre, precio, inventario, imagen, etc.\n\n\nclass Producto(models.Model):\n    nombre = models.CharField(max_length=255)\n    precio = models.DecimalField(max_digits=10, decimal_places=2)\n    descripcion = models.TextField()\n    inventario = models.IntegerField()\n    imagen = models.ImageField(upload_to='productos/')\n\nModelo de Pedido:\n\nEn orders/models.py, crea un modelo para los pedidos, con campos como usuario, productos, fecha, estado, etc.\nclass Pedido(models.Model):\n    usuario = models.ForeignKey(User, on_delete=models.CASCADE)\n    productos = models.ManyToManyField(Producto)\n    fecha = models.DateTimeField(auto_now_add=True)\n    estado = models.CharField(max_length=50)\n    total = models.DecimalField(max_digits=10, decimal_places=2)\n\n\nC. Serializadores\nEn el backend, usarás serializers para transformar los datos entre los modelos y las respuestas JSON:\n\nSerializador de Producto (en products/serializers.py):\n\nfrom rest_framework import serializers\nfrom .models import Producto\n\nclass ProductoSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Producto\n        fields = ['id', 'nombre', 'precio', 'descripcion', 'inventario', 'imagen']\n\nSerializador de Pedido (en orders/serializers.py):\n\nfrom rest_framework import serializers\nfrom .models import Pedido\nfrom products.serializers import ProductoSerializer\n\nclass PedidoSerializer(serializers.ModelSerializer):\n    productos = ProductoSerializer(many=True)\n\n    class Meta:\n        model = Pedido\n        fields = ['id', 'usuario', 'productos', 'fecha', 'estado', 'total']\n\n\nD. Vistas y Rutas\n\nVistas para el Producto (en products/views.py):\n\nfrom rest_framework import viewsets\nfrom .models import Producto\nfrom .serializers import ProductoSerializer\n\nclass ProductoViewSet(viewsets.ModelViewSet):\n    queryset = Producto.objects.all()\n    serializer_class = ProductoSerializer\n\nVistas para el Pedido (en orders/views.py):\n\nfrom rest_framework import viewsets\nfrom .models import Pedido\nfrom .serializers import PedidoSerializer\n\nclass PedidoViewSet(viewsets.ModelViewSet):\n    queryset = Pedido.objects.all()\n    serializer_class = PedidoSerializer\n\nRutas (en urls.py):\n\nfrom django.urls import include, path\nfrom rest_framework.routers import DefaultRouter\nfrom products.views import ProductoViewSet\nfrom orders.views import PedidoViewSet\n\nrouter = DefaultRouter()\nrouter.register(r'productos', ProductoViewSet)\nrouter.register(r'pedidos', PedidoViewSet)\n\nurlpatterns = [\n    path('api/', include(router.urls)),\n]\n\n\nE. Autenticación (JWT)\n\nConfiguración de JWT:\n\n\nInstala el paquete djangorestframework-jwt para la autenticación con JWT.\n\npip install djangorestframework-jwt\n\nEn settings.py, agrega la configuración para JWT:\n\nREST_FRAMEWORK = {\n    'DEFAULT_AUTHENTICATION_CLASSES': [\n        'rest_framework_simplejwt.authentication.JWTAuthentication',\n    ],\n}\n\nVistas de Login/Logout:\n\n\nCrea vistas para manejar el login y logout de los usuarios, utilizando JWT.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Fase 3. Desarrollo de la Aplicación</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/3_tienda_virtual.html#desarrollo-del-frontend-react-con-vite",
+    "href": "unidades/Proyectos/3_tienda_virtual.html#desarrollo-del-frontend-react-con-vite",
+    "title": "Fase 3. Desarrollo de la Aplicación",
+    "section": "2. Desarrollo del Frontend (React con Vite)",
+    "text": "2. Desarrollo del Frontend (React con Vite)\n\nA. Configuración Inicial del Proyecto\n\nCrear el Proyecto React con Vite:\n\nnpm create vite@latest frontend --template react\ncd frontend\nnpm install\n\nInstalar Dependencias:\n\nnpm install axios react-router-dom\n\n\nB. Estructura de Archivos\nEn el frontend, la estructura del proyecto será la siguiente:\nfrontend/\n├── src/\n│   ├── components/\n│   │   ├── Header.js\n│   │   └── ProductList.js\n│   ├── pages/\n│   │   ├── HomePage.js\n│   │   └── ProductPage.js\n│   ├── services/\n│   │   └── api.js\n│   ├── App.js\n│   ├── index.js\n│   └── store/\n├── public/\n├── tailwind.config.js\n├── vite.config.js\n└── .env\n\n\nC. Lógica de Peticiones con Axios\n\nServicio API (en services/api.js):\n\nimport axios from 'axios';\n\nconst API_URL = 'http://localhost:8000/api/';\n\nexport const getProductos = async () =&gt; {\n    const response = await axios.get(`${API_URL}productos/`);\n    return response.data;\n};\n\nexport const getPedido = async (id) =&gt; {\n    const response = await axios.get(`${API_URL}pedidos/${id}/`);\n    return response.data;\n};\n\nComponente de Lista de Productos (en components/ProductList.js):\n\nimport React, { useEffect, useState } from 'react';\nimport { getProductos } from '../services/api';\n\nconst ProductList = () =&gt; {\n    const [productos, setProductos] = useState([]);\n\n    useEffect(() =&gt; {\n        const fetchProductos = async () =&gt; {\n            const data = await getProductos();\n            setProductos(data);\n        };\n\n        fetchProductos();\n    }, []);\n\n    return (\n        &lt;div&gt;\n            &lt;h2&gt;Productos&lt;/h2&gt;\n            &lt;ul&gt;\n                {productos.map((producto) =&gt; (\n                    &lt;li key={producto.id}&gt;{producto.nombre}&lt;/li&gt;\n                ))}\n            &lt;/ul&gt;\n        &lt;/div&gt;\n    );\n};\n\nexport default ProductList;",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Fase 3. Desarrollo de la Aplicación</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/3_tienda_virtual.html#despliegue-y-configuración-de-docker",
+    "href": "unidades/Proyectos/3_tienda_virtual.html#despliegue-y-configuración-de-docker",
+    "title": "Fase 3. Desarrollo de la Aplicación",
+    "section": "3. Despliegue y Configuración de Docker",
+    "text": "3. Despliegue y Configuración de Docker\n\nA. Configuración de Docker\n\nDockerfile para el Backend:\n\n# Dockerfile para Backend\nFROM python:3.9-slim\n\nWORKDIR /app\n\nCOPY requirements.txt .\n\nRUN pip install -r requirements.txt\n\nCOPY . .\n\nCMD [\"python\", \"manage.py\", \"runserver\", \"0.0.0.0:8000\"]\n\nDockerfile para el Frontend:\n\n# Dockerfile para Frontend\nFROM node:16\n\nWORKDIR /app\n\nCOPY package.json .\nCOPY package-lock.json .\n\nRUN npm install\n\nCOPY . .\n\nCMD [\"npm\", \"run\", \"dev\"]\n\ndocker-compose.yml:\n\nservices:\n  backend:\n    build: ./backend\n    ports:\n      - \"8000:8000\"\n    depends_on:\n      - db\n\n  frontend:\n    build: ./frontend\n    ports:\n      - \"3000:3000\"\n    depends_on:\n      - backend\n\n  db:\n    image: postgres:latest\n    environment:\n      POSTGRES_USER: user\n      POSTGRES_PASSWORD: password\n      POSTGRES_DB: mydatabase",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Fase 3. Desarrollo de la Aplicación</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/4_tienda_virtual.html#implementación-de-la-autenticación-de-usuarios-con-jwt",
+    "href": "unidades/Proyectos/4_tienda_virtual.html#implementación-de-la-autenticación-de-usuarios-con-jwt",
+    "title": "Fase 4: Integración de Funcionalidades Avanzadas",
+    "section": "1. Implementación de la Autenticación de Usuarios con JWT",
+    "text": "1. Implementación de la Autenticación de Usuarios con JWT\n\nA. Configuración de la Autenticación JWT en el Backend\n\nConfiguración del paquete SimpleJWT: Instala la biblioteca necesaria si aún no lo has hecho:\n\npip install djangorestframework-simplejwt\nLuego, actualiza settings.py para incluir la configuración de autenticación JWT:\nREST_FRAMEWORK = {\n    'DEFAULT_AUTHENTICATION_CLASSES': [\n        'rest_framework_simplejwt.authentication.JWTAuthentication',\n    ],\n}\n\nVistas para Autenticación (Login y Refresh Tokens): En el archivo auth/views.py, crea las vistas para manejar tokens de acceso y refresco:\n\nfrom rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView\nfrom django.urls import path\n\nurlpatterns = [\n    path('login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),\n    path('refresh/', TokenRefreshView.as_view(), name='token_refresh'),\n]\n\nProtección de las Rutas API: Asegúrate de que las vistas relacionadas con productos y pedidos estén protegidas mediante JWT:\n\nfrom rest_framework.permissions import IsAuthenticated\n\nclass ProductoViewSet(viewsets.ModelViewSet):\n    queryset = Producto.objects.all()\n    serializer_class = ProductoSerializer\n    permission_classes = [IsAuthenticated]\n\nPruebas para la Autenticación: Agrega pruebas en el backend para validar que solo los usuarios autenticados puedan acceder a las rutas protegidas.\n\n\n\nB. Configuración del Frontend para JWT\n\nManejo del Login en el Frontend: Crea un componente Login.js para autenticar al usuario:\n\nimport React, { useState } from 'react';\nimport axios from 'axios';\n\nconst Login = () =&gt; {\n    const [email, setEmail] = useState('');\n    const [password, setPassword] = useState('');\n\n    const handleSubmit = async (e) =&gt; {\n        e.preventDefault();\n        try {\n            const response = await axios.post('http://localhost:8000/api/login/', {\n                username: email,\n                password: password,\n            });\n            localStorage.setItem('access', response.data.access);\n            localStorage.setItem('refresh', response.data.refresh);\n            alert('Inicio de sesión exitoso');\n        } catch (error) {\n            console.error('Error al iniciar sesión:', error);\n            alert('Credenciales incorrectas');\n        }\n    };\n\n    return (\n        &lt;form onSubmit={handleSubmit}&gt;\n            &lt;input\n                type=\"email\"\n                value={email}\n                onChange={(e) =&gt; setEmail(e.target.value)}\n                placeholder=\"Correo electrónico\"\n            /&gt;\n            &lt;input\n                type=\"password\"\n                value={password}\n                onChange={(e) =&gt; setPassword(e.target.value)}\n                placeholder=\"Contraseña\"\n            /&gt;\n            &lt;button type=\"submit\"&gt;Iniciar sesión&lt;/button&gt;\n        &lt;/form&gt;\n    );\n};\n\nexport default Login;\n\nAutenticación Automática en Axios: Configura un interceptor en Axios para agregar automáticamente el token JWT a las solicitudes:\n\nimport axios from 'axios';\n\nconst API = axios.create({\n    baseURL: 'http://localhost:8000/api/',\n});\n\nAPI.interceptors.request.use((config) =&gt; {\n    const token = localStorage.getItem('access');\n    if (token) {\n        config.headers.Authorization = `Bearer ${token}`;\n    }\n    return config;\n});\n\nexport default API;",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 4: Integración de Funcionalidades Avanzadas</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/4_tienda_virtual.html#integración-con-paypal",
+    "href": "unidades/Proyectos/4_tienda_virtual.html#integración-con-paypal",
+    "title": "Fase 4: Integración de Funcionalidades Avanzadas",
+    "section": "2. Integración con PayPal",
+    "text": "2. Integración con PayPal\n\nA. Configuración del SDK de PayPal\n\nInstalar el SDK en el Frontend: Instala el paquete de PayPal:\n\nnpm install @paypal/react-paypal-js\n\nConfigurar el Componente de Pago: Crea un componente PaypalButton.js que permita realizar pagos:\n\nimport React from 'react';\nimport { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';\n\nconst PaypalButton = ({ total }) =&gt; {\n    const handleApprove = (data, actions) =&gt; {\n        return actions.order.capture().then((details) =&gt; {\n            alert(`Pago realizado por ${details.payer.name.given_name}`);\n        });\n    };\n\n    return (\n        &lt;PayPalScriptProvider\n            options={{ \"client-id\": \"YOUR_PAYPAL_CLIENT_ID\" }}\n        &gt;\n            &lt;PayPalButtons\n                createOrder={(data, actions) =&gt; {\n                    return actions.order.create({\n                        purchase_units: [\n                            {\n                                amount: {\n                                    value: total.toString(),\n                                },\n                            },\n                        ],\n                    });\n                }}\n                onApprove={handleApprove}\n            /&gt;\n        &lt;/PayPalScriptProvider&gt;\n    );\n};\n\nexport default PaypalButton;\n\nActualizar la Página de Pedido: Integra el botón de PayPal en la página de resumen del pedido (OrderPage.js):\n\nimport React from 'react';\nimport PaypalButton from '../components/PaypalButton';\n\nconst OrderPage = ({ order }) =&gt; {\n    return (\n        &lt;div&gt;\n            &lt;h2&gt;Resumen del Pedido&lt;/h2&gt;\n            &lt;ul&gt;\n                {order.productos.map((producto) =&gt; (\n                    &lt;li key={producto.id}&gt;\n                        {producto.nombre} - ${producto.precio}\n                    &lt;/li&gt;\n                ))}\n            &lt;/ul&gt;\n            &lt;h3&gt;Total: ${order.total}&lt;/h3&gt;\n            &lt;PaypalButton total={order.total} /&gt;\n        &lt;/div&gt;\n    );\n};\n\nexport default OrderPage;",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 4: Integración de Funcionalidades Avanzadas</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/4_tienda_virtual.html#optimización-de-flujo-de-trabajo",
+    "href": "unidades/Proyectos/4_tienda_virtual.html#optimización-de-flujo-de-trabajo",
+    "title": "Fase 4: Integración de Funcionalidades Avanzadas",
+    "section": "3. Optimización de Flujo de Trabajo",
+    "text": "3. Optimización de Flujo de Trabajo\n\nA. Validaciones en Formularios\n\nImplementa validaciones en el frontend (con herramientas como Formik o React Hook Form) para asegurar que los formularios contengan datos correctos antes de enviarse.\n\n\n\nB. Paginación en Listas de Productos\n\nImplementa la paginación en el backend utilizando LimitOffsetPagination:\n\nfrom rest_framework.pagination import LimitOffsetPagination\n\nclass ProductoPagination(LimitOffsetPagination):\n    default_limit = 10\n    max_limit = 100\n\nConfigura la paginación en el frontend con estados que gestionen el desplazamiento entre páginas.\n\n\n\nC. Optimización con Caching\n\nConfigura un sistema de caching en el backend utilizando Redis para mejorar el rendimiento de las solicitudes frecuentes.\n\npip install django-redis\nEn settings.py:\nCACHES = {\n    'default': {\n        'BACKEND': 'django_redis.cache.RedisCache',\n        'LOCATION': 'redis://127.0.0.1:6379/1',\n    }\n}\n\n\nD. Dockerización Completa\n\nAsegúrate de que tanto el backend como el frontend estén correctamente empaquetados con sus dependencias para el despliegue. Puedes agregar un contenedor para Redis en el archivo docker-compose.yml.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 4: Integración de Funcionalidades Avanzadas</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/4_tienda_virtual.html#despliegue-en-producción",
+    "href": "unidades/Proyectos/4_tienda_virtual.html#despliegue-en-producción",
+    "title": "Fase 4: Integración de Funcionalidades Avanzadas",
+    "section": "4. Despliegue en Producción",
+    "text": "4. Despliegue en Producción\n\nA. Configuración de Servidor\n\nUsa NGINX como servidor proxy inverso para manejar las solicitudes HTTP y redirigirlas al backend y frontend.\n\n\n\nB. SSL con Let’s Encrypt\n\nConfigura certificados SSL para tu dominio utilizando Certbot.\n\n\n\nC. Configuración de Base de Datos\n\nAsegúrate de que la base de datos PostgreSQL esté alojada en un entorno seguro y optimizado para producción.",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 4: Integración de Funcionalidades Avanzadas</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/5_tienda_virtual.html#configuración-del-entorno-de-producción",
+    "href": "unidades/Proyectos/5_tienda_virtual.html#configuración-del-entorno-de-producción",
+    "title": "Fase 5: Configuración para Despliegue y Pruebas E2E",
+    "section": "1. Configuración del Entorno de Producción",
+    "text": "1. Configuración del Entorno de Producción\n\nA. Configuración del Servidor con NGINX y Gunicorn\n\nInstalar NGINX y Gunicorn: En el servidor de producción, instala las herramientas necesarias:\n\nsudo apt update\nsudo apt install nginx python3-pip\npip install gunicorn\n\nConfigurar Gunicorn: Crea un archivo gunicorn.service para iniciar Gunicorn como un servicio de sistema:\n\nsudo nano /etc/systemd/system/gunicorn.service\nContenido del archivo:\n[Unit]\nDescription=gunicorn daemon\nAfter=network.target\n\n[Service]\nUser=your_user\nGroup=www-data\nWorkingDirectory=/path/to/your/project\nExecStart=/usr/bin/gunicorn --workers 3 --bind unix:/path/to/your/project.sock your_project.wsgi:application\n\n[Install]\nWantedBy=multi-user.target\nReinicia y habilita el servicio:\nsudo systemctl start gunicorn\nsudo systemctl enable gunicorn\n\nConfigurar NGINX: Crea un archivo de configuración en /etc/nginx/sites-available/your_project:\n\nserver {\n    listen 80;\n    server_name your_domain.com www.your_domain.com;\n\n    location = /favicon.ico { access_log off; log_not_found off; }\n    location /static/ {\n        root /path/to/your/project;\n    }\n\n    location / {\n        include proxy_params;\n        proxy_pass http://unix:/path/to/your/project.sock;\n    }\n}\nHabilita el archivo de configuración:\nsudo ln -s /etc/nginx/sites-available/your_project /etc/nginx/sites-enabled\nsudo nginx -t\nsudo systemctl restart nginx\n\n\nB. Configurar Certificados SSL con Let’s Encrypt\n\nInstalar Certbot: Instala Certbot y su plugin para NGINX:\n\nsudo apt install certbot python3-certbot-nginx\n\nObtener Certificados SSL: Ejecuta Certbot para tu dominio:\n\nsudo certbot --nginx -d your_domain.com -d www.your_domain.com\n\nRenovación Automática: Agrega Certbot al cron para renovar automáticamente los certificados:\n\nsudo certbot renew --dry-run",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 5: Configuración para Despliegue y Pruebas E2E</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/5_tienda_virtual.html#pruebas-e2e-con-cypress",
+    "href": "unidades/Proyectos/5_tienda_virtual.html#pruebas-e2e-con-cypress",
+    "title": "Fase 5: Configuración para Despliegue y Pruebas E2E",
+    "section": "2. Pruebas E2E con Cypress",
+    "text": "2. Pruebas E2E con Cypress\n\nA. Instalación de Cypress\n\nInstalar Cypress en el Frontend: Desde el directorio del frontend, instala Cypress:\n\nnpm install cypress --save-dev\n\nInicializar Cypress: Ejecuta el siguiente comando para crear la configuración básica de Cypress:\n\nnpx cypress open\n\n\nB. Crear Pruebas E2E\n\nConfiguración del Archivo de Pruebas: Crea un archivo de prueba, por ejemplo, cypress/e2e/login.cy.js:\n\ndescribe('Pruebas de Autenticación', () =&gt; {\n    it('El usuario puede iniciar sesión correctamente', () =&gt; {\n        cy.visit('http://localhost:3000/login');\n        cy.get('input[type=\"email\"]').type('usuario@example.com');\n        cy.get('input[type=\"password\"]').type('contraseña123');\n        cy.get('button[type=\"submit\"]').click();\n        cy.url().should('include', '/dashboard');\n    });\n\n    it('El usuario recibe un error con credenciales incorrectas', () =&gt; {\n        cy.visit('http://localhost:3000/login');\n        cy.get('input[type=\"email\"]').type('usuario@example.com');\n        cy.get('input[type=\"password\"]').type('contraseñaIncorrecta');\n        cy.get('button[type=\"submit\"]').click();\n        cy.contains('Credenciales incorrectas').should('be.visible');\n    });\n});\nEjecutar Pruebas: Lanza las pruebas con:\nnpx cypress run\n\n\nC. Pruebas para el Flujo Completo\n\nSimulación de un Pedido: Crea pruebas para simular el flujo completo, desde agregar productos al carrito hasta realizar el pago:\n\ndescribe('Flujo Completo de Pedido', () =&gt; {\n    it('El usuario puede realizar un pedido', () =&gt; {\n        cy.visit('http://localhost:3000/');\n        cy.get('.producto').first().click();\n        cy.get('button.agregar-al-carrito').click();\n        cy.get('button.ver-carrito').click();\n        cy.get('button.proceder-al-pago').click();\n        cy.get('input[type=\"email\"]').type('usuario@example.com');\n        cy.get('input[type=\"password\"]').type('contraseña123');\n        cy.get('button[type=\"submit\"]').click();\n        cy.contains('Pago realizado con éxito').should('be.visible');\n    });\n});",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 5: Configuración para Despliegue y Pruebas E2E</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Proyectos/5_tienda_virtual.html#dockerización-completa",
+    "href": "unidades/Proyectos/5_tienda_virtual.html#dockerización-completa",
+    "title": "Fase 5: Configuración para Despliegue y Pruebas E2E",
+    "section": "3. Dockerización Completa",
+    "text": "3. Dockerización Completa\n\nA. Actualización del docker-compose.yml\nIncluye contenedores para:\n\nBackend\nFrontend\nRedis\nBase de datos PostgreSQL\nNGINX\n\nEjemplo de configuración para docker-compose.yml:\nservices:\n  db:\n    image: postgres:15\n    environment:\n      POSTGRES_USER: user\n      POSTGRES_PASSWORD: password\n      POSTGRES_DB: your_db\n    volumes:\n      - db_data:/var/lib/postgresql/data\n    ports:\n      - \"5432:5432\"\n\n  redis:\n    image: redis:6\n    ports:\n      - \"6379:6379\"\n\n  backend:\n    build:\n      context: ./backend\n    command: gunicorn your_project.wsgi:application --bind 0.0.0.0:8000\n    volumes:\n      - ./backend:/app\n    ports:\n      - \"8000:8000\"\n    depends_on:\n      - db\n      - redis\n\n  frontend:\n    build:\n      context: ./frontend\n    ports:\n      - \"3000:3000\"\n    stdin_open: true\n    tty: true\n\n  nginx:\n    image: nginx:latest\n    volumes:\n      - ./nginx.conf:/etc/nginx/nginx.conf\n    ports:\n      - \"80:80\"\n      - \"443:443\"\n    depends_on:\n      - backend\n      - frontend\n\nvolumes:\n  db_data:",
+    "crumbs": [
+      "Proyectos",
+      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 5: Configuración para Despliegue y Pruebas E2E</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/ejercicios/ejercicios_python-001.html",
+    "href": "unidades/ejercicios/ejercicios_python-001.html",
+    "title": "Ejercicios Python - Nivel Intermedio (POO)",
+    "section": "",
+    "text": "Ejercicio 1\nCrear una clase Persona con atributos nombre y edad. Implementar un método que devuelva si la persona es mayor de edad.\n\n\nSolución\n\nclass Persona:\n    def __init__(self, nombre, edad):\n        self.nombre = nombre\n        self.edad = edad\n\n    def es_mayor_de_edad(self):\n        return self.edad &gt;= 18\n\nEjemplo de uso\npersona = Persona(\"Juan\", 20)\nprint(persona.es_mayor_de_edad())  # True\n\nEjercicio 2\nCrear una clase Círculo con un atributo radio. Implementar métodos para calcular el área y el perímetro.\n\n\nSolución\n\nimport math\n\nclass Circulo:\n    def __init__(self, radio):\n        self.radio = radio\n\n    def area(self):\n        return math.pi * self.radio ** 2\n\n    def perimetro(self):\n        return 2 * math.pi * self.radio\n\n\nEjemplo de uso\ncirculo = Circulo(5)\nprint(circulo.area())       # 78.54...\nprint(circulo.perimetro())  # 31.41...\n\nEjercicio 3\nCrear una clase Rectángulo con atributos base y altura. Implementar un método que determine si es un cuadrado.\n\n\nSolución\n\nclass Rectangulo:\n    def __init__(self, base, altura):\n        self.base = base\n        self.altura = altura\n\n    def es_cuadrado(self):\n        return self.base == self.altura\n\n\nEjemplo de uso\nrectangulo = Rectangulo(5, 5)\nprint(rectangulo.es_cuadrado())  # True\n\nEjercicio 4\nCrear una clase Vehículo con atributos marca y modelo. Crear una clase hija Coche con un atributo adicional velocidad_maxima.\n\n\nSolución\n\nclass Vehiculo:\n    def __init__(self, marca, modelo):\n        self.marca = marca\n        self.modelo = modelo\n\nclass Coche(Vehiculo):\n    def __init__(self, marca, modelo, velocidad_maxima):\n        super().__init__(marca, modelo)\n        self.velocidad_maxima = velocidad_maxima\n\n\nEjemplo de uso\ncoche = Coche(\"Toyota\", \"Corolla\", 180)\nprint(coche.marca)             # Toyota\nprint(coche.velocidad_maxima)  # 180\n\nEjercicio 5\nCrear una clase CuentaBancaria con métodos para depositar, retirar y consultar el saldo.\n\n\nSolución\n\nclass CuentaBancaria:\n    def __init__(self, saldo_inicial=0):\n        self.saldo = saldo_inicial\n\n    def depositar(self, cantidad):\n        self.saldo += cantidad\n\n    def retirar(self, cantidad):\n        if cantidad &lt;= self.saldo:\n            self.saldo -= cantidad\n        else:\n            print(\"Fondos insuficientes.\")\n\n    def consultar_saldo(self):\n        return self.saldo\n\n\nEjemplo de uso\ncuenta = CuentaBancaria(100)\ncuenta.depositar(50)\ncuenta.retirar(30)\nprint(cuenta.consultar_saldo())  # 120\n\nEjercicio 6\nCrear una clase Empleado con atributos nombre y salario. Implementar un método que calcule el salario anual.\n\n\nSolución\n\nclass Empleado:\n    def __init__(self, nombre, salario):\n        self.nombre = nombre\n        self.salario = salario\n\n    def salario_anual(self):\n        return self.salario * 12\n\n\nEjemplo de uso\nempleado = Empleado(\"Ana\", 1500)\nprint(empleado.salario_anual())  # 18000\n\nEjercicio 7\nCrear una clase Animal con un método hablar. Crear subclases como Perro y Gato que implementen el método hablar.\n\n\nSolución\n\nclass Animal:\n    def hablar(self):\n        raise NotImplementedError(\"Este método debe ser implementado por la subclase.\")\n\nclass Perro(Animal):\n    def hablar(self):\n        return \"Guau\"\n\nclass Gato(Animal):\n    def hablar(self):\n        return \"Miau\"\n\n\nEjemplo de uso\nperro = Perro()\ngato = Gato()\nprint(perro.hablar())  # Guau\nprint(gato.hablar())   # Miau\n\nEjercicio 8\nCrear una clase Tienda que gestione un inventario. Implementar métodos para agregar, eliminar y mostrar productos.\n\n\nSolución\n\nclass Tienda:\n    def __init__(self):\n        self.inventario = {}\n\n    def agregar_producto(self, producto, cantidad):\n        if producto in self.inventario:\n            self.inventario[producto] += cantidad\n        else:\n            self.inventario[producto] = cantidad\n\n    def eliminar_producto(self, producto):\n        if producto in self.inventario:\n            del self.inventario[producto]\n\n    def mostrar_inventario(self):\n        return self.inventario\n\n\nEjemplo de uso\ntienda = Tienda()\ntienda.agregar_producto(\"Manzanas\", 10)\ntienda.agregar_producto(\"Peras\", 5)\ntienda.eliminar_producto(\"Peras\")\nprint(tienda.mostrar_inventario())  # {'Manzanas': 10}\n\nEjercicio 9\nCrear una clase Fracción con atributos numerador y denominador. Implementar un método para sumar dos fracciones.\n\n\nSolución\n\nclass Fraccion:\n    def __init__(self, numerador, denominador):\n        self.numerador = numerador\n        self.denominador = denominador\n\n    def sumar(self, otra):\n        nuevo_num = self.numerador * otra.denominador + otra.numerador * self.denominador\n        nuevo_den = self.denominador * otra.denominador\n        return Fraccion(nuevo_num, nuevo_den)\n\n    def __str__(self):\n        return f\"{self.numerador}/{self.denominador}\"\n\n\nEjemplo de uso\nf1 = Fraccion(1, 2)\nf2 = Fraccion(1, 3)\nresultado = f1.sumar(f2)\nprint(resultado)  # 5/6\n\nEjercicio 10\nCrear una clase Libro que contenga un atributo autores como una lista. Implementar un método para agregar y listar los autores.\n\n\nSolución\n\nclass Libro:\n    def __init__(self, titulo):\n        self.titulo = titulo\n        self.autores = []\n\n    def agregar_autor(self, autor):\n        self.autores.append(autor)\n\n    def listar_autores(self):\n        return self.autores\n\n\nEjemplo de uso\nlibro = Libro(\"Python Intermedio\")\nlibro.agregar_autor(\"Autor 1\")\nlibro.agregar_autor(\"Autor 2\")\nprint(libro.listar_autores())  # ['Autor 1', 'Autor 2']",
+    "crumbs": [
+      "Ejercicios",
+      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Ejercicios Python - Nivel Intermedio (POO)</span>"
+    ]
+  },
+  {
     "objectID": "unidades/Extras/0_parte.html#introducción",
     "href": "unidades/Extras/0_parte.html#introducción",
     "title": "Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor",
@@ -2185,7 +2526,7 @@
     "text": "Introducción\nEn este laboratorio práctico, los estudiantes aprenderán a desarrollar un sistema de chat cliente-servidor utilizando Python. Este laboratorio está diseñado para simular un flujo de trabajo profesional, combinando técnicas modernas de desarrollo como pruebas automatizadas, integración continua y control de versiones con Git y GitHub.\nEl laboratorio está dividido en varias fases que permiten a los estudiantes comprender y aplicar los fundamentos del desarrollo de aplicaciones de red, utilizando un enfoque incremental para construir funcionalidad de manera ordenada.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span>"
+      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span>"
     ]
   },
   {
@@ -2196,7 +2537,7 @@
     "text": "Lo que Vamos a Desarrollar\n\nAnálisis de Requisitos:\n\nIdentificar las funcionalidades clave del sistema, como enviar y recibir mensajes en tiempo real.\n\n\n\nHistorias de Usuario:\n\nDesarrollar casos prácticos para simular cómo interactuarán los usuarios con el sistema.\n\n\n\nDiseño y Arquitectura:\n\nCrear la estructura del proyecto con carpetas organizadas y archivos bien definidos.\nImplementar un diseño modular que facilite la colaboración y el mantenimiento.\n\n\n\nCodificación:\n\nConstruir el servidor y cliente del sistema en Python utilizando socket.\nDesarrollar pruebas unitarias e integración con pytest.\n\n\n\nIntegración Continua:\n\nConfigurar GitHub Actions para ejecutar pruebas automáticamente con cada cambio en el código.\n\n\n\nExtensión con GUI:\n\nImplementar una interfaz gráfica para el cliente utilizando Tkinter.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span>"
+      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span>"
     ]
   },
   {
@@ -2207,7 +2548,7 @@
     "text": "Objetivos Específicos\n\nEntender el Proceso de Desarrollo: Aplicar principios de diseño modular y buenas prácticas de programación.\nDesarrollar Habilidades en Python: Usar bibliotecas estándar como socket y tkinter.\nAprender Herramientas Profesionales: Configurar entornos virtuales, pruebas automatizadas e integración continua.\nSimular el Trabajo en Equipo: Utilizar Git y GitHub para la gestión de código y colaboración.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span>"
+      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span>"
     ]
   },
   {
@@ -2218,7 +2559,7 @@
     "text": "Materiales y Herramientas Necesarias\n\nSoftware:\n\nPython 3.10 o superior.\nGit y una cuenta de GitHub.\nEditor de código (Visual Studio Code, PyCharm, o similar).\nLibrerías y Dependencias:\npytest para pruebas.\ntkinter para la interfaz gráfica.\n\n\n\nConocimientos Previos Requeridos:\n\nConceptos básicos de Python.\nFamiliaridad con Git y GitHub.\nConocimientos básicos de programación orientada a objetos (POO).\n\n\n\nEstructura del Laboratorio\n\nFase 1: Preparación del Entorno y Repositorio.\n\nConfiguración inicial del proyecto con Git y creación del entorno virtual.\n\n\n\nFase 2: Creación de Clases Base.\n\nImplementar las clases del cliente y servidor con métodos vacíos.\n\n\n\nFase 3: Comunicación Cliente-Servidor.\n\nDesarrollar y probar la funcionalidad de envío y recepción de mensajes.\n\n\n\nFase 4: Pruebas Automatizadas.\n\nCrear pruebas unitarias e integración para garantizar la funcionalidad.\n\n\n\nFase 5: Configuración de CI/CD.\n\nConfigurar GitHub Actions para pruebas automatizadas.\n\n\n\nFase 6: Implementación de Interfaz Gráfica.\n\nExtender el cliente para incluir una GUI con Tkinter.\n\n\n\nFase 7: Documentación y Reflexión.\n\nElaborar conclusiones y responder preguntas de reflexión.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span>"
+      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span>"
     ]
   },
   {
@@ -2229,7 +2570,7 @@
     "text": "Resultados Esperados\nAl finalizar este laboratorio, los estudiantes tendrán:\n\nUn sistema de chat cliente-servidor funcional.\nUn repositorio GitHub estructurado con código bien documentado.\nPruebas automatizadas y un pipeline de CI funcionando correctamente.\nExperiencia en herramientas y técnicas utilizadas en entornos profesionales.\n\n\n¡Comencemos con el desarrollo! 🎉",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span>"
+      "<span class='chapter-number'>52</span>  <span class='chapter-title'>Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span>"
     ]
   },
   {
@@ -2240,7 +2581,7 @@
     "text": "Objetivo\nQue los estudiantes comprendan el flujo de desarrollo de una aplicación profesional, desde la planificación hasta la implementación, utilizando herramientas de control de versiones, entornos virtuales y mejores prácticas en Python.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
+      "<span class='chapter-number'>53</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
     ]
   },
   {
@@ -2251,7 +2592,7 @@
     "text": "Conceptos Clave\n\nProgramación en red: Uso de sockets para la comunicación cliente-servidor.\nDiseño modular: Organización del código en clases y métodos.\nEntornos virtuales: Aislamiento de dependencias con venv.\nControl de versiones: Uso de Git y GitHub.\nInterfaces gráficas: Uso de tkinter para desarrollar la GUI del cliente.\nHistorias de usuario: Identificación de requerimientos clave mediante ejemplos prácticos.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
+      "<span class='chapter-number'>53</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
     ]
   },
   {
@@ -2262,7 +2603,7 @@
     "text": "Historias de Usuario\n\nHU1: Como usuario, quiero conectarme al servidor con un apodo único, para identificarme en el chat.\nHU2: Como usuario, quiero enviar mensajes al chat y que otros los reciban, para comunicarme con los demás.\nHU3: Como usuario, quiero recibir mensajes enviados por otros usuarios en tiempo real, para estar informado de las conversaciones.\nHU4: Como administrador, quiero registrar y gestionar conexiones de clientes, para mantener el control del servidor.\n\n\nInstrucciones: Fase 1\n\nCrear un directorio de proyecto\n\nmkdir chat_app\ncd chat_app\n\n\nInicializar un repositorio Git\ngit init\ngit branch -M main\n\nConfigurar un entorno virtual\n\npython3 -m venv env\nsource env/bin/activate  # En Windows: env\\Scripts\\activate\n\nCrear el archivo .gitignore Contenido sugerido para ignorar archivos innecesarios:\n\nenv/\n__pycache__/\n*.pyc\n*.pyo\nCrear un archivo requirements.txt Inicialmente vacío. Agregaremos dependencias más adelante.\nEstructurar el proyecto\nmkdir src\ntouch src/server.py src/client.py\nmkdir tests\ntouch tests/test_server.py tests/test_client.py",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
+      "<span class='chapter-number'>53</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
     ]
   },
   {
@@ -2273,7 +2614,7 @@
     "text": "Planificar la arquitectura inicial\n\nEl servidor manejará conexiones y permitirá la comunicación entre clientes.\nEl cliente tendrá una interfaz de línea de comandos (CLI) en esta fase inicial.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
+      "<span class='chapter-number'>53</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
     ]
   },
   {
@@ -2284,7 +2625,7 @@
     "text": "Codificar clases base En server.py:\n\"\"\"\nMódulo: server.py\nDescripción: Define el servidor del sistema de chat local.\n\"\"\"\nimport socket\nimport threading\n\nclass ChatServer:\n    def __init__(self, host, port):\n        \"\"\"Inicializa el servidor con la dirección y puerto especificados.\"\"\"\n        pass\n\n    def start_server(self):\n        \"\"\"Inicia el servidor y espera conexiones entrantes.\"\"\"\n        pass\n\n    def handle_client(self, client_socket, client_address):\n        \"\"\"Maneja la comunicación con un cliente específico.\"\"\"\n        pass\n\n    def broadcast(self, message, sender_socket):\n        \"\"\"Envía un mensaje a todos los clientes excepto al remitente.\"\"\"\n        pass",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
+      "<span class='chapter-number'>53</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
     ]
   },
   {
@@ -2295,7 +2636,7 @@
     "text": "En client.py:\n\"\"\"\nMódulo: client.py\nDescripción: Define el cliente del sistema de chat local.\n\"\"\"\nimport socket\n\nclass ChatClient:\n    def __init__(self, host, port):\n        \"\"\"Inicializa el cliente con la dirección del servidor y el puerto.\"\"\"\n        pass\n\n    def connect_to_server(self):\n        \"\"\"Establece conexión con el servidor.\"\"\"\n        pass\n\n    def send_message(self, message):\n        \"\"\"Envía un mensaje al servidor.\"\"\"\n        pass\n\n    def receive_messages(self):\n        \"\"\"Recibe mensajes del servidor.\"\"\"\n        pass",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
+      "<span class='chapter-number'>53</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
     ]
   },
   {
@@ -2306,7 +2647,7 @@
     "text": "Agregar y confirmar cambios en Git\ngit add .\ngit commit -m \"Fase 1: Configuración inicial y clases base con métodos vacíos\"",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
+      "<span class='chapter-number'>53</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
     ]
   },
   {
@@ -2317,7 +2658,7 @@
     "text": "Pruebas\n\nEn esta fase, no se ejecuta ningún código, pero verifica que los archivos y directorios existen.\nAsegúrate de que el entorno virtual esté activo antes de cualquier ejecución futura.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
+      "<span class='chapter-number'>53</span>  <span class='chapter-title'>Fase 1: Análisis de Requisitos, Historias de Usuario y Preparación del Proyecto</span>"
     ]
   },
   {
@@ -2328,7 +2669,7 @@
     "text": "Objetivo\nImplementar la lógica básica del servidor para gestionar conexiones y comunicaciones entre clientes. Este servidor será accesible a través de la línea de comandos.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
+      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
     ]
   },
   {
@@ -2339,7 +2680,7 @@
     "text": "Conceptos Clave\n\nSockets TCP: Configuración de sockets para aceptar conexiones y transmitir datos.\nHilos (Threads): Manejo concurrente de clientes usando la biblioteca threading.\nEstrategias de Broadcasting: Comunicación eficiente con múltiples clientes.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
+      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
     ]
   },
   {
@@ -2350,7 +2691,7 @@
     "text": "Instrucciones\n\n1. Actualizar el código del servidor\nAbrir src/server.py y completar las clases con la lógica básica:\n\"\"\"\nMódulo: server.py\nDescripción: Define el servidor del sistema de chat local.\n\"\"\"\n\nimport socket\nimport threading\n\nclass ChatServer:\n    def __init__(self, host, port):\n        \"\"\"\n        Inicializa el servidor con la dirección y puerto especificados.\n\n        :param host: Dirección IP del servidor.\n        :param port: Puerto del servidor.\n        \"\"\"\n        self.host = host\n        self.port = port\n        self.server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n        self.clients = {}\n\n    def start_server(self):\n        \"\"\"\n        Inicia el servidor, permitiendo conexiones entrantes de clientes.\n        \"\"\"\n        self.server_socket.bind((self.host, self.port))\n        self.server_socket.listen()\n        print(f\"Servidor escuchando en {self.host}:{self.port}\")\n\n        while True:\n            client_socket, client_address = self.server_socket.accept()\n            print(f\"Conexión aceptada de {client_address}\")\n            threading.Thread(\n                target=self.handle_client, args=(client_socket, client_address)\n            ).start()\n\n    def handle_client(self, client_socket, client_address):\n        \"\"\"\n        Maneja la interacción con un cliente específico.\n\n        :param client_socket: Socket del cliente.\n        :param client_address: Dirección del cliente.\n        \"\"\"\n        nickname = client_socket.recv(1024).decode(\"utf-8\")\n        self.clients[client_socket] = nickname\n        print(f\"{nickname} ({client_address}) se ha conectado\")\n\n        self.broadcast(f\"{nickname} se ha unido al chat\", client_socket)\n\n        while True:\n            try:\n                message = client_socket.recv(1024).decode(\"utf-8\")\n                if not message:\n                    break\n                print(f\"Mensaje de {nickname}: {message}\")\n                self.broadcast(f\"{nickname}: {message}\", client_socket)\n            except Exception as e:\n                print(f\"Error en cliente {nickname}: {e}\")\n                break\n\n        print(f\"{nickname} ({client_address}) se ha desconectado\")\n        self.broadcast(f\"{nickname} se ha desconectado\", client_socket)\n        client_socket.close()\n        del self.clients[client_socket]\n\n    def broadcast(self, message, sender_socket):\n        \"\"\"\n        Envia un mensaje a todos los clientes conectados excepto al remitente.\n\n        :param message: Mensaje a transmitir.\n        :param sender_socket: Socket del remitente.\n        \"\"\"\n        for client_socket in self.clients.keys():\n            if client_socket != sender_socket:\n                try:\n                    client_socket.sendall(message.encode(\"utf-8\"))\n                except Exception as e:\n                    print(f\"Error al enviar mensaje: {e}\")\n\n\nif __name__ == \"__main__\":\n    SERVER_HOST = \"127.0.0.1\"\n    SERVER_PORT = 12345\n    server = ChatServer(SERVER_HOST, SERVER_PORT)\n    server.start_server()",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
+      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
     ]
   },
   {
@@ -2361,7 +2702,7 @@
     "text": "2. Probar el servidor\nAsegúrate de que el entorno virtual esté activo:\nsource venv/bin/activate  # En Windows: venv\\Scripts\\activate\n\nEjecuta el servidor:\npython src/server.py\nVerifica que el servidor comienza a escuchar en la dirección configurada.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
+      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
     ]
   },
   {
@@ -2372,7 +2713,7 @@
     "text": "3. Agregar pruebas unitarias básicas\nEdita tests/test_server.py para agregar un caso inicial (simulación simple de conexión):\nimport unittest\nfrom src.server import ChatServer\n\nclass TestChatServer(unittest.TestCase):\n    def setUp(self):\n        self.server = ChatServer(\"127.0.0.1\", 12345)\n\n    def test_server_initialization(self):\n        self.assertEqual(self.server.host, \"127.0.0.1\")\n        self.assertEqual(self.server.port, 12345)\n        self.assertIsInstance(self.server.clients, dict)\n\nif __name__ == \"__main__\":\n    unittest.main()\nEjecuta las pruebas:\npython -m unittest discover -s tests",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
+      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
     ]
   },
   {
@@ -2383,7 +2724,7 @@
     "text": "4. Versionar los cambios\nAgrega y confirma los archivos modificados:\ngit add .\ngit commit -m \"Fase 2: Implementación del servidor básico\"\n(Opcional) Crea un repositorio remoto en GitHub:\ngit remote add origin &lt;URL_DEL_REPOSITORIO&gt;\ngit push -u origin main",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
+      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
     ]
   },
   {
@@ -2394,7 +2735,7 @@
     "text": "Pruebas\n\nEjecuta el servidor y asegúrate de que no haya errores.\nEjecuta las pruebas unitarias.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
+      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
     ]
   },
   {
@@ -2405,7 +2746,7 @@
     "text": "Conclusiones\nEn esta fase, se implementó un servidor funcional que puede aceptar múltiples conexiones de clientes y gestionar sus mensajes de forma concurrente. Los estudiantes ahora comprenden la importancia de los sockets y los hilos para crear aplicaciones escalables.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>47</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
+      "<span class='chapter-number'>54</span>  <span class='chapter-title'>Fase 2: Implementación del Servidor CLI</span>"
     ]
   },
   {
@@ -2416,7 +2757,7 @@
     "text": "Objetivo\nCrear la lógica básica del cliente para conectarse al servidor de chat, enviar mensajes y recibir transmisiones, inicialmente usando la línea de comandos (CLI).",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Fase 3: Implementación del Cliente CLI</span>"
+      "<span class='chapter-number'>55</span>  <span class='chapter-title'>Fase 3: Implementación del Cliente CLI</span>"
     ]
   },
   {
@@ -2427,7 +2768,7 @@
     "text": "Conceptos Clave\nSockets TCP Cliente: Uso de sockets para conectar con el servidor. Hilos en el Cliente: Permitir el envío y recepción simultánea de mensajes. Comunicación entre Cliente y Servidor: Manejo de datos y estructuras de mensajes.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Fase 3: Implementación del Cliente CLI</span>"
+      "<span class='chapter-number'>55</span>  <span class='chapter-title'>Fase 3: Implementación del Cliente CLI</span>"
     ]
   },
   {
@@ -2438,7 +2779,7 @@
     "text": "Instrucciones\n\n1. Crear la estructura inicial del cliente\nEdita src/client.py y completa la clase con las funciones esenciales:\n\"\"\"\nMódulo: client.py\nDescripción: Define el cliente del sistema de chat local.\n\"\"\"\n\nimport socket\nimport threading\n\n\nclass ChatClient:\n    def __init__(self, host, port):\n        \"\"\"\n        Inicializa el cliente con la dirección y puerto del servidor.\n\n        :param host: Dirección IP del servidor.\n        :param port: Puerto del servidor.\n        \"\"\"\n        self.host = host\n        self.port = port\n        self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n        self.running = True\n\n    def connect_to_server(self):\n        \"\"\"\n        Conecta el cliente al servidor especificado.\n        \"\"\"\n        try:\n            self.client_socket.connect((self.host, self.port))\n            print(\"Conectado al servidor\")\n            nickname = input(\"Ingresa tu nickname: \")\n            self.client_socket.sendall(nickname.encode(\"utf-8\"))\n        except Exception as e:\n            print(f\"No se pudo conectar al servidor: {e}\")\n            self.running = False\n\n    def send_message(self):\n        \"\"\"\n        Envía mensajes al servidor de manera continua.\n        \"\"\"\n        while self.running:\n            try:\n                message = input()\n                self.client_socket.sendall(message.encode(\"utf-8\"))\n            except Exception as e:\n                print(f\"Error al enviar mensaje: {e}\")\n                self.running = False\n                break\n\n    def receive_messages(self):\n        \"\"\"\n        Recibe mensajes del servidor de manera continua.\n        \"\"\"\n        while self.running:\n            try:\n                message = self.client_socket.recv(1024).decode(\"utf-8\")\n                if message:\n                    print(message)\n                else:\n                    break\n            except Exception as e:\n                print(f\"Error al recibir mensaje: {e}\")\n                self.running = False\n                break\n\n    def start_client(self):\n        \"\"\"\n        Inicia el cliente, manejando la conexión y las operaciones.\n        \"\"\"\n        self.connect_to_server()\n\n        if self.running:\n            threading.Thread(target=self.receive_messages, daemon=True).start()\n            self.send_message()\n\n\nif __name__ == \"__main__\":\n    SERVER_HOST = \"127.0.0.1\"\n    SERVER_PORT = 12345\n    client = ChatClient(SERVER_HOST, SERVER_PORT)\n    client.start_client()\n\n\n2. Probar el cliente\nAsegúrate de que el servidor está corriendo:\npython src/server.py\nEn una nueva terminal, ejecuta el cliente:\npython src/client.py\nIngresa un nickname y verifica que el cliente se conecte al servidor.\nAbre múltiples terminales y ejecuta el cliente en cada una para probar el sistema.\nEnvía mensajes entre clientes y confirma que el servidor los retransmite correctamente.\n\n\n3. Agregar pruebas unitarias para el cliente\nEdita tests/test_client.py para verificar casos básicos:\nimport unittest\nfrom src.client import ChatClient\n\n\nclass TestChatClient(unittest.TestCase):\n    def setUp(self):\n        self.client = ChatClient(\"127.0.0.1\", 12345)\n\n    def test_client_initialization(self):\n        self.assertEqual(self.client.host, \"127.0.0.1\")\n        self.assertEqual(self.client.port, 12345)\n\n    def test_client_socket_creation(self):\n        self.assertIsNotNone(self.client.client_socket)\n\n\nif __name__ == \"__main__\":\n    unittest.main()\nEjecuta las pruebas:\npython -m unittest discover -s tests\n\n\n4. Versionar los cambios\nAgrega y confirma los archivos modificados:\ngit add .\ngit commit -m \"Fase 3: Implementación del cliente CLI\"\nSube los cambios al repositorio remoto:\ngit push origin main",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Fase 3: Implementación del Cliente CLI</span>"
+      "<span class='chapter-number'>55</span>  <span class='chapter-title'>Fase 3: Implementación del Cliente CLI</span>"
     ]
   },
   {
@@ -2449,7 +2790,7 @@
     "text": "Pruebas\n\nConecta múltiples clientes al servidor y verifica que los mensajes se retransmitan correctamente.\nRealiza pruebas unitarias para garantizar la creación adecuada del cliente.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>48</span>  <span class='chapter-title'>Fase 3: Implementación del Cliente CLI</span>"
+      "<span class='chapter-number'>55</span>  <span class='chapter-title'>Fase 3: Implementación del Cliente CLI</span>"
     ]
   },
   {
@@ -2460,7 +2801,7 @@
     "text": "Objetivo\nDesarrollar una interfaz gráfica para el cliente del chat usando la biblioteca Tkinter. La interfaz permitirá una experiencia más amigable para enviar y recibir mensajes en tiempo real.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
+      "<span class='chapter-number'>56</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
     ]
   },
   {
@@ -2471,7 +2812,7 @@
     "text": "Conceptos Clave\n\nInterfaz Gráfica (GUI): Uso de Tkinter para construir interfaces gráficas básicas en Python.\nInteractividad**: Implementar botones, entradas de texto y listas para mostrar mensajes.\nHilos en la GUI: Asegurar que la aplicación gráfica sea responsiva mientras maneja múltiples tareas como enviar y recibir mensajes.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
+      "<span class='chapter-number'>56</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
     ]
   },
   {
@@ -2482,7 +2823,7 @@
     "text": "Instrucciones\n\n1. Crear la estructura inicial para la GUI\nEdita el archivo src/client.py para añadir funcionalidades gráficas. Comienza reemplazando la clase ChatClient por una versión ampliada con Tkinter:\n\"\"\"\nMódulo: client.py\nDescripción: Cliente de chat con interfaz gráfica (Tkinter).\n\"\"\"\n\nimport socket\nimport tkinter as tk\nimport threading\n\n\nclass ChatClientGUI:\n    def __init__(self, host, port):\n        \"\"\"\n        Inicializa el cliente con la dirección y puerto del servidor, y configura la GUI.\n\n        :param host: Dirección IP del servidor.\n        :param port: Puerto del servidor.\n        \"\"\"\n        self.host = host\n        self.port = port\n        self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n        self.nickname = \"\"\n        self.running = True\n        self.chat_window = None\n        self.message_box = None\n        self.entry_box = None\n\n    def connect_to_server(self):\n        \"\"\"\n        Conecta el cliente al servidor y envía el nickname.\n        \"\"\"\n        try:\n            self.client_socket.connect((self.host, self.port))\n            print(\"Conectado al servidor\")\n        except Exception as e:\n            print(f\"No se pudo conectar al servidor: {e}\")\n\n    def send_message(self, message):\n        \"\"\"\n        Envía un mensaje al servidor.\n        :param message: Mensaje a enviar.\n        \"\"\"\n        try:\n            self.client_socket.sendall(message.encode(\"utf-8\"))\n        except Exception as e:\n            print(f\"Error al enviar mensaje: {e}\")\n\n    def receive_messages(self):\n        \"\"\"\n        Recibe mensajes del servidor y los muestra en la GUI.\n        \"\"\"\n        while self.running:\n            try:\n                message = self.client_socket.recv(1024).decode(\"utf-8\")\n                if message:\n                    self.chat_window.after(0, self.display_message, message)\n                else:\n                    break\n            except Exception as e:\n                print(f\"Error al recibir mensaje: {e}\")\n                break\n\n    def display_message(self, message):\n        \"\"\"\n        Muestra un mensaje en la ventana de chat.\n        :param message: Mensaje recibido.\n        \"\"\"\n        self.message_box.insert(tk.END, message)\n        self.message_box.yview(tk.END)\n\n    def setup_gui(self):\n        \"\"\"\n        Configura la ventana principal de la interfaz gráfica.\n        \"\"\"\n        self.window = tk.Tk()\n        self.window.title(\"Chat Cliente\")\n\n        # Ventana de ingreso de nickname\n        self.nickname_window = tk.Frame(self.window)\n        self.nickname_window.pack(padx=10, pady=10)\n\n        self.nickname_label = tk.Label(self.nickname_window, text=\"Nick:\")\n        self.nickname_label.pack(padx=10, pady=10)\n\n        self.nickname_entry = tk.Entry(self.nickname_window)\n        self.nickname_entry.pack(padx=10, pady=10)\n\n        self.nickname_button = tk.Button(\n            self.nickname_window, text=\"OK\", command=self.set_nickname\n        )\n        self.nickname_button.pack(padx=10, pady=10)\n\n        self.window.mainloop()\n\n    def set_nickname(self):\n        \"\"\"\n        Configura el nickname del usuario y prepara la ventana de chat.\n        \"\"\"\n        self.nickname = self.nickname_entry.get()\n        if self.nickname:\n            self.client_socket.sendall(self.nickname.encode(\"utf-8\"))\n            self.nickname_window.pack_forget()  # Oculta la ventana de nickname\n            self.create_chat_window()  # Muestra la ventana de chat\n\n    def create_chat_window(self):\n        \"\"\"\n        Crea la ventana de chat principal con opciones para enviar y recibir mensajes.\n        \"\"\"\n        self.chat_window = tk.Frame(self.window)\n        self.chat_window.pack(padx=10, pady=10)\n\n        self.message_box = tk.Listbox(self.chat_window, height=15, width=50)\n        self.message_box.pack(padx=10, pady=10)\n\n        self.entry_box = tk.Entry(self.chat_window, width=40)\n        self.entry_box.pack(padx=10, pady=10)\n\n        self.send_button = tk.Button(\n            self.chat_window, text=\"Enviar\", command=self.on_send_message\n        )\n        self.send_button.pack(padx=10, pady=10)\n\n        # Hilo para recibir mensajes\n        threading.Thread(target=self.receive_messages, daemon=True).start()\n\n    def on_send_message(self):\n        \"\"\"\n        Envía un mensaje al servidor y lo muestra en el cliente.\n        \"\"\"\n        message = self.entry_box.get()\n        if message:\n            self.send_message(message)\n            self.display_message(f\"{self.nickname}: {message}\")\n            self.entry_box.delete(0, tk.END)\n\n\nif __name__ == \"__main__\":\n    SERVER_HOST = \"127.0.0.1\"\n    SERVER_PORT = 12345\n    client = ChatClientGUI(SERVER_HOST, SERVER_PORT)\n    client.connect_to_server()\n    client.setup_gui()\n\n\n2. Probar la interfaz gráfica\nAsegúrate de que el servidor está ejecutándose:\npython src/server.py\nInicia el cliente con la nueva interfaz gráfica:\npython src/client.py\nConecta múltiples clientes y verifica que puedan enviar y recibir mensajes. Asegúrate de que la interfaz es funcional.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
+      "<span class='chapter-number'>56</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
     ]
   },
   {
@@ -2493,7 +2834,7 @@
     "text": "3. Versionar los cambios\nAgrega y confirma los archivos modificados:\ngit add .\ngit commit -m \"Fase 4: Implementación de la interfaz gráfica del cliente con Tkinter\"\nSube los cambios al repositorio remoto:\ngit push origin main",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
+      "<span class='chapter-number'>56</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
     ]
   },
   {
@@ -2504,7 +2845,7 @@
     "text": "Pruebas\n\nVerifica que el cliente gráfico se conecta correctamente al servidor.\nConfirma que los mensajes enviados y recibidos se muestran correctamente en la interfaz.\nRealiza pruebas con múltiples clientes para asegurar la funcionalidad del sistema completo.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
+      "<span class='chapter-number'>56</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
     ]
   },
   {
@@ -2515,7 +2856,7 @@
     "text": "Conclusiones\nEn esta fase, se extendió el cliente del chat incorporando una interfaz gráfica interactiva. Esto proporciona una experiencia de usuario más amigable y permite manejar tareas de comunicación en segundo plano sin afectar la responsividad de la interfaz.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>49</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
+      "<span class='chapter-number'>56</span>  <span class='chapter-title'>Fase 4: Extender la Aplicación con una Interfaz Gráfica para el Cliente usando Tkinter</span>"
     ]
   },
   {
@@ -2526,7 +2867,7 @@
     "text": "Objetivo\nAgregar pruebas unitarias y de integración para asegurar la funcionalidad del sistema. Configurar un flujo de integración continua (CI) usando GitHub Actions para garantizar que los cambios en el código no rompan la aplicación.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 5: Implementación de Pruebas e Integración Continua</span>"
+      "<span class='chapter-number'>57</span>  <span class='chapter-title'>Fase 5: Implementación de Pruebas e Integración Continua</span>"
     ]
   },
   {
@@ -2537,7 +2878,7 @@
     "text": "Conceptos Clave\n\nPruebas Unitarias: Validan funcionalidades específicas de componentes individuales del sistema.\nPruebas de Integración: Aseguran que los componentes interactúen correctamente entre sí.\nIntegración Continua (CI): Automatiza la ejecución de pruebas en cada cambio del código mediante herramientas como GitHub Actions.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 5: Implementación de Pruebas e Integración Continua</span>"
+      "<span class='chapter-number'>57</span>  <span class='chapter-title'>Fase 5: Implementación de Pruebas e Integración Continua</span>"
     ]
   },
   {
@@ -2548,7 +2889,7 @@
     "text": "Instrucciones\n\n1. Configurar un entorno de pruebas\nAsegúrate de que tienes las siguientes dependencias instaladas:\npip install pytest pytest-mock\nCrea un archivo requirements.txt para incluir las dependencias de desarrollo:\npytest\npytest-mock\nAgrega este archivo al control de versiones:\ngit add requirements-dev.txt\ngit commit -m \"Añadido archivo requirements-dev.txt para dependencias de desarrollo\"\n\n\n2. Escribir pruebas unitarias para el servidor\nCrea un directorio tests/ y un archivo tests/test_server.py para las pruebas del servidor:\n\"\"\"\nPruebas unitarias para server.py\n\"\"\"\n\nimport socket\nimport threading\nimport pytest\nfrom src.server import ChatServer\n\n\n@pytest.fixture\ndef server():\n    \"\"\"\n    Configura una instancia del servidor para pruebas.\n    \"\"\"\n    chat_server = ChatServer(\"127.0.0.1\", 12345)\n    threading.Thread(target=chat_server.start, daemon=True).start()\n    return chat_server\n\n\ndef test_server_initialization(server):\n    \"\"\"\n    Prueba que el servidor se inicializa correctamente.\n    \"\"\"\n    assert server.host == \"127.0.0.1\"\n    assert server.port == 12345\n    assert server.clients == []\n\n\ndef test_client_connection(server):\n    \"\"\"\n    Prueba que un cliente puede conectarse al servidor.\n    \"\"\"\n    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    client_socket.connect((server.host, server.port))\n    assert client_socket\n    client_socket.close()\n\n\n3. Escribir pruebas para el cliente\nCrea el archivo tests/test_client.py:\n\"\"\"\nPruebas unitarias para client.py\n\"\"\"\n\nimport pytest\nfrom src.client import ChatClientGUI\n\n\n@pytest.fixture\ndef client():\n    \"\"\"\n    Configura un cliente de chat para pruebas.\n    \"\"\"\n    return ChatClientGUI(\"127.0.0.1\", 12345)\n\n\ndef test_client_initialization(client):\n    \"\"\"\n    Prueba que el cliente se inicializa correctamente.\n    \"\"\"\n    assert client.host == \"127.0.0.1\"\n    assert client.port == 12345\n    assert client.nickname == \"\"\n\n\n4. Ejecutar las pruebas\nEjecuta las pruebas localmente para verificar que todo funcione correctamente:\npytest tests/\nSi todo está correcto, verás un resultado como este:\n========================= test session starts =========================\ncollected 3 items\n\ntests/test_client.py ..                                           [ 66%]\ntests/test_server.py ..                                           [100%]\n\n========================== 3 passed in 0.10s =========================\n\n\n5. Configurar integración continua con GitHub Actions\nCrea el archivo .github/workflows/ci.yml con la siguiente configuración:\nname: CI Pipeline\n\non:\n  push:\n    branches:\n      - main\n  pull_request:\n    branches:\n      - main\n\njobs:\n  test:\n    runs-on: ubuntu-latest\n\n    steps:\n    - name: Checkout code\n      uses: actions/checkout@v3\n\n    - name: Set up Python\n      uses: actions/setup-python@v4\n      with:\n        python-version: \"3.12\"\n\n    - name: Install dependencies\n      run: |\n        python -m venv venv\n        . venv/bin/activate\n        pip install -r requirements.txt\n        pip install -r requirements-dev.txt\n\n    - name: Run tests\n      run: |\n        . venv/bin/activate\n        pytest tests/\nSube los cambios al repositorio:\ngit add .github/workflows/ci.yml\ngit commit -m \"Añadido pipeline de CI con GitHub Actions\"\ngit push origin main\nVerifica en GitHub que las pruebas se ejecuten automáticamente al hacer un push o pull request.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 5: Implementación de Pruebas e Integración Continua</span>"
+      "<span class='chapter-number'>57</span>  <span class='chapter-title'>Fase 5: Implementación de Pruebas e Integración Continua</span>"
     ]
   },
   {
@@ -2559,7 +2900,7 @@
     "text": "Pruebas y Validación\n\nRealiza cambios controlados en el código y verifica que GitHub Actions detecta errores.\nAsegúrate de que las pruebas pasen tanto localmente como en el flujo de CI.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 5: Implementación de Pruebas e Integración Continua</span>"
+      "<span class='chapter-number'>57</span>  <span class='chapter-title'>Fase 5: Implementación de Pruebas e Integración Continua</span>"
     ]
   },
   {
@@ -2570,7 +2911,7 @@
     "text": "Conclusiones\nLa incorporación de pruebas unitarias e integración continua asegura la calidad del software y evita errores al integrar cambios. Este flujo refleja prácticas profesionales utilizadas en la industria.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>50</span>  <span class='chapter-title'>Fase 5: Implementación de Pruebas e Integración Continua</span>"
+      "<span class='chapter-number'>57</span>  <span class='chapter-title'>Fase 5: Implementación de Pruebas e Integración Continua</span>"
     ]
   },
   {
@@ -2581,7 +2922,7 @@
     "text": "Objetivo\nCrear una documentación completa para el laboratorio, detallando cada paso realizado en las fases anteriores, junto con preguntas de reflexión para evaluar el aprendizaje de los estudiantes.\n\nSección 1: Introducción al Laboratorio\n\nTítulo del Laboratorio\nDesarrollo de un Chat Local Cliente-Servidor con Pruebas e Integración Continua.\n\nDescripción\n\nEn este laboratorio, los estudiantes desarrollarán una aplicación de chat local utilizando Python. El proyecto sigue un flujo profesional, incluyendo análisis de requisitos, diseño, codificación, pruebas, y despliegue de un pipeline de integración continua con GitHub Actions.\n\nObjetivo General\n\nComprender y aplicar un flujo profesional de desarrollo de software para construir aplicaciones cliente-servidor con Python.\n\nSección 2: Instrucciones Prácticas\n\nParte 1: Configuración Inicial\n\nCrear el repositorio:\n\nUsa GitHub para crear un nuevo repositorio.\nClona el repositorio en tu máquina local:\n\n\ngit clone &lt;URL del repositorio&gt;\n\nEstructura del proyecto:\n\nCrea los siguientes directorios y archivos iniciales:\nchat-project/\n├── .github/\n│   └── workflows/\n│       └── ci.yml\n├── src/\n│   ├── client.py\n│   ├── server.py\n├── tests/\n│   ├── test_client.py\n│   ├── test_server.py\n├── requirements.txt\n├── requirements-dev.txt\n├── .gitignore\n└── README.md\n\nEntorno virtual:\n\nCrea un entorno virtual y activa:\n\n\npython -m venv venv\nsource venv/bin/activate  # Linux/Mac\nvenv\\Scripts\\activate  # Windows\n\nInstala dependencias:\n\nAñade las librerías necesarias a requirements.txt y requirements-dev.txt, e instálalas:\n\n\npip install -r requirements.txt\npip install -r requirements-dev.txt",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+      "<span class='chapter-number'>58</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
     ]
   },
   {
@@ -2592,7 +2933,7 @@
     "text": "Implementa las clases base:\n\nDefine las clases ChatServer y ChatClientGUI con métodos iniciales vacíos (pass).\nAñade funcionalidades gradualmente, como se explicó en fases anteriores.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+      "<span class='chapter-number'>58</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
     ]
   },
   {
@@ -2603,7 +2944,7 @@
     "text": "Pruebas:\n\nImplementa pruebas unitarias y de integración en la carpeta tests/.\n\n\nEjecuta las pruebas:\npytest tests/",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+      "<span class='chapter-number'>58</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
     ]
   },
   {
@@ -2614,7 +2955,7 @@
     "text": "Integración continua:\n\nConfigura el pipeline de CI en GitHub Actions para validar las pruebas automáticamente.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+      "<span class='chapter-number'>58</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
     ]
   },
   {
@@ -2625,7 +2966,7 @@
     "text": "Interfaz gráfica (opcional):\n\nImplementa la GUI en client.py usando Tkinter.\n\nSección 3: Preguntas de Reflexión",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+      "<span class='chapter-number'>58</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
     ]
   },
   {
@@ -2636,7 +2977,7 @@
     "text": "Diseño y Arquitectura:\n\n¿Qué ventajas tiene dividir el proyecto en módulos (src/ y tests/)?\n¿Cómo mejora el diseño la inclusión de docstrings en las clases y funciones?",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+      "<span class='chapter-number'>58</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
     ]
   },
   {
@@ -2647,7 +2988,7 @@
     "text": "Pruebas:\n\n¿Por qué es importante incluir pruebas unitarias e integración en proyectos colaborativos?\n¿Qué aprendiste al ejecutar y depurar tus pruebas?",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+      "<span class='chapter-number'>58</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
     ]
   },
   {
@@ -2658,7 +2999,7 @@
     "text": "Integración Continua:\n\n¿Cómo asegura la CI la calidad del código en un proyecto con múltiples desarrolladores?\n¿Qué beneficios aporta GitHub Actions en comparación con ejecutar pruebas localmente?",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+      "<span class='chapter-number'>58</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
     ]
   },
   {
@@ -2669,7 +3010,7 @@
     "text": "Desafíos Técnicos:\n\n¿Qué desafíos enfrentaste al implementar la comunicación entre cliente y servidor?\n¿Cómo los resolviste?\n\nSección 4: Conclusión",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+      "<span class='chapter-number'>58</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
     ]
   },
   {
@@ -2680,7 +3021,7 @@
     "text": "Resultados Obtenidos:\n\nLos estudiantes construyeron un sistema cliente-servidor funcional con comunicación en tiempo real.\nImplementaron pruebas automatizadas y configuraron CI, simulando un flujo profesional de desarrollo.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+      "<span class='chapter-number'>58</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
     ]
   },
   {
@@ -2691,7 +3032,7 @@
     "text": "Lecciones Clave:\n\nLa planificación y estructura del proyecto son esenciales para su éxito.\nLa automatización de pruebas y flujos de trabajo asegura la calidad del software.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+      "<span class='chapter-number'>58</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
     ]
   },
   {
@@ -2702,7 +3043,7 @@
     "text": "Próximos Pasos:\n\nImplementar características avanzadas como manejo de usuarios, historial de chat, o cifrado de mensajes.\nExtender el proyecto para que funcione a través de redes externas.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+      "<span class='chapter-number'>58</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
     ]
   },
   {
@@ -2713,7 +3054,7 @@
     "text": "Entrega Final\n\nRepositorio GitHub:\n\nSube todo el proyecto a un repositorio en GitHub.\nAsegúrate de que el README.md incluya instrucciones claras para ejecutar la aplicación y el flujo de CI.",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+      "<span class='chapter-number'>58</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
     ]
   },
   {
@@ -2724,7 +3065,7 @@
     "text": "Evidencias:\n\nCapturas de pantalla de las pruebas exitosas.\nURL del repositorio de GitHub.\n\n\n¡Felicidades por completar el laboratorio! 🎉",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>51</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
+      "<span class='chapter-number'>58</span>  <span class='chapter-title'>Fase 6: Documentación del Laboratorio y Reflexión Final</span>"
     ]
   },
   {
