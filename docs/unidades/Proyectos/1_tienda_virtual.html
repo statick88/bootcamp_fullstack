@@ -465,6 +465,11 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../unidades/Proyectos/1_app_cursos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sistema de Gestión de Cursos con Django y DRF</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../unidades/Proyectos/0_tienda_virtual.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tienda Virtual.</span></a>
   </div>
 </li>
@@ -475,12 +480,22 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/Proyectos/2_tienda_virtual.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 2: Configuración de Red y Contenedor para la Base de Datos</span></a>
+  <a href="../../unidades/Proyectos/2_tienda_virtual.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 2: Diseño de la Arquitectura</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/Proyectos/3_tienda_virtual.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 3: Configuración del Contenedor para el Backend</span></a>
+  <a href="../../unidades/Proyectos/3_tienda_virtual.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 3. Desarrollo de la Aplicación</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/Proyectos/4_tienda_virtual.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 4: Integración de Funcionalidades Avanzadas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/Proyectos/5_tienda_virtual.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 5: Configuración para Despliegue y Pruebas E2E</span></a>
   </div>
 </li>
       </ul>
@@ -488,12 +503,28 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
- <span class="menu-text">Extras</span></a>
+ <span class="menu-text">Ejercicios</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../unidades/ejercicios/ejercicios_python-001.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicios Python - Nivel 1</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+ <span class="menu-text">Extras</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../unidades/Extras/0_parte.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio: Desarrollo de un Sistema de Chat Local Cliente-Servidor</span></a>
@@ -562,185 +593,152 @@ ul.task-list li input[type="checkbox"] {
 
 
 <div class="justify">
-<section id="introducción" class="level2">
-<h2 class="anchored" data-anchor-id="introducción">Introducción</h2>
-<p>Esta fase inicial tiene como objetivo comprender y documentar todos los aspectos necesarios para construir una tienda virtual funcional y moderna. Definir los requisitos de manera clara y detallada asegura una base sólida para las fases posteriores y reduce el riesgo de errores y retrabajo.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>¿Qué es un Requisito?</strong></p>
-<ul>
-<li>Un requisito es una característica que el sistema debe cumplir. Se clasifica en:</li>
-</ul>
-</div>
-</div>
+<section id="requisitos-funcionales" class="level2">
+<h2 class="anchored" data-anchor-id="requisitos-funcionales">Requisitos Funcionales</h2>
+<section id="usuarios" class="level3">
+<h3 class="anchored" data-anchor-id="usuarios">Usuarios</h3>
 <ol type="1">
-<li><p><strong>Requisitos Funcionales</strong>: Qué debe hacer el sistema.</p>
+<li><p>Registro e inicio de sesión:</p>
 <ul>
-<li><strong>Ejemplo</strong>: Un usuario debe poder registrarse e iniciar sesión.</li>
+<li>Los usuarios deben poder registrarse, iniciar sesión y cerrar sesión.</li>
+<li>Roles: Cliente y Administrador.</li>
 </ul></li>
-<li><p><strong>Requisitos No Funcionales</strong>: Cómo debe comportarse el sistema.</p>
+<li><p>Gestión de perfiles:</p>
 <ul>
-<li><strong>Ejemplo</strong>: El sistema debe responder en menos de 2 segundos.</li>
+<li>Los usuarios pueden editar su información personal (nombre, correo, contraseña).</li>
+<li>El administrador puede gestionar los usuarios (consultar, actualizar, deshabilitar cuentas).</li>
 </ul></li>
-<li><p><strong>Requisitos Técnicos</strong>: Qué herramientas o tecnologías utilizaremos.</p>
+<li><p>Recuperación de contraseña:</p>
 <ul>
-<li><strong>Ejemplo</strong>: Usar React para el frontend.</li>
+<li>Los usuarios deben poder recuperar su contraseña mediante un enlace enviado a su correo.</li>
+</ul></li>
+<li><p>Autenticación de dos factores (2FA):</p>
+<ul>
+<li>Implementación futura para mayor seguridad. Integración opcional según las necesidades del proyecto.</li>
 </ul></li>
 </ol>
 </section>
-<section id="objetivos" class="level2">
-<h2 class="anchored" data-anchor-id="objetivos">Objetivos</h2>
+<section id="productos" class="level3">
+<h3 class="anchored" data-anchor-id="productos">Productos</h3>
 <ol type="1">
-<li>Identificar todas las funcionalidades clave de la tienda virtual.</li>
-<li>Establecer estándares claros de calidad y desempeño.</li>
-<li>Seleccionar las tecnologías adecuadas para el desarrollo.</li>
-</ol>
-</section>
-<section id="actividades" class="level2">
-<h2 class="anchored" data-anchor-id="actividades">Actividades</h2>
-<section id="definir-requisitos-funcionales" class="level3">
-<h3 class="anchored" data-anchor-id="definir-requisitos-funcionales">1. Definir Requisitos Funcionales</h3>
-<p><strong>Usuarios</strong>:</p>
+<li><p>CRUD de productos:</p>
 <ul>
-<li>Registro e inicio de sesión con validación.</li>
-<li>Gestión de perfiles (nombre, correo, contraseña).</li>
-</ul>
-<p><strong>Roles</strong>:</p>
-<ul>
-<li><strong>Cliente</strong>: Realizar compras y gestionar su carrito.</li>
-<li><strong>Administrador</strong>: Gestión total de productos y pedidos.</li>
-</ul>
-<p><strong>Productos</strong>:</p>
-<ul>
-<li>Visualización de lista de productos con detalles.</li>
-<li>CRUD (crear, leer, actualizar, eliminar) para administradores.</li>
-</ul>
-<p><strong>Carrito de Compras</strong>:</p>
-<ul>
-<li>Agregar y eliminar productos del carrito.</li>
-<li>Calcular automáticamente el precio total.</li>
-</ul>
-<p><strong>Pedidos</strong>:</p>
-<ul>
-<li>Crear pedidos a partir del carrito.</li>
-<li>Gestión de estados del pedido: Pendiente, Pagado, Enviado.</li>
-</ul>
-<p><strong>Pagos</strong>:</p>
-<ul>
-<li>Integración con PayPal Sandbox para procesar pagos.</li>
-</ul>
-<p><strong>Frontend</strong>:</p>
-<ul>
-<li>Diseño atractivo, intuitivo y responsivo.</li>
-<li>Compatibilidad con dispositivos móviles y computadoras.</li>
-</ul>
-</section>
-<section id="definir-requisitos-no-funcionales" class="level3">
-<h3 class="anchored" data-anchor-id="definir-requisitos-no-funcionales">2. Definir Requisitos No Funcionales</h3>
-<p><strong>Seguridad</strong>:</p>
-<ul>
-<li>Uso de HTTPS en producción.</li>
-<li>Autenticación y autorización con JWT.</li>
-</ul>
-<p><strong>Rendimiento</strong>:</p>
-<ul>
-<li>Respuesta en menos de 2 segundos para la mayoría de las operaciones.</li>
-</ul>
-<p><strong>Escalabilidad</strong>:</p>
-<ul>
-<li>Soporte inicial para 100 usuarios concurrentes.</li>
-</ul>
-<p><strong>Accesibilidad</strong>:</p>
-<ul>
-<li>Interfaz funcional y compatible con navegadores modernos.</li>
-</ul>
-</section>
-<section id="definir-requisitos-técnicos" class="level3">
-<h3 class="anchored" data-anchor-id="definir-requisitos-técnicos">3. Definir Requisitos Técnicos</h3>
-<p><strong>Backend</strong>:</p>
-<ul>
-<li><strong>Framework</strong>: Django 4.2 + Django REST Framework 3.15.</li>
-<li><strong>Base de Datos</strong>: PostgreSQL 15.</li>
-<li><strong>Autenticación</strong>: JWT.</li>
-<li><strong>Despliegue</strong>: Railway.</li>
-</ul>
-<p><strong>Frontend</strong></p>
-<ul>
-<li><strong>Framework</strong>: React 18 con Vite.</li>
-<li><strong>Estilización</strong>: TailwindCSS.</li>
-<li><strong>Lenguaje</strong>: TypeScript.</li>
-<li><strong>Despliegue</strong>: Vercel.</li>
-</ul>
-<p><strong>Infraestructura</strong></p>
-<ul>
-<li><p><strong>Contenedores Docker para</strong>:</p>
-<ul>
-<li>Base de datos (PostgreSQL).</li>
-<li>Backend (Django).</li>
-<li>Frontend (React).</li>
+<li>El administrador puede crear, leer, actualizar y eliminar productos.</li>
+<li>Atributos: nombre, descripción, precio, inventario, imágenes.</li>
 </ul></li>
-<li><p><strong>Orquestación</strong>: Docker Compose v3.8.</p></li>
-</ul>
-<p><strong>Otros</strong></p>
+<li><p>Gestión de imágenes:</p>
 <ul>
-<li>Uso del entorno de pruebas de PayPal (<strong>Sandbox</strong>).</li>
-</ul>
-</section>
-<section id="representación-visual" class="level3">
-<h3 class="anchored" data-anchor-id="representación-visual">4. Representación Visual</h3>
-<p>A continuación, se muestra un diagrama conceptual de la arquitectura:</p>
-<pre class="plaintext"><code>Usuario -----&gt; Frontend (React + Vite) -----&gt; Backend (Django REST API)
-                |                              |
-                V                              V
-            TailwindCSS                  Base de Datos (PostgreSQL)</code></pre>
-</section>
-</section>
-<section id="entregables" class="level1">
-<h1>Entregables</h1>
-<ol type="1">
-<li>Documento de Requisitos Funcionales.</li>
-<li>Documento de Requisitos No Funcionales.</li>
-<li>Documento de Requisitos Técnicos.</li>
-<li>Diagrama de arquitectura inicial.</li>
-</ol>
-</section>
-<section id="pruebas-de-la-fase-1" class="level1">
-<h1>Pruebas de la Fase 1</h1>
-<ol type="1">
-<li>Revisión de los documentos de requisitos por parte del equipo.</li>
-<li>Validación de los requisitos con el cliente:</li>
-</ol>
-<ul>
-<li>Checklist de Validación:
-<ul class="task-list">
-<li><label><input type="checkbox">¿Todos los roles están cubiertos?</label></li>
-<li><label><input type="checkbox">¿Se describen claramente las interacciones clave del sistema?</label></li>
-<li><label><input type="checkbox">¿Se definen métricas claras de desempeño?</label></li>
+<li>El sistema almacenará las imágenes en el directorio /static/images del backend utilizando el sistema de archivos de Railway.</li>
 </ul></li>
-</ul>
-<ol start="3" type="1">
-<li>Aprobación final de los requisitos para avanzar a la fase de diseño.</li>
 </ol>
 </section>
-<section id="métricas-de-éxito" class="level1">
-<h1>Métricas de Éxito</h1>
+<section id="carrito-y-pedidos" class="level3">
+<h3 class="anchored" data-anchor-id="carrito-y-pedidos">Carrito y Pedidos</h3>
 <ol type="1">
-<li><strong>Completitud</strong>: Documentación del 100% de los requisitos funcionales y técnicos.</li>
-<li><strong>Aprobación del cliente</strong>: Validación sin objeciones críticas.</li>
-<li><strong>Claridad</strong>: Comprensión total del equipo sobre los documentos entregados.</li>
+<li><p>Gestión del carrito de compras:</p>
+<ul>
+<li>Los clientes pueden agregar, editar o eliminar productos en su carrito.</li>
+</ul></li>
+<li><p>Gestión de pedidos:</p>
+<ul>
+<li>Los clientes pueden realizar pedidos y consultar su estado (pendiente, procesado, enviado, cancelado).</li>
+<li>Seguimiento de pedidos: Los clientes podrán recibir notificaciones o actualizaciones del estado del pedido en tiempo real.</li>
+</ul></li>
 </ol>
 </section>
-<section id="conclusiones" class="level1">
-<h1>Conclusiones</h1>
-<p>La Fase 1 sienta las bases para un desarrollo exitoso al documentar detalladamente lo que se necesita construir. La inclusión de requisitos funcionales, no funcionales y técnicos, junto con representaciones visuales, asegura una alineación clara entre los miembros del equipo y el cliente. Este enfoque reduce riesgos y prepara el terreno para las siguientes fases del proyecto, como el diseño del sistema.</p>
+<section id="pagos" class="level3">
+<h3 class="anchored" data-anchor-id="pagos">Pagos</h3>
+<ol type="1">
+<li><p>Integración con PayPal Sandbox:</p>
+<ul>
+<li>Los usuarios podrán realizar pagos utilizando PayPal Sandbox.</li>
+<li>Los pagos serán validados a través de un servidor externo que confirmará la transacción.</li>
+</ul></li>
+<li><p>Validación y actualización de pagos:</p>
+<ul>
+<li>Una vez validado el pago, el sistema actualizará automáticamente el estado del pedido según el resultado de la transacción (pendiente, procesado, cancelado).</li>
+</ul></li>
+</ol>
+</section>
+<section id="accesibilidad-y-seo" class="level3">
+<h3 class="anchored" data-anchor-id="accesibilidad-y-seo">Accesibilidad y SEO</h3>
+<ol type="1">
+<li><p>Frontend accesible:</p>
+<ul>
+<li>Cumplir con los estándares de accesibilidad (WCAG 2.1).</li>
+<li>Aplicar buenas prácticas de SEO, como el uso de etiquetas semánticas, metadatos, y optimización de la velocidad de carga.</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="requisitos-técnicos" class="level2">
+<h2 class="anchored" data-anchor-id="requisitos-técnicos">Requisitos Técnicos</h2>
+<section id="backend" class="level3">
+<h3 class="anchored" data-anchor-id="backend">Backend</h3>
+<ol type="1">
+<li><p>Frameworks y herramientas:</p>
+<ul>
+<li>Django como framework principal.</li>
+<li>Django REST Framework para API RESTful.</li>
+</ul></li>
+<li><p>Autenticación:</p>
+<ul>
+<li>Basada en JWT con roles de usuario.</li>
+</ul></li>
+<li><p>Base de datos:</p>
+<ul>
+<li>PostgreSQL para almacenamiento seguro y escalable.</li>
+</ul></li>
+<li><p>Caché:</p>
+<ul>
+<li>Uso de Redis para mejorar el rendimiento.</li>
+</ul></li>
+</ol>
+</section>
+<section id="frontend" class="level3">
+<h3 class="anchored" data-anchor-id="frontend">Frontend</h3>
+<ol type="1">
+<li><p>Frameworks y tecnologías:</p>
+<ul>
+<li>React con Vite para una configuración rápida.</li>
+<li>TailwindCSS para diseño moderno y responsivo.</li>
+<li>JavaScript para tipado estático y código robusto.</li>
+</ul></li>
+<li><p>Optimización:</p>
+<ul>
+<li>Lazy loading y code splitting para mejorar el rendimiento.</li>
+<li>Axios para el consumo de APIs.</li>
+</ul></li>
+</ol>
+</section>
+<section id="infraestructura" class="level3">
+<h3 class="anchored" data-anchor-id="infraestructura">Infraestructura</h3>
+<ol type="1">
+<li><p>Contenedores:</p>
+<ul>
+<li>Docker Compose para orquestación.</li>
+<li>Backend, frontend y base de datos en contenedores separados.</li>
+</ul></li>
+<li><p>Variables de entorno:</p>
+<ul>
+<li>Manejo seguro con archivos .env.</li>
+</ul></li>
+</ol>
+</section>
+<section id="despliegue" class="level3">
+<h3 class="anchored" data-anchor-id="despliegue">Despliegue</h3>
+<ol type="1">
+<li><p>Hosting:</p>
+<ul>
+<li>Railway para backend.</li>
+<li>Vercel para frontend.</li>
+</ul></li>
+<li><p>CI/CD:</p>
+<ul>
+<li>Flujo automatizado para pruebas y despliegue.</li>
+</ul></li>
+</ol>
+</section>
 </section>
 </div>
 
@@ -1322,8 +1320,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../unidades/Proyectos/2_tienda_virtual.html" class="pagination-link" aria-label="Fase 2: Configuración de Red y Contenedor para la Base de Datos">
-        <span class="nav-page-text"><span class="chapter-title">Fase 2: Configuración de Red y Contenedor para la Base de Datos</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../unidades/Proyectos/2_tienda_virtual.html" class="pagination-link" aria-label="Fase 2: Diseño de la Arquitectura">
+        <span class="nav-page-text"><span class="chapter-title">Fase 2: Diseño de la Arquitectura</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

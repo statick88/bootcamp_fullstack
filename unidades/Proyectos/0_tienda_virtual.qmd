@@ -7,173 +7,114 @@
 
 ## Descripción del Proyecto
 
-Este proyecto tiene como objetivo construir una tienda virtual escalable y moderna utilizando **Django** para el backend, **React** con Vite, **TailwindCSS** y **TypeScript** para el frontend, y **PostgreSQL** como base de datos. Se utilizará **Docker** para crear un entorno de desarrollo consistente, con contenedores separados para el backend, frontend y base de datos. El sistema integrará **PayPal Sandbox** para pagos y será desplegado en Railway (backend) y Vercel (frontend).
+El objetivo es construir una tienda virtual básica utilizando Django para el backend, React con Vite y TailwindCSS para el frontend, y PostgreSQL como base de datos. Se empleará Docker para un entorno de desarrollo consistente, con contenedores separados para el backend y base de datos. El sistema incluirá funcionalidades básicas para gestión de usuarios, productos y pedidos.
 
-Se priorizarán buenas prácticas, seguridad, accesibilidad y cumplimiento legal para garantizar un sistema robusto y listo para producción.
+## Objetivo General
 
-## Objetivos
+Crear una tienda virtual funcional y accesible, enfocada en simplicidad y rendimiento, con un diseño modular y tecnología moderna.
 
-### Objetivo General
+## Funcionalidades Principales
 
-Desarrollar una tienda virtual con arquitectura modular y tecnologías modernas, optimizada para escalabilidad, seguridad, accesibilidad y rendimiento.
+1. Usuarios:
 
-### Objetivos Específicos
+    - Registro e inicio de sesión.
+    - Gestión de perfiles.
 
-1. Implementar un backend funcional con **Django** y **Django REST Framework**, con autenticación basada en **JWT** y gestión segura de datos con **PostgreSQL**.
+2. Productos:
 
-2. Diseñar un frontend interactivo, accesible y responsivo con **React**, utilizando Vite, **TailwindCSS** y **TypeScript**.
-3. Integrar pagos con **PayPal Sandbox** y explorar opciones para múltiples métodos de pago.
+    - CRUD de productos con imágenes.
 
-4. Configurar un entorno dockerizado con tres contenedores, garantizando comunicación eficiente entre backend y base de datos.
+3. Carrito y Pedidos:
 
-5. Implementar un flujo de CI/CD con despliegue automatizado en **Railway** y **Vercel**.
-6. Asegurar cumplimiento legal y normativo (e.g., GDPR), accesibilidad (a11y) y monitoreo continuo del sistema.
+    - Agregar productos al carrito.
+    - Crear y gestionar pedidos.
 
-## Fases del Proyecto
+4. Pagos:
 
-### Fase 1: Recolección de Requisitos
+    - Integración básica con PayPal Sandbox para validación de pagos.
 
-#### Requisitos Funcionales
+5. Frontend:
 
-**Usuarios**:
+    - Diseño responsivo y accesible con TailwindCSS.
 
-- Registro, inicio de sesión y gestión de perfiles (roles: cliente y administrador).
+6. Infraestructura:
 
-- Recuperación de contraseña y manejo de autenticación de dos factores (2FA).
+    - Configuración con Docker Compose para desarrollo local.
 
-**Productos**:
+# Fases del Proyecto
 
-- CRUD para gestión de productos.
-- Gestión de imágenes con integración a servicios externos (e.g., AWS S3, Google Cloud Storage).
+## Fase 1: Configuración Inicial
 
-**Carrito y Pedidos**:
+1. Crear estructura del proyecto:
 
-- Gestión de carritos de compra y creación de pedidos.
-- Estados de pedidos (e.g., pendiente, procesado, enviado, cancelado).
+    - Backend: Django con Django REST Framework.
+    - Frontend: React con Vite y TailwindCSS.
 
-**Pagos**:
+2.  Configurar un archivo docker-compose.yml para el backend y base de datos.
 
-- Integración con PayPal Sandbox y soporte para otros métodos (e.g., Stripe).
-- Validación de pagos y actualizaciones automáticas de pedidos.
+3.  Crear archivo .env con variables esenciales:
 
-**Accesibilidad y SEO**:
+    - Backend: DATABASE_URL, SECRET_KEY.
+    - Frontend: URL del backend.
 
-- Frontend accesible para personas con discapacidades.
-- Optimización para motores de búsqueda (SEO).
+## Fase 2: Desarrollo del Backend
 
-**Requisitos Técnicos**
+1.  Modelos:
 
-**Backend**:
+    - User: Roles (cliente y administrador).
+    - Product: Nombre, precio, inventario, imágenes.
+    - Order: Asociado a usuarios y productos.
 
-- **Django** y **Django REST Framework** para la API.
-- Autenticación JWT con roles de usuario.
-- Configuración de caché con **Redis**.
+2.  Endpoints:
 
-**Frontend**:
+    - Usuarios: Registro, login, perfil.
+    - Productos: CRUD.
+    - Pedidos: Crear y listar.
 
-- **React** con **Vite**, **TailwindCSS** y **TypeScript**.
-- Lazy loading y code splitting para optimizar rendimiento.
-- Uso de Axios para consumir APIs.
+3. Autenticación:
 
-**Infraestructura**:
+    - Implementar autenticación con JWT.
 
-- Contenedores Docker orquestados con Docker Compose.
-- Red interna para comunicación entre contenedores (backend y base de datos).
-- Configuración para manejo seguro de variables de entorno.
+## Fase 3: Desarrollo del Frontend
 
-**Despliegue**:
+1. Configurar React con Vite y TailwindCSS.
 
-- Backend desplegado en **Railway**.
-- Frontend desplegado en **Vercel**.
-- Flujo CI/CD para despliegue automatizado.
+2. Crear componentes básicos:
 
-## Fase 2: Diseño del Sistema
+    - Navbar, ProductList, ProductDetails, Cart, CheckoutForm.
 
-### Arquitectura General
+3.  Implementar rutas principales con React Router:
 
-**Backend**:
+    - Home: Lista de productos.
+    - Product Details: Detalles de un producto.
+    - Cart: Resumen del carrito.
+    - Checkout: Confirmación de pedido.
 
-- Módulos de Django para usuarios, productos, pedidos y pagos.
-- Endpoints REST con DRF para CRUD y gestión de transacciones.
-- Configuración de variables de entorno para manejar credenciales y secretos.
+4.   Consumir APIs del backend con Axios.
 
-**Frontend**:
+## Fase 4: Integración de Pagos
 
-- Componentes reutilizables (Navbar, ProductCard, Cart, CheckoutForm).
-- Rutas principales:
-  - **Home**: Lista de productos.
-  - **Product Details**: Detalles de un producto.
-  - **Cart**: Resumen del carrito.
-  - **Checkout**: Procesar pedidos y pagos.
-  - **Profile**: Gestión de perfil.
-
-**Infraestructura**:
-
-- Configuración de Docker Compose:
-  - **Base de datos**: Contenedor PostgreSQL con persistencia de datos.
-  - **Backend**: Contenedor Django con conexión a la base de datos.
-  - **Frontend**: Contenedor React conectado al backend.
-
-## Fase 3: Configuración Inicial
-
-1. Crear la estructura inicial del proyecto con directorios separados para backend y frontend.
-2. Configurar un archivo **docker-compose.yml** para orquestar contenedores.
-3. Crear **.env** para variables de entorno:
-  - **Backend**: **DATABASE_URL**, **SECRET_KEY**, **PAYPAL_CLIENT_ID**.
-  - **Frontend**: URL del backend, claves de API.
-4. Configurar TailwindCSS en el frontend.
-5. Inicializar el repositorio Git con un .gitignore adecuado.
-
-## Fase 4: Desarrollo del Backend
-
-1. Crear modelos y relaciones:
-  - **User**: Roles (cliente y administrador).
-  - **Product**: Detalles (nombre, precio, inventario, imágenes).
-  - **Order**: Asociado a usuarios y productos.
-
-2. Configurar vistas y serializadores con **Django REST Framework**.
-3. Implementar autenticación basada en **JWT**.
-4. Configurar endpoints seguros para:
-  - Usuarios (registro, login, perfil).
-  - Productos (CRUD).
-  - Pedidos.
-  - Pagos.
-
-## Fase 5: Desarrollo del Frontend
-
-1. Configurar React con **Vite**, **TailwindCSS** y **TypeScript**.
-2. Crear componentes reutilizables y rutas principales.
-3. Integrar **React Router** para navegación.
-4. Consumir APIs del backend con Axios, manejando autenticación y errores.
-
-## Fase 6: Integración de Pagos
 1. Configurar PayPal Sandbox en el backend.
-2. Implementar lógica en el frontend para manejar transacciones.
-3. Validar pagos y actualizar pedidos según estado de transacción.
 
-## Fase 7: Pruebas
-1. **Pruebas Unitarias**:
-  - **Backend**: Modelos, serializadores, vistas.
-  - **Frontend**: Componentes, funciones.
+2. Implementar lógica básica en el frontend para manejar pagos.
 
-2. **Pruebas de Integración**:
-  - Flujo completo (registro → carrito → pago).
-3. **Pruebas de Carga**:
-  - Simular tráfico alto con herramientas como **Locust** o **JMeter**.
+## Fase 5: Pruebas
 
-## Fase 8: Despliegue
-1. Configurar CI/CD para despliegue automatizado.
-2. Desplegar backend en Railway y frontend en Vercel.
-3. Validar el sistema completo en producción.
+1. Pruebas unitarias en backend (modelos y vistas).
+2. Pruebas de integración básica:
 
-## Fase 9: Optimización y Mantenimiento
-1. Optimizar consultas a la base de datos.
-2. Implementar monitoreo con herramientas como Grafana y Prometheus.
-3. Automatizar backups para la base de datos.
-4. Actualizar dependencias y resolver vulnerabilidades.
+    - Flujo completo (registro → carrito → pedido).
 
-## Fase 10: Documentación
-1. Crear documentación detallada para desarrolladores y usuarios finales.
-2. Generar un manual de uso de la API con Swagger.
-3. Incluir instrucciones para desarrollo local y despliegue.
+## Fase 6: Despliegue
+
+1. Configurar despliegue en:
+
+    - Backend: Railway.
+    - Frontend: Vercel.
+
+2. Validar funcionalidad en producción.
+
+# Resultado Esperado
+
+Una tienda virtual básica funcional, lista para ser extendida en el futuro con más características como métodos de pago adicionales, monitoreo y accesibilidad avanzada.
 :::

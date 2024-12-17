@@ -1,157 +1,122 @@
 :::{.justify}
+
 # Fase 1: Recolección de Requisitos
 
-## Introducción
+## Requisitos Funcionales
 
-Esta fase inicial tiene como objetivo comprender y documentar todos los aspectos necesarios para construir una tienda virtual funcional y moderna. Definir los requisitos de manera clara y detallada asegura una base sólida para las fases posteriores y reduce el riesgo de errores y retrabajo.
+### Usuarios
 
-:::{.callout-tip}
-**¿Qué es un Requisito?**
+1. Registro e inicio de sesión:
 
-- Un requisito es una característica que el sistema debe cumplir. Se clasifica en:
+    - Los usuarios deben poder registrarse, iniciar sesión y cerrar sesión.
+    - Roles: Cliente y Administrador.
+
+2. Gestión de perfiles:
+
+    - Los usuarios pueden editar su información personal (nombre, correo, contraseña).
+    - El administrador puede gestionar los usuarios (consultar, actualizar, deshabilitar cuentas).
+
+3. Recuperación de contraseña:
+
+    - Los usuarios deben poder recuperar su contraseña mediante un enlace enviado a su correo.
+
+4. Autenticación de dos factores (2FA):
+
+    - Implementación futura para mayor seguridad. Integración opcional según las necesidades del proyecto.
+
+### Productos
+
+1. CRUD de productos:
+
+    - El administrador puede crear, leer, actualizar y eliminar productos.
+    - Atributos: nombre, descripción, precio, inventario, imágenes.
+
+2. Gestión de imágenes:
+
+    - El sistema almacenará las imágenes en el directorio /static/images del backend utilizando el sistema de archivos de Railway.
+
+### Carrito y Pedidos
+
+1. Gestión del carrito de compras:
+
+    - Los clientes pueden agregar, editar o eliminar productos en su carrito.
+
+2.  Gestión de pedidos:
+
+    - Los clientes pueden realizar pedidos y consultar su estado (pendiente, procesado, enviado, cancelado).
+    - Seguimiento de pedidos: Los clientes podrán recibir notificaciones o actualizaciones del estado del pedido en tiempo real.
+
+### Pagos
+
+1. Integración con PayPal Sandbox:
+
+    - Los usuarios podrán realizar pagos utilizando PayPal Sandbox.
+    - Los pagos serán validados a través de un servidor externo que confirmará la transacción.
+
+2. Validación y actualización de pagos:
+
+    - Una vez validado el pago, el sistema actualizará automáticamente el estado del pedido según el resultado de la transacción (pendiente, procesado, cancelado).
+
+### Accesibilidad y SEO
+
+1. Frontend accesible:
+
+    - Cumplir con los estándares de accesibilidad (WCAG 2.1).
+    - Aplicar buenas prácticas de SEO, como el uso de etiquetas semánticas, metadatos, y optimización de la velocidad de carga.
+
+## Requisitos Técnicos
+
+### Backend
+
+1. Frameworks y herramientas:
+
+    - Django como framework principal.
+    - Django REST Framework para API RESTful.
+
+2. Autenticación:
+
+    - Basada en JWT con roles de usuario.
+
+3. Base de datos:
+
+    - PostgreSQL para almacenamiento seguro y escalable.
+
+4. Caché:
+
+    - Uso de Redis para mejorar el rendimiento.
+
+### Frontend
+
+1. Frameworks y tecnologías:
+
+    - React con Vite para una configuración rápida.
+    - TailwindCSS para diseño moderno y responsivo.
+    - JavaScript para tipado estático y código robusto.
+
+2.  Optimización:
+
+    - Lazy loading y code splitting para mejorar el rendimiento.
+    - Axios para el consumo de APIs.
+
+### Infraestructura
+
+1. Contenedores:
+
+    - Docker Compose para orquestación.
+    - Backend, frontend y base de datos en contenedores separados.
+
+2.  Variables de entorno:
+
+    - Manejo seguro con archivos .env.
+
+### Despliegue
+
+1.  Hosting:
+
+    - Railway para backend.
+    - Vercel para frontend.
+
+2.  CI/CD:
+
+    - Flujo automatizado para pruebas y despliegue.
 :::
-
-1. **Requisitos Funcionales**: Qué debe hacer el sistema.
-
-    - **Ejemplo**: Un usuario debe poder registrarse e iniciar sesión.
-
-2. **Requisitos No Funcionales**: Cómo debe comportarse el sistema.
-
-    - **Ejemplo**: El sistema debe responder en menos de 2 segundos.
-
-3. **Requisitos Técnicos**: Qué herramientas o tecnologías utilizaremos.
-
-    - **Ejemplo**: Usar React para el frontend.
-
-## Objetivos
-
-1. Identificar todas las funcionalidades clave de la tienda virtual.
-2. Establecer estándares claros de calidad y desempeño.
-3. Seleccionar las tecnologías adecuadas para el desarrollo.
-
-## Actividades
-
-### 1. Definir Requisitos Funcionales
-
-**Usuarios**:
-
-- Registro e inicio de sesión con validación.
-- Gestión de perfiles (nombre, correo, contraseña).
-
-**Roles**:
-
-  - **Cliente**: Realizar compras y gestionar su carrito.
-  - **Administrador**: Gestión total de productos y pedidos.
-
-**Productos**:
-
-  - Visualización de lista de productos con detalles.
-  - CRUD (crear, leer, actualizar, eliminar) para administradores.
-
-**Carrito de Compras**:
-
-  - Agregar y eliminar productos del carrito.
-  - Calcular automáticamente el precio total.
-
-**Pedidos**:
-
-  - Crear pedidos a partir del carrito.
-  - Gestión de estados del pedido: Pendiente, Pagado, Enviado.
-
-**Pagos**:
-
-- Integración con PayPal Sandbox para procesar pagos.
-
-**Frontend**:
-
-  - Diseño atractivo, intuitivo y responsivo.
-  - Compatibilidad con dispositivos móviles y computadoras.
-
-### 2. Definir Requisitos No Funcionales
-
-**Seguridad**:
-
-- Uso de HTTPS en producción.
-- Autenticación y autorización con JWT.
-
-**Rendimiento**:
-
-- Respuesta en menos de 2 segundos para la mayoría de las operaciones.
-
-**Escalabilidad**:
-
-- Soporte inicial para 100 usuarios concurrentes.
-
-**Accesibilidad**:
-
-- Interfaz funcional y compatible con navegadores modernos.
-
-### 3. Definir Requisitos Técnicos
-
-**Backend**:
-
-- **Framework**: Django 4.2 + Django REST Framework 3.15.
-- **Base de Datos**: PostgreSQL 15.
-- **Autenticación**: JWT.
-- **Despliegue**: Railway.
-
-**Frontend**
-
-- **Framework**: React 18 con Vite.
-- **Estilización**: TailwindCSS.
-- **Lenguaje**: TypeScript.
-- **Despliegue**: Vercel.
-
-**Infraestructura**
-
-- **Contenedores Docker para**:
-
-    - Base de datos (PostgreSQL).
-    - Backend (Django).
-    - Frontend (React).
-
-- **Orquestación**: Docker Compose v3.8.
-
-**Otros**
-
-- Uso del entorno de pruebas de PayPal (**Sandbox**).
-
-### 4. Representación Visual
-
-A continuación, se muestra un diagrama conceptual de la arquitectura: 
-
-```plaintext
-Usuario -----> Frontend (React + Vite) -----> Backend (Django REST API)
-                |                              |
-                V                              V
-            TailwindCSS                  Base de Datos (PostgreSQL)
-```
-
-# Entregables
-
-1. Documento de Requisitos Funcionales.
-2. Documento de Requisitos No Funcionales.
-3. Documento de Requisitos Técnicos.
-4. Diagrama de arquitectura inicial.
-
-# Pruebas de la Fase 1
-
-1. Revisión de los documentos de requisitos por parte del equipo.
-2. Validación de los requisitos con el cliente:
-  - Checklist de Validación:
-    - [ ] ¿Todos los roles están cubiertos?
-    - [ ] ¿Se describen claramente las interacciones clave del sistema?
-    - [ ] ¿Se definen métricas claras de desempeño?
-3. Aprobación final de los requisitos para avanzar a la fase de diseño.
-
-# Métricas de Éxito
-
-1. **Completitud**: Documentación del 100% de los requisitos funcionales y técnicos.
-2. **Aprobación del cliente**: Validación sin objeciones críticas.
-4. **Claridad**: Comprensión total del equipo sobre los documentos entregados.
-
-# Conclusiones
-
-La Fase 1 sienta las bases para un desarrollo exitoso al documentar detalladamente lo que se necesita construir. La inclusión de requisitos funcionales, no funcionales y técnicos, junto con representaciones visuales, asegura una alineación clara entre los miembros del equipo y el cliente. Este enfoque reduce riesgos y prepara el terreno para las siguientes fases del proyecto, como el diseño del sistema.
-:::
-

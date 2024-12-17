@@ -1,0 +1,239 @@
+:::{.justify}
+# Fase 4: Integración de Funcionalidades Avanzadas
+
+En esta fase, vamos a agregar características avanzadas para hacer que el sistema sea más funcional y completo, incluyendo autenticación JWT, integración con pasarelas de pago (como PayPal), y optimización del flujo de trabajo para los usuarios.
+
+## 1. Implementación de la Autenticación de Usuarios con JWT
+
+### A. Configuración de la Autenticación JWT en el Backend
+
+1. **Configuración del paquete SimpleJWT**: Instala la biblioteca necesaria si aún no lo has hecho:
+
+```bash
+pip install djangorestframework-simplejwt
+```
+Luego, actualiza **settings.py** para incluir la configuración de autenticación JWT:
+
+```python
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+}
+```
+2. **Vistas para Autenticación (Login y Refresh Tokens)**: En el archivo **auth/views.py**, crea las vistas para manejar tokens de acceso y refresco:
+
+```python
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from django.urls import path
+
+urlpatterns = [
+    path('login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+]
+```
+3. **Protección de las Rutas API**: Asegúrate de que las vistas relacionadas con productos y pedidos estén protegidas mediante JWT:
+
+```python
+from rest_framework.permissions import IsAuthenticated
+
+class ProductoViewSet(viewsets.ModelViewSet):
+    queryset = Producto.objects.all()
+    serializer_class = ProductoSerializer
+    permission_classes = [IsAuthenticated]
+```
+4. **Pruebas para la Autenticación**: Agrega pruebas en el backend para validar que solo los usuarios autenticados puedan acceder a las rutas protegidas.
+
+### B. Configuración del Frontend para JWT
+
+1. **Manejo del Login en el Frontend**: Crea un componente **Login.js** para autenticar al usuario:
+
+```javascript
+import React, { useState } from 'react';
+import axios from 'axios';
+
+const Login = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post('http://localhost:8000/api/login/', {
+                username: email,
+                password: password,
+            });
+            localStorage.setItem('access', response.data.access);
+            localStorage.setItem('refresh', response.data.refresh);
+            alert('Inicio de sesión exitoso');
+        } catch (error) {
+            console.error('Error al iniciar sesión:', error);
+            alert('Credenciales incorrectas');
+        }
+    };
+
+    return (
+        <form onSubmit={handleSubmit}>
+            <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Correo electrónico"
+            />
+            <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Contraseña"
+            />
+            <button type="submit">Iniciar sesión</button>
+        </form>
+    );
+};
+
+export default Login;
+```
+2. **Autenticación Automática en Axios**: Configura un interceptor en Axios para agregar automáticamente el token JWT a las solicitudes:
+
+```javascript
+import axios from 'axios';
+
+const API = axios.create({
+    baseURL: 'http://localhost:8000/api/',
+});
+
+API.interceptors.request.use((config) => {
+    const token = localStorage.getItem('access');
+    if (token) {
+        config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+});
+
+export default API;
+```
+## 2. Integración con PayPal
+
+### A. Configuración del SDK de PayPal
+
+1. **Instalar el SDK en el Frontend**: Instala el paquete de PayPal:
+
+```bash
+npm install @paypal/react-paypal-js
+```
+2. **Configurar el Componente de Pago**: Crea un componente PaypalButton.js que permita realizar pagos:
+
+```javascript
+import React from 'react';
+import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
+
+const PaypalButton = ({ total }) => {
+    const handleApprove = (data, actions) => {
+        return actions.order.capture().then((details) => {
+            alert(`Pago realizado por ${details.payer.name.given_name}`);
+        });
+    };
+
+    return (
+        <PayPalScriptProvider
+            options={{ "client-id": "YOUR_PAYPAL_CLIENT_ID" }}
+        >
+            <PayPalButtons
+                createOrder={(data, actions) => {
+                    return actions.order.create({
+                        purchase_units: [
+                            {
+                                amount: {
+                                    value: total.toString(),
+                                },
+                            },
+                        ],
+                    });
+                }}
+                onApprove={handleApprove}
+            />
+        </PayPalScriptProvider>
+    );
+};
+
+export default PaypalButton;
+```
+3. **Actualizar la Página de Pedido**: Integra el botón de PayPal en la página de resumen del pedido (OrderPage.js):
+
+```javascript
+import React from 'react';
+import PaypalButton from '../components/PaypalButton';
+
+const OrderPage = ({ order }) => {
+    return (
+        <div>
+            <h2>Resumen del Pedido</h2>
+            <ul>
+                {order.productos.map((producto) => (
+                    <li key={producto.id}>
+                        {producto.nombre} - ${producto.precio}
+                    </li>
+                ))}
+            </ul>
+            <h3>Total: ${order.total}</h3>
+            <PaypalButton total={order.total} />
+        </div>
+    );
+};
+
+export default OrderPage;
+```
+## 3. Optimización de Flujo de Trabajo
+
+### A. Validaciones en Formularios
+
+  - Implementa validaciones en el frontend (con herramientas como **Formik** o **React Hook Form**) para asegurar que los formularios contengan datos correctos antes de enviarse.
+
+### B. Paginación en Listas de Productos
+
+  - Implementa la paginación en el backend utilizando **LimitOffsetPagination**:
+
+```python
+from rest_framework.pagination import LimitOffsetPagination
+
+class ProductoPagination(LimitOffsetPagination):
+    default_limit = 10
+    max_limit = 100
+```
+  - Configura la paginación en el frontend con estados que gestionen el desplazamiento entre páginas.
+
+### C. Optimización con Caching
+
+- Configura un sistema de caching en el backend utilizando Redis para mejorar el rendimiento de las solicitudes frecuentes.
+
+```bash
+pip install django-redis
+```
+En **settings.py**:
+
+```python
+CACHES = {
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': 'redis://127.0.0.1:6379/1',
+    }
+}
+```
+### D. Dockerización Completa
+
+- Asegúrate de que tanto el backend como el frontend estén correctamente empaquetados con sus dependencias para el despliegue. Puedes agregar un contenedor para Redis en el archivo **docker-compose.yml**.
+
+## 4. Despliegue en Producción
+
+### A. Configuración de Servidor
+
+- Usa NGINX como servidor proxy inverso para manejar las solicitudes HTTP y redirigirlas al backend y frontend.
+
+### B. SSL con Let's Encrypt
+
+- Configura certificados SSL para tu dominio utilizando Certbot.
+
+### C. Configuración de Base de Datos
+
+- Asegúrate de que la base de datos PostgreSQL esté alojada en un entorno seguro y optimizado para producción.
+:::

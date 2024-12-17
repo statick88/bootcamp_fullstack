@@ -8,7 +8,7 @@
 
 <meta name="description" content="Bootcamp de Desarrollo Web FullStack con Python, Django y React">
 
-<title>Fase 2: Configuración de Red y Contenedor para la Base de Datos – Bootcamp Desarrollo Web FullStack</title>
+<title>Fase 2: Diseño de la Arquitectura – Bootcamp Desarrollo Web FullStack</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -120,7 +86,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/Proyectos/3_funciones.html">Proyectos</a></li><li class="breadcrumb-item"><a href="../../unidades/Proyectos/2_tienda_virtual.html"><span class="chapter-title">Fase 2: Configuración de Red y Contenedor para la Base de Datos</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/Proyectos/3_funciones.html">Proyectos</a></li><li class="breadcrumb-item"><a href="../../unidades/Proyectos/2_tienda_virtual.html"><span class="chapter-title">Fase 2: Diseño de la Arquitectura</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -499,6 +465,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../unidades/Proyectos/1_app_cursos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sistema de Gestión de Cursos con Django y DRF</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../unidades/Proyectos/0_tienda_virtual.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tienda Virtual.</span></a>
   </div>
 </li>
@@ -509,7 +480,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../unidades/Proyectos/2_tienda_virtual.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Fase 2: Configuración de Red y Contenedor para la Base de Datos</span></a>
+  <a href="../../unidades/Proyectos/2_tienda_virtual.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Fase 2: Diseño de la Arquitectura</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -576,9 +547,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/Proyectos/3_funciones.html">Proyectos</a></li><li class="breadcrumb-item"><a href="../../unidades/Proyectos/2_tienda_virtual.html"><span class="chapter-title">Fase 2: Configuración de Red y Contenedor para la Base de Datos</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../unidades/Proyectos/3_funciones.html">Proyectos</a></li><li class="breadcrumb-item"><a href="../../unidades/Proyectos/2_tienda_virtual.html"><span class="chapter-title">Fase 2: Diseño de la Arquitectura</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Fase 2: Configuración de Red y Contenedor para la Base de Datos</span></h1>
+<h1 class="title"><span class="chapter-title">Fase 2: Diseño de la Arquitectura</span></h1>
 </div>
 
 
@@ -596,157 +567,168 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <div class="justify">
-<p>En esta fase, configuraremos la red de Docker, levantaremos el contenedor para PostgreSQL, y gestionaremos las variables de entorno de forma adecuada. También automatizaremos la creación de la red para la comunicación entre el backend y la base de datos, simplificando el proceso de configuración.</p>
-<section id="objetivos-de-la-fase" class="level2">
-<h2 class="anchored" data-anchor-id="objetivos-de-la-fase">Objetivos de la Fase</h2>
-<ol type="1">
-<li>Crear un archivo <strong>.gitignore</strong> y un archivo <strong>.dockerignore</strong> para evitar incluir archivos no necesarios.</li>
-<li>Configurar un archivo <strong>.env</strong> para gestionar las variables de entorno.</li>
-<li>Automatizar la creación de la red para la comunicación entre el backend y la base de datos.</li>
-<li>Configurar y levantar el contenedor de <strong>PostgreSQL</strong> utilizando Docker Compose.</li>
-<li>Verificar que la base de datos funciona correctamente y puede conectarse sin problemas.</li>
-</ol>
+<section id="arquitectura-general-del-sistema" class="level2">
+<h2 class="anchored" data-anchor-id="arquitectura-general-del-sistema">1. Arquitectura General del Sistema</h2>
+<p>La arquitectura del sistema se basará en un enfoque cliente-servidor, donde el cliente (frontend) interactúa con el servidor (backend) a través de una API RESTful. El backend se encargará de gestionar la lógica de negocio, la autenticación, el almacenamiento de datos y la comunicación con servicios externos como PayPal.</p>
 </section>
-<section id="paso-1-crear-los-archivos-.gitignore-y-.dockerignore" class="level2">
-<h2 class="anchored" data-anchor-id="paso-1-crear-los-archivos-.gitignore-y-.dockerignore">Paso 1: Crear los Archivos .gitignore y .dockerignore</h2>
-<p>Los archivos <strong>.gitignore</strong> y <strong>.dockerignore</strong> nos ayudarán a evitar que archivos innecesarios sean incluidos en el repositorio o en la imagen Docker.</p>
-<ol type="1">
-<li><strong>gitignore</strong>: Crea un archivo <strong>.gitignore</strong> en el directorio raíz del proyecto y añade las siguientes líneas:</li>
-</ol>
-<pre class=".gitignore"><code># Archivos de configuración de Docker
-.dockerignore
-
-# Archivos de entorno
-.env
-
-# Archivos generados por Docker
-docker-compose.override.yml
-
-# Directorios y archivos temporales de la aplicación
-node_modules/
-*.log
-*.pid
-
-# Archivos de Python (si es necesario)
-__pycache__/
-*.pyc</code></pre>
-<ol start="2" type="1">
-<li><strong>dockerignore</strong>: Crea un archivo <strong>.dockerignore</strong> en el directorio raíz y añade lo siguiente:</li>
-</ol>
-<pre class=".dockerignore"><code># Archivos y carpetas que no deben ser copiados a la imagen de Docker
-node_modules/
-*.log
-*.env
-.git
-.gitignore
-.dockerignore</code></pre>
-</section>
-<section id="paso-2-configurar-el-archivo-.env-para-variables-de-entorno" class="level2">
-<h2 class="anchored" data-anchor-id="paso-2-configurar-el-archivo-.env-para-variables-de-entorno">Paso 2: Configurar el Archivo .env para Variables de Entorno</h2>
-<p>Las variables de entorno como las credenciales de la base de datos deben mantenerse fuera del código fuente, por lo que se recomienda usar un archivo <strong>.env</strong> para gestionar esta información. Crea un archivo llamado <strong>.env</strong> en el directorio raíz y añade las siguientes líneas:</p>
-<pre class="env"><code>POSTGRES_USER=admin
-POSTGRES_PASSWORD=securepassword
-POSTGRES_DB=ecommerce
-DB_HOST=localhost
-DB_PORT=5432</code></pre>
-</section>
-<section id="paso-3-automatizar-la-creación-de-la-red-de-docker" class="level2">
-<h2 class="anchored" data-anchor-id="paso-3-automatizar-la-creación-de-la-red-de-docker">Paso 3: Automatizar la Creación de la Red de Docker</h2>
-<p>En lugar de crear la red manualmente, podemos automatizar la creación de la red en el archivo docker-compose.yml para simplificar la configuración.</p>
-<section id="estructura-del-archivo-docker-compose.yml-para-postgresql" class="level3">
-<h3 class="anchored" data-anchor-id="estructura-del-archivo-docker-compose.yml-para-postgresql">Estructura del archivo docker-compose.yml para PostgreSQL:</h3>
-<p>En el directorio project/db/, crea el archivo docker-compose.yml con el siguiente contenido. Ahora, no es necesario crear la red manualmente, ya que Docker Compose se encarga de esto automáticamente:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">db</span><span class="kw">:</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> postgres:14</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> postgres_container</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">restart</span><span class="kw">:</span><span class="at"> always</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">environment</span><span class="kw">:</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">POSTGRES_USER</span><span class="kw">:</span><span class="at"> ${POSTGRES_USER}</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">POSTGRES_PASSWORD</span><span class="kw">:</span><span class="at"> ${POSTGRES_PASSWORD}</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">POSTGRES_DB</span><span class="kw">:</span><span class="at"> ${POSTGRES_DB}</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> db_data:/var/lib/postgresql/data</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">networks</span><span class="kw">:</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> backend_network</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"5432:5432"</span><span class="co">  # Exponer puerto solo para pruebas iniciales</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="fu">volumes</span><span class="kw">:</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">db_data</span><span class="kw">:</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="fu">networks</span><span class="kw">:</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">backend_network</span><span class="kw">:</span></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">driver</span><span class="kw">:</span><span class="at"> bridge</span><span class="co">  # Se crea automáticamente si no existe</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="explicación" class="level3">
-<h3 class="anchored" data-anchor-id="explicación">Explicación:</h3>
+<section id="detalles-importantes" class="level2">
+<h2 class="anchored" data-anchor-id="detalles-importantes">Detalles importantes:</h2>
 <ul>
-<li><strong>environment</strong>: Las variables de entorno ahora se toman del archivo .env mediante la sintaxis <strong>${VARIABLE_NAME}</strong>.</li>
-<li><strong>networks</strong>: La red backend_network se configura automáticamente cuando se ejecuta <strong>docker-compose up</strong>, no es necesario crearla manualmente.</li>
-<li><strong>driver</strong>: Usamos el driver bridge para la red, lo cual es suficiente para la mayoría de los casos.</li>
+<li><p><strong>API RESTful</strong>: El backend proporcionará endpoints RESTful para interactuar con recursos como usuarios, productos, pedidos y pagos. Se detallará la estructura de las rutas y la respuesta esperada de cada uno de los endpoints (por ejemplo, GET /api/products/ para obtener la lista de productos).</p></li>
+<li><p><strong>Servicios Externos (PayPal)</strong>: La integración con PayPal será a través de su API RESTful. Las credenciales y detalles del procesamiento de pagos se manejarán con variables de entorno y secretos seguros.</p></li>
+</ul>
+</section>
+<section id="backend-django-con-django-rest-framework" class="level2">
+<h2 class="anchored" data-anchor-id="backend-django-con-django-rest-framework">2. Backend (Django con Django REST Framework)</h2>
+<section id="a.-estructura-del-proyecto" class="level3">
+<h3 class="anchored" data-anchor-id="a.-estructura-del-proyecto">A. Estructura del Proyecto:</h3>
+<p>La estructura del proyecto se organizará de la siguiente manera:</p>
+<pre class="plaintext"><code>backend/
+├── auth/
+│   ├── migrations/
+│   ├── models.py
+│   ├── serializers.py
+│   ├── views.py
+│   ├── tests/
+├── products/
+│   ├── migrations/
+│   ├── models.py
+│   ├── serializers.py
+│   ├── views.py
+│   ├── tests/
+├── orders/
+│   ├── migrations/
+│   ├── models.py
+│   ├── serializers.py
+│   ├── views.py
+│   ├── tests/
+├── settings.py
+├── urls.py
+├── wsgi.py
+├── requirements.txt
+└── .env</code></pre>
+</section>
+<section id="b.-tecnologías" class="level3">
+<h3 class="anchored" data-anchor-id="b.-tecnologías">B. Tecnologías:</h3>
+<ul>
+<li><strong>Django</strong>: Framework principal para la gestión del backend.</li>
+<li><strong>Django REST Framework (DRF)</strong>: Para la creación de APIs RESTful que interactúan con el frontend.</li>
+<li><strong>JWT (JSON Web Tokens)</strong>: Para la autenticación de usuarios basada en tokens. Implementaremos una política de Refresh Tokens para permitir la renovación de tokens sin que el usuario tenga que iniciar sesión constantemente.</li>
+<li><strong>PostgreSQL</strong>: Base de datos relacional para almacenar la información de los usuarios, productos y pedidos.</li>
+<li><strong>Redis</strong>: Para la gestión de caché, sesiones y optimización de consultas.</li>
+<li><strong>PayPal API</strong>: Para la integración de pagos. Los detalles de las credenciales de la API se almacenarán en archivos .env utilizando herramientas de seguridad como Vault para la gestión de secretos.</li>
+<li><strong>Validaciones</strong>: Implementaremos validaciones tanto en el frontend como en el backend para asegurar la integridad de los datos. El backend usará serializers en Django para validar los datos recibidos.</li>
+<li><strong>Cifrado de Contraseñas</strong>: Usaremos bcrypt para el cifrado de contraseñas y asegurarnos de que la seguridad de los usuarios esté garantizada.</li>
 </ul>
 </section>
 </section>
-<section id="paso-4-levantar-el-contenedor-de-la-base-de-datos" class="level2">
-<h2 class="anchored" data-anchor-id="paso-4-levantar-el-contenedor-de-la-base-de-datos">Paso 4: Levantar el Contenedor de la Base de Datos</h2>
-<p>Con todo configurado, ahora podemos levantar el contenedor de PostgreSQL.</p>
-<p>Entra en el directorio db y ejecuta el siguiente comando:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker-compose</span> up <span class="at">-d</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Verifica que el contenedor está corriendo correctamente:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> ps</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Deberías ver algo como esto:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">CONTAINER</span> ID   IMAGE        COMMAND                  ...     PORTS</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">abc123xyz</span>      postgres:14  <span class="st">"docker-entrypoint.s…"</span>  ...     0.0.0.0:5432-<span class="op">&gt;</span>5432/tcp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="frontend-react-con-vite" class="level2">
+<h2 class="anchored" data-anchor-id="frontend-react-con-vite">3. Frontend (React con Vite)</h2>
+<section id="a.-estructura-del-proyecto-1" class="level3">
+<h3 class="anchored" data-anchor-id="a.-estructura-del-proyecto-1">A. Estructura del Proyecto:</h3>
+<p>La estructura del frontend se organizará de la siguiente manera:</p>
+<pre class="plaintext"><code>frontend/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── services/
+│   ├── App.js
+│   ├── index.js
+│   ├── store/
+├── public/
+├── tailwind.config.js
+├── vite.config.js
+└── .env</code></pre>
 </section>
-<section id="paso-5-probar-la-base-de-datos" class="level2">
-<h2 class="anchored" data-anchor-id="paso-5-probar-la-base-de-datos">Paso 5: Probar la Base de Datos</h2>
-<p>Para verificar que la base de datos está funcionando correctamente, conéctate usando una herramienta como Visual Studio Code con la extensión de PostgreSQL o utilizando la línea de comandos.</p>
-<section id="conexión-usando-una-herramienta-de-administración" class="level3">
-<h3 class="anchored" data-anchor-id="conexión-usando-una-herramienta-de-administración">Conexión usando una Herramienta de Administración:</h3>
-<p>Conéctate a la base de datos utilizando las siguientes credenciales del archivo <strong>.env</strong>:</p>
+<section id="b.-tecnologías-1" class="level3">
+<h3 class="anchored" data-anchor-id="b.-tecnologías-1">B. Tecnologías:</h3>
 <ul>
-<li><strong>Host</strong>: localhost</li>
-<li><strong>Puerto</strong>: 5432</li>
-<li><strong>Usuario</strong>: admin</li>
-<li><strong>Contraseña</strong>: securepassword</li>
-<li><strong>Base de datos</strong>: ecommerce</li>
+<li><strong>React</strong>: Librería para la construcción de la interfaz de usuario.</li>
+<li><strong>Vite</strong>: Herramienta para la configuración rápida y eficiente de aplicaciones React.</li>
+<li><strong>TailwindCSS</strong>: Framework CSS para un diseño limpio y moderno.</li>
+<li><strong>Axios</strong>: Para hacer peticiones HTTP a la API del backend. Se incluirán mecanismos para manejar errores globalmente (por ejemplo, mostrando alertas de error si una petición falla).</li>
+<li><strong>React Router</strong>: Para la gestión de rutas en la aplicación de una sola página.</li>
+<li><strong>React Context / Redux</strong>: Usaremos React Context o Redux para la gestión de estado a nivel global, especialmente para manejar la autenticación de usuarios, productos y pedidos.</li>
+<li><strong>Optimización de Carga</strong>: Implementaremos Lazy Loading para componentes pesados y Code Splitting para mejorar el rendimiento y tiempo de carga del frontend.</li>
+<li><strong>Manejo de Errores</strong>: Se implementará un sistema global de manejo de errores, tanto en las peticiones HTTP (con Axios) como en la interfaz de usuario (con Toast Notifications o alertas).</li>
 </ul>
-<p>Ejecuta el siguiente comando para verificar que la base de datos está funcionando correctamente:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> version();</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="alternativa-línea-de-comandos" class="level3">
-<h3 class="anchored" data-anchor-id="alternativa-línea-de-comandos">Alternativa: Línea de Comandos</h3>
-<p>Puedes acceder directamente al contenedor y conectarte a la base de datos con:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> exec <span class="at">-it</span> postgres_container psql <span class="at">-U</span> admin <span class="at">-d</span> ecommerce</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="paso-6-validar-la-persistencia-de-datos" class="level3">
-<h3 class="anchored" data-anchor-id="paso-6-validar-la-persistencia-de-datos">Paso 6: Validar la Persistencia de Datos</h3>
-<p>Una vez levantado el contenedor, valida que los datos persisten cuando reinicias el contenedor.</p>
-<ol type="1">
-<li>Detén el contenedor con:</li>
-</ol>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker-compose</span> down</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="2" type="1">
-<li>Reinicia el contenedor con:</li>
-</ol>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker-compose</span> up <span class="at">-d</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="3" type="1">
-<li>Verifica que los datos de la base de datos siguen siendo los mismos después de reiniciar.</li>
-</ol>
 </section>
 </section>
-<section id="pruebas-finales" class="level1">
-<h1>Pruebas Finales</h1>
-<ol type="1">
-<li><p><strong>Conexión Externa</strong>: Si puedes conectarte a la base de datos usando herramientas externas o la línea de comandos, la configuración está correcta.</p></li>
-<li><p><strong>Posibles Errores y Soluciones</strong>:</p>
+<section id="integración-del-backend-y-frontend" class="level2">
+<h2 class="anchored" data-anchor-id="integración-del-backend-y-frontend">4. Integración del Backend y Frontend</h2>
+<section id="comunicación" class="level3">
+<h3 class="anchored" data-anchor-id="comunicación">Comunicación:</h3>
 <ul>
-<li><strong>Puerto en uso</strong>: Si el puerto 5432 ya está siendo utilizado por otro servicio, cambia el puerto en el archivo <strong>docker-compose.yml</strong>.</li>
-<li><strong>Variables incorrectas</strong>: Asegúrate de que las variables de entorno en el archivo .env estén configuradas correctamente.</li>
-<li><strong>Red no conectada</strong>: Si la red no está conectada, asegúrate de que Docker Compose la cree automáticamente.</li>
+<li>El frontend se comunicará con el backend a través de peticiones HTTP utilizando Axios para obtener datos y realizar acciones (CRUD) sobre los productos, pedidos, etc. Se asegurará de que todas las peticiones que requieren autenticación incluyan el JWT en las cabeceras.</li>
+</ul>
+</section>
+<section id="autenticación" class="level3">
+<h3 class="anchored" data-anchor-id="autenticación">Autenticación:</h3>
+<ul>
+<li>La autenticación de los usuarios se manejará mediante JWT. El token de acceso se incluirá en las cabeceras de las peticiones HTTP que requieran autenticación. También se implementará un sistema de Refresh Tokens para renovar el token de acceso sin necesidad de que el usuario vuelva a iniciar sesión.</li>
+</ul>
+</section>
+<section id="manejo-de-errores" class="level3">
+<h3 class="anchored" data-anchor-id="manejo-de-errores">Manejo de Errores:</h3>
+<ul>
+<li>Se implementarán manejadores de errores tanto en el backend como en el frontend. En el backend, usaremos excepciones personalizadas para manejar errores en los endpoints de la API, mientras que en el frontend se mostrarán mensajes adecuados de error usando un sistema de notificaciones.</li>
+</ul>
+</section>
+</section>
+<section id="base-de-datos-postgresql" class="level2">
+<h2 class="anchored" data-anchor-id="base-de-datos-postgresql">5. Base de Datos (PostgreSQL)</h2>
+<ul>
+<li><p><strong>Modelo de Datos</strong>: Los modelos de datos se organizarán en tablas de usuarios, productos y pedidos.</p>
+<ul>
+<li><strong>Usuarios</strong>: Almacenará información sobre clientes y administradores. Incluye un campo de rol para diferenciarlos.</li>
+<li><strong>Productos</strong>: Almacenará la información de los productos (nombre, precio, inventario, imágenes, descripción, etc.).</li>
+<li><strong>Pedidos</strong>: Almacenará los detalles de los pedidos realizados por los clientes (productos, cantidades, fecha de compra, total, estado de pago).</li>
 </ul></li>
-</ol>
+</ul>
+<section id="relacionando-los-modelos" class="level3">
+<h3 class="anchored" data-anchor-id="relacionando-los-modelos">Relacionando los Modelos:</h3>
+<ul>
+<li>Se establecerán relaciones adecuadas entre los modelos, como Foreign Keys entre pedidos y productos, y Many-to-Many entre productos y categorías, si es necesario.</li>
+</ul>
+</section>
+</section>
+<section id="infraestructura-docker-y-contenedores" class="level2">
+<h2 class="anchored" data-anchor-id="infraestructura-docker-y-contenedores">6. Infraestructura (Docker y Contenedores)</h2>
+<ul>
+<li><p><strong>Docker Compose</strong>: Para orquestar los contenedores del backend, frontend y base de datos.</p>
+<ul>
+<li><strong>Contenedor Backend</strong>: Contendrá la aplicación Django, configurada para interactuar con PostgreSQL y Redis.</li>
+<li><strong>Contenedor Frontend</strong>: Contendrá la aplicación React, configurada para comunicarse con la API Django.</li>
+<li><strong>Contenedor Base de Datos</strong>: Contendrá PostgreSQL.</li>
+<li><strong>Contenedor de Cache</strong>: Contendrá Redis.</li>
+</ul></li>
+<li><p><strong>Variables de Entorno</strong>: Los detalles de configuración (como credenciales de base de datos, claves de API) se almacenarán en archivos .env para mantener la seguridad y facilitar la configuración.</p></li>
+<li><p>Implementaremos un archivo .env.example para que los desarrolladores puedan copiarlo y configurar sus entornos locales.</p></li>
+</ul>
+</section>
+<section id="despliegue-railway-para-backend-vercel-para-frontend" class="level2">
+<h2 class="anchored" data-anchor-id="despliegue-railway-para-backend-vercel-para-frontend">7. Despliegue (Railway para Backend, Vercel para Frontend)</h2>
+<ul>
+<li><strong>Backend en Railway</strong>: El backend se desplegará en Railway, donde se gestionarán las bases de datos y la API.</li>
+<li><strong>Frontend en Vercel</strong>: El frontend se desplegará en Vercel para un acceso rápido y escalabilidad automática.</li>
+</ul>
+<section id="escalabilidad" class="level3">
+<h3 class="anchored" data-anchor-id="escalabilidad">Escalabilidad:</h3>
+<ul>
+<li>A medida que el proyecto crezca, podremos escalar el backend en Railway o cambiar a un servicio como AWS o Heroku si es necesario.</li>
+<li>Vercel ofrece escalabilidad automática, pero también es importante evaluar el uso de un CDN para optimizar la entrega de contenido estático en el frontend.</li>
+</ul>
+</section>
+</section>
+<section id="seguridad-y-buenas-prácticas" class="level2">
+<h2 class="anchored" data-anchor-id="seguridad-y-buenas-prácticas">8. Seguridad y Buenas Prácticas</h2>
+<ul>
+<li><strong>Autenticación de Usuarios</strong>: Implementación de JWT para la autenticación de usuarios, con roles de cliente y administrador. La política de renovación de tokens mediante Refresh Tokens será implementada.</li>
+<li><strong>Seguridad en los Pagos</strong>: Integración con PayPal para procesar pagos de manera segura. Las credenciales y claves de la API de PayPal se mantendrán seguras mediante variables de entorno.</li>
+<li><strong>Validación de Datos</strong>: Uso de validaciones tanto en el frontend como en el backend para garantizar la integridad de los datos.</li>
+<li><strong>Cifrado</strong>: Cifrado de contraseñas en el backend utilizando bcrypt.</li>
+<li><strong>Manejo de Errores y Logs</strong>: Se configurarán registros (logs) detallados para facilitar la detección de errores y auditoría.</li>
+</ul>
 </section>
 </div>
 

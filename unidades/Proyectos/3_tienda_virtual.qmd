@@ -1,205 +1,327 @@
 :::{.justify}
-# Fase 3: Configuración del Contenedor para el Backend
 
-En esta fase, configuraremos el backend utilizando Django. Lo ejecutaremos dentro de un contenedor Docker y lo conectaremos con la base de datos PostgreSQL creada en la fase anterior. Aseguraremos que ambos contenedores puedan comunicarse mediante la red **backend_network**.
+# Fase 3. Desarrollo de la Aplicación
 
-## Paso 1: Estructura de Archivos
+En esta fase, vamos a estructurar cómo se desarrollarán los distintos módulos del sistema, tanto en el backend como en el frontend, para implementar las funcionalidades esenciales del proyecto.
 
-Crea la siguiente estructura en tu proyecto:
+## 1. Desarrollo del Backend (Django con Django REST Framework)
 
-```bash
-project/
-│
-├── backend/
-│   ├── Dockerfile
-│   ├── docker-compose.yml
-│   ├── .env
-│   ├── requirements.txt
-│   ├── manage.py  # Se generará automáticamente al crear el proyecto Django
-│   ├── backend/   # Carpeta principal del proyecto Django
-│   │   ├── settings.py
-│   │   ├── urls.py
-│   │   └── wsgi.py
-│
-└── db/
-    └── docker-compose.yml
-```
+### A. Configuración Inicial del Proyecto
 
-## Paso 2: Configurar el Archivo .env
-
-En la carpeta **backend/**, crea un archivo **.env** con las siguientes variables de entorno:
-
-```plaintext
-DJANGO_SECRET_KEY=your_secret_key_here
-DJANGO_DEBUG=True
-POSTGRES_USER=admin
-POSTGRES_PASSWORD=securepassword
-POSTGRES_DB=ecommerce
-POSTGRES_HOST=db
-POSTGRES_PORT=5432
-```
-### Explicación:
-
-- **DJANGO_SECRET_KEY**: Llave secreta para el backend.
-- **DJANGO_DEBUG**: Configuración para habilitar el modo desarrollo.
-- **POSTGRES_\***: Variables necesarias para conectar Django con PostgreSQL.
-
-## Paso 3: Crear el Archivo requirements.txt
-
-Crea un archivo **requirements.txt** con las dependencias necesarias para el proyecto Django:
-
-```plaintext
-Django==4.2
-djangorestframework
-psycopg2-binary
-```
-
-### Explicación:
-
-- **Django**: Framework principal para el backend.
-- **djangorestframework**: Extensión de Django para crear APIs REST.
-- **psycopg2-binary**: Cliente para conectar Django con PostgreSQL.
-
-## Paso 4: Crear el Archivo Dockerfile
-
-En la carpeta **backend/**, crea el archivo Dockerfile para construir la imagen de Docker del backend.
-
-```dockerfile
-# Usamos la imagen base de Python 3.10
-FROM python:3.10-slim
-
-# Establecemos el directorio de trabajo en el contenedor
-WORKDIR /app
-
-# Copiamos los archivos necesarios al contenedor
-COPY requirements.txt requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copiamos el código fuente
-COPY . .
-
-# Exponemos el puerto 8000 para el servidor de desarrollo
-EXPOSE 8000
-
-# Comando por defecto para ejecutar el servidor
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
-```
-### Explicación:
-
-- **FROM python:3.10-slim**: Utilizamos una imagen ligera de Python 3.10.
-- **WORKDIR /app**: Establece la carpeta de trabajo dentro del contenedor.
-- **COPY requirements.txt**: Copiamos las dependencias al contenedor para instalarlas.
-- **CMD**: Comando que ejecutará el servidor de desarrollo de Django.
-
-## Paso 5: Configurar **docker-compose.yml** para el Backend
-
-En la carpeta backend/, crea un archivo docker-compose.yml para definir el contenedor del backend.
-
-```yaml
-services:
-  backend:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: django_backend
-    environment:
-      - DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY}
-      - DJANGO_DEBUG=${DJANGO_DEBUG}
-      - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-      - POSTGRES_DB=${POSTGRES_DB}
-      - POSTGRES_HOST=${POSTGRES_HOST}
-      - POSTGRES_PORT=${POSTGRES_PORT}
-    volumes:
-      - .:/app
-    ports:
-      - "8000:8000"
-    networks:
-      - backend_network
-
-networks:
-  backend_network:
-    external: true
-```
-
-### Explicación:
-
-- **build**: Indica cómo construir la imagen del contenedor.
-- **environment**: Pasa las variables de entorno al contenedor.
-- **volumes**: Monta el código local para facilitar el desarrollo.
-- **ports**: Expone el puerto 8000 para acceder al servidor de desarrollo.
-- **networks**: Conecta el contenedor a la red backend_network.
-
-## Paso 6: Crear y Configurar el Proyecto Django
-
-1. Inicia el contenedor del backend:
+1 **Instalación de Dependencias**: Instalaremos las dependencias necesarias en el entorno virtual de Python.
 
 ```bash
-docker-compose up -d
+pip install django djangorestframework psycopg2-binary django-environ djangorestframework-jwt redis
 ```
-2. Accede al contenedor:
+2. Configuración del Proyecto Django:
 
-```bash
-docker exec -it django_backend bash
-```
-3. Dentro del contenedor, crea el proyecto Django:
+    - Crear el proyecto Django con el comando:
 
 ```bash
 django-admin startproject backend .
 ```
-4. Modifica el archivo **settings.py** en **backend/settings.py**:
 
-- Reemplaza la configuración de la base de datos con lo siguiente:
+   - Crear las aplicaciones para autenticación, productos y pedidos:
+
+```bash
+python manage.py startapp auth
+python manage.py startapp products
+python manage.py startapp orders
+```
+   - Configuración de la Base de Datos:
+
+3. En el archivo **settings.py**, configura la conexión a PostgreSQL utilizando el paquete **django-environ** para gestionar variables de entorno. Asegúrate de tener un archivo **.env** con las credenciales necesarias:
 
 ```python
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('POSTGRES_DB'),
-        'USER': os.getenv('POSTGRES_USER'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-        'HOST': os.getenv('POSTGRES_HOST'),
-        'PORT': os.getenv('POSTGRES_PORT'),
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': os.environ.get('DB_PORT', 5432),
     }
 }
 ```
-- Agrega al final del archivo:
+Y en el archivo **.env**, agrega las variables de entorno:
+
+```makefile
+DB_NAME=mydatabase
+DB_USER=myuser
+DB_PASSWORD=mypassword
+DB_HOST=localhost
+DB_PORT=5432
+```
+### B. Implementación de Modelos
+
+1. **Modelo de Usuario**:
+
+    - En el archivo **auth/models.py**, crea un modelo de usuario si decides personalizarlo (si no, puedes usar el modelo **User** por defecto de Django).
+
+2. **Modelo de Producto**:
+
+    - En **products/models.py**, define el modelo para los productos con campos como **nombre**, **precio**, **inventario**, **imagen**, etc.
 
 ```python
-import os
-
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
-DEBUG = os.getenv('DJANGO_DEBUG') == 'True'
+class Producto(models.Model):
+    nombre = models.CharField(max_length=255)
+    precio = models.DecimalField(max_digits=10, decimal_places=2)
+    descripcion = models.TextField()
+    inventario = models.IntegerField()
+    imagen = models.ImageField(upload_to='productos/')
 ```
-## Paso 7: Migrar la Base de Datos
+3. **Modelo de Pedido**:
 
-Dentro del contenedor del backend, ejecuta:
+En **orders/models.py**, crea un modelo para los pedidos, con campos como **usuario**, **productos**, **fecha**, **estado**, etc.
+
+```python
+class Pedido(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    productos = models.ManyToManyField(Producto)
+    fecha = models.DateTimeField(auto_now_add=True)
+    estado = models.CharField(max_length=50)
+    total = models.DecimalField(max_digits=10, decimal_places=2)
+```
+### C. Serializadores
+
+En el backend, usarás **serializers** para transformar los datos entre los modelos y las respuestas JSON:
+
+1. Serializador de Producto (en **products/serializers.py**):
+
+```python
+from rest_framework import serializers
+from .models import Producto
+
+class ProductoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Producto
+        fields = ['id', 'nombre', 'precio', 'descripcion', 'inventario', 'imagen']
+```
+2. Serializador de Pedido (en **orders/serializers.py**):
+
+```python
+from rest_framework import serializers
+from .models import Pedido
+from products.serializers import ProductoSerializer
+
+class PedidoSerializer(serializers.ModelSerializer):
+    productos = ProductoSerializer(many=True)
+
+    class Meta:
+        model = Pedido
+        fields = ['id', 'usuario', 'productos', 'fecha', 'estado', 'total']
+```
+### D. Vistas y Rutas
+
+1. Vistas para el Producto (en **products/views.py**):
+
+```python
+from rest_framework import viewsets
+from .models import Producto
+from .serializers import ProductoSerializer
+
+class ProductoViewSet(viewsets.ModelViewSet):
+    queryset = Producto.objects.all()
+    serializer_class = ProductoSerializer
+```
+2. Vistas para el Pedido (en **orders/views.py**):
+
+```python
+from rest_framework import viewsets
+from .models import Pedido
+from .serializers import PedidoSerializer
+
+class PedidoViewSet(viewsets.ModelViewSet):
+    queryset = Pedido.objects.all()
+    serializer_class = PedidoSerializer
+```
+3. Rutas (en **urls.py**):
+
+```python
+from django.urls import include, path
+from rest_framework.routers import DefaultRouter
+from products.views import ProductoViewSet
+from orders.views import PedidoViewSet
+
+router = DefaultRouter()
+router.register(r'productos', ProductoViewSet)
+router.register(r'pedidos', PedidoViewSet)
+
+urlpatterns = [
+    path('api/', include(router.urls)),
+]
+```
+### E. Autenticación (JWT)
+
+1. **Configuración de JWT**:
+
+  - Instala el paquete **djangorestframework-jwt** para la autenticación con JWT.
+```bash
+pip install djangorestframework-jwt
+````
+  - En **settings.py**, agrega la configuración para JWT:
+
+```python
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+}
+```
+2. **Vistas de Login/Logout**:
+
+  - Crea vistas para manejar el login y logout de los usuarios, utilizando JWT.
+
+## 2. Desarrollo del Frontend (React con Vite)
+
+### A. Configuración Inicial del Proyecto
+
+1. Crear el Proyecto React con Vite:
 
 ```bash
-python manage.py migrate
+npm create vite@latest frontend --template react
+cd frontend
+npm install
 ```
-Esto conectará Django a PostgreSQL y aplicará las migraciones iniciales.
-
-## Paso 8: Probar el Backend
-
-1. Inicia el servidor de desarrollo dentro del contenedor:
+2. Instalar Dependencias:
 
 ```bash
-python manage.py runserver 0.0.0.0:8000
+npm install axios react-router-dom
 ```
-2. Accede a <http://localhost:8000> en tu navegador. Deberías ver la página inicial de Django.
+### B. Estructura de Archivos
 
-## Pruebas Finales
+En el frontend, la estructura del proyecto será la siguiente:
 
-1. Asegúrate de que el backend puede comunicarse con la base de datos:
-
-  - Crea un modelo simple en **backend/models.py**.
-  - Aplica las migraciones.
-  - Valida que el modelo se refleje en la base de datos.
-
-2.  Revisa los logs del contenedor para identificar posibles errores:
-
-```bash
-docker logs django_backend
+```plaintext
+frontend/
+├── src/
+│   ├── components/
+│   │   ├── Header.js
+│   │   └── ProductList.js
+│   ├── pages/
+│   │   ├── HomePage.js
+│   │   └── ProductPage.js
+│   ├── services/
+│   │   └── api.js
+│   ├── App.js
+│   ├── index.js
+│   └── store/
+├── public/
+├── tailwind.config.js
+├── vite.config.js
+└── .env
 ```
-:::
+### C. Lógica de Peticiones con Axios
+
+1. Servicio API (en **services/api.js**):
+
+```javascript
+import axios from 'axios';
+
+const API_URL = 'http://localhost:8000/api/';
+
+export const getProductos = async () => {
+    const response = await axios.get(`${API_URL}productos/`);
+    return response.data;
+};
+
+export const getPedido = async (id) => {
+    const response = await axios.get(`${API_URL}pedidos/${id}/`);
+    return response.data;
+};
+```
+2. Componente de Lista de Productos (en **components/ProductList.js**):
+
+```javascript
+import React, { useEffect, useState } from 'react';
+import { getProductos } from '../services/api';
+
+const ProductList = () => {
+    const [productos, setProductos] = useState([]);
+
+    useEffect(() => {
+        const fetchProductos = async () => {
+            const data = await getProductos();
+            setProductos(data);
+        };
+
+        fetchProductos();
+    }, []);
+
+    return (
+        <div>
+            <h2>Productos</h2>
+            <ul>
+                {productos.map((producto) => (
+                    <li key={producto.id}>{producto.nombre}</li>
+                ))}
+            </ul>
+        </div>
+    );
+};
+
+export default ProductList;
+```
+## 3. Despliegue y Configuración de Docker
+
+### A. Configuración de Docker
+
+1. **Dockerfile para el Backend**:
+
+```Dockerfile
+# Dockerfile para Backend
+FROM python:3.9-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+
+RUN pip install -r requirements.txt
+
+COPY . .
+
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+```
+2. **Dockerfile para el Frontend**:
+
+```Dockerfile
+# Dockerfile para Frontend
+FROM node:16
+
+WORKDIR /app
+
+COPY package.json .
+COPY package-lock.json .
+
+RUN npm install
+
+COPY . .
+
+CMD ["npm", "run", "dev"]
+```
+3. **docker-compose.yml**:
+
+```yaml
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydatabase
+```

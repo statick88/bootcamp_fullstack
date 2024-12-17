@@ -1,79 +1,257 @@
-# Ejercicios Python - Nivel 1
+# Ejercicios Python - Nivel Intermedio (POO)
 
-## Ejercicio 1
+Ejercicio 1
 
-- Crear un programa que muestre por pantalla la cadena "Hola Mundo!".
-
-<details>
-<summary>Solución</summary>
-
+Crear una clase Persona con atributos nombre y edad. Implementar un método que devuelva si la persona es mayor de edad.
+<details> <summary>Solución</summary>
 ```python
-print("Hola Mundo!")
+class Persona:
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+
+    def es_mayor_de_edad(self):
+        return self.edad >= 18
+```
+# Ejemplo de uso
+```python
+persona = Persona("Juan", 20)
+print(persona.es_mayor_de_edad())  # True
 ```
 </details>
 
-## Ejercicio 2
+Ejercicio 2
 
-- Crear un programa que muestre por pantalla tu nombre.
-
-<details>
-<summary>Solución</summary>
-
+Crear una clase Círculo con un atributo radio. Implementar métodos para calcular el área y el perímetro.
+<details> <summary>Solución</summary>
 ```python
-print("Tu nombre")
+import math
+
+class Circulo:
+    def __init__(self, radio):
+        self.radio = radio
+
+    def area(self):
+        return math.pi * self.radio ** 2
+
+    def perimetro(self):
+        return 2 * math.pi * self.radio
+```
+# Ejemplo de uso
+```python
+circulo = Circulo(5)
+print(circulo.area())       # 78.54...
+print(circulo.perimetro())  # 31.41...
 ```
 </details>
 
-## Ejercicio 3
+Ejercicio 3
 
-- Crear un programa que pida al usuario que introduzca su nombre y muestre por pantalla la cadena "Hola", seguido del nombre y un signo de exclamación.
+Crear una clase Rectángulo con atributos base y altura. Implementar un método que determine si es un cuadrado.
 
-<details>
-<summary>Solución</summary>
-
+<details> <summary>Solución</summary>
 ```python
-nombre = input("Introduce tu nombre: ")
-print("Hola", nombre, "!")
+class Rectangulo:
+    def __init__(self, base, altura):
+        self.base = base
+        self.altura = altura
+
+    def es_cuadrado(self):
+        return self.base == self.altura
 ```
-
-Otra forma de hacerlo:
-
+# Ejemplo de uso
 ```python
-nombre = input("Introduce tu nombre: ")
-print(f"Hola {nombre}!")
+rectangulo = Rectangulo(5, 5)
+print(rectangulo.es_cuadrado())  # True
 ```
-
 </details>
 
-## Ejercicio 4
+Ejercicio 4
 
-- Crear un programa que pregunte al usuario por el número de horas trabajadas y el coste por hora. Después debe mostrar por pantalla la paga que le corresponde.
+Crear una clase Vehículo con atributos marca y modelo. Crear una clase hija Coche con un atributo adicional velocidad_maxima.
 
-<details>
-<summary>Solución</summary>
-
+<details> <summary>Solución</summary>
 ```python
-horas = float(input("Introduce tus horas de trabajo: "))
-coste = float(input("Introduce lo que cobras por hora: "))
-paga = horas * coste
-print("Tu paga es de", paga)
-```
+class Vehiculo:
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
 
+class Coche(Vehiculo):
+    def __init__(self, marca, modelo, velocidad_maxima):
+        super().__init__(marca, modelo)
+        self.velocidad_maxima = velocidad_maxima
+```
+# Ejemplo de uso
+```python
+coche = Coche("Toyota", "Corolla", 180)
+print(coche.marca)             # Toyota
+print(coche.velocidad_maxima)  # 180
+```
 </details>
 
-## Ejercicio 5
+Ejercicio 5
 
-- Crear un programa que pida al usuario una cantidad de dolares, una tasa de interés y un número de años. Mostrar por pantalla en cuanto se habrá convertido el capital inicial transcurridos esos años si cada año se aplica la tasa de interés introducida.
-- Formula del interés compuesto: Cn = C * (1 + x/100) ^ n
+Crear una clase CuentaBancaria con métodos para depositar, retirar y consultar el saldo.
 
-<details>
-<summary>Solución</summary>
-
+<details> <summary>Solución</summary>
 ```python
-cantidad = float(input("¿Cantidad a invertir? "))
-interes = float(input("¿Interés porcentual anual? "))
-años = int(input("¿Años?"))
-print("Capital final: ", round(cantidad * (interes / 100 + 1) ** años, 2))
-```
+class CuentaBancaria:
+    def __init__(self, saldo_inicial=0):
+        self.saldo = saldo_inicial
 
+    def depositar(self, cantidad):
+        self.saldo += cantidad
+
+    def retirar(self, cantidad):
+        if cantidad <= self.saldo:
+            self.saldo -= cantidad
+        else:
+            print("Fondos insuficientes.")
+
+    def consultar_saldo(self):
+        return self.saldo
+```
+# Ejemplo de uso
+```python
+cuenta = CuentaBancaria(100)
+cuenta.depositar(50)
+cuenta.retirar(30)
+print(cuenta.consultar_saldo())  # 120
+```
+</details>
+
+Ejercicio 6
+
+Crear una clase Empleado con atributos nombre y salario. Implementar un método que calcule el salario anual.
+
+<details> <summary>Solución</summary>
+```python
+class Empleado:
+    def __init__(self, nombre, salario):
+        self.nombre = nombre
+        self.salario = salario
+
+    def salario_anual(self):
+        return self.salario * 12
+```
+# Ejemplo de uso
+```python
+empleado = Empleado("Ana", 1500)
+print(empleado.salario_anual())  # 18000
+```
+</details>
+
+Ejercicio 7
+
+Crear una clase Animal con un método hablar. Crear subclases como Perro y Gato que implementen el método hablar.
+
+<details> <summary>Solución</summary>
+```python
+class Animal:
+    def hablar(self):
+        raise NotImplementedError("Este método debe ser implementado por la subclase.")
+
+class Perro(Animal):
+    def hablar(self):
+        return "Guau"
+
+class Gato(Animal):
+    def hablar(self):
+        return "Miau"
+```
+# Ejemplo de uso
+```python
+perro = Perro()
+gato = Gato()
+print(perro.hablar())  # Guau
+print(gato.hablar())   # Miau
+```
+</details>
+
+Ejercicio 8
+
+Crear una clase Tienda que gestione un inventario. Implementar métodos para agregar, eliminar y mostrar productos.
+
+<details> <summary>Solución</summary>
+```python
+class Tienda:
+    def __init__(self):
+        self.inventario = {}
+
+    def agregar_producto(self, producto, cantidad):
+        if producto in self.inventario:
+            self.inventario[producto] += cantidad
+        else:
+            self.inventario[producto] = cantidad
+
+    def eliminar_producto(self, producto):
+        if producto in self.inventario:
+            del self.inventario[producto]
+
+    def mostrar_inventario(self):
+        return self.inventario
+```
+# Ejemplo de uso
+```python
+tienda = Tienda()
+tienda.agregar_producto("Manzanas", 10)
+tienda.agregar_producto("Peras", 5)
+tienda.eliminar_producto("Peras")
+print(tienda.mostrar_inventario())  # {'Manzanas': 10}
+```
+</details>
+
+Ejercicio 9
+
+Crear una clase Fracción con atributos numerador y denominador. Implementar un método para sumar dos fracciones.
+
+<details> <summary>Solución</summary>
+```python
+class Fraccion:
+    def __init__(self, numerador, denominador):
+        self.numerador = numerador
+        self.denominador = denominador
+
+    def sumar(self, otra):
+        nuevo_num = self.numerador * otra.denominador + otra.numerador * self.denominador
+        nuevo_den = self.denominador * otra.denominador
+        return Fraccion(nuevo_num, nuevo_den)
+
+    def __str__(self):
+        return f"{self.numerador}/{self.denominador}"
+```
+# Ejemplo de uso
+```python
+f1 = Fraccion(1, 2)
+f2 = Fraccion(1, 3)
+resultado = f1.sumar(f2)
+print(resultado)  # 5/6
+```
+</details>
+
+Ejercicio 10
+
+Crear una clase Libro que contenga un atributo autores como una lista. Implementar un método para agregar y listar los autores.
+
+<details> <summary>Solución</summary>
+```python
+class Libro:
+    def __init__(self, titulo):
+        self.titulo = titulo
+        self.autores = []
+
+    def agregar_autor(self, autor):
+        self.autores.append(autor)
+
+    def listar_autores(self):
+        return self.autores
+```
+# Ejemplo de uso
+```python
+libro = Libro("Python Intermedio")
+libro.agregar_autor("Autor 1")
+libro.agregar_autor("Autor 2")
+print(libro.listar_autores())  # ['Autor 1', 'Autor 2']
+```
 </details>

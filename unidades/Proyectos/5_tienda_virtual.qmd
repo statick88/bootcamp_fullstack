@@ -1,0 +1,214 @@
+:::{.justify}
+
+# Fase 5: Configuración para Despliegue y Pruebas E2E
+
+En esta fase, vamos a preparar el proyecto para ser desplegado en un entorno de producción y agregar pruebas E2E (end-to-end) para garantizar que el sistema funcione correctamente desde la perspectiva del usuario final.
+
+## 1. Configuración del Entorno de Producción
+
+### A. Configuración del Servidor con NGINX y Gunicorn
+
+1. **Instalar NGINX y Gunicorn**: En el servidor de producción, instala las herramientas necesarias:
+
+```bash
+sudo apt update
+sudo apt install nginx python3-pip
+pip install gunicorn
+```
+2. **Configurar Gunicorn**: Crea un archivo **gunicorn.service** para iniciar Gunicorn como un servicio de sistema:
+
+```bash
+sudo nano /etc/systemd/system/gunicorn.service
+```
+Contenido del archivo:
+
+```ini
+[Unit]
+Description=gunicorn daemon
+After=network.target
+
+[Service]
+User=your_user
+Group=www-data
+WorkingDirectory=/path/to/your/project
+ExecStart=/usr/bin/gunicorn --workers 3 --bind unix:/path/to/your/project.sock your_project.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
+```
+Reinicia y habilita el servicio:
+
+```bash
+sudo systemctl start gunicorn
+sudo systemctl enable gunicorn
+```
+3. **Configurar NGINX**: Crea un archivo de configuración en **/etc/nginx/sites-available/your_project**:
+
+```nginx
+server {
+    listen 80;
+    server_name your_domain.com www.your_domain.com;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/ {
+        root /path/to/your/project;
+    }
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/path/to/your/project.sock;
+    }
+}
+```
+Habilita el archivo de configuración:
+
+```bash
+sudo ln -s /etc/nginx/sites-available/your_project /etc/nginx/sites-enabled
+sudo nginx -t
+sudo systemctl restart nginx
+```
+### B. Configurar Certificados SSL con Let's Encrypt
+
+1. **Instalar Certbot**: Instala Certbot y su plugin para NGINX:
+
+```bash
+sudo apt install certbot python3-certbot-nginx
+```
+2. **Obtener Certificados SSL**: Ejecuta Certbot para tu dominio:
+
+```bash
+sudo certbot --nginx -d your_domain.com -d www.your_domain.com
+```
+3. **Renovación Automática**: Agrega Certbot al cron para renovar automáticamente los certificados:
+
+```bash
+sudo certbot renew --dry-run
+```
+## 2. Pruebas E2E con Cypress
+
+### A. Instalación de Cypress
+
+1. Instalar Cypress en el Frontend: Desde el directorio del frontend, instala Cypress:
+
+```bash
+npm install cypress --save-dev
+```
+2. **Inicializar Cypress**: Ejecuta el siguiente comando para crear la configuración básica de Cypress:
+
+```bash
+npx cypress open
+```
+### B. Crear Pruebas E2E
+
+1. **Configuración del Archivo de Pruebas**: Crea un archivo de prueba, por ejemplo, **cypress/e2e/login.cy.js**:
+
+```javascript
+describe('Pruebas de Autenticación', () => {
+    it('El usuario puede iniciar sesión correctamente', () => {
+        cy.visit('http://localhost:3000/login');
+        cy.get('input[type="email"]').type('usuario@example.com');
+        cy.get('input[type="password"]').type('contraseña123');
+        cy.get('button[type="submit"]').click();
+        cy.url().should('include', '/dashboard');
+    });
+
+    it('El usuario recibe un error con credenciales incorrectas', () => {
+        cy.visit('http://localhost:3000/login');
+        cy.get('input[type="email"]').type('usuario@example.com');
+        cy.get('input[type="password"]').type('contraseñaIncorrecta');
+        cy.get('button[type="submit"]').click();
+        cy.contains('Credenciales incorrectas').should('be.visible');
+    });
+});
+```
+Ejecutar Pruebas: Lanza las pruebas con:
+
+```bash
+npx cypress run
+```
+### C. Pruebas para el Flujo Completo
+
+1. **Simulación de un Pedido**: Crea pruebas para simular el flujo completo, desde agregar productos al carrito hasta realizar el pago:
+
+```javascript
+describe('Flujo Completo de Pedido', () => {
+    it('El usuario puede realizar un pedido', () => {
+        cy.visit('http://localhost:3000/');
+        cy.get('.producto').first().click();
+        cy.get('button.agregar-al-carrito').click();
+        cy.get('button.ver-carrito').click();
+        cy.get('button.proceder-al-pago').click();
+        cy.get('input[type="email"]').type('usuario@example.com');
+        cy.get('input[type="password"]').type('contraseña123');
+        cy.get('button[type="submit"]').click();
+        cy.contains('Pago realizado con éxito').should('be.visible');
+    });
+});
+```
+## 3. Dockerización Completa
+
+### A. Actualización del **docker-compose.yml**
+
+Incluye contenedores para:
+
+- Backend
+- Frontend
+- Redis
+- Base de datos PostgreSQL
+- NGINX
+
+Ejemplo de configuración para **docker-compose.yml**:
+
+```yaml
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: your_db
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:6
+    ports:
+      - "6379:6379"
+
+  backend:
+    build:
+      context: ./backend
+    command: gunicorn your_project.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - redis
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - backend
+      - frontend
+
+volumes:
+  db_data:
+```
+:::

@@ -1,171 +1,145 @@
 :::{.justify}
-# Fase 2: Configuración de Red y Contenedor para la Base de Datos
 
-En esta fase, configuraremos la red de Docker, levantaremos el contenedor para PostgreSQL, y gestionaremos las variables de entorno de forma adecuada. También automatizaremos la creación de la red para la comunicación entre el backend y la base de datos, simplificando el proceso de configuración.
+# Fase 2: Diseño de la Arquitectura
 
-## Objetivos de la Fase
+## 1. Arquitectura General del Sistema
 
-1. Crear un archivo **.gitignore** y un archivo **.dockerignore** para evitar incluir archivos no necesarios.
-2. Configurar un archivo **.env** para gestionar las variables de entorno.
-3. Automatizar la creación de la red para la comunicación entre el backend y la base de datos.
-4. Configurar y levantar el contenedor de **PostgreSQL** utilizando Docker Compose.
-5. Verificar que la base de datos funciona correctamente y puede conectarse sin problemas.
+La arquitectura del sistema se basará en un enfoque cliente-servidor, donde el cliente (frontend) interactúa con el servidor (backend) a través de una API RESTful. El backend se encargará de gestionar la lógica de negocio, la autenticación, el almacenamiento de datos y la comunicación con servicios externos como PayPal.
 
-## Paso 1: Crear los Archivos .gitignore y .dockerignore
+## Detalles importantes:
 
-Los archivos **.gitignore** y **.dockerignore** nos ayudarán a evitar que archivos innecesarios sean incluidos en el repositorio o en la imagen Docker.
+- **API RESTful**: El backend proporcionará endpoints RESTful para interactuar con recursos como usuarios, productos, pedidos y pagos. Se detallará la estructura de las rutas y la respuesta esperada de cada uno de los endpoints (por ejemplo, GET /api/products/ para obtener la lista de productos).
 
-1. **gitignore**: Crea un archivo **.gitignore** en el directorio raíz del proyecto y añade las siguientes líneas:
+- **Servicios Externos (PayPal)**: La integración con PayPal será a través de su API RESTful. Las credenciales y detalles del procesamiento de pagos se manejarán con variables de entorno y secretos seguros.
 
-```.gitignore
-# Archivos de configuración de Docker
-.dockerignore
+## 2. Backend (Django con Django REST Framework)
 
-# Archivos de entorno
-.env
+### A. Estructura del Proyecto:
 
-# Archivos generados por Docker
-docker-compose.override.yml
+La estructura del proyecto se organizará de la siguiente manera:
 
-# Directorios y archivos temporales de la aplicación
-node_modules/
-*.log
-*.pid
-
-# Archivos de Python (si es necesario)
-__pycache__/
-*.pyc
+```plaintext
+backend/
+├── auth/
+│   ├── migrations/
+│   ├── models.py
+│   ├── serializers.py
+│   ├── views.py
+│   ├── tests/
+├── products/
+│   ├── migrations/
+│   ├── models.py
+│   ├── serializers.py
+│   ├── views.py
+│   ├── tests/
+├── orders/
+│   ├── migrations/
+│   ├── models.py
+│   ├── serializers.py
+│   ├── views.py
+│   ├── tests/
+├── settings.py
+├── urls.py
+├── wsgi.py
+├── requirements.txt
+└── .env
 ```
-2. **dockerignore**: Crea un archivo **.dockerignore** en el directorio raíz y añade lo siguiente:
+### B. Tecnologías:
 
-```.dockerignore
-# Archivos y carpetas que no deben ser copiados a la imagen de Docker
-node_modules/
-*.log
-*.env
-.git
-.gitignore
-.dockerignore
+- **Django**: Framework principal para la gestión del backend.
+- **Django REST Framework (DRF)**: Para la creación de APIs RESTful que interactúan con el frontend.
+- **JWT (JSON Web Tokens)**: Para la autenticación de usuarios basada en tokens. Implementaremos una política de Refresh Tokens para permitir la renovación de tokens sin que el usuario tenga que iniciar sesión constantemente.
+- **PostgreSQL**: Base de datos relacional para almacenar la información de los usuarios, productos y pedidos.
+- **Redis**: Para la gestión de caché, sesiones y optimización de consultas.
+- **PayPal API**: Para la integración de pagos. Los detalles de las credenciales de la API se almacenarán en archivos .env utilizando herramientas de seguridad como Vault para la gestión de secretos.
+- **Validaciones**: Implementaremos validaciones tanto en el frontend como en el backend para asegurar la integridad de los datos. El backend usará serializers en Django para validar los datos recibidos.
+- **Cifrado de Contraseñas**: Usaremos bcrypt para el cifrado de contraseñas y asegurarnos de que la seguridad de los usuarios esté garantizada.
+
+## 3. Frontend (React con Vite)
+
+### A. Estructura del Proyecto:
+
+La estructura del frontend se organizará de la siguiente manera:
+
+```plaintext
+frontend/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── services/
+│   ├── App.js
+│   ├── index.js
+│   ├── store/
+├── public/
+├── tailwind.config.js
+├── vite.config.js
+└── .env
 ```
-## Paso 2: Configurar el Archivo .env para Variables de Entorno
+### B. Tecnologías:
 
-Las variables de entorno como las credenciales de la base de datos deben mantenerse fuera del código fuente, por lo que se recomienda usar un archivo **.env** para gestionar esta información. Crea un archivo llamado **.env** en el directorio raíz y añade las siguientes líneas:
+- **React**: Librería para la construcción de la interfaz de usuario.
+- **Vite**: Herramienta para la configuración rápida y eficiente de aplicaciones React.
+- **TailwindCSS**: Framework CSS para un diseño limpio y moderno.
+- **Axios**: Para hacer peticiones HTTP a la API del backend. Se incluirán mecanismos para manejar errores globalmente (por ejemplo, mostrando alertas de error si una petición falla).
+- **React Router**: Para la gestión de rutas en la aplicación de una sola página.
+- **React Context / Redux**: Usaremos React Context o Redux para la gestión de estado a nivel global, especialmente para manejar la autenticación de usuarios, productos y pedidos.
+- **Optimización de Carga**: Implementaremos Lazy Loading para componentes pesados y Code Splitting para mejorar el rendimiento y tiempo de carga del frontend.
+- **Manejo de Errores**: Se implementará un sistema global de manejo de errores, tanto en las peticiones HTTP (con Axios) como en la interfaz de usuario (con Toast Notifications o alertas).
 
-```env
-POSTGRES_USER=admin
-POSTGRES_PASSWORD=securepassword
-POSTGRES_DB=ecommerce
-DB_HOST=localhost
-DB_PORT=5432
-```
+## 4. Integración del Backend y Frontend
 
-## Paso 3: Automatizar la Creación de la Red de Docker
+### Comunicación:
 
-En lugar de crear la red manualmente, podemos automatizar la creación de la red en el archivo docker-compose.yml para simplificar la configuración.
+- El frontend se comunicará con el backend a través de peticiones HTTP utilizando Axios para obtener datos y realizar acciones (CRUD) sobre los productos, pedidos, etc. Se asegurará de que todas las peticiones que requieren autenticación incluyan el JWT en las cabeceras.
 
-### Estructura del archivo docker-compose.yml para PostgreSQL:
+### Autenticación:
 
-En el directorio project/db/, crea el archivo docker-compose.yml con el siguiente contenido. Ahora, no es necesario crear la red manualmente, ya que Docker Compose se encarga de esto automáticamente:
+- La autenticación de los usuarios se manejará mediante JWT. El token de acceso se incluirá en las cabeceras de las peticiones HTTP que requieran autenticación. También se implementará un sistema de Refresh Tokens para renovar el token de acceso sin necesidad de que el usuario vuelva a iniciar sesión.
 
-```yaml
-services:
-  db:
-    image: postgres:14
-    container_name: postgres_container
-    restart: always
-    environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: ${POSTGRES_DB}
-    volumes:
-      - db_data:/var/lib/postgresql/data
-    networks:
-      - backend_network
-    ports:
-      - "5432:5432"  # Exponer puerto solo para pruebas iniciales
+### Manejo de Errores:
 
-volumes:
-  db_data:
+- Se implementarán manejadores de errores tanto en el backend como en el frontend. En el backend, usaremos excepciones personalizadas para manejar errores en los endpoints de la API, mientras que en el frontend se mostrarán mensajes adecuados de error usando un sistema de notificaciones.
 
-networks:
-  backend_network:
-    driver: bridge  # Se crea automáticamente si no existe
-```
+## 5. Base de Datos (PostgreSQL)
 
-### Explicación:
+- **Modelo de Datos**: Los modelos de datos se organizarán en tablas de usuarios, productos y pedidos.
 
-- **environment**: Las variables de entorno ahora se toman del archivo .env mediante la sintaxis **${VARIABLE_NAME}**.
-- **networks**: La red backend_network se configura automáticamente cuando se ejecuta **docker-compose up**, no es necesario crearla manualmente.
-- **driver**: Usamos el driver bridge para la red, lo cual es suficiente para la mayoría de los casos.
+    - **Usuarios**: Almacenará información sobre clientes y administradores. Incluye un campo de rol para diferenciarlos.
+    - **Productos**: Almacenará la información de los productos (nombre, precio, inventario, imágenes, descripción, etc.).
+    - **Pedidos**: Almacenará los detalles de los pedidos realizados por los clientes (productos, cantidades, fecha de compra, total, estado de pago).
 
-## Paso 4: Levantar el Contenedor de la Base de Datos
+### Relacionando los Modelos:
 
-Con todo configurado, ahora podemos levantar el contenedor de PostgreSQL.
+- Se establecerán relaciones adecuadas entre los modelos, como Foreign Keys entre pedidos y productos, y Many-to-Many entre productos y categorías, si es necesario.
 
-Entra en el directorio db y ejecuta el siguiente comando:
+## 6. Infraestructura (Docker y Contenedores)
 
-```bash
-docker-compose up -d
-```
-Verifica que el contenedor está corriendo correctamente:
+- **Docker Compose**: Para orquestar los contenedores del backend, frontend y base de datos.
 
-```bash
-docker ps
-```
-Deberías ver algo como esto:
+    - **Contenedor Backend**: Contendrá la aplicación Django, configurada para interactuar con PostgreSQL y Redis.
+    - **Contenedor Frontend**: Contendrá la aplicación React, configurada para comunicarse con la API Django.
+    - **Contenedor Base de Datos**: Contendrá PostgreSQL.
+    - **Contenedor de Cache**: Contendrá Redis.
 
-```bash
-CONTAINER ID   IMAGE        COMMAND                  ...     PORTS
-abc123xyz      postgres:14  "docker-entrypoint.s…"  ...     0.0.0.0:5432->5432/tcp
-```
-## Paso 5: Probar la Base de Datos
+- **Variables de Entorno**: Los detalles de configuración (como credenciales de base de datos, claves de API) se almacenarán en archivos .env para mantener la seguridad y facilitar la configuración.
 
-Para verificar que la base de datos está funcionando correctamente, conéctate usando una herramienta como Visual Studio Code con la extensión de PostgreSQL o utilizando la línea de comandos.
+- Implementaremos un archivo .env.example para que los desarrolladores puedan copiarlo y configurar sus entornos locales.
 
-###  Conexión usando una Herramienta de Administración:
+## 7. Despliegue (Railway para Backend, Vercel para Frontend)
 
-Conéctate a la base de datos utilizando las siguientes credenciales del archivo **.env**:
+- **Backend en Railway**: El backend se desplegará en Railway, donde se gestionarán las bases de datos y la API.
+- **Frontend en Vercel**: El frontend se desplegará en Vercel para un acceso rápido y escalabilidad automática.
 
-- **Host**: localhost
-- **Puerto**: 5432
-- **Usuario**: admin
-- **Contraseña**: securepassword
-- **Base de datos**: ecommerce
+### Escalabilidad:
 
-Ejecuta el siguiente comando para verificar que la base de datos está funcionando correctamente:
+- A medida que el proyecto crezca, podremos escalar el backend en Railway o cambiar a un servicio como AWS o Heroku si es necesario.
+- Vercel ofrece escalabilidad automática, pero también es importante evaluar el uso de un CDN para optimizar la entrega de contenido estático en el frontend.
 
-```sql
-SELECT version();
-```
-### Alternativa: Línea de Comandos
+## 8. Seguridad y Buenas Prácticas
 
-Puedes acceder directamente al contenedor y conectarte a la base de datos con:
-
-```bash
-docker exec -it postgres_container psql -U admin -d ecommerce
-```
-
-### Paso 6: Validar la Persistencia de Datos
-
-Una vez levantado el contenedor, valida que los datos persisten cuando reinicias el contenedor.
-
-1. Detén el contenedor con:
-```bash
-docker-compose down
-```
-2. Reinicia el contenedor con:
-```bash
-docker-compose up -d
-```
-3. Verifica que los datos de la base de datos siguen siendo los mismos después de reiniciar.
-
-# Pruebas Finales
-
-1. **Conexión Externa**: Si puedes conectarte a la base de datos usando herramientas externas o la línea de comandos, la configuración está correcta.
-
-2. **Posibles Errores y Soluciones**:
-
-   - **Puerto en uso**: Si el puerto 5432 ya está siendo utilizado por otro servicio, cambia el puerto en el archivo **docker-compose.yml**.
-    - **Variables incorrectas**: Asegúrate de que las variables de entorno en el archivo .env estén configuradas correctamente.
-    - **Red no conectada**: Si la red no está conectada, asegúrate de que Docker Compose la cree automáticamente.
+- **Autenticación de Usuarios**: Implementación de JWT para la autenticación de usuarios, con roles de cliente y administrador. La política de renovación de tokens mediante Refresh Tokens será implementada.
+- **Seguridad en los Pagos**: Integración con PayPal para procesar pagos de manera segura. Las credenciales y claves de la API de PayPal se mantendrán seguras mediante variables de entorno.
+- **Validación de Datos**: Uso de validaciones tanto en el frontend como en el backend para garantizar la integridad de los datos.
+- **Cifrado**: Cifrado de contraseñas en el backend utilizando bcrypt.
+- **Manejo de Errores y Logs**: Se configurarán registros (logs) detallados para facilitar la detección de errores y auditoría.
 :::
