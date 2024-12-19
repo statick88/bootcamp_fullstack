@@ -1,4 +1,4 @@
-# Ejercicios Python - Nivel Intermedio (POO)
+# Ejercicios Python - Nivel Intermedio (POO) - Parte 1
 
 Ejercicio 1
 

@@ -1,95 +1,270 @@
-# Ejercicios Python - Nivel 2
+# Ejercicios Python - Nivel Intermedio (POO) - Parte 2
 
-## Ejercicio 1
+Ejercicio 6
 
-- Crear una función que reciba una lista de números y devuelva su media aritmética.
-- Ejemplo: media_aritmetica([1, 2, 3, 4, 5]) -> 3.0
+Implementa una clase base Animal con un método hablar. Crea una subclase Perro que sobrescriba este método.
 
-<details>
-<summary>Posible solución</summary>
+<details> 
+  <summary>Solución</summary>
 
 ```python
-def media_aritmetica(lista):
-    return sum(lista) / len(lista)
+class Animal:
+    def hablar(self):
+        raise NotImplementedError("Este método debe ser implementado por la subclase.")
+
+class Perro(Animal):
+    def hablar(self):
+        return "Guau"
+```
+Ejemplo de uso
+
+```python
+perro = Perro()
+print(perro.hablar())  # Guau
 ```
 </details>
 
-## Ejercicio 2
+Ejercicio 7
 
-- Crear una función que reciba una lista de números y devuelva su mediana.
-- Ejemplo: mediana([1, 2, 3, 4, 5]) -> 3.0
+Crea una clase Empleado y una subclase Gerente que utilice super() para llamar al constructor de la clase base.
 
-<details>
-<summary>Posible solución</summary>
+<details> 
+  <summary>Solución</summary> 
+
+```python 
+class Empleado: 
+  def __init__(self, nombre, salario): 
+  self.nombre = nombre 
+  self.salario = salario
+
+class Gerente(Empleado): 
+  def init(self, nombre, salario, departamento): 
+  super().init(nombre, salario) 
+  self.departamento = departamento
+```
+Ejemplo de uso
 
 ```python
-def mediana(lista):
-    lista_ordenada = sorted(lista)
-    n = len(lista_ordenada)
-    if n % 2 == 0:
-        return (lista_ordenada[n // 2 - 1] + lista_ordenada[n // 2]) / 2
-    else:
-        return lista_ordenada[n // 2]
+gerente = Gerente("Carlos", 5000, "Ventas")
+print(gerente.nombre)       # Carlos
+print(gerente.departamento) # Ventas
+```
+
+</details>
+
+Ejercicio 8
+
+Crea una clase Matematica con un método estático que calcule el área de un círculo dado el radio.
+
+<details> 
+  <summary>Solución</summary>
+
+```python 
+import math
+
+class Matematica:
+
+@staticmethod # Método estático, no recibe una instancias como argumento
+def area_circulo(radio): 
+return math.pi * radio ** 2
+```
+Ejemplo de uso
+
+```python
+print(Matematica.area_circulo(5))  # 78.5398...
 ```
 </details>
 
-## Ejercicio 3
+Ejercicio 9
 
-- Crear una función que reciba una lista de números y devuelva su moda.
-- Si hay más de una moda, devolver una lista con todas las modas.
-- Si no hay moda, devolver una lista vacía.
-- La moda es el número que más veces se repite en una lista.
-- Si todos los números se repiten el mismo número de veces, no hay moda.
-- Ejemplo: moda([1, 2, 3, 2, 3, 4]) -> [2, 3]
+Implementa una clase Vehiculo con un contador de instancias.
 
-<details>
-<summary>Posible solución</summary>
+<details> 
+  <summary>Solución</summary> 
+
+```python 
+class Vehiculo: 
+  contador = 0
+
+def __init__(self):
+    Vehiculo.contador += 1
+```
+Ejemplo de uso
 
 ```python
-def moda(lista):
-    frecuencias = {}
-    for numero in lista:
-        if numero in frecuencias:
-            frecuencias[numero] += 1
-        else:
-            frecuencias[numero] = 1
-    max_frecuencia = max(frecuencias.values())
-    modas = [numero for numero, frecuencia in frecuencias.items() if frecuencia == max_frecuencia]
-    return modas if len(modas) > 1 else modas[0] if modas else []
+vehiculo1 = Vehiculo()
+vehiculo2 = Vehiculo()
+print(Vehiculo.contador)  # 2
 ```
 </details>
 
-## Ejercicio 4
+Ejercicio 10
 
-- Crear una función que reciba una lista de números y devuelva su desviación típica.
-- La desviación típica es la raíz cuadrada de la varianza.
-- La varianza es la media de los cuadrados de las diferencias entre cada número y la media aritmética.
-- Ejemplo: desviacion_tipica([1, 2, 3, 4, 5]) -> 1.4142135623730951
+Crea una clase Vector que permita sumar dos vectores usando el operador +.
 
-<details>
-<summary>Posible solución</summary>
+<details> 
+  <summary>Solución</summary> 
+
+```python 
+class Vector: 
+  def __init__(self, x, y): 
+    self.x = x 
+    self.y = y
+
+  def __add__(self, otro):
+    return Vector(self.x + otro.x, self.y + otro.y)
+
+  def __str__(self):
+    return f"({self.x}, {self.y})"
+```
+
+Ejemplo de uso
 
 ```python
-def desviacion_tipica(lista):
-    media = sum(lista) / len(lista)
-    varianza = sum((numero - media) ** 2 for numero in lista) / len(lista)
-    return varianza ** 0.5
+v1 = Vector(1, 2)
+v2 = Vector(3, 4)
+v3 = v1 + v2
+print(v3)  # (4, 6)
 ```
 </details>
 
-## Ejercicio 5
+Ejercicio 11
 
-- Crear una función que reciba una lista de números y devuelva su coeficiente de variación.
-- El coeficiente de variación es la desviación típica dividida por la media aritmética.
-- Ejemplo: coeficiente_variacion([1, 2, 3, 4, 5]) -> 0.4472135954999579
+Crea una clase Rectangulo que calcule su área como una propiedad.
 
-<details>
-<summary>Posible solución</summary>
+<details> 
+  <summary>Solución</summary>
+
+```python 
+class Rectangulo: 
+  def __init__(self, base, altura): 
+    self.base = base 
+    self.altura = altura
+
+  @property # Propiedad, las propiedades no se llaman como métodos
+  def area(self):
+    return self.base * self.altura
+```
+Ejemplo de uso
 
 ```python
-def coeficiente_variacion(lista):
-    media = sum(lista) / len(lista)
-    desviacion_tipica = sum((numero - media) ** 2 for numero in lista) / len(lista) ** 0.5
-    return desviacion_tipica / media
+rectangulo = Rectangulo(5, 3)
+print(rectangulo.area)  # 15
+```
+
+</details>
+
+Ejercicio 12
+
+Crea una clase abstracta Figura con un método area que deba implementarse en las subclases.
+
+<details> 
+  <summary>Solución</summary>
+
+```python 
+from abc import ABC, abstractmethod
+
+class Figura(ABC):
+  
+  @abstractmethod # Método abstracto, las subclases deben implementarlo
+  def area(self): 
+    pass
+
+class Circulo(Figura): 
+  def __init__(self, radio): 
+    self.radio = radio
+
+  def area(self):
+    return 3.1416 * self.radio ** 2
+```
+Ejemplo de uso
+
+```python
+circulo = Circulo(4)
+print(circulo.area())  # 50.2656...
 ```
 </details>
+
+Ejercicio 13
+
+Crea una excepción personalizada llamada SaldoInsuficienteError para una clase de cuenta bancaria.
+
+<details> 
+  <summary>Solución</summary>
+
+```python 
+class SaldoInsuficienteError(Exception): 
+  pass
+
+class CuentaBancaria: 
+  def init(self, saldo_inicial=0): 
+    self.saldo = saldo_inicial
+
+def retirar(self, cantidad):
+    if cantidad > self.saldo:
+        raise SaldoInsuficienteError("Fondos insuficientes")
+    self.saldo -= cantidad
+```
+Ejemplo de uso
+
+```python
+cuenta = CuentaBancaria(100)
+try:
+    cuenta.retirar(200)
+except SaldoInsuficienteError as e:
+    print(e)  # Fondos insuficientes
+```
+</details>
+
+Ejercicio 14
+
+Crea una clase Libro que implemente estos métodos para mostrar información de manera clara.
+
+<details> 
+  <summary>Solución</summary> 
+
+```python 
+class Libro: 
+  def __init__(self, titulo, autor): 
+    self.titulo = titulo self.autor = autor
+
+  def __str__(self):
+    return f"Libro: {self.titulo} por {self.autor}"
+
+  def __repr__(self):
+    return f"Libro({self.titulo!r}, {self.autor!r})"
+```
+Ejemplo de uso
+
+```python
+libro = Libro("Python Avanzado", "Juan Pérez")
+print(str(libro))  # Libro: Python Avanzado por Juan Pérez
+print(repr(libro))  # Libro('Python Avanzado', 'Juan Pérez')
+```
+</details>
+
+Ejercicio 15
+
+Implementa una clase Producto usando \@dataclass.
+
+<details> 
+  <summary>Solución</summary>
+
+```python 
+from dataclasses import dataclass
+
+@dataclass # Decorador para crear clases de datos
+class Producto: 
+  nombre: str 
+  precio: float 
+  cantidad: int
+```
+
+Ejemplo de uso
+
+```python
+producto = Producto("Camiseta", 20.5, 100)
+print(producto)  # Producto(nombre='Camiseta', precio=20.5, cantidad=100)
+```
+</details>
+

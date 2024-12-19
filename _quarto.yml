@@ -115,6 +115,8 @@ book:
     - part: "Ejercicios"
       chapters:
         - "unidades/ejercicios/ejercicios_python-001.qmd"
+        - "unidades/ejercicios/ejercicios_python-002.qmd"
+        - "unidades/ejercicios/ejercicios_python-003.qmd"
     - part: "Extras"
       chapters:
         - "unidades/Extras/0_parte.qmd"

@@ -1,81 +1,197 @@
-# Ejercicios Python - Nivel 3
+# Ejercicios Python - Nivel Intermedio (POO) - Parte 3
 
-## Ejercicio 1: 
+Ejercicio 16
 
-- Crear una lista vacía y agregar elementos a la misma hasta que el usuario ingrese "fin".
+Crea una clase Contador que actúe como un iterador para contar hasta un número dado.
 
-<details>
-<summary>Posible solución</summary>
+<details> 
+  <summary>Solución</summary>
 
 ```python
-lista = []
-while True:
-    elemento = input("Ingrese un elemento: ")
-    if elemento == "fin":
-        break
-    lista.append(elemento)
-print(lista)
+class Contador:
+    def __init__(self, limite):
+        self.limite = limite
+        self.contador = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.contador < self.limite:
+            self.contador += 1
+            return self.contador
+        else:
+            raise StopIteration
+```
+Ejemplo de uso
+
+```python
+contador = Contador(3)
+for numero in contador:
+    print(numero)  # 1 2 3
 ```
 </details>
 
-## Ejercicio 2:
+Ejercicio 17
 
-- Crear una lista con los números del 1 al 10 y mostrar los números pares.
+Crea una clase LoggerMixin para agregar registro de actividades a otras clases.
 
-<details>
-<summary>Posible solución</summary>
+<details> 
+  <summary>Solución</summary> 
+
+```python 
+class LoggerMixin: 
+  def log(self, mensaje): 
+    print(f"Log: {mensaje}")
+
+class Usuario(LoggerMixin): 
+  def init(self, nombre): 
+  self.nombre = nombre
+
+def realizar_actividad(self):
+    self.log(f"{self.nombre} realizó una actividad")
+```
+Ejemplo de uso
 
 ```python
-lista = list(range(1, 11))
-for numero in lista:
-    if numero % 2 == 0:
-        print(numero)
+usuario = Usuario("Carlos")
+usuario.realizar_actividad()  # Log: Carlos realizó una actividad
 ```
 </details>
 
-## Ejercicio 3:
+Ejercicio 18
 
-- Crear una lista con los números del 1 al 10 y mostrar los números impares.
+Crea una clase Conversor que permita convertir entre unidades (por ejemplo, kilómetros a millas).
 
-<details>
-<summary>Posible solución</summary>
+<details> 
+  <summary>Solución</summary> 
+
+```python 
+class Conversor: 
+
+  @staticmethod 
+  def kilometros_a_millas(km): 
+    return km * 0.621371
+
+  @classmethod
+  def millas_a_kilometros(cls, millas):
+    return millas / 0.621371
+```
+Ejemplo de uso
 
 ```python
-lista = list(range(1, 11))
-for numero in lista:
-    if numero % 2 != 0:
-        print(numero)
+print(Conversor.kilometros_a_millas(5))  # 3.106855
+print(Conversor.millas_a_kilometros(3))  # 4.828032
 ```
 </details>
 
-## Ejercicio 4:
+Ejercicio 19
 
-- Crear una lista de nombres de estudiantes y mostrar aquellos cuyos nombres comiencen con la letra "A".
- 
-<details>
-<summary>Posible solución</summary>
+Crea una jerarquía de clases: Vehiculo como base, con subclases Auto y Moto.
+
+<details> <summary>Solución</summary>
+
+```python 
+class Vehiculo: 
+  
+  def __init__(self, marca): 
+  self.marca = marca
+
+class Auto(Vehiculo): 
+  def __init__(self, marca, puertas): 
+    super().__init__(marca) 
+    self.puertas = puertas
+
+class Moto(Vehiculo): 
+  def __init__(self, marca, cilindrada): 
+    super().init(marca) 
+    self.cilindrada = cilindrada
+```
+Ejemplo de uso
 
 ```python
-nombres = ["Ana", "Juan", "Pedro", "Andrea", "Lucía", "Antonio"]
-for nombre in nombres:
-    if nombre[0].lower() == "a":
-        print(nombre)
+auto = Auto("Toyota", 4)
+moto = Moto("Yamaha", 250)
+print(auto.marca)  # Toyota
+print(moto.cilindrada)  # 250
 ```
-
 </details>
 
-## Ejercicio 5:
+Ejercicio 20
 
-- Crear una lista de números y mostrar aquellos que sean mayores a 100.
+Crea una clase Punto cuyos atributos sean de solo lectura.
 
-<details>
-<summary>Posible solución</summary>
+<details> 
+  <summary>Solución</summary> 
+
+```python 
+class Punto: 
+  def __init__(self, x, y): 
+    self._x = x self._y = y
+
+  @property
+  def x(self):
+    return self._x
+
+  @property
+  def y(self):
+    return self._y
+```
+Ejemplo de uso
 
 ```python
-numeros = [10, 20, 150, 200, 300, 400, 500]
-for numero in numeros:
-    if numero > 100:
-        print(numero)
+punto = Punto(5, 10)
+print(punto.x)  # 5
+print(punto.y)  # 10
+punto.x = 10  # AttributeError: can't set AttributeError
 ```
 </details>
 
+Ejercicio 21
+
+Implementa la clase Fraccion que permita comparar fracciones usando operadores (<, >, ==).
+
+<details> 
+  <summary>Solución</summary> 
+
+```python 
+class Fraccion: 
+  def __init__(self, numerador, denominador): 
+  self.numerador = numerador 
+  self.denominador = denominador
+
+def __eq__(self, otra):
+    return self.numerador * otra.denominador == self.denominador * otra.numerador
+
+def __lt__(self, otra):
+    return self.numerador * otra.denominador < self.denominador * otra.numerador
+```
+Ejemplo de uso
+
+```python
+f1 = Fraccion(1, 2)
+f2 = Fraccion(1, 3)
+print(f1 == f2)  # False
+print(f1 < f2)   # False
+```
+</details>
+
+Ejercicio 22
+
+Crea una clase Calculadora que permita llamar a sus instancias como si fueran funciones.
+
+<details> 
+  <summary>Solución</summary> 
+
+```python 
+class Calculadora: 
+  def __call__(self, a, b): 
+    return a + b 
+```
+Ejemplo de uso 
+
+```python 
+calculadora = Calculadora() 
+print(calculadora(2, 3)) # 5 
+``` 
+</details>
