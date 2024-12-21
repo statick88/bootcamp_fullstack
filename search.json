@@ -3091,6 +3091,61 @@
     ]
   },
   {
+    "objectID": "unidades/Pruebas/prueba_tecnica_junior.html#parte-1-programación-orientada-a-objetos-15-puntos",
+    "href": "unidades/Pruebas/prueba_tecnica_junior.html#parte-1-programación-orientada-a-objetos-15-puntos",
+    "title": "Prueba Técnica para Programador Junior - Python",
+    "section": "Parte 1: Programación Orientada a Objetos (15 puntos)",
+    "text": "Parte 1: Programación Orientada a Objetos (15 puntos)\nDuración recomendada: 15 minutos\n\nClase Producto (15 puntos)\n\nCrea una clase Producto con los siguientes atributos y métodos:\nAtributos:\n\nnombre (str)\nprecio (float)\ncantidad (int)\n\nMétodos:\n\n__init__: Inicializa los atributos.\n\ncalcular_total: Devuelve el precio total del producto (precio × cantidad).\nImplementa un método __str__ para mostrar la información del producto en el formato:\n\nProducto(nombre=Nombre, precio=Precio, cantidad=Cantidad)\n\n\nEjemplo de uso:\np1 = Producto(\"Laptop\", 1500.0, 2)\nprint(p1.calcular_total())  # 3000.0\nprint(p1)  # Producto(nombre=Laptop, precio=1500.0, cantidad=2)",
+    "crumbs": [
+      "Pruebas Técnicas",
+      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Prueba Técnica para Programador Junior - Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Pruebas/prueba_tecnica_junior.html#parte-2-lógica-de-programación-y-estructuras-de-datos-15-puntos",
+    "href": "unidades/Pruebas/prueba_tecnica_junior.html#parte-2-lógica-de-programación-y-estructuras-de-datos-15-puntos",
+    "title": "Prueba Técnica para Programador Junior - Python",
+    "section": "Parte 2: Lógica de Programación y Estructuras de Datos (15 puntos)",
+    "text": "Parte 2: Lógica de Programación y Estructuras de Datos (15 puntos)\n\nFibonacci Recursivo (10 puntos)\nEscribe una función fibonacci(n) que calcule el n-ésimo número de la secuencia de Fibonacci de forma recursiva.\n\n\n\n\n\n\nTip\n\n\n\nLa secuencia de Fibonacci es:\n\n0, 1, 1, 2, 3, 5, 8, ….\n\n\n\n\n\nEjemplo de uso:\nprint(fibonacci(6))  # 8\n\n\nAnálisis de texto (5 puntos)\nCrea una función analizar_texto(texto) que reciba un texto como cadena y devuelva un diccionario con:\n\nNúmero de palabras.\nNúmero de letras.\n\n\n\nEjemplo de uso:\ntexto = \"Hola mundo\"\nprint(analizar_texto(texto))\n# {'palabras': 2, 'letras': 9}\n\nPuntaje total: 30 puntos\nAprobación mínima: 20 puntos",
+    "crumbs": [
+      "Pruebas Técnicas",
+      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Prueba Técnica para Programador Junior - Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Pruebas/prueba_tecnica_junior.html#parte-1-programación-orientada-a-objetos-15-puntos-1",
+    "href": "unidades/Pruebas/prueba_tecnica_junior.html#parte-1-programación-orientada-a-objetos-15-puntos-1",
+    "title": "Prueba Técnica para Programador Junior - Python",
+    "section": "Parte 1: Programación Orientada a Objetos (15 puntos)",
+    "text": "Parte 1: Programación Orientada a Objetos (15 puntos)\n\nDefinición de clase y atributos (3 puntos):\n\nLa clase Producto está correctamente definida con los atributos nombre, precio, y cantidad.\n\nMétodo __init__ (3 puntos):\n\nEl constructor inicializa correctamente los atributos.\n\nMétodo calcular_total (4 puntos):\n\nCalcula correctamente el precio total (precio × cantidad).\n\nMétodo __str__ (5 puntos):\n\nDevuelve una representación clara y en el formato especificado:\n\n\nProducto(nombre=Nombre, precio=Precio, cantidad=Cantidad)\n\nNo hay errores al mostrar el objeto con print().",
+    "crumbs": [
+      "Pruebas Técnicas",
+      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Prueba Técnica para Programador Junior - Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Pruebas/prueba_tecnica_junior.html#parte-2-lógica-de-programación-y-estructuras-de-datos-15-puntos-1",
+    "href": "unidades/Pruebas/prueba_tecnica_junior.html#parte-2-lógica-de-programación-y-estructuras-de-datos-15-puntos-1",
+    "title": "Prueba Técnica para Programador Junior - Python",
+    "section": "Parte 2: Lógica de Programación y Estructuras de Datos (15 puntos)",
+    "text": "Parte 2: Lógica de Programación y Estructuras de Datos (15 puntos)\n\nFibonacci Recursivo (10 puntos):\n\n\nLógica correcta (6 puntos):\n\nLa función calcula correctamente el n-ésimo número de Fibonacci.\n\nEficiencia básica (2 puntos):\n\nSe aplica recursividad correctamente sin errores de lógica.\n\nResultados esperados (2 puntos):\n\nLa función produce los resultados esperados para diferentes valores de n.\n\n\n\nAnálisis de Texto (5 puntos):\n\n\nCálculo del número de palabras (2 puntos):\n\nSe cuenta correctamente el número de palabras en el texto.\n\nCálculo del número de letras (2 puntos):\n\nSe cuentan correctamente las letras (excluyendo espacios).\n\nFormato del diccionario (1 punto):\n\nLa función devuelve un diccionario con las claves palabras y letras correctamente estructurado.",
+    "crumbs": [
+      "Pruebas Técnicas",
+      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Prueba Técnica para Programador Junior - Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Pruebas/prueba_tecnica_junior.html#notas-de-calificación",
+    "href": "unidades/Pruebas/prueba_tecnica_junior.html#notas-de-calificación",
+    "title": "Prueba Técnica para Programador Junior - Python",
+    "section": "Notas de calificación:",
+    "text": "Notas de calificación:\n\nPuntaje total: 30 puntos.\nAprobación mínima: 20 puntos.\nErrores menores: Se puede restar hasta 1 punto por detalles menores (nombres incorrectos de variables o errores de formato).\nErrores críticos: Fallos que generan excepciones o resultados incorrectos en los ejemplos restan la totalidad de los puntos asignados al criterio correspondiente.",
+    "crumbs": [
+      "Pruebas Técnicas",
+      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Prueba Técnica para Programador Junior - Python</span>"
+    ]
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "Acerca de mi",
