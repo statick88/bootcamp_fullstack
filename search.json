@@ -3146,6 +3146,39 @@
     ]
   },
   {
+    "objectID": "unidades/Pruebas/resolucion_prueba_tecnica_junior.html#parte-1-programación-orientada-a-objetos",
+    "href": "unidades/Pruebas/resolucion_prueba_tecnica_junior.html#parte-1-programación-orientada-a-objetos",
+    "title": "Resolución de la Prueba Técnica para Programador Junior - Python",
+    "section": "Parte 1: Programación Orientada a Objetos",
+    "text": "Parte 1: Programación Orientada a Objetos\n\nArchivo: parte1/producto.py\nDescripción de la clase Producto:\n\nAtributos:\n\nnombre: String\nprecio: Float\ncantidad: Integer\n\nMétodos:\n\n__init__(self, nombre, precio, cantidad): Constructor que inicializa los atributos.\ncalcular_total(self): Calcula y devuelve el precio total, que es precio * cantidad.\n__str__(self): Devuelve una representación en formato “Producto(nombre=Nombre, precio=Precio, cantidad=Cantidad)”.\n\n\n\n\nImplementación de la clase Producto:\nclass Producto:\n    def __init__(self, nombre, descripcion, precio, cantidad):\n        if cantidad &lt; 0:\n            raise ValueError(\"La cantidad no puede ser negativa\")\n        self.nombre = nombre\n        self.descripcion = descripcion\n        self.precio = precio\n        self.cantidad = cantidad\n\n    def calcular_precio_total(self):\n        return self.precio * self.cantidad\n\n    def __str__(self):\n      return f\"Producto(nombre={self.nombre}, descripcion={self.descripcion}, precio={self.precio}, cantidad={self.cantidad})\"\n\nSe ha implementado la clase Producto con sus atributos y métodos.\nEl método __init__ inicializa los atributos de la clase.\nEl método calcular_precio_total calcula el precio total del producto.\nEl método __str__ devuelve una representación en formato “Producto(nombre=Nombre, precio=Precio, cantidad=Cantidad)”.",
+    "crumbs": [
+      "Pruebas Técnicas",
+      "<span class='chapter-number'>62</span>  <span class='chapter-title'>Resolución de la Prueba Técnica para Programador Junior - Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Pruebas/resolucion_prueba_tecnica_junior.html#parte-2-lógica-de-programación-y-estructuras-de-datos",
+    "href": "unidades/Pruebas/resolucion_prueba_tecnica_junior.html#parte-2-lógica-de-programación-y-estructuras-de-datos",
+    "title": "Resolución de la Prueba Técnica para Programador Junior - Python",
+    "section": "Parte 2: Lógica de Programación y Estructuras de Datos",
+    "text": "Parte 2: Lógica de Programación y Estructuras de Datos\n\nFunción fibonacci (Parte 2):\nLa función fibonacci debe ser recursiva. El enésimo número de la secuencia de Fibonacci se calcula como:\n\nfibonacci(0) = 0\nfibonacci(1) = 1\nfibonacci(n) = fibonacci(n-1) + fibonacci(n-2) para n &gt; 1\n\n\n\nImplementación de la función fibonacci:\nimport string\n\n\ndef fibonacci(n):\n    if n &lt;= 1:\n        return n\n    return fibonacci(n - 1) + fibonacci(n - 2)\n\n\ndef fibonacci_memo(n, memo={0: 0, 1: 1}):\n    if n not in memo:\n        memo[n] = fibonacci_memo(n - 1, memo) + fibonacci_memo(n - 2, memo)\n    return memo[n]\n\nSe ha implementado la función fibonacci de forma recursiva.\nSe ha implementado la función analizar_texto que cuenta el número de palabras y letras en un texto.\n\n\n\nFunción analizar_texto (Parte 2):\nLa función analizar_texto recibe un texto y devuelve un diccionario con dos claves:\n\n‘palabras’: Número de palabras en el texto.\n‘letras’: Número de letras en el texto (sin contar espacios ni signos de puntuación).\n\n\n\nImplementación de la función analizar_texto:\ndef analizar_texto(texto):\n    palabras = texto.split()\n\n    letras = sum(len(''.join(c for c in palabra if c.isalpha()))\n                 for palabra in palabras)\n\n    return {'palabras': len(palabras), 'letras': letras}\n\nSe ha implementado la función analizar_texto que cuenta el número de palabras y letras en un texto.\nLa función split divide el texto en palabras.\nSe utiliza una expresión generadora para contar el número de letras en cada palabra.\nEl resultado se devuelve como un diccionario con las claves ‘palabras’ y ‘letras’.\n\n\n\nArchivo runner.py",
+    "crumbs": [
+      "Pruebas Técnicas",
+      "<span class='chapter-number'>62</span>  <span class='chapter-title'>Resolución de la Prueba Técnica para Programador Junior - Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Pruebas/resolucion_prueba_tecnica_junior.html#ahora-puedes-ejecutar-las-pruebas-de-la-siguiente-manera",
+    "href": "unidades/Pruebas/resolucion_prueba_tecnica_junior.html#ahora-puedes-ejecutar-las-pruebas-de-la-siguiente-manera",
+    "title": "Resolución de la Prueba Técnica para Programador Junior - Python",
+    "section": "Ahora puedes ejecutar las pruebas de la siguiente manera:",
+    "text": "Ahora puedes ejecutar las pruebas de la siguiente manera:\npython3 runner.py\nEsto ejecutará todas las pruebas y generará un resumen con la puntuación final.",
+    "crumbs": [
+      "Pruebas Técnicas",
+      "<span class='chapter-number'>62</span>  <span class='chapter-title'>Resolución de la Prueba Técnica para Programador Junior - Python</span>"
+    ]
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "Acerca de mi",
