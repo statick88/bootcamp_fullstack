@@ -2523,7 +2523,7 @@
     "href": "unidades/ejercicios/ejercicios_python-002.html",
     "title": "Ejercicios Python - Nivel Intermedio (POO) - Parte 2",
     "section": "",
-    "text": "Ejercicio 6\nImplementa una clase base Animal con un método hablar. Crea una subclase Perro que sobrescriba este método.\n\n\nSolución\n\nclass Animal:\n    def hablar(self):\n        raise NotImplementedError(\"Este método debe ser implementado por la subclase.\")\n\nclass Perro(Animal):\n    def hablar(self):\n        return \"Guau\"\nEjemplo de uso\nperro = Perro()\nprint(perro.hablar())  # Guau\n\nEjercicio 7\nCrea una clase Empleado y una subclase Gerente que utilice super() para llamar al constructor de la clase base.\n\n\nSolución\n\nclass Empleado: \n  def __init__(self, nombre, salario): \n  self.nombre = nombre \n  self.salario = salario\n\nclass Gerente(Empleado): \n  def init(self, nombre, salario, departamento): \n  super().init(nombre, salario) \n  self.departamento = departamento\nEjemplo de uso\ngerente = Gerente(\"Carlos\", 5000, \"Ventas\")\nprint(gerente.nombre)       # Carlos\nprint(gerente.departamento) # Ventas\n\nEjercicio 8\nCrea una clase Matematica con un método estático que calcule el área de un círculo dado el radio.\n\n\nSolución\n\nimport math\n\nclass Matematica: \n@staticmethod \ndef area_circulo(radio): \nreturn math.pi * radio ** 2\nEjemplo de uso\nprint(Matematica.area_circulo(5))  # 78.5398...\n\nEjercicio 9\nImplementa una clase Vehiculo con un contador de instancias.\n\n\nSolución\n\nclass Vehiculo: \n  contador = 0\n\ndef __init__(self):\n    Vehiculo.contador += 1\nEjemplo de uso\nvehiculo1 = Vehiculo()\nvehiculo2 = Vehiculo()\nprint(Vehiculo.contador)  # 2\n\nEjercicio 10\nCrea una clase Vector que permita sumar dos vectores usando el operador +.\n\n\nSolución\n\nclass Vector: \n  def __init__(self, x, y): \n    self.x = x \n    self.y = y\n\n  def __add__(self, otro):\n    return Vector(self.x + otro.x, self.y + otro.y)\n\n  def __str__(self):\n    return f\"({self.x}, {self.y})\"\nEjemplo de uso\nv1 = Vector(1, 2)\nv2 = Vector(3, 4)\nv3 = v1 + v2\nprint(v3)  # (4, 6)\n\nEjercicio 11\nCrea una clase Rectangulo que calcule su área como una propiedad.\n\n\nSolución\n\nclass Rectangulo: \n  def __init__(self, base, altura): \n    self.base = base \n    self.altura = altura\n\n  @property # Propiedad, las propiedades no se llaman como métodos\n  def area(self):\n    return self.base * self.altura\nEjemplo de uso\nrectangulo = Rectangulo(5, 3)\nprint(rectangulo.area)  # 15\n\nEjercicio 12\nCrea una clase abstracta Figura con un método area que deba implementarse en las subclases.\n\n\nSolución\n\nfrom abc import ABC, abstractmethod\n\nclass Figura(ABC):\n  \n  @abstractmethod # Método abstracto, las subclases deben implementarlo\n  def area(self): \n    pass\n\nclass Circulo(Figura): \n  def __init__(self, radio): \n    self.radio = radio\n\n  def area(self):\n    return 3.1416 * self.radio ** 2\nEjemplo de uso\ncirculo = Circulo(4)\nprint(circulo.area())  # 50.2656...\n\nEjercicio 13\nCrea una excepción personalizada llamada SaldoInsuficienteError para una clase de cuenta bancaria.\n\n\nSolución\n\nclass SaldoInsuficienteError(Exception): \n  pass\n\nclass CuentaBancaria: \n  def init(self, saldo_inicial=0): \n    self.saldo = saldo_inicial\n\ndef retirar(self, cantidad):\n    if cantidad &gt; self.saldo:\n        raise SaldoInsuficienteError(\"Fondos insuficientes\")\n    self.saldo -= cantidad\nEjemplo de uso\ncuenta = CuentaBancaria(100)\ntry:\n    cuenta.retirar(200)\nexcept SaldoInsuficienteError as e:\n    print(e)  # Fondos insuficientes\n\nEjercicio 14\nCrea una clase Libro que implemente estos métodos para mostrar información de manera clara.\n\n\nSolución\n\nclass Libro: \n  def __init__(self, titulo, autor): \n    self.titulo = titulo self.autor = autor\n\n  def __str__(self):\n    return f\"Libro: {self.titulo} por {self.autor}\"\n\n  def __repr__(self):\n    return f\"Libro({self.titulo!r}, {self.autor!r})\"\nEjemplo de uso\nlibro = Libro(\"Python Avanzado\", \"Juan Pérez\")\nprint(str(libro))  # Libro: Python Avanzado por Juan Pérez\nprint(repr(libro))  # Libro('Python Avanzado', 'Juan Pérez')\n\nEjercicio 15\nImplementa una clase Producto usando (dataclass?).\n\n\nSolución\n\nfrom dataclasses import dataclass\n\n@dataclass # Decorador para crear clases de datos\nclass Producto: \n  nombre: str \n  precio: float \n  cantidad: int\nEjemplo de uso\nproducto = Producto(\"Camiseta\", 20.5, 100)\nprint(producto)  # Producto(nombre='Camiseta', precio=20.5, cantidad=100)",
+    "text": "Ejercicio 6\nImplementa una clase base Animal con un método hablar. Crea una subclase Perro que sobrescriba este método.\n\n\nSolución\n\nclass Animal:\n    def hablar(self):\n        raise NotImplementedError(\"Este método debe ser implementado por la subclase.\")\n\nclass Perro(Animal):\n    def hablar(self):\n        return \"Guau\"\nEjemplo de uso\nperro = Perro()\nprint(perro.hablar())  # Guau\n\nEjercicio 7\nCrea una clase Empleado y una subclase Gerente que utilice super() para llamar al constructor de la clase base.\n\n\nSolución\n\nclass Empleado: \n  def __init__(self, nombre, salario): \n  self.nombre = nombre \n  self.salario = salario\n\nclass Gerente(Empleado): \n  def init(self, nombre, salario, departamento): \n  super().init(nombre, salario) \n  self.departamento = departamento\nEjemplo de uso\ngerente = Gerente(\"Carlos\", 5000, \"Ventas\")\nprint(gerente.nombre)       # Carlos\nprint(gerente.departamento) # Ventas\n\nEjercicio 8\nCrea una clase Matematica con un método estático que calcule el área de un círculo dado el radio.\n\n\nSolución\n\nimport math\n\nclass Matematica:\n\n@staticmethod # Método estático, no recibe una instancias como argumento\ndef area_circulo(radio): \nreturn math.pi * radio ** 2\nEjemplo de uso\nprint(Matematica.area_circulo(5))  # 78.5398...\n\nEjercicio 9\nImplementa una clase Vehiculo con un contador de instancias.\n\n\nSolución\n\nclass Vehiculo: \n  contador = 0\n\ndef __init__(self):\n    Vehiculo.contador += 1\nEjemplo de uso\nvehiculo1 = Vehiculo()\nvehiculo2 = Vehiculo()\nprint(Vehiculo.contador)  # 2\n\nEjercicio 10\nCrea una clase Vector que permita sumar dos vectores usando el operador +.\n\n\nSolución\n\nclass Vector: \n  def __init__(self, x, y): \n    self.x = x \n    self.y = y\n\n  def __add__(self, otro):\n    return Vector(self.x + otro.x, self.y + otro.y)\n\n  def __str__(self):\n    return f\"({self.x}, {self.y})\"\nEjemplo de uso\nv1 = Vector(1, 2)\nv2 = Vector(3, 4)\nv3 = v1 + v2\nprint(v3)  # (4, 6)\n\nEjercicio 11\nCrea una clase Rectangulo que calcule su área como una propiedad.\n\n\nSolución\n\nclass Rectangulo: \n  def __init__(self, base, altura): \n    self.base = base \n    self.altura = altura\n\n  @property # Propiedad, las propiedades no se llaman como métodos\n  def area(self):\n    return self.base * self.altura\nEjemplo de uso\nrectangulo = Rectangulo(5, 3)\nprint(rectangulo.area)  # 15\n\nEjercicio 12\nCrea una clase abstracta Figura con un método area que deba implementarse en las subclases.\n\n\nSolución\n\nfrom abc import ABC, abstractmethod\n\nclass Figura(ABC):\n  \n  @abstractmethod # Método abstracto, las subclases deben implementarlo\n  def area(self): \n    pass\n\nclass Circulo(Figura): \n  def __init__(self, radio): \n    self.radio = radio\n\n  def area(self):\n    return 3.1416 * self.radio ** 2\nEjemplo de uso\ncirculo = Circulo(4)\nprint(circulo.area())  # 50.2656...\n\nEjercicio 13\nCrea una excepción personalizada llamada SaldoInsuficienteError para una clase de cuenta bancaria.\n\n\nSolución\n\nclass SaldoInsuficienteError(Exception): \n  pass\n\nclass CuentaBancaria: \n  def init(self, saldo_inicial=0): \n    self.saldo = saldo_inicial\n\ndef retirar(self, cantidad):\n    if cantidad &gt; self.saldo:\n        raise SaldoInsuficienteError(\"Fondos insuficientes\")\n    self.saldo -= cantidad\nEjemplo de uso\ncuenta = CuentaBancaria(100)\ntry:\n    cuenta.retirar(200)\nexcept SaldoInsuficienteError as e:\n    print(e)  # Fondos insuficientes\n\nEjercicio 14\nCrea una clase Libro que implemente estos métodos para mostrar información de manera clara.\n\n\nSolución\n\nclass Libro: \n  def __init__(self, titulo, autor): \n    self.titulo = titulo self.autor = autor\n\n  def __str__(self):\n    return f\"Libro: {self.titulo} por {self.autor}\"\n\n  def __repr__(self):\n    return f\"Libro({self.titulo!r}, {self.autor!r})\"\nEjemplo de uso\nlibro = Libro(\"Python Avanzado\", \"Juan Pérez\")\nprint(str(libro))  # Libro: Python Avanzado por Juan Pérez\nprint(repr(libro))  # Libro('Python Avanzado', 'Juan Pérez')\n\nEjercicio 15\nImplementa una clase Producto usando @dataclass.\n\n\nSolución\n\nfrom dataclasses import dataclass\n\n@dataclass # Decorador para crear clases de datos\nclass Producto: \n  nombre: str \n  precio: float \n  cantidad: int\nEjemplo de uso\nproducto = Producto(\"Camiseta\", 20.5, 100)\nprint(producto)  # Producto(nombre='Camiseta', precio=20.5, cantidad=100)",
     "crumbs": [
       "Ejercicios",
       "<span class='chapter-number'>52</span>  <span class='chapter-title'>Ejercicios Python - Nivel Intermedio (POO) - Parte 2</span>"
@@ -3091,6 +3091,61 @@
     ]
   },
   {
+    "objectID": "unidades/Pruebas/prueba_tecnica_junior.html#parte-1-programación-orientada-a-objetos-15-puntos",
+    "href": "unidades/Pruebas/prueba_tecnica_junior.html#parte-1-programación-orientada-a-objetos-15-puntos",
+    "title": "Prueba Técnica para Programador Junior - Python",
+    "section": "Parte 1: Programación Orientada a Objetos (15 puntos)",
+    "text": "Parte 1: Programación Orientada a Objetos (15 puntos)\nDuración recomendada: 15 minutos\n\nClase Producto (15 puntos)\n\nCrea una clase Producto con los siguientes atributos y métodos:\nAtributos:\n\nnombre (str)\nprecio (float)\ncantidad (int)\n\nMétodos:\n\n__init__: Inicializa los atributos.\n\ncalcular_total: Devuelve el precio total del producto (precio × cantidad).\nImplementa un método __str__ para mostrar la información del producto en el formato:\n\nProducto(nombre=Nombre, precio=Precio, cantidad=Cantidad)\n\n\nEjemplo de uso:\np1 = Producto(\"Laptop\", 1500.0, 2)\nprint(p1.calcular_total())  # 3000.0\nprint(p1)  # Producto(nombre=Laptop, precio=1500.0, cantidad=2)",
+    "crumbs": [
+      "Pruebas Técnicas",
+      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Prueba Técnica para Programador Junior - Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Pruebas/prueba_tecnica_junior.html#parte-2-lógica-de-programación-y-estructuras-de-datos-15-puntos",
+    "href": "unidades/Pruebas/prueba_tecnica_junior.html#parte-2-lógica-de-programación-y-estructuras-de-datos-15-puntos",
+    "title": "Prueba Técnica para Programador Junior - Python",
+    "section": "Parte 2: Lógica de Programación y Estructuras de Datos (15 puntos)",
+    "text": "Parte 2: Lógica de Programación y Estructuras de Datos (15 puntos)\n\nFibonacci Recursivo (10 puntos)\nEscribe una función fibonacci(n) que calcule el n-ésimo número de la secuencia de Fibonacci de forma recursiva.\n\n\n\n\n\n\nTip\n\n\n\nLa secuencia de Fibonacci es:\n\n0, 1, 1, 2, 3, 5, 8, ….\n\n\n\n\n\nEjemplo de uso:\nprint(fibonacci(6))  # 8\n\n\nAnálisis de texto (5 puntos)\nCrea una función analizar_texto(texto) que reciba un texto como cadena y devuelva un diccionario con:\n\nNúmero de palabras.\nNúmero de letras.\n\n\n\nEjemplo de uso:\ntexto = \"Hola mundo\"\nprint(analizar_texto(texto))\n# {'palabras': 2, 'letras': 9}\n\nPuntaje total: 30 puntos\nAprobación mínima: 20 puntos",
+    "crumbs": [
+      "Pruebas Técnicas",
+      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Prueba Técnica para Programador Junior - Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Pruebas/prueba_tecnica_junior.html#parte-1-programación-orientada-a-objetos-15-puntos-1",
+    "href": "unidades/Pruebas/prueba_tecnica_junior.html#parte-1-programación-orientada-a-objetos-15-puntos-1",
+    "title": "Prueba Técnica para Programador Junior - Python",
+    "section": "Parte 1: Programación Orientada a Objetos (15 puntos)",
+    "text": "Parte 1: Programación Orientada a Objetos (15 puntos)\n\nDefinición de clase y atributos (3 puntos):\n\nLa clase Producto está correctamente definida con los atributos nombre, precio, y cantidad.\n\nMétodo __init__ (3 puntos):\n\nEl constructor inicializa correctamente los atributos.\n\nMétodo calcular_total (4 puntos):\n\nCalcula correctamente el precio total (precio × cantidad).\n\nMétodo __str__ (5 puntos):\n\nDevuelve una representación clara y en el formato especificado:\n\n\nProducto(nombre=Nombre, precio=Precio, cantidad=Cantidad)\n\nNo hay errores al mostrar el objeto con print().",
+    "crumbs": [
+      "Pruebas Técnicas",
+      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Prueba Técnica para Programador Junior - Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Pruebas/prueba_tecnica_junior.html#parte-2-lógica-de-programación-y-estructuras-de-datos-15-puntos-1",
+    "href": "unidades/Pruebas/prueba_tecnica_junior.html#parte-2-lógica-de-programación-y-estructuras-de-datos-15-puntos-1",
+    "title": "Prueba Técnica para Programador Junior - Python",
+    "section": "Parte 2: Lógica de Programación y Estructuras de Datos (15 puntos)",
+    "text": "Parte 2: Lógica de Programación y Estructuras de Datos (15 puntos)\n\nFibonacci Recursivo (10 puntos):\n\n\nLógica correcta (6 puntos):\n\nLa función calcula correctamente el n-ésimo número de Fibonacci.\n\nEficiencia básica (2 puntos):\n\nSe aplica recursividad correctamente sin errores de lógica.\n\nResultados esperados (2 puntos):\n\nLa función produce los resultados esperados para diferentes valores de n.\n\n\n\nAnálisis de Texto (5 puntos):\n\n\nCálculo del número de palabras (2 puntos):\n\nSe cuenta correctamente el número de palabras en el texto.\n\nCálculo del número de letras (2 puntos):\n\nSe cuentan correctamente las letras (excluyendo espacios).\n\nFormato del diccionario (1 punto):\n\nLa función devuelve un diccionario con las claves palabras y letras correctamente estructurado.",
+    "crumbs": [
+      "Pruebas Técnicas",
+      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Prueba Técnica para Programador Junior - Python</span>"
+    ]
+  },
+  {
+    "objectID": "unidades/Pruebas/prueba_tecnica_junior.html#notas-de-calificación",
+    "href": "unidades/Pruebas/prueba_tecnica_junior.html#notas-de-calificación",
+    "title": "Prueba Técnica para Programador Junior - Python",
+    "section": "Notas de calificación:",
+    "text": "Notas de calificación:\n\nPuntaje total: 30 puntos.\nAprobación mínima: 20 puntos.\nErrores menores: Se puede restar hasta 1 punto por detalles menores (nombres incorrectos de variables o errores de formato).\nErrores críticos: Fallos que generan excepciones o resultados incorrectos en los ejemplos restan la totalidad de los puntos asignados al criterio correspondiente.",
+    "crumbs": [
+      "Pruebas Técnicas",
+      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Prueba Técnica para Programador Junior - Python</span>"
+    ]
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "Acerca de mi",
@@ -3126,135 +3181,69 @@
     "text": "Cambios en la Licencia\n[Nombre de la Compañía] se reserva el derecho de modificar los términos de esta licencia en cualquier momento. Cualquier cambio se reflejará en esta página.\nGracias por respetar nuestros derechos de autor y por tu comprensión."
   },
   {
-    "objectID": "unidades/Pruebas/prueba_tecnica_junior.html",
-    "href": "unidades/Pruebas/prueba_tecnica_junior.html",
-    "title": "Prueba Técnica para Programador Junior - Python",
-    "section": "",
-    "text": "Parte 1: Programación Orientada a Objetos (15 puntos)\nDuración total: 30 minutos\nObjetivo: Evaluar conocimientos básicos de programación orientada a objetos, lógica de programación y uso de estructuras de datos en Python.\nDuración recomendada: 15 minutos",
+    "objectID": "unidades/Pruebas/resolucion_prueba_tecnica_junior.html#archivo-parte1producto.py",
+    "href": "unidades/Pruebas/resolucion_prueba_tecnica_junior.html#archivo-parte1producto.py",
+    "title": "Parte 1: Programación Orientada a Objetos",
+    "section": "Archivo: parte1/producto.py",
+    "text": "Archivo: parte1/producto.py\nDescripción de la clase Producto:\n\nAtributos:\n\nnombre: String\nprecio: Float\ncantidad: Integer\n\nMétodos:\n\n__init__(self, nombre, precio, cantidad): Constructor que inicializa los atributos.\ncalcular_total(self): Calcula y devuelve el precio total, que es precio * cantidad.\n__str__(self): Devuelve una representación en formato “Producto(nombre=Nombre, precio=Precio, cantidad=Cantidad)”.",
     "crumbs": [
       "Pruebas Técnicas",
-      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Prueba Técnica para Programador Junior - Python</span>"
+      "<span class='chapter-number'>62</span>  <span class='chapter-title'>Parte 1: Programación Orientada a Objetos</span>"
     ]
   },
   {
-    "objectID": "unidades/Pruebas/prueba_tecnica_junior.html#clase-producto-15-puntos",
-    "href": "unidades/Pruebas/prueba_tecnica_junior.html#clase-producto-15-puntos",
-    "title": "Prueba Técnica para Programador Junior - Python",
-    "section": "Clase Producto (15 puntos)",
-    "text": "Clase Producto (15 puntos)\n\nCrea una clase Producto con los siguientes atributos y métodos:\nAtributos:\n\nnombre (str)\nprecio (float)\ncantidad (int)\n\nMétodos:\n\n__init__: Inicializa los atributos.\n\ncalcular_total: Devuelve el precio total del producto (precio × cantidad).\nImplementa un método __str__ para mostrar la información del producto en el formato:\n\nProducto(nombre=Nombre, precio=Precio, cantidad=Cantidad)",
+    "objectID": "unidades/Pruebas/resolucion_prueba_tecnica_junior.html#implementación-de-la-clase-producto",
+    "href": "unidades/Pruebas/resolucion_prueba_tecnica_junior.html#implementación-de-la-clase-producto",
+    "title": "Parte 1: Programación Orientada a Objetos",
+    "section": "Implementación de la clase Producto:",
+    "text": "Implementación de la clase Producto:\n# parte1/producto.py\n\nclass Producto:\n    def __init__(self, nombre, precio, cantidad):\n        if cantidad &lt; 0:\n            raise ValueError(\"La cantidad no puede ser negativa.\")\n        self.nombre = nombre\n        self.precio = precio\n        self.cantidad = cantidad\n\n    def calcular_total(self):\n        return self.precio * self.cantidad\n\n    def __str__(self):\n        return f\"Producto(nombre={self.nombre}, precio={self.precio}, cantidad={self.cantidad})\"\n\nEl método init inicializa los atributos y valida que la cantidad no sea negativa.\nEl método calcular_total multiplica el precio por la cantidad.\nEl método __str__ devuelve una cadena que representa el objeto de forma legible.",
     "crumbs": [
       "Pruebas Técnicas",
-      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Prueba Técnica para Programador Junior - Python</span>"
+      "<span class='chapter-number'>62</span>  <span class='chapter-title'>Parte 1: Programación Orientada a Objetos</span>"
     ]
   },
   {
-    "objectID": "unidades/Pruebas/prueba_tecnica_junior.html#fibonacci-recursivo-10-puntos",
-    "href": "unidades/Pruebas/prueba_tecnica_junior.html#fibonacci-recursivo-10-puntos",
-    "title": "Prueba Técnica para Programador Junior - Python",
-    "section": "Fibonacci Recursivo (10 puntos)",
-    "text": "Fibonacci Recursivo (10 puntos)\nEscribe una función fibonacci(n) que calcule el n-ésimo número de la secuencia de Fibonacci de forma recursiva.\n\n\n\n\n\n\nTip\n\n\n\nLa secuencia de Fibonacci es:\n\n0, 1, 1, 2, 3, 5, 8, ….",
+    "objectID": "unidades/Pruebas/resolucion_prueba_tecnica_junior.html#pruebas-para-la-parte-1-archivo-parte1test_producto.py",
+    "href": "unidades/Pruebas/resolucion_prueba_tecnica_junior.html#pruebas-para-la-parte-1-archivo-parte1test_producto.py",
+    "title": "Parte 1: Programación Orientada a Objetos",
+    "section": "Pruebas para la Parte 1 (Archivo: parte1/test_producto.py):",
+    "text": "Pruebas para la Parte 1 (Archivo: parte1/test_producto.py):\nSe debe probar el cálculo correcto del precio total, la descripción y la validación de la cantidad negativa.\n# parte1/test_producto.py\n\nimport unittest\nfrom parte1.producto import Producto\n\nclass TestProducto(unittest.TestCase):\n    def test_calcular_precio_total(self):\n        producto = Producto(\"Laptop\", 1200.0, 2)\n        self.assertEqual(producto.calcular_total(), 2400.0)\n\n    def test_descripcion_correcta(self):\n        producto = Producto(\"Celular\", 800.0, 1)\n        self.assertEqual(str(producto), \"Producto(nombre=Celular, precio=800.0, cantidad=1)\")\n\n    def test_cantidad_incorrecta(self):\n        with self.assertRaises(ValueError):\n            Producto(\"TV\", 500.0, -3)\n\nif __name__ == \"__main__\":\n    unittest.main()",
     "crumbs": [
       "Pruebas Técnicas",
-      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Prueba Técnica para Programador Junior - Python</span>"
+      "<span class='chapter-number'>62</span>  <span class='chapter-title'>Parte 1: Programación Orientada a Objetos</span>"
     ]
   },
   {
-    "objectID": "unidades/Pruebas/prueba_tecnica_junior.html#ejemplo-de-uso",
-    "href": "unidades/Pruebas/prueba_tecnica_junior.html#ejemplo-de-uso",
-    "title": "Prueba Técnica para Programador Junior - Python",
-    "section": "Ejemplo de uso:",
-    "text": "Ejemplo de uso:\np1 = Producto(\"Laptop\", 1500.0, 2)\nprint(p1.calcular_total())  # 3000.0\nprint(p1)  # Producto(nombre=Laptop, precio=1500.0, cantidad=2)",
+    "objectID": "unidades/Pruebas/resolucion_prueba_tecnica_junior.html#parte-2-lógica-de-programación-y-estructuras-de-datos",
+    "href": "unidades/Pruebas/resolucion_prueba_tecnica_junior.html#parte-2-lógica-de-programación-y-estructuras-de-datos",
+    "title": "Resolución de la Prueba Técnica para Programador Junior - Python",
+    "section": "Parte 2: Lógica de Programación y Estructuras de Datos",
+    "text": "Parte 2: Lógica de Programación y Estructuras de Datos\n\nFunción fibonacci (Parte 2):\nLa función fibonacci debe ser recursiva. El enésimo número de la secuencia de Fibonacci se calcula como:\n\nfibonacci(0) = 0\nfibonacci(1) = 1\nfibonacci(n) = fibonacci(n-1) + fibonacci(n-2) para n &gt; 1\n\n\n\nImplementación de la función fibonacci:\n# parte2/logica.py\n\ndef fibonacci(n):\n    if n == 0:\n        return 0\n    elif n == 1:\n        return 1\n    else:\n        return fibonacci(n-1) + fibonacci(n-2)\n\nSe implementa la secuencia de Fibonacci de manera recursiva, devolviendo los valores correctos para fibonacci(0) y fibonacci(1), y calculando el siguiente valor sumando los dos anteriores.\n\n\n\nFunción analizar_texto (Parte 2):\nLa función analizar_texto debe recibir un texto y devolver un diccionario con el número de palabras y el número de letras (sin contar los espacios).\n\n\nImplementación de la función analizar_texto:\n# parte2/logica.py\n\ndef analizar_texto(texto):\n    palabras = texto.split()\n    num_palabras = len(palabras)\n    num_letras = sum(len(palabra) for palabra in palabras)\n    return {\"palabras\": num_palabras, \"letras\": num_letras}\n\nSe divide el texto en palabras usando split(), luego se cuenta cuántas palabras hay.\nSe cuenta el número de letras en el texto sumando la longitud de cada palabra (sin contar espacios).\n\n\n\nPruebas para la Parte 2 (Archivo: parte2/test_logica.py):\nSe deben probar las funciones fibonacci y analizar_texto.\n# parte2/test_logica.py\n\nimport unittest\nfrom parte2.logica import fibonacci, analizar_texto\n\nclass TestLogica(unittest.TestCase):\n    def test_fibonacci(self):\n        self.assertEqual(fibonacci(6), 8)\n        self.assertEqual(fibonacci(0), 0)\n        self.assertEqual(fibonacci(1), 1)\n\n    def test_analizar_texto(self):\n        texto = \"Hola mundo\"\n        resultado = analizar_texto(texto)\n        self.assertEqual(resultado, {\"palabras\": 2, \"letras\": 9})\n\nif __name__ == \"__main__\":\n    unittest.main()\n\n\nArchivo runner.py\nEste script se encargará de ejecutar todas las pruebas.\n# runner.py\n\nimport unittest\n\nif __name__ == \"__main__\":\n    loader = unittest.TestLoader()\n    suite = unittest.TestSuite()\n\n    # Carga de pruebas\n    suite.addTests(loader.discover(\"./parte1\", pattern=\"test_*.py\"))\n    suite.addTests(loader.discover(\"./parte2\", pattern=\"test_*.py\"))\n\n    # Ejecución de pruebas\n    runner = unittest.TextTestRunner(verbosity=2)\n    resultado = runner.run(suite)\n\n    # Generar puntuación\n    total_tests = resultado.testsRun\n    fallos = len(resultado.failures)\n    errores = len(resultado.errors)\n\n    exito = total_tests - (fallos + errores)\n    puntuacion = (exito / total_tests) * 100\n\n    print(\"\\nResumen de la prueba técnica:\")\n    print(f\"Total de pruebas ejecutadas: {total_tests}\")\n    print(f\"Pruebas exitosas: {exito}\")\n    print(f\"Pruebas fallidas: {fallos}\")\n    print(f\"Errores en pruebas: {errores}\")\n    print(f\"Puntuación final: {puntuacion:.2f}%\")",
     "crumbs": [
       "Pruebas Técnicas",
-      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Prueba Técnica para Programador Junior - Python</span>"
+      "<span class='chapter-number'>62</span>  <span class='chapter-title'>Resolución de la Prueba Técnica para Programador Junior - Python</span>"
     ]
   },
   {
-    "objectID": "unidades/Pruebas/prueba_tecnica_junior.html#ejemplo-de-uso-1",
-    "href": "unidades/Pruebas/prueba_tecnica_junior.html#ejemplo-de-uso-1",
-    "title": "Prueba Técnica para Programador Junior - Python",
-    "section": "Ejemplo de uso:",
-    "text": "Ejemplo de uso:\nprint(fibonacci(6))  # 8",
+    "objectID": "unidades/Pruebas/resolucion_prueba_tecnica_junior.html#ahora-puedes-ejecutar-las-pruebas-de-la-siguiente-manera",
+    "href": "unidades/Pruebas/resolucion_prueba_tecnica_junior.html#ahora-puedes-ejecutar-las-pruebas-de-la-siguiente-manera",
+    "title": "Resolución de la Prueba Técnica para Programador Junior - Python",
+    "section": "Ahora puedes ejecutar las pruebas de la siguiente manera:",
+    "text": "Ahora puedes ejecutar las pruebas de la siguiente manera:\npython3 runner.py\nEsto ejecutará todas las pruebas y generará un resumen con la puntuación final.",
     "crumbs": [
       "Pruebas Técnicas",
-      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Prueba Técnica para Programador Junior - Python</span>"
+      "<span class='chapter-number'>62</span>  <span class='chapter-title'>Resolución de la Prueba Técnica para Programador Junior - Python</span>"
     ]
   },
   {
-    "objectID": "unidades/Pruebas/prueba_tecnica_junior.html#análisis-de-texto-5-puntos",
-    "href": "unidades/Pruebas/prueba_tecnica_junior.html#análisis-de-texto-5-puntos",
-    "title": "Prueba Técnica para Programador Junior - Python",
-    "section": "Análisis de texto (5 puntos)",
-    "text": "Análisis de texto (5 puntos)\nCrea una función analizar_texto(texto) que reciba un texto como cadena y devuelva un diccionario con:\n\nNúmero de palabras.\nNúmero de letras.",
+    "objectID": "unidades/Pruebas/resolucion_prueba_tecnica_junior.html#parte-1-programación-orientada-a-objetos",
+    "href": "unidades/Pruebas/resolucion_prueba_tecnica_junior.html#parte-1-programación-orientada-a-objetos",
+    "title": "Resolución de la Prueba Técnica para Programador Junior - Python",
+    "section": "Parte 1: Programación Orientada a Objetos",
+    "text": "Parte 1: Programación Orientada a Objetos\n\nArchivo: parte1/producto.py\nDescripción de la clase Producto:\n\nAtributos:\n\nnombre: String\nprecio: Float\ncantidad: Integer\n\nMétodos:\n\n__init__(self, nombre, precio, cantidad): Constructor que inicializa los atributos.\ncalcular_total(self): Calcula y devuelve el precio total, que es precio * cantidad.\n__str__(self): Devuelve una representación en formato “Producto(nombre=Nombre, precio=Precio, cantidad=Cantidad)”.\n\n\n\n\nImplementación de la clase Producto:\n# parte1/producto.py\n\nclass Producto:\n    def __init__(self, nombre, precio, cantidad):\n        if cantidad &lt; 0:\n            raise ValueError(\"La cantidad no puede ser negativa.\")\n        self.nombre = nombre\n        self.precio = precio\n        self.cantidad = cantidad\n\n    def calcular_total(self):\n        return self.precio * self.cantidad\n\n    def __str__(self):\n        return f\"Producto(nombre={self.nombre}, precio={self.precio}, cantidad={self.cantidad})\"\n\nEl método init inicializa los atributos y valida que la cantidad no sea negativa.\nEl método calcular_total multiplica el precio por la cantidad.\nEl método __str__ devuelve una cadena que representa el objeto de forma legible.\n\n\n\nPruebas para la Parte 1 (Archivo: parte1/test_producto.py):\nSe debe probar el cálculo correcto del precio total, la descripción y la validación de la cantidad negativa.\n# parte1/test_producto.py\n\nimport unittest\nfrom parte1.producto import Producto\n\nclass TestProducto(unittest.TestCase):\n    def test_calcular_precio_total(self):\n        producto = Producto(\"Laptop\", 1200.0, 2)\n        self.assertEqual(producto.calcular_total(), 2400.0)\n\n    def test_descripcion_correcta(self):\n        producto = Producto(\"Celular\", 800.0, 1)\n        self.assertEqual(str(producto), \"Producto(nombre=Celular, precio=800.0, cantidad=1)\")\n\n    def test_cantidad_incorrecta(self):\n        with self.assertRaises(ValueError):\n            Producto(\"TV\", 500.0, -3)\n\nif __name__ == \"__main__\":\n    unittest.main()",
     "crumbs": [
       "Pruebas Técnicas",
-      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Prueba Técnica para Programador Junior - Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Pruebas/prueba_tecnica_junior.html#ejemplo-de-uso-2",
-    "href": "unidades/Pruebas/prueba_tecnica_junior.html#ejemplo-de-uso-2",
-    "title": "Prueba Técnica para Programador Junior - Python",
-    "section": "Ejemplo de uso:",
-    "text": "Ejemplo de uso:\ntexto = \"Hola mundo\"\nprint(analizar_texto(texto))\n# {'palabras': 2, 'letras': 9}\n\nPuntaje total: 30 puntos\nAprobación mínima: 20 puntos",
-    "crumbs": [
-      "Pruebas Técnicas",
-      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Prueba Técnica para Programador Junior - Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Pruebas/prueba_tecnica_junior.html#notas-de-calificación",
-    "href": "unidades/Pruebas/prueba_tecnica_junior.html#notas-de-calificación",
-    "title": "Prueba Técnica para Programador Junior - Python",
-    "section": "Notas de calificación:",
-    "text": "Notas de calificación:\n\nPuntaje total: 30 puntos.\nAprobación mínima: 20 puntos.\nErrores menores: Se puede restar hasta 1 punto por detalles menores (nombres incorrectos de variables o errores de formato).\nErrores críticos: Fallos que generan excepciones o resultados incorrectos en los ejemplos restan la totalidad de los puntos asignados al criterio correspondiente.",
-    "crumbs": [
-      "Pruebas Técnicas",
-      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Prueba Técnica para Programador Junior - Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Pruebas/prueba_tecnica_junior.html#parte-1-programación-orientada-a-objetos-15-puntos-1",
-    "href": "unidades/Pruebas/prueba_tecnica_junior.html#parte-1-programación-orientada-a-objetos-15-puntos-1",
-    "title": "Prueba Técnica para Programador Junior - Python",
-    "section": "Parte 1: Programación Orientada a Objetos (15 puntos)",
-    "text": "Parte 1: Programación Orientada a Objetos (15 puntos)\n\nDefinición de clase y atributos (3 puntos):\n\nLa clase Producto está correctamente definida con los atributos nombre, precio, y cantidad.\n\nMétodo __init__ (3 puntos):\n\nEl constructor inicializa correctamente los atributos.\n\nMétodo calcular_total (4 puntos):\n\nCalcula correctamente el precio total (precio × cantidad).\n\nMétodo __str__ (5 puntos):\n\nDevuelve una representación clara y en el formato especificado:\n\n\nProducto(nombre=Nombre, precio=Precio, cantidad=Cantidad)\n\nNo hay errores al mostrar el objeto con print().",
-    "crumbs": [
-      "Pruebas Técnicas",
-      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Prueba Técnica para Programador Junior - Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Pruebas/prueba_tecnica_junior.html#parte-2-lógica-de-programación-y-estructuras-de-datos-15-puntos-1",
-    "href": "unidades/Pruebas/prueba_tecnica_junior.html#parte-2-lógica-de-programación-y-estructuras-de-datos-15-puntos-1",
-    "title": "Prueba Técnica para Programador Junior - Python",
-    "section": "Parte 2: Lógica de Programación y Estructuras de Datos (15 puntos)",
-    "text": "Parte 2: Lógica de Programación y Estructuras de Datos (15 puntos)\n\nFibonacci Recursivo (10 puntos):\n\n\nLógica correcta (6 puntos):\n\nLa función calcula correctamente el n-ésimo número de Fibonacci.\n\nEficiencia básica (2 puntos):\n\nSe aplica recursividad correctamente sin errores de lógica.\n\nResultados esperados (2 puntos):\n\nLa función produce los resultados esperados para diferentes valores de n.\n\n\n\nAnálisis de Texto (5 puntos):\n\n\nCálculo del número de palabras (2 puntos):\n\nSe cuenta correctamente el número de palabras en el texto.\n\nCálculo del número de letras (2 puntos):\n\nSe cuentan correctamente las letras (excluyendo espacios).\n\nFormato del diccionario (1 punto):\n\nLa función devuelve un diccionario con las claves palabras y letras correctamente estructurado.",
-    "crumbs": [
-      "Pruebas Técnicas",
-      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Prueba Técnica para Programador Junior - Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Pruebas/prueba_tecnica_junior.html#parte-1-programación-orientada-a-objetos-15-puntos",
-    "href": "unidades/Pruebas/prueba_tecnica_junior.html#parte-1-programación-orientada-a-objetos-15-puntos",
-    "title": "Prueba Técnica para Programador Junior - Python",
-    "section": "Parte 1: Programación Orientada a Objetos (15 puntos)",
-    "text": "Parte 1: Programación Orientada a Objetos (15 puntos)\nDuración recomendada: 15 minutos\n\nClase Producto (15 puntos)\n\nCrea una clase Producto con los siguientes atributos y métodos:\nAtributos:\n\nnombre (str)\nprecio (float)\ncantidad (int)\n\nMétodos:\n\n__init__: Inicializa los atributos.\n\ncalcular_total: Devuelve el precio total del producto (precio × cantidad).\nImplementa un método __str__ para mostrar la información del producto en el formato:\n\nProducto(nombre=Nombre, precio=Precio, cantidad=Cantidad)\n\n\nEjemplo de uso:\np1 = Producto(\"Laptop\", 1500.0, 2)\nprint(p1.calcular_total())  # 3000.0\nprint(p1)  # Producto(nombre=Laptop, precio=1500.0, cantidad=2)",
-    "crumbs": [
-      "Pruebas Técnicas",
-      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Prueba Técnica para Programador Junior - Python</span>"
-    ]
-  },
-  {
-    "objectID": "unidades/Pruebas/prueba_tecnica_junior.html#parte-2-lógica-de-programación-y-estructuras-de-datos-15-puntos",
-    "href": "unidades/Pruebas/prueba_tecnica_junior.html#parte-2-lógica-de-programación-y-estructuras-de-datos-15-puntos",
-    "title": "Prueba Técnica para Programador Junior - Python",
-    "section": "Parte 2: Lógica de Programación y Estructuras de Datos (15 puntos)",
-    "text": "Parte 2: Lógica de Programación y Estructuras de Datos (15 puntos)\n\nFibonacci Recursivo (10 puntos)\nEscribe una función fibonacci(n) que calcule el n-ésimo número de la secuencia de Fibonacci de forma recursiva.\n\n\n\n\n\n\nTip\n\n\n\nLa secuencia de Fibonacci es:\n\n0, 1, 1, 2, 3, 5, 8, ….\n\n\n\n\n\nEjemplo de uso:\nprint(fibonacci(6))  # 8\n\n\nAnálisis de texto (5 puntos)\nCrea una función analizar_texto(texto) que reciba un texto como cadena y devuelva un diccionario con:\n\nNúmero de palabras.\nNúmero de letras.\n\n\n\nEjemplo de uso:\ntexto = \"Hola mundo\"\nprint(analizar_texto(texto))\n# {'palabras': 2, 'letras': 9}\n\nPuntaje total: 30 puntos\nAprobación mínima: 20 puntos",
-    "crumbs": [
-      "Pruebas Técnicas",
-      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Prueba Técnica para Programador Junior - Python</span>"
+      "<span class='chapter-number'>62</span>  <span class='chapter-title'>Resolución de la Prueba Técnica para Programador Junior - Python</span>"
     ]
   }
 ]

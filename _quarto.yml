@@ -130,6 +130,7 @@ book:
     - part: "Pruebas Técnicas"
       chapters:
         - "unidades/Pruebas/prueba_tecnica_junior.qmd"
+        - "unidades/Pruebas/resolucion_prueba_tecnica_junior.qmd"
 
 bibliography: "references.bib"
 biblio-style: "apalike"

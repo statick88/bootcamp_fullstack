@@ -1,0 +1,114 @@
+:::{.justify}
+
+# Resolución de la Prueba Técnica para Programador Junior - Python
+
+## Parte 1: Programación Orientada a Objetos
+
+### Archivo: parte1/producto.py
+
+Descripción de la clase Producto:
+
+- Atributos:
+    - nombre: String
+    - precio: Float
+    - cantidad: Integer
+- Métodos:
+    - \_\_init\_\_(self, nombre, precio, cantidad): Constructor que inicializa los atributos.
+    - calcular_total(self): Calcula y devuelve el precio total, que es precio * cantidad.
+    - \_\_str\_\_(self): Devuelve una representación en formato "Producto(nombre=Nombre, precio=Precio, cantidad=Cantidad)".
+
+### Implementación de la clase Producto:
+
+```python
+class Producto:
+    def __init__(self, nombre, descripcion, precio, cantidad):
+        if cantidad < 0:
+            raise ValueError("La cantidad no puede ser negativa")
+        self.nombre = nombre
+        self.descripcion = descripcion
+        self.precio = precio
+        self.cantidad = cantidad
+
+    def calcular_precio_total(self):
+        return self.precio * self.cantidad
+
+    def __str__(self):
+      return f"Producto(nombre={self.nombre}, descripcion={self.descripcion}, precio={self.precio}, cantidad={self.cantidad})"
+
+```
+- Se ha implementado la clase Producto con sus atributos y métodos.
+- El método \_\_init\_\_ inicializa los atributos de la clase.
+- El método calcular_precio_total calcula el precio total del producto.
+- El método \_\_str\_\_ devuelve una representación en formato "Producto(nombre=Nombre, precio=Precio, cantidad=Cantidad)".
+
+## Parte 2: Lógica de Programación y Estructuras de Datos
+
+### Función fibonacci (Parte 2):
+
+La función fibonacci debe ser recursiva. El enésimo número de la secuencia de Fibonacci se calcula como:
+
+- fibonacci(0) = 0
+- fibonacci(1) = 1
+- fibonacci(n) = fibonacci(n-1) + fibonacci(n-2) para n > 1
+
+### Implementación de la función fibonacci:
+
+```python
+import string
+
+
+def fibonacci(n):
+    if n <= 1:
+        return n
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+
+def fibonacci_memo(n, memo={0: 0, 1: 1}):
+    if n not in memo:
+        memo[n] = fibonacci_memo(n - 1, memo) + fibonacci_memo(n - 2, memo)
+    return memo[n]
+```
+
+- Se ha implementado la función fibonacci de forma recursiva.
+- Se ha implementado la función analizar_texto que cuenta el número de palabras y letras en un texto.
+
+### Función analizar_texto (Parte 2):
+
+La función analizar_texto recibe un texto y devuelve un diccionario con dos claves:
+
+- 'palabras': Número de palabras en el texto.
+- 'letras': Número de letras en el texto (sin contar espacios ni signos de puntuación).
+
+### Implementación de la función analizar_texto:
+
+```python
+def analizar_texto(texto):
+    palabras = texto.split()
+
+    letras = sum(len(''.join(c for c in palabra if c.isalpha()))
+                 for palabra in palabras)
+
+    return {'palabras': len(palabras), 'letras': letras}
+```
+
+- Se ha implementado la función analizar_texto que cuenta el número de palabras y letras en un texto.
+- La función split divide el texto en palabras.
+- Se utiliza una expresión generadora para contar el número de letras en cada palabra.
+- El resultado se devuelve como un diccionario con las claves 'palabras' y 'letras'.
+
+### Archivo runner.py
+
+
+# Conclusión:
+
+- Se ha implementado la clase Producto con sus métodos en la Parte 1.
+- Se han implementado las funciones fibonacci y analizar_texto en la Parte 2.
+- El script runner.py permite ejecutar todas las pruebas y calcular la puntuación final.
+
+## Ahora puedes ejecutar las pruebas de la siguiente manera:
+
+```bash
+python3 runner.py
+```
+Esto ejecutará todas las pruebas y generará un resumen con la puntuación final.
+:::
