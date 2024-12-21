@@ -117,6 +117,7 @@ book:
         - "unidades/ejercicios/ejercicios_python-001.qmd"
         - "unidades/ejercicios/ejercicios_python-002.qmd"
         - "unidades/ejercicios/ejercicios_python-003.qmd"
+
     - part: "Extras"
       chapters:
         - "unidades/Extras/0_parte.qmd"
@@ -126,6 +127,9 @@ book:
         - "unidades/Extras/4_parte.qmd"
         - "unidades/Extras/5_parte.qmd"
         - "unidades/Extras/6_parte.qmd"
+    - part: "Pruebas Técnicas"
+      chapters:
+        - "unidades/Pruebas/prueba_tecnica_junior.qmd"
 
 bibliography: "references.bib"
 biblio-style: "apalike"

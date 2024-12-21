@@ -1,0 +1,142 @@
+:::{.justify}
+# Prueba Técnica para Programador Junior - Python
+
+**Duración total**: 30 minutos
+
+**Objetivo**: Evaluar conocimientos básicos de programación orientada a objetos, lógica de programación y uso de estructuras de datos en Python.
+
+:::{.callout-tip}
+- Por favor leer claramente las instrucciones antes de empezar
+- Crea un fork de este repositorio y trabaja en tu propio espacio
+
+:::{.center}
+<https://github.com/statick88/prueba_tecnica_junior_python>
+:::
+:::
+## Parte 1: Programación Orientada a Objetos (15 puntos)
+
+**Duración recomendada**: 15 minutos
+
+### Clase Producto (15 puntos)
+
+- Crea una clase Producto con los siguientes atributos y métodos:
+
+- **Atributos**: 
+  - nombre (str) 
+  - precio (float) 
+  - cantidad (int)
+
+- **Métodos**:
+    - **\_\_init\_\_**: Inicializa los atributos.
+- **calcular_total**: Devuelve el precio total del producto (precio × cantidad).
+- Implementa un método \_\_str\_\_ para mostrar la información del producto en el formato:
+```python
+Producto(nombre=Nombre, precio=Precio, cantidad=Cantidad)
+```
+### Ejemplo de uso:
+
+```python
+p1 = Producto("Laptop", 1500.0, 2)
+print(p1.calcular_total())  # 3000.0
+print(p1)  # Producto(nombre=Laptop, precio=1500.0, cantidad=2)
+```
+
+## Parte 2: Lógica de Programación y Estructuras de Datos (15 puntos)
+
+### Fibonacci Recursivo (10 puntos)
+
+Escribe una función fibonacci(n) que calcule el n-ésimo número de la secuencia de Fibonacci de forma recursiva.
+
+:::{.callout-tip}
+La secuencia de Fibonacci es: 
+
+:::{.center}
+0, 1, 1, 2, 3, 5, 8, ....
+:::
+:::
+
+### Ejemplo de uso:
+
+```python
+print(fibonacci(6))  # 8
+```
+### Análisis de texto (5 puntos)
+
+Crea una función **analizar_texto(texto)** que reciba un **texto** como **cadena** y **devuelva** un **diccionario** con:
+
+- Número de palabras.
+- Número de letras.
+
+### Ejemplo de uso:
+
+```python
+texto = "Hola mundo"
+print(analizar_texto(texto))
+# {'palabras': 2, 'letras': 9}
+```
+
+- **Puntaje total**: 30 puntos
+- **Aprobación mínima**: 20 puntos
+
+# Criterios de Evaluación
+
+## **Parte 1**: Programación Orientada a Objetos (15 puntos)
+
+1. Definición de clase y atributos (3 puntos):
+
+    - La clase Producto está correctamente definida con los atributos nombre, precio, y cantidad.
+
+2. Método \_\_init\_\_ (3 puntos):
+
+    - El constructor inicializa correctamente los atributos.
+
+3. Método calcular_total (4 puntos):
+
+    - Calcula correctamente el precio total (precio × cantidad).
+
+4. Método \_\_str\_\_ (5 puntos):
+
+    - Devuelve una representación clara y en el formato especificado:
+
+```python
+Producto(nombre=Nombre, precio=Precio, cantidad=Cantidad)
+```
+  - No hay errores al mostrar el objeto con print().
+
+## **Parte 2**: Lógica de Programación y Estructuras de Datos (15 puntos)
+
+1. Fibonacci Recursivo (10 puntos):
+
+  - Lógica correcta (6 puntos):
+
+    - La función calcula correctamente el n-ésimo número de Fibonacci.
+
+  - Eficiencia básica (2 puntos):
+
+    - Se aplica recursividad correctamente sin errores de lógica.
+
+  - Resultados esperados (2 puntos):
+
+    - La función produce los resultados esperados para diferentes valores de n.
+
+2. Análisis de Texto (5 puntos):
+
+  - Cálculo del número de palabras (2 puntos):
+
+    - Se cuenta correctamente el número de palabras en el texto.
+
+  - Cálculo del número de letras (2 puntos):
+
+    - Se cuentan correctamente las letras (excluyendo espacios).
+
+  - Formato del diccionario (1 punto):
+
+    - La función devuelve un diccionario con las claves palabras y letras correctamente estructurado.
+
+## Notas de calificación:
+
+- **Puntaje total**: 30 puntos.
+- **Aprobación mínima**: 20 puntos.
+- **Errores menores**: Se puede restar hasta 1 punto por detalles menores (nombres incorrectos de variables o errores de formato).
+- **Errores críticos**: Fallos que generan excepciones o resultados incorrectos en los ejemplos restan la totalidad de los puntos asignados al criterio correspondiente.
+:::
